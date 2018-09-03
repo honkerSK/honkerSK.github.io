@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[markdown语法]]></title>
+    <url>%2F2018%2F08%2F30%2Fmarkdown%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[欢迎使用马克飞象@(示例笔记本)[马克飞象|帮助|Markdown] 马克飞象是一款专为印象笔记（Evernote）打造的Markdown编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，带来前所未有的书写体验。特点概述： 功能丰富 ：支持高亮代码块、LaTeX 公式、流程图，本地图片以及附件上传，甚至截图粘贴，工作学习好帮手； 得心应手 ：简洁高效的编辑器，提供[桌面客户端][1]以及[离线Chrome App][2]，支持移动端 Web； 深度整合 ：支持选择笔记本和添加标签，支持从印象笔记跳转编辑，轻松管理。 [TOC] (不支持) Markdown简介(hexo引用不一样) Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。 —— 维基百科 正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为粗体或者斜体，创建一个链接或一个脚注[^demo]。下面列举了几个高级功能，更多语法请按Cmd + /查看帮助。 代码块12345678910@requires_authorizationdef somefunc(param1='', param2=0): '''A docstring''' if param1 &gt; param2: # interesting print 'Greater' return (param2 - param1 + 1) or Noneclass SomeClass: pass&gt;&gt;&gt; message = '''interpreter... prompt''' LaTeX 公式 (hexo不支持此写法)可以创建行内公式，例如 $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$。或者块级公式： $$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$ 表格 (不一样) Item Value Qty Computer 1600 USD 5 Phone 12 USD 12 Pipe 1 USD 234 流程图 (hexo不支持此写法)12345678st=&gt;start: Starte=&gt;endop=&gt;operation: My Operationcond=&gt;condition: Yes or No?st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 以及时序图: 123Alice-&gt;Bob: Hello Bob, how are you?Note right of Bob: Bob thinksBob--&gt;Alice: I am good thanks! 提示：想了解更多，请查看流程图[语法][3]以及时序图[语法][4]。 复选框使用 - [ ] 和 - [x] 语法可以创建复选框，实现 todo-list 等功能。例如： 已完成事项 待办事项1 待办事项2 注意：目前支持尚不完全，在印象笔记中勾选复选框是无效、不能同步的，所以必须在马克飞象中修改 Markdown 原文才可生效。下个版本将会全面支持。 印象笔记相关笔记本和标签马克飞象增加了@(笔记本)[标签A|标签B]语法, 以选择笔记本和添加标签。 绑定账号后， 输入(自动会出现笔记本列表，请从中选择。 笔记标题马克飞象会自动使用文档内出现的第一个标题作为笔记标题。例如本文，就是第一行的 欢迎使用马克飞象。 快捷编辑保存在印象笔记中的笔记，右上角会有一个红色的编辑按钮，点击后会回到马克飞象中打开并编辑该笔记。 注意：目前用户在印象笔记中单方面做的任何修改，马克飞象是无法自动感知和更新的。所以请务必回到马克飞象编辑。 数据同步马克飞象通过将Markdown原文以隐藏内容保存在笔记中的精妙设计，实现了对Markdown的存储和再次编辑。既解决了其他产品只是单向导出HTML的单薄，又规避了服务端存储Markdown带来的隐私安全问题。这样，服务端仅作为对印象笔记 API调用和数据转换之用。 隐私声明：用户所有的笔记数据，均保存在印象笔记中。马克飞象不存储用户的任何笔记数据。 离线存储马克飞象使用浏览器离线存储将内容实时保存在本地，不必担心网络断掉或浏览器崩溃。为了节省空间和避免冲突，已同步至印象笔记并且不再修改的笔记将删除部分本地缓存，不过依然可以随时通过文档管理打开。 注意：虽然浏览器存储大部分时候都比较可靠，但印象笔记作为专业云存储，更值得信赖。以防万一，请务必经常及时同步到印象笔记。 编辑器相关设置右侧系统菜单（快捷键Cmd + M）的设置中，提供了界面字体、字号、自定义CSS、vim/emacs 键盘模式等高级选项。 快捷键帮助 Cmd + /同步文档 Cmd + S创建文档 Cmd + Opt + N最大化编辑器 Cmd + Enter预览文档 Cmd + Opt + Enter文档管理 Cmd + O系统菜单 Cmd + M 加粗 Cmd + B插入图片 Cmd + G插入链接 Cmd + L提升标题 Cmd + H 关于收费马克飞象为新用户提供 10 天的试用期，试用期过后需要续费才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。 反馈与建议 微博：@马克飞象，@GGock 邮箱：&#x68;&#117;&#x73;&#116;&#103;&#111;&#x63;&#x6b;&#64;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#109; 感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。 [^demo] (hexo不支持) [^demo]: 这是一个示例脚注。请查阅 MultiMarkdown 文档 关于脚注的说明。 限制： 印象笔记的笔记内容使用 [ENML][5] 格式，基于 HTML，但是不支持某些标签和属性，例如id，这就导致脚注和TOC无法正常点击。 (支持) [1]: http://maxiang.info/client_zh [2]: https://chrome.google.com/webstore/detail/kidnkfckhbdkfgbicccmdggmpgogehop [3]: http://adrai.github.io/flowchart.js/ [4]: http://bramp.github.io/js-sequence-diagrams/ [5]: https://dev.yinxiang.com/doc/articles/enml.php]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo语法体验]]></title>
+    <url>%2F2018%2F08%2F30%2Fhexo%E8%AF%AD%E6%B3%95%E4%BD%93%E9%AA%8C%2F</url>
+    <content type="text"><![CDATA[标签插件（Tag Plugins）引用块在文章中插入引言，可包含作者、来源和标题。 别号： quotecontent [author[source]] [link] [source_link_title] 样例没有提供参数，则只输出普通的 blockquote Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem. 111111 222222 333 代码块在文章中插入代码。 别名： code[title] [] [url] [link text]1code snippet 样例普通的代码块1alert(&apos;Hello World!&apos;); alert(‘Hello World!’); 指定语言1[rectangle setX: 10 y: 10 width: 20 height: 20]; [rectangle setX: 10 y: 10 width: 20 height: 20]; 1[rectangle setX: 10 y: 10 width: 20 height: 20]; 附加说明Array.map1array.map(callback[, thisArg]) Array.maparray.map(callback[, thisArg]) 附加说明和网址_.compactUnderscore.js12_.compact([0, 1, false, 2, &apos;&apos;, 3]);=&gt; [1, 2, 3] _.compactUnderscore.js_.compact([0, 1, false, 2, ‘’, 3]);=&gt; [1, 2, 3] 反引号代码块另一种形式的代码块，不同的是它使用三个反引号来包裹。 [title] [url] [link text] 1code snippet Image在文章中插入指定大小的图片。 Link在文章中插入链接，并自动给外部链接添加 target=”_blank” 属性。 text url [external] [title] Youtube在文章中插入 Youtube 视频。 Vimeo在文章中插入 Vimeo 视频。 引用文章引用其他文章的链接。 引用资源引用文章的资源。 window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[博客开篇]]></title>
+    <url>%2F2018%2F08%2F30%2F%E5%8D%9A%E5%AE%A2%E5%BC%80%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[终于下决心要开始写博客了，做程序员快四年了，四年的时间里，由一个嫩头青，成长为了一个能在公司项目里独立完成一些业务逻辑复杂的大模块的中坚程序员。首先我还是概括下这几年的成长历程吧。 由于本人的脸长得比较缓慢，刚出道时还是一张孩童脸，用时下流行的一个词来描述那就是“萌”。因为太萌，刚安排到客户现场做开发时，还被客户开玩笑说你们公司违法招收童工，我一怒之下蓄了几个月胡须，留了几个月飘逸的长发，想让自己在外表上看上去更老成。但不巧的是，此时的我又与那时刚出道的“犀利哥”风格极为类似，又被戏称为犀利程序哥，再怒之下，开始潜心工作，不再追求表面的浮夸，在工作中逐渐展露头角，完成了项目中几个重要需求的开发，在后来的普选中当选为公司年度优秀员工之一。最近1，2年波澜不惊，因为自学没有断过，技术也在逐步积累。 下面进入主题，关于我的博客，我用自问自答的方式来介绍： 1、我为什么要写博客？ 做程序员这几年，技术不断积累，思想不断在升华，有些思考和想法在与同事、朋友的交流中会迸发出来。在交流的过程中，我觉得很过瘾。有些模糊不清的事情，通过交流明确了，有些以为自己把握的很准的事情，通过交流颠覆了，而有些自己已经明白的事情，又开阔了新的思路。但交流只是瞬时的、已逝的，我们的讨论不是国家政要接见外国领导，没有人把我们的谈话记录下来。就像在内存里一样，断电后恢复不了，事后很难回忆起来那些曾经闪光的思想。所以我要把我在程序人生中得到的思想给持久化了，给固化下来。再一个就是，我的同事、朋友始终是我身边熟悉的人，我需要一个更大的世界，所以，我也想通过博客与大家交流！ 2、我的博客写些什么东西？ 这个问题我想了很久，以前想写些关于iOS的、关于前端博文。有时候在草稿中写好一段文字，最后一搜索，全世界拥有同样知识点的，同样解决方案的数不胜数，太多了。作为一个讨厌重复的人，我不能再罗列这些网上一抓一大把的普世技术知识点，更何况以我现在的积累，还不能做到非常好。当然我不是说罗列技术点没有技术含量，正是因为网上这些庞大的知识，我才能很快的找到我想要的，解决我的问题。综上，我不能做重复的事，也不要因为说的东西不扎实而误导别人。当然了，在某个技术领域达到一定境界了，我也会写研究技术细节的博文。 那我写什么？什么是不重复的？那必须斩钉截铁的说那就是我的思想，世上没有任何一个人和我的人生轨迹完全一样，在这个过程中，我会思考我会总结，我要把我的思想留存于世，即使有时候会有相同思想的东西同时存在，那也会因为是我个人的总结和反思而有所不同！ 3、写博客的计划？ 不追求一个月一定要写几篇几篇的，当我有深刻的感触，对事物有不同的理解，我就写一篇，记录下来，一步一个脚印，向卓越程序员迈进！ 夜空霓虹，都是我不要的繁荣，完。]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+</search>
