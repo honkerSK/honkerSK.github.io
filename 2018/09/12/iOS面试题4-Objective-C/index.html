@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            iOS面试题4--Objective-C | 
+        
+        暮鼓晨钟
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",iOS面试">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="暮鼓晨钟">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题4-Objective-C/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题4-Objective-C/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="iOS面试题4--Objective-C | 暮鼓晨钟">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="iOS面试"> 
+
+    
+        <meta property="article:published_time" content="Wed Sep 12 2018 01:56:06 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 12 2018 02:24:48 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题4-Objective-C/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题4-Objective-C/index.html",
+    "headline": "iOS面试题4--Objective-C",
+    "datePublished": "Wed Sep 12 2018 01:56:06 GMT+0800",
+    "dateModified": "Wed Sep 12 2018 02:24:48 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "暮鼓晨钟",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "暮鼓晨钟",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",iOS面试",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Objective-C"><span class="post-toc-number">1.</span> <span class="post-toc-text">Objective-C</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#方法和选择器有何不同？-Difference-between-method-and-selector"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">方法和选择器有何不同？(Difference between method and selector?)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Core-Foundation的内存管理"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Core Foundation的内存管理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#malloc和New的区别"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">malloc和New的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#你是否接触过OC中的反射机制？简单聊一下概念和使用"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">你是否接触过OC中的反射机制？简单聊一下概念和使用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是SEL-如何声明一个SEL-通过那些方法能够-调用SEL包装起来的方法"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">什么是SEL?如何声明一个SEL?通过那些方法能够,调用SEL包装起来的方法?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#协议中是什么意思-子类继承了父类-那么子类会遵守父类中遵守的协议吗-协议中能够定义成员变量-如何约束一个对象类型的变量要存储的地址是遵守一个协议对象"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">协议中是什么意思?子类继承了父类,那么子类会遵守父类中遵守的协议吗?协议中能够定义成员变量?如何约束一个对象类型的变量要存储的地址是遵守一个协议对象?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NS-CF-CG-CA-UI这些前缀分别是什么含义"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">NS/CF/CG/CA/UI这些前缀分别是什么含义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#面向对象都有哪些特征以及你对这些特征的理解。"><span class="post-toc-number">1.0.8.</span> <span class="post-toc-text">面向对象都有哪些特征以及你对这些特征的理解。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#我们说的Objective-C是动态运行时语言是什么意思-When-we-call-objective-c-is-runtime-language-what-does-it-mean"><span class="post-toc-number">1.0.9.</span> <span class="post-toc-text">我们说的Objective-C是动态运行时语言是什么意思? (When we call objective c is runtime language what does it mean?)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#readwrite-readonly-assign-retain-copy-nonatomic属性的作用"><span class="post-toc-number">1.0.10.</span> <span class="post-toc-text">readwrite, readonly, assign, retain, copy, nonatomic属性的作用?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#简述NotificationCenter、KVC、KVO、Delegate-并说明它们之间的区别-重点"><span class="post-toc-number">1.0.11.</span> <span class="post-toc-text">简述NotificationCenter、KVC、KVO、Delegate?并说明它们之间的区别?(重点)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#懒加载-What-is-lazy-loading"><span class="post-toc-number">1.0.12.</span> <span class="post-toc-text">懒加载(What is lazy loading ?)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#OC有多继承吗-没有的话可以用什么方法替代"><span class="post-toc-number">1.0.13.</span> <span class="post-toc-text">OC有多继承吗?没有的话可以用什么方法替代?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分别描述类别-categories-和延展-extensions-是什么-以及两者的区别-继承和类别在实现中有何区别-为什么Category只能为对象添加方法-却不能添加成员变量"><span class="post-toc-number">1.0.14.</span> <span class="post-toc-text">分别描述类别(categories)和延展(extensions)是什么?以及两者的区别?继承和类别在实现中有何区别?为什么Category只能为对象添加方法,却不能添加成员变量?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Objective-C有私有方法么-私有变量呢-如多没有的话-有没有什么代替的方法"><span class="post-toc-number">1.0.15.</span> <span class="post-toc-text">Objective-C有私有方法么?私有变量呢?如多没有的话,有没有什么代替的方法?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#include与-import的区别-import与-class的区别"><span class="post-toc-number">1.0.16.</span> <span class="post-toc-text">#include与#import的区别? #import与 @class的区别?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#浅复制-拷贝-和深复制的区别-Difference-between-shallow-copy-and-deep-copy"><span class="post-toc-number">1.0.17.</span> <span class="post-toc-text">浅复制(拷贝)和深复制的区别? (Difference between shallow copy and deep copy?)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#类变量的-protected-private-public-package声明各有什么含义"><span class="post-toc-number">1.0.18.</span> <span class="post-toc-text">类变量的@protected,@private,@public,@package声明各有什么含义?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Objective-C与C、C-之间的联系和区别？"><span class="post-toc-number">1.0.19.</span> <span class="post-toc-text">Objective-C与C、C+++之间的联系和区别？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#目标-动作机制"><span class="post-toc-number">1.0.20.</span> <span class="post-toc-text">目标-动作机制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Objective-C优点和缺点"><span class="post-toc-number">1.0.21.</span> <span class="post-toc-text">Objective-C优点和缺点</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#C语言的函数调用和oc的消息机制有什么区别"><span class="post-toc-number">1.0.22.</span> <span class="post-toc-text">C语言的函数调用和oc的消息机制有什么区别?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是谓词"><span class="post-toc-number">1.0.23.</span> <span class="post-toc-text">什么是谓词</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#C与OC混用"><span class="post-toc-number">1.0.24.</span> <span class="post-toc-text">C与OC混用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#atomic和nonatomic的区别"><span class="post-toc-number">1.0.25.</span> <span class="post-toc-text">atomic和nonatomic的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常见的oc数据类型哪些，和c的基本类型有啥区别"><span class="post-toc-number">1.0.26.</span> <span class="post-toc-text">常见的oc数据类型哪些，和c的基本类型有啥区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#id和nil代表什么"><span class="post-toc-number">1.0.27.</span> <span class="post-toc-text">id和nil代表什么</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#nil和NULL的区别？"><span class="post-toc-number">1.0.28.</span> <span class="post-toc-text">nil和NULL的区别？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#nil、Nil、NULL和NSNull区别"><span class="post-toc-number">1.0.29.</span> <span class="post-toc-text">nil、Nil、NULL和NSNull区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#向一个nil对象发送消息会发生什么？"><span class="post-toc-number">1.0.30.</span> <span class="post-toc-text">向一个nil对象发送消息会发生什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#self-和self-gt-的区别"><span class="post-toc-number">1.0.31.</span> <span class="post-toc-text">self.和self-&gt;的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#类方法和实例方法的本质区别和联系"><span class="post-toc-number">1.0.32.</span> <span class="post-toc-text">类方法和实例方法的本质区别和联系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#block-weak修饰符区别"><span class="post-toc-number">1.0.33.</span> <span class="post-toc-text">_block/weak修饰符区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写一个NSString类的实现"><span class="post-toc-number">1.0.34.</span> <span class="post-toc-text">写一个NSString类的实现</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么标准头文件都有类似以下的结构？"><span class="post-toc-number">1.0.35.</span> <span class="post-toc-text">为什么标准头文件都有类似以下的结构？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#init和initwithobject区别（语法）？"><span class="post-toc-number">1.0.35.1.</span> <span class="post-toc-text">init和initwithobject区别（语法）？</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#property的本质是什么？ivar、getter、setter是如何生成并添加到这个类中的？"><span class="post-toc-number">1.0.36.</span> <span class="post-toc-text">@property的本质是什么？ivar、getter、setter是如何生成并添加到这个类中的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这个写法会出什么问题：-property-copy-NSMutableArray-array"><span class="post-toc-number">1.0.37.</span> <span class="post-toc-text">这个写法会出什么问题：@property (copy) NSMutableArray *array;</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#protocol和category中如何使用-property"><span class="post-toc-number">1.0.38.</span> <span class="post-toc-text">@protocol和category中如何使用 @property</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#property中有哪些属性关键字？"><span class="post-toc-number">1.0.39.</span> <span class="post-toc-text">@property中有哪些属性关键字？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#isa指针问题"><span class="post-toc-number">1.0.40.</span> <span class="post-toc-text">isa指针问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何访问并修改一个类的私有属性？"><span class="post-toc-number">1.0.41.</span> <span class="post-toc-text">如何访问并修改一个类的私有属性？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何为-Class-定义一个对外只读对内可读写的属性"><span class="post-toc-number">1.0.42.</span> <span class="post-toc-text">如何为 Class 定义一个对外只读对内可读写的属性?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Objective-C-中，meta-class-指的是什么？"><span class="post-toc-number">1.0.43.</span> <span class="post-toc-text">Objective-C 中，meta-class 指的是什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Objective-C-的class是如何实现的？Selector是如何被转化为-C-语言的函数调用的？"><span class="post-toc-number">1.0.44.</span> <span class="post-toc-text">Objective-C 的class是如何实现的？Selector是如何被转化为 C 语言的函数调用的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对于语句NSString-obj-NSData-alloc-init-，编译时和运行时obj分别是什么类型？"><span class="post-toc-number">1.0.45.</span> <span class="post-toc-text">对于语句NSString *obj = [[NSData alloc] init]; ，编译时和运行时obj分别是什么类型？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#synthesize和-dynamic分别有什么作用？"><span class="post-toc-number">1.0.46.</span> <span class="post-toc-text">@synthesize和@dynamic分别有什么作用？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NSString-的时候用copy和strong的区别？"><span class="post-toc-number">1.0.47.</span> <span class="post-toc-text">NSString 的时候用copy和strong的区别？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NSArray、NSSet、NSDictionary与NSMutableArray、NSMutableSet、NSMutableDictionary的特性和作用（遇到copy修饰产生的变化）"><span class="post-toc-number">1.0.48.</span> <span class="post-toc-text">NSArray、NSSet、NSDictionary与NSMutableArray、NSMutableSet、NSMutableDictionary的特性和作用（遇到copy修饰产生的变化）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#请把字符串2015-04-10格式化日期转为NSDate类型"><span class="post-toc-number">1.0.49.</span> <span class="post-toc-text">请把字符串2015-04-10格式化日期转为NSDate类型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在一个对象的方法里：-self-name-object-和name-object有什么不同"><span class="post-toc-number">1.0.50.</span> <span class="post-toc-text">在一个对象的方法里：[self.name=@object] 和name=@object有什么不同</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#怎样使用performSelector传入3个以上参数，其中一个为结构体"><span class="post-toc-number">1.0.51.</span> <span class="post-toc-text">怎样使用performSelector传入3个以上参数，其中一个为结构体</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#objc中向一个对象发送消息-obj-foo-和objc-msgSend-函数之间有什么关系？"><span class="post-toc-number">1.0.52.</span> <span class="post-toc-text">objc中向一个对象发送消息[obj foo]和objc_msgSend()函数之间有什么关系？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#下面的代码输出什么？"><span class="post-toc-number">1.0.53.</span> <span class="post-toc-text">下面的代码输出什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#若一个类有实例变量NSString-foo，调用setValue-forKey-时，可以以foo还是-foo作为key？"><span class="post-toc-number">1.0.54.</span> <span class="post-toc-text">若一个类有实例变量NSString *_foo，调用setValue:forKey:时，可以以foo还是_foo作为key？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么时候使用NSMutableArray，什么时候使用NSArray"><span class="post-toc-number">1.0.55.</span> <span class="post-toc-text">什么时候使用NSMutableArray，什么时候使用NSArray?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#类NSObject的那些方法经常被使用"><span class="post-toc-number">1.0.56.</span> <span class="post-toc-text">类NSObject的那些方法经常被使用?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是简便构造方法"><span class="post-toc-number">1.0.57.</span> <span class="post-toc-text">什么是简便构造方法?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是构造方法，使用构造方法有什么注意点。"><span class="post-toc-number">1.0.58.</span> <span class="post-toc-text">什么是构造方法，使用构造方法有什么注意点。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建一个对象需要经过那三个步骤？"><span class="post-toc-number">1.0.59.</span> <span class="post-toc-text">创建一个对象需要经过那三个步骤？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Get方法的作用是什么？"><span class="post-toc-number">1.0.60.</span> <span class="post-toc-text">Get方法的作用是什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Set方法的作用是什么？Set方法的好处？"><span class="post-toc-number">1.0.61.</span> <span class="post-toc-text">Set方法的作用是什么？Set方法的好处？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#结构体当中能定义oc对象吗？"><span class="post-toc-number">1.0.62.</span> <span class="post-toc-text">结构体当中能定义oc对象吗？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#点语法本质是什么-写一个点语法的例子-并写上注释"><span class="post-toc-number">1.0.63.</span> <span class="post-toc-text">点语法本质是什么,写一个点语法的例子,并写上注释</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#id类型是什么，instancetype是什么，有什么区别？"><span class="post-toc-number">1.0.64.</span> <span class="post-toc-text">id类型是什么，instancetype是什么，有什么区别？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#成员变量名的命名以下划线开头的好处？"><span class="post-toc-number">1.0.65.</span> <span class="post-toc-text">成员变量名的命名以下划线开头的好处？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这段代码有什么问题吗"><span class="post-toc-number">1.0.66.</span> <span class="post-toc-text">这段代码有什么问题吗:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#截取字符串”20-http-www-baidu-com”-中-”-”字符前面和后面的数据-分别输出它们。"><span class="post-toc-number">1.0.67.</span> <span class="post-toc-text">截取字符串”20 | http://www.baidu.com” 中, ”|”字符前面和后面的数据,分别输出它们。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写一个完整的代理-包括声明-实现"><span class="post-toc-number">1.0.68.</span> <span class="post-toc-text">写一个完整的代理,包括声明,实现</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#isKindOfClass、isMemberOfClass、selector作用分别是什么"><span class="post-toc-number">1.0.69.</span> <span class="post-toc-text">isKindOfClass、isMemberOfClass、selector作用分别是什么</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#请分别写出SEL、id、-的意思"><span class="post-toc-number">1.0.70.</span> <span class="post-toc-text">请分别写出SEL、id、@的意思?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#unsigned-int-和int-有什么区别。假设int长度为65535，请写出unsigned-int与-int的取值范围"><span class="post-toc-number">1.0.71.</span> <span class="post-toc-text">unsigned int 和int 有什么区别。假设int长度为65535，请写出unsigned int与 int的取值范围</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Foundation对象与Core-Foundation对象有什么区别"><span class="post-toc-number">1.0.72.</span> <span class="post-toc-text">Foundation对象与Core Foundation对象有什么区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#编写一个函数，实现递归删除指定路径下的所有文件。"><span class="post-toc-number">1.0.73.</span> <span class="post-toc-text">编写一个函数，实现递归删除指定路径下的所有文件。</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                iOS面试题4--Objective-C
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>暮鼓晨钟</strong>
+        <span>9月 12, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题4--Objective-C&url=http://yoursite.com/2018/09/12/iOS面试题4-Objective-C/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题4--Objective-C&url=http://yoursite.com/2018/09/12/iOS面试题4-Objective-C/index.html&via=暮鼓晨钟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题4-Objective-C/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题4-Objective-C/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=iOS面试题4--Objective-C&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题4-Objective-C/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>面试笔试都是必考语法知识的。请认真复习和深入研究OC。</p>
+<h2 id="Objective-C"><a href="#Objective-C" class="headerlink" title="Objective-C"></a>Objective-C</h2><h4 id="方法和选择器有何不同？-Difference-between-method-and-selector"><a href="#方法和选择器有何不同？-Difference-between-method-and-selector" class="headerlink" title="方法和选择器有何不同？(Difference between method and selector?)"></a>方法和选择器有何不同？(Difference between method and selector?)</h4><ul>
+<li>selector是一个方法的名字，method是一个组合体，包含了名字和实现.</li>
+</ul>
+<h4 id="Core-Foundation的内存管理"><a href="#Core-Foundation的内存管理" class="headerlink" title="Core Foundation的内存管理"></a>Core Foundation的内存管理</h4><ul>
+<li>凡是带有Create、Copy、Retain等字眼的函数，创建出来的对象，都需要在最后做一次release</li>
+<li>比如CFRunLoopObserverCreate release函数：CFRelease(对象);</li>
+</ul>
+<h4 id="malloc和New的区别"><a href="#malloc和New的区别" class="headerlink" title="malloc和New的区别"></a>malloc和New的区别</h4><ul>
+<li>new 是c++中的操作符，malloc是c 中的一个函数</li>
+<li>new 不止是分配内存，而且会调用类的构造函数，同理delete会调用类的析构函数，而malloc则只分配内存，不会进行初始化类成员的工作，同样free也不会调用析构函数</li>
+<li>内存泄漏对于malloc或者new都可以检查出来的，区别在于new可以指明是那个文件的那一行，  而malloc没有这些信息。</li>
+<li>new 和 malloc效率比较</li>
+<li>new可以认为是malloc加构造函数的执行。</li>
+<li>new出来的指针是直接带类型信息的。</li>
+</ul>
+<h4 id="你是否接触过OC中的反射机制？简单聊一下概念和使用"><a href="#你是否接触过OC中的反射机制？简单聊一下概念和使用" class="headerlink" title="你是否接触过OC中的反射机制？简单聊一下概念和使用"></a>你是否接触过OC中的反射机制？简单聊一下概念和使用</h4><ul>
+<li>class反射</li>
+<li>通过类名的字符串形式实例化对象</li>
+</ul>
+<pre class=" language-objc"><code class="language-objc">   Class class NSClassFromString@(@"student");
+   Student *stu = [[class alloc ]init];
+</code></pre>
+<ul>
+<li><p>将类名变为字符串</p>
+<pre class=" language-objc"><code class="language-objc"> Class class  =[Student class];
+ NSString *className = NSStringFromClass(class);
+</code></pre>
+</li>
+<li><p>SEL的反射</p>
+</li>
+<li><p>通过方法的字符串形式实例化方法</p>
+<pre class=" language-objc"><code class="language-objc"> SEL selector  = NSSelectorFromClass(@"setName");
+ [stu performSelector:selector withObject:@"Mike"];
+</code></pre>
+</li>
+<li><p>将方法变成字符串</p>
+<pre class=" language-objc"><code class="language-objc">NSStringFomrSelector(@selector*(setName:))
+</code></pre>
+</li>
+</ul>
+<h4 id="什么是SEL-如何声明一个SEL-通过那些方法能够-调用SEL包装起来的方法"><a href="#什么是SEL-如何声明一个SEL-通过那些方法能够-调用SEL包装起来的方法" class="headerlink" title="什么是SEL?如何声明一个SEL?通过那些方法能够,调用SEL包装起来的方法?"></a>什么是SEL?如何声明一个SEL?通过那些方法能够,调用SEL包装起来的方法?</h4><ul>
+<li>SEL就是对方法的一种包装。包装的SEL类型数据它对应相应的方法地址，找到方法地址就可以调用方法。在内存中每个类的方法都存储在类对象中，每个方法都有一个与之对应的SEL类型的数据，根据一个SEL数据就可以找到对应的方法地址，进而调用方法。</li>
+</ul>
+<pre class=" language-objc"><code class="language-objc">SEL s1 = @selector(test1); // 将test1方法包装成SEL对象
+SEL s2 = NSSelectorFromString(@"test1"); // 将一个字符串方法转换成为SEL对象
+</code></pre>
+<ul>
+<li>调用方法有两种方式：</li>
+<li>1.直接通过方法名来调用 [person text]</li>
+<li><p>2.间接的通过SEL数据来调用  </p>
+<pre class=" language-objc"><code class="language-objc">SEL aaa = @selector(text); 
+[person performSelector:aaa];
+</code></pre>
+<h4 id="协议中是什么意思-子类继承了父类-那么子类会遵守父类中遵守的协议吗-协议中能够定义成员变量-如何约束一个对象类型的变量要存储的地址是遵守一个协议对象"><a href="#协议中是什么意思-子类继承了父类-那么子类会遵守父类中遵守的协议吗-协议中能够定义成员变量-如何约束一个对象类型的变量要存储的地址是遵守一个协议对象" class="headerlink" title="协议中是什么意思?子类继承了父类,那么子类会遵守父类中遵守的协议吗?协议中能够定义成员变量?如何约束一个对象类型的变量要存储的地址是遵守一个协议对象?"></a>协议中<nsobject>是什么意思?子类继承了父类,那么子类会遵守父类中遵守的协议吗?协议中能够定义成员变量?如何约束一个对象类型的变量要存储的地址是遵守一个协议对象?</nsobject></h4></li>
+<li><p>遵守NSObject协议</p>
+</li>
+<li>会</li>
+<li>能，但是只在头文件中声明，编译器是不会自动生成实例变量的。需要自己处理getter和setter方法</li>
+<li>id<xxx></xxx></li>
+</ul>
+<h4 id="NS-CF-CG-CA-UI这些前缀分别是什么含义"><a href="#NS-CF-CG-CA-UI这些前缀分别是什么含义" class="headerlink" title="NS/CF/CG/CA/UI这些前缀分别是什么含义"></a>NS/CF/CG/CA/UI这些前缀分别是什么含义</h4><ul>
+<li>函数归属于属于cocoa Fundation框架</li>
+<li>函数归属于属于core Fundation框架</li>
+<li>函数归属于属于CoreGraphics.frameworks框架</li>
+<li>函数归属于属于CoreAnimation.frameworks框架</li>
+<li>函数归属于属于UIkit框架</li>
+</ul>
+<h4 id="面向对象都有哪些特征以及你对这些特征的理解。"><a href="#面向对象都有哪些特征以及你对这些特征的理解。" class="headerlink" title="面向对象都有哪些特征以及你对这些特征的理解。"></a>面向对象都有哪些特征以及你对这些特征的理解。</h4><ul>
+<li><p><code>继承</code>：继承是从已有类得到继承信息创建新类的过程。提供继承信息的类被称为父类（超类、基类）；得到继承信息的类被称为子类（派生类）。 继承让变化中的软件系统有了一定的延续性，同时继承也是封装程序中可变因素的重要手段。</p>
+</li>
+<li><p><code>封装</code>：封装是把数据和操作数据的方法绑定起来，对数据的访问只能通过已定义的接口。我们在类中编写的方法就是对实现细节的一种封装；我们编写一个类就是对数据和数据操作的封装。可以说，封装就是隐藏一切可隐藏的东西，只向外界提供最简单的编程接口。</p>
+</li>
+<li><p><code>多态性</code> ：多态性是指允许不同子类型的对象对同一消息作出不同的响应。简单的说就是用同样的对象引用调用同样的方法但是做了不同的事情。多态性分为编译时的多态性和运行时的多态性。方法重载（overload）实现的是编译时的多态性（也称为前绑定），而方法重写（override）实现的是运行时的多态性（也称为后绑定）。<br>运行时的多态是面向对象最精髓的东西，要实现多态需要做两件事：</p>
+<ul>
+<li>方法重写（子类继承父类并重写父类中已有的或抽象的方法）；</li>
+<li>对象造型（用父类型引用引用子类型对象，这样同样的引用调用同样的方法就会根据子类对象的不同而表现出不同的行为）。</li>
+</ul>
+</li>
+<li><p><code>抽象</code>：抽象是将一类对象的共同特征总结出来构造类的过程，包括数据抽象和行为抽象两方面。抽象只关注对象有哪些属性和行为，并不关注这些行为的细节是什么。</p>
+</li>
+</ul>
+<h4 id="我们说的Objective-C是动态运行时语言是什么意思-When-we-call-objective-c-is-runtime-language-what-does-it-mean"><a href="#我们说的Objective-C是动态运行时语言是什么意思-When-we-call-objective-c-is-runtime-language-what-does-it-mean" class="headerlink" title="我们说的Objective-C是动态运行时语言是什么意思? (When we call objective c is runtime language what does it mean?)"></a>我们说的Objective-C是动态运行时语言是什么意思? (When we call objective c is runtime language what does it mean?)</h4><ul>
+<li>主要是将数据类型的确定由编译时,推迟到了运行时。这个问题其实浅涉及到两个概念,运行时和多态。</li>
+<li>简单来说, 运行时机制使我们直到运行时才去决定一个对象的类别,以及调用该类别对象指定方法。</li>
+<li>多态:不同对象以自己的方式响应相同的消息的能力叫做多态。</li>
+<li>意思就是假设生物类(life)都拥有一个相同的方法-eat;那人类属于生物,猪也属于生物,都继承了life后,实现各自的eat,但是调用是我们只需调用各自的eat方法。也就是不同的对象以自己的方式响应了相同的消 息(响应了eat这个选择器)。因此也可以说,运行时机制是多态的基础.</li>
+</ul>
+<h4 id="readwrite-readonly-assign-retain-copy-nonatomic属性的作用"><a href="#readwrite-readonly-assign-retain-copy-nonatomic属性的作用" class="headerlink" title="readwrite, readonly, assign, retain, copy, nonatomic属性的作用?"></a>readwrite, readonly, assign, retain, copy, nonatomic属性的作用?</h4><ul>
+<li><p><code>readwrite</code> 是可读可写特性;需要生成getter方法和setter方法;</p>
+</li>
+<li><p><code>readonly</code> 是只读特性 只会生成getter方法 不会生成setter方法 ,不希望属性在类外改变;</p>
+</li>
+<li><p><code>assign</code> 是赋值特性,setter方法将传入参数赋值给实例变量;仅设置变量时; assign用于简单数据类型,如NSInteger,double,bool;</p>
+</li>
+<li><p><code>retain</code> 表示持有特性,setter方法将传入参数先保留,再赋值,传入参数的引用计数retaincount会+1;</p>
+</li>
+<li><p><code>copy</code> 表示赋值特性,setter方法将传入对象复制一份;需要完全一份新的变量时;</p>
+</li>
+<li><p><code>nonatomic</code> 非原子操作,决定编译器生成的setter getter是否是原子操作;</p>
+</li>
+<li><p><code>atomic</code> 表示多线程安全,一般使用 nonatomic。</p>
+</li>
+</ul>
+<h4 id="简述NotificationCenter、KVC、KVO、Delegate-并说明它们之间的区别-重点"><a href="#简述NotificationCenter、KVC、KVO、Delegate-并说明它们之间的区别-重点" class="headerlink" title="简述NotificationCenter、KVC、KVO、Delegate?并说明它们之间的区别?(重点)"></a>简述NotificationCenter、KVC、KVO、Delegate?并说明它们之间的区别?(重点)</h4><ul>
+<li><code>KVO</code>（Key-Value- Observing）：一对多, 观察者模式,键值观察机制，它提供了观察某一属性变化的方法，极大简化了代码。</li>
+<li><code>KVC</code> (Key-Value-Coding)：是键值编码, 一个对象在调用setValue的时候，<ul>
+<li>检查是否存在相应key的set方法，存在就调用set方法。</li>
+<li>set方法不存在，就查找_key的成员变量是否存在，存在就直接赋值。</li>
+<li>如果_key没找到，就查找相同名称的key，存在就赋值。</li>
+<li>如果没有就调用valueForUndefinedkey和setValue：forUndefinedKey。</li>
+</ul>
+</li>
+<li><p><code>Delegate</code>: 通常发送者和接收者的关系是直接的一对一的关系。</p>
+<ul>
+<li>代理的目的是改变或传递控制链。允许一个类在某些特定时刻通知到其他类，而不需要获取到那些类的指针。</li>
+<li>可以减少框架复杂度。消息的发送者(sender)告知接收者(receiver)某个事件将要发生，delegate同意然然后发送者响应事件，delegate机制使得接收者可以改变发送者的行为。</li>
+</ul>
+</li>
+<li><p><code>Notification</code>: 观察者模式, 通常发送者和接收者的关系是间接的多对多关系。 消息的发送者告知接收者事件已经发生或者将要发送，仅此而已，接收者并不能反过来影响发送者的行为。</p>
+</li>
+<li><p>区别</p>
+<ul>
+<li>效率肯定是delegate比NSNotification高。</li>
+<li>delegate方法比notification更加直接，需要关注返回值，所以delegate方法往往包含should这个很传神的词。相反的，notification最大的特色就是不关心结果。所以notification往往用did这个词汇。</li>
+<li>两个模块之间联系不是很紧密，就用notification传值，例如多线程之间传值用notificaiton。</li>
+<li>delegate只是一种较为简单的回调，且主要用在一个模块中，例如底层功能完成了，需要把一些值传到上层去，就事先把上层的函数通过delegate传到底层，然后在底层call这个delegate，它们都在一个模块中，完成一个功能，例如说 NavgationController 从 B 界面到A 点返回按钮 (调用popViewController方法) 可以用delegate比较好。</li>
+</ul>
+</li>
+</ul>
+<h4 id="懒加载-What-is-lazy-loading"><a href="#懒加载-What-is-lazy-loading" class="headerlink" title="懒加载(What is lazy loading ?)"></a>懒加载(What is lazy loading ?)</h4><ul>
+<li>就是懒加载,只在用到的时候才去初始化。也可以理解成延时加载。我觉得最好也最简单的一个列子就是tableView中图片的加载显示了, 一个延时加载, 避免内存过高,一个异步加载,避免线程堵塞提高用户体验</li>
+</ul>
+<h4 id="OC有多继承吗-没有的话可以用什么方法替代"><a href="#OC有多继承吗-没有的话可以用什么方法替代" class="headerlink" title="OC有多继承吗?没有的话可以用什么方法替代?"></a>OC有多继承吗?没有的话可以用什么方法替代?</h4><ul>
+<li>多继承即一个子类可以有多个父类,它继承了多个父类的特性。</li>
+<li>Object-c的类没有多继承,只支持单继承,如果要实现多继承的话,可以通过类别和协议的方式来实现。</li>
+<li>protocol（协议）可以实现多个接口,通过实现多个接口可以完成多继承;</li>
+<li>Category（类别）一般使用分类,用Category去重写类的方法,仅对本Category有效,不会影响到其他类与原有类的关系。</li>
+</ul>
+<h4 id="分别描述类别-categories-和延展-extensions-是什么-以及两者的区别-继承和类别在实现中有何区别-为什么Category只能为对象添加方法-却不能添加成员变量"><a href="#分别描述类别-categories-和延展-extensions-是什么-以及两者的区别-继承和类别在实现中有何区别-为什么Category只能为对象添加方法-却不能添加成员变量" class="headerlink" title="分别描述类别(categories)和延展(extensions)是什么?以及两者的区别?继承和类别在实现中有何区别?为什么Category只能为对象添加方法,却不能添加成员变量?"></a>分别描述类别(categories)和延展(extensions)是什么?以及两者的区别?继承和类别在实现中有何区别?为什么Category只能为对象添加方法,却不能添加成员变量?</h4><ul>
+<li>类别: 在没有原类.m文件的基础上,给该类添加方法;</li>
+<li>延展:一种特殊形式的类别,主要在一个类的.m文件里声明和实现延展的作用,就是给某类添加私有方法或是私有变量。</li>
+<li>两个的区别: <ul>
+<li>延展可以添加属性并且它添加的方法是必须要实现的。延展可以认为是一个私有的类目。</li>
+<li>类别可以在不知道,不改变原来代码的情况下往里面添加新的方法,只能添加,不能删除修改。</li>
+<li>并且如果类别和原来类中的方法产生名称冲突,则类别将覆盖原来的方法,因为类别具有更高的优先级。</li>
+</ul>
+</li>
+<li>继承可以增加，修改删除方法，添加属性。</li>
+<li>Category只能为对象添加方法,却不能添加成员变量的原因:如果可以添加成员变量,添加的成员变量没有办法初始化</li>
+</ul>
+<h4 id="Objective-C有私有方法么-私有变量呢-如多没有的话-有没有什么代替的方法"><a href="#Objective-C有私有方法么-私有变量呢-如多没有的话-有没有什么代替的方法" class="headerlink" title="Objective-C有私有方法么?私有变量呢?如多没有的话,有没有什么代替的方法?"></a>Objective-C有私有方法么?私有变量呢?如多没有的话,有没有什么代替的方法?</h4><ul>
+<li>objective-c类里面的方法只有两种,静态方法和实例方法.但是可以通过把方法的声明和定义都放在.m文件中来实现一个表面上的私有方法。有私有变量,可以通过@private来修饰,或者把声明放到.m文件中。在Objective‐C中,所有实例变量默认都是私有的, 所有实例方法默认都是公有的</li>
+</ul>
+<h4 id="include与-import的区别-import与-class的区别"><a href="#include与-import的区别-import与-class的区别" class="headerlink" title="#include与#import的区别? #import与 @class的区别?"></a><code>#include</code>与<code>#import</code>的区别? <code>#import</code>与 <code>@class</code>的区别?</h4><ul>
+<li><p><code>#import</code>指令是Object-C针对<code></code>#include的改进版本，<code>#import</code>确保引用的文件只会被引用一次，这样你就不会陷入递归包含的问题中。</p>
+</li>
+<li><p><code># impor</code>与<code>@class</code>二者的区别在于：</p>
+<ul>
+<li><p><code>#import</code>会链入该头文件的全部信息，包括实例变量和方法等；而<code>@class</code>只是告诉编译器，其后面声明的名称是类的名称，至于这些类是如何定义的，暂时不用考虑。</p>
+</li>
+<li><p>在头文件中一般使用<code>@class</code>来声明这个名称是类的名称,不需要知道其内部的实体变量和方法.</p>
+</li>
+<li><p>而在实现类里面，因为会用到这个引用类的内部的实体变量和方法，所以需要使用<code>#import</code>来包含这个被引用类的头文件。</p>
+</li>
+<li><p>在编译效率方面，如果你有100个头文件都<code>#import</code>了同一个头文件，或者这些文件是依次引用的，如A–&gt;B, B–&gt;C, C–&gt;D这样的引用关系。当最开始的那个头文件有变化的话，后面所有引用它的类都需要重新编译，如果你的类有很多的话，这将耗费大量的时间。而是用<code>@class</code>则不会。</p>
+</li>
+<li><p>如果有循环依赖关系，如:A–&gt;B, B–&gt;A这样的相互依赖关系，如果使用<code>#import</code>来相互包含，那么就会出现编译错误，如果使用<code>@class</code>在两个类的头文件中相互声明，则不会有编译错误出现。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="浅复制-拷贝-和深复制的区别-Difference-between-shallow-copy-and-deep-copy"><a href="#浅复制-拷贝-和深复制的区别-Difference-between-shallow-copy-and-deep-copy" class="headerlink" title="浅复制(拷贝)和深复制的区别? (Difference between shallow copy and deep copy?)"></a>浅复制(拷贝)和深复制的区别? (Difference between shallow copy and deep copy?)</h4><ul>
+<li>浅复制(copy)：只复制指向对象的指针，而不复制引用对象本身。</li>
+<li>深复制(mutableCopy)：复制引用对象本身。深复制就好理解了,内存中存在了两份独立对象本身, 当修改A时,A_copy不变。</li>
+</ul>
+<h4 id="类变量的-protected-private-public-package声明各有什么含义"><a href="#类变量的-protected-private-public-package声明各有什么含义" class="headerlink" title="类变量的@protected,@private,@public,@package声明各有什么含义?"></a>类变量的@protected,@private,@public,@package声明各有什么含义?</h4><p>变量的作用域不同。</p>
+<ul>
+<li>@protected 该类和子类中访问，是默认的;</li>
+<li>@private 只能在本类中访问;</li>
+<li>@public 任何地方都能访问;</li>
+<li>@package 本包内使用，跨包不可以</li>
+</ul>
+<h4 id="Objective-C与C、C-之间的联系和区别？"><a href="#Objective-C与C、C-之间的联系和区别？" class="headerlink" title="Objective-C与C、C+++之间的联系和区别？"></a>Objective-C与C、C+++之间的联系和区别？</h4><ul>
+<li>Objective-C和C++都是C的面向对象的超集。</li>
+<li>Object与C++的区别主要点：Objective-C是完全动态的，支持在运行时动态类型决议(dynamic typing)，动态绑定(dynamic binding)以及动态装载(dynamic loading)；而C++是部分动态的，编译时静态绑定，通过嵌入类(多重继承)和虚函数(虚表)来模拟实现。</li>
+<li>Objective-C 在语言层次上支持动态消息转发，其消息发送语法为 [object function]； 而且C++ 为 object-&gt;function()。 两者的语义也不同，在 Objective-C 里是说发送消息到一个对象上，至于这个对象能不能响应消息以及是响应还是转发消息都不会 crash； 而在 C++ 里是说对象进行了某个操作，如果对象没有这个操作的话，要么编译会报错(静态绑定)，要么程序会 crash 掉的(动态绑定)。</li>
+</ul>
+<h4 id="目标-动作机制"><a href="#目标-动作机制" class="headerlink" title="目标-动作机制"></a>目标-动作机制</h4><ul>
+<li>目标是动作消息的接收者。一个控件，或者更为常见的是它的单元，以插座变量的形式保有其动作消息的目标。</li>
+<li>动作是控件发送给目标的消息，或者从目标的角度看，它是目标为了响应动作而实现的方法. 程序需要某些机制来进行事件和指令的翻译。这个机制就是目标-动作机制。</li>
+</ul>
+<h4 id="Objective-C优点和缺点"><a href="#Objective-C优点和缺点" class="headerlink" title="Objective-C优点和缺点"></a>Objective-C优点和缺点</h4><ul>
+<li>优点:1.Cateogies 2.Posing 3.动态识别 4.指标计算 5.弹性讯息传递 6.不是一个过度复杂的C衍生语言 7.Objective-C与C++可混合编程</li>
+<li>缺点:1.不支持命名空間 2.不支持运算符重载 3.不支持多重继承 4.使用动态运行时类型,所有的方法都是函数调用,所以很多编译时优化方法都用不到。(如内联函数等),性能低劣。</li>
+</ul>
+<h4 id="C语言的函数调用和oc的消息机制有什么区别"><a href="#C语言的函数调用和oc的消息机制有什么区别" class="headerlink" title="C语言的函数调用和oc的消息机制有什么区别?"></a>C语言的函数调用和oc的消息机制有什么区别?</h4><ul>
+<li>对于C语言，函数的调用在编译的时候会决定调用哪个函数。编译完成之后直接顺序执行。</li>
+<li>OC的函数调用成为消息发送。属于动态调用过程。在编译的时候并不能决定真正调用哪个函数（事实证明，在编译阶段，OC可以调用任何函数，即使这个函数并未实现，只要申明过就不会报错。而C语言在编译阶段就会报错）。只有在真正运行的时候才会根据函数的名称找到对应的函数来调用。</li>
+</ul>
+<h4 id="什么是谓词"><a href="#什么是谓词" class="headerlink" title="什么是谓词"></a>什么是谓词</h4><p>谓词就是通过NSPredicate给定的逻辑条件作为约束条件，完成对数据的筛选。</p>
+<ul>
+<li><p>定义谓词对象，谓词对象中包含了过滤条件</p>
+<pre class=" language-objc"><code class="language-objc">NSPredicate *predicate = [NSPredicate predicateWithFormat:@"age<%d",30];
+</code></pre>
+</li>
+<li><p>使用谓词条件过滤数组中的元素，过滤之后返回查询的结果</p>
+<pre class=" language-objc"><code class="language-objc">NSArray *array = [persons filteredArrayUsingPredicate:predicate];
+</code></pre>
+</li>
+<li><p>可以使用&amp;&amp;进行多条件过滤</p>
+<pre class=" language-objc"><code class="language-objc">predicate = [NSPredicate predicateWithFormat:@"name='1' && age>40"];
+array = [persons filteredArrayUsingPredicate:predicate];
+</code></pre>
+</li>
+<li><p>包含语句的使用</p>
+<pre class=" language-objc"><code class="language-objc">predicate = [NSPredicate predicateWithFormat:@"[self.name](https://link.jianshu.com?t=http://self.name) IN {'1','2','4'} || self.age IN{30,40}"];
+</code></pre>
+</li>
+<li><p>指定字符开头和指定字符结尾，是否包含指定字符</p>
+</li>
+<li><p>name以a开头的</p>
+<pre class=" language-objc"><code class="language-objc">predicate = [NSPredicate predicateWithFormat:@"name BEGINSWITH 'a'"];
+</code></pre>
+</li>
+<li><p>name以ba结尾的</p>
+<pre class=" language-objc"><code class="language-objc">predicate = [NSPredicate predicateWithFormat:@"name ENDSWITH 'ba'"];
+</code></pre>
+</li>
+<li><p>name中包含字符a的</p>
+<pre class=" language-objc"><code class="language-objc">predicate = [NSPredicate predicateWithFormat:@"name CONTAINS 'a'"];
+</code></pre>
+</li>
+<li><p>like进行匹配多个字符</p>
+</li>
+<li><p>name中只要有s字符就满足条件</p>
+<pre class=" language-objc"><code class="language-objc">predicate = [NSPredicate predicateWithFormat:@"name like '*s*'"];
+</code></pre>
+</li>
+<li><p>?代表一个字符，下面的查询条件是：name中第二个字符是s的</p>
+<pre class=" language-objc"><code class="language-objc">predicate = [NSPredicate predicateWithFormat:@"name like '?s'"];
+</code></pre>
+</li>
+</ul>
+<h4 id="C与OC混用"><a href="#C与OC混用" class="headerlink" title="C与OC混用"></a>C与OC混用</h4><p>处理.m可以识别c和oc，.mm可以识别c c++ oc 但是cpp只能用c/c++</p>
+<h4 id="atomic和nonatomic的区别"><a href="#atomic和nonatomic的区别" class="headerlink" title="atomic和nonatomic的区别"></a>atomic和nonatomic的区别</h4><ul>
+<li>atomic提供多线程安全，防止读写未完成的时候被另外一个线程读写，造成数据错误。</li>
+<li>nonatomic在自己管理内存的环境中，解析的访问器保留并自动释放返回值，若指定了nonatomic，那么访问器只是简单的返回这个值。</li>
+</ul>
+<h4 id="常见的oc数据类型哪些，和c的基本类型有啥区别"><a href="#常见的oc数据类型哪些，和c的基本类型有啥区别" class="headerlink" title="常见的oc数据类型哪些，和c的基本类型有啥区别"></a>常见的oc数据类型哪些，和c的基本类型有啥区别</h4><ul>
+<li>常见的：NSInteger CGFloat NSString NSNumber NSArray NSDate</li>
+<li>NSInteger根据32或者64位系统决定本身是int还是long</li>
+<li>CGFloat根据32或者64位系统决定本身是float还是double</li>
+<li>NSString NSNumber NSArray NSDate都是指针类型的对象，在堆中分配内存，c语言中的char int 等都是在栈中分配空间</li>
+</ul>
+<h4 id="id和nil代表什么"><a href="#id和nil代表什么" class="headerlink" title="id和nil代表什么"></a>id和nil代表什么</h4><ul>
+<li>id类型的指针可以指向任何OC对象</li>
+<li>nil代表空值（空指针的值，0）</li>
+</ul>
+<h4 id="nil和NULL的区别？"><a href="#nil和NULL的区别？" class="headerlink" title="nil和NULL的区别？"></a>nil和NULL的区别？</h4><ul>
+<li>从oc的官方语法上看，nil表示对象的指针 即对象的引用为空</li>
+<li>null表示指向基础数据类型变量 即c语言变量的指针为空</li>
+<li>在非arc中 两个空可以互换，但是在arc中 普通指针和对象引用被严格限制，不能互换</li>
+</ul>
+<h4 id="nil、Nil、NULL和NSNull区别"><a href="#nil、Nil、NULL和NSNull区别" class="headerlink" title="nil、Nil、NULL和NSNull区别"></a>nil、Nil、NULL和NSNull区别</h4><ul>
+<li><p>nil和C语言的NULL相同，在objc/objc.h中定义。nil表示Objective-C对象的值为空。在C语言中，指针的空值用NULL表示。在Objective-C中，nil对象调用任何方法表示什么也不执行，也不会崩溃。</p>
+</li>
+<li><p>Nil:那么对于我们Objective-C开发来说，Nil也就代表((void *)0)。但是它是用于代表空类的. 比如：Class myClass = Nil;</p>
+</li>
+<li><p>NULL: 在C语言中，NULL是无类型的，只是一个宏，它代表空. 这就是在C/C++中的空指针。对于我们Objective-C开发来说，NULL就表示((void*)0).</p>
+</li>
+<li><p>NSNull:NSNull是继承于NSObject的类型。它是很特殊的类，它表示是空，什么也不存储，但是它却是对象，只是一个占位对象。使用场景就不一样了，比如说服务端接口中让我们在值为空时，传空。NSDictionry *parameters = @{@”arg1” : @”value1”,@”arg2” : arg2.isEmpty ? [NSNull null] : arg2};</p>
+</li>
+<li>NULL、nil、Nil这三者对于Objective-C中值是一样的，都是(void *)0，那么为什么要区分呢？又与NSNull之间有什么区别：</li>
+<li>NULL是宏，是对于C语言指针而使用的，表示空指针</li>
+<li>nil是宏，是对于Objective-C中的对象而使用的，表示对象为空</li>
+<li>Nil是宏，是对于Objective-C中的类而使用的，表示类指向空</li>
+<li>NSNull是类类型，是用于表示空的占位对象，与JS或者服务端的null类似的含意</li>
+</ul>
+<h4 id="向一个nil对象发送消息会发生什么？"><a href="#向一个nil对象发送消息会发生什么？" class="headerlink" title="向一个nil对象发送消息会发生什么？"></a>向一个nil对象发送消息会发生什么？</h4><ul>
+<li>向nil发送消息是完全有效的——只是在运行时不会有任何作用。</li>
+<li>如果一个方法返回值是一个对象，那么发送给nil的消息将返回0(nil)</li>
+<li>如果方法返回值为指针类型，其指针大小为小于或者等于sizeof(void*)，float，double，long double 或者long long的整型标量，发送给nil的消息将返回0。</li>
+</ul>
+<p>-如果方法返回值为结构体，正如在《Mac OS X ABI 函数调用指南》，发送给nil的消息将返回0。结构体中各个字段的值将都是0。其他的结构体数据类型将不是用0填充的。</p>
+<ul>
+<li>如果方法的返回值不是上述提到的几种情况，那么发送给nil的消息的返回值将是未定义的。</li>
+</ul>
+<h4 id="self-和self-gt-的区别"><a href="#self-和self-gt-的区别" class="headerlink" title="self.和self-&gt;的区别"></a>self.和self-&gt;的区别</h4><ul>
+<li>self.是调用get或者set方法</li>
+<li>self是当前本身，是一个指向当前对象的指针</li>
+<li>self-&gt;是直接访问成员变量</li>
+</ul>
+<h4 id="类方法和实例方法的本质区别和联系"><a href="#类方法和实例方法的本质区别和联系" class="headerlink" title="类方法和实例方法的本质区别和联系"></a>类方法和实例方法的本质区别和联系</h4><table>
+<thead>
+<tr>
+<th>类方法</th>
+<th>实例方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>属于类对象</td>
+<td>属于实例对象</td>
+</tr>
+<tr>
+<td>只能类对象调用</td>
+<td>实例对象调用</td>
+</tr>
+<tr>
+<td>self是类对象</td>
+<td>self是实例对象</td>
+</tr>
+<tr>
+<td>类方法可以调用其他类方法</td>
+<td>实例方法可以调用实例方法</td>
+</tr>
+<tr>
+<td>类方法不能访问成员变量</td>
+<td>实例方法可以访问成员变量</td>
+</tr>
+<tr>
+<td>类方法不能直接调用对象方法</td>
+<td>实例方法可以调用类方法</td>
+</tr>
+</tbody>
+</table>
+<h4 id="block-weak修饰符区别"><a href="#block-weak修饰符区别" class="headerlink" title="_block/weak修饰符区别"></a>_block/weak修饰符区别</h4><ul>
+<li>_block在arc和mrc环境下都能用，可以修饰对象，也能修饰基本数据类型</li>
+<li>_weak只能在arc环境下使用，只能修饰对象(NSString)，不能修饰基本数据类型(int)</li>
+<li>_block对象可以在block中重新赋值，_weak不行。</li>
+</ul>
+<h4 id="写一个NSString类的实现"><a href="#写一个NSString类的实现" class="headerlink" title="写一个NSString类的实现"></a>写一个NSString类的实现</h4><pre class=" language-objc"><code class="language-objc">NSString *str = [[NSString alloc] initWithCString: nullTerminatedCString encoding:encoding];
+</code></pre>
+<h4 id="为什么标准头文件都有类似以下的结构？"><a href="#为什么标准头文件都有类似以下的结构？" class="headerlink" title="为什么标准头文件都有类似以下的结构？"></a>为什么标准头文件都有类似以下的结构？</h4><pre class=" language-c"><code class="language-c"><span class="token macro property"># <span class="token directive keyword">ifndef</span> __INCvxWorksh</span>
+
+<span class="token macro property"># <span class="token directive keyword">define</span> __INCvxWorksh</span>
+
+<span class="token macro property"># <span class="token directive keyword">ifdef</span> __cplusplus</span>
+
+<span class="token keyword">extern</span> <span class="token string">"C"</span> <span class="token punctuation">{</span>
+
+<span class="token macro property"># <span class="token directive keyword">endif</span></span>
+
+<span class="token macro property"># <span class="token directive keyword">ifdef</span> __cplusplus</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token macro property"># <span class="token directive keyword">endif</span></span>
+
+<span class="token macro property"># <span class="token directive keyword">endif</span></span>
+</code></pre>
+<p>显然，头文件中的编译宏 <code>#ifndef __INCvxWorksh、#define __INCvxWorksh、#endif</code> 的作用是防止该头文件被重复引用</p>
+<h5 id="init和initwithobject区别（语法）？"><a href="#init和initwithobject区别（语法）？" class="headerlink" title="init和initwithobject区别（语法）？"></a>init和initwithobject区别（语法）？</h5><ul>
+<li>后者给属性赋值</li>
+</ul>
+<h4 id="property的本质是什么？ivar、getter、setter是如何生成并添加到这个类中的？"><a href="#property的本质是什么？ivar、getter、setter是如何生成并添加到这个类中的？" class="headerlink" title="@property的本质是什么？ivar、getter、setter是如何生成并添加到这个类中的？"></a>@property的本质是什么？ivar、getter、setter是如何生成并添加到这个类中的？</h4><pre><code>@property的本质：
+@property = ivar（实例变量） + getter（取方法） + setter（存方法）
+
+“属性” (property)有两大概念：ivar（实例变量）、存取方法（access method ＝ getter + setter）
+ivar、getter、setter如何生成并添加到类中：
+这是编译器自动合成的，通过@synthesize关键字指定，若不指定，默认为@synthesize propertyName = _propertyName;若手动实现了getter/setter方法，则不会自动合成。
+现在编译器已经默认为我们添加@synthesize propertyName = _propertyName;因此不再需要手动添加了，除非你真的要改成员变量名。
+生成getter方法时，会判断当前属性名是否有_，比如声明属性为@property (nonatomic, copy) NSString *_name;那么所生成的成员变量名就会变成__name，如果我们要手动生成getter方法，就要判断是否以_开头了。
+不过，命名都要有规范，是不允许声明属性是使用_开头的，不规范的命名，在使用runtime时，会带来很多的不方便的。
+</code></pre><h4 id="这个写法会出什么问题：-property-copy-NSMutableArray-array"><a href="#这个写法会出什么问题：-property-copy-NSMutableArray-array" class="headerlink" title="这个写法会出什么问题：@property (copy) NSMutableArray *array;"></a>这个写法会出什么问题：@property (copy) NSMutableArray *array;</h4><ul>
+<li>没有指明为nonatomic，因此就是atomic原子操作，会影响性能。该属性使用了同步锁，会在创建时生成一些额外的代码用于帮助编写多线程程序，这会带来性能问题，通过声明nonatomic可以节省这些虽然很小但是不必要额外开销。在我们的应用程序中，几乎都是使用nonatomic来声明的，因为使用atomic并不能保证绝对的线程安全，对于要绝对保证线程安全的操作，还需要使用更高级的方式来处理，比如NSSpinLock、@syncronized等</li>
+<li>因为使用的是copy，所得到的实际是NSArray类型，它是不可变的，若在使用中使用了增、删、改操作，则会crash</li>
+</ul>
+<h4 id="protocol和category中如何使用-property"><a href="#protocol和category中如何使用-property" class="headerlink" title="@protocol和category中如何使用 @property"></a>@protocol和category中如何使用 @property</h4><p>•   在protocol中使用@property只会生成setter和getter方法声明，我们使用属性的目的是希望遵守我协议的对象能实现该属性<br>•   category使用@property也是只会生成setter和getter方法的声明，如果我们真的需要给category增加属性的实现，需要借助于运行时的两个函数：<br>•   objc_setAssociatedObject<br>•   objc_getAssociatedObject</p>
+<h4 id="property中有哪些属性关键字？"><a href="#property中有哪些属性关键字？" class="headerlink" title="@property中有哪些属性关键字？"></a>@property中有哪些属性关键字？</h4><p>1.原子性 （atomic，nonatomic）<br>2.读写（readwrite, readonly）<br>3.内存管理（assign, strong, weak, unsafe_unretained,copy）<br>4.getter、setter</p>
+<h4 id="isa指针问题"><a href="#isa指针问题" class="headerlink" title="isa指针问题"></a>isa指针问题</h4><ul>
+<li>isa：是一个Class 类型的指针. 每个实例对象有个isa的指针,他指向对象的类，而Class里也有个isa的指针, 指向meteClass(元类)。元类保存了类方法的列表。当类方法被调用时，先会从本身查找类方法的实现，如果没有，元类会向他父类查找该方法。同时注意的是：元类（meteClass）也是类，它也是对象。元类也有isa指针,它的isa指针最终指向的是一个根元类(root meteClass).根元类的isa指针指向本身，这样形成了一个封闭的内循环。</li>
+</ul>
+<h4 id="如何访问并修改一个类的私有属性？"><a href="#如何访问并修改一个类的私有属性？" class="headerlink" title="如何访问并修改一个类的私有属性？"></a>如何访问并修改一个类的私有属性？</h4><ul>
+<li>一种是通过KVC获取</li>
+<li>通过runtime访问并修改私有属性</li>
+</ul>
+<h4 id="如何为-Class-定义一个对外只读对内可读写的属性"><a href="#如何为-Class-定义一个对外只读对内可读写的属性" class="headerlink" title="如何为 Class 定义一个对外只读对内可读写的属性?"></a>如何为 Class 定义一个对外只读对内可读写的属性?</h4><p>在头文件中将属性定义为readonly,在.m文件中将属性重新定义为readwrite</p>
+<h4 id="Objective-C-中，meta-class-指的是什么？"><a href="#Objective-C-中，meta-class-指的是什么？" class="headerlink" title="Objective-C 中，meta-class 指的是什么？"></a>Objective-C 中，meta-class 指的是什么？</h4><p>meta-class 是 Class 对象的类,为这个Class类存储类方法,当一个类发送消息时,就去这个类对应的meta-class中查找那个消息,每个Class都有不同的meta-class,所有的meta-class都使用基类的meta-class(假如类继承NSObject,那么他所对应的meta-class也是NSObject)作为他们的类</p>
+<h4 id="Objective-C-的class是如何实现的？Selector是如何被转化为-C-语言的函数调用的？"><a href="#Objective-C-的class是如何实现的？Selector是如何被转化为-C-语言的函数调用的？" class="headerlink" title="Objective-C 的class是如何实现的？Selector是如何被转化为 C 语言的函数调用的？"></a>Objective-C 的class是如何实现的？Selector是如何被转化为 C 语言的函数调用的？</h4><ul>
+<li><p>当一个类被正确的编译过后，在这个编译成功的类里面，存在一个变量用于保存这个类的信息。我们可以通过[NSClassFromString]或[obj class]。这样的机制允许我们在程序执行的过程当中，可以Class来得到对象的类，也可以在程序执行的阶段动态的生成一个在编译阶段无法确定的一个对象。 （isa指针）</p>
+</li>
+<li><p>@selector()基本可以等同C语言的中函数指针,只不过C语言中，可以把函数名直接赋给一个函数指针，而Object-C的类不能直接应用函数指针，这样只能做一个@selector语法来取.</p>
+<pre class=" language-objc"><code class="language-objc">@interface foo
+-(int)add:int val;
+@end
+
+SEL class_func ; //定义一个类方法指针
+class_func = @selector(add:int);
+</code></pre>
+</li>
+<li><p>@selector是查找当前类的方法，而[object @selector(方法名:方法参数..) ] ;是取object对应类的相应方法.</p>
+</li>
+<li><p>查找类方法时，除了方法名,方法参数也查询条件之一.</p>
+</li>
+<li><p>可以用字符串来找方法 SEL　变量名　=　NSSelectorFromString(方法名字的字符串);</p>
+</li>
+<li><p>可以运行中用SEL变量反向查出方法名字字符串。NSString　*变量名　=　NSStringFromSelector(SEL参数);</p>
+</li>
+<li><p>取到selector的值以后，执行seletor。 SEL变量的执行.用performSelecor方法来执行.<br> [对象　performSelector:SEL变量　withObject:参数1　withObject:参数2];</p>
+</li>
+</ul>
+<h4 id="对于语句NSString-obj-NSData-alloc-init-，编译时和运行时obj分别是什么类型？"><a href="#对于语句NSString-obj-NSData-alloc-init-，编译时和运行时obj分别是什么类型？" class="headerlink" title="对于语句NSString *obj = [[NSData alloc] init]; ，编译时和运行时obj分别是什么类型？"></a>对于语句NSString *obj = [[NSData alloc] init]; ，编译时和运行时obj分别是什么类型？</h4><ul>
+<li>编译时是NSString类型 ，运行时是NSData类型.</li>
+</ul>
+<h4 id="synthesize和-dynamic分别有什么作用？"><a href="#synthesize和-dynamic分别有什么作用？" class="headerlink" title="@synthesize和@dynamic分别有什么作用？"></a>@synthesize和@dynamic分别有什么作用？</h4><p>答:</p>
+<ul>
+<li>@property有两个对应的词，一个是 @synthesize，一个是 @dynamic。如果 @synthesize和 @dynamic都没写，那么默认的就是@syntheszie var = _var;</li>
+<li>@synthesize 的语义是如果你没有手动实现 setter 方法和 getter 方法，那么编译器会自动为你加上这两个方法。</li>
+<li>@dynamic 告诉编译器：属性的 setter 与 getter 方法由用户自己实现，不自动生成。（当然对于 readonly 的属性只需提供 getter 即可）。假如一个属性被声明为 @dynamic var，然后你没有提供 @setter方法和 @getter 方法，编译的时候没问题，但是当程序运行到 instance.var = someVar，由于缺 setter 方法会导致程序崩溃；或者当运行到 someVar = var 时，由于缺 getter 方法同样会导致崩溃。编译时没问题，运行时才执行相应的方法，这就是所谓的动态绑定。</li>
+</ul>
+<h4 id="NSString-的时候用copy和strong的区别？"><a href="#NSString-的时候用copy和strong的区别？" class="headerlink" title="NSString 的时候用copy和strong的区别？"></a>NSString 的时候用copy和strong的区别？</h4><pre><code>OC中NSString为不可变字符串的时候，用copy和strong都是只分配一次内存，但是如果用copy的时候，需要先判断字符串是否是不可变字符串，如果是不可变字符串，就不再分配空间，如果是可变字符串才分配空间。如果程序中用到NSString的地方特别多，每一次都要先进行判断就会耗费性能，影响用户体验，用strong就不会再进行判断，所以，不可变字符串可以直接用strong。
+</code></pre><h4 id="NSArray、NSSet、NSDictionary与NSMutableArray、NSMutableSet、NSMutableDictionary的特性和作用（遇到copy修饰产生的变化）"><a href="#NSArray、NSSet、NSDictionary与NSMutableArray、NSMutableSet、NSMutableDictionary的特性和作用（遇到copy修饰产生的变化）" class="headerlink" title="NSArray、NSSet、NSDictionary与NSMutableArray、NSMutableSet、NSMutableDictionary的特性和作用（遇到copy修饰产生的变化）"></a>NSArray、NSSet、NSDictionary与NSMutableArray、NSMutableSet、NSMutableDictionary的特性和作用（遇到copy修饰产生的变化）</h4><ul>
+<li>特性：</li>
+<li>NSArray表示不可变数组，是有序元素集，只能存储对象类型，可通过索引直接访问元素，而且元素类型可以不一样，但是不能进行增、删、改操作；NSMutableArray是可变数组，能进行增、删、改操作。通过索引查询值很快，但是插入、删除等效率很低。</li>
+<li>NSSet表示不可变集合，具有确定性、互异性、无序性的特点，只能访问而不能修改集合；NSMutableSet表示可变集合，可以对集合进行增、删、改操作。集合通过值查询很快，插入、删除操作极快。</li>
+<li><p>NSDictionary表示不可变字典，具有无序性的特点，每个key对应的值是唯一的，可通过key直接获取值；NSMutableDictionary表示可变字典，能对字典进行增、删、改操作。通过key查询值、插入、删除值都很快。</p>
+</li>
+<li><p>作用：</p>
+<ul>
+<li>数组用于处理一组有序的数据集，比如常用的列表的dataSource要求有序，可通过索引直接访问，效率高。</li>
+<li>集合要求具有确定性、互异性、无序性，在iOS开发中是比较少使用到的，笔者也不清楚如何说明其作用</li>
+<li>字典是键值对数据集，操作字典效率极高，时间复杂度为常量，但是值是无序的。在ios中，常见的JSON转字典，字典转模型就是其中一种应用。</li>
+</ul>
+</li>
+</ul>
+<h4 id="请把字符串2015-04-10格式化日期转为NSDate类型"><a href="#请把字符串2015-04-10格式化日期转为NSDate类型" class="headerlink" title="请把字符串2015-04-10格式化日期转为NSDate类型"></a>请把字符串2015-04-10格式化日期转为NSDate类型</h4><pre class=" language-objc"><code class="language-objc">NSString *timeStr = @"2015-04-10";
+NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+formatter.dateFormat = @"yyyy-MM-dd";
+formatter.timeZone = [NSTimeZone defaultTimeZone];
+NSDate *date = [formatter dateFromString:timeStr];
+// 2015-04-09 16:00:00 +0000
+NSLog(@"%@", date);
+</code></pre>
+<h4 id="在一个对象的方法里：-self-name-object-和name-object有什么不同"><a href="#在一个对象的方法里：-self-name-object-和name-object有什么不同" class="headerlink" title="在一个对象的方法里：[self.name=@object] 和name=@object有什么不同"></a>在一个对象的方法里：<code>[self.name=@object]</code> 和<code>name=@object</code>有什么不同</h4><ul>
+<li>这是老生常谈的话题了，实质上就是问setter方法赋值与成员变量赋值有什么不同。通过点语法<code>self.name</code>实质上就是 <code>[self setName:@object];</code>。而name这里是成员变量，直接赋值。<br> 一般来说，在对象的方法里成员变量和方法都是可以访问的，我们通常会重写Setter方法来执行某些额外的工作。比如说，外部传一个模型过来，那么我会直接重写Setter方法，当模型传过来时，也就是意味着数据发生了变化，那么视图也需要更新显示，则在赋值新模型的同时也去刷新UI。这样也不用再额外提供其他方法了。</li>
+</ul>
+<h4 id="怎样使用performSelector传入3个以上参数，其中一个为结构体"><a href="#怎样使用performSelector传入3个以上参数，其中一个为结构体" class="headerlink" title="怎样使用performSelector传入3个以上参数，其中一个为结构体"></a>怎样使用performSelector传入3个以上参数，其中一个为结构体</h4><pre class=" language-objc"><code class="language-objc">- (id)performSelector:(SEL)aSelector;
+- (id)performSelector:(SEL)aSelector withObject:(id)object;
+- (id)performSelector:(SEL)aSelector withObject:(id)object1 withObject:(id)object2;
+</code></pre>
+<p>因为系统提供的performSelector的api中，并没有提供三个参数。因此，我们只能传数组或者字典，但是数组或者字典只有存入对象类型，而结构体并不是对象类型，那么怎么办呢？<br> 没有办法，我们只能通过对象放入结构作为属性来传过去了：</p>
+<pre class=" language-objc"><code class="language-objc">ypedef struct HYBStruct {
+  int a;
+  int b;
+} *my_struct;
+
+@interface HYBObject : NSObject
+
+@property (nonatomic, assign) my_struct arg3;
+@property (nonatomic, copy)  NSString *arg1;
+@property (nonatomic, copy) NSString *arg2;
+
+@end
+
+@implementation HYBObject
+
+// 在堆上分配的内存，我们要手动释放掉
+- (void)dealloc {
+  free(self.arg3);
+}
+
+@end
+</code></pre>
+<p>测试：</p>
+<pre class=" language-objc"><code class="language-objc">my_struct str = (my_struct)(malloc(sizeof(my_struct)));
+str->a = 1;
+str->b = 2;
+HYBObject *obj = [[HYBObject alloc] init];
+obj.arg1 = @"arg1";
+obj.arg2 = @"arg2";
+obj.arg3 = str;
+
+[self performSelector:@selector(call:) withObject:obj];
+
+// 在回调时得到正确的数据的
+- (void)call:(HYBObject *)obj {
+    NSLog(@"%d %d", obj.arg3->a, obj.arg3->b);
+}
+</code></pre>
+<h4 id="objc中向一个对象发送消息-obj-foo-和objc-msgSend-函数之间有什么关系？"><a href="#objc中向一个对象发送消息-obj-foo-和objc-msgSend-函数之间有什么关系？" class="headerlink" title="objc中向一个对象发送消息[obj foo]和objc_msgSend()函数之间有什么关系？"></a>objc中向一个对象发送消息[obj foo]和objc_msgSend()函数之间有什么关系？</h4><p>实际上，编译器在编译时会转换成objc_msgSend，大概会像这样：</p>
+<pre class=" language-objc"><code class="language-objc">((void (*)(id, SEL))(void)objc_msgSend)((id)obj, sel_registerName("foo"));
+</code></pre>
+<p>也就是说，[obj foo];在objc动态编译时，会被转换为：objc_msgSend(obj, @selector(foo));这样的形式，但是需要根据具体的参数类型及返回值类型进行相应的类型转换。</p>
+<h4 id="下面的代码输出什么？"><a href="#下面的代码输出什么？" class="headerlink" title="下面的代码输出什么？"></a>下面的代码输出什么？</h4><pre class=" language-objc"><code class="language-objc">@implementation Son : Father
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        NSLog(@"%@", NSStringFromClass([self class]));
+        NSLog(@"%@", NSStringFromClass([super class]));
+    }
+    return self;
+}
+
+@end
+
+// 输出
+NSStringFromClass([self class]) = Son
+NSStringFromClass([super class]) = Son
+</code></pre>
+<p>这个题目主要是考察关于Objective-C中对self和super的理解。我们都知道：self是类的隐藏参数，指向当前调用方法的这个类的实例。那super呢？<br>很多人会想当然的认为“super和self类似，应该是指向父类的指针吧！”。这是很普遍的一个误区。其实 super是一个 Magic Keyword，它本质是一个编译器标示符，和self 是指向的同一个消息接受者！他们两个的不同点在于：super会告诉编译器，调用class 这个方法时，要去父类的方法，而不是本类里的。</p>
+<p>上面的例子不管调用[self class]还是[super class]，接受消息的对象都是当前 Son ＊xxx 这个对象。<br>当使用self调用方法时，会从当前类的方法列表中开始找，如果没有，就从父类中再找；而当使用super时，则从父类的方法列表中开始找。然后调用父类的这个方法。</p>
+<h4 id="若一个类有实例变量NSString-foo，调用setValue-forKey-时，可以以foo还是-foo作为key？"><a href="#若一个类有实例变量NSString-foo，调用setValue-forKey-时，可以以foo还是-foo作为key？" class="headerlink" title="若一个类有实例变量NSString *_foo，调用setValue:forKey:时，可以以foo还是_foo作为key？"></a>若一个类有实例变量NSString *_foo，调用setValue:forKey:时，可以以foo还是_foo作为key？</h4><ul>
+<li>两者都可以。</li>
+</ul>
+<h4 id="什么时候使用NSMutableArray，什么时候使用NSArray"><a href="#什么时候使用NSMutableArray，什么时候使用NSArray" class="headerlink" title="什么时候使用NSMutableArray，什么时候使用NSArray?"></a>什么时候使用NSMutableArray，什么时候使用NSArray?</h4><ul>
+<li>当数组在程序运行时，需要不断变化的，使用NSMutableArray，当数组在初始化后，便不再改变的，使用NSArray。需要指出的是，使用NSArray只表明的是该数组在运行时不发生改变，即不能往NSAarry的数组里新增和删除元素，但不表明其数组內的元素的内容不能发生改变。NSArray是线程安全的，NSMutableArray不是线程安全的，多线程使用到NSMutableArray需要注意。</li>
+</ul>
+<h4 id="类NSObject的那些方法经常被使用"><a href="#类NSObject的那些方法经常被使用" class="headerlink" title="类NSObject的那些方法经常被使用?"></a>类NSObject的那些方法经常被使用?</h4><ul>
+<li>NSObject是Objetive-C的基类，其由NSObject类及一系列协议构成。</li>
+<li>其中类方法alloc、class、 description 对象方法init、dealloc、– performSelector:withObject:afterDelay:等经常被使用</li>
+</ul>
+<h4 id="什么是简便构造方法"><a href="#什么是简便构造方法" class="headerlink" title="什么是简便构造方法?"></a>什么是简便构造方法?</h4><ul>
+<li>简便构造方法一般由CocoaTouch框架提供，如NSNumber的<br><code>`</code>objc</li>
+</ul>
+<ul>
+<li>numberWithBool: </li>
+<li>numberWithChar: </li>
+<li>numberWithDouble: </li>
+<li>numberWithFloat: </li>
+<li>numberWithInt:<br><code>`</code></li>
+</ul>
+<ul>
+<li>Foundation下大部分类均有简便构造方法，我们可以通过简便构造方法，获得系统给我们创建好的对象，并且不需要手动释放。</li>
+</ul>
+<h4 id="什么是构造方法，使用构造方法有什么注意点。"><a href="#什么是构造方法，使用构造方法有什么注意点。" class="headerlink" title="什么是构造方法，使用构造方法有什么注意点。"></a>什么是构造方法，使用构造方法有什么注意点。</h4><p>什么是构造方法：构造方法是对象初始化并一个实例的方法。</p>
+<p>构造方法有什么用： 一般在构造方法里 对类进行一些初始化操作<br> 注意点：方法开头必须以init开头，接下来名称要大写 例如 initWithName ，initLayout</p>
+<h4 id="创建一个对象需要经过那三个步骤？"><a href="#创建一个对象需要经过那三个步骤？" class="headerlink" title="创建一个对象需要经过那三个步骤？"></a>创建一个对象需要经过那三个步骤？</h4><ul>
+<li>开辟内存空间</li>
+<li>初始化参数</li>
+<li>返回内存地址值</li>
+</ul>
+<h4 id="Get方法的作用是什么？"><a href="#Get方法的作用是什么？" class="headerlink" title="Get方法的作用是什么？"></a>Get方法的作用是什么？</h4><p>Get方法的作用：为调用者返回对象内部的成员变量</p>
+<h4 id="Set方法的作用是什么？Set方法的好处？"><a href="#Set方法的作用是什么？Set方法的好处？" class="headerlink" title="Set方法的作用是什么？Set方法的好处？"></a>Set方法的作用是什么？Set方法的好处？</h4><ul>
+<li>Set方法的作用：为外界提供一个设置成员变量值的方法。</li>
+<li>Set方法的好处： <ul>
+<li>不让数据暴露在外，保证了数据的安全性</li>
+<li>对设置的数据进行过滤</li>
+</ul>
+</li>
+</ul>
+<h4 id="结构体当中能定义oc对象吗？"><a href="#结构体当中能定义oc对象吗？" class="headerlink" title="结构体当中能定义oc对象吗？"></a>结构体当中能定义oc对象吗？</h4><p>不能, 因为结构体当中只能是类型的声明不能进行分配空间</p>
+<h4 id="点语法本质是什么-写一个点语法的例子-并写上注释"><a href="#点语法本质是什么-写一个点语法的例子-并写上注释" class="headerlink" title="点语法本质是什么,写一个点语法的例子,并写上注释"></a>点语法本质是什么,写一个点语法的例子,并写上注释</h4><ul>
+<li>点语法的本质是方法的调用，而不是访问成员变量，当使用点语法时，编译器会自动展开成相应的方法。切记点语法的本质是转换成相应的set和get方法，如果没有set和get方法，则不能使用点语法。</li>
+<li><p>例如有一个Person类 通过@property定义了name和age属性,再提供了一个run方法。</p>
+<pre class=" language-objc"><code class="language-objc">Person *person = [Person new];
+person.name=@”sk666”;//调用了person的setName方法
+int age = person.age;  //  调用了person的age方法
+person.run      //调用了person的run方法
+</code></pre>
+<h4 id="id类型是什么，instancetype是什么，有什么区别？"><a href="#id类型是什么，instancetype是什么，有什么区别？" class="headerlink" title="id类型是什么，instancetype是什么，有什么区别？"></a>id类型是什么，instancetype是什么，有什么区别？</h4></li>
+<li><p>id类型：万能指针，能作为参数，方法的返回类型。</p>
+</li>
+<li>instancetype：只能作为方法的范围类型，并且返回的类型是当前定义类的类类型。</li>
+</ul>
+<h4 id="成员变量名的命名以下划线开头的好处？"><a href="#成员变量名的命名以下划线开头的好处？" class="headerlink" title="成员变量名的命名以下划线开头的好处？"></a>成员变量名的命名以下划线开头的好处？</h4><ul>
+<li>与get方法的方法名区分开来；</li>
+<li>可以和一些其他的局部变量区分开来，下划线开头的变量，通常都是类的成员变量。</li>
+</ul>
+<h4 id="这段代码有什么问题吗"><a href="#这段代码有什么问题吗" class="headerlink" title="这段代码有什么问题吗:"></a>这段代码有什么问题吗:</h4><pre class=" language-objc"><code class="language-objc">@implementation Person
+- (void)setAge:(int)newAge {
+self.age = newAge; }
+@end
+会死循环,会重复调用自己!self.age 改为_age即可;
+并且书写不规范:setter方法中的newAge应该为age
+</code></pre>
+<h4 id="截取字符串”20-http-www-baidu-com”-中-”-”字符前面和后面的数据-分别输出它们。"><a href="#截取字符串”20-http-www-baidu-com”-中-”-”字符前面和后面的数据-分别输出它们。" class="headerlink" title="截取字符串”20 | http://www.baidu.com” 中, ”|”字符前面和后面的数据,分别输出它们。"></a>截取字符串”20 | <a href="http://www.baidu.com”" target="_blank" rel="noopener">http://www.baidu.com”</a> 中, ”|”字符前面和后面的数据,分别输出它们。</h4><pre class=" language-objc"><code class="language-objc">NSString * str = @"20 | http://www.baidu.com";
+NSArray *array = [str componentsSeparatedByString:@"|"]; //这是分别输出的截取后的字符串
+for (int i = 0; i<[array count]; ++i) {
+    NSLog(@"%d=%@", i, [array objectAtIndex:i]);
+}
+</code></pre>
+<h4 id="写一个完整的代理-包括声明-实现"><a href="#写一个完整的代理-包括声明-实现" class="headerlink" title="写一个完整的代理,包括声明,实现"></a>写一个完整的代理,包括声明,实现</h4><pre class=" language-objc"><code class="language-objc">//创建
+@protocol MyDelagate
+
+@required
+-(void)eat:(NSString *)foodName;
+
+@optional
+-(void)run;
+@end
+
+//声明
+@interface person: NSObject< MyDelagate>
+
+//实现
+@implementation person
+-(void)eat:(NSString *)foodName{
+    NSLog(@"吃:%@!",foodName);
+}
+-(void)run{
+    NSLog(@"run!");
+}
+@end
+</code></pre>
+<h4 id="isKindOfClass、isMemberOfClass、selector作用分别是什么"><a href="#isKindOfClass、isMemberOfClass、selector作用分别是什么" class="headerlink" title="isKindOfClass、isMemberOfClass、selector作用分别是什么"></a>isKindOfClass、isMemberOfClass、selector作用分别是什么</h4><ul>
+<li>isKindOfClass,作用是,某个对象属于某个类型或者继承自某类型</li>
+<li>isMemberOfClass:某个对象确切属于某个类型</li>
+<li>selector:通过方法名,获取在内存中的函数的入口地址</li>
+</ul>
+<h4 id="请分别写出SEL、id、-的意思"><a href="#请分别写出SEL、id、-的意思" class="headerlink" title="请分别写出SEL、id、@的意思?"></a>请分别写出SEL、id、@的意思?</h4><ul>
+<li>SEL是“selector”的一个类型,表示一个方法的名字——-就是一个方法的入口地址</li>
+<li>id是一个指向任何一个继承了Object(或者NSObject)类的对象。需要注意的是id是一个指针,所以在使用id 的时候不需要加*。</li>
+<li>@:OC中的指令符</li>
+</ul>
+<h4 id="unsigned-int-和int-有什么区别。假设int长度为65535，请写出unsigned-int与-int的取值范围"><a href="#unsigned-int-和int-有什么区别。假设int长度为65535，请写出unsigned-int与-int的取值范围" class="headerlink" title="unsigned int 和int 有什么区别。假设int长度为65535，请写出unsigned int与 int的取值范围"></a>unsigned int 和int 有什么区别。假设int长度为65535，请写出unsigned int与 int的取值范围</h4><p>int:基本整型，当字节数为2时 取值范围为-32768~32767，当字节数为4时 取值范围<br> 负的2的31次方 到 2的31次方减1<br> unsigned int：无符号基本整型，当字节数为2时 取值范围为0~65535，当字节数为4时 取值范围为0到2的32次方减1</p>
+<h4 id="Foundation对象与Core-Foundation对象有什么区别"><a href="#Foundation对象与Core-Foundation对象有什么区别" class="headerlink" title="Foundation对象与Core Foundation对象有什么区别"></a>Foundation对象与Core Foundation对象有什么区别</h4><ul>
+<li>Foundation对象是OC的，Core Foundation对象是C对象</li>
+<li>数据类型之间的转换 <ul>
+<li>ARC:<strong>bridge_retained（持有对象所有权,F-&gt;CF）、</strong>bridge_transfer（释放对象有所权CF-&gt;F）</li>
+<li>非ARC: __bridge</li>
+</ul>
+</li>
+</ul>
+<h4 id="编写一个函数，实现递归删除指定路径下的所有文件。"><a href="#编写一个函数，实现递归删除指定路径下的所有文件。" class="headerlink" title="编写一个函数，实现递归删除指定路径下的所有文件。"></a>编写一个函数，实现递归删除指定路径下的所有文件。</h4><pre class=" language-objc"><code class="language-objc">+ (void)deleteFiles:(NSString *)path;{
+    // 1.判断文件还是目录
+    NSFileManager * fileManger = [NSFileManager defaultManager];
+    BOOL isDir = NO;
+    BOOL isExist = [fileManger fileExistsAtPath:path isDirectory:&isDir];
+    if (isExist) {
+        // 2. 判断是不是目录
+        if (isDir) {
+        NSArray * dirArray = [fileManger contentsOfDirectoryAtPath:path error:nil];
+            NSString * subPath = nil;
+            for (NSString * str in dirArray) {
+                subPath  = [path stringByAppendingPathComponent:str];
+                BOOL issubDir = NO;
+                 [fileManger fileExistsAtPath:subPath isDirectory:&issubDir];
+                [self deleteFiles:subPath];
+            }       
+        }else{
+            NSLog(@"%@",path);
+            [manager removeItemAtPath:filePath error:nil];  
+        }
+    }else{
+        NSLog(@"你打印的是目录或者不存在");
+    }
+}
+</code></pre>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/12/iOS面试题3-C语言/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="暮鼓晨钟's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        swift630@sina.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: swift630@sina.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">9</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;暮鼓晨钟
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
