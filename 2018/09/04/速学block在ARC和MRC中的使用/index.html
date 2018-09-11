@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Tue Sep 04 2018 15:47:30 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 05 2018 09:52:11 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 05 2018 16:16:21 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/09/04/速学block在ARC和MRC中的使用/index.html",
     "headline": "速学block在ARC和MRC中的使用",
     "datePublished": "Tue Sep 04 2018 15:47:30 GMT+0800",
-    "dateModified": "Wed Sep 05 2018 09:52:11 GMT+0800",
+    "dateModified": "Wed Sep 05 2018 16:16:21 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -528,8 +528,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>你想知道Objective-C中blocks是怎么工作的吗？接下来就让我们通过几个测试题来了解下吧。</p>
-<h2 id="1-ARC转MRC-MRC转ARC"><a href="#1-ARC转MRC-MRC转ARC" class="headerlink" title="1.ARC转MRC MRC转ARC"></a>1.ARC转MRC MRC转ARC</h2><p>首先, 先要了解下ARC转MRC和MRC转ARC.<br><strong>ARC项目转MRC</strong><br>创建项目, 打开Xcode,  点击项目,  找到Build Phases中的Compile Sources, 将需要转为MRC的 .m文件加入编译标记  <code>-fno-objc-arc</code></p>
+        <h2 id="1-ARC转MRC-MRC转ARC"><a href="#1-ARC转MRC-MRC转ARC" class="headerlink" title="1.ARC转MRC MRC转ARC"></a>1.ARC转MRC MRC转ARC</h2><p>首先, 先要了解下ARC转MRC和MRC转ARC.<br><strong>ARC项目转MRC</strong><br>创建项目, 打开Xcode,  点击项目,  找到Build Phases中的Compile Sources, 将需要转为MRC的 .m文件加入编译标记  <code>-fno-objc-arc</code></p>
 <p><strong>MRC项目转ARC</strong><br>给MRC项目中.m文件添加ARC标记  <code>-fobjc-arc</code></p>
 <h2 id="2-示例演示"><a href="#2-示例演示" class="headerlink" title="2.示例演示"></a>2.示例演示</h2><p><strong>Example A</strong></p>
 <pre class=" language-objc"><code class="language-objc">void exampleA() {
@@ -700,6 +699,14 @@ NSLog(@"Stack Block:%@", [^{NSLog(@"Stack Block:%d",count);} class]);
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2018/09/12/iOS体系结构图/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
@@ -798,7 +805,7 @@ NSLog(@"Stack Block:%@", [^{NSLog(@"Stack Block:%d",count);} class]);
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -816,7 +823,7 @@ NSLog(@"Stack Block:%@", [^{NSLog(@"Stack Block:%d",count);} class]);
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -840,7 +847,7 @@ NSLog(@"Stack Block:%@", [^{NSLog(@"Stack Block:%d",count);} class]);
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">4</span>
+                <span class="sidebar-badge">7</span>
             </a>
         </li>
         
