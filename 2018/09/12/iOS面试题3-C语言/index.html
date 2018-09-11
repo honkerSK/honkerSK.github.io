@@ -61,7 +61,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",iOS面试">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -247,11 +247,11 @@
     <meta property="og:title" content="iOS面试题3--C语言 | 暮鼓晨钟">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="iOS面试"> 
 
     
         <meta property="article:published_time" content="Wed Sep 12 2018 01:11:27 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 12 2018 01:11:27 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 12 2018 01:30:26 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题3-C语言/index.html",
     "headline": "iOS面试题3--C语言",
     "datePublished": "Wed Sep 12 2018 01:11:27 GMT+0800",
-    "dateModified": "Wed Sep 12 2018 01:11:27 GMT+0800",
+    "dateModified": "Wed Sep 12 2018 01:30:26 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -292,7 +292,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": "",
+    "keywords": ",iOS面试",
     "description": "",
 }
 </script>
@@ -361,6 +361,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#当你写下面的代码时会发生什么事？"><span class="post-toc-number">1.</span> <span class="post-toc-text">当你写下面的代码时会发生什么事？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#用预处理指令-define声明一个常数，用以表明1年中有多少秒（忽略闰年问题）"><span class="post-toc-number">2.</span> <span class="post-toc-text">用预处理指令#define声明一个常数，用以表明1年中有多少秒（忽略闰年问题）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写一个”标准”宏MIN-，这个宏输入两个参数并返回较小的一个。"><span class="post-toc-number">3.</span> <span class="post-toc-text">写一个”标准”宏MIN ，这个宏输入两个参数并返回较小的一个。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写一个标准宏Max，并给出以下代码的输出"><span class="post-toc-number">4.</span> <span class="post-toc-text">写一个标准宏Max，并给出以下代码的输出</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#define定义的宏和const定义的常量有什么区别？"><span class="post-toc-number">5.</span> <span class="post-toc-text">define定义的宏和const定义的常量有什么区别？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关键字volatile有什么含意-并给出三个不同的例子"><span class="post-toc-number">6.</span> <span class="post-toc-text">关键字volatile有什么含意?并给出三个不同的例子</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#完成字符串拷贝可以使用sprintf、strcpy、以及memcpy函数，请问这些函数有什么区别-你喜欢哪一个？为什么？"><span class="post-toc-number">7.</span> <span class="post-toc-text">完成字符串拷贝可以使用sprintf、strcpy、以及memcpy函数，请问这些函数有什么区别?你喜欢哪一个？为什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#sprintf-strcpy-memcpy使用上有什么要注意的地方"><span class="post-toc-number">8.</span> <span class="post-toc-text">sprintf,strcpy,memcpy使用上有什么要注意的地方</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#static关键字的作用"><span class="post-toc-number">9.</span> <span class="post-toc-text">static关键字的作用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#static关键字区别："><span class="post-toc-number">10.</span> <span class="post-toc-text">static关键字区别：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关键字const"><span class="post-toc-number">11.</span> <span class="post-toc-text">关键字const</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#堆栈"><span class="post-toc-number">12.</span> <span class="post-toc-text">堆栈</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数组和指针的区别"><span class="post-toc-number">13.</span> <span class="post-toc-text">数组和指针的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#引用和指针的区别"><span class="post-toc-number">14.</span> <span class="post-toc-text">引用和指针的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#用变量a给出下面的定义"><span class="post-toc-number">15.</span> <span class="post-toc-text">用变量a给出下面的定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#请写出以下代码输出"><span class="post-toc-number">16.</span> <span class="post-toc-text">请写出以下代码输出</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#简述内存分区情况"><span class="post-toc-number">17.</span> <span class="post-toc-text">简述内存分区情况</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#用NSLog函数输出一个浮点类型，结果四舍五入，并保留一位小数"><span class="post-toc-number">18.</span> <span class="post-toc-text">用NSLog函数输出一个浮点类型，结果四舍五入，并保留一位小数</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -426,6 +435,15 @@
     
 
     <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+    </ul>
     
 
     <!-- Share -->
@@ -510,7 +528,152 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <p>C语言，开发的基础功底，iOS很多高级应用都要和C语言打交道，所以，C语言在iOS开发中的重要性，你懂的。里面的一些问题可能并不是C语言问题，但是属于计算机的一些原理性的知识点，所以我就不再另外写一篇文章了，直接写在这里。</p>
+<h4 id="当你写下面的代码时会发生什么事？"><a href="#当你写下面的代码时会发生什么事？" class="headerlink" title="当你写下面的代码时会发生什么事？"></a>当你写下面的代码时会发生什么事？</h4><ul>
+<li>least = MIN(*p++, b);</li>
+<li>结果是：((<em>p++) &lt;= (b) ? (</em>p++) : (*p++)) 这个表达式会产生副作用，指针p会作三次++自增操作。</li>
+</ul>
+<h4 id="用预处理指令-define声明一个常数，用以表明1年中有多少秒（忽略闰年问题）"><a href="#用预处理指令-define声明一个常数，用以表明1年中有多少秒（忽略闰年问题）" class="headerlink" title="用预处理指令#define声明一个常数，用以表明1年中有多少秒（忽略闰年问题）"></a>用预处理指令#define声明一个常数，用以表明1年中有多少秒（忽略闰年问题）</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> SECONDS_PER_YEAR (60 * 60 * 24 * 365)UL(UL无符号长整形)</span>
+</code></pre>
+<h4 id="写一个”标准”宏MIN-，这个宏输入两个参数并返回较小的一个。"><a href="#写一个”标准”宏MIN-，这个宏输入两个参数并返回较小的一个。" class="headerlink" title="写一个”标准”宏MIN ，这个宏输入两个参数并返回较小的一个。"></a>写一个”标准”宏MIN ，这个宏输入两个参数并返回较小的一个。</h4><pre><code>#define MIN(A,B) （（A） &lt;= (B) ? (A) : (B))
+</code></pre><h4 id="写一个标准宏Max，并给出以下代码的输出"><a href="#写一个标准宏Max，并给出以下代码的输出" class="headerlink" title="写一个标准宏Max，并给出以下代码的输出"></a>写一个标准宏Max，并给出以下代码的输出</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> array<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">&amp;</span>array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token function">Max</span><span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token operator">++</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d"</span><span class="token punctuation">,</span> max<span class="token punctuation">,</span> <span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+参考答案： <span class="token number">1</span>，<span class="token number">2</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> Max(X, Y) ((X) > (Y) ? (X) : (Y))</span>
+当看到宏时，就会想到宏定义所带来的副作用。对于<span class="token operator">++</span>、–，在宏当中使用是最容易产生副作用的，因此要慎用。
+分析：
+p指针指向了数组array的首地址，也就是第一个元素对应的地址，其值为<span class="token number">1</span><span class="token punctuation">.</span>
+宏定义时一定要注意每个地方要加上圆括号
+<span class="token operator">*</span>p<span class="token operator">++</span>相当于<span class="token operator">*</span>p<span class="token punctuation">,</span> p<span class="token operator">++</span><span class="token punctuation">,</span>所以<span class="token function">Max</span><span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token operator">++</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>相当于：
+<span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token operator">=</span><span class="token operator">></span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token operator">=</span><span class="token operator">></span>
+第一个<span class="token operator">*</span>p<span class="token operator">++</span>的结果是，p所指向的值变成了<span class="token number">2</span>，但是<span class="token number">1</span> <span class="token operator">></span> <span class="token number">1</span>为値，所以最终max的值就是<span class="token number">1</span>。而后面的<span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token operator">++</span><span class="token punctuation">)</span>也就不会执行，因此p所指向的地址对应的值就是<span class="token number">2</span>，而不是<span class="token number">3</span><span class="token punctuation">.</span>
+扩展：如果上面的<span class="token operator">*</span>p<span class="token operator">++</span>改成<span class="token operator">*</span><span class="token punctuation">(</span><span class="token operator">++</span>p<span class="token punctuation">)</span>如何？
+<span class="token punctuation">(</span><span class="token operator">*</span><span class="token operator">++</span>p<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token operator">++</span>p<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token operator">=</span><span class="token operator">></span>
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token operator">++</span>p<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token operator">=</span><span class="token operator">></span> 
+max <span class="token operator">=</span> <span class="token operator">*</span><span class="token operator">++</span>p<span class="token punctuation">;</span>
+<span class="token operator">=</span><span class="token operator">></span> 
+<span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">3</span>，max <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+
+</code></pre>
+<h4 id="define定义的宏和const定义的常量有什么区别？"><a href="#define定义的宏和const定义的常量有什么区别？" class="headerlink" title="define定义的宏和const定义的常量有什么区别？"></a>define定义的宏和const定义的常量有什么区别？</h4><pre class=" language-c"><code class="language-c">λ   #define定义宏的指令，程序在预处理阶段将用#define所定义的内容只是进行了替换。因此程序运行时，常量表中并没有用#define所定义的宏，系统并不为它分配内存，而且在编译时不会检查数据类型，出错的概率要大一些。
+λ   <span class="token keyword">const</span>定义的常量，在程序运行时是存放在常量表中，系统会为它分配内存，而且在编译时会进行类型检查。
+<span class="token macro property">#<span class="token directive keyword">define</span>定义表达式时要注意“边缘效应”，例如如下定义：</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> N 2 + 3 </span><span class="token comment" spellcheck="true">// 我们预想的N值是5，我们这样使用N</span>
+<span class="token keyword">int</span> a <span class="token operator">=</span> N <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 我们预想的a的值是2.5，可实际上a的值是3.5</span>
+</code></pre>
+<h4 id="关键字volatile有什么含意-并给出三个不同的例子"><a href="#关键字volatile有什么含意-并给出三个不同的例子" class="headerlink" title="关键字volatile有什么含意?并给出三个不同的例子"></a>关键字volatile有什么含意?并给出三个不同的例子</h4><ul>
+<li>优化器在用到这个变量时必须每次都小心地重新读取这个变量的值，而不是使用保存在寄存器里的备份。下面是volatile变量的几个例子：</li>
+<li>并行设备的硬件寄存器（如：状态寄存器）</li>
+<li>一个中断服务子程序中会访问到的非自动变量(Non-automatic variables)</li>
+<li>多线程应用中被几个任务共享的变量</li>
+</ul>
+<h4 id="完成字符串拷贝可以使用sprintf、strcpy、以及memcpy函数，请问这些函数有什么区别-你喜欢哪一个？为什么？"><a href="#完成字符串拷贝可以使用sprintf、strcpy、以及memcpy函数，请问这些函数有什么区别-你喜欢哪一个？为什么？" class="headerlink" title="完成字符串拷贝可以使用sprintf、strcpy、以及memcpy函数，请问这些函数有什么区别?你喜欢哪一个？为什么？"></a>完成字符串拷贝可以使用sprintf、strcpy、以及memcpy函数，请问这些函数有什么区别?你喜欢哪一个？为什么？</h4><p>这些函数的区别在于实现功能以及操作对象不同。</p>
+<ul>
+<li>strcpy：函数操作的对象是字符串，完成从源字符串到目的字符串的拷贝功能。</li>
+<li>sprintf：这个函数主要用来实现（字符串或基本数据类型）向字符串的转换功能。如果源对象是字符串，并且指定%s格式符，也可实现字符串拷贝功能。</li>
+<li>memcpy：函数顾名思义就是内存拷贝，实现将一个内存块的内容复制到另一个内存块这一功能。内存块由其首地址以及长度确定。因此，memcpy 的操作对象适用于任意数据类型，只要能给出对象的起始地址和内存长度信息、并且对象具有可操作性即可。鉴于memcpy函数等长拷贝的特点以及数据类型代表的物理意义，memcpy函数通常限于同种类型数据或对象之间的拷贝，其中当然也包括字符串拷贝以及基本数据类型的拷贝。</li>
+<li>对于字符串拷贝来说，用上述三个函数都可以实现，但是其实现的效率和使用的方便程度不同：</li>
+<li>strcpy 无疑是最合适的选择：效率高且调用方便。</li>
+<li>snprintf 要额外指定格式符并且进行格式转化，麻烦且效率不高。</li>
+<li>memcpy 虽然高效，但是需要额外提供拷贝的内存长度这一参数，易错且使用不便；并且如果长度指定过大的话（最优长度是源字符串长度 + 1），还会带来性能的下降。其实 strcpy 函数一般是在内部调用 memcpy函数或者用汇编直接实现的，以达到高效的目的。因此，使用 memcpy 和 strcpy 拷贝字符串在性能上应该没有什么大的差别。</li>
+<li>对于非字符串类型的数据的复制来说，strcpy和snprintf一般就无能为力了，可是对memcpy却没有什么影响。但是，对于基本数据类型来说，尽管可以用 memcpy 进行拷贝，由于有赋值运算符可以方便且高效地进行同种或兼容类型的数据之间的拷贝，所以这种情况下memcpy几乎不被使用。memcpy的长处是用来实现（通常是内部实现居多）对结构或者数组的拷贝，其目的是或者高效，或者使用方便，甚或两者兼有。</li>
+</ul>
+<h4 id="sprintf-strcpy-memcpy使用上有什么要注意的地方"><a href="#sprintf-strcpy-memcpy使用上有什么要注意的地方" class="headerlink" title="sprintf,strcpy,memcpy使用上有什么要注意的地方"></a>sprintf,strcpy,memcpy使用上有什么要注意的地方</h4><ul>
+<li>strcpy是一个字符串拷贝的函数，它的函数原型为strcpy(char <em>dst, const char </em>src);</li>
+<li>将src开始的一段字符串拷贝到dst开始的内存中去，结束的标志符号为 ‘\0’，由于拷贝的长度不是由我们自己控制的，所以这个字符串拷贝很容易出错。</li>
+<li>具备字符串拷贝功能的函数有memcpy，这是一个内存拷贝函数，它的函数原型为memcpy(char <em>dst, const char</em> src, unsigned int len);将长度为len的一段内存，从src拷贝到dst中去，这个函数的长度可控。但是会有内存读写错误。(比如len的长度大于要拷贝的空间或目的空间)</li>
+<li>sprintf是格式化函数。将一段数据通过特定的格式，格式化到一个字符串缓冲区中去。sprintf格式化的函数的长度不可控，有可能格式化后的字符串会超出缓冲区的大小，造成溢出。</li>
+</ul>
+<h4 id="static关键字的作用"><a href="#static关键字的作用" class="headerlink" title="static关键字的作用"></a>static关键字的作用</h4><ul>
+<li>隐藏。编译多个文件时，所有未加static前缀的全局变量和函数都全局可见。</li>
+<li>保持变量内容的持久。全局变量和static变量都存储在静态存储区，程序开始运行就初始化，只初始化一次。static控制了变量的作用范围。</li>
+<li>默认初始化为0.在静态数据区，内存中的所有字节都是0x00，全局变量和static变量都是默认初始化为0.</li>
+</ul>
+<h4 id="static关键字区别："><a href="#static关键字区别：" class="headerlink" title="static关键字区别："></a>static关键字区别：</h4><ul>
+<li>static全局变量与普通的全局变量有什么区别：static全局变量只初使化一次，防止在其他文件单元中被引用;</li>
+<li>static局部变量和普通局部变量有什么区别：static局部变量只被初始化一次，下一次依据上一次结果值；</li>
+<li>static函数与普通函数有什么区别：static函数在内存中只有一份，普通函数在每个被调用中维持一份拷贝</li>
+</ul>
+<h4 id="关键字const"><a href="#关键字const" class="headerlink" title="关键字const"></a>关键字const</h4><ul>
+<li>const int a;int const a; 作用是一样：a 是一个常整型数</li>
+<li>const int <em>a;int const </em>a; a 是一个指向常整型数的指针(整型数是不可修改的，但指针可以)</li>
+<li>int * const a;a 是一个指向整型数的常指针(指针指向的整型数是可以修改的，但指针是不可修改的)</li>
+<li>int const * const a;a 是一个指向常整型数的常指针(指针指向的整型数是不可修改的，同时指针也是不可修改的)</li>
+</ul>
+<h4 id="堆栈"><a href="#堆栈" class="headerlink" title="堆栈"></a>堆栈</h4><ul>
+<li>管理方式：对于栈来讲，是由编译器自动管理，无需我们手工控制；对于堆来说，释放工作由程序员控制，容易产生内存泄露 (memory leak)。</li>
+<li>申请大小：<ul>
+<li>栈：在Windows下,栈是向低地址扩展的数据结构，是一块连续的内存的区域。这句话的意思是栈顶的地址和栈的最大容量是系统预先规定好的，在Windows下，栈的大小是2M（也有的说是1M，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示 overflow。因此，能从栈获得的空间较小。</li>
+<li>堆：堆是向高地址扩展的数据结构，是不连续的内存区域。这是由于系统是用链表来存储的空闲内存地址的，自然是不连续的，而链表的遍历方向是由低地址向高地址。堆的大小受限于计算机系统中有效的虚拟内存。由此可见，堆获得的空间比较灵活，也比较大。</li>
+</ul>
+</li>
+<li>碎片问题：<br> 对于堆来讲，频繁的new/delete势必会造成内存空间的不连续，从而造成大量的碎片，使程序效率降低。对于栈来讲，则不会存在这个 问题，因为栈是先进后出的队列，他们是如此的一一对应，以至于永远都不可能有一个内存块从栈中间弹出</li>
+<li>分配方式：<br> 堆都是动态分配的，没有静态分配的堆。栈有2种分配方式：静态分配和动态分配。静态分配是编译器完成的，比如局部变量的分配。动态分配由 alloc函数进行分配，但是栈的动态分配和堆是不同的，他的动态分配是由编译器进行释放，无需我们手工实现。</li>
+<li>分配效率：<br> 栈是机器系统提供的数据结构，计算机会在底层对栈提供支持：分配专门的寄存器存放栈的地址，压栈出栈都有专门的指令执行，这就决定了栈的 效率比较高。堆则是C/C++函数库提供的，它的机制是很复杂的</li>
+</ul>
+<h4 id="数组和指针的区别"><a href="#数组和指针的区别" class="headerlink" title="数组和指针的区别"></a>数组和指针的区别</h4><ul>
+<li>数组可以申请在栈区和数据区；指针可以指向任意类型的内存块<br> sizeof作用于数组时，得到的是数组所占的内存大小；作用于指针时，得到的都是4个字节的大小</li>
+<li>数组名表示数组首地址，是常量指针，不可修改指向。比如不可以将＋＋作用于数组名上；普通指针的值可以改变，比如可将＋＋作用于指针上</li>
+<li>用字符串初始化字符数组是将字符串的内容拷贝到字符数组中；用字符串初始化字符指针是将字符串的首地址赋给指针，也就是指针指向了该字符串</li>
+</ul>
+<h4 id="引用和指针的区别"><a href="#引用和指针的区别" class="headerlink" title="引用和指针的区别"></a>引用和指针的区别</h4><ul>
+<li>指针指向一块内存，内容存储所指内存的地址。</li>
+<li>引用是某块内存的别名。</li>
+<li>引用使用时不需要解引用（*）而指针需要</li>
+<li>引用只在定义时被初始化，之后不可变，指针可变。</li>
+<li>引用没有const</li>
+<li>引用不能为空</li>
+<li>sizeof引用得到的是所指向变量（对象）的大小，sizeof指针是指针本身的大小。</li>
+<li>指针和引用的自增(++)运算意义不一样：引用++为引用对象自己++，指针++是指向对象后面的内存</li>
+<li>程序需要为指针分配内存区域，引用不需要。</li>
+</ul>
+<h4 id="用变量a给出下面的定义"><a href="#用变量a给出下面的定义" class="headerlink" title="用变量a给出下面的定义"></a>用变量a给出下面的定义</h4><ul>
+<li>一个整型数（An integer）</li>
+<li>一个指向整型数的指针（ A pointer to an integer）</li>
+<li>一个指向指针的的指针，它指向的指针是指向一个整型数（ A pointer to a pointer to an intege）r</li>
+<li>一个有10个整型数的数组（ An array of 10 integers）</li>
+<li>一个有10个指针的数组，该指针是指向一个整型数的。（An array of 10 pointers to integers）</li>
+<li>一个指向有10个整型数数组的指针（ A pointer to an array of 10 integers）</li>
+<li>一个指向函数的指针，该函数有一个整型参数并返回一个整型数（A pointer to a function that takes an integer as an argument<br> and returns an integer）</li>
+<li>一个有10个指针的数组，该指针指向一个函数，该函数有一个整型参数并返回一个整型数（ An array of ten pointers to functions t<br> hat take an integer argument and return an integer ）</li>
+</ul>
+<p>答案是：</p>
+<ul>
+<li>int a; // An integer</li>
+<li>int *a; // A pointer to an integer</li>
+<li>int **a; // A pointer to a pointer to an integer</li>
+<li>int a[10]; // An array of 10 integers</li>
+<li>int *a[10]; // An array of 10 pointers to integers</li>
+<li>int (*a)[10]; // A pointer to an array of 10 integers</li>
+<li>int (*a)(int); // A pointer to a function a that  takes an integer argument and returns an integer</li>
+<li>int (*a[10])(int); // An array of 10 pointers to functions  that take an integer argument and return an integer</li>
+</ul>
+<h4 id="请写出以下代码输出"><a href="#请写出以下代码输出" class="headerlink" title="请写出以下代码输出"></a>请写出以下代码输出</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>ptr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d, %d"</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">(</span>ptr <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+参考答案： <span class="token number">2</span><span class="token punctuation">,</span> 随机值
+这种类型题好像挺常见的。考的就是C语言上的指针的理解和数组的理解。
+分析：
+a代表有<span class="token number">5</span>个元素的数组的首地址，a<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span>的元素分别是<span class="token number">1</span>，<span class="token number">2</span>，<span class="token number">3</span>，<span class="token number">4</span>，<span class="token number">5</span>。接下来，a <span class="token operator">+</span> <span class="token number">1</span>表示数据首地址加<span class="token number">1</span>，那么就是a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>，也就是对应于值为<span class="token number">2</span><span class="token punctuation">.</span>但是，这里是<span class="token operator">&amp;</span>a <span class="token operator">+</span> <span class="token number">1</span>，因为a代表的是整个数组，它的空间大小为<span class="token number">5</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>，因此<span class="token operator">&amp;</span>a <span class="token operator">+</span> <span class="token number">1</span>就是a<span class="token operator">+</span><span class="token number">5</span>。a是个常量指针，指向当前数组的首地址，指针<span class="token operator">+</span><span class="token number">1</span>就是移动<span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>个字节。
+因此，ptr是指向<span class="token keyword">int</span> <span class="token operator">*</span>类型的指针，而ptr指向的就是a <span class="token operator">+</span> <span class="token number">5</span>，那么ptr <span class="token operator">+</span> <span class="token number">1</span>也相当于a <span class="token operator">+</span> <span class="token number">6</span>，所以最后的<span class="token operator">*</span><span class="token punctuation">(</span>ptr <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>就是一个随机值了。而<span class="token operator">*</span><span class="token punctuation">(</span>ptr – <span class="token number">1</span><span class="token punctuation">)</span>就相当于a <span class="token operator">+</span> <span class="token number">4</span>，对应的值就是<span class="token number">5</span>。
+</code></pre>
+<h4 id="简述内存分区情况"><a href="#简述内存分区情况" class="headerlink" title="简述内存分区情况"></a>简述内存分区情况</h4><ul>
+<li>代码区：存放函数二进制代码</li>
+<li>数据区：系统运行时申请内存并初始化，系统退出时由系统释放，存放全局变量、静态变量、常量</li>
+<li>堆区：通过malloc等函数或new等操作符动态申请得到，需程序员手动申请和释放</li>
+<li>栈区：函数模块内申请，函数结束时由系统自动释放，存放局部变量、函数参数</li>
+</ul>
+<h4 id="用NSLog函数输出一个浮点类型，结果四舍五入，并保留一位小数"><a href="#用NSLog函数输出一个浮点类型，结果四舍五入，并保留一位小数" class="headerlink" title="用NSLog函数输出一个浮点类型，结果四舍五入，并保留一位小数"></a>用NSLog函数输出一个浮点类型，结果四舍五入，并保留一位小数</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">float</span> money <span class="token operator">=</span> <span class="token number">1.011</span><span class="token punctuation">;</span>
+<span class="token function">NSLog</span><span class="token punctuation">(</span>@<span class="token string">"%.1f"</span><span class="token punctuation">,</span> money<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
         
     
 
@@ -679,7 +842,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
