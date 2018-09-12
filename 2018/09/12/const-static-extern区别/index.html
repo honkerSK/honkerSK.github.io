@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Wed Sep 12 2018 18:19:49 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 12 2018 18:27:52 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 12 2018 20:19:39 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/09/12/const-static-extern区别/index.html",
     "headline": "const,static,extern区别",
     "datePublished": "Wed Sep 12 2018 18:19:49 GMT+0800",
-    "dateModified": "Wed Sep 12 2018 18:27:52 GMT+0800",
+    "dateModified": "Wed Sep 12 2018 20:19:39 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -583,7 +583,7 @@ static NSString * const account = @"account";
 <span class="token operator">*</span>   <span class="token number">2</span><span class="token punctuation">.</span>被<span class="token keyword">const</span>修饰的变量是只读的。
 </code></pre>
 <ul>
-<li><code>const基本使用</code></li>
+<li>const基本使用</li>
 </ul>
 <pre class=" language-objc"><code class="language-objc">- (void)viewDidLoad {
     [super viewDidLoad];
@@ -595,7 +595,7 @@ static NSString * const account = @"account";
     a = 20;
 
     // const两种用法
-    // const:修饰基本变量p
+    // const:修饰基本变量b
     // 这两种写法是一样的，const只修饰右边的基本变量b
     const int b = 20; // b:只读变量
     int const b = 20; // b:只读变量
@@ -636,8 +636,7 @@ static NSString * const account = @"account";
 
 // const放*前面约束参数，表示*a只读
 // 只能修改地址a,不能通过a修改访问的内存空间
-- (void)test:(const int * )a
-{
+- (void)test:(const int * )a {
 //    *a = 20;
 }
 
@@ -701,8 +700,7 @@ int a = 20;
 // static修饰全局变量
 static int age = 20;
 
-- (void)test
-{
+- (void)test {
     // static修饰局部变量
     static int age = 0;
     age++;
@@ -719,7 +717,6 @@ static int age = 20;
     extern int age;
     NSLog(@"%d",age);
 }
-I
 </code></pre>
 <h3 id="五、static与const联合使用"><a href="#五、static与const联合使用" class="headerlink" title="五、static与const联合使用"></a>五、static与const联合使用</h3><ul>
 <li>static与const作用:声明一个只读的静态变量</li>
@@ -825,6 +822,14 @@ NSString * const nameKey = @&quot;name&quot;;
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2018/09/13/runtime使用示例代码/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
@@ -923,7 +928,7 @@ NSString * const nameKey = @&quot;name&quot;;
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -941,7 +946,7 @@ NSString * const nameKey = @&quot;name&quot;;
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -965,7 +970,7 @@ NSString * const nameKey = @&quot;name&quot;;
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">30</span>
+                <span class="sidebar-badge">31</span>
             </a>
         </li>
         

@@ -50,7 +50,7 @@
     
     <title>
         
-            iOS面试题1--版本控制 | 
+            runtime使用示例代码 | 
         
         暮鼓晨钟
     </title>
@@ -227,7 +227,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="暮鼓晨钟">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题1-版本控制/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/13/runtime使用示例代码/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
@@ -242,16 +242,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题1-版本控制/">
+    <meta property="og:url" content="http://yoursite.com/2018/09/13/runtime使用示例代码/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="iOS面试题1--版本控制 | 暮鼓晨钟">
+    <meta property="og:title" content="runtime使用示例代码 | 暮鼓晨钟">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="">
     <meta property="og:article:tag" content="iOS面试"> 
 
     
-        <meta property="article:published_time" content="Wed Sep 12 2018 00:39:24 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 12 2018 00:41:17 GMT+0800">
+        <meta property="article:published_time" content="Thu Sep 13 2018 01:47:02 GMT+0800">
+        <meta property="article:modified_time" content="Thu Sep 13 2018 01:50:35 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题1-版本控制/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/09/13/runtime使用示例代码/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -271,10 +271,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题1-版本控制/index.html",
-    "headline": "iOS面试题1--版本控制",
-    "datePublished": "Wed Sep 12 2018 00:39:24 GMT+0800",
-    "dateModified": "Wed Sep 12 2018 00:41:17 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/13/runtime使用示例代码/index.html",
+    "headline": "runtime使用示例代码",
+    "datePublished": "Thu Sep 13 2018 01:47:02 GMT+0800",
+    "dateModified": "Thu Sep 13 2018 01:50:35 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -367,7 +367,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SVN"><span class="post-toc-number">1.</span> <span class="post-toc-text">SVN</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Git"><span class="post-toc-number">2.</span> <span class="post-toc-text">Git</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么要用源代码管理工具"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">为什么要用源代码管理工具</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#最常用的版本控制工具是什么，能大概讲讲原理么？"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">最常用的版本控制工具是什么，能大概讲讲原理么？</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、runtime简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、runtime简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、runtime作用"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、runtime作用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-发送消息"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.发送消息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-交换方法"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.交换方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-动态添加方法"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3.动态添加方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-给分类添加属性"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4.给分类添加属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-字典转模型"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">5.字典转模型</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -399,7 +399,7 @@
         
     
             <p class="article-headline-p">
-                iOS面试题1--版本控制
+                runtime使用示例代码
             </p>
         </div>
 
@@ -418,7 +418,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>暮鼓晨钟</strong>
-        <span>9月 12, 2018</span>
+        <span>9月 13, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -470,7 +470,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题1--版本控制&url=http://yoursite.com/2018/09/12/iOS面试题1-版本控制/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=runtime使用示例代码&url=http://yoursite.com/2018/09/13/runtime使用示例代码/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -479,7 +479,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题1--版本控制&url=http://yoursite.com/2018/09/12/iOS面试题1-版本控制/index.html&via=暮鼓晨钟" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=runtime使用示例代码&url=http://yoursite.com/2018/09/13/runtime使用示例代码/index.html&via=暮鼓晨钟" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -488,7 +488,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题1-版本控制/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/13/runtime使用示例代码/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -497,7 +497,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题1-版本控制/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/13/runtime使用示例代码/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -509,7 +509,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=iOS面试题1--版本控制&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题1-版本控制/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=runtime使用示例代码&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/13/runtime使用示例代码/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -528,166 +528,447 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>面试过程中，可能会问及一些关于版本控制的问题，理解下SVN和Git的原理，记住常用命令即可。</p>
-<h2 id="SVN"><a href="#SVN" class="headerlink" title="SVN"></a>SVN</h2><ul>
-<li>SVN 是集中式源代码管理工具</li>
+        <h3 id="一、runtime简介"><a href="#一、runtime简介" class="headerlink" title="一、runtime简介"></a>一、runtime简介</h3><ul>
+<li>RunTime简称运行时。OC就是<code>运行时机制</code>，也就是在运行时候的一些机制，其中最主要的是消息机制。</li>
+<li>对于C语言，<code>函数的调用在编译的时候会决定调用哪个函数</code>。</li>
+<li>对于OC的函数，属于<code>动态调用过程</code>，在编译的时候并不能决定真正调用哪个函数，只有在真正运行的时候才会根据函数的名称找到对应的函数来调用。</li>
+<li>事实证明：<ul>
+<li>在编译阶段，OC可以<code>调用任何函数</code>，即使这个函数并未实现，只要声明过就不会报错。</li>
+<li>在编译阶段，C语言调用<code>未实现的函数</code>就会报错。</li>
 </ul>
-<pre><code>概念：
-1&gt; Repository   代码仓库，保存代码的仓库
-2&gt; Server       服务器，保存所有版本的代码仓库
-3&gt; Client       客户端，只保存当前用户的代码仓库
-4&gt; 用户名&amp;密码   访问代码仓库需要使用自己的&quot;用户名和密码&quot;，从而可以区分出不同的人对代码做的修改
-
-操作：
-1&gt; checkout     将服务器上最新的代码仓库下载到本地，&quot;只需要做一次&quot;
-2&gt; update       从服务器上将其他人所做的修改下载到本地，&quot;每天上班必须要做的事情&quot;
-3&gt; commit       将工作提交到服务器，&quot;每天下班之前至少做一次&quot;
-</code></pre><ul>
-<li>SVN服务器安装(略)</li>
-<li>SVN常用命令</li>
+</li>
 </ul>
-<pre><code>切换工作目录
-$ cd 工作目录
-checkout服务器上的代码仓库
-$ svn co http://xxx/svn/xxxx --username=manager --password=manager
-
-提示：checkout(co)之后，命令行会记录用户名和密码，后续操作不用再另行指定
-
-查看本地代码库状态
-$ svn st
-错误提示：&quot;is not a working copy&quot;，必须在svn的工作目录下才能正确使用svn的命令
-查看svn日志
-$ svn log
-查看某一个文件的日志
-$ svn log filename
-查看某一个文件某个版本的日志
-$ svn log filename@1
-
-创建文件
-$ touch main.c
-打开并编写文件内容
-$ open main.c
-
-查看工作目录状态
-$ svn st
-将文件添加到本地版本库中
-$ svn add main.c/main.*
-将文件提交到服务器的版本库中
-$ svn ci -m &quot;备注信息&quot;
-注意：一定要养成写注释的良好习惯
-
-删除文件
-$ svn rm Person.h
- 提交删除
-$ svn ci -m &quot;删除了文件&quot;
-注意：不要使用文件管理器直接删除文件
-
-撤销修改
-$ svn revert Person.m
-
-恢复到之前的某个版本
-$ svn update -r 5
-
-冲突解决
-(p) postpone            对比
-(mc) mine-conflict      使用我的
-(tc) theirs-conflict    使用对方的
-
-svn st 显示的文件状态
-
-&#39; &#39; 没有修改
-&#39;A&#39; 被添加到本地代码仓库
-&#39;C&#39; 冲突
-&#39;D&#39; 被删除
-&#39;I&#39; 被忽略
-&#39;M&#39; 被修改
-&#39;R&#39; 被替换
-&#39;X&#39; 外部定义创建的版本目录
-&#39;?&#39; 文件没有被添加到本地版本库内
-&#39;!&#39; 文件丢失或者不完整（不是通过svn命令删除的文件）
-&#39;~&#39; 受控文件被其他文件阻隔
-</code></pre><h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ul>
-<li>git是一款开源的分布式版本控制工具</li>
+<h3 id="二、runtime作用"><a href="#二、runtime作用" class="headerlink" title="二、runtime作用"></a>二、runtime作用</h3><h4 id="1-发送消息"><a href="#1-发送消息" class="headerlink" title="1.发送消息"></a>1.发送消息</h4><ul>
+<li>方法调用的本质，就是让对象发送消息。</li>
+<li>objc_msgSend,只有对象才能发送消息，因此以objc开头.</li>
+<li>使用<code>消息机制</code>前提，必须导入#import &lt;objc/message.h&gt;</li>
+<li>消息机制简单使用</li>
 </ul>
-<pre><code>$ git help
-查看git所有命令的帮助
-$ git help 子命令
+<pre class=" language-objc"><code class="language-objc">    // 创建person对象
+    Person *p = [[Person alloc] init];
 
-要退出帮助信息，按&quot;q&quot;
-翻看下页，按&quot;空格&quot;
-翻看上页，按&quot;CTRL+B&quot;
-要搜索相关文字，按&quot;/&quot;然后输入&quot;相关文字&quot;
+    // 调用对象方法
+    [p eat];
 
-创建代码仓库
-$ git init
+    // 本质：让对象发送消息
+    objc_msgSend(p, @selector(eat));
 
-配置用户名和邮箱
-$ git config user.name manager
-$ git config user.email manager@gmail.com
-以上两个命令会将用户信息保存在当前代码仓库中
+    // 调用类方法的方式：两种
+    // 第一种通过类名调用
+    [Person eat];
+    // 第二种通过类对象调用
+    [[Person class] eat];
 
-如果要一次性配置完成可以使用一下命令
-$ git config --global user.name manager
-$ git config --global user.email manager@gmail.com
-以上两个命令会将用户信息保存在用户目录下的 .gitconfig 文件中
-
-查看当前所有配置
-$ git config -l
-
-创建代码，开始开发
-$ touch main.c
-$ open main.c
-
-将代码添加到代码库
-查看当前代码库状态
-$ git status
-将文件添加到代码库
-$ git add main.c
-将修改提交到代码库
-$ git commit -m &quot;添加了main.c&quot;
-在此一定要使用 -m 参数指定修改的备注信息
-否则会进入 vim 编辑器，如果对vim不熟悉，会是很糟糕的事情
-
-将当前文件夹下的所有新建或修改的文件一次性添加到代码库
-$ git add .
-
-添加多个文件
-$ touch Person.h Person.m
-$ git add .
-$ git commit -m &quot;添加了Person类&quot;
-$ open Person.h
-$ git add .
-$ git commit -m &quot;增加Person类属性&quot;
-注意 使用git时，每一次修改都需要添加再提交，这一点是与svn不一样的
-
-查看所有版本库日志
-$ git log
-查看指定文件的版本库日志
-$ git log 文件名
-
-回到当前版本，放弃所有没有提交的修改
-$ git reset --hard HEAD
-回到上一个版本
-$ git reset --hard HEAD^
-回到之前第3个修订版本
-$ git reset --hard HEAD~3
-回到指定版本号的版本
-$ git reset --hard e695b67
-
-查看分支引用记录
-$ git reflog
-</code></pre><h4 id="为什么要用源代码管理工具"><a href="#为什么要用源代码管理工具" class="headerlink" title="为什么要用源代码管理工具"></a>为什么要用源代码管理工具</h4><ul>
-<li>能追踪一个项目从诞生一直到定案的过程</li>
-<li>记录一个项目的所有内容变化</li>
-<li>方便地查阅特定版本的修订情况</li>
-</ul>
-<h4 id="最常用的版本控制工具是什么，能大概讲讲原理么？"><a href="#最常用的版本控制工具是什么，能大概讲讲原理么？" class="headerlink" title="最常用的版本控制工具是什么，能大概讲讲原理么？"></a>最常用的版本控制工具是什么，能大概讲讲原理么？</h4><p>参考答案：</p>
+    // 用类名调用类方法，底层会自动把类名转换成类对象调用
+    // 本质：让类对象发送消息
+    objc_msgSend([Person class], @selector(eat));
+</code></pre>
 <ul>
-<li>最常用的版本控制工具有SourceTree（GIT）和CornerStone（SVN）；</li>
-<li>原理提到svn是集中式代码管理，解释下具体意思，git也这样回答就行了。</li>
-<li>集中式代码管理（SVN）的核心是服务器，所有开发者在开始新一天的工作之前必须从服务器获取代码，然后开发，最后解决冲突，提交。所有的版本信息都放在服务器上。如果脱离了服务器，开发者基本上可以说是无法工作的。</li>
-<li>分布式的版本控制系统，在Git中并不存在主库这样的概念，每一份出的库都可以独立使用，任何两个库之间的不一致之处都可以进行合并。</li>
+<li>消息机制原理:对象根据方法编号SEL去映射表查找对应的方法实现</li>
 </ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-59b1dcc1665fd1f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp" alt="img"></p>
+<p>1.png</p>
+<h4 id="2-交换方法"><a href="#2-交换方法" class="headerlink" title="2.交换方法"></a>2.交换方法</h4><ul>
+<li>开发使用场景:系统自带的方法功能不够，给系统自带的方法扩展一些功能，并且保持原有的功能。</li>
+<li>方式一:继承系统的类，重写方法.</li>
+<li>方式二:使用runtime,交换方法.</li>
+</ul>
+<pre class=" language-objc"><code class="language-objc">@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    // 需求：给imageNamed方法提供功能，每次加载图片就判断下图片是否加载成功。
+    // 步骤一：先搞个分类，定义一个能加载图片并且能打印的方法+ (instancetype)imageWithName:(NSString *)name;
+    // 步骤二：交换imageNamed和imageWithName的实现，就能调用imageWithName，间接调用imageWithName的实现。
+    UIImage *image = [UIImage imageNamed:@"123"];
+
+}
+
+@end
+
+@implementation UIImage (Image)
+// 加载分类到内存的时候调用
++ (void)load
+{
+    // 交换方法
+
+    // 获取imageWithName方法地址
+    Method imageWithName = class_getClassMethod(self, @selector(imageWithName:));
+
+    // 获取imageWithName方法地址
+    Method imageName = class_getClassMethod(self, @selector(imageNamed:));
+
+    // 交换方法地址，相当于交换实现方式
+    method_exchangeImplementations(imageWithName, imageName);
+
+}
+
+// 不能在分类中重写系统方法imageNamed，因为会把系统的功能给覆盖掉，而且分类中不能调用super.
+
+// 既能加载图片又能打印
++ (instancetype)imageWithName:(NSString *)name
+{
+
+    // 这里调用imageWithName，相当于调用imageName
+    UIImage *image = [self imageWithName:name];
+
+    if (image == nil) {
+        NSLog(@"加载空的图片");
+    }
+
+    return image;
+}
+
+@end
+</code></pre>
+<ul>
+<li>交换原理：<ul>
+<li>交换之前：</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-faf8a0e452f5880e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp" alt="img"></p>
+<ul>
+<li>交换之后：</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-37200db1e1af7ead.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp" alt="img"></p>
+<h4 id="3-动态添加方法"><a href="#3-动态添加方法" class="headerlink" title="3.动态添加方法"></a>3.动态添加方法</h4><ul>
+<li>开发使用场景：如果一个类方法非常多，加载类到内存的时候也比较耗费资源，需要给每个方法生成映射表，可以使用动态给某个类，添加方法解决。</li>
+<li>经典面试题：有没有使用performSelector，其实主要想问你有没有动态添加过方法。</li>
+<li>简单使用</li>
+</ul>
+<pre class=" language-objc"><code class="language-objc">@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+
+    Person *p = [[Person alloc] init];
+
+    // 默认person，没有实现eat方法，可以通过performSelector调用，但是会报错。
+    // 动态添加方法就不会报错
+    [p performSelector:@selector(eat)];
+
+}
+
+@end
+
+@implementation Person
+// void(*)()
+// 默认方法都有两个隐式参数，
+void eat(id self,SEL sel)
+{
+    NSLog(@"%@ %@",self,NSStringFromSelector(sel));
+}
+
+// 当一个对象调用未实现的方法，会调用这个方法处理,并且会把对应的方法列表传过来.
+// 刚好可以用来判断，未实现的方法是不是我们想要动态添加的方法
++ (BOOL)resolveInstanceMethod:(SEL)sel
+{
+
+    if (sel == @selector(eat)) {
+        // 动态添加eat方法
+
+        // 第一个参数：给哪个类添加方法
+        // 第二个参数：添加方法的方法编号
+        // 第三个参数：添加方法的函数实现（函数地址）
+        // 第四个参数：函数的类型，(返回值+参数类型) v:void @:对象->self :表示SEL->_cmd
+        class_addMethod(self, @selector(eat), eat, "v@:");
+
+    }
+
+    return [super resolveInstanceMethod:sel];
+}
+@end
+</code></pre>
+<h4 id="4-给分类添加属性"><a href="#4-给分类添加属性" class="headerlink" title="4.给分类添加属性"></a>4.给分类添加属性</h4><ul>
+<li>原理：给一个类声明属性，其实本质就是给这个类添加关联，并不是直接把这个值的内存空间添加到类存空间。</li>
+</ul>
+<pre class=" language-objc"><code class="language-objc">@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+
+    // 给系统NSObject类动态添加属性name
+
+    NSObject *objc = [[NSObject alloc] init];
+    objc.name = @"乔布斯";
+    NSLog(@"%@",objc.name);
+
+}
+
+@end
+
+// 定义关联的key
+static const char *key = "name";
+
+@implementation NSObject (Property)
+
+- (NSString *)name
+{
+    // 根据关联的key，获取关联的值。
+    return objc_getAssociatedObject(self, key);
+}
+
+- (void)setName:(NSString *)name
+{
+    // 第一个参数：给哪个对象添加关联
+    // 第二个参数：关联的key，通过这个key获取
+    // 第三个参数：关联的value
+    // 第四个参数:关联的策略
+    objc_setAssociatedObject(self, key, name, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+@end
+</code></pre>
+<h4 id="5-字典转模型"><a href="#5-字典转模型" class="headerlink" title="5.字典转模型"></a>5.字典转模型</h4><ul>
+<li>设计模型：字典转模型的第一步<ul>
+<li>模型属性，通常需要跟字典中的key一一对应</li>
+<li>问题：一个一个的生成模型属性，很慢？</li>
+<li>需求：能不能自动根据一个字典，生成对应的属性。</li>
+<li>解决：提供一个分类，专门根据字典生成对应的属性字符串。</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-objc"><code class="language-objc">    @implementation NSObject (Log)
+
+// 自动打印属性字符串
++ (void)resolveDict:(NSDictionary *)dict{
+
+    // 拼接属性字符串代码
+    NSMutableString *strM = [NSMutableString string];
+
+    // 1.遍历字典，把字典中的所有key取出来，生成对应的属性代码
+    [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+
+        // 类型经常变，抽出来
+         NSString *type;
+
+        if ([obj isKindOfClass:NSClassFromString(@"__NSCFString")]) {
+            type = @"NSString";
+        }else if ([obj isKindOfClass:NSClassFromString(@"__NSCFArray")]){
+            type = @"NSArray";
+        }else if ([obj isKindOfClass:NSClassFromString(@"__NSCFNumber")]){
+            type = @"int";
+        }else if ([obj isKindOfClass:NSClassFromString(@"__NSCFDictionary")]){
+            type = @"NSDictionary";
+        }
+
+        // 属性字符串
+        NSString *str;
+        if ([type containsString:@"NS"]) {
+            str = [NSString stringWithFormat:@"@property (nonatomic, strong) %@ *%@;",type,key];
+        }else{
+            str = [NSString stringWithFormat:@"@property (nonatomic, assign) %@ %@;",type,key];
+        }
+
+        // 每生成属性字符串，就自动换行。
+        [strM appendFormat:@"\n%@\n",str];
+
+    }];
+
+    // 把拼接好的字符串打印出来，就好了。
+    NSLog(@"%@",strM);
+
+}
+
+@end
+</code></pre>
+<ul>
+<li>字典转模型的方式一：KVC</li>
+</ul>
+<pre class=" language-objc"><code class="language-objc">@implementation Status
+
++ (instancetype)statusWithDict:(NSDictionary *)dict
+{
+    Status *status = [[self alloc] init];
+
+    [status setValuesForKeysWithDictionary:dict];
+
+    return status;
+
+}
+
+@end
+</code></pre>
+<ul>
+<li>KVC字典转模型弊端：必须保证，模型中的属性和字典中的key一一对应。<ul>
+<li>如果不一致，就会调用<code>[&lt;Status 0x7fa74b545d60&gt; setValue:forUndefinedKey:]</code><br>报<code>key</code>找不到的错。</li>
+<li>分析:模型中的属性和字典的key不一一对应，系统就会调用<code>setValue:forUndefinedKey:</code>报错。</li>
+<li>解决:重写对象的<code>setValue:forUndefinedKey:</code>,把系统的方法覆盖，<br>就能继续使用KVC，字典转模型了。</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-objc"><code class="language-objc">- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+
+}
+</code></pre>
+<ul>
+<li>字典转模型的方式二：Runtime<ul>
+<li>思路：利用运行时，遍历模型中所有属性，根据模型的属性名，去字典中查找key，取出对应的值，给模型的属性赋值。</li>
+<li>步骤：提供一个NSObject分类，专门字典转模型，以后所有模型都可以通过这个分类转。</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-objc"><code class="language-objc">@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+
+    // 解析Plist文件
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"status.plist" ofType:nil];
+
+    NSDictionary *statusDict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+
+    // 获取字典数组
+    NSArray *dictArr = statusDict[@"statuses"];
+
+    // 自动生成模型的属性字符串
+//    [NSObject resolveDict:dictArr[0][@"user"]];
+
+    _statuses = [NSMutableArray array];
+
+    // 遍历字典数组
+    for (NSDictionary *dict in dictArr) {
+
+        Status *status = [Status modelWithDict:dict];
+
+        [_statuses addObject:status];
+
+    }
+
+    // 测试数据
+    NSLog(@"%@ %@",_statuses,[_statuses[0] user]);
+
+}
+
+@end
+
+@implementation NSObject (Model)
+
++ (instancetype)modelWithDict:(NSDictionary *)dict
+{
+    // 思路：遍历模型中所有属性-》使用运行时
+
+    // 0.创建对应的对象
+    id objc = [[self alloc] init];
+
+    // 1.利用runtime给对象中的成员属性赋值
+
+    // class_copyIvarList:获取类中的所有成员属性
+    // Ivar：成员属性的意思
+    // 第一个参数：表示获取哪个类中的成员属性
+    // 第二个参数：表示这个类有多少成员属性，传入一个Int变量地址，会自动给这个变量赋值
+    // 返回值Ivar *：指的是一个ivar数组，会把所有成员属性放在一个数组中，通过返回的数组就能全部获取到。
+    /* 类似下面这种写法
+
+     Ivar ivar;
+     Ivar ivar1;
+     Ivar ivar2;
+     // 定义一个ivar的数组a
+     Ivar a[] = {ivar,ivar1,ivar2};
+
+     // 用一个Ivar *指针指向数组第一个元素
+     Ivar *ivarList = a;
+
+     // 根据指针访问数组第一个元素
+     ivarList[0];
+
+     */
+    unsigned int count;
+
+    // 获取类中的所有成员属性
+    Ivar *ivarList = class_copyIvarList(self, &count);
+
+    for (int i = 0; i < count; i++) {
+        // 根据角标，从数组取出对应的成员属性
+        Ivar ivar = ivarList[i];
+
+        // 获取成员属性名
+        NSString *name = [NSString stringWithUTF8String:ivar_getName(ivar)];
+
+        // 处理成员属性名->字典中的key
+        // 从第一个角标开始截取
+        NSString *key = [name substringFromIndex:1];
+
+        // 根据成员属性名去字典中查找对应的value
+        id value = dict[key];
+
+        // 二级转换:如果字典中还有字典，也需要把对应的字典转换成模型
+        // 判断下value是否是字典
+        if ([value isKindOfClass:[NSDictionary class]]) {
+            // 字典转模型
+            // 获取模型的类对象，调用modelWithDict
+            // 模型的类名已知，就是成员属性的类型
+
+            // 获取成员属性类型
+           NSString *type = [NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];
+          // 生成的是这种@"@\"User\"" 类型 -》 @"User"  在OC字符串中 \" -> "，\是转义的意思，不占用字符
+            // 裁剪类型字符串
+            NSRange range = [type rangeOfString:@"\""];
+
+           type = [type substringFromIndex:range.location + range.length];
+
+            range = [type rangeOfString:@"\""];
+
+            // 裁剪到哪个角标，不包括当前角标
+          type = [type substringToIndex:range.location];
+
+            // 根据字符串类名生成类对象
+            Class modelClass = NSClassFromString(type);
+
+            if (modelClass) { // 有对应的模型才需要转
+
+                // 把字典转模型
+                value  =  [modelClass modelWithDict:value];
+            }
+
+        }
+
+        // 三级转换：NSArray中也是字典，把数组中的字典转换成模型.
+        // 判断值是否是数组
+        if ([value isKindOfClass:[NSArray class]]) {
+            // 判断对应类有没有实现字典数组转模型数组的协议
+            if ([self respondsToSelector:@selector(arrayContainModelClass)]) {
+
+                // 转换成id类型，就能调用任何对象的方法
+                id idSelf = self;
+
+                // 获取数组中字典对应的模型
+                NSString *type =  [idSelf arrayContainModelClass][key];
+
+                // 生成模型
+               Class classModel = NSClassFromString(type);
+                NSMutableArray *arrM = [NSMutableArray array];
+                // 遍历字典数组，生成模型数组
+                for (NSDictionary *dict in value) {
+                    // 字典转模型
+                  id model =  [classModel modelWithDict:dict];
+                    [arrM addObject:model];
+                }
+
+                // 把模型数组赋值给value
+                value = arrM;
+
+            }
+        }
+
+        if (value) { // 有值，才需要给模型的属性赋值
+            // 利用KVC给模型中的属性赋值
+            [objc setValue:value forKey:key];
+        }
+
+    }
+
+    return objc;
+}
+
+@end
+</code></pre>
 
         
     
@@ -741,21 +1022,13 @@ $ git reflog
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/12/iOS面试题2-UNIX常用命令/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/11/iOS体系结构图/" id="post_nav-older" class="next-content">
+        <a href="/2018/09/12/const-static-extern区别/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
