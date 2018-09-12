@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            iOS面试题24--补充 | 
+        
+        暮鼓晨钟
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",iOS面试">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="暮鼓晨钟">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题24-补充/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题24-补充/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="iOS面试题24--补充 | 暮鼓晨钟">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="iOS面试"> 
+
+    
+        <meta property="article:published_time" content="Wed Sep 12 2018 17:50:23 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 12 2018 17:50:55 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题24-补充/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题24-补充/index.html",
+    "headline": "iOS面试题24--补充",
+    "datePublished": "Wed Sep 12 2018 17:50:23 GMT+0800",
+    "dateModified": "Wed Sep 12 2018 17:50:55 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "暮鼓晨钟",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "暮鼓晨钟",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",iOS面试",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UML"><span class="post-toc-number">1.</span> <span class="post-toc-text">UML</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如果设计一个交易平台，流程如下：A用户在平台P发现B用户有东西出售，P平台的业务逻辑是需要A先付款到P得中间账户，等到A确认收货后，P向B付款，你能尝试某种表示方式来让程序员，产品设计，美术设计明白这个流程么？"><span class="post-toc-number">2.</span> <span class="post-toc-text">如果设计一个交易平台，流程如下：A用户在平台P发现B用户有东西出售，P平台的业务逻辑是需要A先付款到P得中间账户，等到A确认收货后，P向B付款，你能尝试某种表示方式来让程序员，产品设计，美术设计明白这个流程么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#从1-n个五序列的数字中排序的算法有哪些，简单代码实现一个并写出时间复杂度"><span class="post-toc-number">3.</span> <span class="post-toc-text">从1-n个五序列的数字中排序的算法有哪些，简单代码实现一个并写出时间复杂度</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有一个6克和21克的砝码，怎样称量三次将420克的糖分成270克和150克"><span class="post-toc-number">4.</span> <span class="post-toc-text">有一个6克和21克的砝码，怎样称量三次将420克的糖分成270克和150克</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一桌子人，每个人额头上都贴有标签，绿色和红色，绿色至少1个，大家都能看到别人头上的标签，看不到自己头上的标签，然后开始闭眼游戏，大家觉得自己头上是绿色标签就拍一下手掌，第一次闭眼没人拍掌，第二次，第三次也同样没有人拍掌，第四次有一个人拍掌了，请问绿色标签有几张"><span class="post-toc-number">5.</span> <span class="post-toc-text">一桌子人，每个人额头上都贴有标签，绿色和红色，绿色至少1个，大家都能看到别人头上的标签，看不到自己头上的标签，然后开始闭眼游戏，大家觉得自己头上是绿色标签就拍一下手掌，第一次闭眼没人拍掌，第二次，第三次也同样没有人拍掌，第四次有一个人拍掌了，请问绿色标签有几张</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#是否使用过coreImage和coreText-如果使用过，说说你的体验"><span class="post-toc-number">6.</span> <span class="post-toc-text">是否使用过coreImage和coreText?如果使用过，说说你的体验</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写一个单项链表逆序"><span class="post-toc-number">7.</span> <span class="post-toc-text">写一个单项链表逆序</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是OpenGL-具体使用"><span class="post-toc-number">8.</span> <span class="post-toc-text">什么是OpenGL?具体使用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开启一个其他线程来计算1-1-并且把结果用主线程显示在label上更新UI"><span class="post-toc-number">9.</span> <span class="post-toc-text">开启一个其他线程来计算1+1 并且把结果用主线程显示在label上更新UI</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ffmpeg框架"><span class="post-toc-number">10.</span> <span class="post-toc-text">ffmpeg框架</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#静态链接库"><span class="post-toc-number">11.</span> <span class="post-toc-text">静态链接库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#init和initwithobject区别（语法）？"><span class="post-toc-number">12.</span> <span class="post-toc-text">init和initwithobject区别（语法）？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是OOP？"><span class="post-toc-number">13.</span> <span class="post-toc-text">什么是OOP？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为NSString扩展一个方法，方法能判断字符串是否是Url地址（即判断字符串是否以“http-”），放回BOOL值类型"><span class="post-toc-number">14.</span> <span class="post-toc-text">为NSString扩展一个方法，方法能判断字符串是否是Url地址（即判断字符串是否以“http://”），放回BOOL值类型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写一个iphone程序，有2屏，可以通过滑动切换，第二屏有一个webview，读取本地的html文件，Html文件中会加载一个本地xml文件，获取xml文件中的数据内容并显示。（可选：html中加载的js文件）"><span class="post-toc-number">15.</span> <span class="post-toc-text">写一个iphone程序，有2屏，可以通过滑动切换，第二屏有一个webview，读取本地的html文件，Html文件中会加载一个本地xml文件，获取xml文件中的数据内容并显示。（可选：html中加载的js文件）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何避免json解析出现内存泄露，内存泄露后怎么解决"><span class="post-toc-number">16.</span> <span class="post-toc-text">.如何避免json解析出现内存泄露，内存泄露后怎么解决</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么情况下会发生内存泄漏和内存溢出？"><span class="post-toc-number">17.</span> <span class="post-toc-text">什么情况下会发生内存泄漏和内存溢出？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有方法查看当前系统内存使用情况吗？"><span class="post-toc-number">18.</span> <span class="post-toc-text">有方法查看当前系统内存使用情况吗？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写一个贪吃蛇的算法"><span class="post-toc-number">19.</span> <span class="post-toc-text">写一个贪吃蛇的算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#请写一个类似于NSMutableArray的类，可以添加，删除，以及如何以最快的速度查找某个元素？"><span class="post-toc-number">20.</span> <span class="post-toc-text">请写一个类似于NSMutableArray的类，可以添加，删除，以及如何以最快的速度查找某个元素？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#给一个数字，判断从左读和从右读是否是一致的？例如12321和4444"><span class="post-toc-number">21.</span> <span class="post-toc-text">给一个数字，判断从左读和从右读是否是一致的？例如12321和4444</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#给一个数组-1、3、2、4、8-排序后-1、2、3、4、8-？"><span class="post-toc-number">22.</span> <span class="post-toc-text">给一个数组[1、3、2、4、8]排序后[1、2、3、4、8]？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#怎么用下面的类？北京品科艺科技有限公司"><span class="post-toc-number">23.</span> <span class="post-toc-text">怎么用下面的类？北京品科艺科技有限公司</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#怎么从xib文件加载成UIview？"><span class="post-toc-number">24.</span> <span class="post-toc-text">怎么从xib文件加载成UIview？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#OAuth2-0授权的过程，是否用过1-0？"><span class="post-toc-number">25.</span> <span class="post-toc-text">OAuth2.0授权的过程，是否用过1.0？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#id是编译时还是运行时"><span class="post-toc-number">26.</span> <span class="post-toc-text">id是编译时还是运行时</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#蓝牙"><span class="post-toc-number">27.</span> <span class="post-toc-text">蓝牙</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#、CFNetwork基于啥？"><span class="post-toc-number">28.</span> <span class="post-toc-text">、CFNetwork基于啥？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#逻辑运算跟位运算的区别？"><span class="post-toc-number">29.</span> <span class="post-toc-text">逻辑运算跟位运算的区别？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三维动画的旋转的原理？底层怎么实现？点与点-用距阵变换实现的。"><span class="post-toc-number">30.</span> <span class="post-toc-text">三维动画的旋转的原理？底层怎么实现？点与点 用距阵变换实现的。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NSFileManager-NSFileHandle为什么不用文件加载而用数据库？"><span class="post-toc-number">31.</span> <span class="post-toc-text">NSFileManager/NSFileHandle为什么不用文件加载而用数据库？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#uikit基于什么？"><span class="post-toc-number">32.</span> <span class="post-toc-text">uikit基于什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#默写二分查找算法？"><span class="post-toc-number">33.</span> <span class="post-toc-text">默写二分查找算法？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设计一个忽略大小写比较两个字符串的算法？"><span class="post-toc-number">34.</span> <span class="post-toc-text">设计一个忽略大小写比较两个字符串的算法？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#怎么过滤一段既有字符串又有数字的，让他只剩数字？"><span class="post-toc-number">35.</span> <span class="post-toc-text">怎么过滤一段既有字符串又有数字的，让他只剩数字？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#支付功能。微信支付-支付宝支付"><span class="post-toc-number">36.</span> <span class="post-toc-text">支付功能。微信支付 支付宝支付</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#友盟分享-报错"><span class="post-toc-number">37.</span> <span class="post-toc-text">友盟分享 报错</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#假设某一个生物每B年繁殖一次，一次繁殖N个只，寿命是M年，编写程序起初有X只生物，求T年之后生物的总数是多少？"><span class="post-toc-number">38.</span> <span class="post-toc-text">假设某一个生物每B年繁殖一次，一次繁殖N个只，寿命是M年，编写程序起初有X只生物，求T年之后生物的总数是多少？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有个不相同的数，从中随机取N个数，要求N个数互不相同。"><span class="post-toc-number">39.</span> <span class="post-toc-text">=有个不相同的数，从中随机取N个数，要求N个数互不相同。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是消息推送？"><span class="post-toc-number">40.</span> <span class="post-toc-text">什么是消息推送？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#已知二叉树后序遍历序列是dabec，中序遍历序列是debac，它的前"><span class="post-toc-number">41.</span> <span class="post-toc-text">已知二叉树后序遍历序列是dabec，中序遍历序列是debac，它的前</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在iPhone中怎么写入C-程序，详细写下来"><span class="post-toc-number">42.</span> <span class="post-toc-text">在iPhone中怎么写入C++程序，详细写下来</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#远程推送；本地消息和原地推送的区别"><span class="post-toc-number">43.</span> <span class="post-toc-text">远程推送；本地消息和原地推送的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#苹果怎么实现安全机制"><span class="post-toc-number">44.</span> <span class="post-toc-text">苹果怎么实现安全机制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#极光推送原理（第三方框架），怎么用的？遇到什么问题？怎么解决的？"><span class="post-toc-number">45.</span> <span class="post-toc-text">极光推送原理（第三方框架），怎么用的？遇到什么问题？怎么解决的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#微信的附近功能怎么实现的？"><span class="post-toc-number">46.</span> <span class="post-toc-text">微信的附近功能怎么实现的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#怎么实现第三方登陆"><span class="post-toc-number">47.</span> <span class="post-toc-text">怎么实现第三方登陆</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#autolayout？sizeclass"><span class="post-toc-number">48.</span> <span class="post-toc-text">autolayout？sizeclass</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HealthKit是什么？"><span class="post-toc-number">49.</span> <span class="post-toc-text">HealthKit是什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HomeKit是什么？"><span class="post-toc-number">50.</span> <span class="post-toc-text">HomeKit是什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iCloud是什么包含了哪些技术与服务？"><span class="post-toc-number">51.</span> <span class="post-toc-text">iCloud是什么包含了哪些技术与服务？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CoreData与多线程操作"><span class="post-toc-number">52.</span> <span class="post-toc-text">CoreData与多线程操作:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#请解释一下Handoff是什么，并简述它是如何实现iOS、Mac-网页应用互通的-开发指南"><span class="post-toc-number">53.</span> <span class="post-toc-text">请解释一下Handoff是什么，并简述它是如何实现iOS、Mac/网页应用互通的   开发指南</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                iOS面试题24--补充
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>暮鼓晨钟</strong>
+        <span>9月 12, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题24--补充&url=http://yoursite.com/2018/09/12/iOS面试题24-补充/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题24--补充&url=http://yoursite.com/2018/09/12/iOS面试题24-补充/index.html&via=暮鼓晨钟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题24-补充/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题24-补充/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=iOS面试题24--补充&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题24-补充/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h4 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h4><ul>
+<li>统一建模语言（UML，UnifiedModelingLanguage）是面向对象软件的标准化建模语言。UML因其简单、统一的特点，而且能表达软件设计中的动态和静态信息，目前已成为可视化建模语言的工业标准。在软件无线电系统的开发过程中，统一建模语言可以在整个设计周期中使用，帮助设计者缩短设计时间，减少改进的成本，使软硬件分割最优。</li>
+<li>用例图 静态图 行为图 交互图 实现图</li>
+</ul>
+<h4 id="如果设计一个交易平台，流程如下：A用户在平台P发现B用户有东西出售，P平台的业务逻辑是需要A先付款到P得中间账户，等到A确认收货后，P向B付款，你能尝试某种表示方式来让程序员，产品设计，美术设计明白这个流程么？"><a href="#如果设计一个交易平台，流程如下：A用户在平台P发现B用户有东西出售，P平台的业务逻辑是需要A先付款到P得中间账户，等到A确认收货后，P向B付款，你能尝试某种表示方式来让程序员，产品设计，美术设计明白这个流程么？" class="headerlink" title="如果设计一个交易平台，流程如下：A用户在平台P发现B用户有东西出售，P平台的业务逻辑是需要A先付款到P得中间账户，等到A确认收货后，P向B付款，你能尝试某种表示方式来让程序员，产品设计，美术设计明白这个流程么？"></a>如果设计一个交易平台，流程如下：A用户在平台P发现B用户有东西出售，P平台的业务逻辑是需要A先付款到P得中间账户，等到A确认收货后，P向B付款，你能尝试某种表示方式来让程序员，产品设计，美术设计明白这个流程么？</h4><h4 id="从1-n个五序列的数字中排序的算法有哪些，简单代码实现一个并写出时间复杂度"><a href="#从1-n个五序列的数字中排序的算法有哪些，简单代码实现一个并写出时间复杂度" class="headerlink" title="从1-n个五序列的数字中排序的算法有哪些，简单代码实现一个并写出时间复杂度"></a>从1-n个五序列的数字中排序的算法有哪些，简单代码实现一个并写出时间复杂度</h4><h4 id="有一个6克和21克的砝码，怎样称量三次将420克的糖分成270克和150克"><a href="#有一个6克和21克的砝码，怎样称量三次将420克的糖分成270克和150克" class="headerlink" title="有一个6克和21克的砝码，怎样称量三次将420克的糖分成270克和150克"></a>有一个6克和21克的砝码，怎样称量三次将420克的糖分成270克和150克</h4><h4 id="一桌子人，每个人额头上都贴有标签，绿色和红色，绿色至少1个，大家都能看到别人头上的标签，看不到自己头上的标签，然后开始闭眼游戏，大家觉得自己头上是绿色标签就拍一下手掌，第一次闭眼没人拍掌，第二次，第三次也同样没有人拍掌，第四次有一个人拍掌了，请问绿色标签有几张"><a href="#一桌子人，每个人额头上都贴有标签，绿色和红色，绿色至少1个，大家都能看到别人头上的标签，看不到自己头上的标签，然后开始闭眼游戏，大家觉得自己头上是绿色标签就拍一下手掌，第一次闭眼没人拍掌，第二次，第三次也同样没有人拍掌，第四次有一个人拍掌了，请问绿色标签有几张" class="headerlink" title="一桌子人，每个人额头上都贴有标签，绿色和红色，绿色至少1个，大家都能看到别人头上的标签，看不到自己头上的标签，然后开始闭眼游戏，大家觉得自己头上是绿色标签就拍一下手掌，第一次闭眼没人拍掌，第二次，第三次也同样没有人拍掌，第四次有一个人拍掌了，请问绿色标签有几张"></a>一桌子人，每个人额头上都贴有标签，绿色和红色，绿色至少1个，大家都能看到别人头上的标签，看不到自己头上的标签，然后开始闭眼游戏，大家觉得自己头上是绿色标签就拍一下手掌，第一次闭眼没人拍掌，第二次，第三次也同样没有人拍掌，第四次有一个人拍掌了，请问绿色标签有几张</h4><h4 id="是否使用过coreImage和coreText-如果使用过，说说你的体验"><a href="#是否使用过coreImage和coreText-如果使用过，说说你的体验" class="headerlink" title="是否使用过coreImage和coreText?如果使用过，说说你的体验"></a>是否使用过coreImage和coreText?如果使用过，说说你的体验</h4><ul>
+<li>coreImage是IOS5中新加入的一个Objective-c的框架，提供了强大高效的图像处理功能，用来对基于像素的图像进行操作与分析。</li>
+</ul>
+<h4 id="写一个单项链表逆序"><a href="#写一个单项链表逆序" class="headerlink" title="写一个单项链表逆序"></a>写一个单项链表逆序</h4><h4 id="什么是OpenGL-具体使用"><a href="#什么是OpenGL-具体使用" class="headerlink" title="什么是OpenGL?具体使用"></a>什么是OpenGL?具体使用</h4><h4 id="开启一个其他线程来计算1-1-并且把结果用主线程显示在label上更新UI"><a href="#开启一个其他线程来计算1-1-并且把结果用主线程显示在label上更新UI" class="headerlink" title="开启一个其他线程来计算1+1 并且把结果用主线程显示在label上更新UI"></a>开启一个其他线程来计算1+1 并且把结果用主线程显示在label上更新UI</h4><h4 id="ffmpeg框架"><a href="#ffmpeg框架" class="headerlink" title="ffmpeg框架"></a>ffmpeg框架</h4><h4 id="静态链接库"><a href="#静态链接库" class="headerlink" title="静态链接库"></a>静态链接库</h4><h4 id="init和initwithobject区别（语法）？"><a href="#init和initwithobject区别（语法）？" class="headerlink" title="init和initwithobject区别（语法）？"></a>init和initwithobject区别（语法）？</h4><h4 id="什么是OOP？"><a href="#什么是OOP？" class="headerlink" title="什么是OOP？"></a>什么是OOP？</h4><h4 id="为NSString扩展一个方法，方法能判断字符串是否是Url地址（即判断字符串是否以“http-”），放回BOOL值类型"><a href="#为NSString扩展一个方法，方法能判断字符串是否是Url地址（即判断字符串是否以“http-”），放回BOOL值类型" class="headerlink" title="为NSString扩展一个方法，方法能判断字符串是否是Url地址（即判断字符串是否以“http://”），放回BOOL值类型"></a>为NSString扩展一个方法，方法能判断字符串是否是Url地址（即判断字符串是否以“http://”），放回BOOL值类型</h4><h4 id="写一个iphone程序，有2屏，可以通过滑动切换，第二屏有一个webview，读取本地的html文件，Html文件中会加载一个本地xml文件，获取xml文件中的数据内容并显示。（可选：html中加载的js文件）"><a href="#写一个iphone程序，有2屏，可以通过滑动切换，第二屏有一个webview，读取本地的html文件，Html文件中会加载一个本地xml文件，获取xml文件中的数据内容并显示。（可选：html中加载的js文件）" class="headerlink" title="写一个iphone程序，有2屏，可以通过滑动切换，第二屏有一个webview，读取本地的html文件，Html文件中会加载一个本地xml文件，获取xml文件中的数据内容并显示。（可选：html中加载的js文件）"></a>写一个iphone程序，有2屏，可以通过滑动切换，第二屏有一个webview，读取本地的html文件，Html文件中会加载一个本地xml文件，获取xml文件中的数据内容并显示。（可选：html中加载的js文件）</h4><h4 id="如何避免json解析出现内存泄露，内存泄露后怎么解决"><a href="#如何避免json解析出现内存泄露，内存泄露后怎么解决" class="headerlink" title=".如何避免json解析出现内存泄露，内存泄露后怎么解决"></a>.如何避免json解析出现内存泄露，内存泄露后怎么解决</h4><h4 id="什么情况下会发生内存泄漏和内存溢出？"><a href="#什么情况下会发生内存泄漏和内存溢出？" class="headerlink" title="什么情况下会发生内存泄漏和内存溢出？"></a>什么情况下会发生内存泄漏和内存溢出？</h4><h4 id="有方法查看当前系统内存使用情况吗？"><a href="#有方法查看当前系统内存使用情况吗？" class="headerlink" title="有方法查看当前系统内存使用情况吗？"></a>有方法查看当前系统内存使用情况吗？</h4><ul>
+<li>静态分析 ：通过静态分析我们可以最初步的了解到代码的一些不规范的地方或者是存在的内存泄漏，这是我们第一步对内存泄漏的检测。当然有一些警告并不是我们关心的可以略过。</li>
+<li>通过instruments来检查内存泄漏<br> 这个方法能粗略的定位我们在哪里发生了内存泄漏。方法是完成一个循环操作，如果内存增长为0就证明我们程序在该次循环操作中不存在内存泄漏，如果内存增长不为0那证明有可能存在内存泄漏，当然具体问题需要具体分析。</li>
+<li>代码测试内存泄漏<br> 在做这项工作之前我们要注意一下，在dealloc的方法中我们是否已经释放了该对象所拥有的所有对象。观察对象的生成和销毁是否配对。准确的说就是init（创建对象的方法）和dealloc是否会被成对触发（简单说来就是走一次创建对象就有走一次dealloc该对象）。<br> 下面是自己遇到的一些比较隐秘的造成内存泄漏的情况：<br> 1.两个对象互相拥有：也就是说对象a里面retain/addSubview了b对象，b对象同时也retain/addSubView了a对象。注意：delegate不要用retain属性，要用assign属性也会导致互相拥有。<br> 2.有时候需要用removeFromSuperView来释放：具体说明，也许我的a对象拥有一个b对象，b对象add到了c对象上，而在我们的设计中b对象的生命周期应该和a对象相同；这时候只一句[b release]/self.b = nil是不能把b对象释放掉的（一般情况下release会使其retainCount－1,[super dealloc]会再次将所有subView的retainCount－1,而b并不是a的subView，所有最后的一次－1没有了）；所以我们需要在之前加上[b removeFromSuperView]。</li>
+</ul>
+<h4 id="写一个贪吃蛇的算法"><a href="#写一个贪吃蛇的算法" class="headerlink" title="写一个贪吃蛇的算法"></a>写一个贪吃蛇的算法</h4><h4 id="请写一个类似于NSMutableArray的类，可以添加，删除，以及如何以最快的速度查找某个元素？"><a href="#请写一个类似于NSMutableArray的类，可以添加，删除，以及如何以最快的速度查找某个元素？" class="headerlink" title="请写一个类似于NSMutableArray的类，可以添加，删除，以及如何以最快的速度查找某个元素？"></a>请写一个类似于NSMutableArray的类，可以添加，删除，以及如何以最快的速度查找某个元素？</h4><h4 id="给一个数字，判断从左读和从右读是否是一致的？例如12321和4444"><a href="#给一个数字，判断从左读和从右读是否是一致的？例如12321和4444" class="headerlink" title="给一个数字，判断从左读和从右读是否是一致的？例如12321和4444"></a>给一个数字，判断从左读和从右读是否是一致的？例如12321和4444</h4><h4 id="给一个数组-1、3、2、4、8-排序后-1、2、3、4、8-？"><a href="#给一个数组-1、3、2、4、8-排序后-1、2、3、4、8-？" class="headerlink" title="给一个数组[1、3、2、4、8]排序后[1、2、3、4、8]？"></a>给一个数组[1、3、2、4、8]排序后[1、2、3、4、8]？</h4><h4 id="怎么用下面的类？北京品科艺科技有限公司"><a href="#怎么用下面的类？北京品科艺科技有限公司" class="headerlink" title="怎么用下面的类？北京品科艺科技有限公司"></a>怎么用下面的类？北京品科艺科技有限公司</h4><ul>
+<li>NSuserDefault</li>
+<li>NSMange Object Context</li>
+<li>NSPredict</li>
+</ul>
+<h4 id="怎么从xib文件加载成UIview？"><a href="#怎么从xib文件加载成UIview？" class="headerlink" title="怎么从xib文件加载成UIview？"></a>怎么从xib文件加载成UIview？</h4><h4 id="OAuth2-0授权的过程，是否用过1-0？"><a href="#OAuth2-0授权的过程，是否用过1-0？" class="headerlink" title="OAuth2.0授权的过程，是否用过1.0？"></a>OAuth2.0授权的过程，是否用过1.0？</h4><h4 id="id是编译时还是运行时"><a href="#id是编译时还是运行时" class="headerlink" title="id是编译时还是运行时"></a>id是编译时还是运行时</h4><h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><h4 id="、CFNetwork基于啥？"><a href="#、CFNetwork基于啥？" class="headerlink" title="、CFNetwork基于啥？"></a>、CFNetwork基于啥？</h4><h4 id="逻辑运算跟位运算的区别？"><a href="#逻辑运算跟位运算的区别？" class="headerlink" title="逻辑运算跟位运算的区别？"></a>逻辑运算跟位运算的区别？</h4><h4 id="三维动画的旋转的原理？底层怎么实现？点与点-用距阵变换实现的。"><a href="#三维动画的旋转的原理？底层怎么实现？点与点-用距阵变换实现的。" class="headerlink" title="三维动画的旋转的原理？底层怎么实现？点与点 用距阵变换实现的。"></a>三维动画的旋转的原理？底层怎么实现？点与点 用距阵变换实现的。</h4><h4 id="NSFileManager-NSFileHandle为什么不用文件加载而用数据库？"><a href="#NSFileManager-NSFileHandle为什么不用文件加载而用数据库？" class="headerlink" title="NSFileManager/NSFileHandle为什么不用文件加载而用数据库？"></a>NSFileManager/NSFileHandle为什么不用文件加载而用数据库？</h4><h4 id="uikit基于什么？"><a href="#uikit基于什么？" class="headerlink" title="uikit基于什么？"></a>uikit基于什么？</h4><h4 id="默写二分查找算法？"><a href="#默写二分查找算法？" class="headerlink" title="默写二分查找算法？"></a>默写二分查找算法？</h4><h4 id="设计一个忽略大小写比较两个字符串的算法？"><a href="#设计一个忽略大小写比较两个字符串的算法？" class="headerlink" title="设计一个忽略大小写比较两个字符串的算法？"></a>设计一个忽略大小写比较两个字符串的算法？</h4><h4 id="怎么过滤一段既有字符串又有数字的，让他只剩数字？"><a href="#怎么过滤一段既有字符串又有数字的，让他只剩数字？" class="headerlink" title="怎么过滤一段既有字符串又有数字的，让他只剩数字？"></a>怎么过滤一段既有字符串又有数字的，让他只剩数字？</h4><h4 id="支付功能。微信支付-支付宝支付"><a href="#支付功能。微信支付-支付宝支付" class="headerlink" title="支付功能。微信支付 支付宝支付"></a>支付功能。微信支付 支付宝支付</h4><h4 id="友盟分享-报错"><a href="#友盟分享-报错" class="headerlink" title="友盟分享 报错"></a>友盟分享 报错</h4><h4 id="假设某一个生物每B年繁殖一次，一次繁殖N个只，寿命是M年，编写程序起初有X只生物，求T年之后生物的总数是多少？"><a href="#假设某一个生物每B年繁殖一次，一次繁殖N个只，寿命是M年，编写程序起初有X只生物，求T年之后生物的总数是多少？" class="headerlink" title="假设某一个生物每B年繁殖一次，一次繁殖N个只，寿命是M年，编写程序起初有X只生物，求T年之后生物的总数是多少？"></a>假设某一个生物每B年繁殖一次，一次繁殖N个只，寿命是M年，编写程序起初有X只生物，求T年之后生物的总数是多少？</h4><h4 id="有个不相同的数，从中随机取N个数，要求N个数互不相同。"><a href="#有个不相同的数，从中随机取N个数，要求N个数互不相同。" class="headerlink" title="=有个不相同的数，从中随机取N个数，要求N个数互不相同。"></a>=有个不相同的数，从中随机取N个数，要求N个数互不相同。</h4><p>//（已经有随机函数int getRand（int min，int max）表示获取从最小值到最大值的随机整数）<br> {<br> return min + (max – min) *rand()/RAND_MAX;<br> }</p>
+<h4 id="什么是消息推送？"><a href="#什么是消息推送？" class="headerlink" title="什么是消息推送？"></a>什么是消息推送？</h4><h4 id="已知二叉树后序遍历序列是dabec，中序遍历序列是debac，它的前"><a href="#已知二叉树后序遍历序列是dabec，中序遍历序列是debac，它的前" class="headerlink" title="已知二叉树后序遍历序列是dabec，中序遍历序列是debac，它的前"></a>已知二叉树后序遍历序列是dabec，中序遍历序列是debac，它的前</h4><h4 id="在iPhone中怎么写入C-程序，详细写下来"><a href="#在iPhone中怎么写入C-程序，详细写下来" class="headerlink" title="在iPhone中怎么写入C++程序，详细写下来"></a>在iPhone中怎么写入C++程序，详细写下来</h4><h4 id="远程推送；本地消息和原地推送的区别"><a href="#远程推送；本地消息和原地推送的区别" class="headerlink" title="远程推送；本地消息和原地推送的区别"></a>远程推送；本地消息和原地推送的区别</h4><h4 id="苹果怎么实现安全机制"><a href="#苹果怎么实现安全机制" class="headerlink" title="苹果怎么实现安全机制"></a>苹果怎么实现安全机制</h4><ul>
+<li>设备控制和保护:支持用户从一系列密码设计策略中根据安全需求来进行选择，包括超时设定、密码长度以及密码更新周期等</li>
+<li>数据保护。256位AES硬件加密算法。远程信息擦除，本地信息擦除</li>
+<li>安全网络通信，VPN SSL WAP/WAP2认证方式接入wifi</li>
+<li>安全的iOS平台。运行时保护-沙盒机制，应用之间不能相互访问，系统资源与用户程序隔离。强制前面。安全认证框架</li>
+</ul>
+<h4 id="极光推送原理（第三方框架），怎么用的？遇到什么问题？怎么解决的？"><a href="#极光推送原理（第三方框架），怎么用的？遇到什么问题？怎么解决的？" class="headerlink" title="极光推送原理（第三方框架），怎么用的？遇到什么问题？怎么解决的？"></a>极光推送原理（第三方框架），怎么用的？遇到什么问题？怎么解决的？</h4><h4 id="微信的附近功能怎么实现的？"><a href="#微信的附近功能怎么实现的？" class="headerlink" title="微信的附近功能怎么实现的？"></a>微信的附近功能怎么实现的？</h4><h4 id="怎么实现第三方登陆"><a href="#怎么实现第三方登陆" class="headerlink" title="怎么实现第三方登陆"></a>怎么实现第三方登陆</h4><h4 id="autolayout？sizeclass"><a href="#autolayout？sizeclass" class="headerlink" title="autolayout？sizeclass"></a>autolayout？sizeclass</h4><h4 id="HealthKit是什么？"><a href="#HealthKit是什么？" class="headerlink" title="HealthKit是什么？"></a>HealthKit是什么？</h4><p>2014年6月2日召开的年度开发者大会上，苹果发布了一款新的移动应用平台，可以收集和分析用户的健康数据，这是苹果计划为其计算和移动软件推出的一系列新功能的一部分该移动应用平台被命名为“Healthkit ”，苹果高管告诉开发者，它可以整合iPhone或iPad上其它健康应用收集的数据，如血压和体重等。</p>
+<p>HealthKit框架提供了一个结构，应用可以使用它来分享健康和健身数据。HealthKit管理从不同来源获得的数据，并根据用户的偏好设置，自动将不同来源的所有数据合并起来。应用还可以获取每个来源的原始数据，然后执行自己的数据合并。</p>
+<p>HealthKit也可以直接与健康和健身设备一起工作。在iOS8.0中，系统可以自动将兼容的低功耗蓝牙心率仪的数据直接保存在<br> HealthKit存储中。如果有M7运动协处理器，系统还可以自动导入计步数据。其他的设备和数据源必须要有配套的应用才可以获取数据并保存在HealthKit中。</p>
+<p>HealthKit另外提供了一个应用来帮助管理用户的健康数据。健康应用为用户展示HealthKit的数据。用户可以使用健康应用来查看、添加、删除或者管理其全部的健康和健身数据。用户还可以编辑每种数据类型的分享权限。</p>
+<p>HealthKit和健康应用在iPad上都不可用。HealthKit框架不能用于应用扩展。</p>
+<h4 id="HomeKit是什么？"><a href="#HomeKit是什么？" class="headerlink" title="HomeKit是什么？"></a>HomeKit是什么？</h4><p>HomeKit，是苹果2014年发布的智能家居平台。HomeKit库是用来沟通和控制家庭自动化配件的，这些家庭自动化配件都支持苹果的HomeKit Accessory Protocol。HomeKit应用程序可让用户发现兼容配件并配置它们。用户可以创建一些action来控制智能配件（例如恒温或者光线强弱），对其进行分组，并且可以通过Siri触发。HomeKit对象被存储在用户iOS设备的数据库中，并且通过iCloud还可以同步到其他iOS设备。HomeKit支持远程访问智能配件，并支持多个用户设备和多个用户。HomeKit 还对用户的安全和隐私做了处理。</p>
+<h4 id="iCloud是什么包含了哪些技术与服务？"><a href="#iCloud是什么包含了哪些技术与服务？" class="headerlink" title="iCloud是什么包含了哪些技术与服务？"></a>iCloud是什么包含了哪些技术与服务？</h4><p>iCloud是苹果公司所提供的云端服务，2011年6月6日苹果公司执行长乔布斯（Steve Jobs）抱病主持全球开发者大会（WWDC），正式发表云端服务iCloud, iOS 5 以及 OS X Lion.其中iCloud的功能是存储内容，包括购买的音乐、应用、电子书等推送到所有设备,iCloud是一系列服务的技术封装,使用者可以免费储存5GB资料。可以备份存放照片、音乐、通讯录、短信、文档等内容，在你需要的时候以无线方式将他们推送到你所有的设备上。自行执行。轻松自如、运作流畅，它就是这么管用。可与亲朋好友共享体验的完整平台。它不仅安全，而且可提供丰富的社交体验，从任何计算机或设备均可随时方便地进行访问。iCloud上所提供的应用程序包括办公生产率、开发工具、媒体和窗口小部件等。随着时间的推移，还将通过易于使用的市场空间和应用程序开发工具箱提供范围更广的应用程序。</p>
+<p>服务:应用软件、电子书与备份、Documents in the Cloud、Photo Stream（照片流）、iTunes Match、Mobile Me</p>
+<p>CoreData：中多线程中处理大量数据同步时的操作</p>
+<p>CoreData:是CoCoa中处理数据绑定数据的关键特性，提供完整的对象持久化存储方案。如果你使用sqlite3厌倦了敲打sql语句，CoreData正解决了你这烦恼。sqlite3是CoreData处理的数据类型之一，当你将CoreData和sqlite的结合起来使用的话，你将能开发出强大的数据库应用。</p>
+<h4 id="CoreData与多线程操作"><a href="#CoreData与多线程操作" class="headerlink" title="CoreData与多线程操作:"></a>CoreData与多线程操作:</h4><p>为了在查询数据的时候不让界面停滞，使用多线程是不可避免，一般我们会用thread，串行线程或者并发线程。coredata与多线程交互的时候，每个线程都必须拥有一个manager context对象，一般有两种方式：</p>
+<p>1.每一个线程使用私有的manager context，共享一个 persistent store coordinator</p>
+<p>2.每个线程使用私有的manager context和私有的persistent store coordinator</p>
+<p>对于这两种方式，我们比较推荐使用第一钟方式，因为使用第二种方式的会消耗我们更多的内存，所以推荐使用第一种。         注意:CoreData里面还带有一个通知NSManagedObjectContextDidSaveNotification，主要监NSManagedObjectContext的数据是否改变，并合并数据改变到相应context</p>
+<h4 id="请解释一下Handoff是什么，并简述它是如何实现iOS、Mac-网页应用互通的-开发指南"><a href="#请解释一下Handoff是什么，并简述它是如何实现iOS、Mac-网页应用互通的-开发指南" class="headerlink" title="请解释一下Handoff是什么，并简述它是如何实现iOS、Mac/网页应用互通的   开发指南"></a>请解释一下Handoff是什么，并简述它是如何实现iOS、Mac/网页应用互通的   开发指南</h4><p>Handoff英译是用手推开某人，在计算机领域是CDMA术语，表示切换的意思。OSX 10.10 Yosemite新增了一个酷炫的功能“HandOff”，打开这个功能之后，用户可以在Mac上对iPad和iPhone进行操作，比如能够编写iPhone上未完成的邮件，并且可以在Mac上打开iPhone的热点等等，Mac的Hand Off功能只能识别Mac周围的iPhone手机。</p>
+<p>Handoff的核心思想就是：用户在一个应用里所做的任何操作都包含着一个activity，一个activity可以和一个特定用户的多台设备关联起来。用行话来说，抽象出这种activity的类叫做NSUserActivity，大部分时间我们都会和这个类打交道。需要一提的是，所有的设备都必须靠近（靠近是指两台设备的蓝牙能够彼此连接），这样Handoff才能正常工作。而且还有两个先决条件得满足：第一个条件是得有一个能正常使用的iCloud账号，而且用户应该在每台准备使用Handoff的设备上登陆这个iCloud账号。事实上，当在不同的设备上切换时，为了保证正在进行的activity不被中断而且被关联到同一个用户，应该尽可能地在所有设备上使用同一个iCloud账号。第二个条件是当两个或两个以上不同的应用想要在同一个用户activity进行Handoff的操作时需要具备的，在这种情况下，所有涉及到的应用必须使用Xcode里相同的团队标识（TeamID）签名。</p>
+<p>当编写一个支持Handoff的应用时，需要关注以下三个交互事件：</p>
+<p>1.为将在另一台设备上继续做的事创建一个新的用户activity。</p>
+<p>2.当需要时，用新的数据更新已有的用户activity。</p>
+<p>3.把一个用户activity传递到另一台设备。</p>
+<p>需要注意的是Handoff相关的测试只能在真实设备上进行，所以你得有至少两台运行着iOS 8.0或以上系统的设备。不管是多台iPhone，多台iPad或者同时拥有iPhone和iPad都可以。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/09/12/const-static-extern区别/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/12/iOS面试题23-通知与推送/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="暮鼓晨钟's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        swift630@sina.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: swift630@sina.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">27</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">30</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;暮鼓晨钟
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

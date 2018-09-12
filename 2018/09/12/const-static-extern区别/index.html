@@ -50,7 +50,7 @@
     
     <title>
         
-            iOS面试题20--安全机制 | 
+            const,static,extern区别 | 
         
         暮鼓晨钟
     </title>
@@ -227,7 +227,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="暮鼓晨钟">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题20-安全机制/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/const-static-extern区别/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
@@ -242,16 +242,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题20-安全机制/">
+    <meta property="og:url" content="http://yoursite.com/2018/09/12/const-static-extern区别/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="iOS面试题20--安全机制 | 暮鼓晨钟">
+    <meta property="og:title" content="const,static,extern区别 | 暮鼓晨钟">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="">
     <meta property="og:article:tag" content="iOS面试"> 
 
     
-        <meta property="article:published_time" content="Wed Sep 12 2018 15:47:00 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 12 2018 15:47:27 GMT+0800">
+        <meta property="article:published_time" content="Wed Sep 12 2018 18:19:49 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 12 2018 18:27:52 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题20-安全机制/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/09/12/const-static-extern区别/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -271,10 +271,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题20-安全机制/index.html",
-    "headline": "iOS面试题20--安全机制",
-    "datePublished": "Wed Sep 12 2018 15:47:00 GMT+0800",
-    "dateModified": "Wed Sep 12 2018 15:47:27 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/12/const-static-extern区别/index.html",
+    "headline": "const,static,extern区别",
+    "datePublished": "Wed Sep 12 2018 18:19:49 GMT+0800",
+    "dateModified": "Wed Sep 12 2018 18:27:52 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -367,7 +367,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#苹果的安全机制有哪些"><span class="post-toc-number">1.</span> <span class="post-toc-text">苹果的安全机制有哪些</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iOS-的签名机制大概是怎样的？"><span class="post-toc-number">2.</span> <span class="post-toc-text">iOS 的签名机制大概是怎样的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#客户端安全性处理方式？"><span class="post-toc-number">3.</span> <span class="post-toc-text">客户端安全性处理方式？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何进行数据加密"><span class="post-toc-number">4.</span> <span class="post-toc-text">如何进行数据加密?</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、const与宏的区别（面试题）"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、const与宏的区别（面试题）:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、const作用：限制类型"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、const作用：限制类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、const开发中使用场景"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、const开发中使用场景:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、static和extern简单使用-要使用一个东西，先了解其作用"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、static和extern简单使用(要使用一个东西，先了解其作用)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、static与const联合使用"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、static与const联合使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、extern与const联合使用"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、extern与const联合使用</span></a></li></ol>
     </ul>
     
 
@@ -399,7 +399,7 @@
         
     
             <p class="article-headline-p">
-                iOS面试题20--安全机制
+                const,static,extern区别
             </p>
         </div>
 
@@ -470,7 +470,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题20--安全机制&url=http://yoursite.com/2018/09/12/iOS面试题20-安全机制/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=const,static,extern区别&url=http://yoursite.com/2018/09/12/const-static-extern区别/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -479,7 +479,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题20--安全机制&url=http://yoursite.com/2018/09/12/iOS面试题20-安全机制/index.html&via=暮鼓晨钟" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=const,static,extern区别&url=http://yoursite.com/2018/09/12/const-static-extern区别/index.html&via=暮鼓晨钟" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -488,7 +488,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题20-安全机制/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/const-static-extern区别/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -497,7 +497,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题20-安全机制/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/const-static-extern区别/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -509,7 +509,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=iOS面试题20--安全机制&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题20-安全机制/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=const,static,extern区别&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/const-static-extern区别/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -528,31 +528,251 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h4 id="苹果的安全机制有哪些"><a href="#苹果的安全机制有哪些" class="headerlink" title="苹果的安全机制有哪些"></a>苹果的安全机制有哪些</h4><ul>
-<li>没经过用户同意，你不能随便获取用户信息。</li>
-<li>所有的程序都在沙盒里运行，B程序不能进入A程序的运行范围。</li>
-<li>如果跟钱有关，比如说支付宝，这些底层的实现都是保密的，只提供接口供开发者调用，这样的话安全性得到保障。</li>
-<li>如果要防止代码被反编译，可以将自己的代码中的.m文件封装成静态库（.a文件）或者是framework文件，只提供给其它人.h文件。这样就保证了个人代码的安全性。</li>
-<li>网络登录的话跟用户名跟密码相关要发送POST请求，如果是GET请求的话密码会直接在URL中显示。然后同时要对帐号密码采用加密技术，加一句：我们公司用的是MD5，但是现在MD5有一个专门的网站来破解，为了防止这个，可以采用加盐技术。</li>
+        <h3 id="一、const与宏的区别（面试题）"><a href="#一、const与宏的区别（面试题）" class="headerlink" title="一、const与宏的区别（面试题）:"></a>一、const与宏的区别（面试题）:</h3><ul>
+<li><p><code>const简介</code>:之前常用的字符串常量，一般是抽成宏，但是苹果不推荐我们抽成宏，推荐我们使用const常量。</p>
+<ul>
+<li><code>执行时刻</code>:宏是预编译（编译之前处理），const是编译阶段。</li>
+<li><code>编译检查</code>:宏不做检查，不会报编译错误，只是替换，const会编译检查，会报编译错误。</li>
+<li><code>宏的好处</code>:宏能定义一些函数，方法。 const不能。</li>
+<li><code>宏的坏处</code>:使用大量宏，容易造成编译时间久，每次都需要重新替换。</li>
 </ul>
-<h4 id="iOS-的签名机制大概是怎样的？"><a href="#iOS-的签名机制大概是怎样的？" class="headerlink" title="iOS 的签名机制大概是怎样的？"></a>iOS 的签名机制大概是怎样的？</h4><ul>
-<li>假设，我们有一个APP需要发布，为了防止中途篡改APP内容，保证APP的完整性，以及APP是由指定的私钥发的。首先，先将APP内容通过摘要算法，得到摘要，再用私钥对摘要进行加密得到密文，将源文本、密文、和私钥对应的公钥一并发布即可。</li>
-<li>那么如何验证呢？<br> 验证方首先查看公钥是否是私钥方的，然后用公钥对密文进行解密得到摘要，将APP用同样的摘要算法得到摘要，两个摘要进行比对，如果相等那么一切正常。这个过程只要有一步出问题就视为无效。</li>
+<p>注意:很多Blog都说使用宏，会消耗很多内存，我这验证并不会生成很多内存，宏定义的是常量，常量都放在常量区，只会生成一份内存。</p>
+</li>
 </ul>
-<h4 id="客户端安全性处理方式？"><a href="#客户端安全性处理方式？" class="headerlink" title="客户端安全性处理方式？"></a>客户端安全性处理方式？</h4><pre><code>1&gt;  网络数据传输(敏感数据[账号\密码\消费数据\银行卡账号], 不能明文发送)
-2&gt;  协议的问题(自定义协议, 游戏代练)
-3&gt;  本地文件存储(游戏的存档)
-4&gt;  源代码(混淆)
-</code></pre><h4 id="如何进行数据加密"><a href="#如何进行数据加密" class="headerlink" title="如何进行数据加密?"></a>如何进行数据加密?</h4><p>常见的加密算法:MD5 \ SHA \ DES \ 3DES \ RC2和RC4 \ RSA \ IDEA \ DSA \ AES</p>
-<p>加密算法的选择:一般公司都会有一套自己的加密方案，按照公司接口文档的规定去加密</p>
-<p>MD5的特点:</p>
-<p>（1）输入两个不同的明文不会得到相同的输出值</p>
-<p>（2）根据输出值，不能得到原始的明文，即其过程不可逆</p>
-<p>现在的MD5已不再是绝对安全，对此，可以对MD5稍作改进，以增加解密的难度</p>
-<p>加盐（Salt）：在明文的固定位置插入随机串，然后再进行MD5</p>
-<p>先加密，后乱序：先对明文进行MD5，然后对加密得到的MD5串的字符进行乱序</p>
-<p>总之宗旨就是：黑客就算攻破了数据库，也无法解密出正确的明文</p>
+<pre class=" language-objc"><code class="language-objc">//常见常量: 抽成宏
+#define SKAccount @"account123"
+//字符串变量
+static NSString *const account = @"account123";
 
+@interface ViewController ()
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    NSString *str = SKAccount;
+    NSString *str2 = SKAccount;
+
+    NSLog(@"%p %p", str, str2); 
+    //打印结果 0x10c7ba068 0x10c7ba068
+}
+</code></pre>
+<pre class=" language-objc"><code class="language-objc">// 常见的常量：抽成宏
+#define Account @"account"
+
+#define UserDefault [NSUserDefaults standardUserDefaults]
+
+// 字符串常量
+static NSString * const account = @"account";
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    // 偏好设置存储
+    // 使用宏
+    [UserDefault setValue:@"123" forKey:Account];
+
+    // 使用const常量
+    [[NSUserDefaults standardUserDefaults] setValue:@"123" forKey:account];
+
+}
+</code></pre>
+<h3 id="二、const作用：限制类型"><a href="#二、const作用：限制类型" class="headerlink" title="二、const作用：限制类型"></a>二、const作用：限制类型</h3><pre class=" language-c"><code class="language-c"><span class="token operator">*</span>   <span class="token number">1</span><span class="token punctuation">.</span><span class="token keyword">const</span>仅仅用来修饰右边的变量（基本数据变量p，指针变量<span class="token operator">*</span>p）
+<span class="token operator">*</span>   <span class="token number">2</span><span class="token punctuation">.</span>被<span class="token keyword">const</span>修饰的变量是只读的。
+</code></pre>
+<ul>
+<li><code>const基本使用</code></li>
+</ul>
+<pre class=" language-objc"><code class="language-objc">- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    // 定义变量
+    int a = 1;
+
+    // 允许修改值
+    a = 20;
+
+    // const两种用法
+    // const:修饰基本变量p
+    // 这两种写法是一样的，const只修饰右边的基本变量b
+    const int b = 20; // b:只读变量
+    int const b = 20; // b:只读变量
+
+    // 不允许修改值
+    b = 1;
+
+    // const:修饰指针变量*p，带*的变量，就是指针变量.
+    // 定义一个指向int类型的指针变量，指向a的地址
+    int *p = &a;
+    int c = 10;  
+    p = &c;
+
+    // 允许修改p指向的地址，
+    // 允许修改p访问内存空间的值
+    *p = 20;
+
+    // const修饰指针变量访问的内存空间，修饰的是右边*p1，
+    // 两种方式一样
+    const int *p1; // *p1：常量 p1:变量
+    int const *p1; // *p1：常量 p1:变量
+
+    // const修饰指针变量p1
+    int * const p1; // *p1:变量 p1:常量
+
+
+    // 第一个const修饰*p1 第二个const修饰 p1
+    // 两种方式一样
+    const int * const p1; // *p1：常量 p1：常量
+
+    int const * const p1;  // *p1：常量 p1：常量
+
+}
+</code></pre>
+<h3 id="三、const开发中使用场景"><a href="#三、const开发中使用场景" class="headerlink" title="三、const开发中使用场景:"></a>三、const开发中使用场景:</h3><pre class=" language-objc"><code class="language-objc">*   1.需求1:提供一个方法，这个方法的参数是地址，里面只能通过地址读取值,不能通过地址修改值
+*   2.需求2:提供一个方法，这个方法的参数是地址，里面不能修改参数的地址。
+@implementation ViewController
+
+// const放*前面约束参数，表示*a只读
+// 只能修改地址a,不能通过a修改访问的内存空间
+- (void)test:(const int * )a
+{
+//    *a = 20;
+}
+
+// const放*后面约束参数，表示a只读
+// 不能修改a的地址，只能修改a访问的值
+- (void)test1:(int * const)a
+{
+    int b;
+    // 会报错
+    a = &b;
+
+    *a = 2;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+
+    int a = 10;
+
+    // 需求1:提供一个方法，这个方法的参数是地址，里面只能通过地址读取值,不能通过地址修改值。
+
+    // 这时候就需要使用const，约束方法的参数只读.
+    [self test:&a];
+
+    // 需求2:提供一个方法，这个方法的参数是地址，里面不能修改参数的地址。
+    [self test1:&a];
+}
+
+
+@end
+</code></pre>
+<h3 id="四、static和extern简单使用-要使用一个东西，先了解其作用"><a href="#四、static和extern简单使用-要使用一个东西，先了解其作用" class="headerlink" title="四、static和extern简单使用(要使用一个东西，先了解其作用)"></a>四、static和extern简单使用(要使用一个东西，先了解其作用)</h3><ul>
+<li><p>static作用: </p>
+<ul>
+<li><p>修饰局部变量：</p>
+<p>1.延长局部变量的生命周期,程序结束才会销毁。</p>
+<p>2.局部变量只会生成一份内存,只会初始化一次。</p>
+<p>3.改变局部变量的作用域。</p>
+</li>
+<li><p>修饰全局变量</p>
+<p>1.只能在本文件中访问,修改全局变量的作用域,生命周期不会改</p>
+<p>2.避免重复定义全局变量</p>
+</li>
+</ul>
+</li>
+<li><p>extern作用:</p>
+<ul>
+<li>只是用来获取全局变量(包括全局静态变量)的值，不能用于定义变量</li>
+</ul>
+</li>
+<li><p>extern工作原理:</p>
+<ul>
+<li>先在当前文件查找有没有全局变量，没有找到，才会去其他文件查找。</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-objc"><code class="language-objc">// 全局变量：只有一份内存，所有文件共享，与extern联合使用。
+int a = 20;
+
+// static修饰全局变量
+static int age = 20;
+
+- (void)test
+{
+    // static修饰局部变量
+    static int age = 0;
+    age++;
+    NSLog(@"%d",age);
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+
+    [self test];
+    [self test];
+
+    extern int age;
+    NSLog(@"%d",age);
+}
+I
+</code></pre>
+<h3 id="五、static与const联合使用"><a href="#五、static与const联合使用" class="headerlink" title="五、static与const联合使用"></a>五、static与const联合使用</h3><ul>
+<li>static与const作用:声明一个只读的静态变量</li>
+<li>开发使用场景:在<code>一个文件中</code>经常使用的字符串常量，可以使用static与const组合</li>
+</ul>
+<pre class=" language-objc"><code class="language-objc">// 开发中常用static修饰全局变量,只改变作用域
+
+// 为什么要改变全局变量作用域，防止重复声明全局变量。
+
+// 开发中声明的全局变量，有些不希望外界改动，只允许读取。
+
+// 比如一个基本数据类型不希望别人改动
+
+// 声明一个静态的全局只读常量
+static const int a = 20;
+
+// staic和const联合的作用:声明一个静态的全局只读常量
+
+// iOS中staic和const常用使用场景，是用来代替宏，把一个经常使用的字符串常量，定义成静态全局只读变量.
+
+// 开发中经常拿到key修改值，因此用const修饰key,表示key只读，不允许修改。
+static  NSString * const key = @"name";
+
+// 如果 const修饰 *key1,表示*key1只读，key1还是能改变。
+static  NSString const *key1 = @"name";
+</code></pre>
+<h3 id="六、extern与const联合使用"><a href="#六、extern与const联合使用" class="headerlink" title="六、extern与const联合使用"></a>六、extern与const联合使用</h3><ul>
+<li>开发中使用场景:在<code>多个文件中</code>经常使用的同一个字符串常量，可以使用extern与const组合。</li>
+<li>原因: <ul>
+<li>static与const组合：在每个文件都需要定义一份静态全局变量。</li>
+<li>extern与const组合:只需要定义一份全局变量，多个文件共享。</li>
+</ul>
+</li>
+<li><p>全局常量正规写法:开发中便于管理所有的全局变量，通常搞一个GlobeConst文件，里面专门定义全局变量，统一管理，要不然项目文件多不好找。</p>
+</li>
+<li><p>GlobeConst.h</p>
+</li>
+</ul>
+<pre><code>/*******************************首页****************************/
+
+extern NSString * const nameKey = @&quot;name&quot;;
+
+/*******************************首页****************************/
+</code></pre><ul>
+<li>GlobeConst.m</li>
+</ul>
+<pre><code>#import &lt;Foundation/Foundation.h&gt;
+
+/*******************************首页****************************/
+NSString * const nameKey = @&quot;name&quot;;
+
+/*******************************首页****************************/
+</code></pre>
         
     
 
@@ -605,21 +825,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/12/iOS面试题21-Runtime/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/12/iOS面试题19-设计模式/" id="post_nav-older" class="next-content">
+        <a href="/2018/09/12/iOS面试题24-补充/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
