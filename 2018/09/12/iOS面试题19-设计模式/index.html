@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            iOS面试题19--设计模式 | 
+        
+        暮鼓晨钟
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",iOS面试">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="暮鼓晨钟">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题19-设计模式/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题19-设计模式/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="iOS面试题19--设计模式 | 暮鼓晨钟">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="iOS面试"> 
+
+    
+        <meta property="article:published_time" content="Wed Sep 12 2018 15:46:05 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 12 2018 15:46:44 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题19-设计模式/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题19-设计模式/index.html",
+    "headline": "iOS面试题19--设计模式",
+    "datePublished": "Wed Sep 12 2018 15:46:05 GMT+0800",
+    "dateModified": "Wed Sep 12 2018 15:46:44 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "暮鼓晨钟",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "暮鼓晨钟",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",iOS面试",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#从设计模式的角度分析Delegate、Notification、KVO的区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">从设计模式的角度分析Delegate、Notification、KVO的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是设计模式"><span class="post-toc-number">2.</span> <span class="post-toc-text">什么是设计模式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设计模式的分类"><span class="post-toc-number">3.</span> <span class="post-toc-text">设计模式的分类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#类工厂方法是什么？"><span class="post-toc-number">4.</span> <span class="post-toc-text">类工厂方法是什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#单例是什么？"><span class="post-toc-number">5.</span> <span class="post-toc-text">单例是什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#手写一下单例方法-或者单例模式的设计：GCD-方式和同步锁方式的区别在哪里？unlock-呢？GCD-是怎么保证单例的？"><span class="post-toc-number">6.</span> <span class="post-toc-text">手写一下单例方法(或者单例模式的设计：GCD 方式和同步锁方式的区别在哪里？unlock 呢？GCD 是怎么保证单例的？)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#简要描述观察者模式，并运用此模式编写一段代码？"><span class="post-toc-number">7.</span> <span class="post-toc-text">简要描述观察者模式，并运用此模式编写一段代码？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#谈谈你对MVC的理解-为什么要用MVC-在Cocoa中MVC是怎么实现的-你还熟悉其他的OC设计模式或别的设计模式吗"><span class="post-toc-number">8.</span> <span class="post-toc-text">谈谈你对MVC的理解?为什么要用MVC?在Cocoa中MVC是怎么实现的?你还熟悉其他的OC设计模式或别的设计模式吗?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#MVC优点不正确的是"><span class="post-toc-number">9.</span> <span class="post-toc-text">MVC优点不正确的是</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何理解MVVM框架，它的优点和缺点在哪？运用此框架编写一段代码，建议采用ReactiveCocoa库实现；"><span class="post-toc-number">10.</span> <span class="post-toc-text">如何理解MVVM框架，它的优点和缺点在哪？运用此框架编写一段代码，建议采用ReactiveCocoa库实现；</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ReactiveCocoa"><span class="post-toc-number">11.</span> <span class="post-toc-text">ReactiveCocoa</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#哪些途径可以让-ViewController-瘦下来？"><span class="post-toc-number">12.</span> <span class="post-toc-text">哪些途径可以让 ViewController 瘦下来？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#你在你的项目中用到了哪些设计模式？"><span class="post-toc-number">13.</span> <span class="post-toc-text">你在你的项目中用到了哪些设计模式？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何实现单例，单例会有什么弊端？"><span class="post-toc-number">14.</span> <span class="post-toc-text">如何实现单例，单例会有什么弊端？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#你在你的项目中用到了哪些设计模式？-1"><span class="post-toc-number">15.</span> <span class="post-toc-text">你在你的项目中用到了哪些设计模式？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#单例书写"><span class="post-toc-number">16.</span> <span class="post-toc-text">单例书写</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                iOS面试题19--设计模式
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>暮鼓晨钟</strong>
+        <span>9月 12, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题19--设计模式&url=http://yoursite.com/2018/09/12/iOS面试题19-设计模式/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题19--设计模式&url=http://yoursite.com/2018/09/12/iOS面试题19-设计模式/index.html&via=暮鼓晨钟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题19-设计模式/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题19-设计模式/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=iOS面试题19--设计模式&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题19-设计模式/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h4 id="从设计模式的角度分析Delegate、Notification、KVO的区别"><a href="#从设计模式的角度分析Delegate、Notification、KVO的区别" class="headerlink" title="从设计模式的角度分析Delegate、Notification、KVO的区别"></a>从设计模式的角度分析Delegate、Notification、KVO的区别</h4><p>三者优缺点：</p>
+<p>delegate的优势：</p>
+<p>1.非常严格的语法。所有将听到的事件必须是在delegate协议中有清晰的定义。</p>
+<p>2.如果delegate中的一个方法没有实现那么就会出现编译警告/错误</p>
+<p>3.协议必须在controller的作用域范围内定义</p>
+<p>4.在一个应用中的控制流程是可跟踪的并且是可识别的；</p>
+<p>5.在一个控制器中可以定义定义多个不同的协议，每个协议有不同的delegates</p>
+<p>6.没有第三方对象要求保持/监视通信过程。</p>
+<p>7.能够接收调用的协议方法的返回值。这意味着delegate能够提供反馈信息给controller</p>
+<p>8.经常被用在存在父子关系的对象之间通信，例如控制器和控制器的view（自己加的理解）</p>
+<p>缺点：</p>
+<p>1.需要定义很多代码：1.协议定义；2.controller的delegate属性；3.在delegate本身中实现delegate方法定义</p>
+<p>2.在释放代理对象时，需要小心的将delegate改为nil。一旦设定失败，那么调用释放对象的方法将会出现内存crash</p>
+<p>3.在一个controller中有多个delegate对象，并且delegate是遵守同一个协议，但还是很难告诉多个对象同一个事件，不过有可能。</p>
+<p>4.经常用在一对一的通信。（不知道是缺点还是优点，只能算是特点）（自己加的理解）</p>
+<p>notification的优势：</p>
+<p>1.不需要编写多少代码，实现比较简单</p>
+<p>2.对于一个发出的通知，多个对象能够做出反应，即一对多的方式实现简单</p>
+<p>3.controller能够传递context对象（dictionary），context对象携带了关于发送通知的自定义的信息</p>
+<p>缺点：</p>
+<p>1.在编译期不会检查通知是否能够被观察者正确的处理；</p>
+<p>2.在释放注册的对象时，需要在通知中心取消注册；</p>
+<p>3.在调试的时候应用的工作以及控制过程难跟踪；</p>
+<p>4.需要第三方对象来管理controller与观察者对象之间的联系；</p>
+<p>5.controller和观察者需要提前知道通知名称、UserInfo dictionary keys。如果这些没有在工作区间定义，那么会出现不同步的情况；</p>
+<p>6.通知发出后，controller不能从观察者获得任何的反馈信息（相比较delegate）。</p>
+<p>KVO的优势：</p>
+<p>1.能够提供一种简单的方法实现两个对象间的同步。例如：model和view之间同步；</p>
+<p>2.能够对非我们创建的对象，即内部对象的状态改变作出响应，而且不需要改变内部对象（SKD对象）的实现；</p>
+<p>3.能够提供观察的属性的最新值以及先前值；</p>
+<p>4.用key paths来观察属性，因此也可以观察嵌套对象；</p>
+<p>5.完成了对观察对象的抽象，因为不需要额外的代码来允许观察值能够被观察</p>
+<p>6.可以一对多。</p>
+<p>缺点：</p>
+<p>1.我们观察的属性必须使用strings来定义。因此在编译器不会出现警告以及检查；</p>
+<p>2.对属性重构将导致我们的观察代码不再可用；</p>
+<p>3.复杂的“IF”语句要求对象正在观察多个值。这是因为所有的观察代码通过一个方法来指向；</p>
+<p>4.当释放观察者时不需要移除观察者。</p>
+<ol>
+<li>效率 肯定是delegate比NSNotification高。</li>
+</ol>
+<p>delegate方法比notification更加直接，最典型的特征是，delegate方法往往需要关注返回值，</p>
+<p>也就是delegate方法的结果。比如-windowShouldClose:，需要关心返回的是yes还是no。所以delegate方法往往包含</p>
+<p>should这个很传神的词。也就是好比你做我的delegate，我会问你我想关闭窗口你愿意吗？你需要给我一个答案，我根据你的答案来决定如何做下一</p>
+<p>步。相反的，notification最大的特色就是不关心接受者的态度，</p>
+<p>我只管把通告放出来，你接受不接受就是你的事情，同时我也不关心结果。所以notification往往用did这个词汇，比如</p>
+<p>NSWindowDidResizeNotification，那么NSWindow对象放出这个notification后就什么都不管了也不会等待接</p>
+<p>受者的反应。</p>
+<p>2、KVO和NSNotification的区别 ：</p>
+<p>和delegate一样，KVO和NSNotification的作用也是类与类之间的通信，与delegate不同的是1）这两个都是负责发出通知，剩下的事情就不管了，所以没有返回值；2）delegate只是一对一，而这两个可以一对多。这两者也有各自的特点。</p>
+<p>总结：</p>
+<p>从上面的分析中可以看出3中设计模式都有各自的优点和缺点。在这三种模式中，我认为KVO有最清晰的使用案例，而且针对某个需求有清晰的实用性。而另外两种模式有比较相似的用处，并且经常用来给controller间进行通信。那么我们在什么情况使用其中之一呢？</p>
+<p>根据我开发iOS应用的经历，我发现有些过分的使用通知模式。我个人不是很喜欢使用通知中心。我发现用通知中心很难把握应用的执行流程。Userlnfo dictionaries的keys到处传递导致失去了同步，而且在公共空间需要定义太多的常量。对于一个工作于现有的项目的开发者来说，如果过分的使用通知中心，那么很难理解应用的流程。</p>
+<p>我觉得使用命名规则好的协议和协议方法定义对于清晰的理解controllers间的通信是很容易的。努力的定义这些协议方法将增强代码的可读性，以及更好的跟踪你的app。代理协议发生改变以及实现都可通过编译器检查出来，如果没有将会在开发的过程中至少会出现crash，而不仅仅是让一些事情异常工作。甚至在同一事件通知多控制器的场景中，只要你的应用在controller层次有着良好的结构，消息将在该层次上传递。该层次能够向后传递直至让所有需要知道事件的controllers都知道。当然会有delegation模式不适合的例外情况出现，而且notification可能更加有效。例如：应用中所有的controller需要知道一个事件。然而这些类型的场景很少出现。另外一个例子是当你建立了一个架构而且需要通知该事件给正在运行中应用。</p>
+<p>根据经验，如果是属性层的事件，不管是在不需要编程的对象还是在紧紧绑定一个view对象的model对象，我只使用观察。对于其他的事件，我都会使用delegate模式。如果因为某种原因我不能使用delegate，首先我将估计我的app架构是否出现了严重的错误。如果没有错误，然后才使用notification。</p>
+<h4 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h4><ul>
+<li>设计模式是为特定场景下的问题而定制的解决方案。特定场景指问题所在的重复出现的场景，问题指特定环境下你想达成的目标。同样的问题在不同的环境下会有不同的限制和挑战。定制的解决方案是指在特定环境下克服了问题的限制条件而达成目标的一种设计。</li>
+</ul>
+<h4 id="设计模式的分类"><a href="#设计模式的分类" class="headerlink" title="设计模式的分类"></a>设计模式的分类</h4><ul>
+<li>设计模式分为三种类型，共23种。 <ul>
+<li>创建型模式：单例模式、抽象工厂模式、建造者模式、工厂模式、原型模式。</li>
+<li>结构型模式：适配器模式、桥接模式、装饰模式、组合模式、外观模式、享元模式、代理模式。</li>
+<li>行为型模式：模版方法模式、命令模式、迭代器模式、观察者模式、中介者模式、备忘录模式、解释器模式（Interpreter模式）、状态模式、策略模式、职责链模式(责任链模式)、访问者模式。</li>
+</ul>
+</li>
+</ul>
+<h4 id="类工厂方法是什么？"><a href="#类工厂方法是什么？" class="headerlink" title="类工厂方法是什么？"></a>类工厂方法是什么？</h4><ul>
+<li>类工厂方法的实现是为了向客户提供方便，它们将分配和初始化合在一个步骤中， 返回被创建的对象，并<br> 进行自动释放处理。</li>
+<li>这些方法的形式是+ (type)className…（其中 className不包括任何前缀）。</li>
+<li>工厂方法可能不仅仅为了方便使用。它们不但可以将分配和初始化合在一起，还可以为初始化过程提供对<br> 象的分配信息。</li>
+<li>类工厂方法的另一个目的是使类（比如NSWorkspace）提供单例。虽 然init…方法可以确认一<br> 个类在每次程序运行过程只存在一个实例，但它需要首先分配一个“生的”实例，然后还必须释放该实例。工厂方法则可以避免为可能没有用的对象盲目分配内存。</li>
+</ul>
+<h4 id="单例是什么？"><a href="#单例是什么？" class="headerlink" title="单例是什么？"></a>单例是什么？</h4><p>单例模式的意思就是只有一个实例。单例模式确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。这个类称为单例类。</p>
+<ol>
+<li>单例模式的要点：</li>
+</ol>
+<p>显然单例模式的要点有三个；一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。</p>
+<ol>
+<li>单例模式的优点：<ul>
+<li>实例控制：Singleton 会阻止其他对象实例化其自己的 Singleton 对象的副本，从而确保所有对象都访问唯一实例。</li>
+<li>灵活性：因为类控制了实例化过程，所以类可以更加灵活修改实例化过程</li>
+</ul>
+</li>
+</ol>
+<h4 id="手写一下单例方法-或者单例模式的设计：GCD-方式和同步锁方式的区别在哪里？unlock-呢？GCD-是怎么保证单例的？"><a href="#手写一下单例方法-或者单例模式的设计：GCD-方式和同步锁方式的区别在哪里？unlock-呢？GCD-是怎么保证单例的？" class="headerlink" title="手写一下单例方法(或者单例模式的设计：GCD 方式和同步锁方式的区别在哪里？unlock 呢？GCD 是怎么保证单例的？)"></a>手写一下单例方法(或者单例模式的设计：GCD 方式和同步锁方式的区别在哪里？unlock 呢？GCD 是怎么保证单例的？)</h4><p>image</p>
+<h4 id="简要描述观察者模式，并运用此模式编写一段代码？"><a href="#简要描述观察者模式，并运用此模式编写一段代码？" class="headerlink" title="简要描述观察者模式，并运用此模式编写一段代码？"></a>简要描述观察者模式，并运用此模式编写一段代码？</h4><ul>
+<li>观察者模式（Observer）是指一个或多个对象对另一个对象进行观察，当被观察对象发生变化时，观察者可以直接或间接地得到通知，从而能自动地更新观察者的数据，或者进行一些操作。</li>
+<li>具体到iOS的开发中，实现观察者模式常用的方式有KVO和Notification两种。</li>
+<li>两者的不同在于，KVO是被观察者主动向观察者发送消息；Notification是被观察者向NotificationCenter发送消息，再由NotificationCenter post通知到每个注册的观察者。</li>
+</ul>
+<h4 id="谈谈你对MVC的理解-为什么要用MVC-在Cocoa中MVC是怎么实现的-你还熟悉其他的OC设计模式或别的设计模式吗"><a href="#谈谈你对MVC的理解-为什么要用MVC-在Cocoa中MVC是怎么实现的-你还熟悉其他的OC设计模式或别的设计模式吗" class="headerlink" title="谈谈你对MVC的理解?为什么要用MVC?在Cocoa中MVC是怎么实现的?你还熟悉其他的OC设计模式或别的设计模式吗?"></a>谈谈你对MVC的理解?为什么要用MVC?在Cocoa中MVC是怎么实现的?你还熟悉其他的OC设计模式或别的设计模式吗?</h4><ul>
+<li>MVC就是Model-View-Controller的缩写,M指的是业务模型,V指的是用户页面,C指的是控制器。MVC是架构模式,是讲M和V的代码分离,从而使同那个一个程序可以使用不同的表现形式。</li>
+<li>单例,代理,观察者,工厂模式等</li>
+<li>单例模式:上面有详细说明</li>
+<li>代理模式:代理模式给某一个对象提供一个代理对象,并由代理对象控制对源对象的引用.比如一个工厂生产了产品,并不想直接卖给用户,而是搞了很多代理商,用户可以直接找代理商买东西,代理商从工厂进货.常见的如QQ的自动回复就属于代理拦截,代理模式在iphone中得到广泛应用.</li>
+</ul>
+<h4 id="MVC优点不正确的是"><a href="#MVC优点不正确的是" class="headerlink" title="MVC优点不正确的是"></a>MVC优点不正确的是</h4><pre><code>A 低耦合性
+B 高重用性和可适用性
+C 较低的生命周期成本
+D 代码高效率
+</code></pre><ul>
+<li>参考答案：D</li>
+<li>理由：MVC只是一种设计模式，它的出现有比较久的历史了。Model-Controller-View是在开发中最常见到的设计模式，通过将Model、View、Controller三者相互联系，以Model作为数据加工厂，以Controller作为桥梁，处理业务，而View只是数据展示层，理应与业务无关。MVC设计模式降低了耦合性，提供了重用性和适用性，可有效地提高开发效率。</li>
+</ul>
+<h4 id="如何理解MVVM框架，它的优点和缺点在哪？运用此框架编写一段代码，建议采用ReactiveCocoa库实现；"><a href="#如何理解MVVM框架，它的优点和缺点在哪？运用此框架编写一段代码，建议采用ReactiveCocoa库实现；" class="headerlink" title="如何理解MVVM框架，它的优点和缺点在哪？运用此框架编写一段代码，建议采用ReactiveCocoa库实现；"></a>如何理解MVVM框架，它的优点和缺点在哪？运用此框架编写一段代码，建议采用ReactiveCocoa库实现；</h4><ul>
+<li>MVVM框架相对于传统的MVC来说，主要区别在于把原本在C中（ViewController）的业务逻辑、网络请求、数据存储等操作和表现逻辑，分离到ViewModel中，从而使ViewController得到精简</li>
+<li>MVC中，Controller同时操作Model和View；MVVM中，ViewModel作为一个过渡，Model的数据获取和加工由ViewModel负责，得到适合View的数据，利用绑定机制，使得View得以自动更新。</li>
+</ul>
+<pre><code>优点：
+层次更加分明清晰
+代码简洁优雅
+减少VC的复杂性
+代码和界面完全分离
+方便测试
+
+缺点：
+MVVM需要使用数据绑定机制，对于OS X 开发，可以直接使用Coocoa Binding，对于iOS，没有太好的数据绑定方法，可以使用KVO，但如果需要绑定的属性太多的话，需要编写大量的selector代码。
+
+ReactiveCocoa提供了一种很方便优雅的绑定机制。
+</code></pre><h4 id="ReactiveCocoa"><a href="#ReactiveCocoa" class="headerlink" title="ReactiveCocoa"></a>ReactiveCocoa</h4><ul>
+<li>RAC具有函数式编程和响应式编程的特性</li>
+<li>试图解决以下问题</li>
+<li>传统iOS开发过程中，状态以及状态之间依赖过多的问题</li>
+<li>传统MVC架构的问题：Controller比较复杂，可测试性差</li>
+<li>提供统一的消息传递机制</li>
+</ul>
+<h4 id="哪些途径可以让-ViewController-瘦下来？"><a href="#哪些途径可以让-ViewController-瘦下来？" class="headerlink" title="哪些途径可以让 ViewController 瘦下来？"></a>哪些途径可以让 ViewController 瘦下来？</h4><ul>
+<li>把 Data Source 和其他 Protocols 分离出来(将UITableView或者UICollectionView的代码提取出来放在其他类中)</li>
+<li>将业务逻辑移到 Model 中(和模型有关的逻辑全部在model中写)</li>
+<li>把网络请求逻辑移到 Model 层(网络请求依靠模型)</li>
+<li>把 View 代码移到 View 层(自定义View)</li>
+</ul>
+<h4 id="你在你的项目中用到了哪些设计模式？"><a href="#你在你的项目中用到了哪些设计模式？" class="headerlink" title="你在你的项目中用到了哪些设计模式？"></a>你在你的项目中用到了哪些设计模式？</h4><pre><code>项目中使用了很多的设计模式，我相信面试官最好听到的不仅仅是设计模式的名字，更想听到的是这些设计模式在项目中如何应用。因此，笔者认为这个问题隐式地说明了应该回答设计模式及其在项目中的应用。
+参考答案：
+•   单例设计模式：在项目中，单例是必不可少的。比如UIApplication、NSUserDefaults就是苹果提供的单例。在项目中经常会将用户数据管理封装成一个单例类，因此用户的信息需要全局使用。
+•   MVC设计模式：现在绝大部分项目都是基于MVC设计模式的，现在有一部分开发者采用MVVM、MVP等模式。
+•   通知(NSNotification)模式：通知在开发中是必不可少的，对于跨模块的类交互，需要使用通知；对于多对多的关系，使用通知更好实现。
+•   工厂设计模式：在我的项目中使用了大量的工厂设计模式，特别是生成控件的API，都已经封装成一套，全部是扩展的类方法，可简化很多的代码。
+•   KVC/KVO设计模式：有的时候需要监听某个类的属性值的变化而做出相应的改变，这时候会使用KVC/KVO设计模式。在项目中，我需要监听model中的某个属性值的变化，当变化时，需要更新UI显示，这时候使用KVC/KVO设计模式就很方便了。
+就说这么多吧，还有很多的设计模式，不过其它并不是那么常用。
+</code></pre><h4 id="如何实现单例，单例会有什么弊端？"><a href="#如何实现单例，单例会有什么弊端？" class="headerlink" title="如何实现单例，单例会有什么弊端？"></a>如何实现单例，单例会有什么弊端？</h4><pre><code>单例在项目中的是必不可少的，它可以使我们全局都可共享我们的数据。这只是简单的问题，大家根据自己的情况回答。
+参考答案：
+•   首先，单例写法有好几种，通常的写法是基于线程安全的写法，结合dispatch_once来使用，保证单例对象只会被创建一次。如果不小心销毁了单例，再调用单例生成方法是不会再创建的。
+•   其次，由于单例是约定俗成的，因此在实际开发中通常不会去重写内存管理方法。
+单例确实给我们带来的便利，但是它也会有代价的。单例一旦创建，整个App使用过程都不会释放，这会占用内存，因此不可滥用单例。
+</code></pre><h4 id="你在你的项目中用到了哪些设计模式？-1"><a href="#你在你的项目中用到了哪些设计模式？-1" class="headerlink" title="你在你的项目中用到了哪些设计模式？"></a>你在你的项目中用到了哪些设计模式？</h4><ul>
+<li><p>设计模式有很多,面试官肯定不想听你把项目里的设计模式名字报给他,他想听得肯定是你是怎么去用这些设计模式的</p>
+</li>
+<li><p>参考答案:</p>
+</li>
+<li><p>MVC:这个设计模型大部分应用应该都在用,介绍下MVC就好</p>
+</li>
+<li><p>单例:单例在项目中用的还是蛮多的,像登录界面,对一些第三方框架二次封装等等</p>
+</li>
+<li><p>KVC/KVO:这个用的应该也很多,KVC用来替换掉系统的tabbar,用KVO来监听偏移量来完成下拉刷新,改变导航条背景颜色这些</p>
+</li>
+<li><p>工厂方法:这个用的更多了,设置一些自定义View肯定要用到这个设计模式</p>
+</li>
+<li><p>如何实现单例，单例会有什么弊端？</p>
+</li>
+<li><p>这个问题还是蛮简单的,说下单例是怎么写的,单例的缺点就好</p>
+</li>
+<li><p>参考答案:</p>
+<pre><code>  // OC版
+  +(instancetype)sharedInstance
+  {
+  static id sharedInstance = nil;
+
+  static dispatch_once_t onceToken;
+  dispatch_once(&amp;onceToken, ^{
+
+  sharedInstance = [[self alloc] init];
+  });
+
+  return sharedInstance;
+  }
+
+  // Swift版
+  static let sharedInstance : &lt;#SingletonClass#&gt; = &lt;#SingletonClass#&gt;()
+</code></pre></li>
+<li><p>单例的缺点也就是会一直占着这块内存,不会被释放</p>
+</li>
+</ul>
+<h4 id="单例书写"><a href="#单例书写" class="headerlink" title="单例书写"></a>单例书写</h4><ul>
+<li>伪单例</li>
+</ul>
+<pre><code>1、 获取单例对象的方法
+
++ (DataHandle *)sharedDataHandle; // 创建单例对象的方法。类方法 命名规则： shared + 类名
+2、 方法的实现
+
+// 因为实例是全局的 因此要定义为全局变量，且需要存储在静态区，不释放。不能存储在栈区。
+static DataHandle *handle = nil;
+
+// 伪单例 和 完整的单例。 以及线程的安全。
+// 一般使用伪单例就足够了 每次都用 sharedDataHandle 创建对象。
++ (DataHandle *)sharedDataHandle
+{
+    // 添加同步锁，一次只能一个线程访问。如果有多个线程访问，等待。一个访问结束后下一个。
+    @synchronized(self){
+        if (nil == handle) {
+            handle = [[DataHadle alloc] init];             
+        }
+    }
+  return handle;
+}
+</code></pre><ul>
+<li>完整单例</li>
+</ul>
+<pre><code>完整的单例
+完整的单例要求比较高，不仅要求我们通过方法获取的对象是单例，如果有 对该对象进行copy mutableCopy copyWithZone 等操作时，也是同一份对象。这就要求我们必须重写这些方法，在这些方法内部做一些操作。
+
+完整的单例要做到四个方面：
+
+为单例对象实现一个静态实例,然后设置成nil，
+构造方法检查静态实例是否为nil，是则新建并返回一个实例，
+重写allocWithZone方法，用来保证其他人直接使用alloc和init试图获得一个新实例的时候不会产生一个新实例，
+适当实现copyWithZone，,retain,retainCount,release和autorelease 等方法
+
+1、 获取单例对象的方法
+
++ (DataHandle *)sharedDataHandle; // 创建单例对象的方法。类方法 命名规则： shared + 类名
+2、 方法的实现
+@synchronized(self){
+        if (nil == handle) {
+            handle = [[super allocWithZone:nil] init]; // 避免死循环
+            // 如果 在单例类里面重写了 allocWithZone 方法 ，在创建单例对象时 使用 [[DataHandle alloc] init] 创建，会死循环。
+
+        }
+    }
+ return handle;
+
+3、 重写 allocWithZone copy mutableCopy copyWithZone
+
+防止外界拷贝造成多个实例， 保证实例的唯一性。
+注意：如果自己重写了 allocWithZone 就不要再调用自身的 alloc 方法，否则会出现死循环。
+
++ (instancetype)allocWithZone:(struct _NSZone *)zone
+{
+    return [DataHandle sharedDataHandle];
+}
+
+- (id)copy
+{
+    return self;
+}
+
+- (id)mutableCopy
+{
+    return self;
+}
+
++ (id)copyWithZone:(struct _NSZone *)zone
+{
+    return self;
+}
+4、 重写 alloc retain release autorelease retainCount
+
++ (instancetype)alloc
+{
+    return [DataHandle sharedDataHandle];
+}
+
+//  因为只有一个实例， 一直不释放，所以不增加引用计数。无意义。
+- (instancetype)retain
+{
+    return self;
+}
+
+- (oneway void)release
+{
+    // nothing
+}
+
+- (instancetype)autorelease
+{
+    return self;
+}
+
+- (NSUInteger)retainCount
+{
+    return NSUIntegerMax; // 返回整形最大值。
+}
+</code></pre>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/09/12/iOS面试题20-安全机制/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/12/iOS面试题18-多媒体/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="暮鼓晨钟's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        swift630@sina.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: swift630@sina.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">28</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;暮鼓晨钟
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

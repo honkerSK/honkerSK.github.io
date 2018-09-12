@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            iOS面试题15--网络 | 
+        
+        暮鼓晨钟
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",iOS面试">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="暮鼓晨钟">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题15-网络/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题15-网络/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="iOS面试题15--网络 | 暮鼓晨钟">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="iOS面试"> 
+
+    
+        <meta property="article:published_time" content="Wed Sep 12 2018 15:42:46 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 12 2018 15:43:14 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题15-网络/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题15-网络/index.html",
+    "headline": "iOS面试题15--网络",
+    "datePublished": "Wed Sep 12 2018 15:42:46 GMT+0800",
+    "dateModified": "Wed Sep 12 2018 15:43:14 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "暮鼓晨钟",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "暮鼓晨钟",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",iOS面试",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#http请求方式？"><span class="post-toc-number">1.</span> <span class="post-toc-text">http请求方式？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Http定义了与服务器交互的不同方法，最基本的方法有？"><span class="post-toc-number">2.</span> <span class="post-toc-text">Http定义了与服务器交互的不同方法，最基本的方法有？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#socket编程简述"><span class="post-toc-number">3.</span> <span class="post-toc-text">socket编程简述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#JSONKit、SBJson、TouchJSON和原生的区别"><span class="post-toc-number">4.</span> <span class="post-toc-text">JSONKit、SBJson、TouchJSON和原生的区别?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#App需要加载超大量的数据，给服务器发送请求，但是服务器卡住了如何解决？"><span class="post-toc-number">5.</span> <span class="post-toc-text">App需要加载超大量的数据，给服务器发送请求，但是服务器卡住了如何解决？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HTTP的通信的-发送请求、接收响应-包含哪些内容？OC中是怎样实现的？"><span class="post-toc-number">6.</span> <span class="post-toc-text">HTTP的通信的 发送请求、接收响应 包含哪些内容？OC中是怎样实现的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#http-的post与get区别与联系，实践中如何选择它们？"><span class="post-toc-number">7.</span> <span class="post-toc-text">http 的post与get区别与联系，实践中如何选择它们？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#知道TCP-UDP吗？说说关于UDP-TCP的区别？"><span class="post-toc-number">8.</span> <span class="post-toc-text">知道TCP/UDP吗？说说关于UDP/TCP的区别？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是三次握手与四次挥手？"><span class="post-toc-number">9.</span> <span class="post-toc-text">什么是三次握手与四次挥手？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分析json、xml的区别-json、xml解析方式的底层是如何处理的"><span class="post-toc-number">10.</span> <span class="post-toc-text">分析json、xml的区别?json、xml解析方式的底层是如何处理的?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#http和scoket通信的区别-socket连接相关库-TCP-UDP的连接方法-HTTP的几种常用方式"><span class="post-toc-number">11.</span> <span class="post-toc-text">http和scoket通信的区别?socket连接相关库,TCP,UDP的连接方法,HTTP的几种常用方式?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#通信底层原理（OSI七层模型）"><span class="post-toc-number">12.</span> <span class="post-toc-text">通信底层原理（OSI七层模型）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设计一套大文件（如上百M的视频）下载方案"><span class="post-toc-number">13.</span> <span class="post-toc-text">设计一套大文件（如上百M的视频）下载方案</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HTTP协议的特点，关于HTTP请求GET和POST的区别"><span class="post-toc-number">14.</span> <span class="post-toc-text">HTTP协议的特点，关于HTTP请求GET和POST的区别?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#即时聊天App不会采用的网络传输方式"><span class="post-toc-number">15.</span> <span class="post-toc-text">即时聊天App不会采用的网络传输方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在App中混合HTML5开发App如何实现的。在App中使用HTML5的优缺点是什么？"><span class="post-toc-number">16.</span> <span class="post-toc-text">在App中混合HTML5开发App如何实现的。在App中使用HTML5的优缺点是什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#介绍一下XMPP-有什么优缺点吗"><span class="post-toc-number">17.</span> <span class="post-toc-text">介绍一下XMPP?有什么优缺点吗?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NSURLConnection的几个常用的代理"><span class="post-toc-number">18.</span> <span class="post-toc-text">NSURLConnection的几个常用的代理?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NSURLConnection-amp-NSURLSession的区别"><span class="post-toc-number">19.</span> <span class="post-toc-text">NSURLConnection&amp;NSURLSession的区别?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XML是什么-XML与HTML的区别"><span class="post-toc-number">20.</span> <span class="post-toc-text">XML是什么? XML与HTML的区别?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#网络图片处理问题中怎么解决一个相同的网络地址重复请求的问题？"><span class="post-toc-number">21.</span> <span class="post-toc-text">网络图片处理问题中怎么解决一个相同的网络地址重复请求的问题？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#sip是什么？"><span class="post-toc-number">22.</span> <span class="post-toc-text">sip是什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#TCP-IP四层模型"><span class="post-toc-number">23.</span> <span class="post-toc-text">TCP/IP四层模型</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                iOS面试题15--网络
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>暮鼓晨钟</strong>
+        <span>9月 12, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题15--网络&url=http://yoursite.com/2018/09/12/iOS面试题15-网络/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题15--网络&url=http://yoursite.com/2018/09/12/iOS面试题15-网络/index.html&via=暮鼓晨钟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题15-网络/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题15-网络/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=iOS面试题15--网络&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题15-网络/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h4 id="http请求方式？"><a href="#http请求方式？" class="headerlink" title="http请求方式？"></a>http请求方式？</h4><p>通常，HTTP的请求方式有3种，分别是：POST、GET、HEAD。POST和GET方法是用于数据发送的。</p>
+<p>POST：它将要发送的数据单独放在一个流中进行发送，而不是附加在URL地址后面，这样做的好处是这些数据不会出现在URL地址中。</p>
+<p>GET：它将要发送的数据直接添加在URL后面，如：<a href="https://link.jianshu.com?t=http://www.sina.com.cn?username=" target="_blank" rel="noopener">www.sina.com.cn?username=</a>“”&amp;password=””，这样的好处是可以直接将数据加在URL后，而不需在用另外的流来发送这些数据，但是缺点也显而易见，它将用户的信息显示出来了。</p>
+<p>HEAD：它是请求资源的元数据方法。在具体的应用中，我暂时还没遇到过，也不去对它进行研究，需要是在学习。</p>
+<h4 id="Http定义了与服务器交互的不同方法，最基本的方法有？"><a href="#Http定义了与服务器交互的不同方法，最基本的方法有？" class="headerlink" title="Http定义了与服务器交互的不同方法，最基本的方法有？"></a>Http定义了与服务器交互的不同方法，最基本的方法有？</h4><ul>
+<li>URL全称是资源描述符，我们可以这样认为：一个URL地址，它用于描述一个网络上的资源，而HTTP中的GET，POST，PUT，DELETE就对应着对这个资源的查，改，增，删4个操作。</li>
+<li>GET一般用于获取/查询资源信息，而POST一般用于更新资源信息。</li>
+</ul>
+<h4 id="socket编程简述"><a href="#socket编程简述" class="headerlink" title="socket编程简述"></a>socket编程简述</h4><p>它是基于TCP/IP协议，Socket就是一个可以连通网络上不同计算机程序之间的管道，把一堆数据从管道的A端扔进去，则会从管道的B端（也许同时还可以从C、D、E、F……端冒出来）。管道的端口由两个因素来唯一确认，即机器的IP地址和程序所使用的端口号。</p>
+<p>Socket可以支持数据的发送和接收，它会定义一种称为套接字的变量，发送数据时首先创建套接字，然后使用该套接字的sendto等方法对准某个IP/端口进行数据发送；接收端也首先创建套接字，然后将该套接字绑定到一个IP/端口上，所有发向此端口的数据会被该套接字的recv等函数读出。如同读出文件中的数据一样。</p>
+<p>TCP/IP的socket提供下列三种类型套接字。  流式套接字、数据报式套接字、原始式套接字。</p>
+<p>客户端编程步骤：</p>
+<p>1：加载套接字库，创建套接字(WSAStartup()/socket())；</p>
+<p>2：向服务器发出连接请求(connect())；</p>
+<p>3：和服务器端进行通信(send()/recv())；</p>
+<p>4：关闭套接字，关闭加载的套接字库(closesocket()/WSACleanup())。</p>
+<p>常用第三方库：1，Asyncsocket库</p>
+<p>asihttp代码原理，异步请求的原理，异步请求最大数目，为什么只能这么多？</p>
+<p>ASIHTTPRequest是一个简易使用的类库,通过包装CFNetwork API 来简化 和服务器端的通讯. 它编写的语言是Objective-C 能够应用于Mac OS X and iPhone 平台的应用程序.</p>
+<p>异步: 请求通过事件触发-&gt;服务器处理（这是浏览器仍然可以作其他事情）-&gt;处理完毕这个数量是跟cpu有关的,并发性取决于cpu核数,每个核只能同时处理一个任务.4核cpu理论上可以并发处理4个任务,如果按http来算就是4个请求,但是cpu是抢占式资源,所以一般来说并发量是要根据任务的耗时和cpu的繁忙度来计算4个左右只是个经验值你开10个短耗时的任务和几个长耗时任务的效率是不同的。</p>
+<h4 id="JSONKit、SBJson、TouchJSON和原生的区别"><a href="#JSONKit、SBJson、TouchJSON和原生的区别" class="headerlink" title="JSONKit、SBJson、TouchJSON和原生的区别?"></a>JSONKit、SBJson、TouchJSON和原生的区别?</h4><p>JSONKit、SBJson、TouchJSON（性能从左到右，越右越差,主要就是性能上的差别）</p>
+<h4 id="App需要加载超大量的数据，给服务器发送请求，但是服务器卡住了如何解决？"><a href="#App需要加载超大量的数据，给服务器发送请求，但是服务器卡住了如何解决？" class="headerlink" title="App需要加载超大量的数据，给服务器发送请求，但是服务器卡住了如何解决？"></a>App需要加载超大量的数据，给服务器发送请求，但是服务器卡住了如何解决？</h4><p>1&gt;  设置请求超时<br> 2&gt;  给用户提示请求超时<br> 3&gt;  根据用户操作再次请求数据</p>
+<h4 id="HTTP的通信的-发送请求、接收响应-包含哪些内容？OC中是怎样实现的？"><a href="#HTTP的通信的-发送请求、接收响应-包含哪些内容？OC中是怎样实现的？" class="headerlink" title="HTTP的通信的 发送请求、接收响应 包含哪些内容？OC中是怎样实现的？"></a>HTTP的通信的 发送请求、接收响应 包含哪些内容？OC中是怎样实现的？</h4><ol>
+<li>请求：一个请求包含以下内容：</li>
+<li>请求行：包含了请求方法、请求资源路径、HTTP协议版本<br> GET /XXServer/resources/images/1.jpg HTTP/1.1</li>
+<li>请求头：包含了对客户端的环境描述、客户端请求的主机地址等信息 <ul>
+<li>Host: 192.168.1.105:8080   // 客户端想访问的服务器主机地址</li>
+<li>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9) Firefox/30.0<br> // 客户端的类型，客户端的软件环境</li>
+<li>Accept: text/html, <em>/</em>   // 客户端所能接收的数据类型</li>
+<li>Accept-Language: zh-cn   // 客户端的语言环境</li>
+<li>Accept-Encoding: gzip   // 客户端支持的数据压缩格式</li>
+</ul>
+</li>
+<li>请求体：客户端发给服务器的具体数据，比如文件数据</li>
+<li>OC中请求NSURLRequest <ul>
+<li>发送给服务器的请求包含：</li>
+<li>请求行： 包含了请求方法、请求资源路径、HTTP协议版本</li>
+<li>请求头：  对客户端的环境描述、客户端请求的主机地址等信息</li>
+<li>请求体：  客户端发给服务器的具体数据</li>
+<li>默认超时时常：60s</li>
+</ul>
+</li>
+<li>响应： <ul>
+<li>一个响应包括：</li>
+<li>状态行：包含了HTTP协议版本、状态码、状态英文名称 HTTP/1.1 200 OK</li>
+<li>响应头：包含了对服务器的描述、对返回数据的描述</li>
+<li>Server: Apache-Coyote/1.1   // 服务器的类型</li>
+<li>Content-Type: image/jpeg   // 返回数据的类型</li>
+<li>Content-Length: 56811   // 返回数据的长度</li>
+<li>Date: Mon, 23 Jun 2014 12:54:52 GMT  // 响应的时间</li>
+<li>实体内容：服务器返回给客户端的具体数据，比如文件数据</li>
+<li>OC中响应用NSURLRespose：返回给客户端的回应包含： <ul>
+<li>状态行 ： 包含了HTTP协议版本、状态码、状态英文名称</li>
+<li>响应头 ： 包含了对服务器的描述、对返回数据的描述</li>
+<li>实体内容：服务器返回给客户端的具体二进制数据</li>
+<li>常用属性：  expectedContentLength （下载时返回文件的长度）<br> suggestedFilename（建议保存的文件名）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="http-的post与get区别与联系，实践中如何选择它们？"><a href="#http-的post与get区别与联系，实践中如何选择它们？" class="headerlink" title="http 的post与get区别与联系，实践中如何选择它们？"></a>http 的post与get区别与联系，实践中如何选择它们？</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>GET</th>
+<th>POST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>用途</td>
+<td>从服务器上获取数据</td>
+<td>向服务器传送数据提交方式</td>
+</tr>
+<tr>
+<td>服务器解析</td>
+<td>Request.QueryString获取变量的值</td>
+<td>Request.Form获取提交的数据</td>
+</tr>
+<tr>
+<td>数据大小</td>
+<td>最大1024字节</td>
+<td>无限制</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>URL中能看到提交的数据</td>
+<td>隐藏在请求头中</td>
+</tr>
+</tbody>
+</table>
+<h4 id="知道TCP-UDP吗？说说关于UDP-TCP的区别？"><a href="#知道TCP-UDP吗？说说关于UDP-TCP的区别？" class="headerlink" title="知道TCP/UDP吗？说说关于UDP/TCP的区别？"></a>知道TCP/UDP吗？说说关于UDP/TCP的区别？</h4><ul>
+<li>UDP: 是用户数据报协议: 主要用在实时性要求高以及对质量相对较弱的地方,但面对现在高质量的线路不是容易丢包除非是一些拥塞条件下, 如流媒体</li>
+<li>TCP: 是传输控制协议:是面连接的,那么运行环境必然要求其可靠性不可丢包有良好的拥塞控制机制如http ftp telnet 等</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发送与接收</td>
+<td>安全送达</td>
+<td>只管发送</td>
+</tr>
+<tr>
+<td>建立连接</td>
+<td>是（三次握手）</td>
+<td>否（有数据包，无需连接）</td>
+</tr>
+<tr>
+<td>数据大小</td>
+<td>无限制</td>
+<td>每个数据报64k</td>
+</tr>
+<tr>
+<td>可靠性</td>
+<td>可靠</td>
+<td>不可靠</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>慢（三次握手才能完成连接</td>
+<td>快（无需连接）</td>
+</tr>
+<tr>
+<td>应用</td>
+<td>流媒体</td>
+<td>qq</td>
+</tr>
+</tbody>
+</table>
+<h4 id="什么是三次握手与四次挥手？"><a href="#什么是三次握手与四次挥手？" class="headerlink" title="什么是三次握手与四次挥手？"></a>什么是三次握手与四次挥手？</h4><ul>
+<li>三次握手实现的过程：<ul>
+<li>第一次握手：建立连接时，客户端发送同步序列编号到服务器，并进入发送状态，等待服务器确认</li>
+<li>第二次：服务器收到同步序列编号，确认并同时自己也发送一个同步序列编号+确认标志，此时服务器进入接收状态</li>
+<li>第三次：客户端收到服务器发送的包，并向服务器发送确认标志，随后链接成功。</li>
+<li>注意：是在链接成功后在进行数据传输。</li>
+</ul>
+</li>
+<li>四次挥手：<ul>
+<li>第一次： 客户端向服务器发送一个带有结束标记的报文。</li>
+<li>第二次：服务器收到报文后，向客户端发送一个确认序号，同时通知自己相应的应用程序：对方要求关闭连接</li>
+<li>第三次： 服务器向客户端发送一个带有结束标记的报文。</li>
+<li>第四次： 客户端收到报文后，向服务器发送一个确认序号。链接关闭。</li>
+</ul>
+</li>
+</ul>
+<h4 id="分析json、xml的区别-json、xml解析方式的底层是如何处理的"><a href="#分析json、xml的区别-json、xml解析方式的底层是如何处理的" class="headerlink" title="分析json、xml的区别?json、xml解析方式的底层是如何处理的?"></a>分析json、xml的区别?json、xml解析方式的底层是如何处理的?</h4><ol>
+<li>Json与xml的区别:<ul>
+<li>可读性方面:基本相同,xml的可读性比较好</li>
+<li>可扩展性方面:都具有很好的扩展性</li>
+<li>编码难度方面:相对而言:JSON的编码比较容易</li>
+<li>解码难度:json的解码难度基本为零,xml需要考虑子节点和父节点</li>
+<li>数据体积方面:json相对于xml来讲,数据体积小,传递的速度跟快些</li>
+<li>数据交互方面:json与JavaScript的交互更加方面,更容易解析处理,更好的数据交互</li>
+<li>数据描述方面:xml对数据描述性比较好</li>
+<li>传输速度方面:json的速度远远快于xml</li>
+</ul>
+</li>
+<li>JSON底层原理:<ul>
+<li>遍历字符串中的字符,最终根据格式规定的特殊字符,比如{}号,[]号, : 号 等进行区分,{}号是一个字典 的开始,[]号是一个数组的开始, : 号是字典的键和值的分水岭,最终乃是将json数据转化为字典,字典中值可能是字典,数组,或字符串而已。</li>
+</ul>
+</li>
+<li>XML底层原理:<ul>
+<li>XML解析常用的解析方法有两种:DOM解析和SAX解析。</li>
+<li>DOM 采用建立树形结构的方式访问 XML 文档,而 SAX 采用的事件模型。</li>
+<li>DOM 解析把 XML 文档转化为一个包含其内容的树,并可以对树进行遍历。</li>
+<li>使用 DOM 解析器的时候需 要处理整个 XML 文档,所以对性能和内存的要求比较高。</li>
+<li>SAX在解析 XML 文档的时候可以触发一系列的事件,当发现给定的tag的时候,它可以激活一个回调方法,告诉该方法制定的标签已经找到。</li>
+<li>SAX 对内存的要求通常会比较低,因为它让开发人员自己来决定所要处理的tag。特别是当开发人员只需要处理文档中所包含的部分数据时,SAX 这种扩展能力得到了更好的体现。</li>
+</ul>
+</li>
+<li>(补充)其他解析方式有自定义二进制解析，就是按字节去解析，电话会谈就是如此，还可以是字符串之间用特殊符号连接的数据，将此数据用特殊符号可以分割成所用数据。</li>
+</ol>
+<h4 id="http和scoket通信的区别-socket连接相关库-TCP-UDP的连接方法-HTTP的几种常用方式"><a href="#http和scoket通信的区别-socket连接相关库-TCP-UDP的连接方法-HTTP的几种常用方式" class="headerlink" title="http和scoket通信的区别?socket连接相关库,TCP,UDP的连接方法,HTTP的几种常用方式?"></a>http和scoket通信的区别?socket连接相关库,TCP,UDP的连接方法,HTTP的几种常用方式?</h4><ol>
+<li>http和scoket通信的区别: <ul>
+<li>http是客户端用http协议进行请求,发送请求时候需要封装http请求头,并绑定请求的数据,服务器一般有web服务器配合(当然也非绝对)。 http请求方式为客户端主动发起请求,服务器才能给响应,一次请求完毕后则断开连接,以节省资源。服务器不能主动给客户端响应(除非采取http长连接技术)。iphone主要使用类是NSUrlConnection。</li>
+<li>scoket是客户端跟服务器直接使用socket“套接字”进行连接,并没有规定连接后断开,所以客户端和服务器可以保持连接通道,双方都可以主动发送数据。一般在游戏开发或股票开发这种要求即时性很强并且保持发送数据量比较大的场合使用。主要使用类是CFSocketRef。</li>
+</ul>
+</li>
+</ol>
+<h4 id="通信底层原理（OSI七层模型）"><a href="#通信底层原理（OSI七层模型）" class="headerlink" title="通信底层原理（OSI七层模型）"></a>通信底层原理（OSI七层模型）</h4><ul>
+<li>OSI简介：OSI采用了分层的结构化技术，共分七层，物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。</li>
+<li>物理层：主要定义物理设备标准，如网线的接口类型、光纤的接口类型、各种传输介质的传输速率等。它的主要作用是传输比特流（就是由1、0转化为电流强弱来进行传输,到达目的地后在转化为1、0，也就是我们常说的数模转换与模数转换）。这一层的数据叫做比特。</li>
+<li>数据链路层：定义了如何让格式化数据以进行传输，以及如何让控制对物理介质的访问。这一层通常还提供错误检测和纠正，以确保数据的可靠传输。</li>
+<li>网络层：：在位于不同地理位置的网络中的两个主机系统之间提供连接和路径选择。Internet的发展使得从世界各站点访问信息的用户数大大增加，而网络层正是管理这种连接的层。</li>
+<li><p>传输层：定义了一些传输数据的协议和端口号（WWW端口80等），如：TCP（传输控制协议，传输效率低，可靠性强，用于传输可靠性要求高，数据量大的数据），UDP（用户数据报协议，与TCP特性恰恰相反，用于传输可靠性要求不高，数据量小的数据，如QQ聊天数据就是通过这种方式传输的）。 主要是将从下层接收的数据进行分段和传输，到达目的地址后再进行重组。常常把这一层数据叫做段。</p>
+</li>
+<li><p>会话层：通过传输层（端口号：传输端口与接收端口）建立数据传输的通路。主要在你的系统之间发起会话或者接受会话请求（设备之间需要互相认识可以是IP也可以是MAC或者是主机名）</p>
+</li>
+<li>表示层：：可确保一个系统的应用层所发送的信息可以被另一个系统的应用层读取。例如，PC程序与另一台计算机进行通信，其中一台计算机使用扩展二一十进制交换码（EBCDIC），而另一台则使用美国信息交换标准码（ASCII）来表示相同的字符。如有必要，表示层会通过使用一种通格式来实现多种数据格式之间的转换。</li>
+<li>应用层：是最靠近用户的OSI层。这一层为用户的应用程序（例如电子邮件、文件传输和终端仿真）提供网络服务。</li>
+</ul>
+<p>all  people seem to need date processing这一句话的意思是所有的人似乎都需要处理数据</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application</td>
+<td>all</td>
+</tr>
+<tr>
+<td>Presentation</td>
+<td>people</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>seem</td>
+</tr>
+<tr>
+<td>Transport</td>
+<td>to</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>need</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>date</td>
+</tr>
+<tr>
+<td>Physical</td>
+<td>processing</td>
+</tr>
+</tbody>
+</table>
+<h4 id="设计一套大文件（如上百M的视频）下载方案"><a href="#设计一套大文件（如上百M的视频）下载方案" class="headerlink" title="设计一套大文件（如上百M的视频）下载方案"></a>设计一套大文件（如上百M的视频）下载方案</h4><ul>
+<li><p>NSURLSession</p>
+</li>
+<li><p>支持断点下载，自动记录停止下载时断点的位置</p>
+</li>
+<li><p>遵守NSURLSessionDownloadDelegate协议</p>
+</li>
+<li><p>使用NSURLSession下载大文件，被下载文件会被自动写入沙盒的临时文件夹tmp中</p>
+</li>
+<li><p>下载完毕，通常需要将已下载文件移动其他位置（tmp文件夹中的数据被定时删除），通常是cache文件夹中</p>
+</li>
+<li><p>下载步骤：</p>
+<ul>
+<li><p>设置下载任务task的为成员变量</p>
+<pre><code> @property (nonatomic, strong) NSURLSessionDownloadTask *task;
+</code></pre></li>
+<li><p>获取NSURLSession对象</p>
+<pre><code>  NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[[NSOperationQueue alloc] init]];
+</code></pre></li>
+<li><p>初始化下载任务任务</p>
+<pre><code>  self.task = [session downloadTaskWithURL:（此处为下载文件路径URL）];
+</code></pre></li>
+<li><p>实现代理方法</p>
+<pre><code>  /**每当写入数据到临时文件的时候，就会调用一次该方法，通常在该方法中获取下载进度*/
+  -(void)URLSession:(NSURLSession *)session downloadTask: (NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
+  {
+  // 计算下载进度
+   CGFloat progress = 1.0 * totalBytesWritten / totalBytesExpectedToWrite;
+  }
+
+  /**任务终止时调用的方法，通常用于断点下载*/
+  -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes
+  {
+    //fileOffset：下载任务中止时的偏移量
+  }
+
+  /**遇到错误的时候调用，error参数只能传递客户端的错误*/
+  -(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
+  { }
+
+  /**下载完成的时候调用，需要将文件剪切到可以长期保存的文件夹中*/
+  -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
+  {
+  //生成文件长期保存的路径
+  NSString *file = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:downloadTask.response.suggestedFilename];
+  //获取文件句柄
+  NSFileManager *fileManager = [NSFileManager defaultManager];
+  //通过文件句柄，将文件剪切到文件长期保存的路径
+  [fileManager moveItemAtURL:location toURL:[NSURL fileURLWithPath:file] error:nil];
+  }
+</code></pre></li>
+<li><p>操作任务状态</p>
+<pre><code>  /**开始/继续下载任务*/
+  [self.task resume];
+
+  /**暂停下载任务*/
+  [self.task suspend]; 
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h4 id="HTTP协议的特点，关于HTTP请求GET和POST的区别"><a href="#HTTP协议的特点，关于HTTP请求GET和POST的区别" class="headerlink" title="HTTP协议的特点，关于HTTP请求GET和POST的区别?"></a>HTTP协议的特点，关于HTTP请求GET和POST的区别?</h4><pre><code>HTTP协议的特点:
+- HTTP超文本传输协议，是短连接，是客户端主动发送请求，服务器做出响应，服务器响应之后，链接断开。HTTP是一个属于应用层面向对象的协议，HTTP有两类报文：请求报文和响应报文。
+- HTTP请求报文：一个HTTP请求报文由请求行、请求头部、空行和请求数据4部分组成。
+- HTTP响应报文：由三部分组成：状态行、消息报头、响应正文。
+</code></pre><h4 id="即时聊天App不会采用的网络传输方式"><a href="#即时聊天App不会采用的网络传输方式" class="headerlink" title="即时聊天App不会采用的网络传输方式"></a>即时聊天App不会采用的网络传输方式</h4><pre><code>A UDP
+B TCP 
+C HTTP 
+D FTP
+参考答案：D
+理由：FTP是文件传输协议，是File Transfer Protocol的简称，它的作用是用于控制互联网上文件的双向传输，因此一定不会是即时聊天使用的；UDP是面向无连接的传输层协议，数据传输是不可靠的，它只管发，不管收不收得到；TCP是面向连接的，可靠的传输层协议；HTTP是超文本传输协议，对应于应用层，而HTTP是基于TCP的。
+</code></pre><h4 id="在App中混合HTML5开发App如何实现的。在App中使用HTML5的优缺点是什么？"><a href="#在App中混合HTML5开发App如何实现的。在App中使用HTML5的优缺点是什么？" class="headerlink" title="在App中混合HTML5开发App如何实现的。在App中使用HTML5的优缺点是什么？"></a>在App中混合HTML5开发App如何实现的。在App中使用HTML5的优缺点是什么？</h4><pre><code>在iOS中，通常是用UIWebView来实现，当然在iOS8以后可以使用WKWebView来实现.有以下几种实现方法：
+通过实现UIWebView的代理方法来拦截，判断scheme是否是约定好的，然后iOS调用本地相关API来实现：
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+在iOS7以后，可以直接通过JavaScripteCore这个库来实现，通过往JS DOM注入对象，而这个对象对应于我们iOS的某个类的实例。更详细请阅读：
+OC JavaScriptCore与js交互
+WKWebView新特性及JS交互
+Swift JavaScriptCore与JS交互
+可以通过WebViewJavascriptBridge来实现。具体如何使用，请大家去其它博客搜索吧！
+优缺点：
+iOS加入H5响应比原生要慢很多，体验不太好，这是缺点。
+iOS加入H5可以实现嵌入别的功能入口，可随时更改，不用更新版本就可以上线，这是最大的优点。
+</code></pre><h4 id="介绍一下XMPP-有什么优缺点吗"><a href="#介绍一下XMPP-有什么优缺点吗" class="headerlink" title="介绍一下XMPP?有什么优缺点吗?"></a>介绍一下XMPP?有什么优缺点吗?</h4><pre><code>XMPP(Extensible Messaging and Presence Protocol,前称)是一种以XML为基础的开放式实时通信协议,是 经由互联网工程工作小组(IETF)通过的互联网标准。简单的说,XMPP就是一种协议,一种规定。就是说,在网络上传 东西,要建立连接,TCP/IP连接,建立后再传东西,而XMPP就是规定你传的东西的格式。XMPP是基于XML的协议。 优点
+开放:
+XMPP协议是自由、开放、公开的,并且易于了解。 而且在客户端 、 服务器 、 组件 、 源码库等方面,都已经各自有多种实现。 标准:
+互联网工程工作小组( IETF )已经将Jabber的核心XML流协议以XMPP之名,正式列为认可的实时通信及Presence技术。 而XMPP的技术规格已被定义在RFC 3920及RFC 3921 。 任何IM供应商在遵循XMPP协议下,都可与Google Talk实现连接。 证实可用:
+第一个Jabber(现在XMPP)技术是Jeremie Miller在1998年开发的,现在已经相当稳定;数以百计的开发者为XMPP技术而努 力。 今日的互联网上有数以万计的XMPP服务器运作着,并有数以百万计的人们使用XMPP实时传讯软件。
+分散式:
+XMPP网络的架构和电子邮件十分相像;XMPP核心协议通信方式是先创建一个stream,XMPP以TCP传递XML数据流,没有 中央主服务器。 任何人都可以运行自己的XMPP服务器,使个人及组织能够掌控他们的实时传讯体验。
+安全:
+任何XMPP协议的服务器可以独立于公众XMPP网络(例如在企业内部网络中),而使用SASL及TLS等技术的可靠安全性,已自 带于核心XMPP技术规格中。
+可扩展:
+XML 命名空间的威力可使任何人在核心协议的基础上建造定制化的功能;为了维持通透性,常见的扩展由XMPP标准基金会 。 弹性佳:
+XMPP除了可用在实时通信的应用程序,还能用在网络管理、内容供稿、协同工具、文件共享、游戏、远程系统监控等。 多样性:
+用XMPP协议来建造及布署实时应用程序及服务的公司及开放源代码计划分布在各种领域;用XMPP技术开发软件,资源及支持的 来源是多样的,使得使你不会陷于被“绑架”的困境。
+缺点
+数据负载太重:
+随着通常超过70%的XMPP协议的服务器的数据流量的存在和近60%的被重复转发,XMPP协议目前拥有一个大型架空中存在的 数据提供给多个收件人。 新的议定书正在研究,以减轻这一问题。
+没有二进制数据:
+XMPP协议的方式被编码为一个单一的长的XML文件,因此无法提供修改二进制数据。 因此, 文件传输协议一样使用外部的 HTTP。 如果不可避免,XMPP协议还提供了带编码的文件传输的所有数据使用的Base64 。 至于其他二进制数据加密会话 (encrypted conversations)或图形图标(graphic icons)以嵌入式使用相同的方法。
+</code></pre><h4 id="NSURLConnection的几个常用的代理"><a href="#NSURLConnection的几个常用的代理" class="headerlink" title="NSURLConnection的几个常用的代理?"></a>NSURLConnection的几个常用的代理?</h4><ul>
+<li>NSURLConnectionDownloadDelegate :能够实现监听下载进度!但是下载之后,找不到下载好的文件!</li>
+<li>NSURLConnectionDataDelegate 是针对数据下载提供的方法!需要注意的是,需要自己实现监听进度的业务逻辑!</li>
+<li>利用 NSURLConnection 的异步回调进行文件下载: <ul>
+<li>如果是小文件下载,问题不大! 可以直接使用异步回调进行下载</li>
+<li>如果使用异步回调的方法进行大文件下载,则会出现内存暴涨的情况!</li>
+</ul>
+</li>
+<li>内存暴涨的原因: 大文件下载之后,默认是放在内存中的,所以下载的文件越大,越耗费内存.</li>
+<li>存在的缺点: 使用异步回调实现文件,无法监听下载进度!并且对于大文件下载,会造成内存暴涨!</li>
+<li>基于以上两点,一般,在进行文件下载的时候,使用代理回调监听下载进度!并且在下载文件的时候,手动管理内存!</li>
+</ul>
+<h4 id="NSURLConnection-amp-NSURLSession的区别"><a href="#NSURLConnection-amp-NSURLSession的区别" class="headerlink" title="NSURLConnection&amp;NSURLSession的区别?"></a>NSURLConnection&amp;NSURLSession的区别?</h4><ul>
+<li>虽然 NSURLConnection 在 iOS 9.0 中已经被废弃，但是作为资深的 iOS 程序员，必须要了解 NSURLConnection 的细节, <ul>
+<li>NSURLSession: 用于替代 NSURLConnection</li>
+<li>支持后台运行的网络任务</li>
+<li>暂停、停止、重启网络任务，不再需要 NSOperation 封装</li>
+<li>请求可以使用同样的配置容器</li>
+<li>不同的 session 可以使用不同的私有存储</li>
+<li>block 和代理可以同时起作用</li>
+<li>直接从文件系统上传、下载</li>
+</ul>
+</li>
+</ul>
+<h4 id="XML是什么-XML与HTML的区别"><a href="#XML是什么-XML与HTML的区别" class="headerlink" title="XML是什么? XML与HTML的区别?"></a>XML是什么? XML与HTML的区别?</h4><ul>
+<li>XML的简单使其易于在任何应用程序中读写数据，这使XML很快成为数据交换的唯一公共语言，虽然不同的应用软件也支持其它的数据交换格式，但不久之后他们都将支持XML，那就意味着程序可以更容易的与Windows,Mac OS,Linux以及其他平台下产生的信息结合，然后可以很容易加载XML数据到程序中并分析他，并以XML格式输出结果。</li>
+<li>XML去掉了之前令许多开发人员头疼的SGML（标准通用标记语言）的随意语法。在XML中，采用了如下的语法： <ul>
+<li>任何的起始标签都必须有一个结束标签。</li>
+<li>可以采用另一种简化语法，可以在一个标签中同时表示起始和结束标签。这种语法是在大于符号之前紧跟一个斜线（/），例如&lt;tag/ &gt;。XML解析器会将其翻译成<tag></tag>。</li>
+<li>标签必须按合适的顺序进行嵌套，所以结束标签必须按镜像顺序匹配起始标签，例如this is asamplestring。这好比是将起始和结束标签看作是数学中的左右括号：在没有关闭所有的内部括号之前，是不能关闭外面的括号的。</li>
+<li>所有的特性都必须有值。</li>
+<li>所有的特性都必须在值的周围加上双引号。</li>
+</ul>
+</li>
+<li>XML与HTML的设计区别是：XML的核心是数据，其重点是数据的内容。而HTML 被设计用来显示数据，其重点是数据的显示。</li>
+<li>XML和HTML语法区别：HTML的标记不是所有的都需要成对出现，XML则要求所有的标记必须成对出现；HTML标记不区分大小写，XML则 大小敏感,即区分大小写。</li>
+</ul>
+<h4 id="网络图片处理问题中怎么解决一个相同的网络地址重复请求的问题？"><a href="#网络图片处理问题中怎么解决一个相同的网络地址重复请求的问题？" class="headerlink" title="网络图片处理问题中怎么解决一个相同的网络地址重复请求的问题？"></a>网络图片处理问题中怎么解决一个相同的网络地址重复请求的问题？</h4><p>利用字典（图片地址为key，下载操作为value）</p>
+<h4 id="sip是什么？"><a href="#sip是什么？" class="headerlink" title="sip是什么？"></a>sip是什么？</h4><pre><code>1&gt;  SIP（Session Initiation Protocol），会话发起协议
+2&gt;  SIP是建立VOIP连接的 IETF 标准，IETF是全球互联网最具权威的技术标准化组织
+3&gt;  所谓VOIP，就是网络电话，直接用互联网打电话，不用耗手机话费
+</code></pre><h4 id="TCP-IP四层模型"><a href="#TCP-IP四层模型" class="headerlink" title="TCP/IP四层模型"></a>TCP/IP四层模型</h4><ul>
+<li>TCP/IP是一组协议的代名词，它还包括许多协议，组成了TCP/IP协议簇。TCP/IP协议簇分为四层，IP位于协议簇的第二层(对应OSI的第三层)，TCP位于协议簇的第三层(对应OSI的第四层)。</li>
+<li>应用层：应用程序间沟通的层，如简单电子邮件传输（SMTP）、文件传输协议（FTP）、网络远程访问协议（Telnet）等。</li>
+<li>传输层：在此层中，它提供了节点间的数据传送服务，如传输控制协议（TCP）、用户数据报协议（UDP）等，TCP和UDP给数据包加入传输数据并把它传输到下一层中，这一层负责传送数据，并且确定数据已被送达并接收。</li>
+<li>互连网络层：负责提供基本的数据封包传送功能，让每一块数据包都能够到达目的主机（但不检查是否被正确接收），如网际协议（IP）。</li>
+<li>网络接口层：对实际的网络媒体的管理，定义如何使用实际网络（如Ethernet、Serial Line等）来传送数据。</li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/09/12/iOS面试题16-WebView与JS交互/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/12/iOS面试题14-Runloop/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="暮鼓晨钟's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        swift630@sina.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: swift630@sina.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">28</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;暮鼓晨钟
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

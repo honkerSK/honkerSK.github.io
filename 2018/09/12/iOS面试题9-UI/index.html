@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            iOS面试题9--UI | 
+        
+        暮鼓晨钟
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",iOS面试">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="暮鼓晨钟">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题9-UI/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题9-UI/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="iOS面试题9--UI | 暮鼓晨钟">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="iOS面试"> 
+
+    
+        <meta property="article:published_time" content="Wed Sep 12 2018 14:19:36 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 12 2018 14:30:13 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题9-UI/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题9-UI/index.html",
+    "headline": "iOS面试题9--UI",
+    "datePublished": "Wed Sep 12 2018 14:19:36 GMT+0800",
+    "dateModified": "Wed Sep 12 2018 14:30:13 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "暮鼓晨钟",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "暮鼓晨钟",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",iOS面试",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#viewcontroller的一些方法的说明viewDidLoad-viewWillDisappear-viewWillAppear方法的-顺序和作用？"><span class="post-toc-number">1.</span> <span class="post-toc-text">viewcontroller的一些方法的说明viewDidLoad,viewWillDisappear, viewWillAppear方法的 顺序和作用？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是key-window？"><span class="post-toc-number">2.</span> <span class="post-toc-text">什么是key window？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#谈一谈你是怎么封装view的"><span class="post-toc-number">3.</span> <span class="post-toc-text">谈一谈你是怎么封装view的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#简单说一下APP的启动过程-从main文件开始说起"><span class="post-toc-number">4.</span> <span class="post-toc-text">简单说一下APP的启动过程,从main文件开始说起</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#怎么解决缓存池满的问题-cell"><span class="post-toc-number">5.</span> <span class="post-toc-text">怎么解决缓存池满的问题(cell)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UIButton与UITableView的层级结构"><span class="post-toc-number">6.</span> <span class="post-toc-text">UIButton与UITableView的层级结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置scroll-view的contensize能在Viewdidload里设置么-为什么"><span class="post-toc-number">7.</span> <span class="post-toc-text">设置scroll view的contensize能在Viewdidload里设置么,为什么</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#简述你对UIView、UIWindow和CALayer的理解"><span class="post-toc-number">8.</span> <span class="post-toc-text">简述你对UIView、UIWindow和CALayer的理解</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#frame和bounds有什么不同？-Difference-between-frame-and-bounds"><span class="post-toc-number">9.</span> <span class="post-toc-text">frame和bounds有什么不同？(Difference between frame and bounds?)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关于页面间传值的问题"><span class="post-toc-number">10.</span> <span class="post-toc-text">关于页面间传值的问题?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关于视图的生命周期的问题"><span class="post-toc-number">11.</span> <span class="post-toc-text">关于视图的生命周期的问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#响应者链条-What-is-responder-chain"><span class="post-toc-number">12.</span> <span class="post-toc-text">响应者链条? (What is responder chain?)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ViewController的loadView-viewDidLoad-viewDidUnload分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作？"><span class="post-toc-number">13.</span> <span class="post-toc-text">ViewController的loadView,viewDidLoad,viewDidUnload分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UITableView的重用机制-或者如何在一个view上显示多个tableView-tableView要求不同的数据源以及不同的样式-要求自定义cell-如何组织各个tableView的delegate和dataSource-请说说实现思路"><span class="post-toc-number">14.</span> <span class="post-toc-text">UITableView的重用机制?(或者如何在一个view上显示多个tableView,tableView要求不同的数据源以及不同的样式 (要求自定义cell), 如何组织各个tableView的delegate和dataSource?请说说实现思路?)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在一个tableView中需要自定义多种样式的cell-两种或三种-通常你如何实现-说说思路即可"><span class="post-toc-number">15.</span> <span class="post-toc-text">在一个tableView中需要自定义多种样式的cell(两种或三种),通常你如何实现,说说思路即可?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UITableView的性能优化-滑动的时候有种卡的感觉是为什么？怎么解决？"><span class="post-toc-number">16.</span> <span class="post-toc-text">UITableView的性能优化? 滑动的时候有种卡的感觉是为什么？怎么解决？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#tableview的cell里如何嵌套collection-view？"><span class="post-toc-number">17.</span> <span class="post-toc-text">tableview的cell里如何嵌套collection view？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#下拉和上拉的原理"><span class="post-toc-number">18.</span> <span class="post-toc-text">下拉和上拉的原理?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何实现cell的动态的行高？"><span class="post-toc-number">19.</span> <span class="post-toc-text">如何实现cell的动态的行高？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#谈谈webView"><span class="post-toc-number">20.</span> <span class="post-toc-text">谈谈webView</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#awakeFromNib与viewdidload区别"><span class="post-toc-number">21.</span> <span class="post-toc-text">awakeFromNib与viewdidload区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#layoutSubview何时调用"><span class="post-toc-number">22.</span> <span class="post-toc-text">layoutSubview何时调用?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#viewcontroller的didreceivememorywaring在什么时候调用-默认操作是什么"><span class="post-toc-number">23.</span> <span class="post-toc-text">viewcontroller的didreceivememorywaring在什么时候调用 默认操作是什么</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UIWindow和UIView和-CALayer-的联系和区别"><span class="post-toc-number">24.</span> <span class="post-toc-text">UIWindow和UIView和 CALayer 的联系和区别?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UIScrollView"><span class="post-toc-number">25.</span> <span class="post-toc-text">UIScrollView</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何实现瀑布流-流水布局"><span class="post-toc-number">26.</span> <span class="post-toc-text">如何实现瀑布流,流水布局</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UIImage有哪几种加载方式"><span class="post-toc-number">27.</span> <span class="post-toc-text">UIImage有哪几种加载方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#描述九宫格算法"><span class="post-toc-number">28.</span> <span class="post-toc-text">描述九宫格算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现图片轮播图"><span class="post-toc-number">29.</span> <span class="post-toc-text">实现图片轮播图</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#应用的生命周期"><span class="post-toc-number">30.</span> <span class="post-toc-text">应用的生命周期</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#load-initialize方法的区别"><span class="post-toc-number">31.</span> <span class="post-toc-text">load initialize方法的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UIScrollView-大概是如何实现的，它是如何捕捉、响应手势的？"><span class="post-toc-number">32.</span> <span class="post-toc-text">UIScrollView 大概是如何实现的，它是如何捕捉、响应手势的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UIView-animateWithDuration-animations-completion-内部大概是如何实现的？"><span class="post-toc-number">33.</span> <span class="post-toc-text">+[UIView animateWithDuration:animations:completion:] 内部大概是如何实现的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么时候会发生「隐式动画」？"><span class="post-toc-number">34.</span> <span class="post-toc-text">什么时候会发生「隐式动画」？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何把一张大图缩小为1-4大小的缩略图？"><span class="post-toc-number">35.</span> <span class="post-toc-text">如何把一张大图缩小为1/4大小的缩略图？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#当TableView的Cell改变时，如何让这些改变以动画的形式呈现？"><span class="post-toc-number">36.</span> <span class="post-toc-text">当TableView的Cell改变时，如何让这些改变以动画的形式呈现？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么当-Core-Animation-完成时，layer-又会恢复到原先的状态？"><span class="post-toc-number">37.</span> <span class="post-toc-text">为什么当 Core Animation 完成时，layer 又会恢复到原先的状态？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设计一个进度条。"><span class="post-toc-number">38.</span> <span class="post-toc-text">设计一个进度条。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何播放-GIF-图片，有什么优化方案么？"><span class="post-toc-number">39.</span> <span class="post-toc-text">如何播放 GIF 图片，有什么优化方案么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有哪几种方式可以对图片进行缩放，使用-CoreGraphics-缩放时有什么注意事项？"><span class="post-toc-number">40.</span> <span class="post-toc-text">有哪几种方式可以对图片进行缩放，使用 CoreGraphics 缩放时有什么注意事项？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XIB与Storyboards的优缺点"><span class="post-toc-number">41.</span> <span class="post-toc-text">XIB与Storyboards的优缺点?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#控制器View的加载过程？"><span class="post-toc-number">42.</span> <span class="post-toc-text">控制器View的加载过程？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#应用程序的启动流程？"><span class="post-toc-number">43.</span> <span class="post-toc-text">应用程序的启动流程？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#事件传递与响应的完整过程"><span class="post-toc-number">44.</span> <span class="post-toc-text">事件传递与响应的完整过程?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#下列回调机制的理解不正确的是"><span class="post-toc-number">45.</span> <span class="post-toc-text">下列回调机制的理解不正确的是</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#给UIImageView添加圆角"><span class="post-toc-number">46.</span> <span class="post-toc-text">给UIImageView添加圆角</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一个view已经初始化完毕，view上面添加了n个button（可能使用循环创建），除用view的tag之外，还可以采用什么办法来找到自己想要的button来修改Button的值"><span class="post-toc-number">47.</span> <span class="post-toc-text">一个view已经初始化完毕，view上面添加了n个button（可能使用循环创建），除用view的tag之外，还可以采用什么办法来找到自己想要的button来修改Button的值</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用drawRect有什么影响？"><span class="post-toc-number">48.</span> <span class="post-toc-text">使用drawRect有什么影响？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#viewWillLayoutSubView你总是知道的。"><span class="post-toc-number">49.</span> <span class="post-toc-text">viewWillLayoutSubView你总是知道的。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一个tableView是否可以关联两个不同的数据源？"><span class="post-toc-number">50.</span> <span class="post-toc-text">一个tableView是否可以关联两个不同的数据源？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何自动计算cell的高度？"><span class="post-toc-number">51.</span> <span class="post-toc-text">如何自动计算cell的高度？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UITableView是如何计算内容高度的？为什么初始化时配置数据时，获取行高的代理方法会调用数据条数次？"><span class="post-toc-number">52.</span> <span class="post-toc-text">UITableView是如何计算内容高度的？为什么初始化时配置数据时，获取行高的代理方法会调用数据条数次？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一个tableView是否可以关联两个不同的数据源-你会怎么处理"><span class="post-toc-number">53.</span> <span class="post-toc-text">一个tableView是否可以关联两个不同的数据源?你会怎么处理?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#给出委托方法的实例，并且说出UITableVIew的Data-Source方法"><span class="post-toc-number">54.</span> <span class="post-toc-text">给出委托方法的实例，并且说出UITableVIew的Data Source方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#cocoa-touch框架"><span class="post-toc-number">55.</span> <span class="post-toc-text">cocoa touch框架</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#xib文件的构成分为哪3个图标？都具有什么功能。"><span class="post-toc-number">56.</span> <span class="post-toc-text">xib文件的构成分为哪3个图标？都具有什么功能。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#简述应用程序按Home键进入后台时的生命周期-和从后台回到前台时的生命周期-应用程序"><span class="post-toc-number">57.</span> <span class="post-toc-text">简述应用程序按Home键进入后台时的生命周期,和从后台回到前台时的生命周期? 应用程序:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#是否使用Core-Text或者Core-Image等？如果使用过，请谈谈你使用Core-Text或者Core-Image的体验。"><span class="post-toc-number">58.</span> <span class="post-toc-text">是否使用Core Text或者Core Image等？如果使用过，请谈谈你使用Core Text或者Core Image的体验。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分析一下使用手机获取验证码注册账号的实现逻辑-给了一个示例图-，发送到手机的验证码超过60秒钟后重新发送"><span class="post-toc-number">59.</span> <span class="post-toc-text">分析一下使用手机获取验证码注册账号的实现逻辑(给了一个示例图)，发送到手机的验证码超过60秒钟后重新发送</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#你做iphone开发时候-有哪些传值方式-view和view之间是如何传值的"><span class="post-toc-number">60.</span> <span class="post-toc-text">你做iphone开发时候,有哪些传值方式,view和view之间是如何传值的?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有哪几种手势通知方法、写清楚方法名？"><span class="post-toc-number">61.</span> <span class="post-toc-text">有哪几种手势通知方法、写清楚方法名？</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                iOS面试题9--UI
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>暮鼓晨钟</strong>
+        <span>9月 12, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题9--UI&url=http://yoursite.com/2018/09/12/iOS面试题9-UI/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题9--UI&url=http://yoursite.com/2018/09/12/iOS面试题9-UI/index.html&via=暮鼓晨钟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题9-UI/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题9-UI/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=iOS面试题9--UI&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题9-UI/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h4 id="viewcontroller的一些方法的说明viewDidLoad-viewWillDisappear-viewWillAppear方法的-顺序和作用？"><a href="#viewcontroller的一些方法的说明viewDidLoad-viewWillDisappear-viewWillAppear方法的-顺序和作用？" class="headerlink" title="viewcontroller的一些方法的说明viewDidLoad,viewWillDisappear, viewWillAppear方法的 顺序和作用？"></a>viewcontroller的一些方法的说明viewDidLoad,viewWillDisappear, viewWillAppear方法的 顺序和作用？</h4><p>viewWillAppear:视图即将可见时调用。默认情况下不执行任何操作</p>
+<p>viewDidAppear:视图已完全过渡到屏幕上时调用</p>
+<p>viewWillDisappear:视图被驳回时调用，覆盖或以其他方式隐藏。默认情况下不执行任何操作</p>
+<p>viewDidDisappear:视图被驳回后调用，覆盖或以其他方式隐藏。默认情况下不执行任何操作loadView; .这是当他们没有正在使用nib视图页面，子类将会创建自己的自定义视图层。绝不能直接调用。</p>
+<p>viewDidLoad:在视图加载后被调用，如果是在代码中创建的视图加载器，他将会在loadView方法后被调用，如果是从nib视图页面输出，他将会在视图设置好后后被调用。</p>
+<p>「initWithNibName: bundle:」载入nib档案来初始化「loadView」载入视图「viewDidLoad」在载入视图至内存后会呼叫的方法「viewDidUnload」在视图从内存中释放后会呼叫的方法 (当内存过低，释放一些不需要的视图时调用)</p>
+<p>「viewWillAppear」当收到视图在视窗将可见时的通知会呼叫的方法</p>
+<p>「viewDidAppear」当收到视图在视窗已可见时的通知会呼叫的方法</p>
+<p>「viewWillDisappear」当收到视图将去除、被覆盖或隐藏于视窗时的通知会呼叫的方法</p>
+<p>「viewDidDisappear」当收到视图已去除、被覆盖或隐藏于视窗时的通知会呼叫的方法</p>
+<p>「didReceiveMemoryWarning」收到系统传来的内存警告通知后会执行的方法</p>
+<p>「shouldAutorotateToInterfaceOrientation」是否支持不同方向的旋转视图</p>
+<p>「willAnimateRotationToInterfaceOrientation」在进行旋转视图前的会执行的方法（用于调整旋转视图之用）</p>
+<ul>
+<li>代码的执行顺序</li>
+</ul>
+<p>1、 alloc                                   创建对象，分配空间</p>
+<p>2、init (initWithNibName) 初始化对象，初始化数据</p>
+<p>3、loadView                          从nib载入视图 ，通常这一步不需要去干涉。除非你没有使用xib文件创建视图</p>
+<p>4、viewDidLoad                   载入完成，可以进行自定义数据以及动态创建其他控件</p>
+<p>5、viewWillAppear              视图将出现在屏幕之前，马上这个视图就会被展现在屏幕上了</p>
+<p>6、viewDidAppear               视图已在屏幕上渲染完成当一个视图被移除屏幕并且销毁的时候的执行顺序，这个顺序差不多和上面的相反</p>
+<p>1、viewWillDisappear            视图将被从屏幕上移除之前执行</p>
+<p>2、viewDidDisappear             视图已经被从屏幕上移除，用户看不到这个视图了</p>
+<p>3、dealloc                                 视图被销毁，此处需要对你在init和viewDidLoad中创建的对象进行释放</p>
+<h4 id="什么是key-window？"><a href="#什么是key-window？" class="headerlink" title="什么是key window？"></a>什么是key window？</h4><ul>
+<li>一个窗口当前能接受键盘和非触摸事件时，便被认为是主窗口。而触摸事件则被投递到触摸发生的窗口，没有相应坐标值的事件被投递到主窗口。同一时刻只有一个窗口是主窗口。</li>
+</ul>
+<h4 id="谈一谈你是怎么封装view的"><a href="#谈一谈你是怎么封装view的" class="headerlink" title="谈一谈你是怎么封装view的"></a>谈一谈你是怎么封装view的</h4><pre><code>- 先添加所需子控件
+- 再接收模型数据根据模型数据设置子控件数据和位置
+- 简而言之, 自己的事情自己做, 把不需要暴露出去的封装起来
+</code></pre><h4 id="简单说一下APP的启动过程-从main文件开始说起"><a href="#简单说一下APP的启动过程-从main文件开始说起" class="headerlink" title="简单说一下APP的启动过程,从main文件开始说起"></a>简单说一下APP的启动过程,从main文件开始说起</h4><pre class=" language-objc"><code class="language-objc">程序启动分为两类:1.有storyboard 2.没有storyboard
+有storyboard情况下:
+1.main函数
+2.UIApplicationMain
+* 创建UIApplication对象
+* 创建UIApplication的delegate对象
+3.根据Info.plist获得Main.storyboard的文件名,加载Main.storyboard(有storyboard)
+* 创建UIWindow
+* 创建和设置UIWindow的rootViewController
+* 显示窗口
+
+没有storyboard情况下:
+1.main函数
+2.UIApplicationMain
+* 创建UIApplication对象
+* 创建UIApplication的delegate对象
+3.delegate对象开始处理(监听)系统事件(没有storyboard)
+* 程序启动完毕的时候, 就会调用代理的application:didFinishLaunchingWithOptions:方法
+* 在application:didFinishLaunchingWithOptions:中创建UIWindow
+* 创建和设置UIWindow的rootViewController
+* 显示窗口
+</code></pre>
+<h4 id="怎么解决缓存池满的问题-cell"><a href="#怎么解决缓存池满的问题-cell" class="headerlink" title="怎么解决缓存池满的问题(cell)"></a>怎么解决缓存池满的问题(cell)</h4><p>iOS中不存在缓存池满的情况，因为通常我们ios中开发，对象都是在需要的时候才会创建，有种常用的说话叫做懒加载，还有在UITableView中一般只会创建刚开始出现在屏幕中的cell，之后都是从缓存池里取，不会在创建新对象。缓存池里最多也就一两个对象，缓存池满的这种情况一般在开发java中比较常见，java中一般把最近最少使用的对象先释放。</p>
+<h4 id="UIButton与UITableView的层级结构"><a href="#UIButton与UITableView的层级结构" class="headerlink" title="UIButton与UITableView的层级结构"></a>UIButton与UITableView的层级结构</h4><ul>
+<li>继承结构，属于内部的子控件结构</li>
+<li>UIButton为：UIButton &gt; UIControl &gt; UIView &gt; UIResponder &gt; NSObject</li>
+<li>UITableView为：UITableView &gt; UIScrollView &gt; UIView &gt; UIResponder &gt; NSObject</li>
+</ul>
+<h4 id="设置scroll-view的contensize能在Viewdidload里设置么-为什么"><a href="#设置scroll-view的contensize能在Viewdidload里设置么-为什么" class="headerlink" title="设置scroll view的contensize能在Viewdidload里设置么,为什么"></a>设置scroll view的contensize能在Viewdidload里设置么,为什么</h4><ul>
+<li>一般情况下可以设置在viewDidLoad中，但在autolayout下，系统会在viewDidAppear之前根据subview的constraint重新计算scrollview的contentsize。 这就是为什么，在viewdidload里面手动设置了contentsize没用。因为在后面，会再重新计算一次，前面手动设置的值会被覆盖掉。</li>
+<li>解决办法就是：<ul>
+<li>去除autolayout选项，自己手动设置contentsize</li>
+<li>如果要使用autolayout，要么自己设置完subview的constraint，然后让系统自动根据constraint计算出contentsize。要么就在viewDidAppear里面自己手动设置contentsize。</li>
+</ul>
+</li>
+</ul>
+<h4 id="简述你对UIView、UIWindow和CALayer的理解"><a href="#简述你对UIView、UIWindow和CALayer的理解" class="headerlink" title="简述你对UIView、UIWindow和CALayer的理解"></a>简述你对UIView、UIWindow和CALayer的理解</h4><ul>
+<li>UIView: 属于UIkit.framework框架,负责渲染矩形区域的内容,为矩形区域添加动画,响应区域的触摸事件,布局和管理一个或多个子视图</li>
+<li><p>UIWindow:属于UIKit.framework框架,是一种特殊的UIView,通常在一个程序中只会有一个UIWindow,但可以手动创建多个UIWindow,同时加到程序里面。UIWindow在程序中主要起到三个作用:</p>
+<ul>
+<li>作为容器,包含app所要显示的所有视图</li>
+<li>传递触摸消息到程序中view和其他对象</li>
+<li>与UIViewController协同工作,方便完成设备方向旋转的支持</li>
+</ul>
+</li>
+<li><p>CAlayer:属于QuartzCore.framework,是用来绘制内容的,对内容进行动画处理依赖与UIView来进行显示,不能处理用户事件。</p>
+</li>
+<li>UIView和CALayer是相互依赖的,UIView依赖CALayer提供内容,CALayer依赖UIView的容器显示绘制内容。</li>
+<li>(补充)UIViewController:每个视图控制器都有一个自带的视图,并且负责这个视图相关的一切事务。方便管理视图中的子视图,负责model与view的通信;检测设备旋转以及内存警告;是所有视图控制类的积累,定义了控制器的基本功能。</li>
+</ul>
+<h4 id="frame和bounds有什么不同？-Difference-between-frame-and-bounds"><a href="#frame和bounds有什么不同？-Difference-between-frame-and-bounds" class="headerlink" title="frame和bounds有什么不同？(Difference between frame and bounds?)"></a>frame和bounds有什么不同？(Difference between frame and bounds?)</h4><ul>
+<li>frame指的是：该view在父view坐标系统中的位置和大小（参照点是父亲的坐标系统）</li>
+<li>bounds指的是：该view在本身坐标系统中的位置和大小（参照点是本身坐标系统）</li>
+</ul>
+<h4 id="关于页面间传值的问题"><a href="#关于页面间传值的问题" class="headerlink" title="关于页面间传值的问题?"></a>关于页面间传值的问题?</h4><pre class=" language-objc"><code class="language-objc">属性传值：A页面设置属性 NSString *paramString，在跳转B页面的时候初始化paramString。
+//A页面.h文件
+@property (nonatomic, copy)NSString *paramString;
+//A页面.m文件
+ NextViewController *nextVC = [[NextViewController alloc] init];
+ nextVC.paramString = @"参数传质";
+ [self presentViewController:nextVC animated:YES completion:nil];
+
+委托delegate传值：在B页面定义delegate，并且设置delegate属性，在A页面实现delegate协议
+
+通知notification传值：在B页面中发送通知，在A页面注册观察者并且在不用的时候移除观察者。
+//B页面发送通知 
+[[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeNameNotification" object:self userInfo:@{@"name":self.nameTextField.text}];
+ [self dismissViewControllerAnimated:YES completion:nil]; 
+//A页面注册观察者
+ [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ChangeNameNotification:) name:@"ChangeNameNotification" object:nil];
+}
+//观察到通知时候的处理方法
+-(void)ChangeNameNotification:(NSNotification*)notification{
+    NSDictionary *nameDictionary = [notification userInfo];
+    self.nameLabel.text = [nameDictionary objectForKey:@"name"];
+}
+//通知不使用的时候移除观察者
+ [[NSNotificationCenter defaultCenter] removeObserver:self];
+
+
+block传值：在B页面定义一个block类型的变量，在B页面跳转A的时候调用这个block。在A页面跳转到B页面的时候对B页面的block赋值。
+//B页面定义block，并设置block类型的变量
+ typedef void (^ablock)(NSString *str);
+ @property (nonatomic, copy) ablock block; 
+//B页面跳转到A页面调用这个block
+ self.block(self.nameTextField.text);
+ [self dismissViewControllerAnimated:YES completion:nil];
+//A页面跳转到B页面的时候对B页面的block赋值，这样在B页面跳转的时候就会回调这个block函数
+ [self presentViewController:second animated:YES completion:nil];
+ second.block = ^(NSString *str){
+        self.nameLabel.text = str;
+    }; 
+
+ kvo传值：在A页面设置B页面的变量second，并且对这个变量进行观察
+- (void)addObserver:(NSObject * _Nonnull)anObserver forKeyPath:(NSString * _Nonnull)keyPath options:(NSKeyValueObservingOptions)options context:(void * _Nullable)context
+并在A页面实现
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context方法。
+在B页面对变量keyPath进行设置，在A页面都会观察的到。
+@property (nonatomic, strong) SecondViewController *second; 
+//在A视图跳转到B视图的地方添加如下代码 
+self.second = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+[self.second addObserver:self forKeyPath:@"userName" options:NSKeyValueObservingOptionNew context:nil];
+[self presentViewController:self.second animated:YES completion:nil];
+//实现这个观察对象的方法
+ -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context 
+//在B页面对userName进行设置，在A页面都可以间听到
+
+ 单例模式传值：通过全局的方式保存
+ 对于通知代理面试常问, 代理和通知分别在什么情况下使用? 区别? 各自优点?
+</code></pre>
+<h4 id="关于视图的生命周期的问题"><a href="#关于视图的生命周期的问题" class="headerlink" title="关于视图的生命周期的问题"></a>关于视图的生命周期的问题</h4><ul>
+<li><p>首先判断控制器是否有视图，如果没有就调用loadView方法创建：通过storyboard或者代码；</p>
+</li>
+<li><p>随后调用viewDidLoad，可以进行下一步的初始化操作；只会被调用一次；</p>
+</li>
+<li><p>在视图显示之前调用viewWillAppear；该函数可以多次调用；</p>
+</li>
+<li><p>视图viewDidAppear</p>
+</li>
+<li><p>在视图显示之前调用viewWillDisappear；该函数可以多次调用；如需要）；</p>
+</li>
+<li><p>在布局变化前后，调用viewWill/DidLayoutSubviews处理相关信息；</p>
+</li>
+<li><p>视图生命周期图</p>
+</li>
+</ul>
+<img src="/2018/09/12/iOS面试题9-UI/viewload.png" title="view视图生命周期">
+<h4 id="响应者链条-What-is-responder-chain"><a href="#响应者链条-What-is-responder-chain" class="headerlink" title="响应者链条? (What is responder chain?)"></a>响应者链条? (What is responder chain?)</h4><ul>
+<li>事件响应链。包括点击事件，画面刷新事件等。在视图栈内从上至下，或者从下之上传播. 可以说点事件的分发，传递以及处理。具体可以去看下touch事件这块。</li>
+<li>首先解释响应者链的概念<ul>
+<li>UIResponder类，是UIKIT中一个用于处理事件响应的基类。窗口上的所有事件触发，都由该类响应（即事件处理入口）。所以，窗口上的View及控制器都是派生于该类的，例如UIView、UIViewController等。</li>
+<li>调用UIResponder类提供的方法或属性，我们就可以捕捉到窗口上的所有响应事件，并进行处理。</li>
+<li>响应者链条是由多个响应者对象连接起来的链条，其中响应者对象是能处理事件的对象，所有的View和ViewController都是响应者对象，利用响应者链条能让多个控件处理同一个触摸事件.</li>
+</ul>
+</li>
+<li>事件传递机制</li>
+</ul>
+<p>image</p>
+<p> 如果当前view不能处理当前事件，那么事件将会沿着响应者链(Responder Chain)进行传递，知道遇到能处理该事件的响应者(Responsder Object)。</p>
+<pre><code>- 接收事件的initial view如果不能处理该事件并且她不是顶层的View，则事件会往它的父View进行传递。
+
+- initial view的父View获取事件后如果仍不能处理，则继续往上传递，循环这个过程。如果顶层的View还是不能处理这个事件的话，则会将事件传递给它们的ViewController，
+
+- 如果ViewController也不能处理，则传递给Window(UIWindow)，此时Window不能处理的话就将事件传递UIApplication，最后如果连Application也不能处理，则废弃该事件
+</code></pre><h4 id="ViewController的loadView-viewDidLoad-viewDidUnload分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作？"><a href="#ViewController的loadView-viewDidLoad-viewDidUnload分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作？" class="headerlink" title="ViewController的loadView,viewDidLoad,viewDidUnload分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作？"></a>ViewController的loadView,viewDidLoad,viewDidUnload分别是在什么时候调用的？在自定义ViewController的时候这几个函数里面应该做什么工作？</h4><ul>
+<li>viewDidLoad在view从nib文件初始化时调用，</li>
+<li>loadView在controller的view为nil时调用。</li>
+<li>此方法在编程实现view时调用, view控制器默认会注册memory warning notification,当viewcontroller的任何view没有用的时候，viewDidUnload会被调用，在这里实现将retain的view release,如果是retain的IBOutlet view属性则不要在这里release,IBOutlet会负责release。</li>
+</ul>
+<h4 id="UITableView的重用机制-或者如何在一个view上显示多个tableView-tableView要求不同的数据源以及不同的样式-要求自定义cell-如何组织各个tableView的delegate和dataSource-请说说实现思路"><a href="#UITableView的重用机制-或者如何在一个view上显示多个tableView-tableView要求不同的数据源以及不同的样式-要求自定义cell-如何组织各个tableView的delegate和dataSource-请说说实现思路" class="headerlink" title="UITableView的重用机制?(或者如何在一个view上显示多个tableView,tableView要求不同的数据源以及不同的样式 (要求自定义cell), 如何组织各个tableView的delegate和dataSource?请说说实现思路?)"></a>UITableView的重用机制?(或者如何在一个view上显示多个tableView,tableView要求不同的数据源以及不同的样式 (要求自定义cell), 如何组织各个tableView的delegate和dataSource?请说说实现思路?)</h4><ul>
+<li>查看UITableView头文件,会找到NSMutableArray <em>visiableCells,和NSMutableArray </em> reusableTableCells两个结构。</li>
+<li>visiableCells内保存当前显示的cells,reusableTableCells保存可重用的cells。</li>
+<li>TableView显示之初,reusableTableCells为空,那么<br> [tableView dequeueReusableCellWithIdentifier:CellIdentifier]返回nil。</li>
+<li>开始的cell都是通过 [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] 来创建,而且cellForRowAtIndexPath只是调用最大显示cell数的次数。 比如:有100条数据,iPhone一屏最多显示10个cell。</li>
+<li>程序最开始显示TableView的情况是:<ul>
+<li>用[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier]创建10次cell,并给cell指定同样的重用标识(当然,可以为不同显示类型的cell指定不同的标识)。并且10个cell全部都加入到visiableCells数组,reusableTableCells为空。</li>
+<li>向下拖动tableView,当cell1完全移出屏幕,并且cell11(它也是alloc出来的,原因同上)完全显示出来的时候。cell11加入到visiableCells,cell1移出visiableCells,cell1加入到reusableTableCells。</li>
+<li>接着向下拖动tableView,因为reusableTableCells中已经有值,所以,当需要显示新的cell, cellForRowAtIndexPath再次被调用的时候,[tableView dequeueReusableCellWithIdentifier:CellIdentifier],返回cell1。 cell1加入到visiableCells,cell1 移出reusableTableCells;cell2移出 visiableCells,cell2加入到reusableTableCells。之后再需要显示的Cell就可 以正常重用了.</li>
+<li>注意：配置Cell的时候一定要注意，对取出的重用的cell做重新赋值，不要遗留老数据。</li>
+</ul>
+</li>
+</ul>
+<h4 id="在一个tableView中需要自定义多种样式的cell-两种或三种-通常你如何实现-说说思路即可"><a href="#在一个tableView中需要自定义多种样式的cell-两种或三种-通常你如何实现-说说思路即可" class="headerlink" title="在一个tableView中需要自定义多种样式的cell(两种或三种),通常你如何实现,说说思路即可?"></a>在一个tableView中需要自定义多种样式的cell(两种或三种),通常你如何实现,说说思路即可?</h4><ul>
+<li>同上！</li>
+</ul>
+<h4 id="UITableView的性能优化-滑动的时候有种卡的感觉是为什么？怎么解决？"><a href="#UITableView的性能优化-滑动的时候有种卡的感觉是为什么？怎么解决？" class="headerlink" title="UITableView的性能优化? 滑动的时候有种卡的感觉是为什么？怎么解决？"></a>UITableView的性能优化? 滑动的时候有种卡的感觉是为什么？怎么解决？</h4><ul>
+<li><p>在使用第三方应用时，却经常遇到性能上的问题，普遍表现在滚动时比较卡，特别是cell中包含图片的情况时。</p>
+</li>
+<li><p>实际上针对性地优化一下就可以解决tableView滑动的时候卡顿的问题:</p>
+<ul>
+<li>使用不透明视图。不透明的视图可以提高渲染的速度。可以将cell及其子视图的opaque属性设为YES（默认值）。</li>
+<li>不要重复创建不必要的cell。UITableView只需要一屏幕的UITableViewCell对象即可。因此在cell不可见时，可以将其缓存起来，而在需要时继续使用它即可。注意：cell被重用时，需要调用setNeedsDisplayInRect:或setNeedsDisplay方法重绘cell。</li>
+<li>减少动画效果的使用，最好不要使用insertRowsAtIndexPaths:withRowAnimation:方法，而是直接调用reloadData方法。</li>
+<li>减少视图的数目。Cell包含了textLabel、detailTextLabel和imageView等view，而你还可以自定义一些视图放在它的contentView里，创建它会消耗较多资源，并且也影响渲染的性能。</li>
+<li>cell包含图片，且数目较多，使用自定义的cell速度会比使用默认的要快。继承UITableViewCell，重写drawRect方法：- (void)drawRect:(CGRect)rect { if (image) { [image drawAtPoint:imagePoint]; self.image = nil; } else { [placeHolder drawAtPoint:imagePoint]; } [text drawInRect:textRect withFont:font lineBreakMode:UILineBreakModeTailTruncation]; }<br> 不过这样一来，你会发现选中一行后，这个cell就变蓝了，其中的内容就被挡住了。最简单的方法就是将cell的selectionStyle属性设为UITableViewCellSelectionStyleNone，这样就不会被高亮了。</li>
+</ul>
+<p>-不需要与用户交互时，使用CALayer，将内容绘制到layer上，然后对cell的contentView.layer调用addSublayer:方法。这个例子中，layer并不会显著影响性能，但如果layer透明，或者有圆角、变形等效果，就会影响到绘制速度了。解决办法可参见后面的预渲染图像。</p>
+<ul>
+<li>不要做多余的绘制工作。在实现drawRect:的时候，它的rect参数就是需要绘制的区域，这个区域之外的不需要进行绘制。</li>
+<li>预渲染图像。你会发现即使做到了上述几点，当新的图像出现时，仍然会有短暂的停顿现象。解决的办法就是在图形上下文中画，导出成UIImage对象，然后再绘制到屏幕。（头像圆角，或者其他变形的时候，用图形上下文能提高性能。）异步绘制</li>
+<li>不要阻塞主线程。tableview在更新数据时，整个界面卡住不动，完全不响应用户请求。常见的是网络请求，等待时间长待数秒。</li>
+<li>解决方案：使用多线程，让子线程去执行这些函数或方法。</li>
+<li>注意：当下载线程数超过2时，会显著影响主线程的性能。所以在不需要响应用户请求时，下载线程数可以增加到5，不建议再加了，以加快下载速度。如果用户正在交互，应把线程数量控制在2个以内。</li>
+<li>提前计算并缓存好高度，因为heightforrowatindexpath调用非常频繁</li>
+<li>选择正确的数据结构：学会选择对业务场景最合适的数组结构是写出高效代码的基础。比如，数组: 有序的一组值。使用索引来查询很快，使用值查询很慢，插入/删除很慢。字典: 存储键值对，用键来查找比较快。集合: 无序的一组值，用值来查找很快，插入/删除很快。</li>
+<li>gzip/zip压缩：当从服务端下载相关附件时，可以通过gzip/zip压缩后再下载，使得内存更小，下载速度也更快。</li>
+</ul>
+</li>
+</ul>
+<h4 id="tableview的cell里如何嵌套collection-view？"><a href="#tableview的cell里如何嵌套collection-view？" class="headerlink" title="tableview的cell里如何嵌套collection view？"></a>tableview的cell里如何嵌套collection view？</h4><p>思路同网易新闻类似,用自定义的继承自UITableViewCell的类,在initWithFrame的构造方法中, 初始化自定义的继承自UICollectionView的类</p>
+<h4 id="下拉和上拉的原理"><a href="#下拉和上拉的原理" class="headerlink" title="下拉和上拉的原理?"></a>下拉和上拉的原理?</h4><ul>
+<li>以tableView的上拉刷新为例:<ul>
+<li>为了进行无缝阅读, 通过tableView的代理方法, willDisplayCell判断是否是最后一行,</li>
+<li>如果是最后一行, 在显示最后一行的同时, 判断当前是否存在上拉刷新</li>
+<li>如果当前没有上拉刷新, 就进行加载数据, 启动小菊花转啊转。</li>
+</ul>
+</li>
+<li>以tableView的下拉刷新为例:<ul>
+<li>判断当前的上拉刷新视图是否动画</li>
+<li>如果没有动画, 就不是上拉刷新</li>
+<li>然后下拉刷新加载数据</li>
+<li>加载完毕数据关闭刷新</li>
+</ul>
+</li>
+</ul>
+<h4 id="如何实现cell的动态的行高？"><a href="#如何实现cell的动态的行高？" class="headerlink" title="如何实现cell的动态的行高？"></a>如何实现cell的动态的行高？</h4><ul>
+<li>如果希望每条数据显示自身的行高, 必须设置两个属性, 1.预估行高, 2.自定义行高</li>
+<li>设置预估行高 tableView.estimatedRowHeight = 200</li>
+<li>设置定义行高 tableView.rowHeight = UITableViewAutomaticDimension</li>
+<li>如果要让自定义行高有效, 必须让容器视图有一个自下而上的约束</li>
+</ul>
+<h4 id="谈谈webView"><a href="#谈谈webView" class="headerlink" title="谈谈webView"></a>谈谈webView</h4><ul>
+<li>iOS开发中webview和native code的配合上的一些经验和技巧。</li>
+<li>webview与运维成本低，更新几乎不依赖App的版本；但在交互和性能上与跟native code有很大差距。</li>
+<li>native code与之对应。</li>
+<li>HTML5确实给web带入了一个新时代。这个时代是什么，web app。也就是说，只有脱离native的这个前提，在浏览器的环境下，HTML5的意义才能显现，而我们讨论iOS App的时候，HTML5显然没什么意义。</li>
+<li>不管是用webview还是native code，两个原则：<ul>
+<li>用户体验不打折</li>
+<li>运维成本低</li>
+</ul>
+</li>
+<li>为什么不提开发成本。因为做web开发和iOS开发根本就是两回事。当然，web开发发展了这么多年，对于某些功能实现是要比native app快。但多数情况，同一个功能，对于iOS开发者和web开发者，用各自擅长的方式开发成本都最低，所以说某个功能开发成本低，往往是一个伪命题。</li>
+<li>刚刚说了，webview的优势在于更新不依赖版本，那么在一款App中，只有会频繁更新的界面考虑webview才有意义。那么哪些界面会频繁更新，这就要因App而异了。</li>
+<li>首页。首页资源可谓必争之地，内容一天一换是正常现象，一天几换也不稀奇。而如果仅仅是内容的更换，非要上个webview就显得有些激进了。而事实上首页的变化千奇百怪，逢年过节变个脸，特殊情况挂个公告，偶尔还要特批强推一把某个业务，等等。此前，我在设计App首页的时候，把首页配置设计的非常复杂。App端要处理n种情况，n各参数，server端要记住n种规则，直到一天，我崩溃了，把首页完全换成webview，才豁然开朗。</li>
+<li>活动页。做互联网都知道，活动，是一个最常见的运营手段。特点是，周期短，功能少，但基本不能复用。这些特点都标识了活动不适合做native，要用webview实现。即使有人告诉你说，我的活动是一个长期活动而且形式不变，也不要相信他。因为在第二期，第三期，第四期他会分别加上一些非常诡异，却有很合理的小变更，而这些变更是你在那个版本根本无法实现的。</li>
+<li>试水的新功能。这种界面，往往设计不成熟，需要在运行过程中不断收集用户反馈，更新升级，甚至决定去留。所以，只有webview才能hold住如此不稳定的功能。切记在一个功能还没有确定之前，不要大张旗鼓单位开发native code，要知道，你写的这些代码，三天后就要改一遍，而且要发布上线。</li>
+<li>富文本内容。这个不用多说了吧，按照HTML的常用标签做一个webtext可不是小工程。而且富文本的变化太多了，一点无法匹配，都会导致整个界面巨丑。</li>
+<li>OK，上边说了我认为最该使用webview的4个界面，分别带有不同的特点，但webview的交互是个短板，因此webview在一个App中，只能作为界面，不允许在界面中出现动作。而一个webview的界面如何跟native code结合起来呢，我的答案是，超链接。在webview上点击超链接，会调用webview delegate的shouldload方法，自这里拦截请求，进行处理。由于webview的链接都是URL，因此我建议，把整个App的界面都用URL管理起来。</li>
+<li>长相问题，webview很难长成native的view。方案：长不成也要装成。在一些情况下，禁用webview滚动，使用滚动框架（iScroll不错）去实现。webview上下留出200pixel的空白背景，y从-200开始。否则大家知道，webview上下会有阴影的背景，不藏起来会很丑。等等，还有很多其他的方法去伪装webview，是要视情景而用。</li>
+<li>cell中嵌套webview，在oc中调用js获取web的高度， CGFloat height = [[self.webView stringByEvaluatingJavaScriptFromString:@”document.body.offsetHeight”] floatValue];在通过webViewDidFinishLoad里面更新行高。</li>
+</ul>
+<h4 id="awakeFromNib与viewdidload区别"><a href="#awakeFromNib与viewdidload区别" class="headerlink" title="awakeFromNib与viewdidload区别"></a>awakeFromNib与viewdidload区别</h4><ul>
+<li>awakefromnib：当.nib文件被加载的时候，会发送一个awakefromnib消息到.nib文件中的每个对象，每个对象都可以定义自己的awakefromnib函数来响应这个消息，执行必要操作。也就是说 通过.nib文件创建view对象执行awakefromnib</li>
+<li>viewdidload：当view对象被加载到内存就会执行viewdidload，不管是通过nib还是代码形式，创建对象就会执行viewdidload</li>
+</ul>
+<h4 id="layoutSubview何时调用"><a href="#layoutSubview何时调用" class="headerlink" title="layoutSubview何时调用?"></a>layoutSubview何时调用?</h4><ul>
+<li>初始化init方法时不会触发</li>
+<li>滚动uiscrollview触发</li>
+<li>旋转屏幕触发</li>
+<li>改变view的值触发，前提是frame改变了</li>
+<li>改变uiview的大小触发</li>
+</ul>
+<h4 id="viewcontroller的didreceivememorywaring在什么时候调用-默认操作是什么"><a href="#viewcontroller的didreceivememorywaring在什么时候调用-默认操作是什么" class="headerlink" title="viewcontroller的didreceivememorywaring在什么时候调用 默认操作是什么"></a>viewcontroller的didreceivememorywaring在什么时候调用 默认操作是什么</h4><ul>
+<li>应用程序收到来自系统的内存警告时，调用didreceivememorywaring方法</li>
+<li>默认做法：控制器上的view不再窗口上显示时，调用viewWillUnload，直接销毁view，并调用viewdidunload</li>
+</ul>
+<h4 id="UIWindow和UIView和-CALayer-的联系和区别"><a href="#UIWindow和UIView和-CALayer-的联系和区别" class="headerlink" title="UIWindow和UIView和 CALayer 的联系和区别?"></a>UIWindow和UIView和 CALayer 的联系和区别?</h4><ul>
+<li>UIView是视图的基类，UIViewController是视图控制器的基类，UIResponder是表示一个可以在屏幕上响应触摸事件的对象；</li>
+<li>UIwindow是UIView的子类，UIWindow的主要作用：一是提供一个区域来显示UIView，二是将事件（event）的分发给UIView，一个应用基本上只有一个UIWindow.<br> 图层不会直接渲染到屏幕上，UIView是iOS系统中界面元素的基础，所有的界面元素都是继承自它。它本身完全是由CoreAnimation来实现的。它真正的绘图部分，是由一个CALayer类来管理。UIView本身更像是一个CALayer的管理器。一个UIView上可以有n个CALayer，每个layer显示一种东西，增强UIView的展现能力。</li>
+<li>都可以显示屏幕效果</li>
+<li>如果需要用户交互就要用UIVIew,其可接收触摸事件(继承UIResponder),而CALayer不能接收触摸事件</li>
+<li>如果没有用户交互可选用CALayer,因为其所在库较小,占用的资源较少</li>
+</ul>
+<h4 id="UIScrollView"><a href="#UIScrollView" class="headerlink" title="UIScrollView"></a>UIScrollView</h4><ul>
+<li>contentsize 内容视图的尺寸</li>
+<li>contentoffset 内容视图当前位置相对滚动视图frame的偏移量</li>
+<li>contentinset 内容视图相对滚动视图frame的展示原点</li>
+</ul>
+<h4 id="如何实现瀑布流-流水布局"><a href="#如何实现瀑布流-流水布局" class="headerlink" title="如何实现瀑布流,流水布局"></a>如何实现瀑布流,流水布局</h4><ul>
+<li>使用UICollectionView</li>
+<li>使用自定义的FlowLayout</li>
+<li>需要在layoutAttributesForElementsInRect中设置自定义的布局(item的frame)</li>
+<li>在 prepareLayout中计算布局</li>
+<li>遍历数据内容,根据索引取出对应的attributes(使用layoutAttributesForCellWithIndexPath),根据九宫格算法设置布局</li>
+<li>细节1: 实时布局,重写shouldInvalidateLayoutForBoundsChange(bounds改变重新布局,scrollview的contentoffset&gt;bounds)</li>
+<li>细节2: 计算设置itemsize(保证内容显示完整,uicollectionview的content size是根据itemize计算的),根据列最大高度/对应列数量求出,最大高度累加得到</li>
+<li>细节3: 追加item到最短列,避免底部参差不齐.</li>
+</ul>
+<h4 id="UIImage有哪几种加载方式"><a href="#UIImage有哪几种加载方式" class="headerlink" title="UIImage有哪几种加载方式"></a>UIImage有哪几种加载方式</h4><ul>
+<li>二进制    imageWithData</li>
+<li>Bundle    imageWithName</li>
+<li>本地路径   imageWithContentOfFile</li>
+</ul>
+<h4 id="描述九宫格算法"><a href="#描述九宫格算法" class="headerlink" title="描述九宫格算法"></a>描述九宫格算法</h4><ul>
+<li>NSInteger col = x;//定义列数</li>
+<li>NSInteger index  = self.shopsView.subviews.count;//获取下标</li>
+<li>CGFloat margin = (self.shopsView.frame.size.width - col*viewW) / (col - 1);//定义间隔</li>
+<li>CGFloat viewX = (index % col ) * (viewW + margin);</li>
+<li>CGFloat viewY = (index / col ) * (viewH + 10);</li>
+</ul>
+<h4 id="实现图片轮播图"><a href="#实现图片轮播图" class="headerlink" title="实现图片轮播图"></a>实现图片轮播图</h4><ul>
+<li>ScrollView只需要设置三个ImageView即可，并且默认显示中间的ImageView</li>
+<li>根据ScrollView的移动情况，迅速变化三个ImageView中图片数据</li>
+<li>ImageView更新完毕后，偷偷把ScrollView拉回到中间的ImageView位置，这样视觉效果上就实现了无限循环的效果</li>
+</ul>
+<h4 id="应用的生命周期"><a href="#应用的生命周期" class="headerlink" title="应用的生命周期"></a>应用的生命周期</h4><ul>
+<li>-(BOOL)application:(UIApplication <em>)application willFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions  告诉代理进程启动但还没进入状态保存</li>
+<li>-(BOOL)application:(UIApplication <em>)application didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions   告诉代理启动基本完成程序准备开始运行</li>
+<li>-(void)applicationWillResignActive:(UIApplication *)application   当应用程序将要入非活动状态执行，在此期间，应用程序不接收消息或事件，比如来电话了</li>
+<li>-(void)applicationDidBecomeActive:(UIApplication *)application    当应用程序入活动状态执行，这个刚好跟上面那个方法相反</li>
+<li>-(void)applicationDidEnterBackground:(UIApplication *)application   当程序被推送到后台的时候调用。所以要设置后台继续运行，则在这个函数里面设置即可</li>
+<li>-(void)applicationWillEnterForeground:(UIApplication *)application   当程序从后台将要重新回到前台时候调用，这个刚好跟上面的那个方法相反。</li>
+<li>-(void)applicationWillTerminate:(UIApplication *)application   当程序将要退出是被调用，通常是用来保存数据和一些退出前的清理工作。</li>
+</ul>
+<h4 id="load-initialize方法的区别"><a href="#load-initialize方法的区别" class="headerlink" title="load initialize方法的区别"></a>load initialize方法的区别</h4><ul>
+<li>+(void)load; <ul>
+<li>当类对象被引入项目时, runtime 会向每一个类对象发送 load 消息</li>
+<li>load 方法会在每一个类甚至分类被引入时仅调用一次,调用的顺序：父类优先于子类, 子类优先于分类</li>
+<li>load 方法不会被类自动继承</li>
+</ul>
+</li>
+<li>+(void)initialize; <ul>
+<li>也是在第一次使用这个类的时候会调用这个方法</li>
+</ul>
+</li>
+</ul>
+<h4 id="UIScrollView-大概是如何实现的，它是如何捕捉、响应手势的？"><a href="#UIScrollView-大概是如何实现的，它是如何捕捉、响应手势的？" class="headerlink" title="UIScrollView 大概是如何实现的，它是如何捕捉、响应手势的？"></a>UIScrollView 大概是如何实现的，它是如何捕捉、响应手势的？</h4><ul>
+<li>我对UIScrollView的理解是frame就是他的contentSize,bounds就是他的可视范围,通过改变bounds从而达到让用户误以为在滚动,以下是一个简单的UIScrollView实现</li>
+<li>第二个问题个人理解是解决手势冲突,对自己添加的手势进行捕获和响应</li>
+</ul>
+<p>// 让UIScrollView遵守UIGestureRecognizerDelegate协议,实现这个方法,在这里方法里对添加的手势进行处理就可以解决冲突</p>
+<ul>
+<li>(BOOL)gestureRecognizer:(UIGestureRecognizer <em>)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer </em>)otherGestureRecognizer</li>
+</ul>
+<h4 id="UIView-animateWithDuration-animations-completion-内部大概是如何实现的？"><a href="#UIView-animateWithDuration-animations-completion-内部大概是如何实现的？" class="headerlink" title="+[UIView animateWithDuration:animations:completion:] 内部大概是如何实现的？"></a>+[UIView animateWithDuration:animations:completion:] 内部大概是如何实现的？</h4><pre><code>animateWithDuration:这就等于创建一个定时器
+animations:这是创建定时器需要实现的SEL
+completion:是定时器结束以后的一个回调block
+</code></pre><h4 id="什么时候会发生「隐式动画」？"><a href="#什么时候会发生「隐式动画」？" class="headerlink" title="什么时候会发生「隐式动画」？"></a>什么时候会发生「隐式动画」？</h4><ul>
+<li>当改变CALayer的一个可做动画的属性，它并不能立刻在屏幕上体现出来.相反，它是从先前的值平滑过渡到新的值。这一切都是默认的行为，你不需要做额外的操作,这就是隐式动画</li>
+</ul>
+<h4 id="如何把一张大图缩小为1-4大小的缩略图？"><a href="#如何把一张大图缩小为1-4大小的缩略图？" class="headerlink" title="如何把一张大图缩小为1/4大小的缩略图？"></a>如何把一张大图缩小为1/4大小的缩略图？</h4><p>imgData = UIImageJPEGRepresentation(image, 0.6f)</p>
+<h4 id="当TableView的Cell改变时，如何让这些改变以动画的形式呈现？"><a href="#当TableView的Cell改变时，如何让这些改变以动画的形式呈现？" class="headerlink" title="当TableView的Cell改变时，如何让这些改变以动画的形式呈现？"></a>当TableView的Cell改变时，如何让这些改变以动画的形式呈现？</h4><pre><code>[tableView deselectRowAtIndexPath:indexPath animated:TRUE];
+// 重点是这2句代码实现的功能
+[tableView beginUpdates];
+[tableView endUpdates];
+</code></pre><h4 id="为什么当-Core-Animation-完成时，layer-又会恢复到原先的状态？"><a href="#为什么当-Core-Animation-完成时，layer-又会恢复到原先的状态？" class="headerlink" title="为什么当 Core Animation 完成时，layer 又会恢复到原先的状态？"></a>为什么当 Core Animation 完成时，layer 又会恢复到原先的状态？</h4><ul>
+<li>因为这些产生的动画只是假象,并没有对layer进行改变.那么为什么会这样呢,这里要讲一下图层树里的呈现树.呈现树实际上是模型图层的复制,但是它的属性值表示了当前外观效果,动画的过程实际上只是修改了呈现树,并没有对图层的属性进行改变,所以在动画结束以后图层会恢复到原先状态</li>
+</ul>
+<h4 id="设计一个进度条。"><a href="#设计一个进度条。" class="headerlink" title="设计一个进度条。"></a>设计一个进度条。</h4><ol>
+<li><p>自定义一个UIView的子类</p>
+<pre><code> //提供一个成员属性，接收下载进度值
+ @property (nonatomic, assign) CGFloat progress;
+</code></pre></li>
+<li><p>重写成员属性progress的setter</p>
+<pre><code> //每次改变成员属性progress的值，就会调用它的setter
+ -(void)setProgress:(CGFloat)progress
+ {
+ _progress = progress;
+ //当下载进度改变时，手动调用重绘方法
+ [self setNeedsDisplay];
+ }
+</code></pre></li>
+<li><p>重写</p>
+<pre><code> -(void)drawRect:(CGRect)rect（核心）
+ -(void)drawRect:(CGRect)rect
+ {
+ //设置圆弧的半径
+ CGFloat radius = rect.size.width * 0.5;
+ //设置圆弧的圆心
+ CGPoint center = CGPointMake(radius, radius);
+ //设置圆弧的开始的角度（弧度制）
+ CGFloat startAngle = - M_PI_2;
+ //设置圆弧的终止角度
+ CGFloat endAngle = - M_PI_2 + 2 * M_PI * self.progress;
+ //使用UIBezierPath类绘制圆弧
+ UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius - 5 startAngle:startAngle endAngle:endAngle clockwise:YES];
+ //将绘制的圆弧渲染到图层上（即显示出来）
+ [path stroke];
+ }
+</code></pre></li>
+</ol>
+<h4 id="如何播放-GIF-图片，有什么优化方案么？"><a href="#如何播放-GIF-图片，有什么优化方案么？" class="headerlink" title="如何播放 GIF 图片，有什么优化方案么？"></a>如何播放 GIF 图片，有什么优化方案么？</h4><ul>
+<li>UIImageView用来显示图片， 使用UIImageView中的动画数组来实现图片的动画效果</li>
+<li>用UIWebView来显示动态图片</li>
+<li>第三方显示框架</li>
+<li>通过UIImageView显示动画效果，实际上是把动态的图拆成了一组静态的图，放到数组中，播放的时候依次从数组中取出。如果播放的图片比较少占得内存比较小或者比较常用（比如工具条上一直显示的动态小图标），可以选择用imageNamed：方式获取图片，但是通过这种方式加到内存中，使用结束，不会自己释放，多次播放动画会造成内存溢出问题。因此，对于大图或经常更换的图，在取图片的时候可以选择imageWithContentsOfFile:方式获取图片，优化内存。</li>
+<li>使用UIWebView显示图片需要注意显示图片的尺寸与UIWebView尺寸的设置，如果只是为了显示动态图片，可以禁止UIWebView滚动。在显示动态图片的时候，即使是动图的背景处为透明，默认显示出来是白色背景，这个时候需要手动设置UIWebView的透明才能达到显示动图背景透明的效果。</li>
+</ul>
+<h4 id="有哪几种方式可以对图片进行缩放，使用-CoreGraphics-缩放时有什么注意事项？"><a href="#有哪几种方式可以对图片进行缩放，使用-CoreGraphics-缩放时有什么注意事项？" class="headerlink" title="有哪几种方式可以对图片进行缩放，使用 CoreGraphics 缩放时有什么注意事项？"></a>有哪几种方式可以对图片进行缩放，使用 CoreGraphics 缩放时有什么注意事项？</h4><ul>
+<li>UIImageView整体拉伸</li>
+<li>UIImage局部拉伸</li>
+<li>UIImage修改大小</li>
+<li>images.xcassets：多亏了Xcode中Asset Catalog的slice和dice，我们不需要代码也能拉伸图片。首先在Xcode中选中图片，然后点击右下角的Show Slicing：</li>
+<li>图形上下文等比例缩放</li>
+</ul>
+<h4 id="XIB与Storyboards的优缺点"><a href="#XIB与Storyboards的优缺点" class="headerlink" title="XIB与Storyboards的优缺点?"></a>XIB与Storyboards的优缺点?</h4><pre><code>- XIB：在编译前就提供了可视化界面，可以直接拖控件，也可以直接给控件添加约束，更直观一些，而且类文件中就少了创建控件的代码，确实简化不少，通常每个XIB对应一个类。
+
+- Storyboard：在编译前提供了可视化界面，可拖控件，可加约束，在开发时比较直观，而且一个storyboard可以有很多的界面，每个界面对应一个类文件，通过storybard，可以直观地看出整个App的结构。
+
+- XIB：需求变动时，需要修改XIB很大，有时候甚至需要重新添加约束，导致开发周期变长。XIB载入相比纯代码自然要慢一些。对于比较复杂逻辑控制不同状态下显示不同内容时，使用XIB是比较困难的。当多人团队或者多团队开发时，如果XIB文件被发动，极易导致冲突，而且解决冲突相对要困难很多。
+
+- Storyboard：需求变动时，需要修改storyboard上对应的界面的约束，与XIB一样可能要重新添加约束，或者添加约束会造成大量的冲突，尤其是多团队开发。对于复杂逻辑控制不同显示内容时，比较困难。当多人团队或者多团队开发时，大家会同时修改一个storyboard，导致大量冲突，解决起来相当困难。
+</code></pre><h4 id="控制器View的加载过程？"><a href="#控制器View的加载过程？" class="headerlink" title="控制器View的加载过程？"></a>控制器View的加载过程？</h4><pre><code>当程序访问了控制器的View属性时会先判断控制器的View是否存在，如果存在就直接返回已经存在的View；
+如果不存在，就会先调用loadView这个方法；如果控制器的loadView方法实现了，就会按照loadView方法加载自定义的View；
+如果控制器的loadView方法没有实现就会判断storyboard是否存在；
+如果storyboard存在就会按照storyboard加载控制器的View；如果storyboard不存在，就会创建一个空视图返回。
+</code></pre><h4 id="应用程序的启动流程？"><a href="#应用程序的启动流程？" class="headerlink" title="应用程序的启动流程？"></a>应用程序的启动流程？</h4><pre><code>1.执行Main
+2.执行UIApplicationMain函数.
+3.创建UIApplication对象,并设置UIApplicationMain对象的代理.
+  UIApplication的第三个参数就是UIApplication的名称,如果指定为nil,它会默认为UIApplication.
+  UIApplication的第四个参数为UIApplication的代理.
+4.开启一个主运行循环.保证应用程序不退出.
+5.加载info.plist.加载配置文件.判断一下info.plist文件当中有没有Main storyboard file base name里面有没有指定storyboard文件,如果有就去加载info.plist文件,如果没有,那么应用程序加载完毕.
+</code></pre><h4 id="事件传递与响应的完整过程"><a href="#事件传递与响应的完整过程" class="headerlink" title="事件传递与响应的完整过程?"></a>事件传递与响应的完整过程?</h4><pre><code>在产生一个事件时,系统会将该事件加入到一个由UIApplication管理的事件队列中,
+UIApplication会从事件队列中取出最前面的事件,将它传递给先发送事件给应用程序的主窗口.
+主窗口会调用hitTest方法寻找最适合的视图控件,找到后就会调用视图控件的touches方法来做具体的事情.
+当调用touches方法,它的默认做法, 就会将事件顺着响应者链条往上传递，
+传递给上一个响应者,接着就会调用上一个响应者的touches方法
+</code></pre><h4 id="下列回调机制的理解不正确的是"><a href="#下列回调机制的理解不正确的是" class="headerlink" title="下列回调机制的理解不正确的是"></a>下列回调机制的理解不正确的是</h4><pre><code>A target-action：当两个对象之间有⽐较紧密的关系时，如视图控制器与其下的某个视图。       
+B delegate：当某个对象收到多个事件，并要求同一个对象来处理所有事件时。委托机制必须依赖于某个协议定义的⽅法来发送消息。       
+C NSNotification：当需要多个对象或两个无关对象处理同一个事件时。       
+D Block：适⽤于回调只发⽣生一次的简单任务。
+参考答案：B
+</code></pre><h4 id="给UIImageView添加圆角"><a href="#给UIImageView添加圆角" class="headerlink" title="给UIImageView添加圆角"></a>给UIImageView添加圆角</h4><ul>
+<li>最直接的方法就是使用如下属性设置：</li>
+</ul>
+<pre><code>imgView.layer.cornerRadius = 10;
+// 这一行代码是很消耗性能的
+imgView.clipsToBounds = YES;
+</code></pre><ul>
+<li>好处是使用简单，操作方便。坏处是离屏渲染（off-screen-rendering）需要消耗性能。对于图片比较多的视图上，不建议使用这种方法来设置圆角。通常来说，计算机系统中CPU、GPU、显示器是协同工作的。CPU计算好显示内容提交到GPU，GPU渲染完成后将渲染结果放入帧缓冲区。</li>
+<li>简单来说，离屏渲染，导致本该GPU干的活，结果交给了CPU来干，而CPU又不擅长GPU干的活，于是拖慢了UI层的FPS（数据帧率），并且离屏需要创建新的缓冲区和上下文切换，因此消耗较大的性能。</li>
+<li>给UIImage添加生成圆角图片的扩展API：</li>
+</ul>
+<pre><code>- (UIImage *)hyb_imageWithCornerRadius:(CGFloat)radius {
+  CGRect rect = (CGRect){0.f, 0.f, self.size};
+
+  UIGraphicsBeginImageContextWithOptions(self.size, NO, UIScreen.mainScreen.scale);
+  CGContextAddPath(UIGraphicsGetCurrentContext(),
+                   [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius].CGPath);
+  CGContextClip(UIGraphicsGetCurrentContext());
+
+  [self drawInRect:rect];
+  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+
+  UIGraphicsEndImageContext();
+
+  return image;
+}
+</code></pre><p>然后调用时就直接传一个圆角来处理：</p>
+<pre><code>imgView.image = [[UIImage imageNamed:@&quot;test&quot;] hyb_imageWithCornerRadius:4];
+</code></pre><p>这么做就是on-screen-rendering了，通过模拟器-&gt;debug-&gt;Color Off-screen-rendering看到没有离屏渲染了!（黄色的小圆角没有显示了，说明这个不是离屏渲染了）</p>
+<ul>
+<li>在画之前先通过UIBezierPath添加裁剪，但是这种不实用</li>
+</ul>
+<pre><code>- (void)drawRect:(CGRect)rect {
+  CGRect bounds = self.bounds;
+  [[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:8.0] addClip];
+
+  [self.image drawInRect:bounds];
+}
+</code></pre><ul>
+<li>通过mask遮罩实现</li>
+</ul>
+<h4 id="一个view已经初始化完毕，view上面添加了n个button（可能使用循环创建），除用view的tag之外，还可以采用什么办法来找到自己想要的button来修改Button的值"><a href="#一个view已经初始化完毕，view上面添加了n个button（可能使用循环创建），除用view的tag之外，还可以采用什么办法来找到自己想要的button来修改Button的值" class="headerlink" title="一个view已经初始化完毕，view上面添加了n个button（可能使用循环创建），除用view的tag之外，还可以采用什么办法来找到自己想要的button来修改Button的值"></a>一个view已经初始化完毕，view上面添加了n个button（可能使用循环创建），除用view的tag之外，还可以采用什么办法来找到自己想要的button来修改Button的值</h4><pre><code>这个问题有很多种方式，而且不同的使用场景也不一样的。比如说：
+•   第一种：如果是点击某个按钮后，才会刷新它的值，其它不用修改，那么不用引用任何按钮，直接在回调时，就已经将接收响应的按钮给传过来了，直接通过它修改即可。
+•   第二种：点击某个按钮后，所有与之同类型的按钮都要修改值，那么可以通过在创建按钮时将按钮存入到数组中，在需要的时候遍历查找。
+</code></pre><h4 id="使用drawRect有什么影响？"><a href="#使用drawRect有什么影响？" class="headerlink" title="使用drawRect有什么影响？"></a>使用drawRect有什么影响？</h4><ul>
+<li>drawRect方法依赖Core Graphics框架来进行自定义的绘制，但这种方法主要的缺点就是它处理touch事件的方式：每次按钮被点击后，都会用setNeddsDisplay进行强制重绘；而且不止一次，每次单点事件触发两次执行。这样的话从性能的角度来说，对CPU和内存来说都是欠佳的。特别是如果在我们的界面上有多个这样的UIButton实例。</li>
+</ul>
+<h4 id="viewWillLayoutSubView你总是知道的。"><a href="#viewWillLayoutSubView你总是知道的。" class="headerlink" title="viewWillLayoutSubView你总是知道的。"></a>viewWillLayoutSubView你总是知道的。</h4><pre><code>controller layout触发的时候，开发者有机会去重新layout自己的各个subview。
+横竖屏切换的时候，系统会响应一些函数，其中 viewWillLayoutSubviews 和 viewDidLayoutSubviews。
+- (void)viewWillLayoutSubviews  {       
+[self _shouldRotateToOrientation:(UIDeviceOrientation)[UIApplication sharedApplication].statusBarOrientation];  
+} 
+ -(void)_shouldRotateToOrientation:(UIDeviceOrientation)orientation {         
+
+ if (orientation == UIDeviceOrientationPortrait ||orientation ==                 UIDeviceOrientationPortraitUpsideDown)
+
+  {           // 竖屏 } 
+
+ else {          // 横屏     } }
+通过上述一个函数就知道横竖屏切换的接口了。 
+注意：viewWillLayoutSubviews只能用在ViewController里面，在view里面没有响应。
+</code></pre><h4 id="一个tableView是否可以关联两个不同的数据源？"><a href="#一个tableView是否可以关联两个不同的数据源？" class="headerlink" title="一个tableView是否可以关联两个不同的数据源？"></a>一个tableView是否可以关联两个不同的数据源？</h4><ul>
+<li>当然是可以关联多个不同的数据源，但是不能同时使用多个数据源而已。比如，一个列表有两个筛选功能，一个是筛选城市，一个是筛选时间，那么这两个就是两个数据源了。当筛选城市时，就会使用城市数据源；当筛选时间时，就会使用时间数据源。</li>
+</ul>
+<h4 id="如何自动计算cell的高度？"><a href="#如何自动计算cell的高度？" class="headerlink" title="如何自动计算cell的高度？"></a>如何自动计算cell的高度？</h4><ul>
+<li>实现原理：通过数据模型的id作为key，以确保唯一，如何才能保证复用cell时不会出现混乱。在配置完数据后，通过更新约束，得到最后一个控件的frame，就只可以判断cell实际需要的高度，并且缓存下来，下次再获取时，判断是否存在，若存在则直接返回。因此，只会计算一遍</li>
+</ul>
+<h4 id="UITableView是如何计算内容高度的？为什么初始化时配置数据时，获取行高的代理方法会调用数据条数次？"><a href="#UITableView是如何计算内容高度的？为什么初始化时配置数据时，获取行高的代理方法会调用数据条数次？" class="headerlink" title="UITableView是如何计算内容高度的？为什么初始化时配置数据时，获取行高的代理方法会调用数据条数次？"></a>UITableView是如何计算内容高度的？为什么初始化时配置数据时，获取行高的代理方法会调用数据条数次？</h4><ul>
+<li>UITableView是继承于UIScrollView的，因此也有contentSize。要得到tableview的contentsize，就需要得到所有cell的高度，从而计算出总高度，才能得到contentsize。因此，在reloadData时，就会调用该代理方法数据条数次。</li>
+</ul>
+<h4 id="一个tableView是否可以关联两个不同的数据源-你会怎么处理"><a href="#一个tableView是否可以关联两个不同的数据源-你会怎么处理" class="headerlink" title="一个tableView是否可以关联两个不同的数据源?你会怎么处理?"></a>一个tableView是否可以关联两个不同的数据源?你会怎么处理?</h4><pre><code>答：首先我们从代码来看，数据源如何关联上的，其实是在数据源关联的代理方法里实现的。
+因此我们并不关心如何去关联他，他怎么关联上，方法只是让我返回根据自己的需要去设置如相关的数据源。
+因此，我觉得可以设置多个数据源啊，但是有个问题是，你这是想干嘛呢?想让列表如何显示，不同的数据源分区块显示?
+</code></pre><h4 id="给出委托方法的实例，并且说出UITableVIew的Data-Source方法"><a href="#给出委托方法的实例，并且说出UITableVIew的Data-Source方法" class="headerlink" title="给出委托方法的实例，并且说出UITableVIew的Data Source方法"></a>给出委托方法的实例，并且说出UITableVIew的Data Source方法</h4><pre><code>CocoaTouch框架中用到了大量委托，其中UITableViewDelegate就是委托机制的典型应用，是一个典型的使用委托来实现适配器模式，其中UITableViewDelegate协议是目标，tableview是适配器，实现UITableViewDelegate协议，并将自身设置为talbeview的delegate的对象，是被适配器，一般情况下该对象是UITableViewController。
+UITableVIew的Data Source方法有- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+</code></pre><h4 id="cocoa-touch框架"><a href="#cocoa-touch框架" class="headerlink" title="cocoa touch框架"></a>cocoa touch框架</h4><p>答：iPhone OS 应用程序的基础 Cocoa Touch 框架重用了许多 Mac 系统的成熟模式，但是它更多地专注于触摸的接口和优化。</p>
+<p>UIKit 为您提供了在 iPhone OS 上实现图形，事件驱动程序的基本工具，其建立在和 Mac OS X 中一样的 Foundation 框架上，包括文件处理，网络，字符串操作等。</p>
+<p>Cocoa Touch 具有和 iPhone 用户接口一致的特殊设计。有了 UIKit，您可以使用 iPhone OS 上的独特的图形接口控件，按钮，以及全屏视图的功能，您还可以使用加速仪和多点触摸手势来控制您的应用。</p>
+<p>各色俱全的框架 除了UIKit 外，Cocoa Touch 包含了创建世界一流 iPhone 应用程序需要的所有框架，从三维图形，到专业音效，甚至提供设备访问 API 以控制摄像头，或通过 GPS 获知当前位置。</p>
+<p>Cocoa Touch 既包含只需要几行代码就可以完成全部任务的强大的 Objective-C 框架，也在需要时提供基础的 C 语言 API 来直接访问系统。这些框架包括：</p>
+<p>Core Animation：通过 Core Animation，您就可以通过一个基于组合独立图层的简单的编程模型来创建丰富的用户体验。</p>
+<p>Core Audio：Core Audio 是播放，处理和录制音频的专业技术，能够轻松为您的应用程序添加强大的音频功能。</p>
+<p>Core Data：提供了一个面向对象的数据管理解决方案，它易于使用和理解，甚至可处理任何应用或大或小的数据模型。</p>
+<p>功能列表：框架分类</p>
+<p>下面是 Cocoa Touch 中一小部分可用的框架：</p>
+<p>音频和视频：Core Audio ，OpenAL ，Media Library ，AV Foundation</p>
+<p>数据管理 ：Core Data ，SQLite</p>
+<p>图形和动画 ：Core Animation ，OpenGL ES ，Quartz 2D</p>
+<p>网络：Bonjour ，WebKit ，BSD Sockets</p>
+<p>用户应用：Address Book ，Core Location ，Map Kit ，Store Kit</p>
+<h4 id="xib文件的构成分为哪3个图标？都具有什么功能。"><a href="#xib文件的构成分为哪3个图标？都具有什么功能。" class="headerlink" title="xib文件的构成分为哪3个图标？都具有什么功能。"></a>xib文件的构成分为哪3个图标？都具有什么功能。</h4><p>File’s Owner 是所有 nib 文件中的每个图标，它表示从磁盘加载 nib 文件的对象；</p>
+<p>First Responder 就是用户当前正在与之交互的对象；</p>
+<p>View 显示用户界面；完成用户交互；是 UIView 类或其子类。</p>
+<h4 id="简述应用程序按Home键进入后台时的生命周期-和从后台回到前台时的生命周期-应用程序"><a href="#简述应用程序按Home键进入后台时的生命周期-和从后台回到前台时的生命周期-应用程序" class="headerlink" title="简述应用程序按Home键进入后台时的生命周期,和从后台回到前台时的生命周期? 应用程序:"></a>简述应用程序按Home键进入后台时的生命周期,和从后台回到前台时的生命周期? 应用程序:</h4><pre><code>-[AppDelegate application:willFinishLaunchingWithOptions:]
+-[AppDelegate application:didFinishLaunchingWithOptions:]
+-[AppDelegate applicationDidBecomeActive:] 
+</code></pre><p>退到后台:</p>
+<pre><code>-[AppDelegate applicationWillResignActive:] 
+-[AppDelegate applicationDidEnterBackground:] 
+</code></pre><p>回到前台:</p>
+<pre><code>-[AppDelegate applicationWillEnterForeground:] 
+-[AppDelegate applicationDidBecomeActive:] 
+</code></pre><p>ViewController之间，<br> 加载页面:</p>
+<pre><code>-[mainViewController viewDidLoad] -[mainViewController viewWillAppear:] -[mainViewController viewWillLayoutSubviews] -[mainViewController viewDidLayoutSubviews] -[mainViewController viewDidAppear:] 
+</code></pre><p>退出当前页面:</p>
+<pre><code>-[mainViewController viewWillDisappear:]
+-[mainViewController viewDidDisappear:]
+</code></pre><p>返回之前页面:</p>
+<pre><code>-[mainViewController viewWillAppear:]
+-[mainViewController viewWillLayoutSubviews]
+-[mainViewController viewDidLayoutSubviews]
+-[mainViewController viewDidAppear:]
+</code></pre><h4 id="是否使用Core-Text或者Core-Image等？如果使用过，请谈谈你使用Core-Text或者Core-Image的体验。"><a href="#是否使用Core-Text或者Core-Image等？如果使用过，请谈谈你使用Core-Text或者Core-Image的体验。" class="headerlink" title="是否使用Core Text或者Core Image等？如果使用过，请谈谈你使用Core Text或者Core Image的体验。"></a>是否使用Core Text或者Core Image等？如果使用过，请谈谈你使用Core Text或者Core Image的体验。</h4><pre><code>CoreText
+•   随意修改文本的样式
+•   图文混排(纯C语言)
+•   国外:Niumb
+Core Image(滤镜处理)
+* 能调节图片的各种属性(对比度, 色温, 色差等)
+</code></pre><h4 id="分析一下使用手机获取验证码注册账号的实现逻辑-给了一个示例图-，发送到手机的验证码超过60秒钟后重新发送"><a href="#分析一下使用手机获取验证码注册账号的实现逻辑-给了一个示例图-，发送到手机的验证码超过60秒钟后重新发送" class="headerlink" title="分析一下使用手机获取验证码注册账号的实现逻辑(给了一个示例图)，发送到手机的验证码超过60秒钟后重新发送"></a>分析一下使用手机获取验证码注册账号的实现逻辑(给了一个示例图)，发送到手机的验证码超过60秒钟后重新发送</h4><ul>
+<li>定义一个label属性，赋值为60秒，再定义一个count 设置一个timer 每次减少一秒 把count– 再把count的值拼接到label上 当count == 0 的时候 再显示重新发送</li>
+</ul>
+<h4 id="你做iphone开发时候-有哪些传值方式-view和view之间是如何传值的"><a href="#你做iphone开发时候-有哪些传值方式-view和view之间是如何传值的" class="headerlink" title="你做iphone开发时候,有哪些传值方式,view和view之间是如何传值的?"></a>你做iphone开发时候,有哪些传值方式,view和view之间是如何传值的?</h4><p>block, target-action ,代理,属性</p>
+<h4 id="有哪几种手势通知方法、写清楚方法名？"><a href="#有哪几种手势通知方法、写清楚方法名？" class="headerlink" title="有哪几种手势通知方法、写清楚方法名？"></a>有哪几种手势通知方法、写清楚方法名？</h4><p>-(void)touchesBegan:(NSSet<em>)touchedwithEvent:(UIEvent</em>)event;</p>
+<p>-(void)touchesMoved:(NSSet<em>)touched withEvent:(UIEvent</em>)event;</p>
+<p>-(void)touchesEnded:(NSSet<em>)touchedwithEvent:(UIEvent</em>)event;</p>
+<p>-(void)touchesCanceled:(NSSet<em>)touchedwithEvent:(UIEvent</em>)event;</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/09/12/iOS面试题10-报错警告调试/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/12/iOS面试题8-Swift/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="暮鼓晨钟's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        swift630@sina.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: swift630@sina.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">28</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;暮鼓晨钟
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

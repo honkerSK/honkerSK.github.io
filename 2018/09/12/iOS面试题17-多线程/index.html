@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            iOS面试题17--多线程 | 
+        
+        暮鼓晨钟
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",iOS面试">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="暮鼓晨钟">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题17-多线程/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题17-多线程/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="iOS面试题17--多线程 | 暮鼓晨钟">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="iOS面试"> 
+
+    
+        <meta property="article:published_time" content="Wed Sep 12 2018 15:44:18 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 12 2018 15:44:50 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题17-多线程/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题17-多线程/index.html",
+    "headline": "iOS面试题17--多线程",
+    "datePublished": "Wed Sep 12 2018 15:44:18 GMT+0800",
+    "dateModified": "Wed Sep 12 2018 15:44:50 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "暮鼓晨钟",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "暮鼓晨钟",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",iOS面试",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#你们项目中为什么多线程用GCD而不用NSOperation呢-你有没有发现国外的大牛他们多线程都是用NSOperation-你能告诉我他们这样做的理由吗"><span class="post-toc-number">1.</span> <span class="post-toc-text">你们项目中为什么多线程用GCD而不用NSOperation呢? 你有没有发现国外的大牛他们多线程都是用NSOperation? 你能告诉我他们这样做的理由吗?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#详解GCD死锁"><span class="post-toc-number">2.</span> <span class="post-toc-text">详解GCD死锁</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#unix上进程怎么通信？"><span class="post-toc-number">3.</span> <span class="post-toc-text">unix上进程怎么通信？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#列举几种进程的同步机制、进程的通信途径、死锁及死锁的处理方法。"><span class="post-toc-number">4.</span> <span class="post-toc-text">列举几种进程的同步机制、进程的通信途径、死锁及死锁的处理方法。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#线程与进程的区别和联系"><span class="post-toc-number">5.</span> <span class="post-toc-text">线程与进程的区别和联系?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iOS线程间怎么通信？"><span class="post-toc-number">6.</span> <span class="post-toc-text">iOS线程间怎么通信？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iOS多线程的底层实现？"><span class="post-toc-number">7.</span> <span class="post-toc-text">iOS多线程的底层实现？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#谈谈多线程安全问题的几种解决方案-何为线程同步-如何实现的-分线程回调主线程方法是什么-有什么作用"><span class="post-toc-number">8.</span> <span class="post-toc-text">谈谈多线程安全问题的几种解决方案?何为线程同步,如何实现的?分线程回调主线程方法是什么,有什么作用?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用atomic一定是线程安全的吗？"><span class="post-toc-number">9.</span> <span class="post-toc-text">使用atomic一定是线程安全的吗？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#谈谈你对多线程开发的理解-多线程的好处，多线程的作用-？ios中有几种实现多线程的方法？"><span class="post-toc-number">10.</span> <span class="post-toc-text">谈谈你对多线程开发的理解(多线程的好处，多线程的作用)？ios中有几种实现多线程的方法？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#OC中异步使用的哪种事件模型-iOS中异步实现机制"><span class="post-toc-number">11.</span> <span class="post-toc-text">OC中异步使用的哪种事件模型,iOS中异步实现机制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#详细谈谈GCD"><span class="post-toc-number">12.</span> <span class="post-toc-text">详细谈谈GCD</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GCD内部怎么实现的"><span class="post-toc-number">13.</span> <span class="post-toc-text">GCD内部怎么实现的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GCD的queue、main-queue中执行的代码一定是在main-thread么？"><span class="post-toc-number">14.</span> <span class="post-toc-text">GCD的queue、main queue中执行的代码一定是在main thread么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）"><span class="post-toc-number">15.</span> <span class="post-toc-text">如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有a、b、c、d-4个异步请求，如何判断a、b、c、d都完成执行？如果需要a、b、c、d顺序执行，该如何实现？"><span class="post-toc-number">16.</span> <span class="post-toc-text">有a、b、c、d 4个异步请求，如何判断a、b、c、d都完成执行？如果需要a、b、c、d顺序执行，该如何实现？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#发送10个网络请求，然后再接收到所有回应之后执行后续操作，如何实现？"><span class="post-toc-number">17.</span> <span class="post-toc-text">发送10个网络请求，然后再接收到所有回应之后执行后续操作，如何实现？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#苹果为什么要废弃dispatch-get-current-queue？"><span class="post-toc-number">18.</span> <span class="post-toc-text">苹果为什么要废弃dispatch_get_current_queue？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如果让你来实现-dispatch-once，你会怎么做？"><span class="post-toc-number">19.</span> <span class="post-toc-text">如果让你来实现 dispatch_once，你会怎么做？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关于NSOperation"><span class="post-toc-number">20.</span> <span class="post-toc-text">关于NSOperation:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NSOperation-queue"><span class="post-toc-number">21.</span> <span class="post-toc-text">NSOperation queue?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NSOperation与GCD的区别"><span class="post-toc-number">22.</span> <span class="post-toc-text">NSOperation与GCD的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GCD与NSThread的区别"><span class="post-toc-number">23.</span> <span class="post-toc-text">GCD与NSThread的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么要取消-恢复队列呢？"><span class="post-toc-number">24.</span> <span class="post-toc-text">为什么要取消/恢复队列呢？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Object-C中创建线程的方法是什么-如果在主线程中执行代码，方法是什么-如果想延时执行代码、方法又是什么"><span class="post-toc-number">25.</span> <span class="post-toc-text">Object C中创建线程的方法是什么?如果在主线程中执行代码，方法是什么?如果想延时执行代码、方法又是什么?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#下面关于线程管理错误的是"><span class="post-toc-number">26.</span> <span class="post-toc-text">下面关于线程管理错误的是</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                iOS面试题17--多线程
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>暮鼓晨钟</strong>
+        <span>9月 12, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题17--多线程&url=http://yoursite.com/2018/09/12/iOS面试题17-多线程/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题17--多线程&url=http://yoursite.com/2018/09/12/iOS面试题17-多线程/index.html&via=暮鼓晨钟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题17-多线程/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题17-多线程/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=iOS面试题17--多线程&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题17-多线程/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h4 id="你们项目中为什么多线程用GCD而不用NSOperation呢-你有没有发现国外的大牛他们多线程都是用NSOperation-你能告诉我他们这样做的理由吗"><a href="#你们项目中为什么多线程用GCD而不用NSOperation呢-你有没有发现国外的大牛他们多线程都是用NSOperation-你能告诉我他们这样做的理由吗" class="headerlink" title="你们项目中为什么多线程用GCD而不用NSOperation呢? 你有没有发现国外的大牛他们多线程都是用NSOperation? 你能告诉我他们这样做的理由吗?"></a>你们项目中为什么多线程用GCD而不用NSOperation呢? 你有没有发现国外的大牛他们多线程都是用NSOperation? 你能告诉我他们这样做的理由吗?</h4><p>关系:</p>
+<p>①:先搞清两者的关系,NSOpertaionQueue用GCD构建封装的，是GCD的高级抽象!</p>
+<p>②:GCD仅仅支持FIFO队列，而NSOperationQueue中的队列可以被重新设置优先级，从而实现不同操作的执行顺序调整。GCD不支持异步操作之间的依赖关系设置。如果某个操作的依赖另一个操作的数据（生产者-消费者模型是其中之一），使用NSOperationQueue能够按照正确的顺序执行操作。GCD则没有内建的依赖关系支持。</p>
+<p>③:NSOperationQueue支持KVO，意味着我们可以观察任务的执行状态。</p>
+<p>了解以上不同，我们可以从以下角度来回答</p>
+<p>性能:①:GCD更接近底层，而NSOperationQueue则更高级抽象，所以GCD在追求性能的底层操作来说，是速度最快的。这取决于使用Instruments进行代码性能分析，如有必要的话</p>
+<p>②:从异步操作之间的事务性，顺序行，依赖关系。GCD需要自己写更多的代码来实现，而NSOperationQueue已经内建了这些支持</p>
+<p>③:如果异步操作的过程需要更多的被交互和UI呈现出来，NSOperationQueue会是一个更好的选择。底层代码中，任务之间不太互相依赖，而需要更高的并发能力，GCD则更有优势</p>
+<p>最后的一句话:别忘了高德纳的教诲：“在大概97%的时间里，我们应该忘记微小的性能提升。过早优化是万恶之源。”只有Instruments显示有真正的性能提升时才有必要用低级的GCD。</p>
+<h4 id="详解GCD死锁"><a href="#详解GCD死锁" class="headerlink" title="详解GCD死锁"></a>详解GCD死锁</h4><h4 id="unix上进程怎么通信？"><a href="#unix上进程怎么通信？" class="headerlink" title="unix上进程怎么通信？"></a>unix上进程怎么通信？</h4><ul>
+<li>UNIX主要支持三种通信方式：</li>
+<li>基本通信：主要用来协调进程间的同步和互斥 <ul>
+<li>锁文件通信:通信的双方通过查找特定目录下特定类型的文件(称锁文件)来完成进程间  对临界资源访问时的互斥；例如进程p1访问一个临界资源，首先查看是否有一个特定类型文件，若有，则等待一段时间再查找锁文件。</li>
+<li>记录锁文件</li>
+</ul>
+</li>
+<li>管道通信：适应大批量的数据传递</li>
+<li>IPC    ：适应大批量的数据传递</li>
+</ul>
+<h4 id="列举几种进程的同步机制、进程的通信途径、死锁及死锁的处理方法。"><a href="#列举几种进程的同步机制、进程的通信途径、死锁及死锁的处理方法。" class="headerlink" title="列举几种进程的同步机制、进程的通信途径、死锁及死锁的处理方法。"></a>列举几种进程的同步机制、进程的通信途径、死锁及死锁的处理方法。</h4><ul>
+<li>进程的同步机制原子操作 信号量机制 自旋锁 管程，会合，分布式系统</li>
+<li>进程之间通信的途径：共享存储系统消息传递系统管道：以文件系统为基础</li>
+<li>进程死锁的原因：资源竞争及进程推进顺序非法</li>
+<li>死锁的4个必要条件：互斥、请求保持、不可剥夺、环路</li>
+<li>死锁的处理：鸵鸟策略、预防策略、避免策略、检测与解除死锁</li>
+</ul>
+<h4 id="线程与进程的区别和联系"><a href="#线程与进程的区别和联系" class="headerlink" title="线程与进程的区别和联系?"></a>线程与进程的区别和联系?</h4><ul>
+<li>线程是进程的基本单位。</li>
+<li>进程和线程都是由操作系统所产生的程序运行的基本单元,系统利用该基本单元实现系统对应用的并发性。</li>
+<li>进程和线程的主要差别在于它们是不同的操作系统资源管理方式。</li>
+<li>进程有独立的地址空间,一个进程崩溃后,在保护模式下 不会对其它进程产生影响。</li>
+<li>线程只是一个进程中的不同执行路径。</li>
+<li>线程有自己的堆栈和局部变量,但线程之间没有单独的地址空间,一个线程死掉就等于整个进程死掉,所以多进程的程序要比多线程的程序健壮,但在进程切换时,耗费资源较大,效率要差一些。</li>
+<li>但对于一些要求同时进行并且又要共享某些变量的并发操作,只能用线程,不能用进程。</li>
+</ul>
+<h4 id="iOS线程间怎么通信？"><a href="#iOS线程间怎么通信？" class="headerlink" title="iOS线程间怎么通信？"></a>iOS线程间怎么通信？</h4><ul>
+<li>performSelector:onThread:withObject:waitUntilDone:</li>
+<li>NSMachPort<br> (基本机制：A线程（父线程）创建NSMachPort对象，并加入A线程的runloop。当创建B线程（辅助线程）时，将创建的NSMachPort对象传递到主体入口点，B线程（辅助线程）就可以使用相同的端口对象将消息传回A线程（父线程）。)</li>
+</ul>
+<h4 id="iOS多线程的底层实现？"><a href="#iOS多线程的底层实现？" class="headerlink" title="iOS多线程的底层实现？"></a>iOS多线程的底层实现？</h4><ul>
+<li>首先搞清楚什么是线程、什么是多线程 <ul>
+<li>Mach是第一个以多线程方式处理任务的系统，因此多线程的底层实现机制是基于Mach的线程</li>
+<li>开发中很少用Mach级的线程，因为Mach级的线程没有提供多线程的基本特征，线程之间是独立的</li>
+</ul>
+</li>
+<li>开发中实现多线程的方案 <ul>
+<li>C语言的POSIX接口：#include &lt;pthread.h&gt;</li>
+<li>OC的NSThread</li>
+<li>C语言的GCD接口（性能最好，代码更精简）</li>
+<li>OC的NSOperation和NSOperationQueue（基于GCD）</li>
+</ul>
+</li>
+</ul>
+<h4 id="谈谈多线程安全问题的几种解决方案-何为线程同步-如何实现的-分线程回调主线程方法是什么-有什么作用"><a href="#谈谈多线程安全问题的几种解决方案-何为线程同步-如何实现的-分线程回调主线程方法是什么-有什么作用" class="headerlink" title="谈谈多线程安全问题的几种解决方案?何为线程同步,如何实现的?分线程回调主线程方法是什么,有什么作用?"></a>谈谈多线程安全问题的几种解决方案?何为线程同步,如何实现的?分线程回调主线程方法是什么,有什么作用?</h4><ul>
+<li>解决方案: 使用锁: 锁是线程编程同步工具的基础。锁可以让你很容易保护代码中一大块区域以便你可以确保代码的正确性。 <ol>
+<li>使用POSIX互斥锁;</li>
+<li>使用NSLock类;</li>
+<li>使用@synchronized指令等。</li>
+</ol>
+</li>
+<li>回到主线程的方法: dispatch_async(dispatch_get_main_queue(), ^{ });</li>
+<li>作用: 主线程是显示UI界面,子线程多数是进行数据处理</li>
+</ul>
+<h4 id="使用atomic一定是线程安全的吗？"><a href="#使用atomic一定是线程安全的吗？" class="headerlink" title="使用atomic一定是线程安全的吗？"></a>使用atomic一定是线程安全的吗？</h4><pre><code>不是的。 
+atomic原子操作，系统会为setter方法加锁。 具体使用 @synchronized(self){//code } 
+nonatomic不会为setter方法加锁。 
+atomic：线程安全，需要消耗大量系统资源来为属性加锁 
+nonatomic：非线程安全，适合内存较小的移动设备
+使用atomic并不能保证绝对的线程安全，对于要绝对保证线程安全的操作，还需要使用更高级的方式来处理，比如NSSpinLock、@syncronized等
+</code></pre><h4 id="谈谈你对多线程开发的理解-多线程的好处，多线程的作用-？ios中有几种实现多线程的方法？"><a href="#谈谈你对多线程开发的理解-多线程的好处，多线程的作用-？ios中有几种实现多线程的方法？" class="headerlink" title="谈谈你对多线程开发的理解(多线程的好处，多线程的作用)？ios中有几种实现多线程的方法？"></a>谈谈你对多线程开发的理解(多线程的好处，多线程的作用)？ios中有几种实现多线程的方法？</h4><ul>
+<li>好处： <ul>
+<li>使用线程可以把占据时间长的程序中的任务放到后台去处理</li>
+<li>用户界面可以更加吸引人，这样比如用户点击了一个按钮去触发某些事件的处理，可以弹出一个进度条来显示处理的进度</li>
+<li>程序的运行效率可能提高</li>
+<li>在一些等待的任务实现上如用户输入、文件读写和网络收发数据等，线程就比较有用了。</li>
+</ul>
+</li>
+<li>缺点： <ul>
+<li>如果有大量的线程,会影响性能,因为操作系统需要在它们之间切换。</li>
+<li>更多的线程需要更多的内存空间。</li>
+<li>线程的中止需要考虑其对程序运行的影响。</li>
+</ul>
+</li>
+<li>通常块模型数据是在多个线程间共享的，需要防止线程死锁情况的发生。</li>
+<li>实现多线程的方法： <ol>
+<li>NSObject的类方法 // -(void)performSelectornBackground/OnMainThread:(SEL)aSelector withObject:(id)arg</li>
+<li>NSThread</li>
+<li>NSOperation</li>
+<li>GCD</li>
+</ol>
+</li>
+</ul>
+<h4 id="OC中异步使用的哪种事件模型-iOS中异步实现机制"><a href="#OC中异步使用的哪种事件模型-iOS中异步实现机制" class="headerlink" title="OC中异步使用的哪种事件模型,iOS中异步实现机制"></a>OC中异步使用的哪种事件模型,iOS中异步实现机制</h4><ul>
+<li>异步非阻塞 I/O（AIO）</li>
+</ul>
+<h4 id="详细谈谈GCD"><a href="#详细谈谈GCD" class="headerlink" title="详细谈谈GCD"></a>详细谈谈GCD</h4><ol>
+<li>推出的时间 iOS4 目的是用来取代NSThread（ios2.0推出）的，是 C语言框架，它能够自动利用更多CPU的核数，并且会自动管理线程的生命周期。<ul>
+<li>CGD的两个核心概念：任务， 队列</li>
+<li>任务：记为在block中执行的代码。</li>
+<li>队列：用来存放任务的。</li>
+<li>注意事项： 队列 != 线程。队列中存放的任务最后都要由线程来执行!。队列的原则:先进先出,后进后出(FIFO/ First In First Out)</li>
+</ul>
+</li>
+<li>队列又分为四种种：1 串行队列  2 并发队列 3 主队列 4 全局队列<ul>
+<li>串行队列： 任务一个接一个的执行。</li>
+<li>并发队列： 队列中的任务并发执行。</li>
+<li>主队列： 跟主线程相关的队列，主队列里面的内容都会在主线程中执行（我们一般在主线程中刷新UI）。</li>
+<li>全局队列： 一个特殊的并发队列。</li>
+</ul>
+</li>
+<li><p>并发队列与全局队列的区别：</p>
+<ul>
+<li>并发队列有名称,可以跟踪错误。全局队列没有</li>
+<li>在ARC中两个队列不需要考虑释放内存,但是在MRC中并发队列是创建出来的需要release操作，而全局队列只有一个不需要。</li>
+<li>一般在开发过程中我们使用全局队列。</li>
+</ul>
+</li>
+<li><p>执行任务的两个函数</p>
+<ul>
+<li>‘同步’执行任务:dispatch_sync(&lt;#dispatch_queue_t queue#&gt;, &lt;#^(void)block#&gt;)</li>
+<li>‘异步’执行任务:dispatch_async(dispatch_queue_t queue, &lt;#^(void)block#&gt;)</li>
+</ul>
+</li>
+<li>“同步”和”异步”的区别:<ul>
+<li>“同步”: 只能在’当前’线程中执行任务,不具备开启新线程的能力.</li>
+<li>“异步”: 可以在’新’的线程中执行任务,具备开启新线程的能力.</li>
+</ul>
+</li>
+<li>各个队列的执行效果：<ul>
+<li>串行队列同步执行，既在当前线程中顺序执行</li>
+<li>串行队列异步执行，开辟一条新的线程，在该线程中顺序执行</li>
+<li>并行队列同步执行，不开辟线程，在当前线程中顺序执行</li>
+<li>并行队列异步执行，开辟多个新的线程，并且线程会重用，无序执行</li>
+<li>主队列异步执行，不开辟新的线程，顺序执行</li>
+<li>主队列同步执行，会造成死锁（’主线程’和’主队列’相互等待,卡住主线程）</li>
+</ul>
+</li>
+<li>线程间通讯：经典案例：子线程进行耗时操作（例如下载更新等）主线程进行UI刷新。<ul>
+<li>经典用法(子线程下载(耗时操作),主线程刷新UI):</li>
+</ul>
+</li>
+</ol>
+<pre><code>dispatch_async(dispatch_get_global_queue(0, 0), ^{ 
+
+ // 执行耗时的异步操作...
+
+dispatch_async(dispatch_get_main_queue(), ^{
+
+// 回到主线程，执行UI刷新操作
+</code></pre><ol>
+<li><p>延迟操作</p>
+<p>调用 NSObject 方法:[self performSelector:@selector(run) withObject:nil afterDelay:2.0];</p>
+<p>// 2秒后再调用self的run方法</p>
+<p>GCD函数实现延时执行:dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{</p>
+<p>// 2秒后执行这里的代码… 在哪个线程执行，跟队列类型有关</p>
+</li>
+<li><p>队列组的使用：</p>
+<ul>
+<li>项目需求:首先:分别异步执行两个耗时操作;其次:等两次耗时操作都执行完毕后,再回到主线程执行操作.使用队列组(dispatch_group_t)快速,高效的实现上述需求.</li>
+</ul>
+<p>dispatch_group_t group = dispatch_group_create(); // 队列组</p>
+<p>dispatch_queue_t queue = dispatch_get_global_queue(0, 0); // 全局并发队列</p>
+<p>dispatch_group_async(group, queue, ^{// 异步执行操作1</p>
+<p>// longTime1</p>
+<p>});</p>
+<p>dispatch_group_async(group, queue, ^{  // 异步执行操作2</p>
+<p>// longTime2</p>
+<p>});</p>
+<p>dispatch_group_notify(group, dispatch_get_main_queue(), ^{</p>
+<p>// 在主线程刷新数据<br> // reload Data<br> });</p>
+</li>
+</ol>
+<h4 id="GCD内部怎么实现的"><a href="#GCD内部怎么实现的" class="headerlink" title="GCD内部怎么实现的"></a>GCD内部怎么实现的</h4><ul>
+<li>iOS和OS X的核心是XNU内核，GCD是基于XNU内核实现的</li>
+<li>GCD的API全部在libdispatch库中</li>
+<li>GCD的底层实现主要有Dispatch Queue和Dispatch Source <ul>
+<li>Dispatch Queue ：管理block(操作)</li>
+<li>Dispatch Source ：处理事件(MACH端口发送,MACH端口接收,检测与进程相关事件等10种事件)</li>
+</ul>
+</li>
+</ul>
+<h4 id="GCD的queue、main-queue中执行的代码一定是在main-thread么？"><a href="#GCD的queue、main-queue中执行的代码一定是在main-thread么？" class="headerlink" title="GCD的queue、main queue中执行的代码一定是在main thread么？"></a>GCD的queue、main queue中执行的代码一定是在main thread么？</h4><pre><code>•   对于queue中所执行的代码不一定在main thread中。如果queue是在主线程中创建的，那么所执行的代码就是在主线程中执行。如果是在子线程中创建的，那么就不会在main thread中执行。
+•   对于main queue就是在主线程中的，因此一定会在主线程中执行。获取main queue就可以了，不需要我们创建，获取方式通过调用方法dispatchgetmain_queue来获取。
+</code></pre><h4 id="如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）"><a href="#如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）" class="headerlink" title="如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）"></a>如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）</h4><pre><code>使用Dispatch Group追加block到Global Group Queue,这些block如果全部执行完毕，就会执行Main Dispatch Queue中的结束处理的block。
+
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, );
+dispatch_group_t group = dispatch_group_create();
+dispatch_group_async(group, queue, ^{ /*加载图片1 */ });
+dispatch_group_async(group, queue, ^{ /*加载图片2 */ });
+dispatch_group_async(group, queue, ^{ /*加载图片3 */ });
+dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        // 合并图片
+});
+</code></pre><h4 id="有a、b、c、d-4个异步请求，如何判断a、b、c、d都完成执行？如果需要a、b、c、d顺序执行，该如何实现？"><a href="#有a、b、c、d-4个异步请求，如何判断a、b、c、d都完成执行？如果需要a、b、c、d顺序执行，该如何实现？" class="headerlink" title="有a、b、c、d 4个异步请求，如何判断a、b、c、d都完成执行？如果需要a、b、c、d顺序执行，该如何实现？"></a>有a、b、c、d 4个异步请求，如何判断a、b、c、d都完成执行？如果需要a、b、c、d顺序执行，该如何实现？</h4><pre><code>1.  对于这四个异步请求，要判断都执行完成最简单的方式就是通过GCD的group来实现：
+2.  dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+3.  dispatch_group_t group = dispatch_group_create();
+4.  dispatch_group_async(group, queue, ^{ /*任务a */ });
+5.  dispatch_group_async(group, queue, ^{ /*任务b */ });
+6.  dispatch_group_async(group, queue, ^{ /*任务c */ }); 
+7.  dispatch_group_async(group, queue, ^{ /*任务d */ }); 
+8.   
+9.  dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+10.     // 在a、b、c、d异步执行完成后，会回调这里
+11. });
+当然，我们还可以使用非常老套的方法来处理，通过四个变量来标识a、b、c、d四个任务是否完成，然后在runloop中让其等待，当完成时才退出run loop。但是这样做会让后面的代码得不到执行，直到Run loop执行完毕。
+要求顺序执行，那么可以将任务放到串行队列中，自然就是按顺序来异步执行了
+</code></pre><h4 id="发送10个网络请求，然后再接收到所有回应之后执行后续操作，如何实现？"><a href="#发送10个网络请求，然后再接收到所有回应之后执行后续操作，如何实现？" class="headerlink" title="发送10个网络请求，然后再接收到所有回应之后执行后续操作，如何实现？"></a>发送10个网络请求，然后再接收到所有回应之后执行后续操作，如何实现？</h4><pre><code>从题目分析可知，10个请求要全部完成后，才执行某一功能。比如，下载10图片后合成一张大图，就需要异步全部下载完成后，才能合并成大图。
+做法：通过dispatch_group_t来实现，将每个请求放入到Group中，将合并成大图的操作放在dispatch_group_notify中实现。
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+dispatch_group_t group = dispatch_group_create();
+dispatch_group_async(group, queue, ^{ /*加载图片1 */ });
+dispatch_group_async(group, queue, ^{ /*加载图片2 */ });
+dispatch_group_async(group, queue, ^{ /*加载图片3 */ }); 
+dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+    // 合并图片
+});
+</code></pre><h4 id="苹果为什么要废弃dispatch-get-current-queue？"><a href="#苹果为什么要废弃dispatch-get-current-queue？" class="headerlink" title="苹果为什么要废弃dispatch_get_current_queue？"></a>苹果为什么要废弃dispatch_get_current_queue？</h4><ul>
+<li>dispatch_get_current_queue容易造成死锁。详情点击该API查看官方注释。</li>
+</ul>
+<h4 id="如果让你来实现-dispatch-once，你会怎么做？"><a href="#如果让你来实现-dispatch-once，你会怎么做？" class="headerlink" title="如果让你来实现 dispatch_once，你会怎么做？"></a>如果让你来实现 dispatch_once，你会怎么做？</h4><ul>
+<li><a href="https://link.jianshu.com?t=http://www.dreamingwish.com/article/gcd-guide-dispatch-once-2.html" target="_blank" rel="noopener">http://www.dreamingwish.com/article/gcd-guide-dispatch-once-2.html</a>（超级详细解析）</li>
+<li>个人觉得说出实现的思路即可，无锁的线程同步编程，每一处的线程竞争都考虑到并妥善处理</li>
+<li>线程A执行Block时，任何其它线程都需要等待。</li>
+<li>线程A执行完Block应该立即标记任务完成状态，然后遍历信号量链来唤醒所有等待线程。</li>
+<li>线程A遍历信号量链来signal时，任何其他新进入函数的线程都应该直接返回而无需等待。</li>
+<li>线程A遍历信号量链来signal时，若有其它等待线程B仍在更新或试图更新信号量链，应该保证此线程B能正确完成其任务：a.直接返回 b.等待在信号量上并很快又被唤醒。</li>
+<li>线程B构造信号量时，应该考虑线程A随时可能改变状态（“等待”、“完成”、“遍历信号量链”）。</li>
+<li>线程B构造信号量时，应该考虑到另一个线程C也可能正在更新或试图更新信号量链，应该保证B、C都能正常完成其任务：a.增加链节并等待在信号量上 b.发现线程A已经标记“完成”然后直接销毁信号量并退出函数。</li>
+</ul>
+<h4 id="关于NSOperation"><a href="#关于NSOperation" class="headerlink" title="关于NSOperation:"></a>关于NSOperation:</h4><ul>
+<li>NSOperation: 抽象类,不能直接使用,需要使用其子类.(类似的类还有核心动画)</li>
+<li>两个常用子类: NSInvocationOperation(调用) 和 NSBlockOperation(块);</li>
+<li>两者没有本质区别,后者使用 Block 的形式组织代码,使用相对方便.</li>
+<li>NSInvocationOperation在调用start方法后，不会开启新的线程只会在当前线程中执行。</li>
+<li>NSBlockOperation 在调用start方法后，如果封装的操作数&gt;1会开辟多条线程执行 =1 只会在当前线程执行.</li>
+<li>NSOperationQueue 创建的操作队列默认为全局队列，队列中的操作执行顺序是无序的，如果需要让它有序执行需要添加依赖关系。</li>
+<li>// 操作op3依赖于操作op2  [op3 addDependency:op2];</li>
+<li>// 操作op2依赖于操作op1  [op2 addDependency:op1];</li>
+<li>同时可以设置最大并发数</li>
+<li>NSOperationQueue NSOperation支持 取消暂停的操作 但是正在进行的的操作并不能取消，这一旦取消不可恢复.</li>
+<li>NSOperationQueue支持KVO，可以监测operation是否正在执行（isExecuted）、是否结束（isFinished），是否取消（isCanceld）</li>
+</ul>
+<h4 id="NSOperation-queue"><a href="#NSOperation-queue" class="headerlink" title="NSOperation queue?"></a>NSOperation queue?</h4><ul>
+<li>存放NSOperation的集合类。不能说队列，不是严格的先进先出</li>
+</ul>
+<h4 id="NSOperation与GCD的区别"><a href="#NSOperation与GCD的区别" class="headerlink" title="NSOperation与GCD的区别"></a>NSOperation与GCD的区别</h4><ul>
+<li>GCD<ol>
+<li>GCD是iOS4.0推出的，主要针对多核cpu做了优化，是纯c语言的技术。</li>
+<li>GCD是将任务（block）添加到队列（串行、并行、全局、主队列），并且以同步/异步的方式执行任务的函数。</li>
+<li>GCD提供了一些NSOperation不具备的功能 <ul>
+<li>一次性执行</li>
+<li>延迟执行</li>
+<li>调度组</li>
+<li>GCD 是严格的队列，先进先出 FIFO；</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>NSOperation<ol>
+<li>NSOperation是iOS2.0推出的，iOS4.0以后又重写了NSOperation</li>
+<li>NSOperation是将操作（异步的任务）添加到队列（并发队列），就会执行指定的函数</li>
+<li>NSOperation提供的方便操作 <ul>
+<li>最大并发数</li>
+<li>队列的暂停和继续</li>
+<li>取消所有的操作</li>
+<li>指定操作之间的依赖关系依赖关系，可以让异步任务同步执行.</li>
+<li>将KVO用于NSOperation中，监听一个operation是否完成。</li>
+<li>能够设置NSOperation的优先级，能够使同一个并行队列中的任务区分先后地执行</li>
+<li>对NSOperation进行继承，在这之上添加成员变量与成员方法，提高整个代码的复用度</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="GCD与NSThread的区别"><a href="#GCD与NSThread的区别" class="headerlink" title="GCD与NSThread的区别"></a>GCD与NSThread的区别</h4><ul>
+<li>NSThread 通过 @selector 指定要执行的方法，代码分散</li>
+<li>GCD 通过 block 指定要执行的代码，代码集中, 所有的代码写在一起的，让代码更加简单，易于阅读和维护</li>
+<li>使用 GCD 不需要管理线程的创建/销毁/复用的过程！程序员不用关心线程的生命周期</li>
+<li>如果要开多个线程 NSThread 必须实例化多个线程对象</li>
+<li>NSThread 靠 NSObject 的分类方法实现的线程间通讯，</li>
+</ul>
+<h4 id="为什么要取消-恢复队列呢？"><a href="#为什么要取消-恢复队列呢？" class="headerlink" title="为什么要取消/恢复队列呢？"></a>为什么要取消/恢复队列呢？</h4><ul>
+<li>一般在内存警告后取消队列中的操作。</li>
+<li>为了保证scorllView在滚动的时候流畅 通常在滚动开始时，暂停队列中的所有操作，滚动结束后，恢复操作。</li>
+</ul>
+<h4 id="Object-C中创建线程的方法是什么-如果在主线程中执行代码，方法是什么-如果想延时执行代码、方法又是什么"><a href="#Object-C中创建线程的方法是什么-如果在主线程中执行代码，方法是什么-如果想延时执行代码、方法又是什么" class="headerlink" title="Object C中创建线程的方法是什么?如果在主线程中执行代码，方法是什么?如果想延时执行代码、方法又是什么?"></a>Object C中创建线程的方法是什么?如果在主线程中执行代码，方法是什么?如果想延时执行代码、方法又是什么?</h4><pre><code>线程创建有三种方法：使用NSThread创建、使用GCD的dispatch、使用子类化的NSOperation,然后将其加入NSOperationQueue;
+
+NSThread创建线程的三种方法：
+ NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(run:) object:@&quot;nil&quot;];
+ [NSThread detachNewThreadSelector:@selector(run:) toTarget:self withObject:@&quot;我是分离出来的子线程&quot;];
+[self performSelectorInBackground:@selector(run:) withObject:@&quot;我是后台线程&quot;];
+
+在主线程执行代码，就调用performSelectorOnMainThread方法。
+
+如果想延时执行代码可以调用performSelector:onThread:withObject:waitUntilDone:方法；
+
+GCD：
+利用异步函数dispatch_async()创建子线程。
+
+在主线程执行代码，dispatch_async(dispatch_get_main_queue(), ^{});
+
+延迟执行代码（延迟·可以控制代码在哪个线程执行）：
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{});
+
+NSOperationQueue：
+使用NSOperation的子类封装操作，再将操作添加到NSOperationQueue创建的队列中，实现多线程。
+在主线程执行代码，只要将封装代码的NSOperation对象添加到主队列就可以了。
+</code></pre><h4 id="下面关于线程管理错误的是"><a href="#下面关于线程管理错误的是" class="headerlink" title="下面关于线程管理错误的是"></a>下面关于线程管理错误的是</h4><pre><code>A. GCD所用的开销要比NSThread大
+B. 可以在子线程中修改UI元素
+C. NSOperationQueue是比NSthread更高层的封装
+D. GCD可以根据不同优先级分配线程
+</code></pre><ul>
+<li>参考答案：B</li>
+<li>理由：首先，UI元素的更新必须在主线程。GCD与Block配合使用，block需要自动捕获上下文变量信息等，因此需要更多的资源，故比NSThread开销要大一些。NSOperationQueue与NSOperation配合使用，比NSThread更易于操作线程。GCD提供了多个优先级，我们可以根据设置优先级，让其自动为我们分配线程。</li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/09/12/iOS面试题18-多媒体/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/12/iOS面试题16-WebView与JS交互/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="暮鼓晨钟's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        swift630@sina.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: swift630@sina.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">28</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;暮鼓晨钟
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
