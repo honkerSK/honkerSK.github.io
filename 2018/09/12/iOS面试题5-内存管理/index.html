@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            iOS面试题5--内存管理 | 
+        
+        暮鼓晨钟
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",iOS面试">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="暮鼓晨钟">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题5-内存管理/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题5-内存管理/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="iOS面试题5--内存管理 | 暮鼓晨钟">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="iOS面试"> 
+
+    
+        <meta property="article:published_time" content="Wed Sep 12 2018 12:26:12 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 12 2018 12:33:22 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题5-内存管理/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题5-内存管理/index.html",
+    "headline": "iOS面试题5--内存管理",
+    "datePublished": "Wed Sep 12 2018 12:26:12 GMT+0800",
+    "dateModified": "Wed Sep 12 2018 12:33:22 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "暮鼓晨钟",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "暮鼓晨钟",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",iOS面试",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ARC处理原理"><span class="post-toc-number">1.</span> <span class="post-toc-text">ARC处理原理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#下面关于Objective-C内存管理的描述错误的是"><span class="post-toc-number">2.</span> <span class="post-toc-text">下面关于Objective-C内存管理的描述错误的是</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#MRC文件在ARC工程混合编译时，需要在文件的Compiler-Flags上添加什么参数"><span class="post-toc-number">3.</span> <span class="post-toc-text">MRC文件在ARC工程混合编译时，需要在文件的Compiler Flags上添加什么参数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么情况使用-weak-关键字，相比-assign-有什么不同？"><span class="post-toc-number">4.</span> <span class="post-toc-text">什么情况使用 weak 关键字，相比 assign 有什么不同？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#调用对象的release-方法会销毁对象吗？"><span class="post-toc-number">5.</span> <span class="post-toc-text">调用对象的release 方法会销毁对象吗？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自动释放池常见面试代码"><span class="post-toc-number">6.</span> <span class="post-toc-text">自动释放池常见面试代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#objective-C对象的内存布局是怎样的？"><span class="post-toc-number">7.</span> <span class="post-toc-text">objective-C对象的内存布局是怎样的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#看下面的程序-第一个NSLog会输出什么-这时str的retainCount是多少-第二个和第三个呢-为什么"><span class="post-toc-number">8.</span> <span class="post-toc-text">看下面的程序,第一个NSLog会输出什么?这时str的retainCount是多少?第二个和第三个呢? 为什么?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#回答person的retainCount值-并解释为什么"><span class="post-toc-number">9.</span> <span class="post-toc-text">回答person的retainCount值,并解释为什么</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么时候需要在程序中创建内存池"><span class="post-toc-number">10.</span> <span class="post-toc-text">什么时候需要在程序中创建内存池?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如果我们不创建内存池，是否有内存池提供给我们"><span class="post-toc-number">11.</span> <span class="post-toc-text">如果我们不创建内存池，是否有内存池提供给我们?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#苹果是如何实现autoreleasepool的？"><span class="post-toc-number">12.</span> <span class="post-toc-text">苹果是如何实现autoreleasepool的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#objc使用什么机制管理对象内存？"><span class="post-toc-number">13.</span> <span class="post-toc-text">objc使用什么机制管理对象内存？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么要进行内存管理"><span class="post-toc-number">14.</span> <span class="post-toc-text">为什么要进行内存管理?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#内存管理的范围"><span class="post-toc-number">15.</span> <span class="post-toc-text">内存管理的范围?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#objc使用什么机制管理对象内存-或者内存管理方式有哪些-？-重点"><span class="post-toc-number">16.</span> <span class="post-toc-text">objc使用什么机制管理对象内存(或者内存管理方式有哪些)？(重点)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iOS是如何管理内存的？"><span class="post-toc-number">17.</span> <span class="post-toc-text">iOS是如何管理内存的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#内存管理的原则"><span class="post-toc-number">18.</span> <span class="post-toc-text">内存管理的原则</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#内存管理研究的对象"><span class="post-toc-number">19.</span> <span class="post-toc-text">内存管理研究的对象:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何判断对象已经被销毁"><span class="post-toc-number">20.</span> <span class="post-toc-text">如何判断对象已经被销毁</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#retainCount-0，使用retain能否复活对象"><span class="post-toc-number">21.</span> <span class="post-toc-text">retainCount = 0，使用retain能否复活对象</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对象与对象之间存在的关系"><span class="post-toc-number">22.</span> <span class="post-toc-text">对象与对象之间存在的关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对象的组合关系中，确保成员变量不被提前释放？"><span class="post-toc-number">23.</span> <span class="post-toc-text">对象的组合关系中，确保成员变量不被提前释放？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#成员变量的对象，在哪里配对释放？"><span class="post-toc-number">24.</span> <span class="post-toc-text">成员变量的对象，在哪里配对释放？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对象组合关系中，内存泄露有哪几种情况？"><span class="post-toc-number">25.</span> <span class="post-toc-text">对象组合关系中，内存泄露有哪几种情况？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#正确重写set方法"><span class="post-toc-number">26.</span> <span class="post-toc-text">正确重写set方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分别描述内存管理要点、autorelease、release、NSAutoreleasePool-并说明autorelease是什么时候被release的-简述什么时候由你负责释放对象-什么时候不由你释放-NSAutoreleasePool-release-和-NSAutoreleasePool-drain-有什么区别"><span class="post-toc-number">27.</span> <span class="post-toc-text">分别描述内存管理要点、autorelease、release、NSAutoreleasePool?并说明autorelease是什么时候被release的?简述什么时候由你负责释放对象,什么时候不由你释放?[NSAutoreleasePool release]和[NSAutoreleasePool drain]有什么区别?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自动释放池是什么-如何工作"><span class="post-toc-number">28.</span> <span class="post-toc-text">自动释放池是什么,如何工作 ?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自动释放池什么时候释放？"><span class="post-toc-number">29.</span> <span class="post-toc-text">自动释放池什么时候释放？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iPhone-OS有没有垃圾回收-autorelease-和垃圾回收制-gc-有什么关系"><span class="post-toc-number">30.</span> <span class="post-toc-text">iPhone OS有没有垃圾回收?autorelease 和垃圾回收制(gc)有什么关系?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ARC问题"><span class="post-toc-number">31.</span> <span class="post-toc-text">ARC问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ARC通过什么方式帮助开发者管理内存？"><span class="post-toc-number">32.</span> <span class="post-toc-text">ARC通过什么方式帮助开发者管理内存？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开发项目时你是怎么检查内存泄露"><span class="post-toc-number">33.</span> <span class="post-toc-text">开发项目时你是怎么检查内存泄露</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#麻烦你设计个简单的图片内存缓存器（移除策略是一定要说的）"><span class="post-toc-number">34.</span> <span class="post-toc-text">麻烦你设计个简单的图片内存缓存器（移除策略是一定要说的）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常见的出现内存循环引用的场景有哪些？"><span class="post-toc-number">35.</span> <span class="post-toc-text">常见的出现内存循环引用的场景有哪些？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对象添加到通知中心中，当通知中心发通知时，这个对象却已经被释放了，可能会出现什么问题？"><span class="post-toc-number">36.</span> <span class="post-toc-text">对象添加到通知中心中，当通知中心发通知时，这个对象却已经被释放了，可能会出现什么问题？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ARC下不显式指定任何属性关键字时，默认的关键字都有哪些？"><span class="post-toc-number">37.</span> <span class="post-toc-text">ARC下不显式指定任何属性关键字时，默认的关键字都有哪些？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写一个便利构造器"><span class="post-toc-number">38.</span> <span class="post-toc-text">写一个便利构造器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写出下面程序段的输出结果"><span class="post-toc-number">39.</span> <span class="post-toc-text">写出下面程序段的输出结果</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#请写出以下代码的执行结果"><span class="post-toc-number">40.</span> <span class="post-toc-text">请写出以下代码的执行结果</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写出方法获取iOS内存使用情况？"><span class="post-toc-number">41.</span> <span class="post-toc-text">写出方法获取iOS内存使用情况？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iOS是如何管理内存的？-1"><span class="post-toc-number">42.</span> <span class="post-toc-text">iOS是如何管理内存的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#很多内置的类，如tableview的delegate的属性是assign不是retain？"><span class="post-toc-number">43.</span> <span class="post-toc-text">很多内置的类，如tableview的delegate的属性是assign不是retain？</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                iOS面试题5--内存管理
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>暮鼓晨钟</strong>
+        <span>9月 12, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题5--内存管理&url=http://yoursite.com/2018/09/12/iOS面试题5-内存管理/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题5--内存管理&url=http://yoursite.com/2018/09/12/iOS面试题5-内存管理/index.html&via=暮鼓晨钟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题5-内存管理/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题5-内存管理/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=iOS面试题5--内存管理&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题5-内存管理/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h4 id="ARC处理原理"><a href="#ARC处理原理" class="headerlink" title="ARC处理原理"></a>ARC处理原理</h4><p>ARC是Objective-C编译器的特性，而不是运行时特性或者垃圾回收机制，ARC所做的只不过是在代码编译时为你自动在合适的位置插入release或autorelease，只要没有强指针指向对象，对象就会被释放。</p>
+<ul>
+<li><p>前端编译器</p>
+<pre><code>前端编译器会为“拥有的”每一个对象插入相应的release语句。如果对象的所有权修饰符是__strong，那么它就是被拥有的。如果在某个方法内创建了一个对象，前端编译器会在方法末尾自动插入release语句以销毁它。而类拥有的对象（实例变量/属性）会在dealloc方法内被释放。事实上，你并不需要写dealloc方法或调用父类的dealloc方法，ARC会自动帮你完成一切。此外，由编译器生成的代码甚至会比你自己写的release语句的性能还要好，因为编辑器可以作出一些假设。在ARC中，没有类可以覆盖release方法，也没有调用它的必要。ARC会通过直接使用objc_release来优化调用过程。而对于retain也是同样的方法。ARC会调用objc_retain来取代保留消息。
+</code></pre></li>
+<li><p>ARC优化器</p>
+</li>
+</ul>
+<p>虽然前端编译器听起来很厉害的样子，但代码中有时仍会出现几个对retain和release的重复调用。ARC优化器负责移除多余的retain和release语句，确保生成的代码运行速度高于手动引用计数的代码。</p>
+<h4 id="下面关于Objective-C内存管理的描述错误的是"><a href="#下面关于Objective-C内存管理的描述错误的是" class="headerlink" title="下面关于Objective-C内存管理的描述错误的是"></a>下面关于Objective-C内存管理的描述错误的是</h4><pre><code>A 当使用ARC来管理内存时，代码中不可以出现autorelease
+B autoreleasepool 在 drain 的时候会释放在其中分配的对象
+C 当使用ARC来管理内存时，在线程中大量分配对象而不用autoreleasepool则可能会造成内存泄露
+D 在使用ARC的项目中不能使用NSZone
+</code></pre><ul>
+<li>参考答案：A</li>
+<li>理由：ARC只是在大多时候编译自动为我们添加上内存管理的代码，只是我们的源代码看不到而已，但是在编译时，编译器会添加上相关内存管理代码。对于自动释放池，在drain时会将自动释放池中的所有对象的引用计数减一，若引用计数为0，则会自动释放掉其内存。如果在线程中需要大量分配内存，我们理应添加上自动释放池，以防内存泄露。比如在for循环中要分配大量的内存处理数据，那么我们应该在for循环内添加自动释放池，在每个循环后就将内存释放掉，防止内存泄露。在ARC项目中，自然不能手动使用NSZone，也不能调用父类的dealloc。</li>
+</ul>
+<h4 id="MRC文件在ARC工程混合编译时，需要在文件的Compiler-Flags上添加什么参数"><a href="#MRC文件在ARC工程混合编译时，需要在文件的Compiler-Flags上添加什么参数" class="headerlink" title="MRC文件在ARC工程混合编译时，需要在文件的Compiler Flags上添加什么参数"></a>MRC文件在ARC工程混合编译时，需要在文件的Compiler Flags上添加什么参数</h4><pre><code>A -shared
+B -fno-objc-arc
+C -fobjc-arc
+D -dynamic
+参考答案：B
+</code></pre><h4 id="什么情况使用-weak-关键字，相比-assign-有什么不同？"><a href="#什么情况使用-weak-关键字，相比-assign-有什么不同？" class="headerlink" title="什么情况使用 weak 关键字，相比 assign 有什么不同？"></a>什么情况使用 weak 关键字，相比 assign 有什么不同？</h4><ul>
+<li>什么情况使用weak关键字?</li>
+<li>在 ARC 中,在有可能出现循环引用的时候,往往要通过让其中一端使用 weak 来解决,比如: delegate 代理属性<br> 自身已经对它进行一次强引用,没有必要再强引用一次,此时也会使用 weak,自定义 IBOutlet 控件属性一般也使用 weak；当然，也可以使用strong。</li>
+<li>weak与assign的不同?</li>
+<li>weak 此特质表明该属性定义了一种“非拥有关系” (nonowning relationship)。为这种属性设置新值时，设置方法既不保留新值，也不释放旧值。此特质同assign类似， 然而在属性所指的对象遭到摧毁时，属性值也会清空(nil out)。 而 assign 的“设置方法”只会执行针对“纯量类型” (scalar type，例如 CGFloat 或 NSlnteger 等)的简单赋值操作。</li>
+<li>assigin 可以用非 OC 对象,而 weak 必须用于 OC 对象</li>
+</ul>
+<h4 id="调用对象的release-方法会销毁对象吗？"><a href="#调用对象的release-方法会销毁对象吗？" class="headerlink" title="调用对象的release 方法会销毁对象吗？"></a>调用对象的release 方法会销毁对象吗？</h4><pre><code>    不会，调用对象的release 方法只是将对象的引用计数器-1，当对象的引用计数器为0的时候会调用了对象的dealloc 方法才能进行释放对象的内存。
+</code></pre><h4 id="自动释放池常见面试代码"><a href="#自动释放池常见面试代码" class="headerlink" title="自动释放池常见面试代码"></a>自动释放池常见面试代码</h4><pre class=" language-objc"><code class="language-objc">for (int i = 0; i < someLargeNumber; ++i) {   
+    NSString *string = @"Abc";
+    string = [string lowercaseString];
+    string = [string stringByAppendingString:@"xyz"]; 
+    NSLog(@"%@",string);
+}
+</code></pre>
+<p>问：以上代码存在什么样的问题？如果循环的次数非常大时，应该如何修改？</p>
+<pre><code>存在问题：问题处在每执行一次循环，就会有一个string加到当前runloop中的自动释放池中，只有当自动释放池被release的时候，自动释放池中的标示了autorelease的这些数据所占用的内存空间才能被释放掉。假设，当someLargeNumber大到一定程度时，内存空间将被耗尽而没有被释放掉，所以就出现了内存溢出的现象。
+
+解决办法1：如果i比较大，可以用@autoreleasepool {}解决，放在for循环外，循环结束后，销毁创建的对象，解决占据栈区内存的问题
+
+解决方法2：如果i玩命大，一次循环都会造成自动释放池被填满，自动释放池放在for循环内，每次循环都将上一次创建的对象release
+修改之后:
+for(int i = 0; i&lt;1000;i++) {
+    NSAutoreleasePool * pool1 = [[NSAutoreleasePool alloc] init]; 
+    NSString *string = @&quot;Abc&quot;;
+    string = [string lowercaseString];
+    string = [string stringByAppendingString:@&quot;xyz&quot;]; 
+    NSLog(@&quot;%@&quot;,string);
+    //释放池
+    [pool1 drain];
+}
+</code></pre><h4 id="objective-C对象的内存布局是怎样的？"><a href="#objective-C对象的内存布局是怎样的？" class="headerlink" title="objective-C对象的内存布局是怎样的？"></a>objective-C对象的内存布局是怎样的？</h4><ul>
+<li>由于Objective-C中没有多继承，因此其内存布局还是很简单的，就是：最前面有个isa指针，然后父类的实例变量存放在子类的成员变量之前</li>
+</ul>
+<h4 id="看下面的程序-第一个NSLog会输出什么-这时str的retainCount是多少-第二个和第三个呢-为什么"><a href="#看下面的程序-第一个NSLog会输出什么-这时str的retainCount是多少-第二个和第三个呢-为什么" class="headerlink" title="看下面的程序,第一个NSLog会输出什么?这时str的retainCount是多少?第二个和第三个呢? 为什么?"></a>看下面的程序,第一个NSLog会输出什么?这时str的retainCount是多少?第二个和第三个呢? 为什么?</h4><pre class=" language-objc"><code class="language-objc">NSMutableArray* ary = [[NSMutableArray array] retain];
+NSString *str = [NSString stringWithFormat:@"test"];
+[str retain];
+[aryaddObject:str];
+NSLog(@”%@%d”,str,[str retainCount]);
+[str retain];
+[str release];
+[str release];
+NSLog(@”%@%d”,str,[str retainCount]);
+[aryremoveAllObjects]
+NSLog(@”%@%d”,str,[str retainCount]);
+str的retainCount创建+1，retain+1，加入数组自动+1 3
+retain+1，release-1，release-1 2
+数组删除所有对象，所有数组内的对象自动-1 1
+</code></pre>
+<h4 id="回答person的retainCount值-并解释为什么"><a href="#回答person的retainCount值-并解释为什么" class="headerlink" title="回答person的retainCount值,并解释为什么"></a>回答person的retainCount值,并解释为什么</h4><pre class=" language-objc"><code class="language-objc">Person *per = [[Person alloc] init]; 此时person 的retainCount的值是1 self.person = per;
+在self.person 时,如果是assign,person的 retainCount的值不变,仍为1 若是:retain person的retainCount的值加1,变为2
+若是:copy person的retainCount值不变,仍为1
+</code></pre>
+<h4 id="什么时候需要在程序中创建内存池"><a href="#什么时候需要在程序中创建内存池" class="headerlink" title="什么时候需要在程序中创建内存池?"></a>什么时候需要在程序中创建内存池?</h4><ul>
+<li>用户自己创建的数据线程，则需要创建该线程的内存池</li>
+</ul>
+<h4 id="如果我们不创建内存池，是否有内存池提供给我们"><a href="#如果我们不创建内存池，是否有内存池提供给我们" class="headerlink" title="如果我们不创建内存池，是否有内存池提供给我们?"></a>如果我们不创建内存池，是否有内存池提供给我们?</h4><ul>
+<li>界面线程维护着自己的内存池，用户自己创建的数据线程，则需要创建该线程的内存池</li>
+</ul>
+<h4 id="苹果是如何实现autoreleasepool的？"><a href="#苹果是如何实现autoreleasepool的？" class="headerlink" title="苹果是如何实现autoreleasepool的？"></a>苹果是如何实现autoreleasepool的？</h4><pre class=" language-objc"><code class="language-objc">autoreleasepool以一个队列数组的形式实现,主要通过下列三个函数完成.
+•   objc_autoreleasepoolPush
+•   objc_autoreleasepoolPop
+•   objc_autorelease
+看函数名就可以知道，对autorelease分别执行push、pop操作。销毁对象时执行release操作。
+</code></pre>
+<h4 id="objc使用什么机制管理对象内存？"><a href="#objc使用什么机制管理对象内存？" class="headerlink" title="objc使用什么机制管理对象内存？"></a>objc使用什么机制管理对象内存？</h4><ul>
+<li>通过引用计数器(retainCount)的机制来决定对象是否需要释放。 每次runloop完成一个循环的时候，都会检查对象的 retainCount，如果retainCount为0，说明该对象没有地方需要继续使用了，可以释放掉了。</li>
+</ul>
+<h4 id="为什么要进行内存管理"><a href="#为什么要进行内存管理" class="headerlink" title="为什么要进行内存管理?"></a>为什么要进行内存管理?</h4><ul>
+<li>因为移动设备的内存极其有限,当一个程序所占内存达到一定值时， 系统会发出内存警告. 当程序达到更大的值时, 程序会闪退, 影响用户体验. 为了保证程序的运行流畅, 必须进行内存管理</li>
+</ul>
+<h4 id="内存管理的范围"><a href="#内存管理的范围" class="headerlink" title="内存管理的范围?"></a>内存管理的范围?</h4><ul>
+<li>管理所有继承自NSObject的对象, 对基本数据类型无效.是因为对象和其他数据类型在系统中存储的空间不一样,其他局部变量主要存储在栈区(因为基本数据类型占用的存储空间是固定的,一般存放于栈区),而对象存储于堆中,当代码块结束时,这个代码块所涉及到的所有局部变量会自动弹栈清空,指向对象的指针也会被回收,这时对象就没有指针指向,但依然存在于堆内存中,造成内存泄露.</li>
+</ul>
+<h4 id="objc使用什么机制管理对象内存-或者内存管理方式有哪些-？-重点"><a href="#objc使用什么机制管理对象内存-或者内存管理方式有哪些-？-重点" class="headerlink" title="objc使用什么机制管理对象内存(或者内存管理方式有哪些)？(重点)"></a>objc使用什么机制管理对象内存(或者内存管理方式有哪些)？(重点)</h4><ul>
+<li>MRC(manual retain-release)手动内存管理</li>
+<li>ARC(automatic reference counting)自动引用计数</li>
+<li>Garbage collection (垃圾回收)。但是iOS不支持垃圾回收, ARC作为LLVM3.0编译器的一项特性, 在iOS5.0 (Xcode4) 版本后推出的。</li>
+<li>ARC的判断准则, 只要没有强指针指向对象, 对象就会被释放.</li>
+</ul>
+<h4 id="iOS是如何管理内存的？"><a href="#iOS是如何管理内存的？" class="headerlink" title="iOS是如何管理内存的？"></a>iOS是如何管理内存的？</h4><ul>
+<li>这个问题的话上一个问题也提到过,讲下block的内存管理,ARC下的黄金法则就行。</li>
+<li>这里说下swift里的内存管理:<br> delgate照样weak修饰,闭包前面用[weak self],swift里的新东西,unowned,举例,如果self在闭包被调用的时候可能为空,则用weak,反之亦然,如果为空时使用了unowned,程序会崩溃,类似访问了悬挂指针,在oc中类似于unsafe_unretained,类似assign修饰了oc对象,对象被销毁后,被unowned修饰的对象不会为空,但是unowned访问速度更快,因为weak需要unwarp后才能使用</li>
+</ul>
+<h4 id="内存管理的原则"><a href="#内存管理的原则" class="headerlink" title="内存管理的原则"></a>内存管理的原则</h4><ul>
+<li>只要还有人在使用这个对象, 那么这个对象就不会被回收</li>
+<li>只有你想使用这个对象, 那么就应该让这个对象的引用计数器加1</li>
+<li>当你不想使用这个对象时, 应该让对象的引用计数器减1</li>
+<li>谁创建, 就由谁来release <ul>
+<li>如果你通过alloc, new, copy 来创建一个对象, 当你不想用这个对象的时候就必须调用release 或者autorelease 让引用计数器减1</li>
+<li>不是你创建的就不用你负责 release</li>
+</ul>
+</li>
+<li>谁retain 谁release <ul>
+<li>只要你调用了retain ,无论这个对象如何生成,  都需要调用release</li>
+</ul>
+</li>
+<li>总结:<br> 有加就应该有减, 曾让某个计数器加1, 就应该让其在最后减1</li>
+</ul>
+<h4 id="内存管理研究的对象"><a href="#内存管理研究的对象" class="headerlink" title="内存管理研究的对象:"></a>内存管理研究的对象:</h4><ul>
+<li><code>野指针</code>:指针变量没有进行初始化或指向的空间已经被释放。<ul>
+<li>使用野指针调用对象方法，会报异常，程序崩溃。</li>
+<li>通常再调用完release方法后，把保存对象指针的地址清空，赋值为nil，找oc中没有空指针异常，所以[nil retain]调用方法不会有异常。</li>
+</ul>
+</li>
+<li><code>内存泄露</code><ul>
+<li>如 Person * person = [Person new]; (对象提前赋值nil或者清空)在栈区的person已经被释放, 而堆区new产生的对象还没有释放, 就会造成内存泄露</li>
+<li>在MRC手动引用计数器模式下, 造成内存泄露的情况 <ol>
+<li>没有配对释放，不符合内存管理原则</li>
+<li>对象提前赋值nil或者清空，导致release不起作用。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><code>僵尸对象</code> : 堆中已经被释放的对象(retainCount = 0)</li>
+<li><code>空指针</code> : 指针赋值为空,nil</li>
+</ul>
+<h4 id="如何判断对象已经被销毁"><a href="#如何判断对象已经被销毁" class="headerlink" title="如何判断对象已经被销毁"></a>如何判断对象已经被销毁</h4><ul>
+<li>重写dealloc方法，对象销毁时，会调用，重写时一定要[super dealloc]</li>
+</ul>
+<h4 id="retainCount-0，使用retain能否复活对象"><a href="#retainCount-0，使用retain能否复活对象" class="headerlink" title="retainCount = 0，使用retain能否复活对象"></a>retainCount = 0，使用retain能否复活对象</h4><ul>
+<li>已经被释放的对象无法复活</li>
+</ul>
+<h4 id="对象与对象之间存在的关系"><a href="#对象与对象之间存在的关系" class="headerlink" title="对象与对象之间存在的关系"></a>对象与对象之间存在的关系</h4><ol>
+<li>继承关系</li>
+<li>组合关系（是一种强烈的包含关系）</li>
+<li>依赖关系(对象作为方法参数传递)</li>
+</ol>
+<h4 id="对象的组合关系中，确保成员变量不被提前释放？"><a href="#对象的组合关系中，确保成员变量不被提前释放？" class="headerlink" title="对象的组合关系中，确保成员变量不被提前释放？"></a>对象的组合关系中，确保成员变量不被提前释放？</h4><ul>
+<li>重写set方法，在set方法中，retain该对象。</li>
+</ul>
+<h4 id="成员变量的对象，在哪里配对释放？"><a href="#成员变量的对象，在哪里配对释放？" class="headerlink" title="成员变量的对象，在哪里配对释放？"></a>成员变量的对象，在哪里配对释放？</h4><ul>
+<li>dealloc中释放</li>
+</ul>
+<h4 id="对象组合关系中，内存泄露有哪几种情况？"><a href="#对象组合关系中，内存泄露有哪几种情况？" class="headerlink" title="对象组合关系中，内存泄露有哪几种情况？"></a>对象组合关系中，内存泄露有哪几种情况？</h4><ul>
+<li>set方法没有retain对象</li>
+<li>没有release旧对象</li>
+<li>没有判断向set方法中传入的是否为同一个对象</li>
+</ul>
+<h4 id="正确重写set方法"><a href="#正确重写set方法" class="headerlink" title="正确重写set方法"></a>正确重写set方法</h4><ul>
+<li>判断是否为同一对象</li>
+<li>release旧对象</li>
+<li>retain新对象</li>
+</ul>
+<h4 id="分别描述内存管理要点、autorelease、release、NSAutoreleasePool-并说明autorelease是什么时候被release的-简述什么时候由你负责释放对象-什么时候不由你释放-NSAutoreleasePool-release-和-NSAutoreleasePool-drain-有什么区别"><a href="#分别描述内存管理要点、autorelease、release、NSAutoreleasePool-并说明autorelease是什么时候被release的-简述什么时候由你负责释放对象-什么时候不由你释放-NSAutoreleasePool-release-和-NSAutoreleasePool-drain-有什么区别" class="headerlink" title="分别描述内存管理要点、autorelease、release、NSAutoreleasePool?并说明autorelease是什么时候被release的?简述什么时候由你负责释放对象,什么时候不由你释放?[NSAutoreleasePool release]和[NSAutoreleasePool drain]有什么区别?"></a>分别描述内存管理要点、autorelease、release、NSAutoreleasePool?并说明autorelease是什么时候被release的?简述什么时候由你负责释放对象,什么时候不由你释放?[NSAutoreleasePool release]和[NSAutoreleasePool drain]有什么区别?</h4><ul>
+<li>内存管理要点:Objective-C 使用引用计数机制(retainCount)来管理内存。</li>
+<li>内存每被引用一次,该内存的引用计数+1,每被释放一次引 用计数-1。</li>
+<li>当引用计数 = 0 的时候,调用该对象的 dealloc 方法,来彻底从内存中删除该对象。</li>
+<li>alloc,allocWithZone,new(带初始化)时:该对象引用计数 +1;</li>
+<li>retain:手动为该对象引用计数 +1;</li>
+<li>copy:对象引用计数 +1;//注意copy的OC数据类型是否有mutable，如有为深拷贝，新对象计数为1，如果没有，为浅拷贝，计数+1</li>
+<li>mutableCopy:生成一个新对象,新对象引用计数为 1;</li>
+<li>release:手动为该对象引用计数 -1;</li>
+<li>autorelease:把该对象放入自动释放池,当自动释放池释放时,其内的对象引用计数 -1。</li>
+<li>NSAutoreleasePool: NSAutoreleasePool是通过接收对象向它发送的autorelease消息,记录该对象的release消息,当自动释放池被销毁时,会自动向池中的对象发送release消息。</li>
+<li>autorelease 是在自动释放池被销毁,向池中的对象发送release<br> 只能释放自己拥有的对象。</li>
+<li>区别是:在引用计数环境下(在不使用ARC情况下),两者基本一样,在GC(垃圾回收制)环境下,release 是一个no-op(无效操作),所以无论是不是GC都使用drain</li>
+<li>面试中内存管理,release和autorelease的含义?这里尤其要强调下autorelease,它引申出自动释放池,也能引申出Run loop!</li>
+</ul>
+<h4 id="自动释放池是什么-如何工作"><a href="#自动释放池是什么-如何工作" class="headerlink" title="自动释放池是什么,如何工作 ?"></a>自动释放池是什么,如何工作 ?</h4><ul>
+<li>什么是自动释放池：用来存储多个对象类型的指针变量</li>
+<li>自动释放池对池内对象的作用：存入池内的对象，当自动释放池被销毁时，会对池内对象全部做一次release操作</li>
+<li>对象如何加入池中：调用对象的autorelease方法</li>
+<li>自动释放池能嵌套使用吗：能</li>
+<li>自动释放池何时被销毁 ：简单的看，autorelease的”}”执行完以后。而实际情况是Autorelease对象是在当前的runloop迭代结束时释放的，而它能够释放的原因是系统在每个runloop迭代中都加入了自动释放池Push和Pop</li>
+<li>多次调用对象的autorelease方法会导致：野指针异常</li>
+<li>自动释放池的作用：将对象与自动释放池建立关系，池子内调用autorelease，在自动释放池销毁时销毁对象，延迟release销毁时间</li>
+</ul>
+<h4 id="自动释放池什么时候释放？"><a href="#自动释放池什么时候释放？" class="headerlink" title="自动释放池什么时候释放？"></a>自动释放池什么时候释放？</h4><ul>
+<li>通过Observer监听RunLoop的状态，一旦监听到RunLoop即将进入睡眠等待状态，就释放自动释放池（kCFRunLoopBeforeWaiting）</li>
+</ul>
+<h4 id="iPhone-OS有没有垃圾回收-autorelease-和垃圾回收制-gc-有什么关系"><a href="#iPhone-OS有没有垃圾回收-autorelease-和垃圾回收制-gc-有什么关系" class="headerlink" title="iPhone OS有没有垃圾回收?autorelease 和垃圾回收制(gc)有什么关系?"></a>iPhone OS有没有垃圾回收?autorelease 和垃圾回收制(gc)有什么关系?</h4><ul>
+<li>iOS 中没有垃圾回收。autorelease只是延迟释放,gc是每隔一段时间询问程序,看是否有无指针指向的对象,若有,就将它回收。他们两者没有什么关系。</li>
+</ul>
+<h4 id="ARC问题"><a href="#ARC问题" class="headerlink" title="ARC问题"></a>ARC问题</h4><ol>
+<li>什么是arc机制：自动引用计数.</li>
+<li>系统判断对象是否销毁的依据：指向对象的强指针是否被销毁</li>
+<li>arc的本质：对retainCount计算，创建+1 清空指针 - 1 或者到达autoreleasepool的大括号-1</li>
+<li>arc目的：不需要程序员关心retain和release操作.</li>
+<li>如何解决arc机制下类的相互引用：.h文件中使用@class关键字声明一个类，两端不能都用强指针，一端用strong一端用weak</li>
+</ol>
+<h4 id="ARC通过什么方式帮助开发者管理内存？"><a href="#ARC通过什么方式帮助开发者管理内存？" class="headerlink" title="ARC通过什么方式帮助开发者管理内存？"></a>ARC通过什么方式帮助开发者管理内存？</h4><p>ARC相对于MRC，不是在编译时添加retain/release/autorelease这么简单。应该是编译期和运行期两部分共同帮助开发者管理内存。</p>
+<ul>
+<li>在编译期，ARC用的是更底层的C接口实现的retain/release/autorelease，这样做性能更好，也是为什么不能在ARC环境下手动retain/release/autorelease，同时对同一上下文的同一对象的成对retain/release操作进行优化（即忽略掉不必要的操作）</li>
+<li>ARC也包含运行期组件，这个地方做的优化比较复杂，但也不能被忽略，手动去做未必优化得好，因此直接交给编译器来优化，相信苹果吧！</li>
+</ul>
+<h4 id="开发项目时你是怎么检查内存泄露"><a href="#开发项目时你是怎么检查内存泄露" class="headerlink" title="开发项目时你是怎么检查内存泄露"></a>开发项目时你是怎么检查内存泄露</h4><ul>
+<li>静态分析 analyze</li>
+<li>instruments工具里面有个leak 可以动态分析</li>
+</ul>
+<p>如果在block中多次使用 weakSelf的话，可以在block中先使用strongSelf，防止block执行时weakSelf被意外释放<br> 对于非ARC，将 <strong>weak 改用为 </strong>block 即可</p>
+<h4 id="麻烦你设计个简单的图片内存缓存器（移除策略是一定要说的）"><a href="#麻烦你设计个简单的图片内存缓存器（移除策略是一定要说的）" class="headerlink" title="麻烦你设计个简单的图片内存缓存器（移除策略是一定要说的）"></a>麻烦你设计个简单的图片内存缓存器（移除策略是一定要说的）</h4><ul>
+<li>内存缓存是个通用话题，每个平台都会涉及到。cache算法会影响到整个app的表现。候选人最好能谈下自己都了解哪些cache策略及各自的特点。</li>
+<li>常见的有FIFO,LRU,LFU等等。由于NSCache的缓存策略不透明，一些app开发者会选择自己做一套cache机制，其实并不难。</li>
+<li>FIFO : 新访问的数据插入FIFO队列尾部，数据在FIFO队列中顺序移动；淘汰FIFO队列头部的数据；</li>
+<li>LRU : 新数据插入到链表头部；每当缓存数据命中，则将数据移到链表头部；当链表满的时候，将链表尾部的数据丢弃；</li>
+<li>LFU : 新加入数据插入到队列尾部（因为引用计数为1）；队列中的数据被访问后，引用计数增加，队列重新排序；当需要淘汰数据时，将已经排序的列表最后的数据块删除；</li>
+</ul>
+<h4 id="常见的出现内存循环引用的场景有哪些？"><a href="#常见的出现内存循环引用的场景有哪些？" class="headerlink" title="常见的出现内存循环引用的场景有哪些？"></a>常见的出现内存循环引用的场景有哪些？</h4><ul>
+<li><code>定时器（NSTimer）</code>：<ul>
+<li>NSTimer经常会被作为某个类的成员变量，而NSTimer初始化时要指定self为target，容易造成循环引用（self-&gt;timer-&gt;self）。 另外，若timer一直处于validate的状态，则其引用计数将始终大于0，因此在不再使用定时器以后，应该先调用invalidate方法</li>
+</ul>
+</li>
+<li><code>block的使用</code>：<ul>
+<li>block在copy时都会对block内部用到的对象进行强引用(ARC)或者retainCount增1(非ARC)。在ARC与非ARC环境下对block使用不当都会引起循环引用问题， 一般表现为，某个类将block作为自己的属性变量，然后该类在block的方法体里面又使用了该类本身，简单说就是self.someBlock =Type var{[self dosomething];或者self.otherVar = XXX;或者_otherVar = …};出现循环的原因是：self-&gt;block-&gt;self或者self-&gt;block-&gt;_ivar（成员变量）</li>
+</ul>
+</li>
+<li><code>代理（delegate）</code>：<ul>
+<li>在委托问题上出现循环引用问题已经是老生常谈了，规避该问题的杀手锏也是简单到哭，一字诀：声明delegate时请用assign(MRC)或者weak(ARC)，千万别手贱玩一下retain或者strong，毕竟这基本逃不掉循环引用了！</li>
+</ul>
+</li>
+</ul>
+<h4 id="对象添加到通知中心中，当通知中心发通知时，这个对象却已经被释放了，可能会出现什么问题？"><a href="#对象添加到通知中心中，当通知中心发通知时，这个对象却已经被释放了，可能会出现什么问题？" class="headerlink" title="对象添加到通知中心中，当通知中心发通知时，这个对象却已经被释放了，可能会出现什么问题？"></a>对象添加到通知中心中，当通知中心发通知时，这个对象却已经被释放了，可能会出现什么问题？</h4><ul>
+<li>其实这种只是考查对通知的简单应用。通知是多对多的关系，主要使用场景是跨模块传值。当某对象加入到通知中心后，若在对象被销毁前不将该对象从通知中心中移除，当发送通知时，就会造成崩溃。这是很常见的。所以，在添加到通知中心后，一定要在释放前移除。</li>
+</ul>
+<h4 id="ARC下不显式指定任何属性关键字时，默认的关键字都有哪些？"><a href="#ARC下不显式指定任何属性关键字时，默认的关键字都有哪些？" class="headerlink" title="ARC下不显式指定任何属性关键字时，默认的关键字都有哪些？"></a>ARC下不显式指定任何属性关键字时，默认的关键字都有哪些？</h4><ul>
+<li>对于基本数据类型默认关键字是：atomic,readwrite,assign</li>
+<li>对于普通的Objective-C对象：atomic,readwrite,strong</li>
+</ul>
+<h4 id="写一个便利构造器"><a href="#写一个便利构造器" class="headerlink" title="写一个便利构造器"></a>写一个便利构造器</h4><pre class=" language-objc"><code class="language-objc">+ (id)Person {
+Person *person=[Person alloc]init];
+return [person autorelease]; 备注:ARC时不用 autorelease
+}
+</code></pre>
+<h4 id="写出下面程序段的输出结果"><a href="#写出下面程序段的输出结果" class="headerlink" title="写出下面程序段的输出结果"></a>写出下面程序段的输出结果</h4><pre class=" language-objc"><code class="language-objc">NSDictionary *dict = [NSDictionary dictionaryWithObject:@"a string value" forKey:@"akey"]; NSLog(@"%@", [dict objectForKey:@"akey"]);
+[dict release];
+打印输出 a string value,然后崩溃----原因:便利构造器创建的对象,之后的release,会造成过度释放
+</code></pre>
+<h4 id="请写出以下代码的执行结果"><a href="#请写出以下代码的执行结果" class="headerlink" title="请写出以下代码的执行结果"></a>请写出以下代码的执行结果</h4><pre class=" language-objc"><code class="language-objc">NSString * name = [ [ NSString alloc] init ];
+name = @”Habb”;
+[ name release];
+打印输出结果是: Habb,在[name release]前后打印均有输出结果 ---会造成内存泄露---原先指向的区域变成了野指针,之后的释放,不能释放之前创建的区域
+</code></pre>
+<h4 id="写出方法获取iOS内存使用情况？"><a href="#写出方法获取iOS内存使用情况？" class="headerlink" title="写出方法获取iOS内存使用情况？"></a>写出方法获取iOS内存使用情况？</h4><h4 id="iOS是如何管理内存的？-1"><a href="#iOS是如何管理内存的？-1" class="headerlink" title="iOS是如何管理内存的？"></a>iOS是如何管理内存的？</h4><p>我相信很多人的回答是内存管理的黄金法则，其实如果我是面试官，我想要的答案不是这样的。我希望的回答是工作中如何处理内存管理的。<br> 参考答案：</p>
+<ul>
+<li><p>Block内存管理：由于使用block很容易造成循环引用，因此一定要小心内存管理问题。最好在基类controller下重写dealloc，加一句打印日志，表示类可以得到释放。如果出现无打印信息，说明这个类一直得不到释放，表明很有可能是使用block的地方出现循环引用了。对于block中需要引用外部controller的属性或者成员变量时，一定要使用弱引用，特别是成员变量像_testId这样的，很多人都没有使用弱引用，导致内存得不到释放。</p>
+</li>
+<li><p>对于普通所创建的对象，因为现在都是ARC项目，所以记住内存管理的黄金法则就可以解决。</p>
+</li>
+</ul>
+<h4 id="很多内置的类，如tableview的delegate的属性是assign不是retain？"><a href="#很多内置的类，如tableview的delegate的属性是assign不是retain？" class="headerlink" title="很多内置的类，如tableview的delegate的属性是assign不是retain？"></a>很多内置的类，如tableview的delegate的属性是assign不是retain？</h4><ul>
+<li>tableview的代理一般都是它所属的控制器，控制器会对它内部的view进行一次retain操作，而tableview对代理控制器也进行一次retain操作，就会出现循环引用问题。</li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/12/iOS面试题4-Objective-C/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="暮鼓晨钟's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        swift630@sina.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: swift630@sina.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">10</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;暮鼓晨钟
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
