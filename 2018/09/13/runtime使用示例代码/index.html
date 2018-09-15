@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Thu Sep 13 2018 01:47:02 GMT+0800">
-        <meta property="article:modified_time" content="Thu Sep 13 2018 01:50:35 GMT+0800">
+        <meta property="article:modified_time" content="Sat Sep 15 2018 18:26:15 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/09/13/runtime使用示例代码/index.html",
     "headline": "runtime使用示例代码",
     "datePublished": "Thu Sep 13 2018 01:47:02 GMT+0800",
-    "dateModified": "Thu Sep 13 2018 01:50:35 GMT+0800",
+    "dateModified": "Sat Sep 15 2018 18:26:15 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -566,8 +566,7 @@
 <ul>
 <li>消息机制原理:对象根据方法编号SEL去映射表查找对应的方法实现</li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/126164-59b1dcc1665fd1f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp" alt="img"></p>
-<p>1.png</p>
+<img src="/2018/09/13/runtime使用示例代码/1.png">
 <h4 id="2-交换方法"><a href="#2-交换方法" class="headerlink" title="2.交换方法"></a>2.交换方法</h4><ul>
 <li>开发使用场景:系统自带的方法功能不够，给系统自带的方法扩展一些功能，并且保持原有的功能。</li>
 <li>方式一:继承系统的类，重写方法.</li>
@@ -582,17 +581,14 @@
     // 步骤一：先搞个分类，定义一个能加载图片并且能打印的方法+ (instancetype)imageWithName:(NSString *)name;
     // 步骤二：交换imageNamed和imageWithName的实现，就能调用imageWithName，间接调用imageWithName的实现。
     UIImage *image = [UIImage imageNamed:@"123"];
-
 }
 
 @end
 
 @implementation UIImage (Image)
 // 加载分类到内存的时候调用
-+ (void)load
-{
++ (void)load {
     // 交换方法
-
     // 获取imageWithName方法地址
     Method imageWithName = class_getClassMethod(self, @selector(imageWithName:));
 
@@ -601,14 +597,12 @@
 
     // 交换方法地址，相当于交换实现方式
     method_exchangeImplementations(imageWithName, imageName);
-
 }
 
 // 不能在分类中重写系统方法imageNamed，因为会把系统的功能给覆盖掉，而且分类中不能调用super.
 
 // 既能加载图片又能打印
-+ (instancetype)imageWithName:(NSString *)name
-{
++ (instancetype)imageWithName:(NSString *)name {
 
     // 这里调用imageWithName，相当于调用imageName
     UIImage *image = [self imageWithName:name];
@@ -616,23 +610,24 @@
     if (image == nil) {
         NSLog(@"加载空的图片");
     }
-
     return image;
 }
 
 @end
 </code></pre>
 <ul>
-<li>交换原理：<ul>
-<li>交换之前：</li>
+<li><p>交换原理：</p>
+<ul>
+<li><p>交换之前：</p>
+<img src="/2018/09/13/runtime使用示例代码/2.png">
+<ul>
+<li>交换之后：<img src="/2018/09/13/runtime使用示例代码/3.png">
+</li>
 </ul>
 </li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/126164-faf8a0e452f5880e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp" alt="img"></p>
-<ul>
-<li>交换之后：</li>
+</li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/126164-37200db1e1af7ead.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500/format/webp" alt="img"></p>
 <h4 id="3-动态添加方法"><a href="#3-动态添加方法" class="headerlink" title="3.动态添加方法"></a>3.动态添加方法</h4><ul>
 <li>开发使用场景：如果一个类方法非常多，加载类到内存的时候也比较耗费资源，需要给每个方法生成映射表，可以使用动态给某个类，添加方法解决。</li>
 <li>经典面试题：有没有使用performSelector，其实主要想问你有没有动态添加过方法。</li>
@@ -657,15 +652,13 @@
 @implementation Person
 // void(*)()
 // 默认方法都有两个隐式参数，
-void eat(id self,SEL sel)
-{
+void eat(id self,SEL sel) {
     NSLog(@"%@ %@",self,NSStringFromSelector(sel));
 }
 
 // 当一个对象调用未实现的方法，会调用这个方法处理,并且会把对应的方法列表传过来.
 // 刚好可以用来判断，未实现的方法是不是我们想要动态添加的方法
-+ (BOOL)resolveInstanceMethod:(SEL)sel
-{
++ (BOOL)resolveInstanceMethod:(SEL)sel {
 
     if (sel == @selector(eat)) {
         // 动态添加eat方法
@@ -696,7 +689,6 @@ void eat(id self,SEL sel)
     NSObject *objc = [[NSObject alloc] init];
     objc.name = @"乔布斯";
     NSLog(@"%@",objc.name);
-
 }
 
 @end
@@ -706,14 +698,12 @@ static const char *key = "name";
 
 @implementation NSObject (Property)
 
-- (NSString *)name
-{
+- (NSString *)name {
     // 根据关联的key，获取关联的值。
     return objc_getAssociatedObject(self, key);
 }
 
-- (void)setName:(NSString *)name
-{
+- (void)setName:(NSString *)name {
     // 第一个参数：给哪个对象添加关联
     // 第二个参数：关联的key，通过这个key获取
     // 第三个参数：关联的value
@@ -735,7 +725,7 @@ static const char *key = "name";
 <pre class=" language-objc"><code class="language-objc">    @implementation NSObject (Log)
 
 // 自动打印属性字符串
-+ (void)resolveDict:(NSDictionary *)dict{
++ (void)resolveDict:(NSDictionary *)dict {
 
     // 拼接属性字符串代码
     NSMutableString *strM = [NSMutableString string];
@@ -766,12 +756,10 @@ static const char *key = "name";
 
         // 每生成属性字符串，就自动换行。
         [strM appendFormat:@"\n%@\n",str];
-
     }];
 
     // 把拼接好的字符串打印出来，就好了。
     NSLog(@"%@",strM);
-
 }
 
 @end
@@ -781,14 +769,12 @@ static const char *key = "name";
 </ul>
 <pre class=" language-objc"><code class="language-objc">@implementation Status
 
-+ (instancetype)statusWithDict:(NSDictionary *)dict
-{
++ (instancetype)statusWithDict:(NSDictionary *)dict {
     Status *status = [[self alloc] init];
 
     [status setValuesForKeysWithDictionary:dict];
 
     return status;
-
 }
 
 @end
@@ -801,8 +787,7 @@ static const char *key = "name";
 </ul>
 </li>
 </ul>
-<pre class=" language-objc"><code class="language-objc">- (void)setValue:(id)value forUndefinedKey:(NSString *)key
-{
+<pre class=" language-objc"><code class="language-objc">- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
 
 }
 </code></pre>
@@ -823,7 +808,6 @@ static const char *key = "name";
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"status.plist" ofType:nil];
 
     NSDictionary *statusDict = [NSDictionary dictionaryWithContentsOfFile:filePath];
-
     // 获取字典数组
     NSArray *dictArr = statusDict[@"statuses"];
 
@@ -834,24 +818,19 @@ static const char *key = "name";
 
     // 遍历字典数组
     for (NSDictionary *dict in dictArr) {
-
         Status *status = [Status modelWithDict:dict];
-
         [_statuses addObject:status];
-
     }
 
     // 测试数据
     NSLog(@"%@ %@",_statuses,[_statuses[0] user]);
-
 }
 
 @end
 
 @implementation NSObject (Model)
 
-+ (instancetype)modelWithDict:(NSDictionary *)dict
-{
++ (instancetype)modelWithDict:(NSDictionary *)dict {
     // 思路：遍历模型中所有属性-》使用运行时
 
     // 0.创建对应的对象
@@ -953,7 +932,6 @@ static const char *key = "name";
 
                 // 把模型数组赋值给value
                 value = arrM;
-
             }
         }
 
@@ -1021,6 +999,14 @@ static const char *key = "name";
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2018/09/15/UITableViewStylePlain和UITableViewStyleGrouped样式的区别及效果处理/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -1120,7 +1106,7 @@ static const char *key = "name";
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">29</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -1138,7 +1124,7 @@ static const char *key = "name";
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">28</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">29</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -1162,7 +1148,7 @@ static const char *key = "name";
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">31</span>
+                <span class="sidebar-badge">32</span>
             </a>
         </li>
         
