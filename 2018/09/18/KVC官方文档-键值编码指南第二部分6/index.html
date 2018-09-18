@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            KVC官方文档-键值编码指南第二部分6 | 
+        
+        暮鼓晨钟
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",文档翻译">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="暮鼓晨钟">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分6/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分6/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="KVC官方文档-键值编码指南第二部分6 | 暮鼓晨钟">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="文档翻译"> 
+
+    
+        <meta property="article:published_time" content="Tue Sep 18 2018 18:38:56 GMT+0800">
+        <meta property="article:modified_time" content="Tue Sep 18 2018 18:39:24 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分6/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分6/index.html",
+    "headline": "KVC官方文档-键值编码指南第二部分6",
+    "datePublished": "Tue Sep 18 2018 18:38:56 GMT+0800",
+    "dateModified": "Tue Sep 18 2018 18:39:24 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "暮鼓晨钟",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "暮鼓晨钟",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",文档翻译",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Key-Value-Coding-Fundamatals–Accessor-Search-Patterns"><span class="post-toc-number">1.</span> <span class="post-toc-text">Key-Value Coding Fundamatals–Accessor Search Patterns</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本的Getter搜索模式"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">基本的Getter搜索模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本的Setter搜索方式"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">基本的Setter搜索方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可变数组的搜索方式"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">可变数组的搜索方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可变有序集的搜索方式"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">可变有序集的搜索方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可变集的搜索方式"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">可变集的搜索方式</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                KVC官方文档-键值编码指南第二部分6
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>暮鼓晨钟</strong>
+        <span>9月 18, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/文档翻译/">文档翻译</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=KVC官方文档-键值编码指南第二部分6&url=http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分6/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=KVC官方文档-键值编码指南第二部分6&url=http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分6/index.html&via=暮鼓晨钟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分6/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分6/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=KVC官方文档-键值编码指南第二部分6&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分6/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>Key-Value Coding Programming Guide 官方文档第二部分第6节<br>2018.9.18 第一次修正</p>
+</blockquote>
+<p><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/SearchImplementation.html#//apple_ref/doc/uid/20000955-CJBBBFFA" target="_blank" rel="noopener">iOS-KVC官方文档第二部分第6节</a></p>
+<h1 id="Key-Value-Coding-Fundamatals–Accessor-Search-Patterns"><a href="#Key-Value-Coding-Fundamatals–Accessor-Search-Patterns" class="headerlink" title="Key-Value Coding Fundamatals–Accessor Search Patterns"></a>Key-Value Coding Fundamatals–Accessor Search Patterns</h1><p>##访问器搜索方式</p>
+<p>NSObject提供的NSKeyValueCoding协议的默认实现将基于键的访问器调用映射到对象的基础属性, 使用一组明确定义的规则。这些协议方法使用键参数搜索其自己的对象实例, 以查找访问器、实例变量以及遵循某些命名约定的相关方法。尽管您很少修改此默认搜索, 但了解它的工作原理, 对于跟踪键值编码对象的行为以及使您自己的对象兼容是很有帮助的。</p>
+<blockquote>
+<p>注意<br>本节中的描述使用<code>&lt;key&gt;</code>或<code>&lt;Key&gt;</code>作为键字符串的占位符，该键字符串作为键值编码协议方法之一中的参数出现，然后该方法将该键字符串用作间接方法调用或变量名称查找的一部分。映射的属性名称遵循占位符的情况。例如，对于getter<code>&lt;key&gt;</code>和<code>is&lt;KEY &gt;</code>，名为 <code>hidden</code> 的属性映射为<code>hidden</code>和<code>isHidden</code> .。</p>
+</blockquote>
+<h3 id="基本的Getter搜索模式"><a href="#基本的Getter搜索模式" class="headerlink" title="基本的Getter搜索模式"></a>基本的Getter搜索模式</h3><p><code>valueForKey：</code>的默认实现，给定一个<code>key</code>参数作为输入，在接收<code>valueForKey：</code>调用的类实例中操作，执行以下过程。</p>
+<p>1.按照该顺序，搜索找到的名称为<code>get&lt;Key&gt;</code>、<code>&lt;key&gt;</code>、<code>is&lt;Key&gt;</code>或<code>&lt;key&gt;</code>的第一个访问器方法。如果找到，调用它，并继续到步骤5的结果。否则进入下一步骤。 </p>
+<p>2.如果找不到简单取值方法, 则在实例中搜索其方法名形如 <code>countOf&lt;Key&gt;</code>和<code>objectIn&lt;Key&gt;AtIndex:</code> （相当于<code>NSArray</code>类中定义的基本方法）和<code>&lt;key&gt;AtIndexes</code>:（相当于<code>NSArray</code>类中的<code>objectsAtIndexes:</code>方法）的方法。</p>
+<p>如果第一个方法和后边两个方法中的至少一个方法被实现了, 则创建一个能够响应所有<code>NSArray</code>方法的集合代理对象，并返回。否则, 继续执行步骤3。</p>
+<p>代理对象随后将它接收的任何NSArray消息转换为<code>countOf &lt;Key&gt;</code>，<code>objectIn &lt;Key&gt; AtIndex：</code>和<code>&lt;key&gt; AtIndexes：</code>的消息，并将其发送给创建它的键值编码兼容对象。如果原始对象还实现了一个名为<code>get &lt;Key&gt;：range：</code>的可选方法，则代理对象也会在适当时使用它。实际上，代理对象与符合键值编码的兼容对象一起工作允许底层属性表现得好像它是一个<code>NSArray</code>，即使它不是。</p>
+<p>3.如果没有找到简单的访问器方法或数组访问方法组，请查找名为<code>countOf &lt;Key&gt;</code>，<code>enumeratorOf &lt;Key&gt;</code>和<code>memberOf &lt;Key&gt;：</code>的方法的三个方法（对应于<code>NSSet</code>类定义的原始方法）。</p>
+<p>如果找到所有三个方法，请创建一个响应所有NSSet方法的集合代理对象并返回该对象。 否则，请继续执行步骤4。</p>
+<p>这个代理对象随后将它接收的任何<code>NSSet</code>消息转换为<code>count Of &lt;Key&gt;</code>，<code>enumeration of &lt;Key&gt;</code>和<code>member Of &lt;Key&gt;：</code>消息到创建它的对象的组合。实际上，与符合键值编码的对象一起工作的代理对象允许底层属性表现得好像它是一个<code>NSSet</code>，即使它不是。</p>
+<p>4.如果找不到简单访问器方法或集合访问方法组, 并且消息接收者的类方法<code>accessInstanceVariablesDirectly</code>返回YES, 则系统按以下顺序搜索实例变量:<code>_&lt;key&gt;</code>、 <code>_is&lt;Key&gt;</code>、 <code>&lt;key&gt;</code>或<code>is&lt;Key&gt;</code>。如果找到, 则直接获取实例变量的值, 然后继续执行步骤5。否则, 继续跳转到步骤6。</p>
+<p>5.如果获取到的属性值是对象指针,即获取的是对象, 则直接将对象返回。</p>
+<p>如果获取到的属性值是NSNumber支持的数据类型, 则将其存储在NSNumber实例并返回。<br>如果获取到的属性值不是 NSNumber 支持的类型, 则转换为NSValue对象, 然后返回。</p>
+<p>6.如果上述所有方法都没有执行，则调用<code>valueForUndefinedKey：</code>。 默认情况下，这会引发异常，但NSObject的子类可以通过重载并根据特定key做一些特殊处理。</p>
+<hr>
+<h3 id="基本的Setter搜索方式"><a href="#基本的Setter搜索方式" class="headerlink" title="基本的Setter搜索方式"></a>基本的Setter搜索方式</h3><p><code>setValue:forKey:</code>的默认实现, 给定<code>key</code>和<code>value</code>参数作为输入, 在接收调用的对象内尝试将名为key的属性设置为value(或者, 对于非对象属性, 则为unwarp value, 详见表示非对象值) , 使用以下过程:</p>
+<ul>
+<li><p>1.按照顺序查找第一个名为<code>set&lt;Key&gt;:</code>或<code>_set&lt;Key&gt;</code>的方法。如果找到, 传入输入值 (或根据需要展开值) 调用它, 然后完成。</p>
+</li>
+<li><p>2.如果找不到简单访问器, 并且类方法<code>accessInstanceVariablesDirectly</code>返回YES, 则按以下顺序查找实例变量: <code>_&lt;key&gt;</code>、 <code>_is&lt;Key&gt;</code>、<code>&lt;key&gt;</code>、<code>is&lt;Key&gt;</code> 。如果找到, 则直接使用输入值 (或展开值) 设置变量并完成。</p>
+</li>
+<li><p>3.如果找不到以上方法或实例变量, 则调用<code>setValue:forUndefinedKey:</code>。默认情况下，这会引发异常，但<code>NSObject</code>的子类可以通过重载并根据特定key做一些特殊处理。</p>
+</li>
+</ul>
+<hr>
+<h3 id="可变数组的搜索方式"><a href="#可变数组的搜索方式" class="headerlink" title="可变数组的搜索方式"></a>可变数组的搜索方式</h3><p><code>mutableArrayValueForKey：</code>的默认实现，给定一个<code>key</code>参数作为输入，使用以下过程为接收访问者调用的对象内的一个名为<code>key</code>的属性返回一个可变代理数组：</p>
+<p>1.查找一对方法, 名为<code>insertObject：in &lt;Key&gt; AtIndex：</code>和<code>removeObjectFrom &lt;Key&gt; AtIndex：</code>的方法（分别对应于<code>NSMutableArray</code>原始方法<code>insertObject：atIndex：</code>和<code>removeObjectAtIndex：</code>） ，或者名称类似于<code>insert &lt;Key&gt;：atIndexes：</code>和<code>remove &lt;Key&gt; AtIndexes：</code>（对应于<code>NSMutableArrayinsertObjects：atIndexes：</code>和<code>removeObjectsAtIndexes：</code>方法）。</p>
+<p>如果对象至少实现一个插入方法和至少一个删除方法，则返回一个响应<code>NSMutableArray</code>消息的代理对象，方法是发送<code>insertObject：in &lt;Key&gt; AtIndex：</code>，<code>removeObjectFrom &lt;Key&gt; AtIndex：</code>，<code>insert &lt;Key&gt;：atIndexes：</code>，和<code>remove &lt;Key&gt; AtIndexes：</code>消息到<code>mutableArrayValueForKey：</code>的原始接收者。</p>
+<p>当接收<code>mutableArrayValueForKey：</code>消息的对象也实现了一个可选的替换对象方法，其名称如<code>replaceObjectIn &lt;Key&gt; AtIndex：withObject：</code>或<code>replace &lt;Key&gt; AtIndexes：with &lt;Key&gt;：</code>，代理对象在适合最佳性能时会自动调用该可选方法。</p>
+<p>2.如果对象没有可变数组方法，则查找名称与模式<code>set &lt;Key&gt;：</code>匹配的访问器方法。 在这种情况下，通过向<code>mutableArrayValueForKey：</code>的原始接收者发出<code>set &lt;Key&gt;：</code>消息，返回响应NSMutableArray消息的代理对象。</p>
+<blockquote>
+<p>注意:<br>此步骤中描述的机制比上一步的效率要低得多, 因为它可能涉及重复创建新的集合对象, 而不是修改现有的。因此, 在设计自己的键值编码兼容对象时, 通常应避免这种情况。</p>
+</blockquote>
+<p>3.如果既没有找到可变数组方法，也没有找到访问器，并且接收者的类对<code>accessInstanceVariablesDirectly</code>响应’YES<code>，则按照顺序搜索名为</code>_ <key><code>或</code><key>`的实例变量。</key></key></p>
+<p>如果找到这样的实例变量，则返回一个代理对象，该对象将它接收的每个<code>NSMutableArray</code>消息转发给实例变量的值，该值通常是<code>NSMutableArray</code>的实例或其子类之一。</p>
+<p>4.如果所有其他方法都失败了，只要收到<code>NSMutableArray</code>消息，就返回一个可变集合代理对象，该对象向<code>mutableArrayValueForKey：</code>消息的原始接收者发出<code>setValue：forUndefinedKey：</code>消息。</p>
+<p>setValue:forUndefinedKey:的默认实现会抛出NSUndefinedKeyException异常, 但子类可能会重写此行为。</p>
+<hr>
+<h3 id="可变有序集的搜索方式"><a href="#可变有序集的搜索方式" class="headerlink" title="可变有序集的搜索方式"></a>可变有序集的搜索方式</h3><p>mutableOrderedSetValueForKey的默认实现：将相同的简单访问器方法和有序集访问器方法识别为<code>valueForKey :</code>(请参阅基本Getter的默认搜索方式），并遵循相同的直接访问实例变量策略，但始终返回可变集合代理对象 <code>valueForKey：</code>返回的不可变集合。 此外，它还执行以下操作：</p>
+<p>1.搜索名称类似于以下形式的方法: <code>insertObject：in &lt;Key&gt; AtIndex：</code>和<code>removeObjectFrom &lt;Key&gt; AtIndex：</code>（对应于<code>NSMutableOrderedSet</code>类定义的两个最原始方法），以及<code>insert &lt;Key&gt;： atIndexes：</code>和<code>remove &lt;Key&gt; AtIndexes：</code>（对应于<code>insertObjects：atIndexes：</code>和<code>removeObjectsAtIndexes：</code>）。</p>
+<p>如果找到至少一个insert方法和至少一个remove方法，则返回的代理对象 当接收到 NSMutableOrderedSet的消息后 会通过以下组合方法给<code>mutableOrderedSetValueForKey</code>的原始对象 发送消息: <code>mutableOrderedSetValueForKey:</code>  <code>insertObject:in&lt;Key&gt;AtIndex:</code>, <code>removeObjectFrom &lt;Key&gt; AtIndex :</code>, <code>insert &lt;Key&gt;：atIndexes：</code>  <code>remove&lt;Key&gt;AtIndexes:</code> </p>
+<p>代理对象还使用方法名为 <code>replaceObjectIn &lt;Key&gt; AtIndex：withObject：</code> 的方法，或<code>replace&lt;Key&gt;AtIndexes:with&lt;Key&gt;:</code> ,当这些方法存在于原始对象中时。</p>
+<p>2.如果找不到可变的set方法，请搜索名为<code>set &lt;Key&gt;：</code>的访问器方法。 在这种情况下，返回的代理对象每次收到<code>NSMutableOrderedSet</code>消息时都会向<code>mutableOrderedSetValueForKey：</code>的原始接收者发送一个<code>set &lt;Key&gt;：</code>消息。</p>
+<blockquote>
+<p>注意<br>此步骤中描述的机制比前一步骤的效率低得多，因为它可能涉及重复创建新的集合对象而不是修改现有的集合对象。 因此，在设计自己的符合键值编码的对象时，通常应该避免使用它。</p>
+</blockquote>
+<p>3.如果找不到可变集消息和访问器，并且接收者的<code>accessInstanceVariablesDirectly</code>类方法返回<code>YES</code>，则按顺序搜索名称如<code>_ &lt;key&gt;</code>或<code>&lt;key&gt;</code>的实例变量。 如果找到这样的实例变量，则返回的代理对象将它接收的任何<code>NSMutableOrderedSet</code>消息转发给实例变量的值，该值通常是<code>NSMutableOrderedSet</code>或其子类之一的实例。</p>
+<p>4.如果所有其他方法都失败了，那么只要收到一个可变的set消息，返回的代理对象就会向<code>mutableOrderedSetValueForKey：</code>的原始接收者发送一个<code>setValue：forUndefinedKey：</code>消息。</p>
+<p><code>setValue：forUndefinedKey：</code>的默认实现引发了一个<code>NSUndefinedKeyException</code>，但是对象可能会覆盖此行为。</p>
+<hr>
+<h3 id="可变集的搜索方式"><a href="#可变集的搜索方式" class="headerlink" title="可变集的搜索方式"></a>可变集的搜索方式</h3><p><code>mutableSetValueForKey：</code>的默认实现，给定一个<code>key</code>参数作为输入，使用以下过程为接收访问者调用的对象内的一个名为<code>key</code>的数组属性返回一个可变代理集：</p>
+<p>1.搜索方法名称为<code>add&lt;Key&gt;Object:</code>和 <code>remove &lt;Key&gt; Object</code> 的方法：（分别对应于<code>NSMutableSet</code>原始方法<code>addObject:</code>和<code>removeObject:</code>）以及<code>add&lt;Key&gt;：</code>和<code>remove&lt;Key&gt;:</code>（对应于<code>NSMutableSet</code> 方法<code>unionSet:</code>和<code>minusSet:</code> ）。如果找到至少一个添加方法和至少一个删除方法，则返回一个代理对象，该对象发送<code>add &lt;Key&gt; Object：</code>，<code>remove &lt;Key&gt; Object：</code>，<code>add &lt;Key&gt;：</code>的某种组合， 和<code>remove &lt;Key&gt;：</code>对于它收到的每个<code>NSMutableSet</code>消息的<code>mutableSetValueForKey：</code>的原始接收者的消息。</p>
+<p>代理对象还使用名称为“cross<key>：”或“set<key>：”的方法来提高性能（如果可用的话）。</key></key></p>
+<p>2.如果<code>mutableSetValueForKey：</code>调用的接收者是托管对象，则搜索模式不会像非托管对象那样继续。 有关更多信息，请参阅“<em><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreData/index.html#//apple_ref/doc/uid/TP40001075" target="_blank" rel="noopener">Core Data Programming Guide</a></em><br>”中的托管对象访问器方法。</p>
+<p>3.如果找不到可变集合方法，并且对象不是托管对象，则搜索名为<code>set &lt;Key&gt;：</code>的访问器方法。 如果找到这样的方法，则返回的代理对象将<code>set &lt;Key&gt;：</code>消息发送给它接收的每个NSMutableSet消息的<code>mutableSetValueForKey：</code>的原始接收者。</p>
+<blockquote>
+<p>注意<br>此步骤中描述的机制的效率远低于第一步的机制，因为它可能涉及重复创建新的集合对象而不是修改现有的集合对象。 因此，在设计自己的符合键值编码的对象时，通常应该避免使用它。</p>
+</blockquote>
+<p>4.如果找不到可变的set方法和accessor方法，并且<code>accessInstanceVariablesDirectly</code>类方法返回<code>YES</code>，则按照顺序搜索名为<code>_ &lt;key&gt;</code>或<code>&lt;key&gt;</code>的实例变量。 如果找到这样的实例变量，则代理对象将它接收的每个<code>NSMutableSet</code>消息转发给实例变量的值，该值通常是<code>NSMutableSet</code>的实例或其子类之一。</p>
+<p>5.如果所有其他方法都失败了，返回的代理对象通过向<code>mutableSetValueForKey：&#39;的原始接收者发送</code>setValue：forUndefinedKey：<code>消息来响应它收到的任何</code>NSMutableSet`消息。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/09/18/KVO官方文档-键值观察者指南/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/18/KVC官方文档-键值编码指南第二部分5/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="暮鼓晨钟's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        swift630@sina.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: swift630@sina.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">38</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">41</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;暮鼓晨钟
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
