@@ -50,7 +50,7 @@
     
     <title>
         
-            iOS体系结构图 | 
+            Hexo搭建github博客 | 
         
         暮鼓晨钟
     </title>
@@ -61,7 +61,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",iOS面试">
+    <meta name="keywords" content=",前端Tool">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -227,7 +227,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="暮鼓晨钟">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS体系结构图/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/11/11/Hexo搭建github博客/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
@@ -242,16 +242,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS体系结构图/">
+    <meta property="og:url" content="http://yoursite.com/2018/11/11/Hexo搭建github博客/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="iOS体系结构图 | 暮鼓晨钟">
+    <meta property="og:title" content="Hexo搭建github博客 | 暮鼓晨钟">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="iOS面试"> 
+    <meta property="og:article:tag" content="前端Tool"> 
 
     
-        <meta property="article:published_time" content="Wed Sep 12 2018 00:20:22 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 12 2018 01:33:40 GMT+0800">
+        <meta property="article:published_time" content="Sun Nov 11 2018 19:36:12 GMT+0800">
+        <meta property="article:modified_time" content="Sun Nov 11 2018 19:39:30 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS体系结构图/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/11/11/Hexo搭建github博客/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -271,10 +271,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS体系结构图/index.html",
-    "headline": "iOS体系结构图",
-    "datePublished": "Wed Sep 12 2018 00:20:22 GMT+0800",
-    "dateModified": "Wed Sep 12 2018 01:33:40 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/11/11/Hexo搭建github博客/index.html",
+    "headline": "Hexo搭建github博客",
+    "datePublished": "Sun Nov 11 2018 19:36:12 GMT+0800",
+    "dateModified": "Sun Nov 11 2018 19:39:30 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -292,7 +292,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": ",iOS面试",
+    "keywords": ",前端Tool",
     "description": "",
 }
 </script>
@@ -361,6 +361,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一-系统环境配置："><span class="post-toc-number">1.</span> <span class="post-toc-text">一.系统环境配置：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二-搭建个人博客"><span class="post-toc-number">2.</span> <span class="post-toc-text">二.搭建个人博客</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-hexo："><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">安装 hexo：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三-修改主题："><span class="post-toc-number">3.</span> <span class="post-toc-text">三.修改主题：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#启动主题："><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">启动主题：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四-部署到GitHub上："><span class="post-toc-number">4.</span> <span class="post-toc-text">四.部署到GitHub上：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#博客外部插件："><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">博客外部插件：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#搜索插件-algolia："><span class="post-toc-number">4.0.1.1.</span> <span class="post-toc-text">搜索插件 algolia：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#评论插件-来必力："><span class="post-toc-number">4.0.1.2.</span> <span class="post-toc-text">评论插件 来必力：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Hexo常用命令："><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Hexo常用命令：</span></a></li></ol></li></ol>
+    </ul>
+    
 
 
 
@@ -390,7 +399,7 @@
         
     
             <p class="article-headline-p">
-                iOS体系结构图
+                Hexo搭建github博客
             </p>
         </div>
 
@@ -409,7 +418,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>暮鼓晨钟</strong>
-        <span>9月 12, 2018</span>
+        <span>11月 11, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -433,7 +442,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+        <a class="post_tag-link" href="/tags/前端Tool/">前端Tool</a>
     </ul>
     
 
@@ -461,7 +470,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS体系结构图&url=http://yoursite.com/2018/09/12/iOS体系结构图/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hexo搭建github博客&url=http://yoursite.com/2018/11/11/Hexo搭建github博客/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -470,7 +479,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS体系结构图&url=http://yoursite.com/2018/09/12/iOS体系结构图/index.html&via=暮鼓晨钟" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hexo搭建github博客&url=http://yoursite.com/2018/11/11/Hexo搭建github博客/index.html&via=暮鼓晨钟" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -479,7 +488,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS体系结构图/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/11/Hexo搭建github博客/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -488,7 +497,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS体系结构图/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/11/Hexo搭建github博客/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -500,7 +509,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=iOS体系结构图&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS体系结构图/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=Hexo搭建github博客&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/11/11/Hexo搭建github博客/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -519,11 +528,112 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p><img src="/2018/09/12/iOS体系结构图/xmind.jpg" alt="iOS结构图1"></p>
-<p><img src="/2018/09/12/iOS体系结构图/xmind.jpg" alt="iOS结构图2"></p>
-<img src="/2018/09/12/iOS体系结构图/xmind.jpg" title="iOS结构图3">
-<p>这张图是github上一位大牛所制作。建议找工作的同学，把这张图打印出来，自己对着看，有哪些知识点遗忘的，赶紧去复习，每天过一遍，保证你面试的时候胸有成竹。</p>
-<p>在这里，我将总结这段时间收集的和面试记录下来的各类问题，助各位同学面试一臂之力。文章如有问题，请留言，我将及时更正。</p>
+        <p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo官方网站</a></p>
+<h2 id="一-系统环境配置："><a href="#一-系统环境配置：" class="headerlink" title="一.系统环境配置："></a>一.系统环境配置：</h2><p>要使用Hexo，需要在你的系统中支持Nodejs以及Git，如果还没有，那就开始安装吧！</p>
+<p><strong>1.安装 node.js</strong><br>​    下载地址 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a><br>​    直接双击下载下来的msi文件，一路下一步就ok了，安装完之后调出命令行或者node命令输入终端，输入node -v看到版本信息就表明安装成功了。如果不会就参考<a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">node.js安装</a></p>
+<p><strong>2.安装 git</strong><br>​    下载地址 <a href="https://git-scm.com/" target="_blank" rel="noopener">git下载</a><br>​    直接双击下载下来的git安装程序，同node安装，安装完之后右键发现多了两个Git GUI Here 、Git Bash Here，点击后者，然后输入git –version出现版本信息就表明安装成功了。</p>
+<p><strong>3.注册 github账号</strong><br>​    github 官网 <a href="https://github.com/" target="_blank" rel="noopener">github</a></p>
+<h2 id="二-搭建个人博客"><a href="#二-搭建个人博客" class="headerlink" title="二.搭建个人博客"></a>二.搭建个人博客</h2><h4 id="安装-hexo："><a href="#安装-hexo：" class="headerlink" title="安装 hexo："></a>安装 hexo：</h4><ul>
+<li><p><strong>1.更新镜像</strong><br>参考 <a href="https://www.jianshu.com/p/aa8fb6fda884" target="_blank" rel="noopener">2018 mac终端更新淘宝npm镜像</a></p>
+</li>
+<li><p><strong>2. 安装 hexo 命令</strong></p>
+<pre><code>  $ sudo cnpm install -g hexo-cli
+</code></pre><p>  在这里会有 一段时间等待，请稍等</p>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-8bcd9d6efc56835c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hexo安装成功"></p>
+<ul>
+<li><strong>3. 安装个人博客</strong><br>进入到 你本地的博客存放路径</li>
+</ul>
+<pre><code>    # 进入本地博客存放目录
+    $ cd /github/blog
+
+    # 初始化 个人博客
+    $ hexo init #等待一段时间
+</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/126164-91aed7dc4936b71b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hexo初始化成功"></p>
+<p>初始化完成以后，会生成以下目录：<br><img src="https://upload-images.jianshu.io/upload_images/126164-d43db69ff782332d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="目录结构"></p>
+<pre><code>#生成静态网页
+$ hexo g
+# 启动服务器。默认情况下，访问网址为： http://localhost:4000/   
+$ hexo s
+</code></pre><p>执行完以后，你就可以去打开 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>  看本地版的博客效果了。</p>
+<hr>
+<h2 id="三-修改主题："><a href="#三-修改主题：" class="headerlink" title="三.修改主题："></a>三.修改主题：</h2><p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">next官网</a><br><a href="https://link.jianshu.com/?t=https://www.zhihu.com/question/24422335" target="_blank" rel="noopener">这里</a>有一些常见的hexo主题，读者可以挑选自己喜欢的安装。</p>
+<p>个人比较喜欢 next 这款主题。基本呢就是这个效果<a href="https://honkersk.github.io/" target="_blank" rel="noopener">个人博客</a></p>
+<p>清除缓存文件 (db.json) 和已生成的静态文件 (public)。</p>
+<pre><code>$ hexo clean
+</code></pre><p>下载主题</p>
+<pre><code>$ git clone https://github.com/iissnan/hexo-theme-next.git themes/next
+</code></pre><h4 id="启动主题："><a href="#启动主题：" class="headerlink" title="启动主题："></a>启动主题：</h4><p><strong>1. 修改Hexo目录下的_config.yml配置文件中的theme属性，将其设置为next</strong></p>
+<pre><code>theme : next
+</code></pre><p><strong>2.生成静态页面</strong></p>
+<pre><code>$ hexo clean 
+# 生成静态页面
+$ hexo g
+
+# 启动服务器
+$ hexo s
+</code></pre><p>打开 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>  查看静态页面.</p>
+<h2 id="四-部署到GitHub上："><a href="#四-部署到GitHub上：" class="headerlink" title="四.部署到GitHub上："></a>四.部署到GitHub上：</h2><p>修改站点根目录下 _config.yml 文件，在最后添加</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:honkerSK/honkerSK.github.io.git  #这里填你自己的github地址
+  branch: master
+</code></pre><p>然后在命令行中执行</p>
+<pre><code>#注意需要提前安装一个扩展：
+$ cnpm install hexo-deployer-git --save
+
+#部署网站, 提交到github
+$ hexo d
+</code></pre><p>到此呢，你的博客基本就搭建完毕了。</p>
+<hr>
+<h4 id="博客外部插件："><a href="#博客外部插件：" class="headerlink" title="博客外部插件："></a>博客外部插件：</h4><p>这个是个人博客的第三方插件，一个博客搜索插件，一个评论插件。</p>
+<h5 id="搜索插件-algolia："><a href="#搜索插件-algolia：" class="headerlink" title="搜索插件 algolia："></a>搜索插件 algolia：</h5><ul>
+<li>1) 注册账号 <a href="https://www.algolia.com/" target="_blank" rel="noopener">algolia</a></li>
+<li><p>2) 登陆，进去创建一个索引，如图：<br>  <img src="http://upload-images.jianshu.io/upload_images/126164-9ef16a35e47eea28?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="new index"></p>
+</li>
+<li><p>3) 创建一个api key，并赋予增删的权限，如图所示：<br>  <img src="http://upload-images.jianshu.io/upload_images/126164-c3aadf219cba3440?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="new api key"></p>
+<p>  并赋予 add records,delete recourds,list indices,delete index 4个权限，如图所示：<br>  <img src="http://upload-images.jianshu.io/upload_images/126164-6c8a7bac6a473269?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="权限"></p>
+</li>
+<li><p>4) 然后编辑配置文件，首先是 next 目录下的 _config.yml：</p>
+<pre><code>  将 # Algolia Search 下的
+  algolia_search:
+  enable: true  ---改为true
+</code></pre></li>
+<li><p>5) 然后修改 站点目录下的 _config.yml：<br>  最后增加：</p>
+<pre><code>  #站内搜索：
+  algolia:
+  applicationID: &#39;ZMNZVONxxx&#39;   #Application ID 对应的值
+  apiKey: &#39;a3b6cc86714b99e25e614968b07xxxxx&#39;   # 这里填你新建的 api key 对应的值
+  indexName: &#39;bigDataBeginner&#39;  #这里填你  创建的索引名称
+  chunkSize: 5000    #这个值不动
+</code></pre></li>
+<li><p>6) 执行命令，将文章列表同步到 algolia：</p>
+<pre><code>  $ export HEXO_ALGOLIA_INDEXING_KEY=a3b6cc86714b99e25e614968b073f442   # key值对于你新建 api key的值
+  $ hexo algolia
+</code></pre><p>  如果报错 执行 hexo clean 后，重试。然后预览。</p>
+</li>
+</ul>
+<h5 id="评论插件-来必力："><a href="#评论插件-来必力：" class="headerlink" title="评论插件 来必力："></a>评论插件 来必力：</h5><ul>
+<li>1) 注册账号<a href="https://livere.com/" target="_blank" rel="noopener">来必力</a></li>
+<li><p>2) 登陆，绑定自己博客地址。如图所示：<br>  <img src="http://upload-images.jianshu.io/upload_images/126164-4d42139d82b90640?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="来必力"></p>
+</li>
+<li><p>3) 复制 自己地址对应的id值。如图所示：<br>  <img src="http://upload-images.jianshu.io/upload_images/126164-9db802d6e567991c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="复制id"></p>
+</li>
+<li><p>4) 编辑 next 目录下的 _config.yml 配置文件：<br>  修改下面一行：</p>
+<pre><code>  livere_uid: &quot;MTAyMC8zMjg2xxxxxx&quot;  ---这里填入你复制的id值
+</code></pre><p>  清空缓存，重新生成静态页面预览就看到效果了。</p>
+</li>
+</ul>
+<h3 id="Hexo常用命令："><a href="#Hexo常用命令：" class="headerlink" title="Hexo常用命令："></a>Hexo常用命令：</h3><pre><code>$ hexo clean 清除本地缓存
+$ hexo g # 或者hexo generate，生成静态页面
+$ hexo s # 或者hexo server，可以在http://localhost:4000/ 查看
+$ hexo new &quot;postName&quot; #新建文章
+$ hexo new page &quot;pageName&quot; #新建页面
+$ hexo d  # 代码同步到github上
+</code></pre><p>好了，本文到此结束。</p>
 
         
     
@@ -577,21 +687,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/12/iOS面试题1-版本控制/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/04/速学block在ARC和MRC中的使用/" id="post_nav-older" class="next-content">
+        <a href="/2018/11/11/如何优雅管理github的star项目/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -683,7 +785,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -701,7 +803,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">31</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -719,13 +821,23 @@
         </li>
         
     
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">send</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
 
     <!-- Article Number  -->
     
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">10</span>
+                <span class="sidebar-badge">46</span>
             </a>
         </li>
         
