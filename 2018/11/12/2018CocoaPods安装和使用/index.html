@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Mon Nov 12 2018 16:40:59 GMT+0800">
-        <meta property="article:modified_time" content="Mon Nov 12 2018 17:24:25 GMT+0800">
+        <meta property="article:modified_time" content="Mon Nov 12 2018 17:34:31 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/11/12/2018CocoaPods安装和使用/index.html",
     "headline": "2018CocoaPods安装和使用",
     "datePublished": "Mon Nov 12 2018 16:40:59 GMT+0800",
-    "dateModified": "Mon Nov 12 2018 17:24:25 GMT+0800",
+    "dateModified": "Mon Nov 12 2018 17:34:31 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -584,12 +584,12 @@ sudo gem install -n /usr/local/bin cocoapods  //Mac OS X 10.11后   输入这一
 <li><p>1 进入要安装框架的项目的.xcodeproj同级文件夹</p>
 </li>
 <li><p>2 在该文件夹中新建一个文件Podfile</p>
+</li>
+</ul>
 <pre><code>pod init 
 </code></pre><p><code>pod init</code>首先需要判断当前目录有没有 XCODEPROJ 项目，如果没有直接报错；若果有单个 XCODEPROJ 项目，会直接创建一个 podfile 文件；如果有多个XCODEPROJ 项目，需要指定一个项目，否则会报错：</p>
 <pre><code>[!] Multiple Xcode projects found, please specify one
-</code></pre></li>
-</ul>
-<p>或者手动 新建文件Podfile <code>vim Podfile</code></p>
+</code></pre><p>或者手动 新建文件Podfile <code>vim Podfile</code></p>
 <pre><code>vim Podfile
 </code></pre><p>Podfile文件中, 写入以下内容并保存 小提示：（终端vim文件 按 i 可编辑 ，esc 退出编辑，：wq  可保存退出）</p>
 <pre><code># Uncomment the next line to define a global platform for your project
@@ -628,7 +628,8 @@ pod update --no-repo-update
 <li>3 更新完成就删除成功了</li>
 </ul>
 <p><strong>注意: 删除一些三方库后编译可能会报错: library not found for -l 库名 </strong><br>解决:<br>在Build Settings中搜索Other Linker Flags，去掉-l”库名”。<br>(有时不管用,应该是cocoapods的版本问题)</p>
-<h3 id="第六-Cocoapods降低版本及卸载"><a href="#第六-Cocoapods降低版本及卸载" class="headerlink" title="第六, Cocoapods降低版本及卸载"></a>第六, Cocoapods降低版本及卸载</h3><p>一. 移除pod组件<br> 1.这条指令会告诉你Cocoapods组件装在哪里 :<br> <code>which pod</code><br> 2.你可以手动移除这个组件 :<br> <code>sudo rm -rf 路径</code><br> 二. 移除 RubyGems 中的 Cocoapods程序包<br> Q: RubyGems是什么?<br> A: RubyGems（简称 gems）是一个用于对 Ruby组件进行打包的 Ruby 打包系统。 它提供一个分发 Ruby 程序和库的标准格式，还提供一个管理程序包安装的工具。<br> 1.查看gems中本地程序包<br> <code>gem list</code><br> 2.移除程序包<br> <code>sudo gem uninstall cocoapods -v 要移除的版本号</code><br> 3.安装指定版本的Cocoapods<br> <code>sudo gem install cocoapods -v 要安装的版本号</code></p>
+<h3 id="第六-Cocoapods降低版本及卸载"><a href="#第六-Cocoapods降低版本及卸载" class="headerlink" title="第六, Cocoapods降低版本及卸载"></a>第六, Cocoapods降低版本及卸载</h3><p>一. 移除pod组件<br> 1.这条指令会告诉你Cocoapods组件装在哪里 :<br> <code>which pod</code><br> 2.你可以手动移除这个组件 :<br> <code>sudo rm -rf 路径</code></p>
+<p>二. 移除 RubyGems 中的 Cocoapods程序包<br> Q: RubyGems是什么?<br> A: RubyGems（简称 gems）是一个用于对 Ruby组件进行打包的 Ruby 打包系统。 它提供一个分发 Ruby 程序和库的标准格式，还提供一个管理程序包安装的工具。<br> 1.查看gems中本地程序包<br> <code>gem list</code><br> 2.移除程序包<br> <code>sudo gem uninstall cocoapods -v 要移除的版本号</code><br> 3.安装指定版本的Cocoapods<br> <code>sudo gem install cocoapods -v 要安装的版本号</code></p>
 <hr>
 <h3 id="跳过pod-setup快速安装"><a href="#跳过pod-setup快速安装" class="headerlink" title="跳过pod setup快速安装"></a>跳过pod setup快速安装</h3><p>有不少同学执行pod setup这一步, 感觉很慢…..</p>
 <p>大约要下载200M的文件,偏偏下载速度出奇的慢,本人保持在30K/S,大约2个小时,关键是没有任何进度条显示,就这样傻乎乎的卡死在这里</p>
