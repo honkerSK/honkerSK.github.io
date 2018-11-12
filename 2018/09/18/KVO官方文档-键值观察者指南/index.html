@@ -682,11 +682,11 @@
 [document setValue:@"Savings" forKeyPath:@"account.name"];
 
 // Use mutableArrayValueForKey: to retrieve a relationship proxy object.
-Transaction *newTransaction = <#Create a="" new="" transaction="" for="" the="" account#="">;
+Transaction *newTransaction = <#Create a new transaction for the account#>;
 NSMutableArray *transactions = [account mutableArrayValueForKey:@"transactions"];
 [transactions addObject:newTransaction];
 
-</#Create></code></pre>
+</code></pre>
 <h2 id="3-2-Manual-Change-Notification-手动变化通知"><a href="#3-2-Manual-Change-Notification-手动变化通知" class="headerlink" title="3.2 Manual Change Notification - 手动变化通知"></a>3.2 Manual Change Notification - 手动变化通知</h2><p>Manual change notification provides more granular control over how and when notifications are sent to observers. This can be useful to help minimize triggering notifications that are unnecessary, or to group a number of changes into a single notification.</p>
 <p>A class that implements manual notification must override the NSObject implementation of automaticallyNotifiesObserversForKey:. It is possible to use both automatic and manual observer notifications in the same class. For properties that perform manual notification, the subclass implementation of automaticallyNotifiesObserversForKey: should return NO. A subclass implementation should invoke super for any unrecognized keys. The example in Listing 2 enables manual notification for the openingBalance property allowing the superclass to determine the notification for all other keys.</p>
 <p>Listing 2 Example implementation of automaticallyNotifiesObserversForKey:</p>
@@ -1020,7 +1020,7 @@ NSMutableArray *transactions = [account mutableArrayValueForKey:@"transactions"]
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">31</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">31</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
