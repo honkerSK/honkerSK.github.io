@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Tue Sep 18 2018 18:37:04 GMT+0800">
-        <meta property="article:modified_time" content="Tue Sep 18 2018 18:40:37 GMT+0800">
+        <meta property="article:modified_time" content="Fri Nov 16 2018 15:35:36 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分5/index.html",
     "headline": "KVC官方文档-键值编码指南第二部分5",
     "datePublished": "Tue Sep 18 2018 18:37:04 GMT+0800",
-    "dateModified": "Tue Sep 18 2018 18:40:37 GMT+0800",
+    "dateModified": "Fri Nov 16 2018 15:35:36 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -529,18 +529,18 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <blockquote>
-<p>Key-Value Coding Programming Guide 官方文档第二部分第5节</p>
+<p>Key-Value Coding Programming Guide 官方文档第二部分第5节<br>2018.9.20 第一次修正</p>
 </blockquote>
 <p><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/ValidatingProperties.html#//apple_ref/doc/uid/10000107i-CH18-SW1" target="_blank" rel="noopener">iOS-KVC官方文档第二部分第5节</a></p>
-<h1 id="Key-Value-Coding-Fundamatals–Validating-Properties"><a href="#Key-Value-Coding-Fundamatals–Validating-Properties" class="headerlink" title="Key-Value Coding Fundamatals–Validating Properties"></a>Key-Value Coding Fundamatals–Validating Properties</h1><h2 id="验证属性"><a href="#验证属性" class="headerlink" title="验证属性"></a>验证属性</h2><p>键值编码协议定义了支持属性验证的方法。正如使用基于键的访问器读取和写入键值编码兼容对象的属性一样, 也可以按键 (或键路径) 验证属性。当您调用<code>validateValue:forKey:error:</code>(或<code>validateValue:forKeyPath:error:</code>) 方法时, 协议的默认实现将搜索接收验证消息的对象 (或在键路径的末尾的对象), 该方法的名称与模式<code>validate&lt;Key&gt;:error:</code>相匹配。如果对象没有此类方法, 则默认情况下验证成功, 默认实现返回<code>YES</code>.当存在属性特定的验证方法时, 默认实现将返回调用该方法的结果。</p>
+<h1 id="Key-Value-Coding-Fundamatals–Validating-Properties"><a href="#Key-Value-Coding-Fundamatals–Validating-Properties" class="headerlink" title="Key-Value Coding Fundamatals–Validating Properties"></a>Key-Value Coding Fundamatals–Validating Properties</h1><h2 id="验证属性"><a href="#验证属性" class="headerlink" title="验证属性"></a>验证属性</h2><p>键值编码协议定义了支持属性验证的方法。就像使用基于键的访问器来读取和写入符合键值编码的对象的属性一样，您也可以按键（或键路径）验证属性。当您调用<code>validateValue:forKey:error:</code>(或<code>validateValue:forKeyPath:error:</code>) 方法时， 协议的默认实现将搜索接收验证消息的对象 (或在键路径的末尾的对象)， 以查找名称与模式匹配的方法<code>validate&lt;Key&gt;:error:。如果对象没有此类方法， 则默认情况下验证成功, 默认实现返回</code>YES`。当存在属性特定的验证方法时， 默认实现将返回调用该方法的结果。</p>
 <blockquote>
 <p>注意<br>您通常仅在<code>Objective-C</code>中使用此处描述的验证。在 Swift 中, 通过依赖 optionals 和强类型检查的编译器支持, 可以更便捷地处理属性验证, 同时使用内置的 willSet 和 didSet 属性观察器来测试任何运行时 API 协定, 详见<br><em><a href="https://docs.swift.org/swift-book/index.html#//apple_ref/doc/uid/TP40014097" target="_blank" rel="noopener">The Swift Programming Language (Swift 4.2)</a></em><br>中<em><a href="https://docs.swift.org/swift-book/LanguageGuide/Properties.html#//apple_ref/doc/uid/TP40014097-CH14-ID262" target="_blank" rel="noopener">Property Observers</a></em>章节对<code>willSet</code> <code>didSet</code>的描述。</p>
 </blockquote>
 <p>由于属性特定的验证方法通过引用的方式接收值和错误参数, 因此验证有三种可能的结果:</p>
 <ol>
-<li>验证方法认为值对象有效并返回YES而不改变值或错误。</li>
-<li>验证方法认为值对象无效, 但选择不更改它。在这种情况下, 该方法返回NO并将错误引用 (如果调用方提供) 设置为指示失败原因的NSError对象。</li>
-<li>验证方法认为值对象无效, 但创建一个新的、有效的替换项。在这种情况下, 该方法返回YES同时使错误对象不被触及。返回之前, 该方法修改值引用以指向新值对象。当它进行修改时, 该方法总是创建一个新对象, 而不是修改旧值, 即使 value 对象是可变的。</li>
+<li>验证方法判断值对象有效并返回YES而不改变值或错误。</li>
+<li>验证方法判断值对象无效, 但选择不更改它。在这种情况下, 该方法返回NO并将错误引用 (如果调用方提供) 设置到<code>NSError</code>指示失败原因的对象。</li>
+<li>验证方法判断值对象无效, 但创建一个新的、有效的对象作为替换。在这种情况下, 该方法返回YES同时保持错误对象不变。返回之前, 该方法修改值引用以指向新值对象。当它进行修改时, 该方法总是创建一个新对象, 而不是修改旧值, 即使 value 对象是可变的。</li>
 </ol>
 <p>清单 6-1显示了如何调用<code>name</code>字符串的验证的示例。</p>
 <pre class=" language-objc"><code class="language-objc">Person* person = [[Person alloc] init];
@@ -550,8 +550,11 @@ if (![person validateValue:&name forKey:@"name" error:&error]) {
     NSLog(@"%@",error);
 }
 </code></pre>
-<h3 id="自动验证"><a href="#自动验证" class="headerlink" title="自动验证"></a>自动验证</h3><p>通常, 键值编码协议及其默认实现都不定义自动执行验证的任何机制。相反, 您可以在您的应用程序中使用适合的验证方法。</p>
-<p>某些其他Cocoa技术在某些情况下会自动进行验证。例如, 当保存托管对象上下文时, <code>Core Data</code>自动执行验证 (详见<em><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreData/index.html#//apple_ref/doc/uid/TP40001075" target="_blank" rel="noopener">Core Data Programming Guide</a></em>)。此外, 在 macOS 中, <code>Cocoa Bindings</code> 允许您指定验证是否自动发生 (请阅读<em><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html#//apple_ref/doc/uid/10000167i" target="_blank" rel="noopener">Cocoa Bindings Programming Topics</a></em>了解有关Cocoa Bindings的更多信息。)。</p>
+<h3 id="自动验证"><a href="#自动验证" class="headerlink" title="自动验证"></a>自动验证</h3><p>通常, 键值编码协议及其默认实现都不定义任何自动执行验证的机制。相反, 您可以在您的应用程序中使用适合的验证方法。</p>
+<p>某些其他Cocoa技术在某些情况下会自动进行验证。例如, <code>Core Data</code>会在保存托管对象上下文时自动执行验证 (详见<em><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreData/index.html#//apple_ref/doc/uid/TP40001075" target="_blank" rel="noopener">Core Data Programming Guide</a></em>)。此外, 在 macOS 中, <code>Cocoa Bindings</code> 允许您指定验证是否自动进行 (请阅读<em><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html#//apple_ref/doc/uid/10000167i" target="_blank" rel="noopener">Cocoa Bindings Programming Topics</a></em>了解有关Cocoa Bindings的更多信息。)。</p>
+<blockquote>
+<p>由于笔者水平有限，文中如果有错误的地方，或者有更好的方法，还望大神指出。<br>附上本文的所有 demo 下载链接，<a href="">【GitHub】</a>。<br>如果你看完后觉得对你有所帮助，还望在 GitHub 上点个 star。赠人玫瑰，手有余香。</p>
+</blockquote>
 
         
     
@@ -729,7 +732,7 @@ if (![person validateValue:&name forKey:@"name" error:&error]) {
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">31</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">31</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         

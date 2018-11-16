@@ -50,8 +50,6 @@
     
     <title>
         
-            AppExtension编程指南:扩展基础 | 
-        
         暮鼓晨钟
     </title>
 
@@ -61,7 +59,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",文档翻译">
+    <meta name="keywords" content="">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -244,14 +242,14 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com/2018/11/16/AppExtension编程指南-扩展基础/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="AppExtension编程指南:扩展基础 | 暮鼓晨钟">
+    <meta property="og:title" content="暮鼓晨钟">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="文档翻译"> 
+    
 
     
-        <meta property="article:published_time" content="Fri Nov 16 2018 09:48:04 GMT+0800">
-        <meta property="article:modified_time" content="Fri Nov 16 2018 11:01:43 GMT+0800">
+        <meta property="article:published_time" content="Fri Nov 16 2018 00:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Sat Nov 17 2018 02:55:01 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -272,9 +270,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "http://yoursite.com/2018/11/16/AppExtension编程指南-扩展基础/index.html",
-    "headline": "AppExtension编程指南:扩展基础",
-    "datePublished": "Fri Nov 16 2018 09:48:04 GMT+0800",
-    "dateModified": "Fri Nov 16 2018 11:01:43 GMT+0800",
+    "headline": "",
+    "datePublished": "Fri Nov 16 2018 00:00:00 GMT+0800",
+    "dateModified": "Sat Nov 17 2018 02:55:01 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -292,7 +290,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": ",文档翻译",
+    "keywords": "",
     "description": "",
 }
 </script>
@@ -367,7 +365,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过应用扩展提升你的应用"><span class="post-toc-number">1.</span> <span class="post-toc-text">通过应用扩展提升你的应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#APP扩展的类型"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">APP扩展的类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Xcode和App-Store帮助你创建并交付应用扩展"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Xcode和App Store帮助你创建并交付应用扩展</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户在不同的情形下体验不同的应用扩展"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">用户在不同的情形下体验不同的应用扩展</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#了解应用程序扩展的工作原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">了解应用程序扩展的工作原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用程序扩展的生命周期"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">应用程序扩展的生命周期</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用扩展是如何进行通信的"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">应用扩展是如何进行通信的</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建应用扩展"><span class="post-toc-number">3.</span> <span class="post-toc-text">创建应用扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从选择正确的扩展点开始"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">从选择正确的扩展点开始</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#检查默认的扩展模板"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">检查默认的扩展模板</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#响应“载体程序”（Host-App）的请求"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">响应“载体程序”（Host App）的请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优化效率和性能"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">优化效率和性能</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计一个精简的用户界面"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">设计一个精简的用户界面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分发扩展主体应用程序"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">分发扩展主体应用程序</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常见问题的处理方案"><span class="post-toc-number">4.</span> <span class="post-toc-text">常见问题的处理方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用内嵌框架共享代码"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">使用内嵌框架共享代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#访问网页"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">访问网页</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行上传下载任务"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">执行上传下载任务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为分享和Action扩展申明支持的数据类型"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">为分享和Action扩展申明支持的数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置载体应用以适用于老版本的iOS系统"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">配置载体应用以适用于老版本的iOS系统</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过应用扩展提升你的应用"><span class="post-toc-number">1.</span> <span class="post-toc-text">通过应用扩展提升你的应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#APP扩展的类型"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">APP扩展的类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Xcode和App-Store帮助你创建并交付应用扩展"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Xcode和App Store帮助你创建并交付应用扩展</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户在不同的情形下体验不同的应用扩展"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">用户在不同的情形下体验不同的应用扩展</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#了解应用程序扩展的工作原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">了解应用程序扩展的工作原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用程序扩展的生命周期"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">应用程序扩展的生命周期</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用扩展是如何进行通信的"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">应用扩展是如何进行通信的</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建应用扩展"><span class="post-toc-number">3.</span> <span class="post-toc-text">创建应用扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从选择正确的扩展点开始"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">从选择正确的扩展点开始</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#检查默认的扩展模板"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">检查默认的扩展模板</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#响应“载体程序”（Host-App）的请求"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">响应“载体程序”（Host App）的请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优化效率和性能"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">优化效率和性能</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计一个精简的用户界面"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">设计一个精简的用户界面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#确保您的iOS-App扩展适用于所有设备"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">确保您的iOS App扩展适用于所有设备</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#调试，配置和测试你的应用扩展"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">调试，配置和测试你的应用扩展</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分发扩展主体应用程序"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">分发扩展主体应用程序</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常见问题的处理方案"><span class="post-toc-number">4.</span> <span class="post-toc-text">常见问题的处理方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用内嵌框架共享代码"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">使用内嵌框架共享代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#与Containing-App共享数据"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">与Containing App共享数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#访问网页"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">访问网页</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行上传下载任务"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">执行上传下载任务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为分享和Action扩展申明支持的数据类型"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">为分享和Action扩展申明支持的数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置载体应用以适用于老版本的iOS系统"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">配置载体应用以适用于老版本的iOS系统</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -399,7 +397,7 @@
         
     
             <p class="article-headline-p">
-                AppExtension编程指南:扩展基础
+                
             </p>
         </div>
 
@@ -436,15 +434,6 @@
 
     <!-- Tags (bookmark) -->
     
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/文档翻译/">文档翻译</a>
-    </ul>
-    
 
     <!-- Share -->
     
@@ -470,7 +459,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=AppExtension编程指南:扩展基础&url=http://yoursite.com/2018/11/16/AppExtension编程指南-扩展基础/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com/2018/11/16/AppExtension编程指南-扩展基础/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -479,7 +468,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=AppExtension编程指南:扩展基础&url=http://yoursite.com/2018/11/16/AppExtension编程指南-扩展基础/index.html&via=暮鼓晨钟" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com/2018/11/16/AppExtension编程指南-扩展基础/index.html&via=暮鼓晨钟" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -509,7 +498,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=AppExtension编程指南:扩展基础&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/11/16/AppExtension编程指南-扩展基础/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/11/16/AppExtension编程指南-扩展基础/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -528,12 +517,13 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="通过应用扩展提升你的应用"><a href="#通过应用扩展提升你的应用" class="headerlink" title="通过应用扩展提升你的应用"></a>通过应用扩展提升你的应用</h2><p>iOS8/OS X v10.10</p>
+        <p>title: ‘AppExtension编程指南:扩展基础’<br>date: 2018-11-16 09:48:04<br>tags: 文档翻译<br>categories : iOS文档<br>toc: true</p>
+<h2 id="通过应用扩展提升你的应用"><a href="#通过应用扩展提升你的应用" class="headerlink" title="通过应用扩展提升你的应用"></a>通过应用扩展提升你的应用</h2><p>iOS8/OS X v10.10</p>
 <p>翻译自苹果官方文档 <a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW1" target="_blank" rel="noopener">App Extension Programming Guide–App Extensions Essentials</a></p>
 <blockquote>
 <p>重要提示： 该文档是一个开发过程中使用API或技术的预发布文档。Apple提供该文档的目的在于让开发者尽快熟悉新技术和新的编程接口，使得开发者针对苹果品牌设备进行开发。但是该文档会不断的更新，使用该文档提供的技术开发的软件应该基于最终操作系统软件和最终的文档进行测试。要时刻关注该文档的更新，以便了解新的API和技术特性。</p>
 </blockquote>
-<p>当iOS 8.0和OS X v10.10发布后，一个全新的概念出现在我们眼前，那就是应用扩展。顾名思义，应用扩展允许开发者扩展应用的自定义功能和内容，能够让用户在使用其他app时使用该项功能。你可以开发一个应用扩展来执行某些特定的任务，用户使用该扩展后就可以在多个上下文环境中执行该任务。比如说，你提供了一个能让用户把内容分享到社交网站的扩展，用户可以在阅读邮件信息或者上网时通过app扩展来发表评论。或者说，如果你提供了一个能展示当前比赛分数的扩展，那么用户可以把它放在通知中心，这样在他们打开Today view时就能看到最新的比分。你甚至可以开发一个提供自定义键盘的扩展，用户可以用它代替iOS系统自带的键盘。</p>
+<p>当iOS 8.0和OS X v10.10发布后，一个全新的概念出现在我们眼前，那就是<code>应用扩展</code>。顾名思义，应用扩展允许开发者扩展应用的自定义功能和内容，能够让用户在使用其他app时使用该项功能。你可以开发一个应用扩展来执行某些特定的任务，用户使用该扩展后就可以在多个上下文环境中执行该任务。比如说，你提供了一个能让用户把内容分享到社交网站的扩展，用户可以在阅读邮件信息或者上网时通过app扩展来发表评论。或者说，如果你提供了一个能展示当前比赛分数的扩展，那么用户可以把它放在通知中心，这样在他们打开Today view时就能看到最新的比分。你甚至可以开发一个提供自定义键盘的扩展，用户可以用它代替iOS系统自带的键盘。</p>
 <h3 id="APP扩展的类型"><a href="#APP扩展的类型" class="headerlink" title="APP扩展的类型"></a>APP扩展的类型</h3><p>iOS和OS X定义了几种应用扩展的类型，每一种类型的扩展都对应系统中的一块区域，比如分享、通知中心以及键盘等。我们把这些支持扩展的区域称为<code>扩展点</code>。每个扩展点都定义了使用策略并提供了API，你可以用来针对该区域创建扩展。要注意的一点是，当你针某个扩展点开发应用扩展时，该应用扩展的功能必须要符合该扩展点的功能特性。</p>
 <p><strong>table 1-1</strong> 列出了iOS和OS X中的扩展点，并列举了对应扩展点的示例任务。 </p>
 <img src="/2018/11/16/AppExtension编程指南-扩展基础/table1-1.jpg">
@@ -555,28 +545,28 @@
 <p>注意：即使你的应用程序扩展没有展示自定义UI（不包括图标），但用户仍然知道该扩展不同于当前的应用，因为它们需要采用特定的操作来激活。</p>
 </blockquote>
 <h2 id="了解应用程序扩展的工作原理"><a href="#了解应用程序扩展的工作原理" class="headerlink" title="了解应用程序扩展的工作原理"></a>了解应用程序扩展的工作原理</h2><p>iOS8/OS X v10.10</p>
-<p>应用程序扩展不是一个应用，相反，它是主体应用程序（containing app）中一个单独的包，并能生成单独的二进制文件。与主体应用程序不同，应用扩展实现的是一个特定的、狭义范围内的任务，并且要严格遵循扩展点的协议。</p>
-<h3 id="应用程序扩展的生命周期"><a href="#应用程序扩展的生命周期" class="headerlink" title="应用程序扩展的生命周期"></a>应用程序扩展的生命周期</h3><p>因为一个应用程序扩展不是一个应用，所以它的生命周期和运行环境也不同于应用。一般情况来说，应用程序扩展的生命周期始于用户从某个应用中启动它。允许用户选择某一种扩展来帮助他们执行某项任务的应用，我们称之为扩展的“载体应用”（host app）。“载体应用”（host app）定义了激活扩展的上下文环境，并在其发送请求以响应用户操作时开始扩展的生命周期。当应用扩展完成载体应用发送的请求任务后，该扩展的生命周期也随之结束。</p>
-<p>比如说，假定这样一个场景，用户在扩展载体应用（host app）中选中一段文字，点击分享按钮，并从分享列表中选择某一个分享扩展，将选中的内容分享至社交网站。此时，载体应用就会向扩展发送一个包含用户所选文本的请求，启动该扩展，从而去响应用户的请求，即分享所选文本的内容。应用扩展基本的生命周期归纳在下图2-1中。</p>
+<p>应用程序扩展不是一个应用，相反，它是<code>主体应用程序（containing app）</code>中一个单独的包，并能生成单独的二进制文件。与主体应用程序不同，应用扩展实现的是一个特定的、狭义范围内的任务，并且要严格遵循扩展点的协议。</p>
+<h3 id="应用程序扩展的生命周期"><a href="#应用程序扩展的生命周期" class="headerlink" title="应用程序扩展的生命周期"></a>应用程序扩展的生命周期</h3><p>因为一个应用程序扩展不是一个应用，所以它的生命周期和运行环境也不同于应用。一般情况来说，应用程序扩展的生命周期始于用户从某个应用中启动它。允许用户选择某一种扩展来帮助他们执行某项任务的应用，我们称之为扩展的<code>载体应用（host app）</code>。<code>载体应用（host app）</code>定义了激活扩展的上下文环境，并在其发送请求以响应用户操作时开始扩展的生命周期。当应用扩展完成载体应用发送的请求任务后，该扩展的生命周期也随之结束。</p>
+<p>比如说，假定这样一个场景，用户在扩展<code>载体应用（host app）</code>中选中一段文字，点击分享按钮，并从分享列表中选择某一个分享扩展，将选中的内容分享至社交网站。此时，载体应用就会向扩展发送一个包含用户所选文本的请求，启动该扩展，从而去响应用户的请求，即分享所选文本的内容。应用扩展基本的生命周期归纳在下图2-1中。</p>
  <img src="/2018/11/16/AppExtension编程指南-扩展基础/table2-1.png">
-<p>基本的扩展生命周期</p>
+<p>​                                基本的扩展生命周期</p>
 <p>在图2-1中的第2步中，系统实例化载体应用请求中确定的扩展，并在两者之间建立通信通道。然后扩展在载体应用的上下文场景中显示相关界面，并使用其在载体应用请求中接收到的项目来执行任务（在上述的例子中，扩展接收到的项目是用户选中的文本）</p>
 <p>在图2-1的第3步中，用户在扩展中执行或取消某个任务，或者直接可以忽略该扩展。在对用户的操作做出响应的过程中，扩展会根据载体应用的请求立即开始执行任务，但如果有特殊需要时，扩展也会在系统后台执行任务，这种情况下，载体不会显示扩展相关界面，并且用户返回到其先前在载体应用中的上下文环境。当应用扩展执行完任务后，不管是立刻返回还是延迟返回，但最后其执行结果都会返回给载体应用。</p>
 <p>当扩展开始执行任务之后（或者开始在系统后台执行任务），系统就会终止扩展，比如图2-1中的第4步。</p>
-<h3 id="应用扩展是如何进行通信的"><a href="#应用扩展是如何进行通信的" class="headerlink" title="应用扩展是如何进行通信的"></a>应用扩展是如何进行通信的</h3><p>当应用扩展在运行的时候，它只会直接和载体应用（host app）进行通信，而扩展和containing app之间不会直接通信。在扩展运行的过程中，主体应用（containing app）甚至都不运行。另外，载体应用（host app）和主体应用（containing app）之间也不会进行通信。图2-2中描述了运行中的应用扩展、载体应用（host app）以及主体应用（containing app）这三者之间的关系。</p>
+<h3 id="应用扩展是如何进行通信的"><a href="#应用扩展是如何进行通信的" class="headerlink" title="应用扩展是如何进行通信的"></a>应用扩展是如何进行通信的</h3><p>当应用扩展在运行的时候，它只会直接和<code>载体应用（host app）</code>进行通信，而扩展和<code>主体应用containing app</code>之间不会直接通信。在扩展运行的过程中，<code>主体应用（containing app）</code>甚至都不运行。另外，<code>载体应用（host app）</code>和<code>主体应用（containing app）</code>之间也不会进行通信。图2-2中描述了运行中的<code>应用扩展</code>、<code>载体应用（host app）</code>以及<code>主体应用（containing app）</code>这三者之间的关系。</p>
 <img src="/2018/11/16/AppExtension编程指南-扩展基础/table2-2.png">
-<p>运行中的扩展仅和载体应用进行通信</p>
-<p>当一个扩展需要和containing app进行通信时，只能在载体应用确定的上下文环境中进行间接通信。比如，一个应用扩展有可能会运行调用它的应用程序。在这个例子中，扩展使用了不能与 containing app 传递消息的API。此外，应用扩展与其 containing app 可以在一个定义为私有的共享容器中访问数据。图2-3描述了扩展和 containing app 之间的间接通信类型。</p>
+<p>​                            运行中的扩展仅和载体应用进行通信</p>
+<p>当一个扩展需要和主体应用containing app进行通信时，只能在载体应用确定的上下文环境中进行间接通信。比如，一个应用扩展有可能会运行调用它的应用程序。在这个例子中，扩展使用了不能与 containing app 传递消息的API。此外，应用扩展与其 containing app 可以在一个定义为私有的共享容器中访问数据。图2-3描述了扩展和 containing app 之间的间接通信类型。</p>
 <img src="/2018/11/16/AppExtension编程指南-扩展基础/table2-3.png">
-<p>运行中的扩展可以与其containing app进行间接通信</p>
+<p>​                        运行中的扩展可以与其containing app进行间接通信</p>
 <p>注意：在底层，系统使用进程间通信来确保应用扩展和扩展载体应用共同来开启无缝结合体验。在你的代码中，你无需考虑这些底层的通信机制，因为你使用的是扩展点和系统提供的高级API。</p>
 <h2 id="创建应用扩展"><a href="#创建应用扩展" class="headerlink" title="创建应用扩展"></a>创建应用扩展</h2><p>iOS8/OS X v10.10</p>
 <p>当你准备好开发一个应用扩展时，可以从选择一个支持你想执行的任务的扩展点开始。然后选择适用于你所选的扩展点的Xcode模板，如果需要的话，可使用自定义代码和自定义用户界面来增强默认文件。最后，在你调试并优化你的应用扩展之后，就可以打包进你的应用程序给用户使用了。</p>
 <h3 id="从选择正确的扩展点开始"><a href="#从选择正确的扩展点开始" class="headerlink" title="从选择正确的扩展点开始"></a>从选择正确的扩展点开始</h3><p>每个扩展点都针对一个定义明确的用户场景，你首先要清楚这个应用能为用户提供什么样的功能，所以要选择一个支持该功能的扩展点。这是非常关键的，因为每个扩展点定义了不同的API，为你提供不同的功能开发，所以如果选错了扩展点，那么很有可能无法实现想要的功能。表1-1列出了iOS和OS X中支持的所有扩展点。</p>
 <p>选定了一个适用于应用扩展的扩展点后，在你的containing app中会有一个新的Target。添加应用扩展Target最简单的方式就是使用Xcode提供的模板，这些模板为扩展点提供了预配置。</p>
-<p>你可以通过菜单选择 File &gt; New &gt; Target在你的Xcode工程中添加一个新Target。在左边的侧边栏中，选择iOS或OS X的Application Extension选项，然后在右边面板呈现的Xcode 模板中选择你想要创建的应用扩展模板，如下图所示：</p>
+<p>你可以通过菜单选择 <strong>File &gt; New &gt; Target</strong>在你的Xcode工程中添加一个新Target。在左边的侧边栏中，选择iOS或OS X的<strong>Application Extension</strong>选项，然后在右边面板呈现的Xcode 模板中选择你想要创建的应用扩展模板，如下图所示：</p>
 <img src="/2018/11/16/AppExtension编程指南-扩展基础/table3.png">
-<p>选择好模板，并在工程中添加Target，在自定义扩展代码之前，你可以试着编译并运行一下项目。如果你是基于Xcode提供的模板创建的扩展，那么当编译成功后，就会生成一个扩展名为.appex的应用扩展包。</p>
+<p>选择好模板，并在工程中添加Target，在自定义扩展代码之前，你可以试着编译并运行一下项目。如果你是基于Xcode提供的模板创建的扩展，那么当编译成功后，就会生成一个扩展名为 <strong>.appex的应用扩展包</strong>。</p>
 <blockquote>
 <p>注意64位的架构：<br>一个应用程序扩展在Architectures设置中必须要包含arm64的架构，否则在上传App Store时会被拒绝。创建完一个应用扩展后，你可以在Xcode的“Standard architectures”设置选项中设置arm64架构。</p>
 </blockquote>
@@ -584,38 +574,56 @@
 <p>关于64位架构开发环境的更多信息，请根据你的target平台参阅64-Bit Transition Guide for Cocoa Touch或者64-Bit Transition Guide for Cocoa。</p>
 <p>在大多数情况下，你可以通过在System Preferences或Settings中启用应用扩展或者授予权限来测试默认的应用扩展，然后可以通过其他应用来访问它。比如你可以在OS X系统中通过Safari中打开一个页面来测试分享扩展，点击分享按钮，然后选择你要测试的扩展即可。</p>
 <h3 id="检查默认的扩展模板"><a href="#检查默认的扩展模板" class="headerlink" title="检查默认的扩展模板"></a>检查默认的扩展模板</h3><p>一般情况下，每个扩展模板都包含一个属性列表文件（就是Info.plist文件），一个View Controller类和一个默认的UI，这些都是扩展点定义的。默认的View Controller类（或principal class）都含有扩展点对应功能的方法，需要我们去实现。</p>
-<p>应用扩展Target的Info.plist文件除了识别扩展点外还罗列了应用扩展的详细信息。最低限度上讲，该文件中包含一个NSExtension key、一个key的字典以及扩展点指定的值。比如Key NSExtensionPointIdentifier的值就是扩展点的反向DNS名称，比如com.apple.widget-extension。在应用扩展的NSExtension字典中还有其他的Key和值：</p>
-<p>NSExtensionAttributes：这是一个描述扩展点具体属性的字典，就像照片编辑扩展中的PHSupportedMediaTypes一样。<br>NSExtensionPrincipalClass：这是扩展模板创建的主体视图控制器类，比如SharingViewController。当载体应用程序（host app）调用扩展时，扩展点会实例化这个类。<br>NSExtensionMainStoryboard（只适用于iOS）：扩展默认的Storyboard文件，一般名为MainInterface。</p>
+<p>应用扩展Target的<strong>Info.plist</strong>文件除了识别扩展点外还罗列了应用扩展的详细信息。该文件至少包括<strong>NSExtension</strong>字典以及扩展点指定的其他键值字典。。比如<strong>NSExtensionPointIdentifier</strong>的key值就是扩展点的<code>反向DNS名称</code>，比如com.apple.widget-extension。在应用扩展的NSExtension字典中还有其他的Key和值：</p>
+<p><strong>NSExtensionAttributes</strong>：这是一个描述扩展点具体属性的字典，就像照片编辑扩展中的PHSupportedMediaTypes一样。<br><strong>NSExtensionPrincipalClass</strong>：这是扩展模板创建的主体视图控制器类，比如SharingViewController。当载体应用程序（host app）调用扩展时，扩展点会实例化这个类。<br><strong>NSExtensionMainStoryboard（只适用于iOS）</strong>：扩展默认的Storyboard文件，一般名为MainInterface。</p>
 <p>除了在属性列表中设置以外，扩展模板还可以设置一些默认的功能。每个扩展点可以定义扩展点支持的适用于某个类型任务的功能。比如，一个iOS的Document Provider扩展就包含com.apple.security.application-groups的功能。  </p>
 <p>所有的OS X扩展模板都默认包含应用程序沙箱和com.apple.security.files.user-selected.read-only功能。如果你开发的扩展需要适用网络，或者访问用户的相册，再或者需要访问用户的通讯录，那么你就需要额外定义这些功能。</p>
 <blockquote>
 <p>注意：通常情况下，如果用户允许主应用程序（containing app）访问他们的私有数据，那么主程序里的扩展也同样拥有该权限。</p>
 </blockquote>
-<h3 id="响应“载体程序”（Host-App）的请求"><a href="#响应“载体程序”（Host-App）的请求" class="headerlink" title="响应“载体程序”（Host App）的请求"></a>响应“载体程序”（Host App）的请求</h3><p>正如你在Understand How an Extension Works这篇文档中了解的，当用户在host app选择一个扩展，并使host app向扩展发出请求时，就会打开扩展才。说的再详细一点，你的扩展会根据用户的操作接收到请求，帮用户执行任务，然后完成或者关闭请求。比如说，一个分享扩展收到了来自host app的请求，然后该扩展会打开相应视图来响应请求。然后用户在该界面中编辑要分享的内容，用户可以选择发送或者不发送，最后扩展根据用户的行为响应完成还是关闭请求。</p>
+<h3 id="响应“载体程序”（Host-App）的请求"><a href="#响应“载体程序”（Host-App）的请求" class="headerlink" title="响应“载体程序”（Host App）的请求"></a>响应“载体程序”（Host App）的请求</h3><p>正如你在Understand How an Extension Works这篇文档中了解的，当用户在host app选择一个扩展，并使host app向扩展发出请求时，就会打开扩展。说的再详细一点，你的扩展会根据用户的操作接收到请求，帮用户执行任务，然后完成或者关闭请求。比如说，一个分享扩展收到了来自host app的请求，然后该扩展会打开相应视图来响应请求。然后用户在该界面中编辑要分享的内容，用户可以选择发送或者不发送，最后扩展根据用户的行为响应完成还是关闭请求。</p>
 <p>当host app向扩展发出请求时，一般都会指明扩展运行的上下文。对于很多扩展来说，最重要的一部分就是要设置一个工作项，这个工作项就是用户在使用这个扩展时要处理的工作项。比如说，一个分享扩展的上下文可能就包含用户选择的想要分享的一段文字。</p>
-<p>当host app发出一个请求（通常就是调用 beginRequestWithExtensionContext: 方法），你的扩展就可以用主试图控制器中的 extensionContext 属性来获得上下文，然后使用 NSExtensionContext 类解析上下文并获得工作项。通常，在视图控制器的 loadView 方法中解析上下文并获得工作项，这样在加载完视图后就可以将信息显示在视图界面中了。获取扩展上下文可以使用如下代码：<br>NSExtensionContext *myExtensionContext = [self extensionContext];<br>有意思的是内容对象的 inputItems 属性，它包含了应用扩展需要使用的工作项。inputItems 属性包含一个 NSExtensionItem 类型的数组，数组的每一个成员都包含一个可执行的工作项。从上下文中获取工作项可以使用如下代码：</p>
+<p>当host app发出一个请求（通常就是调用<code>beginRequestWithExtensionContext:</code>方法），你的扩展就可以用主试图控制器中的 <code>extensionContext</code> 属性来获得上下文，然后使用 <code>NSExtensionContext</code> 类解析上下文并获得工作项。通常，在视图控制器的 loadView 方法中解析上下文并获得工作项，这样在加载完视图后就可以将信息显示在视图界面中了。获取扩展上下文可以使用如下代码：</p>
+<pre><code>NSExtensionContext *myExtensionContext = [self extensionContext]; 
+</code></pre><p>有意思的是内容对象的 inputItems 属性，它包含了应用扩展需要使用的工作项。inputItems 属性包含一个 NSExtensionItem 类型的数组，数组的每一个成员都包含一个可执行的工作项。从上下文中获取工作项可以使用如下代码：</p>
 <pre><code>NSArray *inputItems = [myExtensionContext inputItems]; 
-</code></pre><p>每个 NSExtensionItem 对象都包含若干个描述工作项的属性，比如标题、文本内容、附件信息、用户信息。</p>
-<blockquote>
-<p>注意 attachments 属性，它包含一个与工作项相关联的媒体数据数组。比如说一个分享请求的工作项，那么 attachments 属性可能就包含用户想要分享网页中的信息。</p>
-</blockquote>
+</code></pre><p>每个 <code>NSExtensionItem</code> 对象都包含若干个描述工作项的属性，比如标题、文本内容、附件信息、用户信息。</p>
+<p>注意 <code>attachments</code> 属性，它包含一个与工作项相关联的媒体数据数组。比如说一个分享请求的工作项，那么 attachments 属性可能就包含用户想要分享网页中的信息。</p>
 <p>当用户工作项处理完后，应用扩展通常会给用户两个选择，完成任务或取消任务。根据用户的选择，扩展会调用 completeRequestReturningItems:expirationHandler:completion: 方法，把工作项返回给 host app，或者会调用 cancelRequestWithError: 方法，返回一个错误代码。</p>
-<p>在iOS中，你的应用程序扩展可能需要更多的时间去处理潜在的需长时间处理的任务，比如说往网上上传内容。这种情况下，你就要使用 NSURLSession 类将该任务转为后台处理的任务。因为转换到后台处理任务需要用一个单独的线程，所以在扩展完成主应用请求并关闭后仍然可以处理。想了解更多关于扩展中NSURLSession类的用法，请参阅：Performing Uploads and Downloads。</p>
+<p>在iOS中，你的应用程序扩展可能需要更多的时间去处理潜在的需长时间处理的任务，比如说往网上上传内容。这种情况下，你就要使用 <code>NSURLSession</code> 类将该任务转为后台处理的任务。因为转换到后台处理任务需要用一个单独的线程，所以在扩展完成主应用请求并关闭后仍然可以处理。想了解更多关于扩展中NSURLSession类的用法，请参阅：Performing Uploads and Downloads。</p>
 <blockquote>
 <p>重要：虽然你可以设置一个后台URL来上传或下载任务，但是有一些类型的后台任务，比如支持 VoIp 或者在后台播放音乐的任务，是不能通过扩展来实现的。</p>
 </blockquote>
+<blockquote>
 <p>如果你应用扩展的Info.plist文件中含有 UIBackgroundModes 关键字，那么在上传App Store时会被拒绝。（想了解更多关于 UIBackgroundModes 关键字的内容，请参阅 Information Property List Key Reference 中的 UIBackgroundModes）</p>
+</blockquote>
 <h3 id="优化效率和性能"><a href="#优化效率和性能" class="headerlink" title="优化效率和性能"></a>优化效率和性能</h3><p>应用扩展在内存使用优先级上要明显低于当前运行的应用程序。不管是 iOS 还是 OS X，系统都会毫不犹豫地终止扩展，因为用户想返回到host app中的主要目标中。但是也有一些应用扩展的内存使用优先级要高于其他扩展，比如说widgets就要求要高一些，因为它要实时的显示一些信息，因为一般用户更倾向于同时开启多个widgets。</p>
 <p>你的应用扩展并不拥有主循环线程，你要遵循这一规则，以便让扩展在主循环线程中发挥最好的性能。比如说，如果你的应用扩展阻止了主循环线程，那么在用户使用主应用程序的过程中会造成非常糟糕的用户体验效果。<br>我们需要记住的一点是，GPU在系统中是一个共享的资源，所以应用扩展不会得到很高的优先级照顾。比如说，如果你正在玩一个对GPU消耗很高的游戏，那么由于内存压力比较大，它就有可能会选择关闭Today widget。</p>
 <h3 id="设计一个精简的用户界面"><a href="#设计一个精简的用户界面" class="headerlink" title="设计一个精简的用户界面"></a>设计一个精简的用户界面</h3><p>大多数的扩展点都要求你向用户提供一些自定义的界面，它在用户打开你的应用扩展时呈现给用户。通常情况下，应用扩展的界面要尽可能的简约、内敛，并主要关注一个单一任务。为了提高性能和用户体验效果，你要避免与该扩展功能无关的界面出现。</p>
 <p>大多数Xcode 提供的应用扩展模板都包含一个初始界面文件，你可以从这个文件中设计界面开始。</p>
 <p>在用户的惯性思维中，一般他们都是通过应用扩展的图标来辨识扩展功能的。通常情况下，应用扩展的图标和它的主体应用的图标是一致的。使用主体应用的图标作为应用扩展的图标有利于用户去判断这个扩展的来源，也就是说让用户确信这个扩展是来源于他们安装的主体应用。当然也有一些例外。</p>
 <p>在iOS中，自定义的Action扩展的图标使用其主体应用的图标。<br>在OS X中，如果一个扩展的主体程序只是用来安装扩展的封装包，那么该扩展要提供一个单独的图标，否则都会使用主体应用的图标。</p>
-<p>应用扩展要使用一个简短，语义明确的名字，这能让帮助用户把扩展和你的主应用程序联系起来，并且能让他们在系统中更好的管理应用扩展。通过应用扩展 Target的 CFBundleDisplayName 属性来设置它的名称，你可以在Info.plist文件中修改它。如果你没有给 CFBundleDisplayName 设置值，也就是没有给扩展设置名称，那么应用扩展会使用其主体应用的名称，也就是 CFBundleName 属性中的值。</p>
-<p>同时一些应用扩展也需要一个简短的说明。比如说，OS X中的 Widget 扩展就会显示一个简单的描述，这能帮助用户更好的选择他们想要显示在今日通知中的Widget扩展。扩展的描述可以在 InfoPlist.strings 文件的 widget.description 属性中设置。</p>
-<p>调试，配置和测试你的应用扩展</p>
+<p>应用扩展要使用一个简短，语义明确的名字，这能让帮助用户把扩展和你的主应用程序联系起来，并且能让他们在系统中更好的管理应用扩展。通过应用扩展 <code>Target</code>的 <code>CFBundleDisplayName</code> 属性来设置它的名称，你可以在<code>Info.plist</code>文件中修改它。如果你没有给 <code>CFBundleDisplayName</code>设置值，也就是没有给扩展设置名称，那么应用扩展会使用其主体应用的名称，也就是<code>CFBundleName</code>属性中的值。</p>
+<p>同时一些应用扩展也需要一个简短的说明。比如说，OS X中的 Widget 扩展就会显示一个简单的描述，这能帮助用户更好的选择他们想要显示在今日通知中的Widget扩展。扩展的描述可以在 <code>InfoPlist.strings</code> 文件的<code>widget.description</code> 属性中设置。</p>
+<h3 id="确保您的iOS-App扩展适用于所有设备"><a href="#确保您的iOS-App扩展适用于所有设备" class="headerlink" title="确保您的iOS App扩展适用于所有设备"></a>确保您的iOS App扩展适用于所有设备</h3><p>您必须确保提交的应用扩展程序是通用的：它必须适用于iPhone，iPod touch和iPad。无论您为包含的应用选择哪个目标设备系列，此要求均适用。Xcode中的应用程序扩展模板已针对通用目标设备系列进行了正确配置。</p>
+<p>要声明您的应用扩展程序是通用的，请使用Xcode中的目标设备系列构建设置，指定“iPhone / iPad”值。</p>
+<p><strong>确保您的应用扩展程序具有通用性</strong></p>
+<ol>
+<li>在keyboard project的Xcode项目导航器中，选择项目文件。<br>如果隐藏了项目编辑器中的project和targets列表，请显示它。为此，请单击project编辑器选项卡栏左侧的按钮。</li>
+<li>在project 和 targets列表的targets组中，选择应用扩展程序的targets。</li>
+<li>在project编辑器中选择Build Settings选项卡。<br>确保选中Basic 和 Combined按钮，以便于您更轻松地找到所需的设置。</li>
+<li>在project编辑器的Deployment group中，查看“Targeted Device Family”设置。对于Debug和Release配置，值应为“iPhone / iPad”。<br>如果您找到不同的值，请将其更正为“iPhone / iPad”。</li>
+</ol>
+<p>在设计和构建应用扩展时 使用Auto Layout和size classes类。测试您的应用扩展程序，以确保其符合您对所有设备大小和方向的预期行为。如“ Simulator User Guide所述，在iOS模拟器中执行此<em>操作</em>，如果可能，还可以在两个方向上对物理设备进行测试。</p>
+<p>请记住，即使您的<code>主体应用(containing app)</code>仅针对iPad设备系列，您所包含的应用扩展程序也会以兼容模式运行显示在的iPhone应用中。</p>
 <blockquote>
-<p>注意：要确保主体应用中的所有扩展都要使用相同签名方式的代码。</p>
+<p>重要<br>要通过App Review，您必须将“iPhone / iPad”（有时称为*<em>universal</em>)*）指定为应用扩展程序的目标设备系列，无论您为<code>主体应用(containing app)</code>选择哪个目标设备系列。</p>
+</blockquote>
+<blockquote>
+<p>在以后的iOS更新中，应用扩展程序仅在扩展程序主体应用本机支持的设备（或设备兼容模式）上运行。例如，在兼容模式下使用iPhone应用程序时，在只有iPad的<code>主体应用(containing app)</code>提供的扩展程序将不可见。为确保获得最佳用户体验，我们建议您的主体应用(containing app)和其应用扩展程序是通用的。</p>
+</blockquote>
+<h3 id="调试，配置和测试你的应用扩展"><a href="#调试，配置和测试你的应用扩展" class="headerlink" title="调试，配置和测试你的应用扩展"></a>调试，配置和测试你的应用扩展</h3><blockquote>
+<p>注意：要确保主体应用中的所有扩展都要使用相同签名方式的代码。<br>Xcode项目中的所有target都必须以相同的方式进行代码签名。例如，在测试期间，您可以使用临时代码签名或使用开发人员证书，但必须对项目中的所有target使用相同的方法。要提交到App Store，请使用您的分发证书来获取所有目标。</p>
 </blockquote>
 <p>使用 Xcode 调试应用扩展和调试其他程序基本是一样的，但唯一点不同的是：你要选择一个能访问扩展的载体应用。当你编译运行应用扩展后，Xcode 会运行载体应用，等待你去使用扩展并触发调试点来调试扩展。你要在 scheme 中要为扩展指定一个载体应用（一个 scheme 封装了 Target 编译的说明）。</p>
 <p>当你在主体应用工程中添加一个应用扩展的Target时，Xcode 就会为应用扩展默认创建一个 scheme。应用扩展的 scheme 可以让你指定在调试时由哪个应用程序来调用你的扩展，也就是指定一个调试时的载体应用。默认情况下，当你编译运行扩展时，会询问你使用哪个载体应用来调用该扩展。</p>
@@ -629,82 +637,197 @@
 <blockquote>
 <p>注意：在Xcode的调试控制台日志中，应用扩展的二进制值可能是和 CFBundleIdentifier 属性关联，而不是 CFBundleDisplayName 属性。</p>
 </blockquote>
-<p>因为应用扩展必须要做出一个有效的响应，所以当你运行应用扩展时，在调试导航中查看各种调试监控器就非常的清晰明了。这些调试监控器会告诉你当前运行的应用扩展占用了多少CPU、内存和其他系统资源。当你发现类似占用CPU资源出现异常的性能问题时，你就可以使用Instruments来分析你的应用扩展，并确定需要改进的地方。想学习了解调试监控器，请查阅Debug Your App；想学习了解Instruments，请查阅Instruments User Guide。</p>
+<p>由于应用扩展必须具有响应性和高效性，因此当运行应用扩展时，最好在调试导航器中查看<code>调试指标( the debug gauges)</code>。调试指标显示扩展在运行时如何使用CPU，内存和其他系统资源。当你发现类似占用CPU资源出现异常的性能问题时，例如CPU使用率出现异常高峰，您可以使用Instruments来分析您的扩展，并确定需要改进的地方。通过在任何调试仪表报告中单击Instruments中的配置文件，您可以在调试会话期间打开Instruments（要查看调试仪报告，请单击调试区域中的仪表）。想学习了解调试监控器，请查阅Debug Your App；想学习了解Instruments，请查阅Instruments User Guide。</p>
 <blockquote>
-<p>注意：在Xcode中选择 Product &gt; Profile可以直接在Instruments中编译并运行应用扩展。Instruments使用</p>
+<p>注意：在Xcode中选择 Product &gt; Profile可以直接在Instruments中编译并运行应用扩展。Instruments使用方案的Profile部分中的可执行文件集作为扩展的载体。</p>
 </blockquote>
 <p>如果要使用Xcode提供的测试框架（比如XCTest APIs）测试应用扩展，你需要在主体应用程序中写一些测试用例代码。想了解更多XCTest的知识，请参阅Testing with Xcode。</p>
-<h3 id="分发扩展主体应用程序"><a href="#分发扩展主体应用程序" class="headerlink" title="分发扩展主体应用程序"></a>分发扩展主体应用程序</h3><p>你不能直接将应用扩展上传至App Store，除非它包含在主体应用程序中，并且你不能将应用扩展从一个应用程序中转到另一个应用程序。</p>
+<h3 id="分发扩展主体应用程序"><a href="#分发扩展主体应用程序" class="headerlink" title="分发扩展主体应用程序"></a>分发扩展主体应用程序</h3><p>你无法直接将应用扩展上传至App Store，除非它包含在主体应用程序中，并且你不能将应用扩展从一个应用程序中转到另一个应用程序。</p>
 <p>如果想让用户使用你的应用扩展，你必须提交一个主体应用程序到App Store中，并且主体应用程序如要有其他的功能，不能只包含应用扩展。</p>
-<p>如果你想交付 OS X 应用程序扩展，推荐你将主体应用程序提交至App Store，但这也不是唯一的途径。在OS X中，主体应用程序就可以只包含应用扩展，而不需要提供扩展外的其他功能。</p>
+<p>如果你想提交 OS X 应用程序扩展，推荐你将主体应用程序提交至App Store，但这也不是唯一的途径。在OS X中，主体应用程序就可以只包含应用扩展，而不需要提供扩展外的其他功能。</p>
 <blockquote>
 <p>注意：如果你不使用App Store来将主体应用程序和OS X 扩展交付给用户，那么在主体应用程序通过审核前，Gatekeeper是不会允许应用扩展生效的。同时，如果你不将主体应用程序上传至App Store，那么该主体应用程序也不能签署你的开发者ID名称，所以用户必须明确从主体应用程序中重载Gatekeeper，才可以让应用扩展生效。</p>
 </blockquote>
 <h2 id="常见问题的处理方案"><a href="#常见问题的处理方案" class="headerlink" title="常见问题的处理方案"></a>常见问题的处理方案</h2><p>当编写自定义代码以执行app扩展任务时，你可能需要处理一些其他多种类型扩展也会出现的情况。在这一章节中，我们将帮助你如何应对和处理这些常见的问题。</p>
-<h3 id="使用内嵌框架共享代码"><a href="#使用内嵌框架共享代码" class="headerlink" title="使用内嵌框架共享代码"></a>使用内嵌框架共享代码</h3><p>你可以创建一个内嵌框架，用于在应用扩展和它的主应用程序（containing app）之间共享代码。比如，你在照片编辑扩展中开发了图片滤镜功能，那么同时该扩展的containing app也有这个功能，那么你可以将实现该功能的代码封装成一个框架，并在扩展target和主应用程序target中嵌入这个框架。</p>
-<p>你要确保你创建的内嵌框架不包含应用扩展不能使用的API。这类API一般使用unavailability宏来标记，比如像 NS_EXTENSION_UNAVAILABLE。</p>
+<h3 id="使用内嵌框架共享代码"><a href="#使用内嵌框架共享代码" class="headerlink" title="使用内嵌框架共享代码"></a>使用内嵌框架共享代码</h3><p>你可以创建一个内嵌框架，用于在应用扩展和它的主应用程序（containing app）之间共享代码。比如，你在照片编辑扩展中开发了图片滤镜功能，那么同时该扩展的主应用程序containing app也有这个功能，那么你可以将实现该功能的代码封装成一个框架，并在扩展target和主应用程序target中嵌入这个框架。</p>
+<p>你要确保你创建的内嵌框架不包含应用扩展不能使用的API。这类API一般使用<code>unavailability</code>宏来标记，比如像 <code>NS_EXTENSION_UNAVAILABLE</code>。</p>
 <p>如果你创建的内嵌框架中包含应用扩展不能使用的API，你可将其安全地Link到containing app，它可以正常使用框架中的API，但是不能与应用扩展共享代码（译者注：也就是应用扩展不能使用该框架提供的所有API，继而无法做到代码共享）。如果你上传App Store的应用扩展中有这种框架，或者其他部分使用了不可用的API，那么审核时会被拒绝。</p>
-<p>如果我们要想应用扩展使用内嵌框架，那么首先要配置一下。将target的Require Only App-Extension-Safe API选项设置为Yes。如果你不这样设置，那么Xcode会向你提示警告：linking against dylib not safe for use in application extensions。</p>
+<p>如果我们要想应用扩展使用内嵌框架，那么首先要配置一下。将target的<code>Require Only App-Extension-Safe API</code>选项设置为<code>Yes</code>。如果你不这样设置，那么Xcode会向你提示警告：<code>linking against dylib not safe for use in application extensions</code>。</p>
+<blockquote>
 <p>重要提示：如果containing app要链接至内嵌框架，那么必须要支持arm64架构，否则在上传App Store时会被拒绝。（如“创建应用扩展”章节中介绍的，所有应用扩展都要支持arm64架构。）</p>
-<p>在配置你的 Xcode 项目时，在 Build Phases 选项卡的 Copy Files 项中一定要将 Destination 设置为 Frameworks。</p>
-<p>重要提示：我们通常要选择 Frameworks 作为 Copy Files build phase 目的地。如果你将其设置为 SharedFramework，那么上传App Store时会被拒绝的。</p>
+</blockquote>
+<p>在配置配置Xcode项目时，必须在<code>Copy Files</code>编译阶段选择“Frameworks”作为内嵌框架的目标。</p>
+<blockquote>
+<p>重要提示：我们通常要选择 Frameworks 作为 Copy Files 编译阶段目标。如果你将其设置为 SharedFramework，那么上传App Store时会被拒绝的。</p>
+</blockquote>
 <p>你可以让containing app支持iOS7或更早的版本，但当在iOS8或更新的版本中运行时，要特别注意内嵌框架的安全性。详细内容可以参阅 <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW3" target="_blank" rel="noopener">Deploying a Containing App to Older Versions of iOS。</a></p>
 <p>有关创建和使用内嵌框架的更多内容，请观看<a href="https://developer.apple.com/videos/wwdc/2014" target="_blank" rel="noopener">WWDC 2014的视频“Building Modern Frameworks”</a>。</p>
-<p><strong>与Containing App共享数据</strong><br>应用扩展和它的containing app的安全域是有区别的。即便扩展包是嵌套在containing app包中的。默认情况下，应用扩展和containing app是不能直接访问对方的容器的。</p>
+<h3 id="与Containing-App共享数据"><a href="#与Containing-App共享数据" class="headerlink" title="与Containing App共享数据"></a>与Containing App共享数据</h3><p>应用扩展和它的containing app的安全域是有区别的。即便扩展包是嵌套在containing app包中的。默认情况下，应用扩展和containing app是不能直接访问对方的容器的。</p>
+<blockquote>
+<p>BACKGROUND</p>
+<p>要了解容器，阅读  <a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#//apple_ref/doc/uid/TP40010672-CH2-SW12" target="_blank" rel="noopener">About the iOS File System</a> 中的 <a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40010672" target="_blank" rel="noopener">File System Programming Guid</a>.</p>
+</blockquote>
 <p>不过你可以通过数据共享来实现这个愿望。比如，你希望应用扩展和它的containing app共享一个单一的大数据集。比如prerendered assets。</p>
 <p>要实现数据共享，我们要使用Xcode或者开发者门户网站允许应用扩展和它的containing app成为一个应用组，然后在开发者门户网站中注册应用组，并指明在containing app中使用该应用组。关于应用组的知识请查阅 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/AboutEntitlements.html#//apple_ref/doc/uid/TP40011195" target="_blank" rel="noopener">Entitlement Key Reference</a> 文档的 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19" target="_blank" rel="noopener">Adding an App to an App Group</a> 章节。</p>
 <p>当你设置好应用组后，应用扩展和它的containing app就可以通过 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/index.html#//apple_ref/occ/cl/NSUserDefaults" target="_blank" rel="noopener">NSUserDefaults</a> API共享访问用户的信息。我们可以使用 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/index.html#//apple_ref/occ/instm/NSUserDefaults/initWithSuiteName:" target="_blank" rel="noopener">initWithSuiteName: </a>方法实例化一个 NSUserDefaults 对象，然后传入共享组的标示符。比如一个共享扩展，它或许会更新用户最近经常使用的共享账号，那么我们可以这样来写：</p>
-<pre><code>// Create and share access to an NSUserDefaults object. NSUserDefaults *mySharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@&quot;com.example.domain.MyShareExtension&quot;];     // Use the shared user defaults object to update the user&#39;s account. [mySharedDefaults setObject:theAccountName forKey:@&quot;lastAccountName&quot;]; 
-</code></pre><p>下图向我们展示了应用扩展和它的containing app是如何通过共享容器实现数据共享的.</p>
+<pre class=" language-objc"><code class="language-objc">// Create and share access to an NSUserDefaults object. 
+NSUserDefaults *mySharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"com.example.domain.MyShareExtension"];     
+
+// Use the shared user defaults object to update the user's account. [mySharedDefaults setObject:theAccountName forKey:@"lastAccountName"]; 
+</code></pre>
+<p>下图向我们展示了应用扩展和它的containing app是如何通过共享容器实现数据共享的.</p>
 <p>Figure 4-1应用扩展的容器与其containing app的容器是不同的。</p>
 <img src="/2018/11/16/AppExtension编程指南-扩展基础/table4-1.png">
+<blockquote>
 <p>重要提示：如果你的应用扩展使用NSURLSession类执行后台的上传下载任务时，你必须要设置一个共享容器，这样扩展和containing app就可以访问到转换传输的数据。后台上传下载的更多知识请参阅 <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW2" target="_blank" rel="noopener">Performing Uploads and Downloads。</a></p>
+</blockquote>
 <p>如果你设置了共享容器，那么containing app和它包含的允许参与数据分享的扩展就可以对共享容器里的内容进行读写操作了。同时你还必须要对数据的操作进行同步，以避免数据损坏或出错。使用<a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/cl/UIDocument" target="_blank" rel="noopener">UIDocument</a>类、Core Data或者SQLite可以帮你可以让用户通过要求Safari运行JS文件来访问网络内容，并将结果返回到扩展。</p>
+<blockquote>
+<p>版本说明<br>在iOS 8.2及更高版本中，您也可以使用UIDocument该类来协调共享数据访问。<br>在iOS 9及更高版本中，您可以NSFileCoordinator直接使用该类进行共享数据访问，但是如果您这样做，则必须NSFilePresenter在应用扩展转换为后台时删除对象。</p>
+</blockquote>
 <h3 id="访问网页"><a href="#访问网页" class="headerlink" title="访问网页"></a>访问网页</h3><p>在分享扩展（iOS与OS X平台）和Action扩展（iOS平台）中，一般都允许用户使用Safari浏览器访问网页并通过执行JavaScript脚本，并将结果返回到扩展中。你也可以在你的扩展运行之前（适用于两个平台）或执行完任务之后（仅适用于iOS平台）通过JavaScript文件修改网页内容。比如分享扩展，它可以帮助用户分享网页上的内容，或者iOS上的Action扩展可能会显示当前网页的指定翻译内容。</p>
-<p>如果想添加网页访问和操作应用扩展，那么需要遵循下面几个步骤：<br>1.创建一个JavaScript文件，并申明一个全局对象，命名为 ExtensionPreprocessingJS，并为该对象分配一个新的自定义JavaScript类的实例。<br>2.在应用扩展的属性列表文件中添加关键字 NSExtensionJavaScriptPreprocessingFile，给 Safari 浏览器指明使用哪个 JavaScript 文件。<br>3.在NSExtensionActivationRule字典中，将 NSExtensionActivationSupportsWebURLWithMaxCount 赋值一个非零的值。（更多关于 NSExtensionActivationRule 字典的知识请参阅 <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW8" target="_blank" rel="noopener">Declaring Supported Data Types for a Share or Action Extension</a>。）<br>4.当你的应用扩展开始运行时，使用<a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/occ/cl/NSItemProvider" target="_blank" rel="noopener">NSItemProvider</a>类获得运行JavaScript文件所返回的结果。<br>5.在iOS系统的应用扩展中，如果你希望Safari在扩展执行完任务后更新网页，那么你要向JavaScript文件中传入值。（在这一步中也使用NSItemProvider类。）</p>
-<p>为了告知Safari你的应用扩展中包含一个JavaScript文件，你需要在应用扩展的Info.plist文件中，向NSExtensionAttributes字典添加NSExtensionJavaScriptPreprocessingFile关键字来指明你的JavaScript文件。这个关键字的值就是你希望当你的应用扩展运行前，Safari要加载的JavaScript文件的名称。比如：</p>
-<pre><code>NSExtensionAttributes              NSExtensionJavaScriptPreprocessingFile         MyJavaScriptFile      
-</code></pre><p>在iOS和OS X平台中，在你自定义的JavaScript类中可以定义一个run()函数，该函数就是Safari加载JavaScript文件的入口。在run()函数中，Safari提供了一个名为completionFunction的参数，你可以使用键值对象的形式将结果传给应用扩展。</p>
-<p>在iOS平台中，你还可以定义一个finalize()函数，当应用扩展在任务结束阶段调用completeRequestReturningItems:expirationHandler:completion:方法时Safari会调用finalize()函数。在该函数中，可以通过向completeRequestReturningItems:expirationHandler:completion:方法传值，来改变网页内容。</p>
+<p>如果想添加网页访问和操作应用扩展，那么需要遵循下面几个步骤：<br>1.创建一个JavaScript文件，并申明一个全局对象，命名为 <code>ExtensionPreprocessingJS</code>，并为该对象分配一个新的自定义JavaScript类的实例。<br>2.在应用扩展的属性列表文件中添加关键字 <code>NSExtensionJavaScriptPreprocessingFile</code>，给 Safari 浏览器指明使用哪个 JavaScript 文件。<br>3.在<code>NSExtensionActivationRule</code>字典中，将<code>NSExtensionActivationSupportsWebURLWithMaxCount</code> 赋值一个非零的值。（更多关于 NSExtensionActivationRule 字典的知识请参阅 <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW8" target="_blank" rel="noopener">Declaring Supported Data Types for a Share or Action Extension</a>。）<br>4.当你的应用扩展开始运行时，使用<a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/occ/cl/NSItemProvider" target="_blank" rel="noopener">NSItemProvider</a>类获得运行JavaScript文件所返回的结果。<br>5.在iOS系统的应用扩展中，如果你希望Safari在扩展执行完任务后更新网页，那么你要向JavaScript文件中传入值。（在这一步中也使用<code>NSItemProvider</code>类。）</p>
+<p>为了告知Safari你的应用扩展中包含一个JavaScript文件，你需要在应用扩展的<code>Info.plist</code>文件中，向<code>NSExtensionAttributes</code>字典添加<code>NSExtensionJavaScriptPreprocessingFile</code>关键字来指明你的JavaScript文件。这个键的值就是你希望当你的应用扩展运行前，Safari要加载的JavaScript文件的名称。比如：</p>
+<pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>key<span class="token operator">></span>NSExtensionAttributes<span class="token operator">&lt;</span><span class="token operator">/</span>key<span class="token operator">></span>
+        <span class="token operator">&lt;</span>dict<span class="token operator">></span>
+            <span class="token operator">&lt;</span>key<span class="token operator">></span>NSExtensionJavaScriptPreprocessingFile<span class="token operator">&lt;</span><span class="token operator">/</span>key<span class="token operator">></span>
+            <span class="token operator">&lt;</span>string<span class="token operator">></span>MyJavaScriptFile<span class="token operator">&lt;</span><span class="token operator">/</span>string<span class="token operator">></span> <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> Do not include the <span class="token string">".js"</span> filename extension <span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dict<span class="token operator">></span>
+
+</code></pre>
+<p>在iOS和OS X平台中，在你自定义的JavaScript类中可以定义一个run()函数，该函数就是Safari加载JavaScript文件的入口。在run()函数中，Safari提供了一个名为completionFunction的参数，你可以使用键值对象的形式将结果传给应用扩展。</p>
+<p>在iOS平台中，你还可以定义一个<code>finalize()</code>函数，当应用扩展在任务结束阶段调用<code>completeRequestReturningItems:expirationHandler:completion:</code>方法时Safari会调用<code>finalize()</code>函数。在该函数中，可以通过向<code>completeRequestReturningItems:expirationHandler:completion:</code>方法传值，来改变网页内容。</p>
 <p>比如，你的iOS应用扩展需要基于一个网页URI启动，并且当它结束运行时改变网页的背景色，那么你需要这样写JavaScript代码：</p>
-<pre><code>var MyExtensionJavaScriptClass = function() {};   MyExtensionJavaScriptClass.prototype = {     run: function(arguments) {     // Pass the baseURI of the webpage to the extension.         arguments.completionFunction({&quot;baseURI&quot;: document.baseURI});     },       // Note that the finalize function is only available in iOS.     finalize: function(arguments) {     // arguments contains the value the extension provides in [NSExtensionContext completeRequestReturningItems:expirationHandler:completion:].     // In this example, the extension provides a color as a returning item.     document.body.style.backgroundColor = arguments[&quot;bgColor&quot;];     } };   // The JavaScript file must contain a global object named &quot;ExtensionPreprocessingJS&quot;. var ExtensionPreprocessingJS = new MyExtensionJavaScriptClass; 
-</code></pre><p>在iOS和OS X平台中，你需要编写代码来处理fun()函数返回的值，为获取到字典中的值，我们需要指定kUTTypePropertyList类型作为标示符传入NSItemProvider类的 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/occ/instm/NSItemProvider/loadItemForTypeIdentifier:options:completionHandler:" target="_blank" rel="noopener">loadItemForTypeIdentifier:options:completionHandler:</a> 方法。在该字典中使用 NSExtensionJavaScriptPreprocessingResultsKey 作为key来取值。比如下面例子中我们想要获取将 URI 传入 run() 的返回值：</p>
-<pre><code>[imageProvider loadItemForTypeIdentifier:kUTTypePropertyList options:nil completionHandler:^(NSDictionary *item, NSError *error) { NSDictionary *results = (NSDictionary *)item; NSString *baseURI = [[results objectForKey:NSExtensionJavaScriptPreprocessingResultsKey] objectForKey:@&quot;baseURI&quot;]; }]; 
-</code></pre><p>finalize() 函数是在当应用扩展执行完任务后传参并调用的，创建一个含有我们需要处理的值的字典，然后用 NSItemProvider 的 initWithItem:typeIdentifier: 方法来封装该字典。比如当扩展执行完任务后我们想让网页变为红色，我们可以这样写：</p>
-<pre><code>NSExtensionItem *extensionItem = [[NSExtensionItem alloc] init]; extensionItem.attachments = @[[[NSItemProvider alloc] initWithItem: @{NSExtensionJavaScriptFinalizeArgumentKey: @{@&quot;bgColor&quot;:@&quot;red&quot;}} typeIdentifier:(NSString *)kUTTypePropertyList]]; [[self extensionContext] completeRequestReturningItems:@[extensionItem] expirationHandler:nil completion:nil]; 
-</code></pre><h3 id="执行上传下载任务"><a href="#执行上传下载任务" class="headerlink" title="执行上传下载任务"></a>执行上传下载任务</h3><p>用户一般的操作习惯都倾向于当使用你的应用扩展完成某个任务后，可以将结果立即反馈在使用扩展的应用中。如果一个扩展要处理的任务包含较长时间的上传下载操作时，你要确保当你的应用扩展关闭后能继续完成该任务。为实现这个功能，我们需要使用<a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/cl/NSURLSession" target="_blank" rel="noopener">NSURLSession</a>类创建一个URL会话并创建后台的上传下载任务。</p>
-<p>提示：你可以回想一下其他类型的后台任务，比如后台支持VoIP、后台播放音乐，这些是不能用应用扩展去实现的。更多信息请参阅<a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionCreation.html#//apple_ref/doc/uid/TP40014214-CH5-SW3" target="_blank" rel="noopener">Respond to the Host App’s Request。</a></p>
-<p>当你的应用扩展准备好上传下载任务后，扩展会完成调用它的应用发出的请求，并在不影响上传下载任务的前提下终止扩展。更多关于扩展处理主叫应用请求的知识请参阅<a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionCreation.html#//apple_ref/doc/uid/TP40014214-CH5-SW3" target="_blank" rel="noopener">Respond to the Host App’s Request</a>。在iOS系统中，如果你的应用扩展在执行完后台任务时并没有在运行，那么系统会自动在后台运行扩展的载体应用，并调用<a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleEventsForBackgroundURLSession:completionHandler:" target="_blank" rel="noopener">application:handleEventsForBackgroundURLSession:completionHandler: </a>代理方法。</p>
+<p>清单4-1示例run()和finalize()函数</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> <span class="token builtin">MyExtensionJavaScriptClass</span> <span class="token operator">=</span> <span class="token function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token builtin">MyExtensionJavaScriptClass</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
+    run<span class="token punctuation">:</span> <span class="token function">function</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Pass the baseURI of the webpage to the extension.</span>
+        arguments<span class="token punctuation">.</span><span class="token function">completionFunction</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"baseURI"</span><span class="token punctuation">:</span> document<span class="token punctuation">.</span>baseURI<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token comment" spellcheck="true">// Note that the finalize function is only available in iOS.</span>
+    finalize<span class="token punctuation">:</span> <span class="token function">function</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// arguments contains the value the extension provides in [NSExtensionContext completeRequestReturningItems:completion:].</span>
+    <span class="token comment" spellcheck="true">// In this example, the extension provides a color as a returning item.</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token string">"bgColor"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// The JavaScript file must contain a global object named "ExtensionPreprocessingJS".</span>
+<span class="token keyword">var</span> <span class="token builtin">ExtensionPreprocessingJS</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyExtensionJavaScriptClass</span><span class="token punctuation">;</span>
+</code></pre>
+<p>在iOS和OS X平台中，你需要编写代码来处理<code>run()</code>函数返回的值，为获取到字典中的值，我们需要指定<code>kUTTypePropertyList</code>类型作为标示符传入<code>NSItemProvider</code>类的 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/occ/instm/NSItemProvider/loadItemForTypeIdentifier:options:completionHandler:" target="_blank" rel="noopener">loadItemForTypeIdentifier:options:completionHandler:</a>方法。在该字典中使用 <code>NSExtensionJavaScriptPreprocessingResultsKey</code>作为key来取值。比如下面例子中我们想要获取将 URI 传入 <code>run()</code>的返回值：</p>
+<pre class=" language-objc"><code class="language-objc">[imageProvider loadItemForTypeIdentifier:kUTTypePropertyList options:nil completionHandler:^(NSDictionary *item, NSError *error) {
+    NSDictionary *results = (NSDictionary *)item;
+        NSString *baseURI = [[results objectForKey:NSExtensionJavaScriptPreprocessingResultsKey] objectForKey:@"baseURI"];
+    }];
+</code></pre>
+<p><code>finalize()</code> 函数是在当应用扩展执行完任务后传参并调用的，创建一个含有我们需要处理的值的字典，然后用<code>NSItemProvider</code> 的 <code>initWithItem:typeIdentifier:</code>方法来封装该字典。比如当扩展执行完任务后我们想让网页变为红色，我们可以这样写：</p>
+<pre class=" language-objc"><code class="language-objc">NSExtensionItem *extensionItem = [[NSExtensionItem alloc] init];
+    extensionItem.attachments = @[[[NSItemProvider alloc] initWithItem: @{NSExtensionJavaScriptFinalizeArgumentKey: @{@"bgColor":@"red"}} typeIdentifier:(NSString *)kUTTypePropertyList]];
+    [[self extensionContext] completeRequestReturningItems:@[extensionItem] completion:nil];
+
+</code></pre>
+<h3 id="执行上传下载任务"><a href="#执行上传下载任务" class="headerlink" title="执行上传下载任务"></a>执行上传下载任务</h3><p>用户一般的操作习惯都倾向于当使用你的应用扩展完成某个任务后，可以将结果立即反馈在使用扩展的应用中。如果一个扩展要处理的任务包含较长时间的上传下载操作时，你要确保当你的应用扩展关闭后能继续完成该任务。为实现这个功能，我们需要使用<a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/cl/NSURLSession" target="_blank" rel="noopener">NSURLSession</a>类创建一个URL会话并创建后台的上传下载任务。</p>
+<blockquote>
+<p> 提示：你可以回想一下其他类型的后台任务，比如后台支持VoIP、后台播放音乐，这些是不能用应用扩展去实现的。更多信息请参阅<a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionCreation.html#//apple_ref/doc/uid/TP40014214-CH5-SW3" target="_blank" rel="noopener">Respond to the Host App’s Request。</a></p>
+</blockquote>
+<p>当你的应用扩展准备好上传下载任务后，扩展会完成调用它的应用发出的请求，并在不影响上传下载任务的前提下终止扩展。更多关于扩展处理载体应用请求的知识请参阅<a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionCreation.html#//apple_ref/doc/uid/TP40014214-CH5-SW3" target="_blank" rel="noopener">Respond to the Host App’s Request</a>。在iOS系统中，如果你的应用扩展在执行完后台任务时并没有在运行，那么系统会自动在后台运行扩展的载体应用，并调用<a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleEventsForBackgroundURLSession:completionHandler:" target="_blank" rel="noopener">application:handleEventsForBackgroundURLSession:completionHandler: </a>代理方法。</p>
+<blockquote>
 <p>重要提示：如果你的应用扩展在后台创建了 NSURLSession 任务，那么你必须要设置一个共享容器，以确保扩展和载体应用实现数据共享。我们可以在 NSURLSessionConfiguration 类中使用<a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/instp/NSURLSessionConfiguration/sharedContainerIdentifier" target="_blank" rel="noopener">sharedContainerIdentifier</a>属性来指定一个共享容器的标示符，然后我们就可以通过该标示符获取到共享容器。请参阅 <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW6" target="_blank" rel="noopener">Sharing Data with Your Containing App 文档来设置共享容器。</a></p>
+</blockquote>
 <p>下面的例子展示了如何配置一个URL会话，并创建一个下载任务：</p>
-<pre><code>NSURLSession *mySession = [self configureMySession]; NSURL *url = [NSURL URLWithString:@&quot;http://www.example.com/LargeFile.zip&quot;]; NSURLSessionTask *myTask = [mySession downloadTaskWithURL:url]; [myTask resume];     - (NSURLSession *) configureMySession {     if (!mySession) {         NSURLSessionConfiguration* config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:@“com.mycompany.myapp.backgroundsession”];         // To access the shared container you set up, use the sharedContainerIdentifier property on your configuration object.         config.sharedContainerIdentifier = @“com.mycompany.myappgroupidentifier”;         mySession = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];     }     return mySession; } 
-</code></pre><p>因为在单位时间内只能由一个进程使用后台会话，所以你需要为载体应用中的所有扩展创建不同的后台会话（每个后台会话都要有一个唯一的标示符）。在这里我们建议当载体应用在后台处理扩展的任务时，只使用一个该扩展创建的后台会话。如果你要执行其他的网络相关的任务，那么就要创建相应的URL会话。</p>
-<p>如果你需要在后台创建URL会话之前完成主叫应用的请求，那么要确保创建和使用会话的代码是有效可执行的。当你的扩展调用 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSExtensionContext_Class/index.html#//apple_ref/occ/instm/NSExtensionContext/completeRequestReturningItems:completionHandler:" target="_blank" rel="noopener">completeRequestReturningItems:completionHandler: </a>方法告知主叫应用已经完成相关请求后，系统就可以随时终止你的应用扩展。</p>
-<h3 id="为分享和Action扩展申明支持的数据类型"><a href="#为分享和Action扩展申明支持的数据类型" class="headerlink" title="为分享和Action扩展申明支持的数据类型"></a>为分享和Action扩展申明支持的数据类型</h3><p>在你的分享或Action扩展中，在它们的工作中可能会使用到一些数据，并且这些数据的类型各不相同。为了确保只有当用户在主叫应用中选择了你的扩展支持的数据类型时，才会展示你的扩展功能。你需要在扩展的属性列表文件中添加 NSExtensionActivationRule 关键字。你也可以使用该关键字指定扩展处理每种类型的最大数目。当你的应用扩展运行时，系统会用改关键字的值与扩展数据项的<a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attachments" target="_blank" rel="noopener">attachments</a>属性值作比较。关于 NSExtensionActivationRule 关键字的详细信息可以参阅 <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/SystemExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW2" target="_blank" rel="noopener">Action Extension Keys</a>文档中的 <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009247" target="_blank" rel="noopener">Information Property List Key Reference</a> 章节。</p>
-<p>比如，你可以申明你的分享扩展支持最大处理10张图片，一部影片和一个网站URL。你可以参考下面的写法：</p>
-<pre><code>NSExtensionAttributes              NSExtensionActivationRule                      NSExtensionActivationSupportsImageWithMaxCount             10             NSExtensionActivationSupportsMovieWithMaxCount             1             NSExtensionActivationSupportsWebURLWithMaxCount             1               
+<pre class=" language-objc"><code class="language-objc">NSURLSession *mySession = [self configureMySession];
+NSURL *url = [NSURL URLWithString:@"http://www.example.com/LargeFile.zip"];
+NSURLSessionTask *myTask = [mySession downloadTaskWithURL:url];
+[myTask resume];
+
+- (NSURLSession *) configureMySession {
+    if (!mySession) {
+        NSURLSessionConfiguration* config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:@“com.mycompany.myapp.backgroundsession”];
+// To access the shared container you set up, use the sharedContainerIdentifier property on your configuration object.
+config.sharedContainerIdentifier = @“com.mycompany.myappgroupidentifier”;
+        mySession = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
+    }
+    return mySession;
+}
+
+</code></pre>
+<p>因为在单位时间内只能由一个进程使用后台会话，所以你需要为载体应用中的所有扩展创建不同的后台会话（每个后台会话都要有一个唯一的标示符）。在这里我们建议当载体应用在后台处理扩展的任务时，只使用一个该扩展创建的后台会话。如果你要执行其他的网络相关的任务，那么就要创建相应的URL会话。</p>
+<p>如果你需要在后台创建URL会话之前完成载体应用的请求，那么要确保创建和使用会话的代码是有效可执行的。当你的扩展调用 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSExtensionContext_Class/index.html#//apple_ref/occ/instm/NSExtensionContext/completeRequestReturningItems:completionHandler:" target="_blank" rel="noopener">completeRequestReturningItems:completionHandler: </a>方法告知主叫应用已经完成相关请求后，系统就可以随时终止你的应用扩展。</p>
+<h3 id="为分享和Action扩展申明支持的数据类型"><a href="#为分享和Action扩展申明支持的数据类型" class="headerlink" title="为分享和Action扩展申明支持的数据类型"></a>为分享和Action扩展申明支持的数据类型</h3><p>在你的分享或Action扩展中，在它们的工作中可能会使用到一些数据，并且这些数据的类型各不相同。为了确保只有当用户在载体应用中选择了你的扩展支持的数据类型时，才会展示你的扩展功能。你需要在扩展的<code>Info.plist</code>属性列表文件中添加 <code>NSExtensionActivationRule</code> 关键字。你也可以使用该关键字指定扩展处理每种类型的最大数目。当你的应用扩展运行时，系统会将<code>NSExtensionActivationRule</code>键的值与扩展项的<code>attachments</code>属性中的信息进行比较。关于 <code>NSExtensionActivationRule</code> 关键字的详细信息可以参阅 <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/SystemExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW2" target="_blank" rel="noopener">Action Extension Keys</a>文档中的 <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009247" target="_blank" rel="noopener">Information Property List Key Reference</a> 章节。</p>
+<p>比如，你可以申明你的分享扩展支持最多处理10张图片，一部影片和一个网站URL。您可以使用以下字典作为该<code>NSExtensionAttributes</code>键的值：</p>
+<pre><code>&lt;key&gt;NSExtensionAttributes&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;NSExtensionActivationRule&lt;/key&gt;
+        &lt;dict&gt;
+            &lt;key&gt;NSExtensionActivationSupportsImageWithMaxCount&lt;/key&gt;
+            &lt;integer&gt;10&lt;/integer&gt;
+            &lt;key&gt;NSExtensionActivationSupportsMovieWithMaxCount&lt;/key&gt;
+            &lt;integer&gt;1&lt;/integer&gt;
+            &lt;key&gt;NSExtensionActivationSupportsWebURLWithMaxCount&lt;/key&gt;
+            &lt;integer&gt;1&lt;/integer&gt;
+        &lt;/dict&gt;
+    &lt;/dict&gt;              
 </code></pre><p>如果你想指定不支持的数据类型，那么你可以将该类型的值设置为0，或者在 NSExtensionActivationRule 中不添加该类型即可。</p>
-<p>提示：如果你的分享扩展或iOS中的Action扩展需要访问网页，那你必须要确保 NSExtensionActivationSupportsWebURLWithMaxCount 关键字的值不为0（更多关于在应用扩展中通过JavaScript访问网页的内容请参阅<a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ShareSheet.html#//apple_ref/doc/uid/TP40014214-CH12-SW8" target="_blank" rel="noopener">Accessing a Webpage）。</a></p>
+<blockquote>
+<p>注意：如果你的分享扩展或iOS中的Action扩展需要访问网页，那你必须要确保 NSExtensionActivationSupportsWebURLWithMaxCount 关键字的值不为0（更多关于在应用扩展中通过JavaScript访问网页的内容请参阅<a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ShareSheet.html#//apple_ref/doc/uid/TP40014214-CH12-SW8" target="_blank" rel="noopener">Accessing a Webpage</a></p>
+</blockquote>
 <p>你也可以使用 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/doc/uid/TP40014375-CH1" target="_blank" rel="noopener">NSExtensionItem</a> 定义的 UTI子 类型以便数据检测器检测文本信息，比如电话号码或通讯地址。</p>
-<p>NSExtensionActivationRule字典中的关键字足以满足大多数应用的过滤需求。如果你需要做更复杂的过滤，比如像 public.url 和 public.image 之间的区别，那么你就得在文本中创建断言语句。如果你要创建一个断言，那么就将NSExtensionActivationRule关键字的值设置为你指定的断言字符串。（在运行时，系统会自动将该字符串编译为 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/cl/NSPredicate" target="_blank" rel="noopener">NSPredicate 对象）</a></p>
+<p><code>NSExtensionActivationRule</code>字典中的键足以满足大多数应用的过滤需求。如果你需要做更复杂的过滤，比如像 <code>public.url</code> 和 <code>public.image</code> 之间的区别，那么你就得在文本中创建断言语句。如果你要创建一个断言，那么就将<code>NSExtensionActivationRule</code>关键字的值设置为你指定的断言字符串。（在运行时，系统会自动将该字符串编译为 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/cl/NSPredicate" target="_blank" rel="noopener">NSPredicate 对象</a></p>
 <p>比如，一个应用扩展的附件属性可以指定为PDF文件，可以这样写：</p>
-<pre><code>{extensionItems = ({ attachments = ( { registeredTypeIdentifiers = ( &quot;com.adobe.pdf&quot;, &quot;public.file-url&quot; ); } ); })} 
+<pre><code>{extensionItems = ({
+    attachments = ({
+        registeredTypeIdentifiers = (
+            &quot;com.adobe.pdf&quot;,
+            &quot;public.file-url&quot;
+        );
+    });
+})}
 </code></pre><p>为了指定你的应用扩展可以处理PDF文件，你可以像这样创建断言字符串：</p>
-<pre><code>SUBQUERY(extensionItems, $extensionItem, SUBQUERY($extensionItem.attachments, $attachment, ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;com.adobe.pdf&quot;).@count == 1).@count == 1 
-</code></pre><p>开发过程中，在你创建断言语句之前你可以使用TRUEPREDICATE常量（结果为true）测试你的代码路径。更多断言语句的语法知识请参阅<a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Conceptual/Predicates/Articles/pSyntax.html#//apple_ref/doc/uid/TP40001795" target="_blank" rel="noopener">Predicate Format String Syntax。</a></p>
+<pre><code>SUBQUERY (
+    extensionItems,
+    $extensionItem,
+    SUBQUERY (
+        $extensionItem.attachments,
+        $attachment,
+        ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;com.adobe.pdf&quot;
+    ).@count == $extensionItem.attachments.@count
+).@count == 1
+</code></pre><p>以下是更复杂的断言语句的示例：</p>
+<pre><code>SUBQUERY (
+    extensionItems,
+    $extensionItem,
+    SUBQUERY (
+        $extensionItem.attachments,
+        $attachment,
+        ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;org.appextension.action-one&quot; ||
+        ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;org.appextension.action-two&quot;
+    ).@count == $extensionItem.attachments.@count
+).@count == 1
+
+</code></pre><p>此语句遍历一个<code>NSExtensionItem</code>对象数组，其次是遍历<code>attachments</code>每个扩展项中的数组。对于每个附件，谓词评估附件中每个表示的统一类型标识符（UTI）。当附件表示UTI符合两个不同的指定UTI中的任何一个（您在每个<code>UTI-CONFORMS-TO</code>操作员的右侧看到）时，收集该UTI以进行最终比较测试。<code>TRUE</code>如果应用程序扩展名仅提供了一个支持UTI的扩展项附件，则返回最后一行。</p>
+<p>开发过程中，在你创建断言语句之前你可以使用<code>TRUEPREDICATE</code>常量（结果为true）测试你的代码路径。更多断言语句的语法知识请参阅<a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Conceptual/Predicates/Articles/pSyntax.html#//apple_ref/doc/uid/TP40001795" target="_blank" rel="noopener">Predicate Format String Syntax。</a></p>
+<blockquote>
 <p>重要提示：在将你的载体应用上传App Store之前，要确保所有的 TRUEPREDICATE 常量已经替换为指定的断言语句或 NSExtensionActivationRule 关键字，不然载体应用会被App Store拒绝。</p>
-<h3 id="配置载体应用以适用于老版本的iOS系统"><a href="#配置载体应用以适用于老版本的iOS系统" class="headerlink" title="配置载体应用以适用于老版本的iOS系统"></a>配置载体应用以适用于老版本的iOS系统</h3><p>如果你在载体应用中使用了内嵌框架，那么它就可以在iOS8.0之后的版本中使用，即便内嵌框架不支持老版本的系统也没关系。</p>
-<p>使载体应用能做到上述这一点的是 dlopen 命令，它可以使你使用条件链接和加载框架包的机制。你可以使用这个命令来代替编译时链接，你可以在 Xcode 的 General 选项或 Build Phases 选项中对该命令进行编辑。其原理就是只有当载体应用在 iOS8.0 或更高的版本中运行时，才会链接使用内嵌框架。</p>
-<p>重要提示：如果你的载体应用使用了内嵌框架，那么就必须要支持arm64架构，否则会被App Store拒绝。</p>
-<p>设置Xcode项目中应用扩展的条件链接</p>
-<p>1.将每一个应用扩展的运行系统版本设置为iOS8.0或更高，通常选中Xcode中的target，在General选项中设置Deployment info。<br>2.将你载体应用的运行系统版本设置为你想支持的最低iOS版本。<br>3.在你的载体应用中，通过 <a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/systemVersion" target="_blank" rel="noopener">systemVersion</a> 方法，在运行时检查判断iOS的版本，并判断是否执行dlopen命令。只有你的载体应用在iOS8.0或更高的版本中运行时才会指定dlopen命令。</p>
+</blockquote>
+<h3 id="配置载体应用以适用于老版本的iOS系统"><a href="#配置载体应用以适用于老版本的iOS系统" class="headerlink" title="配置载体应用以适用于老版本的iOS系统"></a>配置载体应用以适用于老版本的iOS系统</h3><p>如果你在主体应用中使用了内嵌框架，那么它就可以在iOS8.0之后的版本中使用，即便内嵌框架不支持老版本的系统也没关系。</p>
+<p>使主体应用能做到上述这一点的是 <code>dlopen</code> 命令，它可以使你使用条件链接和加载框架包的机制。你可以使用这个命令来代替编译时链接，你可以在 Xcode 的 General 选项或 Build Phases 选项中对该命令进行编辑。其原理就是只有当主体应用在 iOS8.0 或更高的版本中运行时，才会链接使用内嵌框架。</p>
+<p>您必须在有条件地 framework bundle的代码语句中使用Objective-C而不是Swift。您的应用程序的其余部分可以用任何一种语言编写，内嵌框架本身也可以用任何一种语言编写。</p>
+<p>调用之后<code>dlopen</code>，使用以下类型的语句访问内嵌框架类：</p>
+<pre><code>MyLoadedClass *loadedClass = [[NSClassFromString (@&quot;MyClass&quot;) alloc] init]; 
+</code></pre><blockquote>
+<p> 重要提示：如果你的主体应用使用了内嵌框架，那么就必须要支持arm64架构，否则会被App Store拒绝。</p>
+</blockquote>
+<p><strong>设置Xcode项目中应用扩展的条件链接</strong></p>
+<p>1.将每一个应用扩展的运行系统版本设置为iOS8.0或更高，通常选中Xcode中的target，在General选项中设置Deployment info。<br>2.将你主体应用的运行系统版本设置为你想支持的最低iOS版本。<br>3.在你的主体应用中，通过 <a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/systemVersion" target="_blank" rel="noopener">systemVersion</a> 方法，在运行时检查判断iOS的版本，并判断是否执行dlopen命令。只有你的载体应用在iOS8.0或更高的版本中运行时才会指定dlopen命令。进行此调用时，请务必使用Objective-C，而不是Swift。</p>
 <p>特定的iOS API通过dlopen命令使用内嵌框架。你必须选择性的使用这些API，就像使用 dlopen 命令时那样。这些API都是 <a href="https://developer.apple.com/library/prerelease/ios/documentation/CoreFoundation/Reference/CFBundleRef/index.html#//apple_ref/c/tdef/CFBundleRef" target="_blank" rel="noopener">CFBundleRef</a> 的封装类型：</p>
-<p><a href="https://developer.apple.com/library/prerelease/ios/documentation/CoreFoundation/Reference/CFBundleRef/index.html#//apple_ref/c/func/CFBundleGetFunctionPointerForName" target="_blank" rel="noopener">CFBundleGetFunctionPointerForName
-</a><a href="https://developer.apple.com/library/prerelease/ios/documentation/CoreFoundation/Reference/CFBundleRef/index.html#//apple_ref/c/func/CFBundleGetFunctionPointersForNames" target="_blank" rel="noopener">CFBundleGetFunctionPointersforNames</a></p>
-<p>还有来自NSBundle类的方法：</p>
-<p><a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/instm/NSBundle/load" target="_blank" rel="noopener">load
-</a><a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/instm/NSBundle/loadAndReturnError:" target="_blank" rel="noopener">loadAndReturnError:
-</a><a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/instm/NSBundle/classNamed:" target="_blank" rel="noopener">classNamed:</a></p>
+<p><a href="https://developer.apple.com/library/prerelease/ios/documentation/CoreFoundation/Reference/CFBundleRef/index.html#//apple_ref/c/func/CFBundleGetFunctionPointerForName" target="_blank" rel="noopener">CFBundleGetFunctionPointerForName</a></p>
+<p><a href="https://developer.apple.com/library/prerelease/ios/documentation/CoreFoundation/Reference/CFBundleRef/index.html#//apple_ref/c/func/CFBundleGetFunctionPointersForNames" target="_blank" rel="noopener">CFBundleGetFunctionPointersforNames</a></p>
+<p>还有来自<code>NSBundle</code>类的方法：</p>
+<p><a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/instm/NSBundle/load" target="_blank" rel="noopener">load</a><a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/instm/NSBundle/loadAndReturnError:" target="_blank" rel="noopener">loadAndReturnError:</a><br><a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/instm/NSBundle/classNamed:" target="_blank" rel="noopener">classNamed:</a></p>
 <p>因为你一般会将载体应用的运行系统版本配置为较低的版本，所以这些API通常都是在运行时检查，只有确保载体应用在iOS8.0或更高版本中运行时才会使用这些API。</p>
 
         
@@ -875,7 +998,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">31</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">31</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         

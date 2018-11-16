@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Tue Sep 18 2018 18:35:33 GMT+0800">
-        <meta property="article:modified_time" content="Tue Sep 18 2018 18:38:11 GMT+0800">
+        <meta property="article:modified_time" content="Fri Nov 16 2018 15:34:28 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分4/index.html",
     "headline": "KVC官方文档-键值编码指南第二部分4",
     "datePublished": "Tue Sep 18 2018 18:35:33 GMT+0800",
-    "dateModified": "Tue Sep 18 2018 18:38:11 GMT+0800",
+    "dateModified": "Fri Nov 16 2018 15:34:28 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -367,7 +367,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Key-Value-Coding-Fundamatals–Representing-Non-Object-Values"><span class="post-toc-number">1.</span> <span class="post-toc-text">Key-Value Coding Fundamatals–Representing Non-Object Values</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#表示非对象值"><span class="post-toc-number">2.</span> <span class="post-toc-text">表示非对象值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包装和展开标量类型"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">包装和展开标量类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包装和展开结构体"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">包装和展开结构体</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Key-Value-Coding-Fundamatals–Representing-Non-Object-Values"><span class="post-toc-number">1.</span> <span class="post-toc-text">Key-Value Coding Fundamatals–Representing Non-Object Values</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#表示非对象值"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">表示非对象值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包装和解包标量类型"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">包装和解包标量类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包装和解包结构体"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">包装和解包结构体</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -529,19 +529,19 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <blockquote>
-<p>Key-Value Coding Programming Guide 官方文档第二部分第4节<br>2018.9.18 第一次修正</p>
+<p>Key-Value Coding Programming Guide 官方文档第二部分第4节<br>2018.9.20 第一次修正</p>
 </blockquote>
 <p><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/DataTypes.html#//apple_ref/doc/uid/20002171-BAJEAIEE" target="_blank" rel="noopener">iOS-KVC官方文档第二部分第4节</a></p>
-<h1 id="Key-Value-Coding-Fundamatals–Representing-Non-Object-Values"><a href="#Key-Value-Coding-Fundamatals–Representing-Non-Object-Values" class="headerlink" title="Key-Value Coding Fundamatals–Representing Non-Object Values"></a>Key-Value Coding Fundamatals–Representing Non-Object Values</h1><h1 id="表示非对象值"><a href="#表示非对象值" class="headerlink" title="表示非对象值"></a>表示非对象值</h1><p><code>NSObject</code>提供的KVC协议方法的默认实现与对象和非对象属性一起使用。 默认实现自动在对象参数或返回值以及非对象属性之间进行转换。 这允许即使存储的属性是标量或结构体，基于key的getter和setter的命名也保持一致。</p>
+<h1 id="Key-Value-Coding-Fundamatals–Representing-Non-Object-Values"><a href="#Key-Value-Coding-Fundamatals–Representing-Non-Object-Values" class="headerlink" title="Key-Value Coding Fundamatals–Representing Non-Object Values"></a>Key-Value Coding Fundamatals–Representing Non-Object Values</h1><h2 id="表示非对象值"><a href="#表示非对象值" class="headerlink" title="表示非对象值"></a>表示非对象值</h2><p>通过<code>NSObject</code>使用对象和非对象属性提供的键值编码协议方法的默认实现。 默认实现自动在对象参数或返回值以及非对象属性之间进行转换。 这允许即使存储的属性是标量或结构体，基于key的getter和setter的命名也保持一致。</p>
 <blockquote>
 <p>注意<br>因为Swift中的所有属性都是对象，所以本节仅适用于Objective-C属性。</p>
 </blockquote>
-<p>当你调用协议的其中一个getter时，例如<code>valueForKey：</code>，默认实现根据<a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/SearchImplementation.html#//apple_ref/doc/uid/20000955-CJBBBFFA" target="_blank" rel="noopener">Accessor Search Patterns</a>中描述的规则 确定为指定键提供值的特定访问器方法或实例变量。 如果返回值不是对象，则getter使用此值初始化<code>NSNumber</code>对象（对于标量）或<code>NSValue</code>对象（对于结构）并返回该值。</p>
-<p>类似地，默认情况下，像<code>setValue：forKey:</code>这样的setter在给定特定键的情况下确定属性的访问器或实例变量所需的数据类型。 如果数据类型不是对象，则setter首先向传入值对象发送适当的<code>&lt;type&gt; Value</code>消息以提取基础数据，并存储该数据。</p>
+<p>当你调用协议的其中一个getter时，<code>valueForKey：</code>，默认实现根据<a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/SearchImplementation.html#//apple_ref/doc/uid/20000955-CJBBBFFA" target="_blank" rel="noopener">Accessor Search Patterns</a>中描述的规则 确定为指定键提供值的特定访问器方法或实例变量。 如果返回值不是对象，则getter使用此值初始化<code>NSNumber</code>对象（对于标量）或<code>NSValue</code>对象（对于结构体）并返回该值。</p>
+<p>同样，默认情况下，像<code>setValue：forKey:</code>这样的setter在给定特定键的情况下确定属性的访问器或实例变量所需的数据类型。 如果数据类型不是对象，则setter首先向传入值对象发送适当的<code>&lt;type&gt; Value</code>消息以提取基础数据，并存储该数据。</p>
 <blockquote>
 <p>注意<br>当您使用非对象属性的nil值调用其中一个KVC协议<code>setter</code>时，setter没有明显的一般操作过程。 因此，它向接收setter调用的对象发送<code>setNilValueForKey：</code>消息。 此方法的默认实现引发<code>NSInvalidArgumentException</code>异常，但子类可能会覆盖此行为，如<a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/HandlingNon-ObjectValues.html#//apple_ref/doc/uid/10000107i-CH5-SW1" target="_blank" rel="noopener">Handling Non-Object Values</a>中所述，例如设置标记值或提供有意义的默认值。</p>
 </blockquote>
-<h3 id="包装和展开标量类型"><a href="#包装和展开标量类型" class="headerlink" title="包装和展开标量类型"></a>包装和展开标量类型</h3><p>Table 5-1 列出默认KVC实现使用<code>NSNumber</code>实例包装的标量类型。 对于每种数据类型，该表显示了用于从基础属性值初始化<code>NSNumber</code>以提供getter返回值的创建方法。 然后显示用于在设置操作期间从setter输入参数中提取值的访问器方法。</p>
+<h3 id="包装和解包标量类型"><a href="#包装和解包标量类型" class="headerlink" title="包装和解包标量类型"></a>包装和解包标量类型</h3><p>Table 5-1 列出默认KVC实现使用<code>NSNumber</code>实例包装的标量类型。 对于每种数据类型，该表显示用于初始化<code>NSNumber</code>基础属性值以提供getter返回值的创建方法。 然后显示用于在设置操作期间从setter输入参数中提取值的访问器方法。</p>
 <p><strong>Table 5-1</strong> 标量类型包含在<code>NSNumber</code>对象中</p>
 <table>
 <thead>
@@ -622,7 +622,7 @@
 <blockquote>
 <p>注意<br>*在macOS中，由于历史原因，BOOL的类型定义为<code>signed char</code>，而KVC不区分这些。 因此，当<code>key</code>为<code>BOOL</code>时，不应将字符串值（例如@“true”或@“YES”）传递给<code>setValue：forKey：</code>。 KVC将尝试调用<code>charValue</code>（因为<code>BOOL</code>本身就是一个<code>char</code>），但是<code>NSString</code>没有实现这个方法，这会导致运行时错误。 相反，当<code>key</code>为<code>BOOL</code>时，只传递一个<code>NSNumber</code>对象，如<code>@(1)</code> 或 <code>@(YES)</code>，作为<code>setValue：forKey:</code> 的值参数。 此限制不适用于iOS，其中BOOL的类型定义为本机布尔类型bool，KVC调用boolValue，它适用于<code>NSNumber</code>对象或格式正确的<code>NSString</code>对象。</p>
 </blockquote>
-<h3 id="包装和展开结构体"><a href="#包装和展开结构体" class="headerlink" title="包装和展开结构体"></a>包装和展开结构体</h3><p><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/DataTypes.html#//apple_ref/doc/uid/20002171-184580-BCIEDECF" target="_blank" rel="noopener">Table 5-2</a> 下面列出了可以包装成<code>NSPoint</code>，<code>NSRange</code>，<code>NSRect</code>和<code>NSSize</code>的常用结构体的转化方法和取值方法</p>
+<h3 id="包装和解包结构体"><a href="#包装和解包结构体" class="headerlink" title="包装和解包结构体"></a>包装和解包结构体</h3><p><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/DataTypes.html#//apple_ref/doc/uid/20002171-184580-BCIEDECF" target="_blank" rel="noopener">Table 5-2</a> 下面列出了可以包装成<code>NSPoint</code>，<code>NSRange</code>，<code>NSRect</code>和<code>NSSize</code>的常用结构体的转化方法和取值方法</p>
 <p><strong>Table 5-2</strong> 包装成<code>NSValue</code>的常用结构类型</p>
 <table>
 <thead>
@@ -655,7 +655,7 @@
 </tr>
 </tbody>
 </table>
-<p>不仅<code>NSPoint</code>，<code>NSRange</code>，<code>NSRect</code>和<code>NSSize</code>的可以自动包装和展开。 结构体类型（即，Objective-C类型中字符串以{开头编码的类型）可以包成NSValue对象中。 例如，参考5-1表格中声明的结构体和类接口。</p>
+<p>不仅<code>NSPoint</code>，<code>NSRange</code>，<code>NSRect</code>和<code>NSSize</code>的可以自动包装和解包。 结构体类型（即Objective-C类型中字符串以<code>{</code>开头编码的类型）也可以包成NSValue对象中。 例如，参考5-1表格中声明的结构体和类接口。</p>
 <p><strong>Listing 5-1</strong> 使用自定义结构体的类</p>
 <pre class=" language-objc"><code class="language-objc">typedef struct {
     float x, y, z;
@@ -674,7 +674,10 @@
 NSValue* value = [NSValue valueWithBytes:&floats objCType:@encode(ThreeFloats)];
 [myClass setValue:value forKey:@"threeFloats"];
 </code></pre>
-<p>The default implementation unwraps the value with a <a href="https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.5/Reference/Frameworks/ObjC/Foundation/Classes/NSValue/Description.html#//apple_ref/occ/instm/NSValue/getValue:" target="_blank" rel="noopener">getValue:</a>  message, and then invokes <code>setThreeFloats:</code>with the resulting structure.</p>
+<p>默认实现使用<a href="https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.5/Reference/Frameworks/ObjC/Foundation/Classes/NSValue/Description.html#//apple_ref/occ/instm/NSValue/getValue:" target="_blank" rel="noopener">getValue:</a>方法解包值，然后使用<code>setThreeFloats:</code>生成的结构体进行调用。</p>
+<blockquote>
+<p>由于笔者水平有限，文中如果有错误的地方，或者有更好的方法，还望大神指出。<br>附上本文的所有 demo 下载链接，<a href="">【GitHub】</a>。<br>如果你看完后觉得对你有所帮助，还望在 GitHub 上点个 star。赠人玫瑰，手有余香。</p>
+</blockquote>
 
         
     
@@ -852,7 +855,7 @@ NSValue* value = [NSValue valueWithBytes:&floats objCType:@encode(ThreeFloats)];
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">31</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">31</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
