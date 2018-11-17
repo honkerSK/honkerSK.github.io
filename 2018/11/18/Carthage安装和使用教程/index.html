@@ -50,7 +50,7 @@
     
     <title>
         
-            iOS面试题10--报错警告调试 | 
+            Carthage安装和使用教程 | 
         
         暮鼓晨钟
     </title>
@@ -61,7 +61,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",iOS面试">
+    <meta name="keywords" content=",iOSTool">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -227,7 +227,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="暮鼓晨钟">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题10-报错警告调试/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/11/18/Carthage安装和使用教程/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
@@ -242,16 +242,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题10-报错警告调试/">
+    <meta property="og:url" content="http://yoursite.com/2018/11/18/Carthage安装和使用教程/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="iOS面试题10--报错警告调试 | 暮鼓晨钟">
+    <meta property="og:title" content="Carthage安装和使用教程 | 暮鼓晨钟">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="iOS面试"> 
+    <meta property="og:article:tag" content="iOSTool"> 
 
     
-        <meta property="article:published_time" content="Wed Sep 12 2018 15:32:31 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 12 2018 15:36:43 GMT+0800">
+        <meta property="article:published_time" content="Sun Nov 18 2018 04:07:22 GMT+0800">
+        <meta property="article:modified_time" content="Sun Nov 18 2018 04:25:16 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题10-报错警告调试/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/11/18/Carthage安装和使用教程/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -271,10 +271,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题10-报错警告调试/index.html",
-    "headline": "iOS面试题10--报错警告调试",
-    "datePublished": "Wed Sep 12 2018 15:32:31 GMT+0800",
-    "dateModified": "Wed Sep 12 2018 15:36:43 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/11/18/Carthage安装和使用教程/index.html",
+    "headline": "Carthage安装和使用教程",
+    "datePublished": "Sun Nov 18 2018 04:07:22 GMT+0800",
+    "dateModified": "Sun Nov 18 2018 04:25:16 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -292,7 +292,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": ",iOS面试",
+    "keywords": ",iOSTool",
     "description": "",
 }
 </script>
@@ -367,7 +367,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#你在实际开发中，有哪些手机架构与性能调试经验"><span class="post-toc-number">1.</span> <span class="post-toc-text">你在实际开发中，有哪些手机架构与性能调试经验</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#BAD-ACCESS在什么情况下出现？"><span class="post-toc-number">2.</span> <span class="post-toc-text">BAD_ACCESS在什么情况下出现？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何调试BAD-ACCESS错误？"><span class="post-toc-number">3.</span> <span class="post-toc-text">如何调试BAD_ACCESS错误？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么时候会报-unrecognized-selector-异常？"><span class="post-toc-number">4.</span> <span class="post-toc-text">什么时候会报 unrecognized selector 异常？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有哪些常见的-Crash-场景？"><span class="post-toc-number">5.</span> <span class="post-toc-text">有哪些常见的 Crash 场景？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#lldb（gdb）常用的调试命令？"><span class="post-toc-number">6.</span> <span class="post-toc-text">lldb（gdb）常用的调试命令？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如果一个函数10次中有7次正确，3次错误，问题可能出现在哪里？"><span class="post-toc-number">7.</span> <span class="post-toc-text">如果一个函数10次中有7次正确，3次错误，问题可能出现在哪里？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#你一般是如何调试Bug的？"><span class="post-toc-number">8.</span> <span class="post-toc-text">你一般是如何调试Bug的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#获取一台设备唯一标识的方法有哪些？"><span class="post-toc-number">9.</span> <span class="post-toc-text">获取一台设备唯一标识的方法有哪些？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#你一般是怎么用-Instruments-的？"><span class="post-toc-number">10.</span> <span class="post-toc-text">你一般是怎么用 Instruments 的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#你一般是如何调试-Bug-的？"><span class="post-toc-number">11.</span> <span class="post-toc-text">你一般是如何调试 Bug 的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何对iOS设备进行性能测试"><span class="post-toc-number">12.</span> <span class="post-toc-text">如何对iOS设备进行性能测试?</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Carthage简单介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">Carthage简单介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Carthage的安装和使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">Carthage的安装和使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Carthage的使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">Carthage的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#先进入到项目所在文件夹"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">先进入到项目所在文件夹</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#"><span class="post-toc-number">3.2.</span> <span class="post-toc-text"> </span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建一个空的Carthage文件"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">创建一个空的Carthage文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#-1"><span class="post-toc-number">3.4.</span> <span class="post-toc-text"> </span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#编辑cartfile文件-例如要安装AFN框架"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">编辑cartfile文件,例如要安装AFN框架</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#-2"><span class="post-toc-number">3.6.</span> <span class="post-toc-text"> </span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#保存并关闭cartfile文件，使用cartfile安装框架"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">保存并关闭cartfile文件，使用cartfile安装框架</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打开Carthage-查看生成的文件目录"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">打开Carthage 查看生成的文件目录</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#-3"><span class="post-toc-number">3.9.</span> <span class="post-toc-text"> </span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置项目"><span class="post-toc-number">3.10.</span> <span class="post-toc-text">配置项目</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加编译的脚本"><span class="post-toc-number">3.11.</span> <span class="post-toc-text">添加编译的脚本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在项目中使用第三方库"><span class="post-toc-number">3.12.</span> <span class="post-toc-text">在项目中使用第三方库</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Carthage优缺点"><span class="post-toc-number">4.</span> <span class="post-toc-text">Carthage优缺点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Carthage的工作过程说明"><span class="post-toc-number">5.</span> <span class="post-toc-text">Carthage的工作过程说明</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#-4"><span class="post-toc-number">6.</span> <span class="post-toc-text"> </span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于版本指定"><span class="post-toc-number">7.</span> <span class="post-toc-text">关于版本指定</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Git-中忽略不需要提交到版本库的文件与文件夹"><span class="post-toc-number">8.</span> <span class="post-toc-text">Git 中忽略不需要提交到版本库的文件与文件夹</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Carthage的其他命令"><span class="post-toc-number">9.</span> <span class="post-toc-text">Carthage的其他命令</span></a></li></ol>
     </ul>
     
 
@@ -399,7 +399,7 @@
         
     
             <p class="article-headline-p">
-                iOS面试题10--报错警告调试
+                Carthage安装和使用教程
             </p>
         </div>
 
@@ -418,7 +418,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>暮鼓晨钟</strong>
-        <span>9月 12, 2018</span>
+        <span>11月 18, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -442,7 +442,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+        <a class="post_tag-link" href="/tags/iOSTool/">iOSTool</a>
     </ul>
     
 
@@ -470,7 +470,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题10--报错警告调试&url=http://yoursite.com/2018/09/12/iOS面试题10-报错警告调试/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Carthage安装和使用教程&url=http://yoursite.com/2018/11/18/Carthage安装和使用教程/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -479,7 +479,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题10--报错警告调试&url=http://yoursite.com/2018/09/12/iOS面试题10-报错警告调试/index.html&via=暮鼓晨钟" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Carthage安装和使用教程&url=http://yoursite.com/2018/11/18/Carthage安装和使用教程/index.html&via=暮鼓晨钟" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -488,7 +488,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题10-报错警告调试/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/18/Carthage安装和使用教程/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -497,7 +497,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题10-报错警告调试/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/18/Carthage安装和使用教程/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -509,7 +509,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=iOS面试题10--报错警告调试&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题10-报错警告调试/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=Carthage安装和使用教程&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/11/18/Carthage安装和使用教程/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -528,129 +528,153 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h4 id="你在实际开发中，有哪些手机架构与性能调试经验"><a href="#你在实际开发中，有哪些手机架构与性能调试经验" class="headerlink" title="你在实际开发中，有哪些手机架构与性能调试经验"></a>你在实际开发中，有哪些手机架构与性能调试经验</h4><ul>
-<li>刚接手公司的旧项目时，模块特别多，而且几乎所有的代码都写在控制器里面，比如UI控件代码、网络请求代码、数据存储代码</li>
-<li>接下来采取MVC模式进行封装、重构 <ul>
-<li>自定义UI控件封装内部的业务逻辑</li>
-<li>封装网络请求工具类(降低耦合)</li>
-<li>封装数据存储工具类</li>
-</ul>
+        <h3 id="Carthage简单介绍"><a href="#Carthage简单介绍" class="headerlink" title="Carthage简单介绍"></a>Carthage简单介绍</h3><table>
+<thead>
+<tr>
+<th>主页:</th>
+<th><a href="https://github.com/Carthage/Carthage.git" target="_blank" rel="noopener">https://github.com/Carthage/Carthage.git</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>作者:</td>
+<td>Justin Spahr-Summers等</td>
+</tr>
+<tr>
+<td>版本:</td>
+<td>0.31</td>
+</tr>
+<tr>
+<td>目标:</td>
+<td>用最简单的方式来管理Cocoa第三方框架</td>
+</tr>
+<tr>
+<td>性质:</td>
+<td>第三方框架管理工具(类似于cocoapods) Carthage为用户管理第三方框架和依赖，但不会自动修改项目文件和生成配置，把对项目结构和设置的控制权交给用户。</td>
+</tr>
+<tr>
+<td>原理</td>
+<td>自动将第三方框架编程为Dynamic framework(动态库)</td>
+</tr>
+<tr>
+<td>限制</td>
+<td>仅支持iOS8+。它只支持框架，所以不能用来针对iOS8以前的系统版本进行开发</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Carthage的安装和使用"><a href="#Carthage的安装和使用" class="headerlink" title="Carthage的安装和使用"></a>Carthage的安装和使用</h3><ul>
+<li><p>直接下载Carthage.pkg安装包，安装运行<br>  <a href="https://github.com/Carthage/Carthage/releases" target="_blank" rel="noopener">Carthage.pkg下载</a></p>
+</li>
+<li><p>如果使用的XCode为7.0+版本，那么也可以使用下面的方法来安装</p>
 </li>
 </ul>
-<h4 id="BAD-ACCESS在什么情况下出现？"><a href="#BAD-ACCESS在什么情况下出现？" class="headerlink" title="BAD_ACCESS在什么情况下出现？"></a>BAD_ACCESS在什么情况下出现？</h4><pre><code>这种问题是经常遇到的，在开发时经常会出现BAD_ACCESS。原因是访问了野指针，比如访问已经释放对象的成员变量或者发消息、死循环等。
-</code></pre><h4 id="如何调试BAD-ACCESS错误？"><a href="#如何调试BAD-ACCESS错误？" class="headerlink" title="如何调试BAD_ACCESS错误？"></a>如何调试BAD_ACCESS错误？</h4><pre><code>出现BAD_ACCESS错误，通常是访问了野指针，比如访问了已经释放了的对象。快速定位问题的步骤有：
-1.  重写对象的respondsToSelector方法，先找到出现EXECBADACCESS前访问的最后一个object
-2.  设置Enable Zombie Objects
-3.  设置全局断点快速定位问题代码所在行，接收所有的异常
-4.  Xcode7已经集成了BAD_ACCESS捕获功能：Address Sanitizer，与步骤2一样设置
-5. analyze也行（不一定管用）
-</code></pre><h4 id="什么时候会报-unrecognized-selector-异常？"><a href="#什么时候会报-unrecognized-selector-异常？" class="headerlink" title="什么时候会报 unrecognized selector 异常？"></a>什么时候会报 unrecognized selector 异常？</h4><ul>
-<li>当调用对象（子类，各级父类）中不含有对应方法的时候，并且依旧没有给出“消息转发”的具体方案的时候，程序在运行时会crash并抛出 unrecognized selector 异常</li>
-<li>objective-c 中的每个方法在运行时会被转为消息发送objc_msgSend(reciver, selector)</li>
-<li>例如 [person say]就会被转化为 objc_msgSend(person, @selector(say))</li>
-<li>运行时会根据对象(reciever) 的isa 指针找到该对象所对应的类，然后会依次在对应的类，父类，爷爷类，根类中找对应的方法</li>
-</ul>
-<p>下面只讲述对象方法的解析过程：</p>
-<ul>
-<li>第一步：+ (BOOL)resolveInstanceMethod:(SEL)sel实现方法，指定是否动态添加方法。若返回NO，则进入下一步，若返回YES，则通过class_addMethod函数动态地添加方法，消息得到处理，此流程完毕。</li>
-<li>第二步：在第一步返回的是NO时，就会进入- (id)forwardingTargetForSelector:(SEL)aSelector方法，这是运行时给我们的第二次机会，用于指定哪个对象响应这个selector。不能指定为self。若返回nil，表示没有响应者，则会进入第三步。若返回某个对象，则会调用该对象的方法。</li>
-<li>第三步：若第二步返回的是nil，则我们首先要通过- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector指定方法签名，若返回nil，则表示不处理。若返回方法签名，则会进入下一步。</li>
-<li>第四步：当第三步返回方法方法签名后，就会调用- (void)forwardInvocation:(NSInvocation *)anInvocation方法，我们可以通过anInvocation对象做很多处理，比如修改实现方法，修改响应对象等</li>
-<li>第五步：若没有实现- (void)forwardInvocation:(NSInvocation *)anInvocation方法，那么会进入- (void)doesNotRecognizeSelector:(SEL)aSelector方法。若我们没有实现这个方法，那么就会crash，然后提示打不到响应的方法。到此，动态解析的流程就结束了。</li>
-</ul>
-<h4 id="有哪些常见的-Crash-场景？"><a href="#有哪些常见的-Crash-场景？" class="headerlink" title="有哪些常见的 Crash 场景？"></a>有哪些常见的 Crash 场景？</h4><ul>
-<li>访问了僵尸对象</li>
-<li>访问了不存在的方法</li>
-<li>数组越界</li>
-<li>在定时器下一次回调前将定时器释放,会Crash</li>
-</ul>
-<h4 id="lldb（gdb）常用的调试命令？"><a href="#lldb（gdb）常用的调试命令？" class="headerlink" title="lldb（gdb）常用的调试命令？"></a>lldb（gdb）常用的调试命令？</h4><pre><code>•   p 输出基本类型//p (int)[[[self view] subviews] count]
-•   po 用于输出 Objective-C 对象//po [self view]
-•   expr 可以在调试时动态执行指定表达式，并将结果打印出来。常用于在调试过程中修改变量的值。//源代码中 a = 1 ；expr a=2 输出结果：(int) $0 = 2
-</code></pre><h4 id="如果一个函数10次中有7次正确，3次错误，问题可能出现在哪里？"><a href="#如果一个函数10次中有7次正确，3次错误，问题可能出现在哪里？" class="headerlink" title="如果一个函数10次中有7次正确，3次错误，问题可能出现在哪里？"></a>如果一个函数10次中有7次正确，3次错误，问题可能出现在哪里？</h4><pre><code>这样的问题通过应聘者的分析，可以知道应聘者的功底如何。很多人的回答会是很简单的，没有从多方面去分析。这样的问题也是很有意义的，在项目开发中所产生的bug，有的时候会出现这样的情况，而代码量比较大且业务比较复杂时，通过其他工具并不能分析出来是什么bug，但是我们却可以根据出现的频率推测。笔者把这个问题当作测试部反馈过来的bug描述问题来分析一下。
-参考答案：
-从问题描述可知，bug不会必现的，因此无法直接定位出错之处。从以下角度出现来分析可能出错之处：
-1.  因出错并不是崩溃，因此没有错误日志可看。第一步就是分析函数中的所有分支，是否在语法上存在可能缺少条件的问题。所以，检查所有的分支，确保每个分支执行的结果的正确的
-2.  检测函数的参数，保证必传参数不能为空，若为空应该抛出异常。因此，用断言检测参数的正确性是很重要的。
-3.  检测函数中每个分支所调用的函数返回结果是正确的，其实就是一个递归的过程（步骤1、2）
-</code></pre><h4 id="你一般是如何调试Bug的？"><a href="#你一般是如何调试Bug的？" class="headerlink" title="你一般是如何调试Bug的？"></a>你一般是如何调试Bug的？</h4><pre><code>这个问题看起来很笼统，但又一针见血。通过应聘者的回答，可很直观地看出这个应聘者的处理bug的能力，以及其解决问题的思维。
-参考答案：
-Bug分为测试中的Bug和线上的Bug：
-•   线上Bug：项目使用了友盟统计，因此会有崩溃日志，通过解析dYSM可以直接定位到大部分bug崩溃之处。解决线上bug需要从主干拉一个新的分支，解决bug并测试通过后，再合并到主干，然后上线。若是多团队开发，可以将fix bug分支与其他团队最近要上线的分支集成，然后集成测试再上线。
-•   测试Bug：根据测试所反馈的bug描述，若语义不清晰，则直接找到提bug人，操作给开发人员看，最好是可以bug复现。解决bug时，若能根据描述直接定位bug出错之处，则好处理；若无法直观定位，则根据bug类型分几种处理方式，比如崩溃的bug可以通过instruments来检测、数据显示错误的bug，则需要阅读代码一步步查看逻辑哪里写错。
-对于开发中出现的崩溃或者数据显示不正常，那就需要根据经验或者相关工具来检测可能出错之处。当然，团队内沟通解决是最好的。
-</code></pre><h4 id="获取一台设备唯一标识的方法有哪些？"><a href="#获取一台设备唯一标识的方法有哪些？" class="headerlink" title="获取一台设备唯一标识的方法有哪些？"></a>获取一台设备唯一标识的方法有哪些？</h4><ul>
-<li>现在常用的是用UUID + keychain结合来实现这个需求。</li>
-<li>UUID是Universally Unique Identifier的缩写，中文意思是通用唯一识别码。它是让分布式系统中的所有元素，都能有唯一的辨识资讯，而不需要透过中央控制端来做辨识资讯的指定。这样，每个人都可以建立不与其它人冲突的 UUID。在此情况下，就不需考虑数据库建立时的名称重复问题。苹果公司建议使用UUID为应用生成唯一标识字符串。</li>
-</ul>
-<pre><code>//获取一个UUID
- - (NSString*)uuid {
-    CFUUIDRef uuid = CFUUIDCreate( nil );
-    CFStringRef uuidString = CFUUIDCreateString( nil, uuid );
-    NSString * result = (NSString *)CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
-    CFRelease(uuid);
-    CFRelease(uuidString);
-    return result;
-}
-</code></pre><ul>
-<li>现在我们获取到了一个UUID，虽然这个标识是唯一的，但是这样还是无法保证每一次的唯一性，因为当你每次调用这个方法或者把应用卸载了，UUID会重新生成一个不同的。这个时候keychain就起到了作用。</li>
-<li>所以整个逻辑是这样的：先从keychain取UUID，如果能取到，就用这个比对，如果取不到就重新生成一个保存起来。keychain独立在App之外，是和系统统一等级的，所以你不用担心它挂掉。</li>
-<li>keychain是苹果公司Mac OS中的密码管理系统。它在Mac OS 8.6中被导入，并且包括在了所有后续的Mac OS版本中，包括Mac OS X。一个钥匙串可以包含多种类型的数据：密码（包括网站，FTP服务器，SSH帐户，网络共享，无线网络，群组软件，加密磁盘镜像等），私钥，电子证书和加密笔记等。iOS端同样有个keychain帮助我们管理这些敏感信息。</li>
-<li>使用过keychain保存过账号密码的童鞋应该对这个工具非常了解，在这里不做过多解释。使用keychain需要导入Security.framework和KeychainItemWrapper.h/.m，KeychainItemWrapper.h/.m搜一下可以下载下来，拖入工程中。保存UUID代码如下：</li>
-</ul>
-<pre class=" language-objc"><code class="language-objc">- (void)saveUuidWithKeyChain {
-    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc]
-                                         initWithIdentifier:@"UUID" accessGroup:@"com.xxx.www"];
-    NSString *strUUID = [keychainItem objectForKey:(id)kSecValueData];
-    if (strUUID == nil || [strUUID isEqualToString:@""])
-    {
-        [keychainItem setObject:[self uuid] forKey:(id)kSecValueData];
-    }
-}
-注：这个方法中accessGroup:这个参数如果一些App设置相同的话，是可以共享的。
+<p><strong>1 安装homebrew*</strong></p>
+<pre><code>$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre><p><strong>2 升级brew</strong></p>
+<pre><code>$ brew update
+</code></pre><p><strong>3 使用brew来安装</strong></p>
+<pre><code>$ brew install Carthage
+</code></pre><img src="/2018/11/18/Carthage安装和使用教程/installCarthage.png">
+<p><strong>4 查看版本</strong></p>
+<pre><code>   $ Carthage version
+</code></pre><h3 id="Carthage的使用"><a href="#Carthage的使用" class="headerlink" title="Carthage的使用"></a>Carthage的使用</h3><h4 id="先进入到项目所在文件夹"><a href="#先进入到项目所在文件夹" class="headerlink" title="先进入到项目所在文件夹"></a>先进入到项目所在文件夹</h4><pre><code> $ cd 项目路径
+</code></pre><h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><h4 id="创建一个空的Carthage文件"><a href="#创建一个空的Carthage文件" class="headerlink" title="创建一个空的Carthage文件"></a>创建一个空的Carthage文件</h4><pre><code>$ touch Cartfile
+</code></pre><h4 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h4><h4 id="编辑cartfile文件-例如要安装AFN框架"><a href="#编辑cartfile文件-例如要安装AFN框架" class="headerlink" title="编辑cartfile文件,例如要安装AFN框架"></a>编辑cartfile文件,例如要安装AFN框架</h4><p>GitHub库可在cartfile文件添加以下内容,指定GitHub的关键字:</p>
+<pre><code>github  &quot;AFNetworking/AFNetworking&quot; 
+</code></pre><p>或者填写其他git源,指定git关键词:</p>
+<pre><code>git &quot;https://github.com/AFNetworking/AFNetworking.git&quot;
+</code></pre><h4 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h4><h4 id="保存并关闭cartfile文件，使用cartfile安装框架"><a href="#保存并关闭cartfile文件，使用cartfile安装框架" class="headerlink" title="保存并关闭cartfile文件，使用cartfile安装框架"></a>保存并关闭cartfile文件，使用cartfile安装框架</h4><pre><code>$ Carthage update --platform iOS
+</code></pre><p>注: 不追加参数会编译出 iOS、OSX、tvos多个framework</p>
+<img src="/2018/11/18/Carthage安装和使用教程/installAFN.png">
+<p>注2: 如果失败的话，先用Xcode打开你的项目，<code>Product &gt; Scheme &gt; Manage Schemes</code> 在新窗口中，勾选上 Shared，点击 Close。在终端再次执行这个命令</p>
+<img src="/2018/11/18/Carthage安装和使用教程/Shared.png">
+<h4 id="打开Carthage-查看生成的文件目录"><a href="#打开Carthage-查看生成的文件目录" class="headerlink" title="打开Carthage 查看生成的文件目录"></a>打开Carthage 查看生成的文件目录</h4><pre><code>$ open Carthage
 </code></pre>
 <ul>
-<li>从keychain获取UUID的方法如下：</li>
+<li>执行安装依赖命令后的文件夹结构</li>
 </ul>
-<pre class=" language-objc"><code class="language-objc">- (NSString *)getKeychain {
-    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc]
-                                         initWithIdentifier:@"UUID" accessGroup:@"com.xxx.www"];
-    NSString *strUUID = [keychainItem objectForKey:(id)kSecValueData];
-    return strUUID;
-}
-</code></pre>
-<ul>
-<li>至此，基本上唯一标识的几个方法算是写完了，大家可以测试一下，卸载应用再重新装，从keychain读取的UUID还是和之前一样。</li>
-<li>但这里有个不确定因素，就是手机系统恢复出厂设置或者抹掉所有数据的话，这个方法也可能不起作用了，因为它是依靠钥匙串在生存，钥匙串挂掉的话它也就失效了。</li>
-</ul>
-<h4 id="你一般是怎么用-Instruments-的？"><a href="#你一般是怎么用-Instruments-的？" class="headerlink" title="你一般是怎么用 Instruments 的？"></a>你一般是怎么用 Instruments 的？</h4><ul>
-<li>这个问题也就是考察下你经验如何了, Instruments里面工具很多,也没必要逐一说明,挑几个常用的说下就好</li>
-<li>参考答案:</li>
-<li>Time Profiler:性能分析</li>
-<li>Zombies:检查是否访问了僵尸对象,但是这个工具只能从上往下检查,不智能</li>
-<li>Allocations:用来检查内存,写算法的那批人也用这个来检查</li>
-<li>Leaks:检查内存,看是否有内存泄露</li>
-</ul>
-<h4 id="你一般是如何调试-Bug-的？"><a href="#你一般是如何调试-Bug-的？" class="headerlink" title="你一般是如何调试 Bug 的？"></a>你一般是如何调试 Bug 的？</h4><ul>
-<li>查看异常报告</li>
-<li>配置相关环境，重现bug</li>
-<li>代码检查</li>
-<li>用测试案例来捕获bug</li>
-<li>可以请同事一同来审查问题，有些时候当局者迷，旁观者清。</li>
-</ul>
-<h4 id="如何对iOS设备进行性能测试"><a href="#如何对iOS设备进行性能测试" class="headerlink" title="如何对iOS设备进行性能测试?"></a>如何对iOS设备进行性能测试?</h4><p>Profile-&gt; Instruments -&gt;Time Profiler 进行性能测试！</p>
-<p>测试iOS版的 App 注意事项分享以下几点：</p>
-<p>1.app使用过程中，接听电话。可以测试不同的通话时间的长短，对于通话结束后，原先打开的app的响应，比如是否停留在原先界面，继续操作时的相应速度等。</p>
-<p>2.app使用过程中，有推送消息时，对app的使用影响</p>
-<p>3.设备在充电时，app的响应以及操作流畅度</p>
-<p>4.设备在不同电量时(低于10%，50%，95%)，app的响应以及操作流畅度</p>
-<p>5.意外断电时，app数据丢失情况</p>
-<p>6.网络环境变化时，app的应对情况如何：是否有适当提示?从有网络环境到无网络环境时，app的反馈如何?从无网络环境回到有网络环境时，是否能自动加载数据，多久才能开始加载数据</p>
-<p>7.多点触摸的情况</p>
-<p>8.跟其他app之间互相切换时的响应</p>
-<p>9.进程关闭再重新打开的反馈</p>
-<p>10.IOS系统语言环境变化时</p>
+<pre><code># 执行文件多出三个文件
 
+Cartfile # 存放需要安装的依赖列表
+
+Cartfile.resolved # 自动生成的依赖关系文件，需提交到git
+# 确保提交的项目可以使用完全相同的配置与方式运行启用, 跟踪项目当前所用的依赖版本号
+
+Carthage # 自动生成的Carthage目录 (不需要提交到 Git)
+# 目录下有两个文件夹：Build  Checkouts
+# Build  存放编译后的文件，包括 iOS/Mac/tvOS/watchOS对应的framework
+# Checkouts  存放从git拉取的依赖库源文件
+</code></pre><h4 id="-3"><a href="#-3" class="headerlink" title=" "></a> </h4><h4 id="配置项目"><a href="#配置项目" class="headerlink" title="配置项目"></a>配置项目</h4><p>打开项目，点击<code>Target -&gt; Build Phases -&gt; Link Library with Libraries</code>选择<code>Carthage/Build</code>目录中要导入的framework</p>
+<img src="/2018/11/18/Carthage安装和使用教程/addFramework.png">
+<h4 id="添加编译的脚本"><a href="#添加编译的脚本" class="headerlink" title="添加编译的脚本"></a>添加编译的脚本</h4><p>（该脚本文件保证在提交归档时会对相关文件和dSYMs进行复制）</p>
+<p>(1)点击Build Phases，点击“+” -&gt;  New Run Script Phase</p>
+<img src="/2018/11/18/Carthage安装和使用教程/NewRunScriptPhase.png">
+<p>(2)添加添加脚本   <code>/usr/local/bin/Carthage copy-frameworks</code></p>
+<p>(3)添加”Input Files”  <code>$(SRCROOT)/Carthage/Build/iOS/AFNetworking.framework</code></p>
+<img src="/2018/11/18/Carthage安装和使用教程/runScript.png">
+<h4 id="在项目中使用第三方库"><a href="#在项目中使用第三方库" class="headerlink" title="在项目中使用第三方库"></a>在项目中使用第三方库</h4><p> <code>#import &lt;AFNetworking/AFNetworking.h&gt;</code></p>
+<p><strong>其它：</strong></p>
+<p>卸载Carthage：<code>$ brew uninstall Carthage</code></p>
+<p>更新第三方框架：<br>更新多个框架：修改Cartfile文件，并重新执行 <code>$ carthage update</code><br>更新某个框架：<code>$ carthage update</code> 具体的框架名称</p>
+<pre><code>carthage update  # 修改了Cartfile文件，并重新编译
+carthage update  Alamofire  # 仅更新Alamofire框架
+carthage update --platform ios  # 仅编译iOS平台的framework
+carthage bootstrap    # 从本地库重新编译依赖
+</code></pre><h3 id="Carthage优缺点"><a href="#Carthage优缺点" class="headerlink" title="Carthage优缺点"></a>Carthage优缺点</h3><p><strong>Carthage的优点</strong><br>​    1）使用了CocoaPods的项目是高度集成的，而Carthage更灵活强调尽可能将任务委托给Xcode和Git。<br>​        CocoaPods在使用中会自动创建和更新workspace、依赖和Pod项目并进行整合;<br>​        Carthage在使用中不需要创建和集成相应的workspace和project,只需要依赖打包好的framework文件即可。<br>​        总结一下，CocoaPods的方法更容易使用，而Carthage更灵活且对项目没有侵入性。<br>​    2）CocoaPods相对来说功能要比Carthage多很多，因此也更复杂,而CocoaPods配置简单项目干净。<br>​    3）CocoaPods有一个中心仓库，而Carthage是去中心化的，没有中心服务器也就避免了可能因中心节点错误而带来的失败，即Carthage每次配置和更新环境，只会去更新具体的库，时间更快。<br>​    4)  Carthage 管理的依赖只需编译一次，项目干净编译时，不会再去重新编译依赖，节省时间<br>​    5) 与 CocoaPods 无缝集成，一个项目能同时拥有 CocoaPods 和 Carthage</p>
+<p> <strong>Carthage的不足</strong></p>
+<ul>
+<li>仅支持 iOS8 +</li>
+<li>它只支持框架，所以不能用来针对 iOS 8 以前的系统版本进行开发</li>
+<li>支持的 Carthage 安装的第三方框架和依赖不如 CocoaPods 丰富</li>
+<li>无法在 Xcode 里定位到第三方库源码</li>
+</ul>
+<h3 id="Carthage的工作过程说明"><a href="#Carthage的工作过程说明" class="headerlink" title="Carthage的工作过程说明"></a>Carthage的工作过程说明</h3><pre><code>① 创建一个Cartfile文件，在该文件中列出您想使用的框架
+② 运行Carthage,获取并编译Cartfile文件中列出的框架
+③ 把框架的二进制文件配置到项目中
+</code></pre><h3 id="-4"><a href="#-4" class="headerlink" title=" "></a> </h3><h3 id="关于版本指定"><a href="#关于版本指定" class="headerlink" title="关于版本指定"></a>关于版本指定</h3><p>Carthage 支持以下几种版本指定方法:</p>
+<blockquote>
+<p>= 1.0 代表 “最低 1.0版本”<br>~&gt; 1.0 代表 “表示使用版本1.0以上但是低于2.0的最新版本，如1.5, 1.9”<br>== 1.0 代表 “必须是 1.0 版本”</p>
+</blockquote>
+<p>“some-branch-or-tag-or-commit”指定一个 Git 对象 (任何被 git rev-parse 允许的)<br>如果没有版本要求,任何版本的依赖是允许的。</p>
+<p>版本好的兼容性是根据语语义化版本控制决定的。这意味着任何大于或等于1.5.1版本,但小于2.0,将认为与1.5.1“兼容”。</p>
+<p>Cartfile示例</p>
+<pre><code># Require version 2.3.1 or later 最低2.3.1版本
+github &quot;ReactiveCocoa/ReactiveCocoa&quot; &gt;= 2.3.1
+
+# Require version 1.x   必须1.x版本
+github &quot;Mantle/Mantle&quot; ~&gt; 1.0    # (大于或等于 1.0 ，小于 2.0)
+
+# Require exactly version 0.4.1 必须0.4.1版本
+github &quot;jspahrsummers/libextobjc&quot; == 0.4.1
+
+# Use the latest version  使用最新版本
+github &quot;jspahrsummers/xcconfigs&quot;
+
+# Use the branch  使用git分支
+github &quot;jspahrsummers/xcconfigs&quot; &quot;branch&quot;
+
+# Use a project from GitHub Enterprise  使用一个企业项目，在 &quot;development&quot; 分支
+github &quot;https://enterprise.local/ghe/desktop/git-error-translations&quot;
+
+# Use a project from any arbitrary server, on the &quot;development&quot; branch  使用一个私有项目，在 &quot;development&quot; 分支
+git &quot;https://enterprise.local/desktop/git-error-translations2.git&quot; &quot;development&quot;
+
+# Use a local project   使用一个本地的项目
+git &quot;file:///directory/to/project&quot; &quot;branch&quot;
+</code></pre><h3 id="Git-中忽略不需要提交到版本库的文件与文件夹"><a href="#Git-中忽略不需要提交到版本库的文件与文件夹" class="headerlink" title="Git 中忽略不需要提交到版本库的文件与文件夹"></a>Git 中忽略不需要提交到版本库的文件与文件夹</h3><p>修改 .gitignore 文件，增加忽略 Carthage 文件夹就行了：</p>
+<pre><code>#Carthage
+Carthage
+</code></pre><h3 id="Carthage的其他命令"><a href="#Carthage的其他命令" class="headerlink" title="Carthage的其他命令"></a>Carthage的其他命令</h3><pre><code> archive           Archives built frameworks into a zip that Carthage can use
+ bootstrap         Check out and build the project&#39;s dependencies
+ build             Build the project&#39;s dependencies
+ checkout          Check out the project&#39;s dependencies
+ copy-frameworks   In a Run Script build phase, copies each framework specified by a SCRIPT_INPUT_FILE environment variable into the built app bundle
+ fetch             Clones or fetches a Git repository ahead of time
+ help              Display general or command-specific help
+ outdated          Check for compatible updates to the project&#39;s dependencies
+ update            Update and rebuild the project&#39;s dependencies
+ version           Display the current version of Carthage
+</code></pre>
         
     
 
@@ -703,21 +727,13 @@ Bug分为测试中的Bug和线上的Bug：
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/12/iOS面试题11-第三方框架及其管理/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/12/iOS面试题9-UI/" id="post_nav-older" class="next-content">
+        <a href="/2018/11/17/GCD之dispatch-semaphore/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
