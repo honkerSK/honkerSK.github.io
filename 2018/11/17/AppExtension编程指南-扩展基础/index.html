@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Sat Nov 17 2018 04:02:20 GMT+0800">
-        <meta property="article:modified_time" content="Sat Nov 17 2018 04:03:48 GMT+0800">
+        <meta property="article:modified_time" content="Sat Nov 17 2018 04:11:57 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/11/17/AppExtension编程指南-扩展基础/index.html",
     "headline": "AppExtension编程指南:扩展基础",
     "datePublished": "Sat Nov 17 2018 04:02:20 GMT+0800",
-    "dateModified": "Sat Nov 17 2018 04:03:48 GMT+0800",
+    "dateModified": "Sat Nov 17 2018 04:11:57 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -699,10 +699,11 @@ NSUserDefaults *mySharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"c
 <p>如果想添加网页访问和操作应用扩展，那么需要遵循下面几个步骤：<br>1.创建一个JavaScript文件，并申明一个全局对象，命名为 <code>ExtensionPreprocessingJS</code>，并为该对象分配一个新的自定义JavaScript类的实例。<br>2.在应用扩展的属性列表文件中添加关键字 <code>NSExtensionJavaScriptPreprocessingFile</code>，给 Safari 浏览器指明使用哪个 JavaScript 文件。<br>3.在<code>NSExtensionActivationRule</code>字典中，将<code>NSExtensionActivationSupportsWebURLWithMaxCount</code> 赋值一个非零的值。（更多关于 NSExtensionActivationRule 字典的知识请参阅 <a href="https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW8" target="_blank" rel="noopener">Declaring Supported Data Types for a Share or Action Extension</a>。）<br>4.当你的应用扩展开始运行时，使用<a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/occ/cl/NSItemProvider" target="_blank" rel="noopener">NSItemProvider</a>类获得运行JavaScript文件所返回的结果。<br>5.在iOS系统的应用扩展中，如果你希望Safari在扩展执行完任务后更新网页，那么你要向JavaScript文件中传入值。（在这一步中也使用<code>NSItemProvider</code>类。）</p>
 <p>为了告知Safari你的应用扩展中包含一个JavaScript文件，你需要在应用扩展的<code>Info.plist</code>文件中，向<code>NSExtensionAttributes</code>字典添加<code>NSExtensionJavaScriptPreprocessingFile</code>关键字来指明你的JavaScript文件。这个键的值就是你希望当你的应用扩展运行前，Safari要加载的JavaScript文件的名称。比如：</p>
 <pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>key<span class="token operator">></span>NSExtensionAttributes<span class="token operator">&lt;</span><span class="token operator">/</span>key<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dict<span class="token operator">></span>
-            <span class="token operator">&lt;</span>key<span class="token operator">></span>NSExtensionJavaScriptPreprocessingFile<span class="token operator">&lt;</span><span class="token operator">/</span>key<span class="token operator">></span>
-            <span class="token operator">&lt;</span>string<span class="token operator">></span>MyJavaScriptFile<span class="token operator">&lt;</span><span class="token operator">/</span>string<span class="token operator">></span> <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> Do not include the <span class="token string">".js"</span> filename extension <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dict<span class="token operator">></span>
+     <span class="token operator">&lt;</span>dict<span class="token operator">></span>
+          <span class="token operator">&lt;</span>key<span class="token operator">></span>NSExtensionJavaScriptPreprocessingFile<span class="token operator">&lt;</span><span class="token operator">/</span>key<span class="token operator">></span>
+          <span class="token operator">&lt;</span>string<span class="token operator">></span>MyJavaScriptFile<span class="token operator">&lt;</span><span class="token operator">/</span>string<span class="token operator">></span>
+          <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> Do not include the <span class="token string">".js"</span> filename extension <span class="token operator">--</span><span class="token operator">></span>
+     <span class="token operator">&lt;</span><span class="token operator">/</span>dict<span class="token operator">></span>
 
 </code></pre>
 <p>在iOS和OS X平台中，在你自定义的JavaScript类中可以定义一个run()函数，该函数就是Safari加载JavaScript文件的入口。在run()函数中，Safari提供了一个名为completionFunction的参数，你可以使用键值对象的形式将结果传给应用扩展。</p>
@@ -717,9 +718,9 @@ NSUserDefaults *mySharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"c
         arguments<span class="token punctuation">.</span><span class="token function">completionFunction</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"baseURI"</span><span class="token punctuation">:</span> document<span class="token punctuation">.</span>baseURI<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
 
-<span class="token comment" spellcheck="true">// Note that the finalize function is only available in iOS.</span>
+    <span class="token comment" spellcheck="true">// Note that the finalize function is only available in iOS.</span>
     finalize<span class="token punctuation">:</span> <span class="token function">function</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// arguments contains the value the extension provides in [NSExtensionContext completeRequestReturningItems:completion:].</span>
+    <span class="token comment" spellcheck="true">// arguments contains the value the extension provides in [NSExtensionContext completeRequestReturningItems:completion:].</span>
     <span class="token comment" spellcheck="true">// In this example, the extension provides a color as a returning item.</span>
     document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token string">"bgColor"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -731,13 +732,13 @@ NSUserDefaults *mySharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"c
 <p>在iOS和OS X平台中，你需要编写代码来处理<code>run()</code>函数返回的值，为获取到字典中的值，我们需要指定<code>kUTTypePropertyList</code>类型作为标示符传入<code>NSItemProvider</code>类的 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/occ/instm/NSItemProvider/loadItemForTypeIdentifier:options:completionHandler:" target="_blank" rel="noopener">loadItemForTypeIdentifier:options:completionHandler:</a>方法。在该字典中使用 <code>NSExtensionJavaScriptPreprocessingResultsKey</code>作为key来取值。比如下面例子中我们想要获取将 URI 传入 <code>run()</code>的返回值：</p>
 <pre class=" language-objc"><code class="language-objc">[imageProvider loadItemForTypeIdentifier:kUTTypePropertyList options:nil completionHandler:^(NSDictionary *item, NSError *error) {
     NSDictionary *results = (NSDictionary *)item;
-        NSString *baseURI = [[results objectForKey:NSExtensionJavaScriptPreprocessingResultsKey] objectForKey:@"baseURI"];
+    NSString *baseURI = [[results objectForKey:NSExtensionJavaScriptPreprocessingResultsKey] objectForKey:@"baseURI"];
     }];
 </code></pre>
 <p><code>finalize()</code> 函数是在当应用扩展执行完任务后传参并调用的，创建一个含有我们需要处理的值的字典，然后用<code>NSItemProvider</code> 的 <code>initWithItem:typeIdentifier:</code>方法来封装该字典。比如当扩展执行完任务后我们想让网页变为红色，我们可以这样写：</p>
 <pre class=" language-objc"><code class="language-objc">NSExtensionItem *extensionItem = [[NSExtensionItem alloc] init];
-    extensionItem.attachments = @[[[NSItemProvider alloc] initWithItem: @{NSExtensionJavaScriptFinalizeArgumentKey: @{@"bgColor":@"red"}} typeIdentifier:(NSString *)kUTTypePropertyList]];
-    [[self extensionContext] completeRequestReturningItems:@[extensionItem] completion:nil];
+extensionItem.attachments = @[[[NSItemProvider alloc] initWithItem: @{NSExtensionJavaScriptFinalizeArgumentKey: @{@"bgColor":@"red"}} typeIdentifier:(NSString *)kUTTypePropertyList]];
+[[self extensionContext] completeRequestReturningItems:@[extensionItem] completion:nil];
 
 </code></pre>
 <h3 id="执行上传下载任务"><a href="#执行上传下载任务" class="headerlink" title="执行上传下载任务"></a>执行上传下载任务</h3><p>用户一般的操作习惯都倾向于当使用你的应用扩展完成某个任务后，可以将结果立即反馈在使用扩展的应用中。如果一个扩展要处理的任务包含较长时间的上传下载操作时，你要确保当你的应用扩展关闭后能继续完成该任务。为实现这个功能，我们需要使用<a href="https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/cl/NSURLSession" target="_blank" rel="noopener">NSURLSession</a>类创建一个URL会话并创建后台的上传下载任务。</p>
@@ -892,6 +893,14 @@ config.sharedContainerIdentifier = @“com.mycompany.myappgroupidentifier”;
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2018/11/17/GCD之dispatch-semaphore/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
@@ -990,7 +999,7 @@ config.sharedContainerIdentifier = @“com.mycompany.myappgroupidentifier”;
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -1008,7 +1017,7 @@ config.sharedContainerIdentifier = @“com.mycompany.myappgroupidentifier”;
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">31</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -1042,7 +1051,7 @@ config.sharedContainerIdentifier = @“com.mycompany.myappgroupidentifier”;
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">48</span>
+                <span class="sidebar-badge">49</span>
             </a>
         </li>
         
