@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Sat Nov 17 2018 14:09:46 GMT+0800">
-        <meta property="article:modified_time" content="Sat Nov 17 2018 14:51:54 GMT+0800">
+        <meta property="article:modified_time" content="Sat Nov 17 2018 14:54:11 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/11/17/GCD之dispatch-semaphore/index.html",
     "headline": "GCD之dispatch_semaphore",
     "datePublished": "Sat Nov 17 2018 14:09:46 GMT+0800",
-    "dateModified": "Sat Nov 17 2018 14:51:54 GMT+0800",
+    "dateModified": "Sat Nov 17 2018 14:54:11 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -529,13 +529,9 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p><img src="https://upload-images.jianshu.io/upload_images/126164-c159b23a2006988a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="各个lock性能对比.png"></p>
-<h3 id="dispatch-semaphore定义"><a href="#dispatch-semaphore定义" class="headerlink" title="dispatch_semaphore定义"></a>dispatch_semaphore定义</h3><ul>
-<li>1&gt; 信号量：就是一种可用来控制访问资源的数量的标识，设定了一个信号量，在线程访问之前，加上信号量的处理，则可告知系统按照我们指定的信号量数量来执行多个线程。</li>
-</ul>
+<h3 id="dispatch-semaphore定义"><a href="#dispatch-semaphore定义" class="headerlink" title="dispatch_semaphore定义"></a>dispatch_semaphore定义</h3><p>1&gt; 信号量：就是一种可用来控制访问资源的数量的标识，设定了一个信号量，在线程访问之前，加上信号量的处理，则可告知系统按照我们指定的信号量数量来执行多个线程。</p>
 <p>其实，这有点类似锁机制了，只不过信号量都是系统帮助我们处理了，我们只需要在执行线程之前，设定一个信号量值，并且在使用时，加上信号量处理方法就行了。</p>
-<ul>
-<li>2&gt; 信号量主要有3个函数，分别是：</li>
-</ul>
+<p>2&gt; 信号量主要有3个函数，分别是：</p>
 <pre><code>// 创建信号量.该函数接收一个long类型的参数, 返回一个dispatch_semaphore_t类型的信号量，值为传入的参数
 dispatch_semaphore_t   dispatch_semaphore_create(long value)
 
