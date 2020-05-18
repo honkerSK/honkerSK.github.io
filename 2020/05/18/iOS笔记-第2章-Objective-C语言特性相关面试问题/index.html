@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            [iOS笔记]第2章 Objective-C语言特性相关面试问题 | 
+        
+        暮鼓晨钟
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",iOS笔记">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="暮鼓晨钟">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/05/18/iOS笔记-第2章-Objective-C语言特性相关面试问题/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2020/05/18/iOS笔记-第2章-Objective-C语言特性相关面试问题/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="[iOS笔记]第2章 Objective-C语言特性相关面试问题 | 暮鼓晨钟">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="iOS笔记"> 
+
+    
+        <meta property="article:published_time" content="Mon May 18 2020 14:46:32 GMT+0800">
+        <meta property="article:modified_time" content="Mon May 18 2020 14:57:41 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2020/05/18/iOS笔记-第2章-Objective-C语言特性相关面试问题/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2020/05/18/iOS笔记-第2章-Objective-C语言特性相关面试问题/index.html",
+    "headline": "[iOS笔记]第2章 Objective-C语言特性相关面试问题",
+    "datePublished": "Mon May 18 2020 14:46:32 GMT+0800",
+    "dateModified": "Mon May 18 2020 14:57:41 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "暮鼓晨钟",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "暮鼓晨钟",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",iOS笔记",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、分类-Category"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、分类(Category)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、关联对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、关联对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、扩展"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、扩展</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、代理-Delegate"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、代理(Delegate)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-gt-定义"><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">1&gt;定义</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-gt-代理工作流程。"><span class="post-toc-number">4.0.2.</span> <span class="post-toc-text">2&gt; 代理工作流程。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-gt-代理遇到问题"><span class="post-toc-number">4.0.3.</span> <span class="post-toc-text">3&gt;代理遇到问题:</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、通知-NSNotification"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、通知(NSNotification)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、KVO"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、KVO</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#七、KVC"><span class="post-toc-number">7.</span> <span class="post-toc-text">七、KVC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#八、属性关键字"><span class="post-toc-number">8.</span> <span class="post-toc-text">八、属性关键字</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#九-OC语言特性面试总结"><span class="post-toc-number">9.</span> <span class="post-toc-text">九 OC语言特性面试总结</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                [iOS笔记]第2章 Objective-C语言特性相关面试问题
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>暮鼓晨钟</strong>
+        <span>5月 18, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS笔记/">iOS笔记</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[iOS笔记]第2章 Objective-C语言特性相关面试问题&url=http://yoursite.com/2020/05/18/iOS笔记-第2章-Objective-C语言特性相关面试问题/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[iOS笔记]第2章 Objective-C语言特性相关面试问题&url=http://yoursite.com/2020/05/18/iOS笔记-第2章-Objective-C语言特性相关面试问题/index.html&via=暮鼓晨钟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/18/iOS笔记-第2章-Objective-C语言特性相关面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/18/iOS笔记-第2章-Objective-C语言特性相关面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=[iOS笔记]第2章 Objective-C语言特性相关面试问题&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/05/18/iOS笔记-第2章-Objective-C语言特性相关面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>本文主讲Objective-C语言特性相关面试问题，包括分类、关联对象、扩展、代理、通知、KVO、 KVC、 属性关键字。</p>
+</blockquote>
+<h3 id="一、分类-Category"><a href="#一、分类-Category" class="headerlink" title="一、分类(Category)"></a>一、分类(Category)</h3><p><strong>什么是分类（category）?</strong><br>Category是一个指向分类的结构体的指针，结构体主要包含分类定义的实例方法以及类方法</p>
+<p>1、你用分类都做了哪些事？<br>(1)、声明私有方法<br>(2)、分解体积庞大的类文件<br>(3)、把Framework的私有方法公开</p>
+<p>2、分类特点<br>(1)、运行时决议（运行时才会添加到宿主类）<br>在编写分类文件之后，并不会立即把分类中添加的内容添加到宿主类中，而是通过runtime把分类中的内容添加到宿主类中<br>(2)、可以为系统类添加分类</p>
+<p>分类有多个的情况下，原有类以及每个分类都有同名的分类方法，最后哪个会生效？<br>答：通过源码分析，取决于编译器，最后一个参与编译的分类会生效。分类方法在runtime分配内存时会插在数组前列，在方法查找过程中，分类添加的方法会”覆盖“宿主类的同名方法(添加在，原方法依然存在)</p>
+<p>3、分类中都可以添加哪些内容？<br>(1)、实例方法<br>(2)、类方法<br>(3)、协议<br>(4)、属性(只会生成set、get方法，不会生成成员变量)<br>可以写@property但并不会在分类中添加实例变量</p>
+<p>分类结构体分析:<br><img src="https://upload-images.jianshu.io/upload_images/126164-42080f4815fb855c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分类结构体"></p>
+<pre><code>//objc-runtime-680版本
+struct category_t {
+    const char *name; //分类名
+    classref_t cls;    //分类所属的类名
+    //分类中所有给类添加的实例方法的列表
+    struct method_list_t *instanceMethods;
+    //分类中所有添加的类方法的列表
+    struct method_list_t *classMethods;
+    //分类实现的所有协议的列表
+    struct protocol_list_t *protocols;
+    //分类中添加的所有实例属性列表
+    struct property_list_t *instanceProperties;
+    // Fields below this point are not always present on disk.
+    // struct property_list_t *_classProperties;
+
+    method_list_t *methodsForMeta(bool isMeta) {
+        if (isMeta) return classMethods;
+        else return instanceMethods;
+    }
+
+    property_list_t *propertiesForMeta(bool isMeta) {
+        if (isMeta) return nil;  //classProperties
+        else return instanceProperties;
+    }
+};
+</code></pre><p>可以看到，分类结构体中会引用其实例对象，类对象，协议以及实例属性的列表。<br>在加载中，系统会读取镜像加载分类文件并关联到他的宿主类中。</p>
+<p>4、分类加载调用栈<br><img src="https://upload-images.jianshu.io/upload_images/126164-b766700b29b56618.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>加载中，分类的方法会“覆盖”原生类的方法，这里的覆盖并不是真正意义上的覆盖，而是将原类的方法在内存指针中后移，而分类方法会前移。不同分类所添加的同方法名的方法也会根据编译顺序而互相覆盖，最后被编译的分类方法将会“覆盖”掉之前编译的分类。<br>由于编译时，分类所拥有的方法会根据分类的名称对应存储在一个数组中，所以相同的分类名会造成编译时的报错。</p>
+<p>5、源码分析<br>(1)、分类添加的方法可以”覆盖”原类方法。<br>(2)、同名分类方法谁能生效取决于编译顺序。最后被编译的分类最优先会生效<br>(3)、名字相同的分类会引起编译报错。</p>
+<h3 id="二、关联对象"><a href="#二、关联对象" class="headerlink" title="二、关联对象"></a>二、关联对象</h3><p>1、能否给分类添加”成员变量”？<br>可以！可以写@property，原则上是不可以添加成员变量，但并没有在分类中添加实例变量。实际上可以通过关联对象associated object扩展属性。</p>
+<pre><code>//根据指定key 到object对象中获取key相对应的关联值,将关联值作为函数返回值,返回给调用方
+id objc_getAssociatedObject(id object, const void * key)
+//将key和value建立映射关系,将对应关系通过policy策略关联到对象object上面, 关联策略是告诉函数value是copy还是assign, retain形式关联到数组对象上
+void objc_setAssociatedObject(id object, const void * key, id value, objc_AssociationPolicy policy)
+//移除指定对象的所有的关联对象
+void objc_removeAssociatedObjects(id object)
+</code></pre><p>在分类中使用关联对象，可以使分类具有成员变量的效果。</p>
+<p>2、关联对象的本质<br>分类添加的成员变量，添加到成员变量数组里面了吗？<br>(1)、关联对象由<code>AssociationsManger</code>管理，并在<code>AssociationsHashMap</code>存储。<br>(2)、所有对象的关联内容都在同一个全局容器中。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-43cd32e5665b3447.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="关联对象本质"></p>
+<p>图说明:<br>1&gt;根据传入value (如 @”Hello”) 和policy 封装成ObjcAssociation结构<br>2&gt; ObjcAssociation 和 key (如 @selector(text) ) 建立映射关系构成 ObjcAssociationMap<br>3&gt; 由object的地址通过DISGUISE函数返回值生成key,<br>和所建立映射结构 ObjcAssociationMap 作为全局容器AssociationHashMap中 object 对应的value ,放到全局容器中</p>
+<p>关联对象保存了需要关联实例的值，和引用规则，并使用键Key来指向关联对象，被关联对象作为key又指向了他自身的关联表。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-3d22400629aad023.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="关联对象本质2"></p>
+<p>3、源码分析</p>
+<h3 id="三、扩展"><a href="#三、扩展" class="headerlink" title="三、扩展"></a>三、扩展</h3><p>1、一般用扩展做什么？<br>(1)、声明私有属性<br>(2)、声明私有方法<br>(3)、声明私有成员变量</p>
+<p>2、扩展特点？<br>(1)、编译时决议<br>(2)、只以声明的形式存在，多数情况下寄生于宿主类的.m中。<br>(3)、不能为系统类添加扩展。</p>
+<p>问题： 扩展和类别的区别是什么？<br>从二者的特点来回答</p>
+<h3 id="四、代理-Delegate"><a href="#四、代理-Delegate" class="headerlink" title="四、代理(Delegate)"></a>四、代理(Delegate)</h3><h5 id="1-gt-定义"><a href="#1-gt-定义" class="headerlink" title="1&gt;定义"></a>1&gt;定义</h5><p>1、准确的说是一种软件设计模式。代理设计模式<br>2、iOS当中以@protocol形式体现。<br>3、传递方式一对一。</p>
+<h5 id="2-gt-代理工作流程。"><a href="#2-gt-代理工作流程。" class="headerlink" title="2&gt; 代理工作流程。"></a>2&gt; 代理工作流程。</h5><p><img src="https://upload-images.jianshu.io/upload_images/126164-388ca5791baa4dd5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="delegate的工作流程"></p>
+<ul>
+<li>委托方要求协议声明需要的属性以及方法</li>
+<li>代理方遵循这个协议，并实现方法，可能返回处理结果</li>
+<li>委托方调用代理方遵从的方法，如有返回结果，接收并处理</li>
+</ul>
+<h5 id="3-gt-代理遇到问题"><a href="#3-gt-代理遇到问题" class="headerlink" title="3&gt;代理遇到问题:"></a>3&gt;代理遇到问题:</h5><p>问题: 代理方和委托方以什么样的关系存在？应该注意什么问题？<br>答: 声明为weak规避循环引用（代理方强持有strong委托方 委托方需要有一个代理方的声明 声明weak）</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-86b80ffec0051c1a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="代理weak声明"></p>
+<h3 id="五、通知-NSNotification"><a href="#五、通知-NSNotification" class="headerlink" title="五、通知(NSNotification)"></a>五、通知(NSNotification)</h3><p>1、通知特点<br>(1)、是使用<code>观察者模式</code>来实现的用于跨层传递消息的机制。<br>(2)、传递方式为一对多。</p>
+<p>问题:通知和代理的区别</p>
+<ul>
+<li>模式区别 代理模式   观察者模式</li>
+<li>传递方式 一对多    一对一</li>
+</ul>
+<p>2、如何实现通知机制？</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-4969f085b3a5a454.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="通知实现机制"></p>
+<p>问题:通知的实现机制？<br>发送者 ——&gt;通知中心——&gt;广播给多个观察者</p>
+<p>问题: 怎么实现通知机制<br>猜想：（类似runtime添加属性的方式）可能会由一个管理者管理一个HashMap表，每一个notificationName对应一个存放有多个观察者对象相关信息( 回调方法)的数组</p>
+<h3 id="六、KVO"><a href="#六、KVO" class="headerlink" title="六、KVO"></a>六、KVO</h3><p>1、KVO介绍</p>
+<ul>
+<li>KVO是Key-value observing的缩写。</li>
+<li>KVO是OC对观察者设计模式的又一实现。</li>
+<li>Apple使用了 isa 混写 (isa-swizzling) 来实现KVO。</li>
+</ul>
+<p>这里提到的isa混写模式就是指，注册KVO的时候，系统会动态创建一个被观察对象的子类，然后令被观察对象的isa指针指向该子类，在该子类中重写了setter方法。这样，当原对象属性被修改时（基于KVC的修改），就会调用setter方法，然后通知观察者。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-4d521171a02eebab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="isa-swizzling 实现"></p>
+<p>问题:isa-swizzling 混写技术怎么体现?<br>答: 当调用<code>addObserver:forKeyPath:options:context:</code> 后, 系统会在运行时动态创建类<code>KVONotifying_A</code>, 同时将原来A的指针指向类<code>KVONotifying_A</code> 。</p>
+<p>问题:isa混写是怎么实现KVO的呢？<br>答:当注册一个对象class的观察者的时候，也就是调用下面的方法，系统会在runtime动态创建一个该对象的子类NSKVONotifiying_class(NSKVONotifiying_类名)，并将isa指针指向该派生类，并重写setter方法，负责通知所有的观察对象</p>
+<pre><code>/* 
+options: 有4个值，分别是：
+NSKeyValueObservingOptionOld 把更改之前的值提供给处理方法 
+NSKeyValueObservingOptionNew 把更改之后的值提供给处理方法 
+NSKeyValueObservingOptionInitial 把初始化的值提供给处理方法，一旦注册，立马就会调用一次。通常它会带有新值，而不会带有旧值。 
+NSKeyValueObservingOptionPrior 分2次调用。在值改变之前和值改变之后。 
+ */
+//注册一个监听器用于监听指定的key路径
+[self.person addObserver:self forKeyPath:@&quot;name&quot; options:NSKeyValueObservingOptionNew context:nil];
+</code></pre><p>键值观察依赖依赖于NSObject的两个方法willChangeValueForKey:和didChangevalueForKey:<br>继而也会调用的下面的方法observeValueForKeyPath</p>
+<pre><code>- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary&lt;NSKeyValueChangeKey,id&gt; *)change
+                       context:(void *)contex
+
+}
+</code></pre><p>例如，A类的实例的name属性被B类的实例监听了。这时，OC的runtime机制生成了一个<code>KVONotifying_A</code>的类来替代原来的A类，重写了+ (Class)class方法，返回[A Class]，从而把自己伪装成A类。重写了A类属性name的setter方法加入了NSObject的两个方法:<code>willChangeValueForKey:(值改变之前)</code>和<code>didChangevlueForKey:(值改变之后)</code>。在一个被观察属性发生改变之前，<code>willChangeValueForKey:</code>一定会被调用，这就会记录旧的值。而当改变发生后，<code>didChangeValueForKey:</code>会被调用，继而<code>observeValueForKey:ofObject:change:context:</code>也会被调用。</p>
+<p>2、KVO特点 (什么情况下能使KVO生效呢？)</p>
+<ul>
+<li>使用setter方法改变值，KVO才会生效。</li>
+<li>使用setValue: forKey: 改变值，KVO才会生效。</li>
+<li>成员变量直接修改，需手动添加KVO才会生效。</li>
+</ul>
+<p>3、通过KVC设置value能否促使KVO生效？为什么<br>答:可以，KVC会重写setter方法。<br><code>setValue: forKey:</code>会调用对象的set方法</p>
+<p>4、通过成员变量直接赋值value能否生效？<br>不可以。可以在给成员变量赋值前后手动添加 [self willChangeValueForKey: ] 和 [self didChangeValueForKey: ] 。didChangeValueForKey方法会触发KVO回调。</p>
+<p>如何实现手动KVO？</p>
+<pre><code>- (void)setValue:(id)obj {
+  [self willChangeValueForKey:@&quot;keyPath&quot;];
+  [super setValue:obj];
+  [self didChangeValueForKey:@&quot;keyPath&quot;];
+}
+</code></pre><h3 id="七、KVC"><a href="#七、KVC" class="headerlink" title="七、KVC"></a>七、KVC</h3><p>KVC是<code>key-value coding</code>的缩写。</p>
+<pre><code>//获取某个实例key同名或者相似名称的实例变量的值
+-(id)valueForKey:(NSString *)key
+//设置某个实例和key同名或者相似名称的实例变量的值
+-(void)setValue:(id)value forKey:(NSString *)key
+</code></pre><p>问题: KVC是否会破坏面向对象编程思想？<br>答: 在我们外部知道某个类的私有成员变量名时，可以通过上面两个方法设置/访问，会破坏面向对象编程思想</p>
+<p>1、-(id)valueForKey:(NSString *)key 系统实现流程</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-d8273565cdab4f57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="valueForKey系统实现流程"></p>
+<p>可以看到，系统先判断有没有对应setter getter方法，如果有则直接执行，如果没有则判断有没有对应的实例变量，如果有则执行实例变量的赋值，没有则会抛出异常。</p>
+<p><strong>Accessor Method</strong>  (访问器方法是否存在判断)</p>
+<ul>
+<li><getkey></getkey></li>
+<li><key></key></li>
+<li><iskey>
+
+</iskey></li>
+</ul>
+<p><strong>Instance var</strong> (实例变量是否存在判断)</p>
+<ul>
+<li>_key</li>
+<li>_isKey</li>
+<li>key</li>
+<li>isKey</li>
+</ul>
+<p>问题: valueForKey的实现逻辑？<br>答: 判断访问器方法，是否存在或相似的方法名( <code>getKey</code>  <code>key</code>  <code>isKey</code> )，存在则返回；不存在再判断实例变量(<code>_key</code> <code>_isKey</code> <code>key</code> <code>isKey</code>)，存在或相似则返回；不存在就调用<code>valueForUndefineKey:</code>然后抛出一个异常</p>
+<p>2、-(void)setValue:(id)value forKey:(NSString *)key 系统实现流程</p>
+<p><img src="//upload-images.jianshu.io/upload_images/6751716-0f67ff3707158b16.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp" alt="setValue:forKey: 系统实现流程"></p>
+<p>问题:setValue:forKey:的实现逻辑？<br>答: 判断访问器方法，存在或相似则返回；不存在再判断实例变量，存在或相似则返回；不存在就调用<code>setValue:ForUndefineKey:</code>然后抛出一个异常</p>
+<h3 id="八、属性关键字"><a href="#八、属性关键字" class="headerlink" title="八、属性关键字"></a>八、属性关键字</h3><p>1、读写权限 readonly、<strong>*readwrite</strong>(默认)<br>2、原子性 <strong>atomic</strong>(默认)、nonatomic。<br>atomic只能保证赋值和获取是线程安全(成员属性)，不能保证操作和访问线程安全。例如NSArray，可以保证赋值和获取对象线程安全，不能保证删除和添加对象线程安全。</p>
+<p>3、引用计数<br>(1)、retain/<strong>strong</strong> （都用于修饰对象，retain在 MRC中使用， stong在ARC中使用）。<br>(2)、<strong>assign</strong> /unsafe_unretained (assign 修饰基本数据类型/对象类型， unsafe_unretained ARC基本不用)<br>assign特点:</p>
+<ul>
+<li>修饰基本数据类型，如int、BOOL等。</li>
+<li>修饰对象类型时，不改变其引用计数。</li>
+<li>会产生悬垂指针。<br>(3)、weak<br>weak特点</li>
+<li>不改变被修饰对象的引用计数。</li>
+<li>所指对象在被释放之后会自动置为nil。</li>
+</ul>
+<p><strong>问题:通过atomic修饰是怎么保证线程安全的呢？</strong><br>答: 通过atomic修饰一个数组，对其进行赋值获取，保证线程安全，但是对其进行增加、删除是无法保证线程安全的</p>
+<p><strong>问题: assign和weak有什么区别？</strong><br>答:<br>从二者的特点来说：<br>assign的特点</p>
+<ul>
+<li>可以修饰基本数据类型和对象</li>
+<li>修饰对象类型时，不改变引用计数</li>
+<li>释放时依然指向原对象内存地址，继续访问会产生<code>悬空指针</code>（<code>野指针</code>是只没有被初始化过的指针 区分）</li>
+</ul>
+<p>weak的特点</p>
+<ul>
+<li>只用于修饰对象</li>
+<li>不改变被修饰对象的引用计数</li>
+<li>所指对象再被释放之后会自动置为nil</li>
+</ul>
+<p>(4)、copy<br>问题:浅拷贝和深拷贝有什么区别？<br>答:<br><strong>浅拷贝</strong>：对内存地址的复制，让目标对象指针和源对象指向<code>同一块</code>内存空间<br>浅拷贝特点 :<br>1.浅拷贝会增加被拷贝对象的引用计数<br>2.没有发生新的内存分配<br><strong>深拷贝</strong>：让目标对象指针和源对象指针指向<code>两片</code>内容相同的内存空间（特点:产生内存分配）<br>深拷贝特点:<br>1.深拷贝不会增加被拷贝对象的引用计数<br>2.深拷贝发生新的内存分配,出现两块内存</p>
+<p>深拷贝、浅拷贝区别?</p>
+<ul>
+<li>是否开辟了新的内存空间</li>
+<li>是否影响了引用计数</li>
+</ul>
+<p>2&gt; copy对对象造了什么影响？</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-e14114c7c2ba7663.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>表格总结：</p>
+<ul>
+<li>可变对象的copy和mutableCopy都是深拷贝。</li>
+<li>不可变对象的copy是浅拷贝，mutableCopy是深拷贝。</li>
+<li>copy方法返回的对象都是不可变对象。</li>
+</ul>
+<p>3&gt;、copy面试题</p>
+<pre><code>@property(copy)NSMutableArray *array?
+答:
+如果赋值过来的是NSMutableArray, copy之后是NSArray
+如果赋值过来的是NSArray, copy之后是NSArray
+</code></pre><h3 id="九-OC语言特性面试总结"><a href="#九-OC语言特性面试总结" class="headerlink" title="九 OC语言特性面试总结"></a>九 OC语言特性面试总结</h3><p>1、MRC下如何重写retain修饰变量的setter方法？</p>
+<pre><code>@property(nonatomic,retain) id obj;
+ - (void)setObj:(id)obj {
+//判断防止异常处理 防止如果传进来的是非obj对象，就会release掉非obj的对象
+    if(_obj != obj) {  
+        [_obj release];
+        _obj = [obj retain]; 
+    }
+}
+</code></pre><p>2、请简述分类实现原理。<br>答:</p>
+<ul>
+<li>分类实现原理由运行时来决议的</li>
+<li>不同分类中含有同名分类方法,谁最终生效取决于谁最后参与编译,最后参与编译的分类中同名方法会最终生效.</li>
+<li>如果分类中的方法和宿主类方法同名,分类方法会覆盖宿主类同名方法. 覆盖指由于消息传递过程中, 优先查找数组靠前的元素,如果找到同名方法就进行调用,实际宿主类同名方法仍然存在.</li>
+</ul>
+<p>3、KVO的实现原理是咋样的？<br>答:<br>1)KVO是系统关于观察者模式的实现<br>2)KVO运用isa混写技术,系统会动态创建一个被观察对象的子类，然后令被观察对象的isa指针指向该子类，在该子类中重写了setter方法。这样，当原对象属性被修改时（基于KVC的修改），就会调用setter方法，然后通知观察者。</p>
+<p>4、能否为分类添加成员变量？<br>答: 能,  可以通过关联对象associated object来为分类添加成员变量</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2020/05/18/iOS笔记-第1章-UI视图相关面试问题/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="暮鼓晨钟's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        swift630@sina.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: swift630@sina.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">send</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">52</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;暮鼓晨钟
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

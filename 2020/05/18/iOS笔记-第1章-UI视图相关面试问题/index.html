@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            [iOS笔记]第1章 UI视图相关面试问题 | 
+        
+        暮鼓晨钟
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",iOS笔记">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="暮鼓晨钟">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/05/18/iOS笔记-第1章-UI视图相关面试问题/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2020/05/18/iOS笔记-第1章-UI视图相关面试问题/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="[iOS笔记]第1章 UI视图相关面试问题 | 暮鼓晨钟">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="iOS笔记"> 
+
+    
+        <meta property="article:published_time" content="Mon May 18 2020 14:06:11 GMT+0800">
+        <meta property="article:modified_time" content="Mon May 18 2020 14:44:53 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2020/05/18/iOS笔记-第1章-UI视图相关面试问题/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2020/05/18/iOS笔记-第1章-UI视图相关面试问题/index.html",
+    "headline": "[iOS笔记]第1章 UI视图相关面试问题",
+    "datePublished": "Mon May 18 2020 14:06:11 GMT+0800",
+    "dateModified": "Mon May 18 2020 14:44:53 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "暮鼓晨钟",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "暮鼓晨钟",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",iOS笔记",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、UITableView相关"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、UITableView相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、重用机制"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1、重用机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#为什么要用重用机制？"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">为什么要用重用机制？</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#重用机制的原理"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">重用机制的原理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、事件传递-amp-视图响应"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、事件传递&amp;视图响应</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、图像显示原理"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、图像显示原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、卡顿-amp-掉帧"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、卡顿&amp;掉帧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、原因"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1、原因</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、滑动优化方案"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">2、滑动优化方案</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何具体优化呢？"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">如何具体优化呢？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#其他优化方案："><span class="post-toc-number">4.4.</span> <span class="post-toc-text">其他优化方案：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Core-Animation工具检测离屏渲染"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">Core Animation工具检测离屏渲染</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、UIView绘制原理-amp-异步绘制"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、UIView绘制原理&amp;异步绘制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、离屏渲染"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、离屏渲染</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最后总结点东西吧，面试官经常问的问题有："><span class="post-toc-number">7.</span> <span class="post-toc-text">最后总结点东西吧，面试官经常问的问题有：</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                [iOS笔记]第1章 UI视图相关面试问题
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>暮鼓晨钟</strong>
+        <span>5月 18, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS笔记/">iOS笔记</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[iOS笔记]第1章 UI视图相关面试问题&url=http://yoursite.com/2020/05/18/iOS笔记-第1章-UI视图相关面试问题/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[iOS笔记]第1章 UI视图相关面试问题&url=http://yoursite.com/2020/05/18/iOS笔记-第1章-UI视图相关面试问题/index.html&via=暮鼓晨钟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/18/iOS笔记-第1章-UI视图相关面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/18/iOS笔记-第1章-UI视图相关面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=[iOS笔记]第1章 UI视图相关面试问题&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/05/18/iOS笔记-第1章-UI视图相关面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>本文主讲UI相关面试问题，包括UITableView相关、事件传递&amp;视图相应、图像显示原理、卡顿&amp;掉帧、绘制原理&amp;异步绘制、离屏渲染。</p>
+</blockquote>
+<h3 id="一、UITableView相关"><a href="#一、UITableView相关" class="headerlink" title="一、UITableView相关"></a>一、UITableView相关</h3><h4 id="1、重用机制"><a href="#1、重用机制" class="headerlink" title="1、重用机制"></a>1、重用机制</h4><p><img src="https://upload-images.jianshu.io/upload_images/126164-50c793b57deac4d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="为什么要用重用机制？"><a href="#为什么要用重用机制？" class="headerlink" title="为什么要用重用机制？"></a>为什么要用重用机制？</h5><p>当UITableView滚动时，如果不用重用机制，会重复初始化原来已经有初始化过的cell，因此用重用机制会节省性能，避免出现卡顿现象</p>
+<h5 id="重用机制的原理"><a href="#重用机制的原理" class="headerlink" title="重用机制的原理"></a>重用机制的原理</h5><p>重用机制主要用到了一个可变数组visiableCells和一个可变的字典类型reusableTableCells,其中visiableCells用来存储当前UITableView显示的cell，reusableTableCells用来存储已经用’identify’缓存的cell。当UITableView滚动的时候，会先在reusableTableCells中根据identify找是否有有已经缓存的cell，如果有直接用，没有再去初始化。</p>
+<p>代码实例:自定义tableView 字母索引条</p>
+<p>2、数据源同步<br>(1)、数据源同步问题</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-cfe54b6ee7648c0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据源同步问题"></p>
+<p>(2)、数据源同步解决方案<br>1&gt;、并发访问、数据拷贝</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-1fd3cb2ac125c51c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="并发访问"></p>
+<ul>
+<li>并发即多个线程都可以执行同一段时间，不需要相互等待，主线程与用户互动，子线程做所需要的网络数据请求、数据解析及预排版等</li>
+<li>主线程事先拷贝一份数据给子线程做网络请求、数据解析、预排版等，如果主线程有相关操作，记录操作，在子线程完成相关操作后将这条操作，与子线程的数据进行同步，再回到主线程刷新界面</li>
+<li>缺点：需要拷贝大量数据，耗内存</li>
+</ul>
+<p>2&gt;、串行访问</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-f338893d9837813d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="串行访问"></p>
+<ul>
+<li>创建一个GCD串行队列，主线程的操作需要等待子线程操作完成</li>
+<li>缺点：需要等待子线程完成，可能会耗时较长</li>
+</ul>
+<p>3&gt; 比较:<br>两种方案各有利弊<br>串行访问方式: 要求在子线程处理任务特别耗时的时候,我们某一个删除动作可能会有延时.<br>并发访问,数据拷贝方式:要记录数据同步操作,如上边例子需要记录同步删除的动作,需要进行大量的数据源拷贝,对内存的开销是有一定的问题.所以在具体场景中,需要根据实际业务去选择使用哪种方案.</p>
+<h3 id="二、事件传递-amp-视图响应"><a href="#二、事件传递-amp-视图响应" class="headerlink" title="二、事件传递&amp;视图响应"></a>二、事件传递&amp;视图响应</h3><p>1、UIView和CALayer的关系和区别</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-6934ad3b91050a3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="UIView和CALayer的关系和区别"></p>
+<p>关系：<br>UIView的内部包含CALayer层。创建UIView时，会自动创建一个CALyer层的对象，通过UIView的layer属性可以访问到。UIView需要显示时，会调用drawRect方法进行绘制，并将所有内容绘制在自己的layer层。也就是CALayer层才有显示功能。<br>区别：<br>UIView负责提供内容，以及负责处理触摸等事件，参与响应链<br>CALayer负责显示内容contents<br>这体现了系统设计的原则:六大职责原则中的 单一原则, 职责上的分工.</p>
+<p>2、事件传递与视图响应链</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-e55f1fb9da208d45.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="事件传递"></p>
+<p>问题:点击c2空白区域,系统最终是以怎样方式找到最终视图响应视图是c2呢?(考察系统有关视图)</p>
+<p>事件的分发与传递:<br>1)当iOS程序中发生触摸事件，系统会将事件加入到UIApplication管理的一个任务队列<br>2)UIApplication将处于任务队列最前端的事件向下分发。即UIWindow -&gt;UIView<br>3)UIView首先看自己是否能处理事件，触摸点是否在自己身上。如果能，那么继续寻找子视图。<br>4)遍历子控件，重复以上两步<br>5)如果没有找到，那么自己就是事件处理者<br>6)如果自己不能处理，那么不做任何处理</p>
+<p>其中不接受处理的事件情况如下三种：</p>
+<ul>
+<li>alpha &lt;0.01</li>
+<li>userInteractionEnabled = NO</li>
+<li>hidden ＝ YES.<br>如果父视图不接受事件处理，则子视图也不能接收。事件只要触摸就会产生，关键在于是否有合适的View处理接收事件</li>
+</ul>
+<p>1&gt; 如何寻找最合适的View呢？以下两个方法</p>
+<pre><code>//返回响应事件的视图
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event;
+//判断点击位置是否在当前视图范围内, 在范围内返回YES
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event;
+</code></pre><p>这两个方法，第一个方法用于找出事件的响应者，第二个方法用于确定事件触发的位置。</p>
+<p>事件传递给窗口或控件的后，就调用hitTest:withEvent:方法寻找更合适的view,如果子控件是合适的view，则在子控件再调用hitTest:withEvent:直到找到最合适的为止。</p>
+<p>通过这两个方法来做事件的传递和响应过程，如下图：</p>
+<p>2&gt;事件传递流程</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-3844db6c3a6f7b71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="事件传递流程"></p>
+<p><code>hitTest:withEvent:</code>方法内部会进行一个递归调用，对响应者的所有subviews调用hittest，<code>hitTest:withEvent:</code>系统实现如下图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-d6acb6b14b232232.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="hitTest:withEvent:系统实现.png"></p>
+<p>3&gt;代码实战:方形按钮指定区域接收事件响应</p>
+<p>4&gt;视图响应流程</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-7077803e7e6540c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="视图相应链"></p>
+<p>响应者链的传递方法是事件传递的反方法，如果所有的响应者都不处理，则事件被丢弃</p>
+<p>视图事件响应三个方法:</p>
+<pre><code>- (void)touchesBegan:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event;
+- (void)touchesMoved:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event;
+- (void)touchesEnded:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event;
+</code></pre><h3 id="三、图像显示原理"><a href="#三、图像显示原理" class="headerlink" title="三、图像显示原理"></a>三、图像显示原理</h3><p><img src="https://upload-images.jianshu.io/upload_images/126164-69c05ad8d4f125dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图像显示原理"></p>
+<blockquote>
+<p>CPU GPU通过总线连接 通过CPU进行绘图，将位图经由总线在合适的时机给GPU，GPU做位图的涂层渲染和纹理合成，再放到帧缓冲区域(Frame Buffer)中， 由视频控制器根据VSync在帧缓冲区域中提取屏幕显示内容，显示到手机屏幕中</p>
+</blockquote>
+<p>可以看到，CPU处理了UI布局，绘制，以及图片编解码等预处理工作，最后将bitmap位图提交给GPU进行屏幕渲染。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-78a09f3b232a9077.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt=""></p>
+<blockquote>
+<p>1、CPU工作<br>Layout(UI布局、文本计算)； Display(绘制，drawRect方法)；Prepare(图片编解码)； Commit(提交位图)。<br>2、GPU渲染管线(openGL)<br>顶点着色、图元装配、光栅化、片段着色、片段处理。<br>GPU渲染管线五步做完后就会,就会把最终像素点提交到对应的帧缓冲区中,然后由视频控制器在对应的VSync信号到来之前,去帧缓冲区中提取最终要显示的屏幕内容。</p>
+</blockquote>
+<h3 id="四、卡顿-amp-掉帧"><a href="#四、卡顿-amp-掉帧" class="headerlink" title="四、卡顿&amp;掉帧"></a>四、卡顿&amp;掉帧</h3><h4 id="1、原因"><a href="#1、原因" class="headerlink" title="1、原因"></a>1、原因</h4><p><img src="https://upload-images.jianshu.io/upload_images/126164-43bbbadae8a4f2e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>UI卡顿、掉帧的原因:<br>保持流畅的UI交互，屏幕的刷新频率应该保持在60帧，即每16.7ms就会进行一次屏幕刷新，如果此时系统中绘制渲染工作还没有完成，导致VSync信号到来之前CPU和GPU无法完成下一帧画面的合成，则会将显示拖延到下一个刷新点，这样就会造成掉帧从而产生卡顿</p>
+<h4 id="2、滑动优化方案"><a href="#2、滑动优化方案" class="headerlink" title="2、滑动优化方案"></a>2、滑动优化方案</h4><p>(1)、CPU<br>对象创建、调整、销毁 , 放到子线程中做；<br>预排版（布局计算、文本计算）, 放到子线程中做；<br>预渲染（文本等异步绘制，图片编解码等）。<br>(2)、GPU<br>纹理渲染（离屏渲染）；<br>视图混合（视图层级复杂度，GPU需要做每个视图的合成）。<br>(在绘制时减少图层层级，将多个层级绘制到一个层级下，以减少GPU在做视图混合时消耗的时间)</p>
+<h4 id="如何具体优化呢？"><a href="#如何具体优化呢？" class="headerlink" title="如何具体优化呢？"></a>如何具体优化呢？</h4><ul>
+<li>官方在iOS9.0后对UIImageView设置圆角进行优化，但是设置阴影依然会触发离屏渲染</li>
+<li>圆角优化<br>1.使用贝塞尔曲线UIBezierPath和Core Graphics框架画出一个圆角<br>2.使用CAShapeLayer和UIBezierPath设置圆角</li>
+<li>shadow优化<br>通过设置shadowPath来优化性能</li>
+</ul>
+<h4 id="其他优化方案："><a href="#其他优化方案：" class="headerlink" title="其他优化方案："></a>其他优化方案：</h4><ul>
+<li>尽量使用不包含透明（alpha）通道的图片资源</li>
+<li>尽量设置layer的大小值为整形值</li>
+<li>使用一张中间透明图片蒙上去</li>
+<li>如果是本地图:直接让美工把图片切成圆角进行显示</li>
+<li>上传图片进行显示，可以让服务端处理圆角</li>
+<li>利用UIBezierPath（CoreGraphics框架）画出来圆角图片</li>
+</ul>
+<h4 id="Core-Animation工具检测离屏渲染"><a href="#Core-Animation工具检测离屏渲染" class="headerlink" title="Core Animation工具检测离屏渲染"></a>Core Animation工具检测离屏渲染</h4><p>对于离屏渲染的检测，苹果为我们提供了一个测试工具Core Animation。可以在Xcode-&gt;Open Develeper Tools-&gt;Instruments中找到</p>
+<h3 id="五、UIView绘制原理-amp-异步绘制"><a href="#五、UIView绘制原理-amp-异步绘制" class="headerlink" title="五、UIView绘制原理&amp;异步绘制"></a>五、UIView绘制原理&amp;异步绘制</h3><p><img src="https://upload-images.jianshu.io/upload_images/126164-c78f9e6c06b5c2d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="UIView绘制原理步骤"></p>
+<p>CALayer会在当前UILoop结束前调用自身的display方法进行绘制，下图是系统调用CALayer的display方法绘制的流程：</p>
+<p>一、系统绘制流程</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-a07f62e76a9e33a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="系统绘制流程"></p>
+<p>UIView的drawRect方法是一个空方法，他给调用者提供了一个在系统绘制的基础上二次操作的空间。<br>bitmap作为layer的contents属性的值，在被赋值后提交给GPU进行渲染。<br>我们可以在displayLayer方法中进行异步绘制。</p>
+<p>二、异步绘制<br>-[layer.delegate displayLayer:]<br>代理负责生成对应的bitmap<br>设置该bitmap作为layer.contents属性的值</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-c51e691371147e9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="异步绘制实现时序图"></p>
+<h3 id="六、离屏渲染"><a href="#六、离屏渲染" class="headerlink" title="六、离屏渲染"></a>六、离屏渲染</h3><p>1、什么是离屏渲染？</p>
+<ul>
+<li>On-Screen Rendering<br>意为当前屏幕渲染，指的是<code>GPU</code>的渲染操作是在当前用于显示的屏幕缓冲区中进行</li>
+<li>Off-Screen Rendering<br>意为离屏渲染，指的是<code>GPU</code>在当前屏幕缓冲区以外<code>新开辟</code>一个缓冲区进行渲染操作</li>
+</ul>
+<p>通俗讲: 当设置某一些UI视图的图层属性时，如果未被预合成之前不能用于当前屏幕直接显示的时候，就会触发离屏渲染，比如设置圆角属性，一些视图遮罩。而离屏渲染的概念起源于GPU层面，指的是GPU在当前屏幕缓冲区以外新开辟一个缓冲区进行渲染操作。</p>
+<p>当屏渲染：指的是GPU的渲染操作是在当前用于显示的屏幕缓存区中进行。</p>
+<p>2、何时会触发？<br>(1)、圆角（layer.masksToBounds = YES 和layer.cornerRadius 同时使用)<br>(2)、图层蒙版 (layer.mask)<br>(3)、阴影  (layer.shadow)<br>(4)、光栅化 ( layer.shouldRasterize=true)<br>(5)、透明度 (layer.allowsGroupOpacity = YES 和 layer.opacity &lt; 1.0)</p>
+<p>由于离屏渲染要创建新的渲染缓冲区，同时还要进行上下文的切换，这会增加GPU的处理时间，可能会造成掉帧</p>
+<p>3、为何要避免离屏渲染？<br>(1)、触发离屏渲染，会增加GPU的工作量，会导致CPU和GPU的工作总耗时超过16.7毫秒，会导致UI的卡顿和掉帧。<br>(2)、创建新的渲染缓冲区，会内存开销。<br>(3)、上下文切换，会导致GPU额外开销。</p>
+<h3 id="最后总结点东西吧，面试官经常问的问题有："><a href="#最后总结点东西吧，面试官经常问的问题有：" class="headerlink" title="最后总结点东西吧，面试官经常问的问题有："></a>最后总结点东西吧，面试官经常问的问题有：</h3><p>1、系统的UI事件传递机制是咋样的？<br>考察hitTest: 和pointInside: 系统内部实现<br>2、使UITableView滚动更流畅的方案或思路都有哪些？(参考滑动优化方案)<br>从CPU和GPU两方面<br>3、什么是离屏渲染？(参考概念 和为何要避免离屏渲染)<br>离屏渲染的概念起源于GPU层面，指的是GPU在当前屏幕缓冲区以外新开辟一个缓冲区进行渲染操作。</p>
+<p>4、UIView和CALayer之间的关系是咋样的？</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2020/05/18/iOS笔记-第2章-Objective-C语言特性相关面试问题/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/11/18/Carthage安装和使用教程/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="暮鼓晨钟's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        swift630@sina.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: swift630@sina.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">34</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">send</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">52</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;暮鼓晨钟
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
