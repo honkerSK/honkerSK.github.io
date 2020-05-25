@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            [iOS面试]第7章 RunLoop相关面试问题 | 
+        
+        暮鼓晨钟
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",iOS面试">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="暮鼓晨钟">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/05/25/iOS面试-第7章-RunLoop相关面试问题/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2020/05/25/iOS面试-第7章-RunLoop相关面试问题/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="[iOS面试]第7章 RunLoop相关面试问题 | 暮鼓晨钟">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="iOS面试"> 
+
+    
+        <meta property="article:published_time" content="Mon May 25 2020 23:55:33 GMT+0800">
+        <meta property="article:modified_time" content="Mon May 25 2020 23:58:03 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2020/05/25/iOS面试-第7章-RunLoop相关面试问题/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2020/05/25/iOS面试-第7章-RunLoop相关面试问题/index.html",
+    "headline": "[iOS面试]第7章 RunLoop相关面试问题",
+    "datePublished": "Mon May 25 2020 23:55:33 GMT+0800",
+    "dateModified": "Mon May 25 2020 23:58:03 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "暮鼓晨钟",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "暮鼓晨钟",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",iOS面试",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、RunLoop概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、RunLoop概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、-问题-什么是RunLoop"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1、 问题:什么是RunLoop?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、EventLoop"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2、EventLoop</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在没有消息处理时，休眠以避免资源占用，它的状态切换是怎么样的"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">在没有消息处理时，休眠以避免资源占用，它的状态切换是怎么样的?</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#用户态和内核态的介绍："><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">用户态和内核态的介绍：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#问题-main函数为什么能保证一直运行状态不退出"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">问题:main函数为什么能保证一直运行状态不退出?</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#什么是事件循环，事件循环的机制是怎样的？"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">什么是事件循环，事件循环的机制是怎样的？</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、RunLoop的数据结构"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、RunLoop的数据结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、CFRunLoopMode数据结构"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2、CFRunLoopMode数据结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、Source-Timer-Observer"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">3、Source/Timer/Observer</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-gt-、CFRunLoopSource"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">1&gt;、CFRunLoopSource</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-gt-、CFRunLoopTimer"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">2&gt;、CFRunLoopTimer</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-gt-、CFRunLoopObserver"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">3&gt;、CFRunLoopObserver</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4、各个数据结构之间关系"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">4、各个数据结构之间关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5、RunLoop的Mode"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">5、RunLoop的Mode</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6、CommonModes的特殊性"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">6、CommonModes的特殊性</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、RunLoop事件循环机制的实现"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、RunLoop事件循环机制的实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-事件循环的整体逻辑："><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1 事件循环的整体逻辑：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-当处于休眠的runloop，可以通过哪些方式唤醒"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2 当处于休眠的runloop，可以通过哪些方式唤醒?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-App-从启动到退出，这个过程当中系统都发生了什么？"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3 App 从启动到退出，这个过程当中系统都发生了什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-RunLoop的核心"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">4 RunLoop的核心</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、RunLoop与NSTimer"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、RunLoop与NSTimer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、RunLoop与多线程"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、RunLoop与多线程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、怎样实现一个常驻线程"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">1、怎样实现一个常驻线程?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、RunLoop和线程关系"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">2、RunLoop和线程关系</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六-RunLoop面试总结"><span class="post-toc-number">6.</span> <span class="post-toc-text">六 RunLoop面试总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#问题-什么是RunLoop-它是怎样做到有事做事-没事休息"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">问题:什么是RunLoop? 它是怎样做到有事做事,没事休息?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#问题-RunLoop与线程是怎样的关系"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">问题:RunLoop与线程是怎样的关系?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#问题-如何实现一个常驻线程"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">问题:如何实现一个常驻线程?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#问题-怎样保证子线程数据回来更新UI的时候不打断用户的滑动操作"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">问题:怎样保证子线程数据回来更新UI的时候不打断用户的滑动操作?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#问题：我们可以监听-RunLoop-哪些时间点？"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">问题：我们可以监听 RunLoop 哪些时间点？</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                [iOS面试]第7章 RunLoop相关面试问题
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>暮鼓晨钟</strong>
+        <span>5月 25, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[iOS面试]第7章 RunLoop相关面试问题&url=http://yoursite.com/2020/05/25/iOS面试-第7章-RunLoop相关面试问题/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[iOS面试]第7章 RunLoop相关面试问题&url=http://yoursite.com/2020/05/25/iOS面试-第7章-RunLoop相关面试问题/index.html&via=暮鼓晨钟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/25/iOS面试-第7章-RunLoop相关面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/25/iOS面试-第7章-RunLoop相关面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=[iOS面试]第7章 RunLoop相关面试问题&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/05/25/iOS面试-第7章-RunLoop相关面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>本文主讲RunLoop相关面试问题，包括RunLoop概念、数据结构、事件循环机制、RunLoop与NSTimer、RunLoop与多线程。</p>
+</blockquote>
+<h3 id="一、RunLoop概念"><a href="#一、RunLoop概念" class="headerlink" title="一、RunLoop概念"></a>一、RunLoop概念</h3><h4 id="1、-问题-什么是RunLoop"><a href="#1、-问题-什么是RunLoop" class="headerlink" title="1、 问题:什么是RunLoop?"></a>1、 问题:什么是RunLoop?</h4><p>答:RunLoop是通过<code>内部维护</code>的事件循环来对<code>事件/消息进行管理</code>的一个对象。<br>1、没有消息需要处理时，休眠以避免资源占有。<br>2、有消息需要处理时，立刻被唤醒。</p>
+<h4 id="2、EventLoop"><a href="#2、EventLoop" class="headerlink" title="2、EventLoop"></a>2、EventLoop</h4><p>没有消息需要被处理时, 系统会将当前线程所有权转化为<code>内核态</code>, 当有消息需要处理时, 系统会将当前线程的状态切换回<code>用户态</code>.<br>所以RunLoop的循环并不是一个单纯的死循环, 而是通过状态切换, 达到没有消息时休眠, 有消息时唤醒的这样一个事件循环机制.</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-d6ea92beb6fa5859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="EventLoop"></p>
+<h5 id="在没有消息处理时，休眠以避免资源占用，它的状态切换是怎么样的"><a href="#在没有消息处理时，休眠以避免资源占用，它的状态切换是怎么样的" class="headerlink" title="在没有消息处理时，休眠以避免资源占用，它的状态切换是怎么样的?"></a>在没有消息处理时，休眠以避免资源占用，它的状态切换是怎么样的?</h5><ul>
+<li><p>没有消息处理 是从<code>用户态</code>通过系统调用进入<code>内核态</code>.<br>也就是当没有消息要处理时，进程或者说线程会进入一个休眠状态，而休眠状态的一个过渡相当于是把当前线程的控制权转移给了<code>内核态</code></p>
+</li>
+<li><p>当有消息需要处理时就会被立刻唤醒<br>实际上就是由<code>内核态</code>到<code>用户态</code>的一个状态切换</p>
+</li>
+</ul>
+<h5 id="用户态和内核态的介绍："><a href="#用户态和内核态的介绍：" class="headerlink" title="用户态和内核态的介绍："></a>用户态和内核态的介绍：</h5><ul>
+<li>应用程序一般都是运行在<code>用户态</code>上面，也就是用户进程包括开发所使用的绝大多数的 API 都是针对于用户层面的.</li>
+<li>而当发生了系统调用，需要使用一些关于操作系统，以及一些底层内核相关的一些指令或者 API 的话，就触发了系统调用，而有些系统调用就会发生状态空间的切换，这种切换空间或者说之所以区分<code>用户态</code>和<code>内核态</code>实际上是对·计算机的一些资源调度·，包括资源管理进行一个统一或者说一致性的操作，这样的话就可以合理的安排资源调度，包括可以避免一些特殊的异常</li>
+<li>比如说在内核态往往有一些线性指令，中断，包括一些开机关机的一些操作，如果说每一个用户进程可以假想是一个 app，每一个 app 都可以促使当前用户手机关机或者说中断，这种场景是无法想象的，所以要有一个用户态到内核态上面的一个区分，同时内核态里面的一些内容可以对用户态当中的一些线程进行调度和管理包括进程间的一些通信</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-292007f1fa1eb6ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="问题-main函数为什么能保证一直运行状态不退出"><a href="#问题-main函数为什么能保证一直运行状态不退出" class="headerlink" title="问题:main函数为什么能保证一直运行状态不退出?"></a>问题:main函数为什么能保证一直运行状态不退出?</h5><p>答:</p>
+<ul>
+<li>在main函数中调用UIApplicationMain()函数, 这个函数内部会启动一个主线程的RunLoop</li>
+<li>RunLoop是对事件循环的维护机制, 可以不断的接收消息，比如说点击屏幕的事件，滑动列表，及处理网络请求的返回，那么接收消息之后对这个事件进行处理，处理完之后就会再进行等待, 通过用户态到内核态的切换, 从而避免资源占用, 让当前线程处于休眠状态.</li>
+<li>注意:等待 != 死循环 ，RunLoop的循环通过状态切换, 达到没有消息时休眠,用户态切换到内核态,有消息时唤醒,内核态切换到用户态的这样一个事件循环机制</li>
+</ul>
+<h5 id="什么是事件循环，事件循环的机制是怎样的？"><a href="#什么是事件循环，事件循环的机制是怎样的？" class="headerlink" title="什么是事件循环，事件循环的机制是怎样的？"></a>什么是事件循环，事件循环的机制是怎样的？</h5><ul>
+<li>维护的事件循环可以用来不断的处理消息或者说事件，对他们进行管理</li>
+<li>同时当没有消息需要管理时用从用户态切换到内核态，由此可以用来进行当前线程的休眠，然后避免资源占用</li>
+<li>同时当有消息需要处理时，会发生从内核态到用户态的切换，然后当前的用户线程会被唤醒</li>
+<li>所以状态的切换才是 RunLoop 的关键点</li>
+</ul>
+<h3 id="二、RunLoop的数据结构"><a href="#二、RunLoop的数据结构" class="headerlink" title="二、RunLoop的数据结构"></a>二、RunLoop的数据结构</h3><p><a href="http://opensource.apple.com/tarballs/CF/CF-855.17.tar.gz" target="_blank" rel="noopener">RunLoop开源代码地址</a><br>在 OC 中实际提供了两个 RunLoop 的。<br>一个是 NSRunLoop，一个是 CFRunLoop。<br>NSRunLoop 是对 CFRunLoop 的封装，提供了一些面向对象的 API。<br>NSRunLoop 是位于 Foundation 当中的，CFRunLoop 位于 CoreFoundation 当中的。</p>
+<p>RunLoop 的数据结构主要有三个：</p>
+<ul>
+<li>CFRunLoop</li>
+<li>CFRunLoopMode</li>
+<li>Source/Timer/Observer</li>
+</ul>
+<p>####1、CFRunLoop</p>
+<ul>
+<li><p>CFRunLoop数据结构 由五部分组成: pthread 、currentMode、modes、commonModes、commonModeItems<br><img src="https://upload-images.jianshu.io/upload_images/126164-83444fdff9ced225.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="CFRunLoop数据结构"></p>
+<pre><code>//源码
+struct __CFRunLoop {
+  CFMutableSetRef _commonModes;     // Set
+  CFMutableSetRef _commonModeItems; // Set
+  CFRunLoopModeRef _currentMode;    // Current Runloop Mode
+  CFMutableSetRef _modes;           // Set
+  ...
+};
+</code></pre></li>
+<li><p>(1)、pthread：一一对应(RunLoop和线程的关系)</p>
+</li>
+<li>(2)、currentMode：CFRunLoopMode</li>
+<li>(3)、modes：NSMutableSet&lt;CFRunLoopMode*&gt;</li>
+<li>(4)、commonModes：NSMutableSet&lt;NSString*&gt;<pre><code>1&gt;、commonMode不是实际存在的一种Mode。
+2&gt;、是同步Source/Timer/Observer到多个Mode中的一种技术方案。
+</code></pre></li>
+<li>(5)、commonModeItems：包含Observer、Timer、Source</li>
+</ul>
+<h4 id="2、CFRunLoopMode数据结构"><a href="#2、CFRunLoopMode数据结构" class="headerlink" title="2、CFRunLoopMode数据结构"></a>2、CFRunLoopMode数据结构</h4><p><img src="https://upload-images.jianshu.io/upload_images/126164-fab6921abd9ab7d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="CFRunLoopMode数据结构"></p>
+<pre><code>//源码
+struct __CFRunLoopMode {
+    CFStringRef _name;            // Mode Name, 例如 @&quot;kCFRunLoopDefaultMode&quot;
+    CFMutableSetRef _sources0;    // Set
+    CFMutableSetRef _sources1;    // Set
+    CFMutableArrayRef _observers; // Array
+    CFMutableArrayRef _timers;    // Array
+    ...
+};
+</code></pre><ul>
+<li>name:  对应某一个runloopMode名称(如 NSDefaultRunLoopMode)</li>
+<li>sources0: MutableSet 集合类型数据结构</li>
+<li>sources1: MutableSet 集合类型数据结构</li>
+<li>observers: MutableArray</li>
+<li>timers:  MutableArray </li>
+</ul>
+<h4 id="3、Source-Timer-Observer"><a href="#3、Source-Timer-Observer" class="headerlink" title="3、Source/Timer/Observer"></a>3、Source/Timer/Observer</h4><ul>
+<li>在 CF 框架当中官方名称叫 CFRunLoopSource ，有两种 source0 和 source1<br>唤醒线程就是从内核态切换到用户态<h5 id="1-gt-、CFRunLoopSource"><a href="#1-gt-、CFRunLoopSource" class="headerlink" title="1&gt;、CFRunLoopSource"></a>1&gt;、CFRunLoopSource</h5>source0：需要手动唤醒线程。<br>source1：具备唤醒线程的能力。</li>
+</ul>
+<p>source0:  非系统事件.<br>只包含了一个回调（函数指针），它并不能主动触发事件。使用时，你需要先调用 CFRunLoopSourceSignal(source)，将这个 Source 标记为待处理，然后手动调用 CFRunLoopWakeUp(runloop) 来唤醒 RunLoop，让其处理这个事件。</p>
+<p>source1 ： 系统事件<br>包含了一个 mach_port和一个回调（函数指针），被用于通过内核和其他线程相互发送消息。这种 Source 能主动唤醒 RunLoop 的线程</p>
+<h5 id="2-gt-、CFRunLoopTimer"><a href="#2-gt-、CFRunLoopTimer" class="headerlink" title="2&gt;、CFRunLoopTimer"></a>2&gt;、CFRunLoopTimer</h5><p>基于事件的定时器，和NSTimer是toll-free bridged的。和平时所使用的 NSTimer 是具备免费桥转换的</p>
+<h5 id="3-gt-、CFRunLoopObserver"><a href="#3-gt-、CFRunLoopObserver" class="headerlink" title="3&gt;、CFRunLoopObserver"></a>3&gt;、CFRunLoopObserver</h5><p>某个observer可以监听runloop的状态变化，并作出一定反应。</p>
+<p>观测时间点</p>
+<ul>
+<li>KCFRunLoopEntry (RunLoop入口时机)</li>
+<li>KCFRunLoopBeforeTimers (通知观察者RunLoop将要对timer一些相关事件进行处理)</li>
+<li>KCFRunLoopBeforeSources (将要对处理一些sources事件)</li>
+<li>KCFRunLoopBeforeWaiting (通知观察者RunLoop将要进入休眠状态, 即将要发用户态到内核态切换)</li>
+<li>KCFRunLoopAfterWaiting (内核态到用户态切换不久)</li>
+<li>KCFRunLoopExit (RunLoop退出通知)</li>
+</ul>
+<p>可以通过注册一些 Observer 来实现对 RunLoop 的一些相关时间点的监测或者观察。</p>
+<h4 id="4、各个数据结构之间关系"><a href="#4、各个数据结构之间关系" class="headerlink" title="4、各个数据结构之间关系"></a>4、各个数据结构之间关系</h4><p><img src="https://upload-images.jianshu.io/upload_images/126164-7307b9d19dfe930a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据结构之间关系"><br>问题:RunLoop 和Mode以及 Mode和其对应的 Source ,Timer , Observer 有什么关系?<br>答: </p>
+<ul>
+<li>一个runLoop可以有多个mode, 一对多关系</li>
+<li>mode 和Source, Timer, Observer 是一对多的关系<br>可以看到, 一个RunLoop可以有多个Mode, 而每个Mode中又可以存放多个不同的事件, 我们在切换Mode时, 其他Mode的事件将不会被响应.</li>
+</ul>
+<h4 id="5、RunLoop的Mode"><a href="#5、RunLoop的Mode" class="headerlink" title="5、RunLoop的Mode"></a>5、RunLoop的Mode</h4><p><img src="https://upload-images.jianshu.io/upload_images/126164-ef18ec3d8cba314f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>Runloop Mode 实际上是 Source，Timer 和 Observer 的集合，不同的 Mode 把不同组的 Source，Timer 和 Observer 隔绝开来。Runloop 在某个时刻只能跑在一个 Mode 下，处理这一个 Mode 当中的 Source，Timer 和 Observer。</p>
+<p>苹果文档中提到的 Mode 有五个，分别是：</p>
+<ul>
+<li>NSDefaultRunLoopMode：默认的mode，正常情况下都是在这个mode</li>
+<li>NSConnectionReplyMode</li>
+<li>NSModalPanelRunLoopMode</li>
+<li>NSEventTrackingRunLoopMode：使用这个Mode去跟踪来自用户交互的事件（比如UITableView上下滑动）</li>
+<li>NSRunLoopCommonModes</li>
+</ul>
+<p>iOS 中公开暴露出来的只有 <code>NSDefaultRunLoopMode</code> 和 <code>NSRunLoopCommonModes</code>。 NSRunLoopCommonModes 实际上是一个 Mode 的集合，默认包括 NSDefaultRunLoopMode 和 NSEventTrackingRunLoopMode。</p>
+<p>问题:RunLoop为什么会有多个mode?<br>答：</p>
+<h4 id="6、CommonModes的特殊性"><a href="#6、CommonModes的特殊性" class="headerlink" title="6、CommonModes的特殊性"></a>6、CommonModes的特殊性</h4><p>NSRunLoopCommonModes<br>(问题:CommonModes是否使用过, 你对CommonModes事怎样理解?)</p>
+<ul>
+<li>CommonModes<code>不是实际存在</code>的一种Mode</li>
+<li>是同步Source/Timer/Observer到多个Mode中的<code>一种技术方案</code></li>
+</ul>
+<p>在 OC 当中经常会通过 NSRunLoopCommonModes 字符串常量来表达 CommonMode。</p>
+<ul>
+<li>CommonModes实现：一个 Mode 可以将自己标记为”Common”属性（通过将其 ModeName 添加到 RunLoop 的 “commonModes” 中）。每当 RunLoop 的内容发生变化时，RunLoop 都会自动将 _commonModeItems 里的 Source/Observer/Timer 同步到具有 “Common” 标记的所有Mode里。</li>
+</ul>
+<h3 id="三、RunLoop事件循环机制的实现"><a href="#三、RunLoop事件循环机制的实现" class="headerlink" title="三、RunLoop事件循环机制的实现"></a>三、RunLoop事件循环机制的实现</h3><p>在开发过程中调用的 NSRunLoop 的 run 系列的相关方法以及 CFRunLoop 的相关的 run 方法最终都会调用到 CFRunLoopRun() 函数</p>
+<p><img src="//upload-images.jianshu.io/upload_images/6751716-aab2f6686479c01a.png?imageMogr2/auto-orient/strip|imageView2/2/w/600" alt=""></p>
+<h4 id="1-事件循环的整体逻辑："><a href="#1-事件循环的整体逻辑：" class="headerlink" title="1 事件循环的整体逻辑："></a>1 事件循环的整体逻辑：</h4><p>1）在 RunLoop 启动之后首先会发出一条通知来告诉观察者当前 RunLoop 即将启动<br>2）之后 RunLoop 将要处理 Timer/Sources0 事件，发出通知<br>3）进入正式 Sources0 的处理<br>4）如果有 Sources1 需要处理，这个时候会用过一条 goto 语句来进行代码逻辑的跳转，来处理唤醒时收到的消息<br>5）如果没有 Source1要处理，此时线程将要休眠，同时也会发送通知给 Observe，然后就发生了用户带到内核态的切换<br>6）线程正式进入休眠，等待唤醒<br>7）之后线程被唤醒，也要发送一个通知，通知观察着说当前线程被唤醒了，然后处理唤醒时受到的消息，之后又会回到第二步</p>
+<h4 id="2-当处于休眠的runloop，可以通过哪些方式唤醒"><a href="#2-当处于休眠的runloop，可以通过哪些方式唤醒" class="headerlink" title="2 当处于休眠的runloop，可以通过哪些方式唤醒?"></a>2 当处于休眠的runloop，可以通过哪些方式唤醒?</h4><p>答: </p>
+<ul>
+<li>通过 Sources1 进行当前 RunLoop 的唤醒</li>
+<li>Timer 事件的回调</li>
+<li>外部手动的唤醒</li>
+</ul>
+<h4 id="3-App-从启动到退出，这个过程当中系统都发生了什么？"><a href="#3-App-从启动到退出，这个过程当中系统都发生了什么？" class="headerlink" title="3 App 从启动到退出，这个过程当中系统都发生了什么？"></a>3 App 从启动到退出，这个过程当中系统都发生了什么？</h4><p>答：</p>
+<ul>
+<li>调用了 main 函数之后，在 main 函数中会调用 UIApplicationMain 函数，在这个函数内部会启动一个主线程的 RunLoop，然后经过一系列的处理最终主线程的 RunLoop 处于休眠状态，</li>
+<li>如果说此时点击一个屏幕，会产生一个 Responder ，然后基于 Responder 最终会转成 Sources1，可以把主线程唤醒，运行然后处理，</li>
+<li>之后当把程序杀死的时候 RunLoop 就会退出，这个时候就会发出一个通知即将退出 RunLoop ，RunLoop 退出之后线程也就销毁掉了。</li>
+</ul>
+<h4 id="4-RunLoop的核心"><a href="#4-RunLoop的核心" class="headerlink" title="4 RunLoop的核心"></a>4 RunLoop的核心</h4><p><img src="https://upload-images.jianshu.io/upload_images/126164-5474cc5627c2b788.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>main 函数经过一系列的处理之后，内部最终会调用一个系统函数 mach_msg() ,于是就发生了一个系统调用，经过系统调用当前用户线程就把控制权转交核心态，然后 mach_msg() 在一定条件下会返回给调用方，触发返回的逻辑就是唤醒线程的逻辑，比如收到了一个 Sources1 或者 Timer 事件的回调，包括外部手动唤醒，就可以触发核心态到用户态的切换，那么当前app的主线程循环就会被唤醒，这就是 RunLoop 的核心</p>
+<h3 id="四、RunLoop与NSTimer"><a href="#四、RunLoop与NSTimer" class="headerlink" title="四、RunLoop与NSTimer"></a>四、RunLoop与NSTimer</h3><p><strong>问题:滑动TableView的时候，我们的定时器还会生效吗？</strong><br>答: </p>
+<ul>
+<li><p>Runloop Mode 实际上是 Source，Timer 和 Observer 的集合，不同的 Mode 把不同组的 Source，Timer 和 Observer 隔绝开来。Runloop 在某个时刻只能跑在一个 Mode 下，处理这一个 Mode 当中的 Source，Timer 和 Observer。</p>
+</li>
+<li><p>滑动TableView的时候Mode发生切换，从KCFRunLoopDefaultMode切换到UITrackingRunLoopMode. (当把Source/Timer/Observer 添加到某个Mode上, 如果当前runloop运行在另一个mode上, 对应Source/Timer/Observer是没有办法进行后续处理和回调.)</p>
+</li>
+<li><p>解决: 通过函数CFRunLoopAddTimer() 将timer添加到commonMode上.</p>
+</li>
+<li>CommonMode<code>不是实际存在</code>的一种Mode, 只是将一些mode打上common标记, 然后可以把某个事件源(如Timer)同步到多个mode中.<pre><code>void CFRunLoopAddTimer(runloop, timer, commonMode)
+`
+</code></pre></li>
+</ul>
+<h3 id="五、RunLoop与多线程"><a href="#五、RunLoop与多线程" class="headerlink" title="五、RunLoop与多线程"></a>五、RunLoop与多线程</h3><h4 id="1、怎样实现一个常驻线程"><a href="#1、怎样实现一个常驻线程" class="headerlink" title="1、怎样实现一个常驻线程?"></a>1、怎样实现一个常驻线程?</h4><p>(1)、为当前线程开启一个RunLoop。<br>(2)、向该RunLoop中添加一个Port/Source等维持RunLoop的事件循环。<br>(3)、启动该RunLoop。</p>
+<p>实现一个常驻线程的基本步骤：</p>
+<ul>
+<li>1)为当前线程开启一个 RunLoop ：NSRunLoop *runLoop = [NSRunLoop currentRunLoop];，因为获取当前 RunLoop 这个方法本身会查找如果当前线程没有 RunLoop 的话，会在系统的内部创建</li>
+<li>2)如果线程没有资源或者事件源要处理的话，默认情况下是不能维持事件循环的就会直接退出了，所以需要给他添加一个 Port/Source 来维持他的时间循环机制</li>
+<li>3)然后再调用 RunLoop 的 run 方法就可以实现一个常驻线程</li>
+</ul>
+<h4 id="2、RunLoop和线程关系"><a href="#2、RunLoop和线程关系" class="headerlink" title="2、RunLoop和线程关系"></a>2、RunLoop和线程关系</h4><p>(1)、runloop与线程是一一对应的，一个runloop对应一个核心的线程，为什么说是核心的，是因为runloop是可以嵌套的，但是核心的只能有一个，他们的关系保存在一个全局的字典里。<br>(2)、runloop是来管理线程的，当线程的runloop被开启后，线程会在执行完任务后进入休眠状态，有了任务就会被唤醒去执行任务。<br>(3)、runloop在第一次获取时被创建，在线程结束时被销毁。<br>(4)、对于主线程来说，runloop在程序一启动就默认创建好了。<br>(5)、对于子线程来说，runloop是懒加载的，只有当我们使用的时候才会创建。</p>
+<pre><code>    dispatch_queue_t queue = dispatch_queue_create(&quot;com.codeTao.testQueue&quot;, DISPATCH_QUEUE_SERIAL);
+    dispatch_async(queue, ^{
+        [self performSelector:@selector(timerAction) withObject:nil afterDelay:1];
+        [[NSRunLoop currentRunLoop] run];
+    });
+</code></pre><p>(6)、子线程中使用定时器，需将定时器添加至RunLoop中，确保子线程的runloop被创建，不然定时器不会回调。</p>
+<pre><code>  dispatch_queue_t queue = dispatch_queue_create(&quot;com.codeTao.testQueue&quot;, DISPATCH_QUEUE_SERIAL);
+    dispatch_async(queue, ^{
+        //此种方式创建的timer已经添加到NSRunloop中了
+        NSTimer *timer1 =[NSTimer scheduledTimerWithTimeInterval:0 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] run];
+
+        //此种方式创建的timer没有添加至runloop中
+        NSTimer *timer2 = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:timer2 forMode:NSDefaultRunLoopMode];
+        [[NSRunLoop currentRunLoop] run];
+    });
+</code></pre><h3 id="六-RunLoop面试总结"><a href="#六-RunLoop面试总结" class="headerlink" title="六 RunLoop面试总结"></a>六 RunLoop面试总结</h3><h4 id="问题-什么是RunLoop-它是怎样做到有事做事-没事休息"><a href="#问题-什么是RunLoop-它是怎样做到有事做事-没事休息" class="headerlink" title="问题:什么是RunLoop? 它是怎样做到有事做事,没事休息?"></a>问题:什么是RunLoop? 它是怎样做到有事做事,没事休息?</h4><p>答: RunLoop是通过<code>内部维护</code>的事件循环来对<code>事件/消息进行管理</code>的一个对象。<br>调用 [CFRunLoop run] 相关方法后, 会调用系统函数mach_msg, 同时发生了用户态向核心态的切换,当前线程处于休眠状态.所有做到有事做事,没事休息</p>
+<h4 id="问题-RunLoop与线程是怎样的关系"><a href="#问题-RunLoop与线程是怎样的关系" class="headerlink" title="问题:RunLoop与线程是怎样的关系?"></a>问题:RunLoop与线程是怎样的关系?</h4><p>答:</p>
+<ul>
+<li>runloop与线程是一一对应的</li>
+<li>一个线程默认是没有runloop的, 需要手动创建</li>
+</ul>
+<h4 id="问题-如何实现一个常驻线程"><a href="#问题-如何实现一个常驻线程" class="headerlink" title="问题:如何实现一个常驻线程?"></a>问题:如何实现一个常驻线程?</h4><p>答:三个步骤:<br>(1)、创建一个线程对应的RunLoop。<br>(2)、向该RunLoop中添加一个Port/Source/Timer/Observer等维持RunLoop的事件循环。<br>(3)、启动该RunLoop 。调用CFRunLoop run方法<br>注意:运行的模式和添加模式必须是同一个,否则外部使用while循环会导致死循环</p>
+<h4 id="问题-怎样保证子线程数据回来更新UI的时候不打断用户的滑动操作"><a href="#问题-怎样保证子线程数据回来更新UI的时候不打断用户的滑动操作" class="headerlink" title="问题:怎样保证子线程数据回来更新UI的时候不打断用户的滑动操作?"></a>问题:怎样保证子线程数据回来更新UI的时候不打断用户的滑动操作?</h4><p>答: </p>
+<ul>
+<li>用户进行滑动过程中,当前RunLoop运行在<code>UITrackingRunLoopMode下</code></li>
+<li>我们一般在子线程中进行网络请求,  所以可以将子线程抛给主线程数据并进行UI更新的逻辑封装起来提交到<code>主线程</code>的NSDefaultRunLoopMode下.</li>
+<li>这样抛回来的任务,当用户滑动时处于UITrackingRunLoopMode下就不会执行任务. 当手停止滑动操作后, 当前线程mode切换到<code>NSDefaultRunLoopMode</code>下,再处理子线程上抛给主线程的任务,这样就不会打断用户滑动操作.</li>
+</ul>
+<h4 id="问题：我们可以监听-RunLoop-哪些时间点？"><a href="#问题：我们可以监听-RunLoop-哪些时间点？" class="headerlink" title="问题：我们可以监听 RunLoop 哪些时间点？"></a>问题：我们可以监听 RunLoop 哪些时间点？</h4><p>答：</p>
+<ul>
+<li><code>KCFRunLoopEntry</code>RunLoop 的入口时机，当 RunLoop 准备启动的时候系统会给我们一个回调通知，这个通知掉 CFRunLoopEntry</li>
+<li><code>KCFRunLoopBeforeTimers</code>代表的含义：通知观察者 RunLoop 将要对 Timer 一些相关事件进行处理了</li>
+<li><code>KCFRunLoopBeforeSources</code>代表将要处理一些 Source 事件</li>
+<li><code>KCFRunLoopBeforeWaiting</code>通知对应观察者，当前 RunLoop 将要进入休眠状态，这个通知或者说观测点是非常重要的一个观测点，在 RunLoop 发送这个通知的时候，即将要发生用户态到内核态的切换</li>
+<li><code>KCFRunLoopAfterWaiting</code>这也是一个重要的观测点，这个通知发出的时机恰好是从内核态切换到用户态之后的不久之间</li>
+<li><code>KCFRunLoopExit</code>代表 RunLoop 退出的通知</li>
+</ul>
+<hr>
+<p><strong>问题:什么时候使用Runloop?</strong><br>当需要和该线程进行交互的时候才会使用Runloop</p>
+<p><strong>问题: Runloop和线程是什么关系？</strong><br>答:</p>
+<ul>
+<li>每条线程都有唯一的一个与之对应的RunLoop对象，其关系是保存在一个全局的 Dictionary 里；</li>
+<li>主线程的RunLoop已经自动创建，子线程的RunLoop需要手动创建；</li>
+<li>RunLoop在第一次获取时创建，在线程结束时销毁</li>
+</ul>
+<p><strong>问题:Runloop的mode作用是什么？</strong><br>答:<br>指定事件在运行循环中的优先级的，<br>线程的运行需要不同的模式，去响应各种不同的事件，去处理不同情境模式。(比如可以优化tableview的时候可以设置UITrackingRunLoopMode下不进行一些操作，比如设置图片等。)</p>
+<p><strong>问题: 以<code>+scheduledTimerWithTimeInterval:</code>的方式触发的<code>timer</code>，在滑动页面上的列表时，<code>timer</code>会暂停回调， 为什么？</strong><br>答:<br>滑动scrollView时，主线程的RunLoop会切换到<code>UITrackingRunLoopMode</code>这个Mode，执行的也是<code>UITrackingRunLoopMode</code>下的任务（Mode中的item），而timer是添加在<code>NSDefaultRunLoopMode</code>下的，所以timer任务并不会执行，只有当<code>UITrackingRunLoopMode</code>的任务执行完毕，runloop切换到<code>NSDefaultRunLoopMode</code>后，才会继续执行timer。</p>
+<p><strong>问题: 如何解决在滑动页面上的列表时，timer会暂停回调？</strong><br>答:<br>将<code>Timer</code>放到<code>NSRunLoopCommonModes</code>中执行即可</p>
+<pre><code>[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+[[NSRunLoop currentRunLoop] run];
+</code></pre><p><strong>问题: NSTimer使用时需要注意什么？</strong><br>答:</p>
+<ul>
+<li>注意timer添加到runloop时应该设置为什么mode</li>
+<li>注意timer在不需要时，一定要调用invalidate方法使定时器失效，否则得不到释放</li>
+</ul>
+<p><strong>问题: RunLoop 有哪些应用？</strong><br>答: 常驻内存、AutoreleasePool 自动释放池</p>
+<p><strong>问题: AutoreleasePool 和 RunLoop 有什么联系？</strong><br>答:<br>iOS应用启动后会注册两个 Observer 管理和维护 AutoreleasePool。应用程序刚刚启动时默认注册了很多个Observer，其中有两个Observer的 callout 都是 _ wrapRunLoopWithAutoreleasePoolHandler，这两个是和自动释放池相关的两个监听。</p>
+<ul>
+<li><p>第一个 Observer 会监听 RunLoop 的进入，它会回调objc_autoreleasePoolPush() 向当前的 AutoreleasePoolPage 增加一个哨兵对象标志创建自动释放池。这个 Observer 的 order 是 -2147483647 优先级最高，确保发生在所有回调操作之前。</p>
+</li>
+<li><p>第二个 Observer 会监听 RunLoop 的进入休眠和即将退出 RunLoop 两种状态，在即将进入休眠时会调用 objc_autoreleasePoolPop() 和 objc_autoreleasePoolPush() 根据情况从最新加入的对象一直往前清理直到遇到哨兵对象。而在即将退出 RunLoop 时会调用objc_autoreleasePoolPop() 释放自动自动释放池内对象。这个Observer 的 order 是 2147483647 ，优先级最低，确保发生在所有回调操作之后。</p>
+</li>
+</ul>
+<p><strong>问题:NSRunLoop 和 CFRunLoopRef 区别?</strong><br>答: CFRunLoopRef 基于C 线程安全，NSRunLoop 基于 CFRunLoopRef 面向对象的API 是不安全的</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2020/05/25/iOS面试-第8章-网络相关面试问题/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2020/05/24/iOS面试-第6章-多线程相关面试问题/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="暮鼓晨钟's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        swift630@sina.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: swift630@sina.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">send</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">58</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;暮鼓晨钟
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
