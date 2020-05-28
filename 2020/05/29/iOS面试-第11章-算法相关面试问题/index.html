@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            [iOS面试]第11章 算法相关面试问题 | 
+        
+        暮鼓晨钟
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",iOS面试">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="暮鼓晨钟">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/05/29/iOS面试-第11章-算法相关面试问题/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="暮鼓晨钟">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2020/05/29/iOS面试-第11章-算法相关面试问题/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="[iOS面试]第11章 算法相关面试问题 | 暮鼓晨钟">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="iOS面试"> 
+
+    
+        <meta property="article:published_time" content="Fri May 29 2020 00:04:28 GMT+0800">
+        <meta property="article:modified_time" content="Fri May 29 2020 00:05:15 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2020/05/29/iOS面试-第11章-算法相关面试问题/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2020/05/29/iOS面试-第11章-算法相关面试问题/index.html",
+    "headline": "[iOS面试]第11章 算法相关面试问题",
+    "datePublished": "Fri May 29 2020 00:04:28 GMT+0800",
+    "dateModified": "Fri May 29 2020 00:05:15 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "暮鼓晨钟",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "暮鼓晨钟",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",iOS面试",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、字符串反转"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、字符串反转</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、链表反转"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、链表反转</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、求无序数组当中的中位数"><span class="post-toc-number">3.</span> <span class="post-toc-text">六、求无序数组当中的中位数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#排序算法-中位数"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">排序算法+中位数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#快排思想"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">快排思想</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                [iOS面试]第11章 算法相关面试问题
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>暮鼓晨钟</strong>
+        <span>5月 29, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[iOS面试]第11章 算法相关面试问题&url=http://yoursite.com/2020/05/29/iOS面试-第11章-算法相关面试问题/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[iOS面试]第11章 算法相关面试问题&url=http://yoursite.com/2020/05/29/iOS面试-第11章-算法相关面试问题/index.html&via=暮鼓晨钟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/29/iOS面试-第11章-算法相关面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/29/iOS面试-第11章-算法相关面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=暮鼓晨钟&title=[iOS面试]第11章 算法相关面试问题&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/05/29/iOS面试-第11章-算法相关面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>注意：本文主讲算法相关面试问题，包括字符串反转、链表反转、有序数组合并、Hash算法、查找两个子视图的共同父视图、求无序数组当中的中位数。</p>
+<h3 id="一、字符串反转"><a href="#一、字符串反转" class="headerlink" title="一、字符串反转"></a>一、字符串反转</h3><p>问题:给定字符串”hello, world”, 实现将其反转.输出结果: dlrow,oleh</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-b43437a2df845602.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="字符串反转"></p>
+<p>答: </p>
+<pre><code>void char_reverse(char* cha) {
+    // 指向第一个字符
+    char* begin = cha;
+    // 指向最后一个字符
+    char* end = cha + strlen(cha) - 1;
+
+    while (begin &lt; end) {
+        // 交换前后两个字符,同时移动指针
+        char temp = *begin;
+        *(begin++) = *end;
+        *(end--) = temp;
+    }
+}
+
+//1.字符串反转
+char ch[] = &quot;hello,world&quot;;
+char_reverse(ch);
+printf(&quot;reverse result is %s \n&quot;, ch);
+//打印 reverse result is dlrow,olleh
+</code></pre><h3 id="二、链表反转"><a href="#二、链表反转" class="headerlink" title="二、链表反转"></a>二、链表反转</h3><p>链表头插法思想<br><img src="https://upload-images.jianshu.io/upload_images/126164-ca29da7142022835.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="链表反转"></p>
+<ul>
+<li>ReverseList.h<pre><code>//ReverseList.h
+// 定义一个链表
+struct Node {
+  int data;
+  struct Node *next;
+};
+@interface ReverseList : NSObject
+// 链表反转
+struct Node* reverseList(struct Node *head);
+// 构造一个链表
+struct Node* constructList(void);
+// 打印链表中的数据
+void printList(struct Node *head);
+@end
+</code></pre></li>
+<li><p>ReverseList.m<br><code>`</code><br>//ReverseList.m<br>@implementation ReverseList<br>struct Node<em> reverseList(struct Node </em>head) {<br>  // 定义遍历指针，初始化为头结点<br>  struct Node <em>p = head;<br>  // 反转后的链表头部<br>  struct Node </em>newH = NULL;</p>
+<p>  // 遍历链表<br>  while (p != NULL) {</p>
+<pre><code>  // 记录下一个结点
+  struct Node *temp = p-&gt;next;
+  // 当前结点的next指向新链表头部
+  p-&gt;next = newH;
+  // 更改新链表头部为当前结点
+  newH = p;
+  // 移动p指针
+  p = temp;
+</code></pre><p>  }<br>  // 返回反转后的链表头结点<br>  return newH;<br>}</p>
+</li>
+</ul>
+<p>struct Node<em> constructList(void) {<br>    // 头结点定义<br>    struct Node </em>head = NULL;<br>    // 记录当前尾结点<br>    struct Node *cur = NULL;</p>
+<pre><code>for (int i = 1; i &lt; 5; i++) {
+    struct Node *node = malloc(sizeof(struct Node));
+    node-&gt;data = i;
+
+    // 头结点为空，新结点即为头结点
+    if (head == NULL) {
+        head = node;
+    }
+    // 当前结点的next为新结点
+    else{
+        cur-&gt;next = node;
+    }
+    // 设置当前结点为新结点
+    cur = node;
+}
+return head;
+</code></pre><p>}</p>
+<p>void printList(struct Node <em>head){<br>    struct Node</em> temp = head;<br>    while (temp != NULL) {<br>        printf(“node is %d \n”, temp-&gt;data);<br>        temp = temp-&gt;next;<br>    }<br>}<br>@end</p>
+<pre><code>+ 执行调用
+</code></pre><p>//单链表反转<br>struct Node<em> head = constructList();<br>printList(head);<br>printf(“———–\n”);<br>struct Node</em> newHead = reverseList(head);<br>printList(newHead); </p>
+<pre><code>
+### 三、有序数组合并
+![有序数组合并](https://upload-images.jianshu.io/upload_images/126164-022a4ae9963ad9a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+</code></pre><p>// 将有序数组a和b的值合并到一个数组result当中，且仍然保持有序<br>void mergeList(int a[], int aLen, int b[], int bLen, int result[]) {<br>    int p = 0; // 遍历数组a的指针<br>    int q = 0; // 遍历数组b的指针<br>    int i = 0; // 记录当前存储位置</p>
+<pre><code>// 任一数组没有到达边界则进行遍历
+while (p &lt; aLen &amp;&amp; q &lt; bLen) {
+    // 如果a数组对应位置的值小于b数组对应位置的值
+    if (a[p] &lt;= b[q]) {
+        // 存储a数组的值
+        result[i] = a[p];
+        // 移动a数组的遍历指针
+        p++;
+    }else{
+        // 存储b数组的值
+        result[i] = b[q];
+        // 移动b数组的遍历指针
+        q++;
+    }
+    // 指向合并结果的下一个存储位置
+    i++;
+}
+
+// 如果a数组有剩余
+while (p &lt; aLen) {
+    // 将a数组剩余部分拼接到合并结果的后面
+    result[i] = a[p++];
+    i++;
+}
+
+// 如果b数组有剩余
+while (q &lt; bLen) {
+    // 将b数组剩余部分拼接到合并结果的后面
+    result[i] = b[q++];
+    i++;
+}
+</code></pre><p>}</p>
+<pre><code>+ 执行调用
+</code></pre><p>int a[5] = {1,4,6,7,9};<br>int b[8] = {2,3,5,6,8,10,11,12};</p>
+<p>//用于存储归并结果<br>int result[13];<br>//归并操作<br>mergeList(a, 5, b, 8, result);<br>//打印归并结果<br>printf(“merge result is “);<br>for (int i = 0; i &lt; 13; i++) {<br>      printf(“%d “, result[i]);<br>}<br>//输出 merge result is 1 2 3 4 5 6 6 7 8 9 10 11 12 </p>
+<pre><code>
+### 四、Hash算法
+问题:在一个字符串中找到第一个只出现一次的字符
+如:输入&quot;abaccdeff&quot; , 则输出b
+
+算法思想:
++ 字符(char)是一个长度为8的数据类型,因此总共有可能256中可能.
++ 每个字母根据其ASCII码值作为数组的下标对应数组的一个数字.
++ 数组中存储的是每个字符出现的次数.
+
+哈希表
+例: 给定值是字母a, 对应ASCII值是97, 数组索引下标为97.
+哈希函数: 建立字母或字符到它所存储位置index的一个映射关系. f(key)
+存储和查找都通过该函数, 有效提高查找效率.
+f(char) =&gt; index
+
+</code></pre><p>//查找第一个只出现一次的字符<br>char findFirstChar(char<em> cha) {<br>    char result = ‘\0’;<br>    // 定义一个数组 用来存储各个字母出现次数<br>    int array[256];<br>    // 对数组进行初始化操作<br>    for (int i=0; i&lt;256; i++) {<br>        array[i] =0;<br>    }<br>    // 定义一个指针 指向当前字符串头部<br>    char</em> p = cha;<br>    // 遍历每个字符<br>    while (<em>p != ‘\0’) {<br>        // 在字母对应存储位置 进行出现次数+1操作<br>        array[</em>(p++)]++;<br>    }</p>
+<pre><code>// 将P指针重新指向字符串头部
+p = cha;
+// 遍历每个字母的出现次数
+while (*p != &#39;\0&#39;) {
+    // 遇到第一个出现次数为1的字符，打印结果
+    if (array[*p] == 1) {
+        result = *p;
+        break;
+    }
+    // 反之继续向后遍历
+    p++;
+}
+return result;
+</code></pre><p>}</p>
+<pre><code>+ 执行结果
+</code></pre><p>char cha[] = “abaccdeff”;<br>char fc = findFirstChar(cha);<br>printf(“this char is %c \n”, fc);<br>//输出this char is b</p>
+<pre><code>
+### 五、查找两个子视图的共同父视图
++ 倒序比较找到第一个不一样的
+
+</code></pre><ul>
+<li><p>(NSArray <uiview *=""> <em>)findCommonSuperView:(UIView </em>)viewOne other:(UIView <em>)viewOther {<br>  NSMutableArray </em>result = [NSMutableArray array];</uiview></p>
+<p>  // 查找第一个视图的所有父视图<br>  NSArray <em>arrayOne = [self findSuperViews:viewOne];<br>  // 查找第二个视图的所有父视图<br>  NSArray </em>arrayOther = [self findSuperViews:viewOther];</p>
+<p>  int i = 0;<br>  // 越界限制条件<br>  while (i &lt; MIN((int)arrayOne.count, (int)arrayOther.count)) {</p>
+<pre><code>  // 倒序方式获取各个视图的父视图
+  UIView *superOne = [arrayOne objectAtIndex:arrayOne.count - i - 1];
+  UIView *superOther = [arrayOther objectAtIndex:arrayOther.count - i - 1];
+
+  // 比较如果相等 则为共同父视图
+  if (superOne == superOther) {
+      [result addObject:superOne];
+      i++;
+  }
+  // 如果不相等，则结束遍历
+  else{
+      break;
+  }
+</code></pre><p>  }</p>
+<p>  return result;<br>}</p>
+</li>
+<li><p>(NSArray <uiview *=""> <em>)findSuperViews:(UIView </em>)view {<br>  // 初始化为第一父视图<br>  UIView <em>temp = view.superview;<br>  // 保存结果的数组<br>  NSMutableArray </em>result = [NSMutableArray array];<br>  while (temp) {</uiview></p>
+<pre><code>  [result addObject:temp];
+  // 顺着superview指针一直向上查找
+  temp = temp.superview;
+</code></pre><p>  }<br>  return result;<br>}<br><code>`</code></p>
+</li>
+</ul>
+<h3 id="六、求无序数组当中的中位数"><a href="#六、求无序数组当中的中位数" class="headerlink" title="六、求无序数组当中的中位数"></a>六、求无序数组当中的中位数</h3><p>方案:</p>
+<ul>
+<li>1&gt;排序算法+中位数</li>
+<li>2&gt;利用快排思想(分治思想)</li>
+</ul>
+<h4 id="排序算法-中位数"><a href="#排序算法-中位数" class="headerlink" title="排序算法+中位数"></a>排序算法+中位数</h4><ul>
+<li>排序算法: 冒泡排序, 快速排序, 堆排序…</li>
+<li>中位数:<br>当n为奇数时, (n+1)/2 ;<br>当n为偶数时, (n/2 + (n/2 + 1)) / 2 ;</li>
+</ul>
+<h4 id="快排思想"><a href="#快排思想" class="headerlink" title="快排思想"></a>快排思想</h4><p><img src="https://upload-images.jianshu.io/upload_images/126164-eae8c97a50f43fbf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="快排思想 "></p>
+<ul>
+<li>快排思想: 选取关键字, 高低交替扫描</li>
+</ul>
+<p>任意挑一个元素, 以该元素为支点, 划分集合为两部分.<br>如果左侧集合长度恰为 (n- 1)/2, 那么支点恰为中位数.<br>如果左侧长度恰 &lt;  (n- 1)/2, 那么中位点在右侧; 反之, 中位数在左侧.<br>进入相应的一侧继续寻找中位点</p>
+<pre><code>int findMedian(int a[], int aLen) {
+    int low = 0;
+    int high = aLen - 1;
+
+    int mid = (aLen - 1) / 2;
+    int div = PartSort(a, low, high);
+
+    while (div != mid){
+        if (mid &lt; div){
+            //左半区间找
+            div = PartSort(a, low, div - 1);
+        }
+        else{
+            //右半区间找
+            div = PartSort(a, div + 1, high);
+        }
+    }
+    //找到了
+    return a[mid];
+}
+
+int PartSort(int a[], int start, int end) {
+    int low = start;
+    int high = end;
+
+    //选取关键字
+    int key = a[end];
+
+    while (low &lt; high) {
+        //左边找比key大的值
+        while (low &lt; high &amp;&amp; a[low] &lt;= key){
+            ++low;
+        }
+
+        //右边找比key小的值
+        while (low &lt; high &amp;&amp; a[high] &gt;= key){
+            --high;
+        }
+
+        if (low &lt; high){
+            //找到之后交换左右的值
+            int temp = a[low];
+            a[low] = a[high];
+            a[high] = temp;
+        }
+    }
+
+    int temp = a[high];
+    a[high] = a[end];
+    a[end] = temp;
+
+    return low;
+}
+</code></pre><ul>
+<li>执行调用<pre><code>int list[9] = {12,3,10,8,6,7,11,13,9};
+// 3 6 7 8 9 10 11 12 13
+//             ^
+int median = findMedian(list, 9);
+printf(&quot;the median is %d \n&quot;, median);
+// the median is 9 
+</code></pre></li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2020/05/29/iOS面试-第12章-第三方框架相关面试问题/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2020/05/26/iOS面试-第10章-架构框架相关面试问题/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="暮鼓晨钟's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        swift630@sina.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: swift630@sina.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">send</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">62</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;暮鼓晨钟
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
