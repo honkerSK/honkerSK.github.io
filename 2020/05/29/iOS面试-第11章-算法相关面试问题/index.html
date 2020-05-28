@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Fri May 29 2020 00:04:28 GMT+0800">
-        <meta property="article:modified_time" content="Fri May 29 2020 00:05:15 GMT+0800">
+        <meta property="article:modified_time" content="Fri May 29 2020 00:29:31 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2020/05/29/iOS面试-第11章-算法相关面试问题/index.html",
     "headline": "[iOS面试]第11章 算法相关面试问题",
     "datePublished": "Fri May 29 2020 00:04:28 GMT+0800",
-    "dateModified": "Fri May 29 2020 00:05:15 GMT+0800",
+    "dateModified": "Fri May 29 2020 00:29:31 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -553,7 +553,8 @@ printf(&quot;reverse result is %s \n&quot;, ch);
 //打印 reverse result is dlrow,olleh
 </code></pre><h3 id="二、链表反转"><a href="#二、链表反转" class="headerlink" title="二、链表反转"></a>二、链表反转</h3><p>链表头插法思想<br><img src="https://upload-images.jianshu.io/upload_images/126164-ca29da7142022835.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="链表反转"></p>
 <ul>
-<li>ReverseList.h<pre><code>//ReverseList.h
+<li><p>ReverseList.h</p>
+<pre><code>//ReverseList.h
 // 定义一个链表
 struct Node {
   int data;
@@ -600,7 +601,8 @@ void printList(struct Node *head);
 return head;
 </code></pre><p>}</p>
 <p>void printList(struct Node <em>head){<br>    struct Node</em> temp = head;<br>    while (temp != NULL) {<br>        printf(“node is %d \n”, temp-&gt;data);<br>        temp = temp-&gt;next;<br>    }<br>}<br>@end</p>
-<pre><code>+ 执行调用
+<pre><code>
++ 执行调用
 </code></pre><p>//单链表反转<br>struct Node<em> head = constructList();<br>printList(head);<br>printf(“———–\n”);<br>struct Node</em> newHead = reverseList(head);<br>printList(newHead); </p>
 <pre><code>
 ### 三、有序数组合并
@@ -639,7 +641,8 @@ while (q &lt; bLen) {
     i++;
 }
 </code></pre><p>}</p>
-<pre><code>+ 执行调用
+<pre><code>
++ 执行调用
 </code></pre><p>int a[5] = {1,4,6,7,9};<br>int b[8] = {2,3,5,6,8,10,11,12};</p>
 <p>//用于存储归并结果<br>int result[13];<br>//归并操作<br>mergeList(a, 5, b, 8, result);<br>//打印归并结果<br>printf(“merge result is “);<br>for (int i = 0; i &lt; 13; i++) {<br>      printf(“%d “, result[i]);<br>}<br>//输出 merge result is 1 2 3 4 5 6 6 7 8 9 10 11 12 </p>
 <pre><code>
