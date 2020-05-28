@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Fri May 29 2020 00:04:28 GMT+0800">
-        <meta property="article:modified_time" content="Fri May 29 2020 00:29:31 GMT+0800">
+        <meta property="article:modified_time" content="Fri May 29 2020 00:36:09 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2020/05/29/iOS面试-第11章-算法相关面试问题/index.html",
     "headline": "[iOS面试]第11章 算法相关面试问题",
     "datePublished": "Fri May 29 2020 00:04:28 GMT+0800",
-    "dateModified": "Fri May 29 2020 00:29:31 GMT+0800",
+    "dateModified": "Fri May 29 2020 00:36:09 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "暮鼓晨钟",
@@ -367,7 +367,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、字符串反转"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、字符串反转</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、链表反转"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、链表反转</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、求无序数组当中的中位数"><span class="post-toc-number">3.</span> <span class="post-toc-text">六、求无序数组当中的中位数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#排序算法-中位数"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">排序算法+中位数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#快排思想"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">快排思想</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、字符串反转"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、字符串反转</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、链表反转"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、链表反转</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、有序数组合并"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、有序数组合并</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、Hash算法"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、Hash算法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、查找两个子视图的共同父视图"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、查找两个子视图的共同父视图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、求无序数组当中的中位数"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、求无序数组当中的中位数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#排序算法-中位数"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">排序算法+中位数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#快排思想"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">快排思想</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -552,13 +552,12 @@ char_reverse(ch);
 printf(&quot;reverse result is %s \n&quot;, ch);
 //打印 reverse result is dlrow,olleh
 </code></pre><h3 id="二、链表反转"><a href="#二、链表反转" class="headerlink" title="二、链表反转"></a>二、链表反转</h3><p>链表头插法思想<br><img src="https://upload-images.jianshu.io/upload_images/126164-ca29da7142022835.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="链表反转"></p>
-<ul>
-<li><p>ReverseList.h</p>
+<p><strong>ReverseList.h</strong></p>
 <pre><code>//ReverseList.h
 // 定义一个链表
 struct Node {
-  int data;
-  struct Node *next;
+    int data;
+    struct Node *next;
 };
 @interface ReverseList : NSObject
 // 链表反转
@@ -568,148 +567,210 @@ struct Node* constructList(void);
 // 打印链表中的数据
 void printList(struct Node *head);
 @end
-</code></pre></li>
-<li><p>ReverseList.m<br><code>`</code><br>//ReverseList.m<br>@implementation ReverseList<br>struct Node<em> reverseList(struct Node </em>head) {<br>  // 定义遍历指针，初始化为头结点<br>  struct Node <em>p = head;<br>  // 反转后的链表头部<br>  struct Node </em>newH = NULL;</p>
-<p>  // 遍历链表<br>  while (p != NULL) {</p>
-<pre><code>  // 记录下一个结点
-  struct Node *temp = p-&gt;next;
-  // 当前结点的next指向新链表头部
-  p-&gt;next = newH;
-  // 更改新链表头部为当前结点
-  newH = p;
-  // 移动p指针
-  p = temp;
-</code></pre><p>  }<br>  // 返回反转后的链表头结点<br>  return newH;<br>}</p>
-</li>
-</ul>
-<p>struct Node<em> constructList(void) {<br>    // 头结点定义<br>    struct Node </em>head = NULL;<br>    // 记录当前尾结点<br>    struct Node *cur = NULL;</p>
-<pre><code>for (int i = 1; i &lt; 5; i++) {
-    struct Node *node = malloc(sizeof(struct Node));
-    node-&gt;data = i;
+</code></pre><p><strong>ReverseList.m</strong></p>
+<pre><code>//ReverseList.m
+@implementation ReverseList
+struct Node* reverseList(struct Node *head) {
+    // 定义遍历指针，初始化为头结点
+    struct Node *p = head;
+    // 反转后的链表头部
+    struct Node *newH = NULL;
 
-    // 头结点为空，新结点即为头结点
-    if (head == NULL) {
-        head = node;
+    // 遍历链表
+    while (p != NULL) {
+
+        // 记录下一个结点
+        struct Node *temp = p-&gt;next;
+        // 当前结点的next指向新链表头部
+        p-&gt;next = newH;
+        // 更改新链表头部为当前结点
+        newH = p;
+        // 移动p指针
+        p = temp;
     }
-    // 当前结点的next为新结点
-    else{
-        cur-&gt;next = node;
-    }
-    // 设置当前结点为新结点
-    cur = node;
+    // 返回反转后的链表头结点
+    return newH;
 }
-return head;
-</code></pre><p>}</p>
-<p>void printList(struct Node <em>head){<br>    struct Node</em> temp = head;<br>    while (temp != NULL) {<br>        printf(“node is %d \n”, temp-&gt;data);<br>        temp = temp-&gt;next;<br>    }<br>}<br>@end</p>
-<pre><code>
-+ 执行调用
-</code></pre><p>//单链表反转<br>struct Node<em> head = constructList();<br>printList(head);<br>printf(“———–\n”);<br>struct Node</em> newHead = reverseList(head);<br>printList(newHead); </p>
-<pre><code>
-### 三、有序数组合并
-![有序数组合并](https://upload-images.jianshu.io/upload_images/126164-022a4ae9963ad9a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-</code></pre><p>// 将有序数组a和b的值合并到一个数组result当中，且仍然保持有序<br>void mergeList(int a[], int aLen, int b[], int bLen, int result[]) {<br>    int p = 0; // 遍历数组a的指针<br>    int q = 0; // 遍历数组b的指针<br>    int i = 0; // 记录当前存储位置</p>
-<pre><code>// 任一数组没有到达边界则进行遍历
-while (p &lt; aLen &amp;&amp; q &lt; bLen) {
-    // 如果a数组对应位置的值小于b数组对应位置的值
-    if (a[p] &lt;= b[q]) {
-        // 存储a数组的值
-        result[i] = a[p];
-        // 移动a数组的遍历指针
+struct Node* constructList(void) {
+    // 头结点定义
+    struct Node *head = NULL;
+    // 记录当前尾结点
+    struct Node *cur = NULL;
+
+    for (int i = 1; i &lt; 5; i++) {
+        struct Node *node = malloc(sizeof(struct Node));
+        node-&gt;data = i;
+
+        // 头结点为空，新结点即为头结点
+        if (head == NULL) {
+            head = node;
+        }
+        // 当前结点的next为新结点
+        else{
+            cur-&gt;next = node;
+        }
+        // 设置当前结点为新结点
+        cur = node;
+    }
+    return head;
+}
+
+void printList(struct Node *head){
+    struct Node* temp = head;
+    while (temp != NULL) {
+        printf(&quot;node is %d \n&quot;, temp-&gt;data);
+        temp = temp-&gt;next;
+    }
+}
+@end
+</code></pre><p><strong>执行调用</strong></p>
+<pre><code>//单链表反转
+struct Node* head = constructList();
+printList(head);
+printf(&quot;-----------\n&quot;);
+struct Node* newHead = reverseList(head);
+printList(newHead); 
+</code></pre><h3 id="三、有序数组合并"><a href="#三、有序数组合并" class="headerlink" title="三、有序数组合并"></a>三、有序数组合并</h3><p><img src="https://upload-images.jianshu.io/upload_images/126164-022a4ae9963ad9a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="有序数组合并"></p>
+<pre><code>// 将有序数组a和b的值合并到一个数组result当中，且仍然保持有序
+void mergeList(int a[], int aLen, int b[], int bLen, int result[]) {
+    int p = 0; // 遍历数组a的指针
+    int q = 0; // 遍历数组b的指针
+    int i = 0; // 记录当前存储位置
+
+    // 任一数组没有到达边界则进行遍历
+    while (p &lt; aLen &amp;&amp; q &lt; bLen) {
+        // 如果a数组对应位置的值小于b数组对应位置的值
+        if (a[p] &lt;= b[q]) {
+            // 存储a数组的值
+            result[i] = a[p];
+            // 移动a数组的遍历指针
+            p++;
+        }else{
+            // 存储b数组的值
+            result[i] = b[q];
+            // 移动b数组的遍历指针
+            q++;
+        }
+        // 指向合并结果的下一个存储位置
+        i++;
+    }
+
+    // 如果a数组有剩余
+    while (p &lt; aLen) {
+        // 将a数组剩余部分拼接到合并结果的后面
+        result[i] = a[p++];
+        i++;
+    }
+
+    // 如果b数组有剩余
+    while (q &lt; bLen) {
+        // 将b数组剩余部分拼接到合并结果的后面
+        result[i] = b[q++];
+        i++;
+    }
+}
+</code></pre><p><strong>执行调用</strong></p>
+<pre><code>int a[5] = {1,4,6,7,9};
+int b[8] = {2,3,5,6,8,10,11,12};
+
+//用于存储归并结果
+int result[13];
+//归并操作
+mergeList(a, 5, b, 8, result);
+//打印归并结果
+printf(&quot;merge result is &quot;);
+for (int i = 0; i &lt; 13; i++) {
+      printf(&quot;%d &quot;, result[i]);
+}
+//输出 merge result is 1 2 3 4 5 6 6 7 8 9 10 11 12 
+</code></pre><h3 id="四、Hash算法"><a href="#四、Hash算法" class="headerlink" title="四、Hash算法"></a>四、Hash算法</h3><p>问题:在一个字符串中找到第一个只出现一次的字符<br>如:输入”abaccdeff” , 则输出b</p>
+<p>算法思想:</p>
+<ul>
+<li>字符(char)是一个长度为8的数据类型,因此总共有可能256中可能.</li>
+<li>每个字母根据其ASCII码值作为数组的下标对应数组的一个数字.</li>
+<li>数组中存储的是每个字符出现的次数.</li>
+</ul>
+<p>哈希表<br>例: 给定值是字母a, 对应ASCII值是97, 数组索引下标为97.<br>哈希函数: 建立字母或字符到它所存储位置index的一个映射关系. f(key)<br>存储和查找都通过该函数, 有效提高查找效率.<br>f(char) =&gt; index</p>
+<pre><code>//查找第一个只出现一次的字符
+char findFirstChar(char* cha) {
+    char result = &#39;\0&#39;;
+    // 定义一个数组 用来存储各个字母出现次数
+    int array[256];
+    // 对数组进行初始化操作
+    for (int i=0; i&lt;256; i++) {
+        array[i] =0;
+    }
+    // 定义一个指针 指向当前字符串头部
+    char* p = cha;
+    // 遍历每个字符
+    while (*p != &#39;\0&#39;) {
+        // 在字母对应存储位置 进行出现次数+1操作
+        array[*(p++)]++;
+    }
+
+    // 将P指针重新指向字符串头部
+    p = cha;
+    // 遍历每个字母的出现次数
+    while (*p != &#39;\0&#39;) {
+        // 遇到第一个出现次数为1的字符，打印结果
+        if (array[*p] == 1) {
+            result = *p;
+            break;
+        }
+        // 反之继续向后遍历
         p++;
-    }else{
-        // 存储b数组的值
-        result[i] = b[q];
-        // 移动b数组的遍历指针
-        q++;
     }
-    // 指向合并结果的下一个存储位置
-    i++;
+    return result;
 }
+</code></pre><p><strong>执行结果</strong></p>
+<pre><code>char cha[] = &quot;abaccdeff&quot;;
+char fc = findFirstChar(cha);
+printf(&quot;this char is %c \n&quot;, fc);
+//输出this char is b
+</code></pre><h3 id="五、查找两个子视图的共同父视图"><a href="#五、查找两个子视图的共同父视图" class="headerlink" title="五、查找两个子视图的共同父视图"></a>五、查找两个子视图的共同父视图</h3><p><strong>倒序比较找到第一个不一样的</strong></p>
+<pre><code>- (NSArray &lt;UIView *&gt; *)findCommonSuperView:(UIView *)viewOne other:(UIView *)viewOther {
+    NSMutableArray *result = [NSMutableArray array];
 
-// 如果a数组有剩余
-while (p &lt; aLen) {
-    // 将a数组剩余部分拼接到合并结果的后面
-    result[i] = a[p++];
-    i++;
-}
+    // 查找第一个视图的所有父视图
+    NSArray *arrayOne = [self findSuperViews:viewOne];
+    // 查找第二个视图的所有父视图
+    NSArray *arrayOther = [self findSuperViews:viewOther];
 
-// 如果b数组有剩余
-while (q &lt; bLen) {
-    // 将b数组剩余部分拼接到合并结果的后面
-    result[i] = b[q++];
-    i++;
-}
-</code></pre><p>}</p>
-<pre><code>
-+ 执行调用
-</code></pre><p>int a[5] = {1,4,6,7,9};<br>int b[8] = {2,3,5,6,8,10,11,12};</p>
-<p>//用于存储归并结果<br>int result[13];<br>//归并操作<br>mergeList(a, 5, b, 8, result);<br>//打印归并结果<br>printf(“merge result is “);<br>for (int i = 0; i &lt; 13; i++) {<br>      printf(“%d “, result[i]);<br>}<br>//输出 merge result is 1 2 3 4 5 6 6 7 8 9 10 11 12 </p>
-<pre><code>
-### 四、Hash算法
-问题:在一个字符串中找到第一个只出现一次的字符
-如:输入&quot;abaccdeff&quot; , 则输出b
+    int i = 0;
+    // 越界限制条件
+    while (i &lt; MIN((int)arrayOne.count, (int)arrayOther.count)) {
+        // 倒序方式获取各个视图的父视图
+        UIView *superOne = [arrayOne objectAtIndex:arrayOne.count - i - 1];
+        UIView *superOther = [arrayOther objectAtIndex:arrayOther.count - i - 1];
 
-算法思想:
-+ 字符(char)是一个长度为8的数据类型,因此总共有可能256中可能.
-+ 每个字母根据其ASCII码值作为数组的下标对应数组的一个数字.
-+ 数组中存储的是每个字符出现的次数.
-
-哈希表
-例: 给定值是字母a, 对应ASCII值是97, 数组索引下标为97.
-哈希函数: 建立字母或字符到它所存储位置index的一个映射关系. f(key)
-存储和查找都通过该函数, 有效提高查找效率.
-f(char) =&gt; index
-
-</code></pre><p>//查找第一个只出现一次的字符<br>char findFirstChar(char<em> cha) {<br>    char result = ‘\0’;<br>    // 定义一个数组 用来存储各个字母出现次数<br>    int array[256];<br>    // 对数组进行初始化操作<br>    for (int i=0; i&lt;256; i++) {<br>        array[i] =0;<br>    }<br>    // 定义一个指针 指向当前字符串头部<br>    char</em> p = cha;<br>    // 遍历每个字符<br>    while (<em>p != ‘\0’) {<br>        // 在字母对应存储位置 进行出现次数+1操作<br>        array[</em>(p++)]++;<br>    }</p>
-<pre><code>// 将P指针重新指向字符串头部
-p = cha;
-// 遍历每个字母的出现次数
-while (*p != &#39;\0&#39;) {
-    // 遇到第一个出现次数为1的字符，打印结果
-    if (array[*p] == 1) {
-        result = *p;
-        break;
+        // 比较如果相等 则为共同父视图
+        if (superOne == superOther) {
+            [result addObject:superOne];
+            i++;
+        }
+        // 如果不相等，则结束遍历
+        else{
+            break;
+        }
     }
-    // 反之继续向后遍历
-    p++;
+
+    return result;
 }
-return result;
-</code></pre><p>}</p>
-<pre><code>+ 执行结果
-</code></pre><p>char cha[] = “abaccdeff”;<br>char fc = findFirstChar(cha);<br>printf(“this char is %c \n”, fc);<br>//输出this char is b</p>
-<pre><code>
-### 五、查找两个子视图的共同父视图
-+ 倒序比较找到第一个不一样的
 
-</code></pre><ul>
-<li><p>(NSArray <uiview *=""> <em>)findCommonSuperView:(UIView </em>)viewOne other:(UIView <em>)viewOther {<br>  NSMutableArray </em>result = [NSMutableArray array];</uiview></p>
-<p>  // 查找第一个视图的所有父视图<br>  NSArray <em>arrayOne = [self findSuperViews:viewOne];<br>  // 查找第二个视图的所有父视图<br>  NSArray </em>arrayOther = [self findSuperViews:viewOther];</p>
-<p>  int i = 0;<br>  // 越界限制条件<br>  while (i &lt; MIN((int)arrayOne.count, (int)arrayOther.count)) {</p>
-<pre><code>  // 倒序方式获取各个视图的父视图
-  UIView *superOne = [arrayOne objectAtIndex:arrayOne.count - i - 1];
-  UIView *superOther = [arrayOther objectAtIndex:arrayOther.count - i - 1];
-
-  // 比较如果相等 则为共同父视图
-  if (superOne == superOther) {
-      [result addObject:superOne];
-      i++;
-  }
-  // 如果不相等，则结束遍历
-  else{
-      break;
-  }
-</code></pre><p>  }</p>
-<p>  return result;<br>}</p>
-</li>
-<li><p>(NSArray <uiview *=""> <em>)findSuperViews:(UIView </em>)view {<br>  // 初始化为第一父视图<br>  UIView <em>temp = view.superview;<br>  // 保存结果的数组<br>  NSMutableArray </em>result = [NSMutableArray array];<br>  while (temp) {</uiview></p>
-<pre><code>  [result addObject:temp];
-  // 顺着superview指针一直向上查找
-  temp = temp.superview;
-</code></pre><p>  }<br>  return result;<br>}<br><code>`</code></p>
-</li>
-</ul>
-<h3 id="六、求无序数组当中的中位数"><a href="#六、求无序数组当中的中位数" class="headerlink" title="六、求无序数组当中的中位数"></a>六、求无序数组当中的中位数</h3><p>方案:</p>
+- (NSArray &lt;UIView *&gt; *)findSuperViews:(UIView *)view {
+    // 初始化为第一父视图
+    UIView *temp = view.superview;
+    // 保存结果的数组
+    NSMutableArray *result = [NSMutableArray array];
+    while (temp) {
+        [result addObject:temp];
+        // 顺着superview指针一直向上查找
+        temp = temp.superview;
+    }
+    return result;
+}
+</code></pre><h3 id="六、求无序数组当中的中位数"><a href="#六、求无序数组当中的中位数" class="headerlink" title="六、求无序数组当中的中位数"></a>六、求无序数组当中的中位数</h3><p>方案:</p>
 <ul>
 <li>1&gt;排序算法+中位数</li>
 <li>2&gt;利用快排思想(分治思想)</li>
@@ -719,9 +780,7 @@ return result;
 <li>中位数:<br>当n为奇数时, (n+1)/2 ;<br>当n为偶数时, (n/2 + (n/2 + 1)) / 2 ;</li>
 </ul>
 <h4 id="快排思想"><a href="#快排思想" class="headerlink" title="快排思想"></a>快排思想</h4><p><img src="https://upload-images.jianshu.io/upload_images/126164-eae8c97a50f43fbf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="快排思想 "></p>
-<ul>
-<li>快排思想: 选取关键字, 高低交替扫描</li>
-</ul>
+<p><strong>快排思想: 选取关键字, 高低交替扫描</strong></p>
 <p>任意挑一个元素, 以该元素为支点, 划分集合为两部分.<br>如果左侧集合长度恰为 (n- 1)/2, 那么支点恰为中位数.<br>如果左侧长度恰 &lt;  (n- 1)/2, 那么中位点在右侧; 反之, 中位数在左侧.<br>进入相应的一侧继续寻找中位点</p>
 <pre><code>int findMedian(int a[], int aLen) {
     int low = 0;
@@ -776,16 +835,14 @@ int PartSort(int a[], int start, int end) {
 
     return low;
 }
-</code></pre><ul>
-<li>执行调用<pre><code>int list[9] = {12,3,10,8,6,7,11,13,9};
+</code></pre><p><strong>执行调用</strong></p>
+<pre><code>int list[9] = {12,3,10,8,6,7,11,13,9};
 // 3 6 7 8 9 10 11 12 13
 //             ^
 int median = findMedian(list, 9);
 printf(&quot;the median is %d \n&quot;, median);
 // the median is 9 
-</code></pre></li>
-</ul>
-
+</code></pre>
         
     
 
