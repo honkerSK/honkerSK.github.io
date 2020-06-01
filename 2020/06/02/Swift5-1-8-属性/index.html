@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            [Swift5.1] 8-属性 | 
+        
+        codeTao
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",Swift5.1">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="codeTao">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/06/02/Swift5-1-8-属性/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="codeTao">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2020/06/02/Swift5-1-8-属性/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="[Swift5.1] 8-属性 | codeTao">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="Swift5.1"> 
+
+    
+        <meta property="article:published_time" content="Tue Jun 02 2020 00:26:38 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jun 02 2020 00:27:29 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2020/06/02/Swift5-1-8-属性/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2020/06/02/Swift5-1-8-属性/index.html",
+    "headline": "[Swift5.1] 8-属性",
+    "datePublished": "Tue Jun 02 2020 00:26:38 GMT+0800",
+    "dateModified": "Tue Jun 02 2020 00:27:29 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "codeTao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "codeTao",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",Swift5.1",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性"><span class="post-toc-number">1.</span> <span class="post-toc-text">属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#存储属性（Stored-Property）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">存储属性（Stored Property）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#计算属性（Computed-Property）"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">计算属性（Computed Property）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#存储属性"><span class="post-toc-number">2.</span> <span class="post-toc-text">存储属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算属性"><span class="post-toc-number">3.</span> <span class="post-toc-text">计算属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#枚举rawValue原理"><span class="post-toc-number">4.</span> <span class="post-toc-text">枚举rawValue原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#延迟存储属性（Lazy-Stored-Property）"><span class="post-toc-number">5.</span> <span class="post-toc-text">延迟存储属性（Lazy Stored Property）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性观察器（Property-Observer）"><span class="post-toc-number">6.</span> <span class="post-toc-text">属性观察器（Property Observer）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局变量、局部变量"><span class="post-toc-number">7.</span> <span class="post-toc-text">全局变量、局部变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#inout的再次研究"><span class="post-toc-number">8.</span> <span class="post-toc-text">inout的再次研究</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#inout的本质总结"><span class="post-toc-number">9.</span> <span class="post-toc-text">inout的本质总结</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类型属性（Type-Property）"><span class="post-toc-number">10.</span> <span class="post-toc-text">类型属性（Type Property）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类型属性细节"><span class="post-toc-number">11.</span> <span class="post-toc-text">类型属性细节</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单例模式"><span class="post-toc-number">12.</span> <span class="post-toc-text">单例模式</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                [Swift5.1] 8-属性
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>codeTao</strong>
+        <span>6月 02, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Swift5-1/">Swift5.1</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[Swift5.1] 8-属性&url=http://yoursite.com/2020/06/02/Swift5-1-8-属性/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[Swift5.1] 8-属性&url=http://yoursite.com/2020/06/02/Swift5-1-8-属性/index.html&via=codeTao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/02/Swift5-1-8-属性/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/02/Swift5-1-8-属性/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=[Swift5.1] 8-属性&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/06/02/Swift5-1-8-属性/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>Swift中跟实例相关的属性可以分为2大类</p>
+<h4 id="存储属性（Stored-Property）"><a href="#存储属性（Stored-Property）" class="headerlink" title="存储属性（Stored Property）"></a>存储属性（Stored Property）</h4><ul>
+<li>类似于成员变量这个概念</li>
+<li>存储在实例的内存中</li>
+<li>结构体、类可以定义存储属性</li>
+<li>枚举<code>不可以</code>定义存储属性</li>
+</ul>
+<h4 id="计算属性（Computed-Property）"><a href="#计算属性（Computed-Property）" class="headerlink" title="计算属性（Computed Property）"></a>计算属性（Computed Property）</h4><ul>
+<li>本质就是方法（函数）</li>
+<li>不占用实例的内存</li>
+<li>枚举、结构体、类都可以定义计算属性</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token builtin">Circle</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 存储属性</span>
+    <span class="token keyword">var</span> radius<span class="token punctuation">:</span> <span class="token builtin">Double</span>
+    <span class="token comment" spellcheck="true">// 计算属性</span>
+    <span class="token keyword">var</span> diameter<span class="token punctuation">:</span> <span class="token builtin">Double</span> <span class="token punctuation">{</span>
+        <span class="token keyword">set</span> <span class="token punctuation">{</span>
+            radius <span class="token operator">=</span> newValue <span class="token operator">/</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">get</span> <span class="token punctuation">{</span>
+            radius <span class="token operator">*</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> circle <span class="token operator">=</span> <span class="token function">Circle</span><span class="token punctuation">(</span>radius<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>circle<span class="token punctuation">.</span>radius<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 5.0</span>
+<span class="token function">print</span><span class="token punctuation">(</span>circle<span class="token punctuation">.</span>diameter<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 10.0</span>
+
+circle<span class="token punctuation">.</span>diameter <span class="token operator">=</span> <span class="token number">12</span>
+<span class="token function">print</span><span class="token punctuation">(</span>circle<span class="token punctuation">.</span>radius<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 6.0</span>
+<span class="token function">print</span><span class="token punctuation">(</span>circle<span class="token punctuation">.</span>diameter<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 12.0</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token builtin">MemoryLayout</span><span class="token operator">&lt;</span><span class="token builtin">Circle</span><span class="token operator">></span><span class="token punctuation">.</span><span class="token builtin">stride</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 8</span>
+</code></pre>
+<h3 id="存储属性"><a href="#存储属性" class="headerlink" title="存储属性"></a>存储属性</h3><p>关于存储属性，Swift有个明确的规定:</p>
+<ul>
+<li>在创建类 或 结构体的实例时，必须为所有的存储属性设置一个合适的初始值</li>
+<li>可以在初始化器里为存储属性设置一个初始值</li>
+<li>可以分配一个默认的属性值作为属性定义的一部分</li>
+</ul>
+<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3><ul>
+<li><code>set</code>传入的新值默认叫做newValue，也可以自定义</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token builtin">Circle</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> radius<span class="token punctuation">:</span> <span class="token builtin">Double</span>
+    <span class="token keyword">var</span> diameter<span class="token punctuation">:</span> <span class="token builtin">Double</span> <span class="token punctuation">{</span>
+        <span class="token keyword">set</span><span class="token punctuation">(</span>newDiameter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            radius <span class="token operator">=</span> newDiameter <span class="token operator">/</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">get</span> <span class="token punctuation">{</span>
+            radius <span class="token operator">*</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>只读计算属性：只有<code>get</code>，没有<code>set</code></li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token builtin">Circle</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> radius<span class="token punctuation">:</span> <span class="token builtin">Double</span>
+    <span class="token keyword">var</span> diameter<span class="token punctuation">:</span> <span class="token builtin">Double</span> <span class="token punctuation">{</span>
+        <span class="token keyword">get</span> <span class="token punctuation">{</span>
+            radius <span class="token operator">*</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token builtin">Circle</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> radius<span class="token punctuation">:</span> <span class="token builtin">Double</span>
+    <span class="token keyword">var</span> diameter<span class="token punctuation">:</span> <span class="token builtin">Double</span> <span class="token punctuation">{</span> radius <span class="token operator">*</span> <span class="token number">2</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>定义计算属性只能用<code>var</code>，不能用<code>let</code></li>
+<li>let代表常量：值是一成不变的</li>
+<li>计算属性的值是可能发生变化的（即使是只读计算属性）</li>
+</ul>
+<h3 id="枚举rawValue原理"><a href="#枚举rawValue原理" class="headerlink" title="枚举rawValue原理"></a>枚举rawValue原理</h3><p>枚举原始值rawValue的本质是：只读计算属性</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">enum</span> <span class="token builtin">TestEnum</span> <span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> test1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> test2 <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> test3 <span class="token operator">=</span> <span class="token number">3</span>
+    <span class="token keyword">var</span> rawValue<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span> <span class="token keyword">self</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token punctuation">.</span>test1<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">10</span>
+        <span class="token keyword">case</span> <span class="token punctuation">.</span>test2<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">11</span>
+        <span class="token keyword">case</span> <span class="token punctuation">.</span>test3<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">12</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token builtin">TestEnum</span><span class="token punctuation">.</span>test3<span class="token punctuation">.</span>rawValue<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 12</span>
+</code></pre>
+<h3 id="延迟存储属性（Lazy-Stored-Property）"><a href="#延迟存储属性（Lazy-Stored-Property）" class="headerlink" title="延迟存储属性（Lazy Stored Property）"></a>延迟存储属性（Lazy Stored Property）</h3><p>使用lazy可以定义一个延迟存储属性，在第一次用到属性的时候才会进行初始化</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Car</span><span class="token punctuation">{</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Car init!"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Car is running!"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+    <span class="token keyword">lazy</span> <span class="token keyword">var</span> car <span class="token operator">=</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Person init!"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function">goOut</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        car<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"------"</span><span class="token punctuation">)</span>
+p<span class="token punctuation">.</span><span class="token function">goOut</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p> 输出:</p>
+<pre><code>Person init!
+------
+Car init!
+Car is running!
+</code></pre><pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">PhotoView</span> <span class="token punctuation">{</span>
+    <span class="token keyword">lazy</span> <span class="token keyword">var</span> image<span class="token punctuation">:</span> <span class="token builtin">Image</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token string">"https://www.baidu.com/xx.png"</span>
+        <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token function">Data</span><span class="token punctuation">(</span>url<span class="token punctuation">:</span> url<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token function">Image</span><span class="token punctuation">(</span>data<span class="token punctuation">:</span> data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>lazy属性必须是<code>var</code>，不能是<code>let</code></li>
+<li><code>let</code>必须在实例的初始化方法完成之前就拥有值</li>
+</ul>
+<ul>
+<li>如果多条线程同时第一次访问<code>lazy</code>属性</li>
+<li>无法保证属性只被初始化1次, 不是线程安全的.</li>
+</ul>
+<p><strong>延迟存储属性注意点:</strong></p>
+<ul>
+<li>当结构体包含一个延迟存储属性时，只有<code>var</code>才能访问延迟存储属性</li>
+<li>因为延迟属性初始化时需要改变结构体的内存</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-1fac9162acbf4a07.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="属性观察器（Property-Observer）"><a href="#属性观察器（Property-Observer）" class="headerlink" title="属性观察器（Property Observer）"></a>属性观察器（Property Observer）</h3><p>可以为非<code>lazy</code>的<code>var</code>存储属性设置属性观察器</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token builtin">Circle</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> radius<span class="token punctuation">:</span> <span class="token builtin">Double</span> <span class="token punctuation">{</span>
+        <span class="token keyword">willSet</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"willSet"</span><span class="token punctuation">,</span> newValue<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">didSet</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"didSet"</span><span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> radius<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>radius <span class="token operator">=</span> <span class="token number">1.0</span>  
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Circle init!"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// Circle init!</span>
+<span class="token keyword">var</span> circle <span class="token operator">=</span> <span class="token function">Circle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// willSet 10.5</span>
+<span class="token comment" spellcheck="true">// didSet 1.0 10.5</span>
+circle<span class="token punctuation">.</span>radius <span class="token operator">=</span> <span class="token number">10.5</span>
+
+<span class="token comment" spellcheck="true">// 10.5  print(circle.radius)</span>
+</code></pre>
+<ul>
+<li><code>willSet</code>会传递新值，默认叫newValue</li>
+<li><code>didSet</code>会传递旧值，默认叫oldValue</li>
+<li>在初始化器中设置属性值不会触发<code>willSet</code>和<code>didSet</code></li>
+<li>在属性定义时设置初始值也不会触发<code>willSet</code>和<code>didSet</code></li>
+</ul>
+<h3 id="全局变量、局部变量"><a href="#全局变量、局部变量" class="headerlink" title="全局变量、局部变量"></a>全局变量、局部变量</h3><p>属性观察器、计算属性的功能，同样可以应用在全局变量、局部变量身上</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> num<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">get</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">set</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"setNum"</span><span class="token punctuation">,</span> newValue<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+num <span class="token operator">=</span> <span class="token number">11</span> <span class="token comment" spellcheck="true">// setNum 11</span>
+<span class="token function">print</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 10</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">10</span> <span class="token punctuation">{</span>
+        <span class="token keyword">willSet</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"willSet"</span><span class="token punctuation">,</span> newValue<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">didSet</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"didSet"</span><span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> age<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    age <span class="token operator">=</span> <span class="token number">11</span>
+    <span class="token comment" spellcheck="true">// willSet 11</span>
+    <span class="token comment" spellcheck="true">// didSet 10 11</span>
+<span class="token punctuation">}</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="inout的再次研究"><a href="#inout的再次研究" class="headerlink" title="inout的再次研究"></a>inout的再次研究</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token builtin">Shape</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token builtin">Int</span>
+    <span class="token keyword">var</span> side<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">willSet</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"willSetSide"</span><span class="token punctuation">,</span> newValue<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">didSet</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"didSetSide"</span><span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> side<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> girth<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">set</span> <span class="token punctuation">{</span>
+            width <span class="token operator">=</span> newValue <span class="token operator">/</span> side
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"setGirth"</span><span class="token punctuation">,</span> newValue<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">get</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"getGirth"</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> width <span class="token operator">*</span> side
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"width=<span class="token interpolation"><span class="token delimiter variable">\(</span>width<span class="token delimiter variable">)</span></span>, side=<span class="token interpolation"><span class="token delimiter variable">\(</span>side<span class="token delimiter variable">)</span></span>, girth=<span class="token interpolation"><span class="token delimiter variable">\(</span>girth<span class="token delimiter variable">)</span></span>"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token number">_</span> num<span class="token punctuation">:</span> <span class="token keyword">inout</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    num <span class="token operator">=</span> <span class="token number">20</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token function">Shape</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> side<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s<span class="token punctuation">.</span>width<span class="token punctuation">)</span>
+s<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"----------"</span><span class="token punctuation">)</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s<span class="token punctuation">.</span>side<span class="token punctuation">)</span>  
+s<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"----------"</span><span class="token punctuation">)</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s<span class="token punctuation">.</span>girth<span class="token punctuation">)</span>  
+s<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>打印:</p>
+<pre><code>getGirth
+width=20, side=4, girth=80
+----------
+willSetSide 20
+didSetSide 4 20
+getGirth
+width=20, side=20, girth=400
+----------
+getGirth
+setGirth 20
+getGirth
+width=1, side=20, girth=20
+</code></pre><h3 id="inout的本质总结"><a href="#inout的本质总结" class="headerlink" title="inout的本质总结"></a>inout的本质总结</h3><p>1)如果实参有物理内存地址，且没有设置属性观察器<br>直接将实参的内存地址传入函数（实参进行引用传递）</p>
+<p>2)如果实参是<code>计算属性</code> 或者 设置了<code>属性观察器</code><br>采取了<code>Copy In Copy Out</code>的做法</p>
+<ul>
+<li>调用该函数时，先复制实参的值，产生副本<code>【get】</code></li>
+<li>将副本的内存地址传入函数（副本进行引用传递），在函数内部可以修改副本的值</li>
+<li>函数返回后，再将副本的值覆盖实参的值<code>【set】</code></li>
+</ul>
+<p><strong>总结：</strong> inout的本质就是引用传递（地址传递）</p>
+<h3 id="类型属性（Type-Property）"><a href="#类型属性（Type-Property）" class="headerlink" title="类型属性（Type Property）"></a>类型属性（Type Property）</h3><p>严格来说，属性可以分为:<br>1)<strong>实例属性</strong>（Instance Property）：只能通过实例去访问</p>
+<ul>
+<li>存储实例属性（Stored Instance Property）：存储在实例的内存中，每个实例都有1份</li>
+<li>计算实例属性（Computed Instance Property）</li>
+</ul>
+<p>2)<strong>类型属性</strong>（Type Property）：只能通过类型去访问</p>
+<ul>
+<li>存储类型属性（Stored Type Property）：整个程序运行过程中，就只有1份内存（类似于全局变量）</li>
+<li>计算类型属性（Computed Type Property）</li>
+</ul>
+<ul>
+<li>可以通过<code>static</code>定义类型属性</li>
+<li>如果是类，也可以用关键字 <code>class</code></li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token builtin">Car</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> <span class="token builtin">count</span><span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token builtin">Car</span><span class="token punctuation">.</span><span class="token builtin">count</span> <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> c1 <span class="token operator">=</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> c2 <span class="token operator">=</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> c3 <span class="token operator">=</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token builtin">Car</span><span class="token punctuation">.</span><span class="token builtin">count</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 3</span>
+</code></pre>
+<h3 id="类型属性细节"><a href="#类型属性细节" class="headerlink" title="类型属性细节"></a>类型属性细节</h3><ul>
+<li>不同于<code>存储实例属性</code>，你必须给<code>存储类型属性</code>设定初始值</li>
+<li>因为类型没有像实例那样的init初始化器来初始化存储属性</li>
+</ul>
+<ul>
+<li><code>存储类型属性</code>默认就是<code>lazy</code>，会在第一次使用的时候才初始化<br>就算被多个线程同时访问，保证只会初始化一次</li>
+<li><code>存储类型属性</code>可以是let</li>
+</ul>
+<ul>
+<li>枚举类型也可以定义类型属性（存储类型属性、计算类型属性）</li>
+</ul>
+<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FileManager</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">let</span> shared <span class="token operator">=</span> <span class="token function">FileManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FileManager</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">let</span> shared <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// ....</span>
+        <span class="token comment" spellcheck="true">// ....</span>
+        <span class="token keyword">return</span> <span class="token function">FileManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2020/06/02/Swift5-1-7-闭包/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="codeTao's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        geeksk54@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: geeksk54@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">20</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">send</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">70</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;codeTao
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
