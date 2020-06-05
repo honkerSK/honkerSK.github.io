@@ -50,7 +50,7 @@
     
     <title>
         
-            iOS面试题22--性能优化 | 
+            [Swift5.1] 18-扩展 | 
         
         codeTao
     </title>
@@ -61,7 +61,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",iOS面试">
+    <meta name="keywords" content=",Swift5.1">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -227,7 +227,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="codeTao">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题22-性能优化/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/06/06/Swift5-1-18-扩展/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="codeTao">
@@ -242,16 +242,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题22-性能优化/">
+    <meta property="og:url" content="http://yoursite.com/2020/06/06/Swift5-1-18-扩展/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="iOS面试题22--性能优化 | codeTao">
+    <meta property="og:title" content="[Swift5.1] 18-扩展 | codeTao">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="iOS面试"> 
+    <meta property="og:article:tag" content="Swift5.1"> 
 
     
-        <meta property="article:published_time" content="Wed Sep 12 2018 15:48:39 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 12 2018 15:49:26 GMT+0800">
+        <meta property="article:published_time" content="Sat Jun 06 2020 01:25:03 GMT+0800">
+        <meta property="article:modified_time" content="Sat Jun 06 2020 01:26:07 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题22-性能优化/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2020/06/06/Swift5-1-18-扩展/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -271,10 +271,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题22-性能优化/index.html",
-    "headline": "iOS面试题22--性能优化",
-    "datePublished": "Wed Sep 12 2018 15:48:39 GMT+0800",
-    "dateModified": "Wed Sep 12 2018 15:49:26 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2020/06/06/Swift5-1-18-扩展/index.html",
+    "headline": "[Swift5.1] 18-扩展",
+    "datePublished": "Sat Jun 06 2020 01:25:03 GMT+0800",
+    "dateModified": "Sat Jun 06 2020 01:26:07 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "codeTao",
@@ -292,7 +292,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": ",iOS面试",
+    "keywords": ",Swift5.1",
     "description": "",
 }
 </script>
@@ -367,7 +367,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#入门级"><span class="post-toc-number">1.</span> <span class="post-toc-text">入门级</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#中级"><span class="post-toc-number">2.</span> <span class="post-toc-text">中级</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#高级"><span class="post-toc-number">3.</span> <span class="post-toc-text">高级</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#平时你是如何对代码进行性能优化的？"><span class="post-toc-number">4.</span> <span class="post-toc-text">平时你是如何对代码进行性能优化的？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#优化Table-View"><span class="post-toc-number">5.</span> <span class="post-toc-text">优化Table View</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UIImage加载图片性能问题"><span class="post-toc-number">6.</span> <span class="post-toc-text">UIImage加载图片性能问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#讲讲你用Instrument优化动画性能的经历吧（别问我什么是Instrument）"><span class="post-toc-number">7.</span> <span class="post-toc-text">讲讲你用Instrument优化动画性能的经历吧（别问我什么是Instrument）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#facebook启动时间优化"><span class="post-toc-number">8.</span> <span class="post-toc-text">facebook启动时间优化</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩展（Extension）"><span class="post-toc-number">1.</span> <span class="post-toc-text">扩展（Extension）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算属性、下标、方法、嵌套类型"><span class="post-toc-number">2.</span> <span class="post-toc-text">计算属性、下标、方法、嵌套类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#协议、初始化器"><span class="post-toc-number">3.</span> <span class="post-toc-text">协议、初始化器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩展协议"><span class="post-toc-number">4.</span> <span class="post-toc-text">扩展协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩展泛型"><span class="post-toc-number">5.</span> <span class="post-toc-text">扩展泛型</span></a></li></ol>
     </ul>
     
 
@@ -399,7 +399,7 @@
         
     
             <p class="article-headline-p">
-                iOS面试题22--性能优化
+                [Swift5.1] 18-扩展
             </p>
         </div>
 
@@ -418,7 +418,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>codeTao</strong>
-        <span>9月 12, 2018</span>
+        <span>6月 06, 2020</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -442,7 +442,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+        <a class="post_tag-link" href="/tags/Swift5-1/">Swift5.1</a>
     </ul>
     
 
@@ -470,7 +470,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题22--性能优化&url=http://yoursite.com/2018/09/12/iOS面试题22-性能优化/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[Swift5.1] 18-扩展&url=http://yoursite.com/2020/06/06/Swift5-1-18-扩展/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -479,7 +479,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题22--性能优化&url=http://yoursite.com/2018/09/12/iOS面试题22-性能优化/index.html&via=codeTao" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[Swift5.1] 18-扩展&url=http://yoursite.com/2020/06/06/Swift5-1-18-扩展/index.html&via=codeTao" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -488,7 +488,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题22-性能优化/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/06/Swift5-1-18-扩展/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -497,7 +497,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题22-性能优化/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/06/Swift5-1-18-扩展/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -509,7 +509,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=iOS面试题22--性能优化&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题22-性能优化/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=[Swift5.1] 18-扩展&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/06/06/Swift5-1-18-扩展/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -528,125 +528,192 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>文字是以前收集的，国外大牛写的，忘记原文链接了。</p>
-<h4 id="入门级"><a href="#入门级" class="headerlink" title="入门级"></a>入门级</h4><ol>
-<li>用ARC管理内存</li>
-<li>在正确的地方使用 reuseIdentifier</li>
-<li>尽量把views设置为透明</li>
-<li>避免过于庞大的XIB</li>
-<li><p>不要阻塞主线程</p>
+        <h3 id="扩展（Extension）"><a href="#扩展（Extension）" class="headerlink" title="扩展（Extension）"></a>扩展（Extension）</h3><ul>
+<li><p>Swift中的扩展，有点类似于OC中的分类（Category）</p>
 </li>
-<li><p>在Image Views中调整图片大小。如果要在UIImageView中显示一个来自bundle的图片，你应保证图片的大小和UIImageView的大小相同。在运行中缩放图片是很耗费资源的，特别是UIImageView嵌套在UIScrollView中的情况下。如果图片是从远端服务加载的你不能控制图片大小，比如在下载前调整到合适大小的话，你可以在下载完成后，最好是用background thread，缩放一次，然后在UIImageView中使用缩放后的图片。</p>
+<li><p>扩展可以为枚举、结构体、类、协议添加新功能。<br>可以添加方法、计算属性、下标、（便捷）初始化器、嵌套类型、协议等等。</p>
 </li>
-<li>选择正确的Collection。<ul>
-<li>Arrays: 有序的一组值。使用index来lookup很快，使用value lookup很慢， 插入/删除很慢。</li>
-<li>Dictionaries: 存储键值对。 用键来查找比较快。</li>
-<li>Sets: 无序的一组值。用值来查找很快，插入/删除很快。</li>
+<li><p>扩展不能办到的事情:<br>不能覆盖原有的功能<br>不能添加存储属性，不能向已有的属性添加属性观察器<br>不能添加父类<br>不能添加指定初始化器，不能添加反初始化器<br>…</p>
+</li>
 </ul>
-</li>
-<li>打开gzip压缩。app可能大量依赖于服务器资源，问题是我们的目标是移动设备，因此你就不能指望网络状况有多好。减小文档的一个方式就是在服务端和你的app中打开gzip。这对于文字这种能有更高压缩率的数据来说会有更显著的效用。<br> iOS已经在NSURLConnection中默认支持了gzip压缩，当然AFNetworking这些基于它的框架亦然。</li>
-</ol>
-<h4 id="中级"><a href="#中级" class="headerlink" title="中级"></a>中级</h4><ol>
-<li>重用和延迟加载(lazy load) Views<ul>
-<li>更多的view意味着更多的渲染，也就是更多的CPU和内存消耗，对于那种嵌套了很多view在UIScrollView里边的app更是如此。</li>
-<li>这里我们用到的技巧就是模仿UITableView和UICollectionView的操作: 不要一次创建所有的subview，而是当需要时才创建，当它们完成了使命，把他们放进一个可重用的队列中。这样的话你就只需要在滚动发生时创建你的views，避免了不划算的内存分配。</li>
+<h3 id="计算属性、下标、方法、嵌套类型"><a href="#计算属性、下标、方法、嵌套类型" class="headerlink" title="计算属性、下标、方法、嵌套类型"></a>计算属性、下标、方法、嵌套类型</h3><p>1)添加计算属性</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">extension</span> <span class="token builtin">Double</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> km<span class="token punctuation">:</span> <span class="token builtin">Double</span> <span class="token punctuation">{</span> <span class="token keyword">self</span> <span class="token operator">*</span> <span class="token number">1_000.0</span> <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> m<span class="token punctuation">:</span> <span class="token builtin">Double</span> <span class="token punctuation">{</span> <span class="token keyword">self</span> <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> dm<span class="token punctuation">:</span> <span class="token builtin">Double</span> <span class="token punctuation">{</span> <span class="token keyword">self</span> <span class="token operator">/</span> <span class="token number">10.0</span> <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> cm<span class="token punctuation">:</span> <span class="token builtin">Double</span> <span class="token punctuation">{</span> <span class="token keyword">self</span> <span class="token operator">/</span> <span class="token number">100.0</span> <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> mm<span class="token punctuation">:</span> <span class="token builtin">Double</span> <span class="token punctuation">{</span> <span class="token keyword">self</span> <span class="token operator">/</span> <span class="token number">1_000.0</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>2)添加下标</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">extension</span> <span class="token builtin">Array</span> <span class="token punctuation">{</span>
+    <span class="token keyword">subscript</span><span class="token punctuation">(</span>nullable idx<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Element</span><span class="token operator">?</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>startIndex<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&lt;</span>endIndex<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>idx<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">self</span><span class="token punctuation">[</span>idx<span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token constant">nil</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>3)添加嵌套类型</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">extension</span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">repetitions</span><span class="token punctuation">(</span>task<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token number">_</span> <span class="token keyword">in</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token keyword">self</span> <span class="token punctuation">{</span> <span class="token function">task</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">mutating</span> <span class="token keyword">func</span> <span class="token function">square</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span> <span class="token operator">=</span> <span class="token keyword">self</span> <span class="token operator">*</span> <span class="token keyword">self</span>
+        <span class="token keyword">return</span> <span class="token keyword">self</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">enum</span> <span class="token builtin">Kind</span> <span class="token punctuation">{</span> <span class="token keyword">case</span> negative<span class="token punctuation">,</span> zero<span class="token punctuation">,</span> positive <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> kind<span class="token punctuation">:</span> <span class="token builtin">Kind</span> <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span> <span class="token keyword">self</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">.</span>zero
+        <span class="token keyword">case</span> <span class="token keyword">let</span> x <span class="token keyword">where</span> x <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token punctuation">.</span>positive
+        <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token punctuation">.</span>negative
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">subscript</span><span class="token punctuation">(</span>digitIndex<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> decimalBase <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> <span class="token number">_</span> <span class="token keyword">in</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&lt;</span>digitIndex <span class="token punctuation">{</span> decimalBase <span class="token operator">*</span><span class="token operator">=</span> <span class="token number">10</span> <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">self</span> <span class="token operator">/</span> decimalBase<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="协议、初始化器"><a href="#协议、初始化器" class="headerlink" title="协议、初始化器"></a>协议、初始化器</h3><ul>
+<li>类扩展协议</li>
 </ul>
-</li>
-<li>Cache, Cache, 还是Cache!<ul>
-<li>一个极好的原则就是，缓存所需要的，也就是那些不大可能改变但是需要经常读取的东西。</li>
-<li>我们能缓存些什么呢？一些选项是，远端服务器的响应，图片，甚至计算结果，比如UITableView的行高。</li>
-<li>NSCache和NSDictionary类似，不同的是系统回收内存的时候它会自动删掉它的内容。</li>
-</ul>
-</li>
-<li>权衡渲染方法.性能能还是要bundle保持合适的大小。</li>
-<li>处理内存警告.移除对缓存，图片object和其他一些可以重创建的objects的strong references.</li>
-<li>重用大开销对象</li>
-<li>一些objects的初始化很慢，比如NSDateFormatter和NSCalendar。然而，你又不可避免地需要使用它们，比如从JSON或者XML中解析数据。想要避免使用这个对象的瓶颈你就需要重用他们，可以通过添加属性到你的class里或者创建静态变量来实现。</li>
-<li>避免反复处理数据.在服务器端和客户端使用相同的数据结构很重要。</li>
-<li>选择正确的数据格式.解析JSON会比XML更快一些，JSON也通常更小更便于传输。从iOS5起有了官方内建的JSON deserialization 就更加方便使用了。但是XML也有XML的好处，比如使用SAX 来解析XML就像解析本地文件一样，你不需像解析json一样等到整个文档下载完成才开始解析。当你处理很大的数据的时候就会极大地减低内存消耗和增加性能。</li>
-<li>正确设定背景图片<ul>
-<li>全屏背景图，在view中添加一个UIImageView作为一个子View</li>
-<li>只是某个小的view的背景图，你就需要用UIColor的colorWithPatternImage来做了，它会更快地渲染也不会花费很多内存：</li>
-</ul>
-</li>
-<li>减少使用Web特性。想要更高的性能你就要调整下你的HTML了。第一件要做的事就是尽可能移除不必要的javascript，避免使用过大的框架。能只用原生js就更好了。尽可能异步加载例如用户行为统计script这种不影响页面表达的javascript。注意你使用的图片，保证图片的符合你使用的大小。</li>
-<li>Shadow Path 。Core Animation不得不先在后台得出你的图形并加好阴影然后才渲染，这开销是很大的。使用shadowPath的话就避免了这个问题。使用shadow path的话iOS就不必每次都计算如何渲染，它使用一个预先计算好的路径。但问题是自己计算path的话可能在某些View中比较困难，且每当view的frame变化的时候你都需要去update shadow path.</li>
-<li>优化Table View<ul>
-<li>正确使用reuseIdentifier来重用cells</li>
-<li>尽量使所有的view opaque，包括cell自身</li>
-<li>避免渐变，图片缩放，后台选人</li>
-<li>缓存行高</li>
-<li>如果cell内现实的内容来自web，使用异步加载，缓存请求结果</li>
-<li>使用shadowPath来画阴影</li>
-<li>减少subviews的数量</li>
-<li>尽量不适用cellForRowAtIndexPath:，如果你需要用到它，只用一次然后缓存结果</li>
-<li>使用正确的数据结构来存储数据</li>
-<li>使用rowHeight, sectionFooterHeight 和 sectionHeaderHeight来设定固定的高，不要请求delegate</li>
-</ul>
-</li>
-<li>选择正确的数据存储选项<ul>
-<li>NSUserDefaults的问题是什么？虽然它很nice也很便捷，但是它只适用于小数据，比如一些简单的布尔型的设置选项，再大点你就要考虑其它方式了</li>
-<li>XML这种结构化档案呢？总体来说，你需要读取整个文件到内存里去解析，这样是很不经济的。使用SAX又是一个很麻烦的事情。</li>
-<li>NSCoding？不幸的是，它也需要读写文件，所以也有以上问题。</li>
-<li>在这种应用场景下，使用SQLite 或者 Core Data比较好。使用这些技术你用特定的查询语句就能只加载你需要的对象。</li>
-<li>在性能层面来讲，SQLite和Core Data是很相似的。他们的不同在于具体使用方法。</li>
-<li>Core Data代表一个对象的graph model，但SQLite就是一个DBMS。</li>
-<li>Apple在一般情况下建议使用Core Data，但是如果你有理由不使用它，那么就去使用更加底层的SQLite吧。</li>
-<li>如果你使用SQLite，你可以用FMDB这个库来简化SQLite的操作，这样你就不用花很多经历了解SQLite的C API了。</li>
-</ul>
-</li>
-</ol>
-<h4 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h4><ol>
-<li><p>加速启动时间。快速打开app是很重要的，特别是用户第一次打开它时，对app来讲，第一印象太太太重要了。你能做的就是使它尽可能做更多的异步任务，比如加载远端或者数据库数据，解析数据。避免过于庞大的XIB，因为他们是在主线程上加载的。所以尽量使用没有这个问题的Storyboards吧！一定要把设备从Xcode断开来测试启动速度</p>
-</li>
-<li><p>使用Autorelease Pool。NSAutoreleasePool`负责释放block中的autoreleased objects。一般情况下它会自动被UIKit调用。但是有些状况下你也需要手动去创建它。假如你创建很多临时对象，你会发现内存一直在减少直到这些对象被release的时候。这是因为只有当UIKit用光了autorelease pool的时候memory才会被释放。消息是你可以在你自己的@autoreleasepool里创建临时的对象来避免这个行为。</p>
-</li>
-<li><p>选择是否缓存图片。常见的从bundle中加载图片的方式有两种，一个是用imageNamed，二是用imageWithContentsOfFile，第一种比较常见一点。</p>
-</li>
-<li><p>避免日期格式转换。如果你要用NSDateFormatter来处理很多日期格式，应该小心以待。就像先前提到的，任何时候重用NSDateFormatters都是一个好的实践。如果你可以控制你所处理的日期格式，尽量选择Unix时间戳。你可以方便地从时间戳转换到NSDate:</p>
-<pre><code>    - (NSDate*)dateFromUnixTimestamp:(NSTimeInterval)timestamp {
-    return[NSDate dateWithTimeIntervalSince1970:timestamp];
-    }
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> age<span class="token punctuation">:</span> <span class="token builtin">Int</span>
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token builtin">String</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>age<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span><span class="token builtin">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+        <span class="token keyword">self</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-</code></pre></li>
-</ol>
-<p>这样会比用C来解析日期字符串还快！需要注意的是，许多web API会以微秒的形式返回时间戳，因为这种格式在javascript中更方便使用。记住用dateFromUnixTimestamp之前除以1000就好了。</p>
-<h4 id="平时你是如何对代码进行性能优化的？"><a href="#平时你是如何对代码进行性能优化的？" class="headerlink" title="平时你是如何对代码进行性能优化的？"></a>平时你是如何对代码进行性能优化的？</h4><ul>
-<li>利用性能分析工具检测，包括静态 Analyze 工具，以及运行时 Profile 工具，通过Xcode工具栏中Product-&gt;Profile可以启动,启动后界面如下:</li>
-</ul>
-<p>  image</p>
+<span class="token keyword">extension</span> <span class="token builtin">Person</span><span class="token punctuation">:</span> <span class="token builtin">Equatable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token keyword">left</span><span class="token punctuation">:</span><span class="token builtin">Person</span><span class="token punctuation">,</span> <span class="token keyword">right</span><span class="token punctuation">:</span> <span class="token builtin">Person</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span><span class="token builtin">Bool</span><span class="token punctuation">{</span>
+        <span class="token keyword">left</span><span class="token punctuation">.</span>age <span class="token operator">==</span> <span class="token keyword">right</span><span class="token punctuation">.</span>age <span class="token operator">&amp;&amp;</span> <span class="token keyword">left</span><span class="token punctuation">.</span>name <span class="token operator">==</span> <span class="token keyword">right</span><span class="token punctuation">.</span>name
+    <span class="token punctuation">}</span>
+    <span class="token keyword">convenience</span> <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>age<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <ul>
-<li><p>比如测试程序启动运行时间，当点击Time Profiler应用程序开始运行后.就能获取到整个应用程序运行消耗时间分布和百分比.为了保证数据分析在统一使用场景真实需要注意一定要使用真机,因为此时模拟器是运行在Mac上，而Mac上的CPU往往比iOS设备要快。</p>
-</li>
-<li><p>为了防止一个应用占用过多的系统资源，开发iOS的苹果工程师门设计了一个“看门狗”的机制。在不同的场景下，“看门狗”会监测应用的性能。如果超出了该场景所规定的运行时间，“看门狗”就会强制终结这个应用的进程。开发者们在crashlog里面，会看到诸如0x8badf00d这样的错误代码。</p>
-</li>
+<li>结构体扩展 初始化器</li>
 </ul>
-<h4 id="优化Table-View"><a href="#优化Table-View" class="headerlink" title="优化Table View"></a>优化Table View</h4><ul>
-<li>正确使用reuseIdentifier来重用cells</li>
-<li>尽量使所有的view opaque，包括cell自身</li>
-<li>如果cell内现实的内容来自web，使用异步加载，缓存请求结果</li>
-<li>减少subviews的数量</li>
-<li>尽量不适用cellForRowAtIndexPath:，如果你需要用到它，只用一次然后缓存结果</li>
-<li>使用rowHeight, sectionFooterHeight和 sectionHeaderHeight来设定固定的高，不要请求delegate</li>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token builtin">Point</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> x<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> y<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">extension</span> <span class="token builtin">Point</span> <span class="token punctuation">{</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token number">_</span> point<span class="token punctuation">:</span> <span class="token builtin">Point</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token number">_</span> point<span class="token punctuation">:</span> <span class="token builtin">Point</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span>point<span class="token punctuation">.</span>x<span class="token punctuation">,</span> y<span class="token punctuation">:</span>point<span class="token punctuation">.</span>y<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> p1 <span class="token operator">=</span> <span class="token function">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> p2 <span class="token operator">=</span> <span class="token function">Point</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> p3 <span class="token operator">=</span> <span class="token function">Point</span><span class="token punctuation">(</span>y<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> p4 <span class="token operator">=</span> <span class="token function">Point</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> p5 <span class="token operator">=</span> <span class="token function">Point</span><span class="token punctuation">(</span>p4<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//扩展的初始化器</span>
+</code></pre>
+<p><strong>总结:</strong></p>
+<ul>
+<li>如果希望自定义初始化器的同时，编译器也能够生成默认初始化器</li>
+<li>可以在扩展中编写自定义初始化器</li>
+<li><code>required</code>初始化器, 也不能写在扩展中</li>
 </ul>
-<h4 id="UIImage加载图片性能问题"><a href="#UIImage加载图片性能问题" class="headerlink" title="UIImage加载图片性能问题"></a>UIImage加载图片性能问题</h4><ul>
-<li>imagedNamed初始化</li>
-<li>imageWithContentsOfFile初始化</li>
-<li>imageNamed默认加载图片成功后会内存中缓存图片,这个方法用一个指定的名字在系统缓存中查找并返回一个图片对象.如果缓存中没有找到相应的图片对象,则从指定地方加载图片然后缓存对象，并返回这个图片对象.</li>
-<li>imageWithContentsOfFile则仅只加载图片,不缓存.</li>
-<li>加载一张大图并且使用一次，用imageWithContentsOfFile是最好,这样CPU不需要做缓存节约时间.</li>
-<li>使用场景需要编程时，应该根据实际应用场景加以区分，UIimage虽小，但使用元素较多问题会有所凸显. <ul>
-<li>不要在viewWillAppear 中做费时的操作：viewWillAppear: 在view显示之前被调用，出于效率考虑，方法中不要处理复杂费时操作；在该方法设置 view 的显示属性之类的简单事情，比如背景色，字体等。否则，会明显感觉到 view 有卡顿或者延迟。</li>
-<li>在正确的地方使用reuseIdentifier：table view用 tableView:cellForRowAtIndexPath:为rows分配cells的时候，它的数据应该重用自UITableViewCell。</li>
-<li>尽量把views设置为透明：如果你有透明的Views你应该设置它们的opaque属性为YES。系统用一个最优的方式渲染这些views。这个简单的属性在IB或者代码里都可以设定。</li>
-<li>避免过于庞大的XIB：尽量简单的为每个Controller配置一个单独的XIB，尽可能把一个View Controller的view层次结构分散到单独的XIB中去, 当你加载一个引用了图片或者声音资源的nib时，nib加载代码会把图片和声音文件写进内存。</li>
-<li>不要阻塞主线程：永远不要使主线程承担过多。因为UIKit在主线程上做所有工作，渲染，管理触摸反应，回应输入等都需要在它上面完成,大部分阻碍主进程的情形是你的app在做一些牵涉到读写外部资源的I/O操作，比如存储或者网络。<br> dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,   0), ^{<br> // 选择一个子线程来执行耗时操作<br> dispatch_async(dispatch_get_main_queue(), ^{<br> // 返回主线程更新UI<br> });<br> });</li>
-<li>在Image Views中调整图片大小<br> 如果要在UIImageView中显示一个来自bundle的图片，你应保证图片的大小和UIImageView的大小相同。在运行中缩放图片是很耗费资源的.</li>
+<h3 id="扩展协议"><a href="#扩展协议" class="headerlink" title="扩展协议"></a>扩展协议</h3><ul>
+<li>如果一个类型已经实现了协议的所有要求，但是还没有声明它遵守了这个协议</li>
+<li>可以通过扩展来让它遵守这个协议</li>
 </ul>
-</li>
+<pre class=" language-swift"><code class="language-swift">protocol <span class="token builtin">TestProtocol</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">TestClass</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token builtin">TestClass</span> <span class="token punctuation">:</span> <span class="token builtin">TestProtocol</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>编写一个函数，判断一个整数是否为奇数？<br><code>`</code>swift<br>func isOdd&lt;T: BinaryInteger&gt;(_ i: T) -&gt; Bool {<br>  i % 2 != 0<br>}</li>
 </ul>
-<h4 id="讲讲你用Instrument优化动画性能的经历吧（别问我什么是Instrument）"><a href="#讲讲你用Instrument优化动画性能的经历吧（别问我什么是Instrument）" class="headerlink" title="讲讲你用Instrument优化动画性能的经历吧（别问我什么是Instrument）"></a>讲讲你用Instrument优化动画性能的经历吧（别问我什么是Instrument）</h4><pre><code>Apple的instrument为开发者提供了各种template去优化app性能和定位问题。很多公司都在赶feature，并没有充足的时间来做优化，导致不少开发者对instrument不怎么熟悉。但这里面其实涵盖了非常完整的计算机基础理论知识体系，memory，disk，network，thread，cpu，gpu等等，顺藤摸瓜去学习，是一笔巨大的知识财富。动画性能只是其中一个template，重点还是理解上面问题当中CPU GPU如何配合工作的知识。
-</code></pre><h4 id="facebook启动时间优化"><a href="#facebook启动时间优化" class="headerlink" title="facebook启动时间优化"></a>facebook启动时间优化</h4><p>1.瘦身请求依赖 2.UDP启动请求先行缓存 3.队列串行化处理启动响应</p>
+<p>extension BinaryInteger {<br>    func isOdd() -&gt; Bool { self % 2 != 0 }<br>}</p>
+<pre><code>
+### 扩展协议细节
+
++ 扩展可以给协议提供`默认实现`，也间接实现`可选协议`的效果
++ 扩展可以给协议扩充`协议中从未声明过的方法`
+
+```swift
+protocol TestProtocol {
+    func test1()
+}
+extension TestProtocol {
+    func test1() {
+        print(&quot;TestProtocol test1&quot;)
+    }
+    func test2() {
+        print(&quot;TestProtocol test2&quot;)
+    }
+}
+
+class TestClass : TestProtocol {}
+var cls = TestClass()
+cls.test1() // TestProtocol test1
+cls.test2() // TestProtocol test2
+var cls2: TestProtocol = TestClass()
+cls2.test1() // TestProtocol test1
+cls2.test2() // TestProtocol test2
+</code></pre><ul>
+<li>类遵守协议,实现协议方法.</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">TestClass</span> <span class="token punctuation">:</span> <span class="token builtin">TestProtocol</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"TestClass test1"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"TestClass test2"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> cls <span class="token operator">=</span> <span class="token function">TestClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+cls<span class="token punctuation">.</span><span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// TestClass test1</span>
+cls<span class="token punctuation">.</span><span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// TestClass test2</span>
+
+<span class="token keyword">var</span> cls2<span class="token punctuation">:</span> <span class="token builtin">TestProtocol</span> <span class="token operator">=</span> <span class="token function">TestClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//结果分析看总结</span>
+cls2<span class="token punctuation">.</span><span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// TestClass test1</span>
+cls2<span class="token punctuation">.</span><span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// TestProtocol test2</span>
+</code></pre>
+<p><strong>总结:</strong></p>
+<ul>
+<li>如果调用方法是在协议声明中的, 编译器优先去实例中查找.</li>
+<li>如果调用方法是在协议声明中没有, 同时对象定义为协议类型,编译器会认为实例中没有该方法, 会直接去协议中查找.</li>
+</ul>
+<h3 id="扩展泛型"><a href="#扩展泛型" class="headerlink" title="扩展泛型"></a>扩展泛型</h3><ul>
+<li>扩展中依然可以使用原类型中的泛型类型.</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Stack</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> elements <span class="token operator">=</span> <span class="token punctuation">[</span>E<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">func</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token number">_</span> element<span class="token punctuation">:</span> E<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        elements<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> E <span class="token punctuation">{</span> elements<span class="token punctuation">.</span><span class="token function">removeLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> elements<span class="token punctuation">.</span><span class="token builtin">count</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 扩展中依然可以使用原类型中的泛型类型</span>
+<span class="token keyword">extension</span> <span class="token builtin">Stack</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> E <span class="token punctuation">{</span> elements<span class="token punctuation">.</span><span class="token builtin">last</span><span class="token operator">!</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 符合条件才扩展</span>
+<span class="token keyword">extension</span> <span class="token builtin">Stack</span> <span class="token punctuation">:</span> <span class="token builtin">Equatable</span> <span class="token keyword">where</span> E <span class="token punctuation">:</span> <span class="token builtin">Equatable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token keyword">left</span><span class="token punctuation">:</span> <span class="token builtin">Stack</span><span class="token punctuation">,</span> <span class="token keyword">right</span><span class="token punctuation">:</span> <span class="token builtin">Stack</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Bool</span> <span class="token punctuation">{</span>
+        <span class="token keyword">left</span><span class="token punctuation">.</span>elements <span class="token operator">==</span> <span class="token keyword">right</span><span class="token punctuation">.</span>elements
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
 
         
     
@@ -700,21 +767,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/12/iOS面试题23-通知与推送/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/12/iOS面试题21-Runtime/" id="post_nav-older" class="next-content">
+        <a href="/2020/06/06/Swift5-1-17-高级运算符/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
