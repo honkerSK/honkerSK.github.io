@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            [Swift5.1] 20-内存管理 | 
+        
+        codeTao
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",Swift5.1">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="codeTao">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/06/07/Swift5-1-20-内存管理/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="codeTao">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2020/06/07/Swift5-1-20-内存管理/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="[Swift5.1] 20-内存管理 | codeTao">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="Swift5.1"> 
+
+    
+        <meta property="article:published_time" content="Sun Jun 07 2020 12:43:43 GMT+0800">
+        <meta property="article:modified_time" content="Sun Jun 07 2020 12:45:02 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2020/06/07/Swift5-1-20-内存管理/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2020/06/07/Swift5-1-20-内存管理/index.html",
+    "headline": "[Swift5.1] 20-内存管理",
+    "datePublished": "Sun Jun 07 2020 12:43:43 GMT+0800",
+    "dateModified": "Sun Jun 07 2020 12:45:02 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "codeTao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "codeTao",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",Swift5.1",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">内存管理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#weak、unowned的使用限制"><span class="post-toc-number">2.</span> <span class="post-toc-text">weak、unowned的使用限制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Autoreleasepool"><span class="post-toc-number">3.</span> <span class="post-toc-text">Autoreleasepool</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#循环引用（Reference-Cycle）"><span class="post-toc-number">4.</span> <span class="post-toc-text">循环引用（Reference Cycle）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#闭包的循环引用"><span class="post-toc-number">5.</span> <span class="post-toc-text">闭包的循环引用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#闭包的self"><span class="post-toc-number">6.</span> <span class="post-toc-text">闭包的self</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#escaping"><span class="post-toc-number">7.</span> <span class="post-toc-text">@escaping</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#逃逸闭包的注意点"><span class="post-toc-number">8.</span> <span class="post-toc-text">逃逸闭包的注意点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存访问冲突（Conflicting-Access-to-Memory）"><span class="post-toc-number">9.</span> <span class="post-toc-text">内存访问冲突（Conflicting Access to Memory）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存访问冲突示例"><span class="post-toc-number">10.</span> <span class="post-toc-text">内存访问冲突示例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存访问冲突示例二"><span class="post-toc-number">11.</span> <span class="post-toc-text">内存访问冲突示例二</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                [Swift5.1] 20-内存管理
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>codeTao</strong>
+        <span>6月 07, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Swift5-1/">Swift5.1</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[Swift5.1] 20-内存管理&url=http://yoursite.com/2020/06/07/Swift5-1-20-内存管理/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[Swift5.1] 20-内存管理&url=http://yoursite.com/2020/06/07/Swift5-1-20-内存管理/index.html&via=codeTao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/07/Swift5-1-20-内存管理/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/07/Swift5-1-20-内存管理/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=[Swift5.1] 20-内存管理&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/06/07/Swift5-1-20-内存管理/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><p>跟OC一样，Swift也是采取基于引用计数的ARC内存管理方案（针对堆空间）.</p>
+<p><strong>Swift的ARC中有3种引用:</strong><br>1)<strong>强引用</strong>（strong reference）：默认情况下，引用都是强引用</p>
+<p>2)<strong>弱引用</strong>（weak reference）：通过<code>weak</code>定义弱引用</p>
+<ul>
+<li>必须是可选类型的<code>var</code>，因为实例销毁后，ARC会自动将弱引用设置为nil</li>
+<li>ARC自动给弱引用设置<code>nil</code>时，不会触发属性观察器</li>
+</ul>
+<p>3)<strong>无主引用</strong>（unowned reference）：通过<code>unowned</code>定义无主引用.</p>
+<ul>
+<li>不会产生强引用，实例销毁后仍然存储着实例的内存地址（类似于OC中的unsafe_unretained）</li>
+<li>试图在实例销毁后访问无主引用，会产生运行时错误（野指针）<br>Fatal error: Attempted to read an unowned reference but object 0x0 was already deallocated</li>
+</ul>
+<h3 id="weak、unowned的使用限制"><a href="#weak、unowned的使用限制" class="headerlink" title="weak、unowned的使用限制"></a>weak、unowned的使用限制</h3><ul>
+<li>weak、unowned只能用在<code>类实例</code>上面</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift">protocol <span class="token builtin">Livable</span> <span class="token punctuation">:</span> <span class="token builtin">AnyObject</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">weak</span> <span class="token keyword">var</span> p0<span class="token punctuation">:</span> <span class="token builtin">Person</span><span class="token operator">?</span>
+<span class="token keyword">weak</span> <span class="token keyword">var</span> p1<span class="token punctuation">:</span> <span class="token builtin">AnyObject</span><span class="token operator">?</span>
+<span class="token keyword">weak</span> <span class="token keyword">var</span> p2<span class="token punctuation">:</span> <span class="token builtin">Livable</span><span class="token operator">?</span>
+
+<span class="token keyword">unowned</span> <span class="token keyword">var</span> p10<span class="token punctuation">:</span> <span class="token builtin">Person</span><span class="token operator">?</span>
+<span class="token keyword">unowned</span> <span class="token keyword">var</span> p11<span class="token punctuation">:</span> <span class="token builtin">AnyObject</span><span class="token operator">?</span>
+<span class="token keyword">unowned</span> <span class="token keyword">var</span> p12<span class="token punctuation">:</span> <span class="token builtin">Livable</span><span class="token operator">?</span>
+</code></pre>
+<h3 id="Autoreleasepool"><a href="#Autoreleasepool" class="headerlink" title="Autoreleasepool"></a>Autoreleasepool</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">public</span> <span class="token keyword">func</span> autoreleasepool<span class="token operator">&lt;</span><span class="token builtin">Result</span><span class="token operator">></span><span class="token punctuation">(</span>invoking body<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Result</span><span class="token punctuation">)</span> <span class="token keyword">rethrows</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Result</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift">autoreleasepool <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token function">MJPerson</span><span class="token punctuation">(</span>age<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">"Jack"</span><span class="token punctuation">)</span>
+    p<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="循环引用（Reference-Cycle）"><a href="#循环引用（Reference-Cycle）" class="headerlink" title="循环引用（Reference Cycle）"></a>循环引用（Reference Cycle）</h3><ul>
+<li><code>weak</code>、<code>unowned</code> 都能解决循环引用的问题，<code>unowned</code> 要比 <code>weak</code> 少一些性能消耗</li>
+<li>在生命周期中可能会变为 nil 的使用<code>weak</code></li>
+<li>初始化赋值后再也不会变为 nil 的使用 <code>unowned</code></li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-a1cd379e50baaffa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-2c855eb310e65065.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-a12ce7b93e2cdb1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="闭包的循环引用"><a href="#闭包的循环引用" class="headerlink" title="闭包的循环引用"></a>闭包的循环引用</h3><ul>
+<li>闭包表达式默认会对用到的外层对象产生额外的强引用（对外层对象进行了retain操作）</li>
+<li>下面代码会产生循环引用，导致Person对象无法释放（看不到Person的deinit被调用）</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> fn<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">?</span>
+    <span class="token keyword">func</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"run"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token keyword">deinit</span> <span class="token punctuation">{</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"deinit"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    p<span class="token punctuation">.</span>fn <span class="token operator">=</span> <span class="token punctuation">{</span> p<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>解决闭包的循环引用:</strong><br>在闭包表达式的<code>捕获列表</code>声明<code>weak</code>或<code>unowned</code>引用，解决循环引用问题</p>
+<pre class=" language-swift"><code class="language-swift">p<span class="token punctuation">.</span>fn <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token keyword">weak</span> p<span class="token punctuation">]</span> <span class="token keyword">in</span>
+    p<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift">p<span class="token punctuation">.</span>fn <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token keyword">unowned</span> p<span class="token punctuation">]</span> <span class="token keyword">in</span>
+    p<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>捕获列表可以定义新的名称</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift">p<span class="token punctuation">.</span>fn <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token keyword">weak</span> wp <span class="token operator">=</span> p<span class="token punctuation">,</span> <span class="token keyword">unowned</span> up <span class="token operator">=</span> p<span class="token punctuation">,</span> a <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token number">20</span><span class="token punctuation">]</span> <span class="token keyword">in</span>
+    wp<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="闭包的self"><a href="#闭包的self" class="headerlink" title="闭包的self"></a>闭包的self</h3><ul>
+<li>1)如果想在定义闭包属性的同时引用<code>self</code>，这个闭包必须是<code>lazy</code>的（因为在实例初始化完毕之后才能引用self）</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">lazy</span> <span class="token keyword">var</span> fn<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">[</span><span class="token keyword">weak</span> <span class="token keyword">self</span><span class="token punctuation">]</span> <span class="token keyword">in</span>
+        <span class="token keyword">self</span><span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"run"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token keyword">deinit</span> <span class="token punctuation">{</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"deinit"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    p<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>左边的闭包fn内部如果用到了实例成员（属性、方法）</li>
+<li>编译器会强制要求明确写出self</li>
+</ul>
+<ul>
+<li>2)如果<code>lazy</code>属性是闭包调用的结果，那么不用考虑循环引用的问题（因为闭包调用后，闭包的生命周期就结束了）</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> age<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token comment" spellcheck="true">//getAge本质是Int类型, 不是闭包</span>
+    <span class="token keyword">lazy</span> <span class="token keyword">var</span> getAge<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>age
+    <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">deinit</span> <span class="token punctuation">{</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"deinit"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>getAge<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="escaping"><a href="#escaping" class="headerlink" title="@escaping"></a>@escaping</h3><p>非逃逸闭包、逃逸闭包，一般都是<strong>当做参数传递给函数</strong>:</p>
+<ul>
+<li><strong>非逃逸闭包</strong>：闭包调用发生在函数结束前，闭包调用在函数作用域内</li>
+<li><strong>逃逸闭包</strong>：闭包有可能在函数结束后调用，闭包调用逃离了函数的作用域，需要通过<code>@escaping</code>声明</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">import</span> <span class="token builtin">Dispatch</span>
+<span class="token keyword">typealias</span> <span class="token builtin">Fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// fn是非逃逸闭包</span>
+<span class="token keyword">func</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token number">_</span> fn<span class="token punctuation">:</span> <span class="token builtin">Fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// fn是逃逸闭包</span>
+<span class="token keyword">var</span> gFn<span class="token punctuation">:</span> <span class="token builtin">Fn</span><span class="token operator">?</span>
+<span class="token keyword">func</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token number">_</span> fn<span class="token punctuation">:</span> @escaping <span class="token builtin">Fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> gFn <span class="token operator">=</span> fn <span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// fn是逃逸闭包</span>
+<span class="token keyword">func</span> <span class="token function">test3</span><span class="token punctuation">(</span><span class="token number">_</span> fn<span class="token punctuation">:</span> @escaping <span class="token builtin">Fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">DispatchQueue</span><span class="token punctuation">.</span><span class="token function">global</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>async <span class="token punctuation">{</span>
+        <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> fn<span class="token punctuation">:</span> <span class="token builtin">Fn</span>
+    <span class="token comment" spellcheck="true">// fn是逃逸闭包</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>fn<span class="token punctuation">:</span> @escaping <span class="token builtin">Fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>fn <span class="token operator">=</span> fn
+    <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// DispatchQueue.global().async也是一个逃逸闭包</span>
+        <span class="token comment" spellcheck="true">// 它用到了实例成员（属性、方法），编译器会强制要求明确写出self</span>
+        <span class="token builtin">DispatchQueue</span><span class="token punctuation">.</span><span class="token function">global</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>async <span class="token punctuation">{</span>
+              <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true">//如果Person对象销毁不再执行闭包,可以这样写</span>
+            <span class="token comment" spellcheck="true">//[weak weakSelf = self] in </span>
+            <span class="token comment" spellcheck="true">//weakSelf?.fn()</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="逃逸闭包的注意点"><a href="#逃逸闭包的注意点" class="headerlink" title="逃逸闭包的注意点"></a>逃逸闭包的注意点</h3><ul>
+<li>逃逸闭包不可以捕获inout参数</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">typealias</span> <span class="token builtin">Fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">other1</span><span class="token punctuation">(</span><span class="token number">_</span> fn<span class="token punctuation">:</span> <span class="token builtin">Fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">other2</span><span class="token punctuation">(</span><span class="token number">_</span> fn<span class="token punctuation">:</span> @escaping <span class="token builtin">Fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">test</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token keyword">inout</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Fn</span> <span class="token punctuation">{</span>
+    other1 <span class="token punctuation">{</span> value <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">}</span>  
+    <span class="token comment" spellcheck="true">// error: 逃逸闭包不能捕获inout参数</span>
+    other2 <span class="token punctuation">{</span> value <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">func</span> <span class="token function">plus</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> value <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// error: 逃逸闭包不能捕获inout参数</span>
+    <span class="token keyword">return</span> plus
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="内存访问冲突（Conflicting-Access-to-Memory）"><a href="#内存访问冲突（Conflicting-Access-to-Memory）" class="headerlink" title="内存访问冲突（Conflicting Access to Memory）"></a>内存访问冲突（Conflicting Access to Memory）</h3><p><strong>内存访问冲突会在两个访问满足下列条件时发生：</strong><br>(在全局作用域中)</p>
+<ul>
+<li>至少一个是写入操作</li>
+<li>它们访问的是同一块内存</li>
+<li>它们的访问时间重叠（比如在同一个函数内）</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// 不存在内存访问冲突</span>
+<span class="token keyword">func</span> <span class="token function">plus</span><span class="token punctuation">(</span><span class="token number">_</span> num<span class="token punctuation">:</span> <span class="token keyword">inout</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> num <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">}</span>
+<span class="token keyword">var</span> number <span class="token operator">=</span> <span class="token number">1</span>
+number <span class="token operator">=</span> <span class="token function">plus</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>number<span class="token punctuation">)</span>
+</code></pre>
+<p>存在内存访问冲突</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// 存在内存访问冲突</span>
+<span class="token comment" spellcheck="true">// Simultaneous accesses to 0x0, but modification requires exclusive access</span>
+<span class="token keyword">var</span> step <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">func</span> <span class="token function">increment</span><span class="token punctuation">(</span><span class="token number">_</span> num<span class="token punctuation">:</span> <span class="token keyword">inout</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> num <span class="token operator">+</span><span class="token operator">=</span> step <span class="token punctuation">}</span>
+<span class="token function">increment</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>step<span class="token punctuation">)</span>
+</code></pre>
+<p>解决内存访问冲突</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// 解决内存访问冲突</span>
+<span class="token keyword">var</span> copyOfStep <span class="token operator">=</span> step
+<span class="token function">increment</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>copyOfStep<span class="token punctuation">)</span>
+step <span class="token operator">=</span> copyOfStep
+</code></pre>
+<h3 id="内存访问冲突示例"><a href="#内存访问冲突示例" class="headerlink" title="内存访问冲突示例"></a>内存访问冲突示例</h3><p>1)同时访问同一变量内存地址</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function">balance</span><span class="token punctuation">(</span><span class="token number">_</span> x<span class="token punctuation">:</span> <span class="token keyword">inout</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> y<span class="token punctuation">:</span> <span class="token keyword">inout</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> sum <span class="token operator">=</span> x <span class="token operator">+</span> y
+    x <span class="token operator">=</span> sum <span class="token operator">/</span> <span class="token number">2</span>
+    y <span class="token operator">=</span> sum <span class="token operator">-</span> x
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> num1 <span class="token operator">=</span> <span class="token number">42</span>
+<span class="token keyword">var</span> num2 <span class="token operator">=</span> <span class="token number">30</span>
+<span class="token function">balance</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>num1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>num2<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">// OK</span>
+<span class="token function">balance</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>num1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>num1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Error</span>
+</code></pre>
+<p>2)同时访问同一对象属性内存地址</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token builtin">Player</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token builtin">String</span>
+    <span class="token keyword">var</span> health<span class="token punctuation">:</span> <span class="token builtin">Int</span>
+    <span class="token keyword">var</span> energy<span class="token punctuation">:</span> <span class="token builtin">Int</span>
+    <span class="token keyword">mutating</span> <span class="token keyword">func</span> <span class="token function">shareHealth</span><span class="token punctuation">(</span>with teammate<span class="token punctuation">:</span> <span class="token keyword">inout</span> <span class="token builtin">Player</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">balance</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>teammate<span class="token punctuation">.</span>health<span class="token punctuation">,</span> <span class="token operator">&amp;</span>health<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> oscar <span class="token operator">=</span> <span class="token function">Player</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">"Oscar"</span><span class="token punctuation">,</span> health<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> energy<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> maria <span class="token operator">=</span> <span class="token function">Player</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">"Maria"</span><span class="token punctuation">,</span> health<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> energy<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span>
+oscar<span class="token punctuation">.</span><span class="token function">shareHealth</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> <span class="token operator">&amp;</span>maria<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">// OK</span>
+oscar<span class="token punctuation">.</span><span class="token function">shareHealth</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> <span class="token operator">&amp;</span>oscar<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Error </span>
+<span class="token comment" spellcheck="true">//同时访问同一对象属性health内存地址</span>
+</code></pre>
+<p>3)同时访问同一元组内存地址</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> tulpe <span class="token operator">=</span> <span class="token punctuation">(</span>health<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> energy<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// Error</span>
+<span class="token function">balance</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tulpe<span class="token punctuation">.</span>health<span class="token punctuation">,</span> <span class="token operator">&amp;</span>tulpe<span class="token punctuation">.</span>energy<span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> holly <span class="token operator">=</span> <span class="token function">Player</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">"Holly"</span><span class="token punctuation">,</span> health<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> energy<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// Error</span>
+<span class="token function">balance</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>holly<span class="token punctuation">.</span>health<span class="token punctuation">,</span> <span class="token operator">&amp;</span>holly<span class="token punctuation">.</span>energy<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">//health和energy在元组中属于同一块内存</span>
+</code></pre>
+<h3 id="内存访问冲突示例二"><a href="#内存访问冲突示例二" class="headerlink" title="内存访问冲突示例二"></a>内存访问冲突示例二</h3><p>如果下面的条件可以满足，就说明重叠访问结构体的属性是<code>安全的</code>:<br>(在局部作用域中)</p>
+<ul>
+<li>你只访问实例存储属性，不是<code>计算属性</code>或者<code>类属性</code></li>
+<li>结构体是<code>局部变量</code>而<code>非全局变量</code></li>
+<li>结构体要么<code>没有被闭包捕获</code>要么<code>只被非逃逸闭包捕获</code></li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// Ok</span>
+<span class="token keyword">func</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> tulpe <span class="token operator">=</span> <span class="token punctuation">(</span>health<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> energy<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">)</span>
+    <span class="token function">balance</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tulpe<span class="token punctuation">.</span>health<span class="token punctuation">,</span> <span class="token operator">&amp;</span>tulpe<span class="token punctuation">.</span>energy<span class="token punctuation">)</span>
+
+    <span class="token keyword">var</span> holly <span class="token operator">=</span> <span class="token function">Player</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">"Holly"</span><span class="token punctuation">,</span> health<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> energy<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token function">balance</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>holly<span class="token punctuation">.</span>health<span class="token punctuation">,</span> <span class="token operator">&amp;</span>holly<span class="token punctuation">.</span>energy<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2020/06/07/Swift5-1-21-指针/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2020/06/07/Swift5-1-19-访问控制/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="codeTao's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        geeksk54@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: geeksk54@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">17</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">33</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">send</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">83</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;codeTao
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

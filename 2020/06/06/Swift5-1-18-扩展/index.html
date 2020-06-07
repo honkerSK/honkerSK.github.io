@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Sat Jun 06 2020 01:25:03 GMT+0800">
-        <meta property="article:modified_time" content="Sat Jun 06 2020 01:26:07 GMT+0800">
+        <meta property="article:modified_time" content="Sat Jun 06 2020 01:34:55 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2020/06/06/Swift5-1-18-扩展/index.html",
     "headline": "[Swift5.1] 18-扩展",
     "datePublished": "Sat Jun 06 2020 01:25:03 GMT+0800",
-    "dateModified": "Sat Jun 06 2020 01:26:07 GMT+0800",
+    "dateModified": "Sat Jun 06 2020 01:34:55 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "codeTao",
@@ -367,7 +367,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩展（Extension）"><span class="post-toc-number">1.</span> <span class="post-toc-text">扩展（Extension）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算属性、下标、方法、嵌套类型"><span class="post-toc-number">2.</span> <span class="post-toc-text">计算属性、下标、方法、嵌套类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#协议、初始化器"><span class="post-toc-number">3.</span> <span class="post-toc-text">协议、初始化器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩展协议"><span class="post-toc-number">4.</span> <span class="post-toc-text">扩展协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩展泛型"><span class="post-toc-number">5.</span> <span class="post-toc-text">扩展泛型</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩展（Extension）"><span class="post-toc-number">1.</span> <span class="post-toc-text">扩展（Extension）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#计算属性、下标、方法、嵌套类型"><span class="post-toc-number">2.</span> <span class="post-toc-text">计算属性、下标、方法、嵌套类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#协议、初始化器"><span class="post-toc-number">3.</span> <span class="post-toc-text">协议、初始化器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩展协议"><span class="post-toc-number">4.</span> <span class="post-toc-text">扩展协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩展协议细节"><span class="post-toc-number">5.</span> <span class="post-toc-text">扩展协议细节</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩展泛型"><span class="post-toc-number">6.</span> <span class="post-toc-text">扩展泛型</span></a></li></ol>
     </ul>
     
 
@@ -643,36 +643,41 @@
 <span class="token keyword">extension</span> <span class="token builtin">TestClass</span> <span class="token punctuation">:</span> <span class="token builtin">TestProtocol</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 </code></pre>
 <ul>
-<li>编写一个函数，判断一个整数是否为奇数？<br><code>`</code>swift<br>func isOdd&lt;T: BinaryInteger&gt;(_ i: T) -&gt; Bool {<br>  i % 2 != 0<br>}</li>
+<li>编写一个函数，判断一个整数是否为奇数？</li>
 </ul>
-<p>extension BinaryInteger {<br>    func isOdd() -&gt; Bool { self % 2 != 0 }<br>}</p>
-<pre><code>
-### 扩展协议细节
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> isOdd<span class="token operator">&lt;</span>T<span class="token punctuation">:</span> <span class="token builtin">BinaryInteger</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> i<span class="token punctuation">:</span> T<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Bool</span> <span class="token punctuation">{</span>
+    i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">!=</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
 
-+ 扩展可以给协议提供`默认实现`，也间接实现`可选协议`的效果
-+ 扩展可以给协议扩充`协议中从未声明过的方法`
+<span class="token keyword">extension</span> <span class="token builtin">BinaryInteger</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">isOdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Bool</span> <span class="token punctuation">{</span> <span class="token keyword">self</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="扩展协议细节"><a href="#扩展协议细节" class="headerlink" title="扩展协议细节"></a>扩展协议细节</h3><ul>
+<li>扩展可以给协议提供<code>默认实现</code>，也间接实现<code>可选协议</code>的效果</li>
+<li>扩展可以给协议扩充<code>协议中从未声明过的方法</code></li>
+</ul>
+<pre class=" language-swift"><code class="language-swift">protocol <span class="token builtin">TestProtocol</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token builtin">TestProtocol</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"TestProtocol test1"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"TestProtocol test2"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-```swift
-protocol TestProtocol {
-    func test1()
-}
-extension TestProtocol {
-    func test1() {
-        print(&quot;TestProtocol test1&quot;)
-    }
-    func test2() {
-        print(&quot;TestProtocol test2&quot;)
-    }
-}
-
-class TestClass : TestProtocol {}
-var cls = TestClass()
-cls.test1() // TestProtocol test1
-cls.test2() // TestProtocol test2
-var cls2: TestProtocol = TestClass()
-cls2.test1() // TestProtocol test1
-cls2.test2() // TestProtocol test2
-</code></pre><ul>
+<span class="token keyword">class</span> <span class="token class-name">TestClass</span> <span class="token punctuation">:</span> <span class="token builtin">TestProtocol</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">var</span> cls <span class="token operator">=</span> <span class="token function">TestClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+cls<span class="token punctuation">.</span><span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// TestProtocol test1</span>
+cls<span class="token punctuation">.</span><span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// TestProtocol test2</span>
+<span class="token keyword">var</span> cls2<span class="token punctuation">:</span> <span class="token builtin">TestProtocol</span> <span class="token operator">=</span> <span class="token function">TestClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+cls2<span class="token punctuation">.</span><span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// TestProtocol test1</span>
+cls2<span class="token punctuation">.</span><span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// TestProtocol test2</span>
+</code></pre>
+<ul>
 <li>类遵守协议,实现协议方法.</li>
 </ul>
 <pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">TestClass</span> <span class="token punctuation">:</span> <span class="token builtin">TestProtocol</span> <span class="token punctuation">{</span>
@@ -766,6 +771,14 @@ cls2<span class="token punctuation">.</span><span class="token function">test2</
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2020/06/07/Swift5-1-19-访问控制/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -865,7 +878,7 @@ cls2<span class="token punctuation">.</span><span class="token function">test2</
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">17</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -883,7 +896,7 @@ cls2<span class="token punctuation">.</span><span class="token function">test2</
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">33</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -917,7 +930,7 @@ cls2<span class="token punctuation">.</span><span class="token function">test2</
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">80</span>
+                <span class="sidebar-badge">83</span>
             </a>
         </li>
         
