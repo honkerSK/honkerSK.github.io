@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            [Swift5.1] 25-Swift 常规用法 | 
+        
+        codeTao
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",Swift5.1">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="codeTao">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/06/09/Swift5-1-25-Swift-常规用法/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="codeTao">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2020/06/09/Swift5-1-25-Swift-常规用法/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="[Swift5.1] 25-Swift 常规用法 | codeTao">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="Swift5.1"> 
+
+    
+        <meta property="article:published_time" content="Tue Jun 09 2020 01:32:31 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jun 09 2020 01:38:01 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2020/06/09/Swift5-1-25-Swift-常规用法/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2020/06/09/Swift5-1-25-Swift-常规用法/index.html",
+    "headline": "[Swift5.1] 25-Swift 常规用法",
+    "datePublished": "Tue Jun 09 2020 01:32:31 GMT+0800",
+    "dateModified": "Tue Jun 09 2020 01:38:01 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "codeTao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "codeTao",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",Swift5.1",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String"><span class="post-toc-number">1.</span> <span class="post-toc-text">String</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String的插入和删除"><span class="post-toc-number">2.</span> <span class="post-toc-text">String的插入和删除</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Substring-子串"><span class="post-toc-number">3.</span> <span class="post-toc-text">Substring 子串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-与-Character"><span class="post-toc-number">4.</span> <span class="post-toc-text">String 与 Character</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String相关的协议"><span class="post-toc-number">5.</span> <span class="post-toc-text">String相关的协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多行String"><span class="post-toc-number">6.</span> <span class="post-toc-text">多行String</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-与-NSString"><span class="post-toc-number">7.</span> <span class="post-toc-text">String 与 NSString</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#只能被class继承的协议"><span class="post-toc-number">8.</span> <span class="post-toc-text">只能被class继承的协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可选协议"><span class="post-toc-number">9.</span> <span class="post-toc-text">可选协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#dynamic"><span class="post-toc-number">10.</span> <span class="post-toc-text">dynamic</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#KVC-KVO"><span class="post-toc-number">11.</span> <span class="post-toc-text">KVC\KVO</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#block方式的KVO"><span class="post-toc-number">12.</span> <span class="post-toc-text">block方式的KVO</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关联对象（Associated-Object）"><span class="post-toc-number">13.</span> <span class="post-toc-text">关联对象（Associated Object）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#资源名管理"><span class="post-toc-number">14.</span> <span class="post-toc-text">资源名管理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#资源名管理的其他思路"><span class="post-toc-number">15.</span> <span class="post-toc-text">资源名管理的其他思路</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多线程开发-–-异步"><span class="post-toc-number">16.</span> <span class="post-toc-text">多线程开发 – 异步</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多线程开发-–-延迟"><span class="post-toc-number">17.</span> <span class="post-toc-text">多线程开发 – 延迟</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多线程开发-–-异步延迟"><span class="post-toc-number">18.</span> <span class="post-toc-text">多线程开发 – 异步延迟</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多线程开发-–-once"><span class="post-toc-number">19.</span> <span class="post-toc-text">多线程开发 – once</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多线程开发-–-加锁"><span class="post-toc-number">20.</span> <span class="post-toc-text">多线程开发 – 加锁</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                [Swift5.1] 25-Swift 常规用法
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>codeTao</strong>
+        <span>6月 09, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Swift5-1/">Swift5.1</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[Swift5.1] 25-Swift 常规用法&url=http://yoursite.com/2020/06/09/Swift5-1-25-Swift-常规用法/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[Swift5.1] 25-Swift 常规用法&url=http://yoursite.com/2020/06/09/Swift5-1-25-Swift-常规用法/index.html&via=codeTao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/09/Swift5-1-25-Swift-常规用法/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/09/Swift5-1-25-Swift-常规用法/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=[Swift5.1] 25-Swift 常规用法&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/06/09/Swift5-1-25-Swift-常规用法/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>Swift的字符串类型<code>String</code>，跟OC的<code>NSString</code>，在API设计上还是有较大差异:</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// 空字符串</span>
+<span class="token keyword">var</span> emptyStr1 <span class="token operator">=</span> <span class="token string">""</span>
+<span class="token keyword">var</span> emptyStr2 <span class="token operator">=</span> <span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> str<span class="token punctuation">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token string">"1"</span>
+<span class="token comment" spellcheck="true">// 拼接，jack_rose</span>
+str<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"_2"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 重载运算符 +</span>
+str <span class="token operator">=</span> str <span class="token operator">+</span> <span class="token string">"_3"</span>
+<span class="token comment" spellcheck="true">// 重载运算符 +=</span>
+str <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">"_4"</span>
+<span class="token comment" spellcheck="true">// \()插值</span>
+str <span class="token operator">=</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter variable">\(</span>str<span class="token delimiter variable">)</span></span>_5"</span>
+<span class="token comment" spellcheck="true">// 长度，9，1_2_3_4_5</span>
+<span class="token function">print</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token builtin">count</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"123456"</span>
+<span class="token function">print</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">hasPrefix</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span>
+<span class="token function">print</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">hasSuffix</span><span class="token punctuation">(</span><span class="token string">"456"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
+<h3 id="String的插入和删除"><a href="#String的插入和删除" class="headerlink" title="String的插入和删除"></a>String的插入和删除</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"1_2"</span>
+<span class="token function">print</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token builtin">count</span><span class="token punctuation">,</span> str<span class="token punctuation">.</span>startIndex<span class="token punctuation">,</span> str<span class="token punctuation">.</span>endIndex<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 3 Index(_rawBits: 1) Index(_rawBits: 196609)</span>
+</code></pre>
+<ul>
+<li>注意: <code>startIndex</code>代表1后面位置, <code>endIndex</code> 代表2后面位置</li>
+<li><code>insert(&quot;&quot; , at:)</code> 只能插入字符</li>
+<li><code>insert(contentsOf: &quot;&quot;, at: )</code>  插入字符串</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"1_2"</span>
+<span class="token comment" spellcheck="true">// 1_2_</span>
+str<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">"_"</span><span class="token punctuation">,</span> at<span class="token punctuation">:</span> str<span class="token punctuation">.</span>endIndex<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 1_2_3_4</span>
+str<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>contentsOf<span class="token punctuation">:</span> <span class="token string">"3_4"</span><span class="token punctuation">,</span> at<span class="token punctuation">:</span> str<span class="token punctuation">.</span>endIndex<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 1666_2_3_4</span>
+str<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>contentsOf<span class="token punctuation">:</span> <span class="token string">"666"</span><span class="token punctuation">,</span> at<span class="token punctuation">:</span> str<span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span>after<span class="token punctuation">:</span> str<span class="token punctuation">.</span>startIndex<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 1666_2_3_8884</span>
+str<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>contentsOf<span class="token punctuation">:</span> <span class="token string">"888"</span><span class="token punctuation">,</span> at<span class="token punctuation">:</span> str<span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span>before<span class="token punctuation">:</span> str<span class="token punctuation">.</span>endIndex<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 从startIndex开始偏移4,插入hello</span>
+str<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>contentsOf<span class="token punctuation">:</span> <span class="token string">"hello"</span><span class="token punctuation">,</span> at<span class="token punctuation">:</span> str<span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span>startIndex<span class="token punctuation">,</span> offsetBy<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 1666hello_2_3_8884  </span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// 删除第一个字符</span>
+str<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>at<span class="token punctuation">:</span> str<span class="token punctuation">.</span><span class="token function">firstIndex</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> <span class="token string">"1"</span><span class="token punctuation">)</span><span class="token operator">!</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 666hello_2_3_8884</span>
+<span class="token comment" spellcheck="true">// 删除含有6的字符</span>
+str<span class="token punctuation">.</span>removeAll <span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">==</span> <span class="token string">"6"</span> <span class="token punctuation">}</span>   <span class="token comment" spellcheck="true">//hello_2_3_8884 </span>
+<span class="token comment" spellcheck="true">// 删除范围</span>
+<span class="token keyword">var</span> range <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span>endIndex<span class="token punctuation">,</span> offsetBy<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&lt;</span>str<span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span>before<span class="token punctuation">:</span> str<span class="token punctuation">.</span>endIndex<span class="token punctuation">)</span>
+str<span class="token punctuation">.</span><span class="token function">removeSubrange</span><span class="token punctuation">(</span>range<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">//hello_2_3_4  </span>
+</code></pre>
+<h3 id="Substring-子串"><a href="#Substring-子串" class="headerlink" title="Substring 子串"></a>Substring 子串</h3><p>String可以通过下标、 prefix、 suffix等截取子串，子串类型不是String，而是<code>Substring</code></p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"1_2_3_4_5"</span>
+<span class="token comment" spellcheck="true">// 截取前3个字符的子串</span>
+<span class="token keyword">var</span> substr1 <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token keyword">prefix</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">//1_2</span>
+<span class="token comment" spellcheck="true">//  截取后3个字符的子串</span>
+<span class="token keyword">var</span> substr2 <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">suffix</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 4_5</span>
+<span class="token comment" spellcheck="true">// 1_2  从开始截取3个字符</span>
+<span class="token keyword">var</span> range <span class="token operator">=</span> str<span class="token punctuation">.</span>startIndex<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&lt;</span>str<span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span>startIndex<span class="token punctuation">,</span> offsetBy<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> substr3 <span class="token operator">=</span> str<span class="token punctuation">[</span>range<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true">// 最初的String，1_2_3_4_5</span>
+<span class="token function">print</span><span class="token punctuation">(</span>substr3<span class="token punctuation">.</span>base<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// Substring -> String</span>
+<span class="token keyword">var</span> str2 <span class="token operator">=</span> <span class="token function">String</span><span class="token punctuation">(</span>substr3<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>Substring和它的base，共享字符串数据</li>
+<li>Substring发生<code>修改</code> 或者 <code>转为String</code>时，会分配新的内存存储字符串数据</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-873b183a62467541.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="String-与-Character"><a href="#String-与-Character" class="headerlink" title="String 与 Character"></a>String 与 Character</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">for</span> c <span class="token keyword">in</span> <span class="token string">"jack"</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// c是Character类型</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"jack"</span>
+<span class="token comment" spellcheck="true">// c是Character类型</span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> str<span class="token punctuation">[</span>str<span class="token punctuation">.</span>startIndex<span class="token punctuation">]</span>
+</code></pre>
+<h3 id="String相关的协议"><a href="#String相关的协议" class="headerlink" title="String相关的协议"></a>String相关的协议</h3><p><strong>BidirectionalCollection 协议包含的部分内容:</strong></p>
+<ul>
+<li>startIndex 、 endIndex 属性、index 方法</li>
+<li><code>String</code>、<code>Array</code> 都遵守了这个协议</li>
+</ul>
+<p><strong>RangeReplaceableCollection 协议包含的部分内容:</strong></p>
+<ul>
+<li>append、insert、remove 方法</li>
+<li><code>String</code>、<code>Array</code> 都遵守了这个协议</li>
+</ul>
+<p><strong>Dictionary、Set 也有实现上述协议中声明的一些方法，只是并没有遵守上述协议</strong></p>
+<h3 id="多行String"><a href="#多行String" class="headerlink" title="多行String"></a>多行String</h3><p>多行字符串: 三个双引号开头, 三个双引号结尾的字符串</p>
+<ul>
+<li>注意: 字符串内容是按照最后一个三双引号对齐.</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">""</span>"
+<span class="token number">1</span>
+    <span class="token string">"2"</span>
+<span class="token number">3</span>
+    <span class="token string">'4'</span>
+<span class="token string">""</span>"
+<span class="token function">print</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+</code></pre>
+<p>打印结果:</p>
+<pre><code>1
+    &quot;2&quot;
+3
+    &#39;4&#39;
+</code></pre><pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// 以下2个字符串是等价的</span>
+<span class="token keyword">let</span> str1 <span class="token operator">=</span> <span class="token string">"These are the same."</span> 
+<span class="token keyword">let</span> str2 <span class="token operator">=</span> <span class="token string">""</span>"
+<span class="token builtin">These</span> are the same<span class="token punctuation">.</span>
+<span class="token string">""</span>"
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// 如果要显示3引号，至少转义1个引号</span>
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">""</span>"
+<span class="token builtin">Escaping</span> the <span class="token builtin">first</span> quote \<span class="token string">""</span>"
+<span class="token builtin">Escaping</span> two quotes \<span class="token string">"\""</span>
+<span class="token builtin">Escaping</span> all three quotes \<span class="token string">"\"\"  "</span><span class="token string">""</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token builtin">Escaping</span> the <span class="token builtin">first</span> quote <span class="token string">""</span>"
+<span class="token builtin">Escaping</span> two quotes <span class="token string">""</span>"
+<span class="token builtin">Escaping</span> all three quotes <span class="token string">""</span>"
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">//缩进以结尾的3引号为对齐线</span>
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">""</span>"
+        <span class="token number">1</span>
+            <span class="token string">"2"</span>
+    <span class="token number">3</span>
+        <span class="token string">'4'</span>
+    <span class="token string">""</span>"
+<span class="token function">print</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+</code></pre>
+<p>打印结果:</p>
+<pre><code>    1
+        &quot;2&quot;
+3
+    &#39;4&#39;
+</code></pre><h3 id="String-与-NSString"><a href="#String-与-NSString" class="headerlink" title="String 与 NSString"></a>String 与 NSString</h3><p><strong>1&gt; String 与 NSString 之间可以随时随地桥接转换</strong></p>
+<ul>
+<li>如果你觉得String的API过于复杂难用，可以考虑将String转为NSString</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> str1<span class="token punctuation">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token string">"jack"</span>
+<span class="token keyword">var</span> str2<span class="token punctuation">:</span> <span class="token builtin">NSString</span> <span class="token operator">=</span> <span class="token string">"rose"</span>
+<span class="token keyword">var</span> str3 <span class="token operator">=</span> str1 <span class="token keyword">as</span> <span class="token builtin">NSString</span>
+<span class="token keyword">var</span> str4 <span class="token operator">=</span> str2 <span class="token keyword">as</span> <span class="token builtin">String</span>
+
+<span class="token comment" spellcheck="true">// ja</span>
+<span class="token keyword">var</span> str5 <span class="token operator">=</span> str3<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> <span class="token function">NSRange</span><span class="token punctuation">(</span>location<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> length<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>str5<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>注意: String 与 NSString 之间桥接后是两个不同类型, 修改内容互补影响.</li>
+</ul>
+<p><strong>2&gt; 比较字符串内容是否等价</strong></p>
+<ul>
+<li>String使用 == 运算符</li>
+<li>NSString使用isEqual方法，也可以使用 == 运算符（本质还是调用了isEqual方法）</li>
+</ul>
+<p><strong>3&gt; Swift、OC桥接转换表</strong></p>
+<ul>
+<li>String与NSString可以互相桥接转换</li>
+<li>String不能桥接转换成NSMutableString</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-db27906d9d7530db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>总结:</strong></p>
+<ul>
+<li>桥接指的是通过 <code>as</code> <code>as?</code> <code>as!</code> 转换类型</li>
+<li>Swift中<code>String</code> \ <code>Array</code> \ <code>Dictionary</code> \ <code>Set</code>可以和OC不可变类型相互桥接转换</li>
+<li>OC可变类型可以桥接转换成Swift中对应的 <code>String</code> \ <code>Array</code> \ <code>Dictionary</code> \ <code>Set</code></li>
+<li>Swift中 <code>String</code> \ <code>Array</code> \ <code>Dictionary</code> \ <code>Set</code> 桥接转换成OC可变类型. 但可以创建新的可变类型存储内容.</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"123456"</span>
+<span class="token comment" spellcheck="true">//String 不能桥接转换为 NSMutableString</span>
+<span class="token keyword">var</span> str2 <span class="token operator">=</span> str <span class="token keyword">as</span><span class="token operator">?</span> <span class="token builtin">NSMutableString</span>  <span class="token comment" spellcheck="true">// nil </span>
+<span class="token keyword">var</span> str3 <span class="token operator">=</span> <span class="token function">NSMutableString</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//123456</span>
+</code></pre>
+<p><strong>问题: Person 继承NSObject, 内存是否有变化?</strong></p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">:</span><span class="token builtin">NSObject</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> weight <span class="token operator">=</span> <span class="token number">20</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span>  <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>答:<br>Person 继承NSObject, 内存是有变化的.</p>
+<ul>
+<li>Swift中 p占32个字节: 8个字节 metadata, 8个字节 引用计数相关, 8个字节 age , 8个字节weight</li>
+<li>OC中   p占32个字节: 8个字节 isa指针, 8个字节 age, 8个字节weight, 最后8个字节凑数</li>
+</ul>
+<h3 id="只能被class继承的协议"><a href="#只能被class继承的协议" class="headerlink" title="只能被class继承的协议"></a>只能被class继承的协议</h3><p>只能被class继承的协议, 如下三种方式:</p>
+<pre class=" language-swift"><code class="language-swift">protocol <span class="token builtin">Runnable1</span><span class="token punctuation">:</span> <span class="token builtin">AnyObject</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+protocol <span class="token builtin">Runnable2</span><span class="token punctuation">:</span> <span class="token keyword">class</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token atrule">@objc</span> protocol <span class="token builtin">Runnable3</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
+<p>被 @objc 修饰的协议，还可以暴露给OC去遵守实现</p>
+<h3 id="可选协议"><a href="#可选协议" class="headerlink" title="可选协议"></a>可选协议</h3><ul>
+<li>可以通过 <code>@objc</code> 定义可选协议，这种协议只能被 <code>class</code> 遵守</li>
+<li>还可以通过<code>extension</code> 定义可选协议</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token atrule">@objc</span> protocol <span class="token builtin">Runnable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">run1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token atrule">@objc</span> <span class="token keyword">optional</span> <span class="token keyword">func</span> <span class="token function">run2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">func</span> <span class="token function">run3</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">extension</span>  <span class="token builtin">Runnable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">run2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Dog run2"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span> <span class="token builtin">Runnable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">run3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Dog run3"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function">run1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Dog run1"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> d <span class="token operator">=</span> <span class="token function">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+d<span class="token punctuation">.</span><span class="token function">run1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Dog run1</span>
+d<span class="token punctuation">.</span><span class="token function">run3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Dog run3</span>
+</code></pre>
+<h3 id="dynamic"><a href="#dynamic" class="headerlink" title="dynamic"></a>dynamic</h3><p>被 <code>@objc dynamic</code> 修饰的内容会具有动态性，比如调用方法会走<code>runtime</code>那一套流程</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span> <span class="token builtin">NSObject</span> <span class="token punctuation">{</span>
+    <span class="token atrule">@objc</span> <span class="token keyword">dynamic</span> <span class="token keyword">func</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">func</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> d <span class="token operator">=</span> <span class="token function">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
+d<span class="token punctuation">.</span><span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+d<span class="token punctuation">.</span><span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-63c6c3d2f206131d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-bcf1a88d86fe4a23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="KVC-KVO"><a href="#KVC-KVO" class="headerlink" title="KVC\KVO"></a>KVC\KVO</h3><p>Swift 支持 KVC \ KVO 的条件</p>
+<ul>
+<li>属性所在的类、监听器最终继承自 <code>NSObject</code></li>
+<li>用 <code>@objc dynamic</code> 修饰对应的属性</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Observer</span><span class="token punctuation">:</span> <span class="token builtin">NSObject</span> <span class="token punctuation">{</span>
+    <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function">observeValue</span><span class="token punctuation">(</span>forKeyPath keyPath<span class="token punctuation">:</span> <span class="token builtin">String</span><span class="token operator">?</span><span class="token punctuation">,</span>
+                               of object<span class="token punctuation">:</span> <span class="token builtin">Any</span><span class="token operator">?</span><span class="token punctuation">,</span>
+                               change<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">NSKeyValueChangeKey</span> <span class="token punctuation">:</span> <span class="token builtin">Any</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token punctuation">,</span>
+                               context<span class="token punctuation">:</span> <span class="token builtin">UnsafeMutableRawPointer</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"observeValue"</span><span class="token punctuation">,</span> change<span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">.</span>newKey<span class="token punctuation">]</span> <span class="token keyword">as</span> <span class="token builtin">Any</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span> <span class="token builtin">NSObject</span> <span class="token punctuation">{</span>
+    <span class="token atrule">@objc</span> <span class="token keyword">dynamic</span> <span class="token keyword">var</span> age<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> observer<span class="token punctuation">:</span> <span class="token builtin">Observer</span> <span class="token operator">=</span> <span class="token function">Observer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">override</span> <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">addObserver</span><span class="token punctuation">(</span>observer<span class="token punctuation">,</span>
+                         forKeyPath<span class="token punctuation">:</span> <span class="token string">"age"</span><span class="token punctuation">,</span>
+                         options<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">,</span>
+                         context<span class="token punctuation">:</span> <span class="token constant">nil</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">deinit</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">removeObserver</span><span class="token punctuation">(</span>observer<span class="token punctuation">,</span>
+                            forKeyPath<span class="token punctuation">:</span> <span class="token string">"age"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// observeValue Optional(20)</span>
+p<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">20</span>
+<span class="token comment" spellcheck="true">// observeValue Optional(25)</span>
+p<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> forKey<span class="token punctuation">:</span> <span class="token string">"age"</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="block方式的KVO"><a href="#block方式的KVO" class="headerlink" title="block方式的KVO"></a>block方式的KVO</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span> <span class="token builtin">NSObject</span> <span class="token punctuation">{</span>
+    <span class="token atrule">@objc</span> <span class="token keyword">dynamic</span> <span class="token keyword">var</span> age<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> observation<span class="token punctuation">:</span> <span class="token builtin">NSKeyValueObservation</span><span class="token operator">?</span>
+    <span class="token keyword">override</span> <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        observation <span class="token operator">=</span> <span class="token function">observe</span><span class="token punctuation">(</span>\<span class="token builtin">Person</span><span class="token punctuation">.</span>age<span class="token punctuation">,</span> options<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token punctuation">(</span>person<span class="token punctuation">,</span> change<span class="token punctuation">)</span> <span class="token keyword">in</span>
+            <span class="token function">print</span><span class="token punctuation">(</span>change<span class="token punctuation">.</span>newValue <span class="token keyword">as</span> <span class="token builtin">Any</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// Optional(20)</span>
+p<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">20</span>
+<span class="token comment" spellcheck="true">// Optional(25)</span>
+p<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> forKey<span class="token punctuation">:</span> <span class="token string">"age"</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="关联对象（Associated-Object）"><a href="#关联对象（Associated-Object）" class="headerlink" title="关联对象（Associated Object）"></a>关联对象（Associated Object）</h3><ul>
+<li>在Swift中，<code>class</code>依然可以使用关联对象</li>
+<li>默认情况，<code>extension</code>不可以增加<code>存储属性</code></li>
+<li>借助关联对象，可以实现类似extension为class增加存储属性的效果</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token builtin">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">var</span> <span class="token constant">AGE_KEY</span><span class="token punctuation">:</span> <span class="token builtin">Void</span><span class="token operator">?</span>
+    <span class="token keyword">var</span> age<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">get</span> <span class="token punctuation">{</span>
+            <span class="token punctuation">(</span><span class="token function">objc_getAssociatedObject</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token keyword">Self</span><span class="token punctuation">.</span><span class="token constant">AGE_KEY</span><span class="token punctuation">)</span> <span class="token keyword">as</span><span class="token operator">?</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token operator">?</span> <span class="token number">0</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">set</span> <span class="token punctuation">{</span>
+            <span class="token function">objc_setAssociatedObject</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">,</span>
+                                     <span class="token operator">&amp;</span><span class="token keyword">Self</span><span class="token punctuation">.</span><span class="token constant">AGE_KEY</span><span class="token punctuation">,</span>
+                                     newValue<span class="token punctuation">,</span>
+                                     <span class="token punctuation">.</span><span class="token constant">OBJC_ASSOCIATION_ASSIGN</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 0</span>
+p<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token function">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 10</span>
+</code></pre>
+<h3 id="资源名管理"><a href="#资源名管理" class="headerlink" title="资源名管理"></a>资源名管理</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">let</span> img <span class="token operator">=</span> <span class="token function">UIImage</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token string">"logo"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> btn <span class="token operator">=</span> <span class="token function">UIButton</span><span class="token punctuation">(</span>type<span class="token punctuation">:</span> <span class="token punctuation">.</span>custom<span class="token punctuation">)</span>
+btn<span class="token punctuation">.</span><span class="token function">setTitle</span><span class="token punctuation">(</span><span class="token string">"添加"</span><span class="token punctuation">,</span> <span class="token keyword">for</span><span class="token punctuation">:</span> <span class="token punctuation">.</span>normal<span class="token punctuation">)</span>
+
+<span class="token function">performSegue</span><span class="token punctuation">(</span>withIdentifier<span class="token punctuation">:</span> <span class="token string">"login_main"</span><span class="token punctuation">,</span> sender<span class="token punctuation">:</span> <span class="token keyword">self</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">let</span> img <span class="token operator">=</span> <span class="token function">UIImage</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>image<span class="token punctuation">.</span>logo<span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> btn <span class="token operator">=</span> <span class="token function">UIButton</span><span class="token punctuation">(</span>type<span class="token punctuation">:</span> <span class="token punctuation">.</span>custom<span class="token punctuation">)</span>
+btn<span class="token punctuation">.</span><span class="token function">setTitle</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>string<span class="token punctuation">.</span>add<span class="token punctuation">,</span> <span class="token keyword">for</span><span class="token punctuation">:</span> <span class="token punctuation">.</span>normal<span class="token punctuation">)</span>
+
+<span class="token function">performSegue</span><span class="token punctuation">(</span>withIdentifier<span class="token punctuation">:</span> R<span class="token punctuation">.</span>segue<span class="token punctuation">.</span>login_main<span class="token punctuation">,</span> sender<span class="token punctuation">:</span> <span class="token keyword">self</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li><p>这种做法实际上是参考了Android的资源名管理方式</p>
+</li>
+<li><p>实现原理:</p>
+</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">enum</span> R <span class="token punctuation">{</span>
+    <span class="token keyword">enum</span> string<span class="token punctuation">:</span> <span class="token builtin">String</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> add <span class="token operator">=</span> <span class="token string">"添加"</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">enum</span> image<span class="token punctuation">:</span> <span class="token builtin">String</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> logo
+    <span class="token punctuation">}</span>
+    <span class="token keyword">enum</span> segue<span class="token punctuation">:</span> <span class="token builtin">String</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> login_main
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">extension</span> <span class="token builtin">UIImage</span> <span class="token punctuation">{</span>
+    <span class="token keyword">convenience</span> <span class="token keyword">init</span><span class="token operator">?</span><span class="token punctuation">(</span><span class="token number">_</span> name<span class="token punctuation">:</span> R<span class="token punctuation">.</span>image<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> name<span class="token punctuation">.</span>rawValue<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">extension</span> <span class="token builtin">UIViewController</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">performSegue</span><span class="token punctuation">(</span>withIdentifier identifier<span class="token punctuation">:</span> R<span class="token punctuation">.</span>segue<span class="token punctuation">,</span> sender<span class="token punctuation">:</span> <span class="token builtin">Any</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">performSegue</span><span class="token punctuation">(</span>withIdentifier<span class="token punctuation">:</span> identifier<span class="token punctuation">.</span>rawValue<span class="token punctuation">,</span> sender<span class="token punctuation">:</span> sender<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">extension</span> <span class="token builtin">UIButton</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">setTitle</span><span class="token punctuation">(</span><span class="token number">_</span> title<span class="token punctuation">:</span> R<span class="token punctuation">.</span>string<span class="token punctuation">,</span> <span class="token keyword">for</span> state<span class="token punctuation">:</span> <span class="token builtin">UIControl</span><span class="token punctuation">.</span><span class="token builtin">State</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTitle</span><span class="token punctuation">(</span>title<span class="token punctuation">.</span>rawValue<span class="token punctuation">,</span> <span class="token keyword">for</span><span class="token punctuation">:</span> state<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="资源名管理的其他思路"><a href="#资源名管理的其他思路" class="headerlink" title="资源名管理的其他思路"></a>资源名管理的其他思路</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">let</span> img <span class="token operator">=</span> <span class="token function">UIImage</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token string">"logo"</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> font <span class="token operator">=</span> <span class="token function">UIFont</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">"Arial"</span><span class="token punctuation">,</span> size<span class="token punctuation">:</span> <span class="token number">14</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> img <span class="token operator">=</span> R<span class="token punctuation">.</span>image<span class="token punctuation">.</span>logo
+<span class="token keyword">let</span> font <span class="token operator">=</span> R<span class="token punctuation">.</span>font<span class="token punctuation">.</span><span class="token function">arial</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">)</span>
+</code></pre>
+<p>实现原理:</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">enum</span> R <span class="token punctuation">{</span>
+    <span class="token keyword">enum</span> image <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">var</span> logo <span class="token operator">=</span> <span class="token function">UIImage</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token string">"logo"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">enum</span> font <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function">arial</span><span class="token punctuation">(</span><span class="token number">_</span> size<span class="token punctuation">:</span> <span class="token builtin">CGFloat</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">UIFont</span><span class="token operator">?</span> <span class="token punctuation">{</span>
+            <span class="token function">UIFont</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string">"Arial"</span><span class="token punctuation">,</span> size<span class="token punctuation">:</span> size<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>更多优秀的思路参考<br><a href="https://github.com/mac-cain13/R.swift" target="_blank" rel="noopener">https://github.com/mac-cain13/R.swift</a><br><a href="https://github.com/SwiftGen/SwiftGen" target="_blank" rel="noopener">https://github.com/SwiftGen/SwiftGen</a></p>
+<h3 id="多线程开发-–-异步"><a href="#多线程开发-–-异步" class="headerlink" title="多线程开发 – 异步"></a>多线程开发 – 异步</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">public</span> <span class="token keyword">typealias</span> <span class="token builtin">Task</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Void</span>
+
+<span class="token keyword">public</span> <span class="token keyword">struct</span> <span class="token builtin">Asyncs</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function">async</span><span class="token punctuation">(</span><span class="token number">_</span> task<span class="token punctuation">:</span> @escaping <span class="token builtin">Task</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">_async</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function">async</span><span class="token punctuation">(</span><span class="token number">_</span> task<span class="token punctuation">:</span> @escaping <span class="token builtin">Task</span><span class="token punctuation">,</span>
+                             <span class="token number">_</span> mainTask<span class="token punctuation">:</span> @escaping <span class="token builtin">Task</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">_async</span><span class="token punctuation">(</span>task<span class="token punctuation">,</span> mainTask<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function">_async</span><span class="token punctuation">(</span><span class="token number">_</span> task<span class="token punctuation">:</span> @escaping <span class="token builtin">Task</span><span class="token punctuation">,</span>
+                               <span class="token number">_</span> mainTask<span class="token punctuation">:</span> <span class="token builtin">Task</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token constant">nil</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//DispatchWorkItem(block:) 包装任务</span>
+        <span class="token keyword">let</span> item <span class="token operator">=</span> <span class="token function">DispatchWorkItem</span><span class="token punctuation">(</span>block<span class="token punctuation">:</span> task<span class="token punctuation">)</span>
+        <span class="token builtin">DispatchQueue</span><span class="token punctuation">.</span><span class="token function">global</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">async</span><span class="token punctuation">(</span>execute<span class="token punctuation">:</span> item<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">let</span> main <span class="token operator">=</span> mainTask <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//item 任务执行完后, 执行notify(), 执行主任务</span>
+            item<span class="token punctuation">.</span><span class="token function">notify</span><span class="token punctuation">(</span>queue<span class="token punctuation">:</span> <span class="token builtin">DispatchQueue</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> execute<span class="token punctuation">:</span> main<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>调用:</p>
+<pre><code>class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        Asyncs.async {
+            print(1)
+        }
+        Asyncs.async({
+            print(1, Thread.current)
+        }) {
+            print(2, Thread.current)
+        }
+    }
+}
+/*
+1
+1 &lt;NSThread: 0x600000805c00&gt;{number = 4, name = (null)}
+2 &lt;NSThread: 0x600000840e40&gt;{number = 1, name = main}
+*/
+</code></pre><h3 id="多线程开发-–-延迟"><a href="#多线程开发-–-延迟" class="headerlink" title="多线程开发 – 延迟"></a>多线程开发 – 延迟</h3><p><code>asyncAfter()</code> 延迟</p>
+<pre class=" language-swift"><code class="language-swift">@discardableResult
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">_</span> seconds<span class="token punctuation">:</span> <span class="token builtin">Double</span><span class="token punctuation">,</span>
+                         <span class="token number">_</span> block<span class="token punctuation">:</span> @escaping <span class="token builtin">Task</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">DispatchWorkItem</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> item <span class="token operator">=</span> <span class="token function">DispatchWorkItem</span><span class="token punctuation">(</span>block<span class="token punctuation">:</span> block<span class="token punctuation">)</span>
+    <span class="token builtin">DispatchQueue</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">asyncAfter</span><span class="token punctuation">(</span>deadline<span class="token punctuation">:</span> <span class="token builtin">DispatchTime</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> seconds<span class="token punctuation">,</span>
+                                  execute<span class="token punctuation">:</span> item<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> item
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="多线程开发-–-异步延迟"><a href="#多线程开发-–-异步延迟" class="headerlink" title="多线程开发 – 异步延迟"></a>多线程开发 – 异步延迟</h3><pre class=" language-swift"><code class="language-swift">@discardableResult
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function">asyncDelay</span><span class="token punctuation">(</span><span class="token number">_</span> seconds<span class="token punctuation">:</span> <span class="token builtin">Double</span><span class="token punctuation">,</span>
+                              <span class="token number">_</span> task<span class="token punctuation">:</span> @escaping <span class="token builtin">Task</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">DispatchWorkItem</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">_asyncDelay</span><span class="token punctuation">(</span>seconds<span class="token punctuation">,</span> task<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+@discardableResult
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function">asyncDelay</span><span class="token punctuation">(</span><span class="token number">_</span> seconds<span class="token punctuation">:</span> <span class="token builtin">Double</span><span class="token punctuation">,</span>
+                              <span class="token number">_</span> task<span class="token punctuation">:</span> @escaping <span class="token builtin">Task</span><span class="token punctuation">,</span>
+                              <span class="token number">_</span> mainTask<span class="token punctuation">:</span> @escaping <span class="token builtin">Task</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">DispatchWorkItem</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">_asyncDelay</span><span class="token punctuation">(</span>seconds<span class="token punctuation">,</span> task<span class="token punctuation">,</span> mainTask<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function">_asyncDelay</span><span class="token punctuation">(</span><span class="token number">_</span> seconds<span class="token punctuation">:</span> <span class="token builtin">Double</span><span class="token punctuation">,</span>
+                                <span class="token number">_</span> task<span class="token punctuation">:</span> @escaping <span class="token builtin">Task</span><span class="token punctuation">,</span>
+                                <span class="token number">_</span> mainTask<span class="token punctuation">:</span> <span class="token builtin">Task</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token constant">nil</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">DispatchWorkItem</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> item <span class="token operator">=</span> <span class="token function">DispatchWorkItem</span><span class="token punctuation">(</span>block<span class="token punctuation">:</span> task<span class="token punctuation">)</span>
+    <span class="token builtin">DispatchQueue</span><span class="token punctuation">.</span><span class="token function">global</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">asyncAfter</span><span class="token punctuation">(</span>deadline<span class="token punctuation">:</span> <span class="token builtin">DispatchTime</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> seconds<span class="token punctuation">,</span>
+                                      execute<span class="token punctuation">:</span> item<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">let</span> main <span class="token operator">=</span> mainTask <span class="token punctuation">{</span>
+        item<span class="token punctuation">.</span><span class="token function">notify</span><span class="token punctuation">(</span>queue<span class="token punctuation">:</span> <span class="token builtin">DispatchQueue</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> execute<span class="token punctuation">:</span> main<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> item
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="多线程开发-–-once"><a href="#多线程开发-–-once" class="headerlink" title="多线程开发 – once"></a>多线程开发 – once</h3><ul>
+<li><code>dispatch_once</code>在Swift中已被废弃，取而代之</li>
+<li>可以用<code>类型属性</code>或者<code>全局变量\常量</code></li>
+<li>默认自带    <code>lazy</code> +  <code>dispatch_once</code> 效 果</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift">fileprivate <span class="token keyword">let</span> initTask2<span class="token punctuation">:</span> <span class="token builtin">Void</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"initTask2---------"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ViewController</span><span class="token punctuation">:</span> <span class="token builtin">UIViewController</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">let</span> initTask1<span class="token punctuation">:</span> <span class="token builtin">Void</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"initTask1---------"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">let</span> <span class="token number">_</span> <span class="token operator">=</span> <span class="token keyword">Self</span><span class="token punctuation">.</span>initTask1
+        <span class="token keyword">let</span> <span class="token number">_</span> <span class="token operator">=</span> initTask2
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="多线程开发-–-加锁"><a href="#多线程开发-–-加锁" class="headerlink" title="多线程开发 – 加锁"></a>多线程开发 – 加锁</h3><ul>
+<li>GCD信号量</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Cache</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">:</span> <span class="token builtin">Any</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">var</span> lock <span class="token operator">=</span> <span class="token function">DispatchSemaphore</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token keyword">set</span><span class="token punctuation">(</span><span class="token number">_</span> key<span class="token punctuation">:</span> <span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token number">_</span> value<span class="token punctuation">:</span> <span class="token builtin">Any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        lock<span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">defer</span> <span class="token punctuation">{</span> lock<span class="token punctuation">.</span><span class="token function">signal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+        data<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>NSLock() 互斥锁<br>但是有递归调用会死锁</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">var</span> lock <span class="token operator">=</span> <span class="token function">NSLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token keyword">set</span><span class="token punctuation">(</span><span class="token number">_</span> key<span class="token punctuation">:</span> <span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token number">_</span> value<span class="token punctuation">:</span> <span class="token builtin">Any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    lock<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">defer</span> <span class="token punctuation">{</span> lock<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>NSRecursiveLock() 递归锁</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">var</span> lock <span class="token operator">=</span> <span class="token function">NSRecursiveLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token keyword">set</span><span class="token punctuation">(</span><span class="token number">_</span> key<span class="token punctuation">:</span> <span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token number">_</span> value<span class="token punctuation">:</span> <span class="token builtin">Any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    lock<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">defer</span> <span class="token punctuation">{</span> lock<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2020/06/09/Swift5-1-24-OC与Swift-混编/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="codeTao's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        geeksk54@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: geeksk54@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">21</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">37</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">send</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">87</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;codeTao
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
