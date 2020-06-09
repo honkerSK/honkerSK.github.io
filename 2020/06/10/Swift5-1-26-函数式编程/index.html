@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            [Swift5.1] 26-函数式编程 | 
+        
+        codeTao
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.jpg">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",Swift5.1">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="codeTao">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/06/10/Swift5-1-26-函数式编程/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="codeTao">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2020/06/10/Swift5-1-26-函数式编程/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="[Swift5.1] 26-函数式编程 | codeTao">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="Swift5.1"> 
+
+    
+        <meta property="article:published_time" content="Wed Jun 10 2020 00:54:15 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jun 10 2020 00:58:28 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2020/06/10/Swift5-1-26-函数式编程/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2020/06/10/Swift5-1-26-函数式编程/index.html",
+    "headline": "[Swift5.1] 26-函数式编程",
+    "datePublished": "Wed Jun 10 2020 00:54:15 GMT+0800",
+    "dateModified": "Wed Jun 10 2020 00:58:28 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "codeTao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "codeTao",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",Swift5.1",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?cc539da139de156c41df0dc0f7670373';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Array的常见操作"><span class="post-toc-number">1.</span> <span class="post-toc-text">Array的常见操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#lazy的优化"><span class="post-toc-number">2.</span> <span class="post-toc-text">lazy的优化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Optional的map和flatMap"><span class="post-toc-number">3.</span> <span class="post-toc-text">Optional的map和flatMap</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数式编程（Funtional-Programming）"><span class="post-toc-number">4.</span> <span class="post-toc-text">函数式编程（Funtional Programming）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#FP实践-–-传统写法"><span class="post-toc-number">5.</span> <span class="post-toc-text">FP实践 – 传统写法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#FP实践-–-函数式写法"><span class="post-toc-number">6.</span> <span class="post-toc-text">FP实践 – 函数式写法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#高阶函数（Higher-Order-Function）"><span class="post-toc-number">7.</span> <span class="post-toc-text">高阶函数（Higher-Order Function）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#柯里化（Currying）"><span class="post-toc-number">8.</span> <span class="post-toc-text">柯里化（Currying）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函子（Functor）"><span class="post-toc-number">9.</span> <span class="post-toc-text">函子（Functor）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#适用函子（Applicative-Functor）"><span class="post-toc-number">10.</span> <span class="post-toc-text">适用函子（Applicative Functor）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单子（Monad）"><span class="post-toc-number">11.</span> <span class="post-toc-text">单子（Monad）</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                [Swift5.1] 26-函数式编程
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>codeTao</strong>
+        <span>6月 10, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Swift5-1/">Swift5.1</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[Swift5.1] 26-函数式编程&url=http://yoursite.com/2020/06/10/Swift5-1-26-函数式编程/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[Swift5.1] 26-函数式编程&url=http://yoursite.com/2020/06/10/Swift5-1-26-函数式编程/index.html&via=codeTao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/10/Swift5-1-26-函数式编程/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/10/Swift5-1-26-函数式编程/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=[Swift5.1] 26-函数式编程&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/06/10/Swift5-1-26-函数式编程/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="Array的常见操作"><a href="#Array的常见操作" class="headerlink" title="Array的常见操作"></a>Array的常见操作</h3><ul>
+<li><strong>arr.map()</strong> : 遍历数组每一个元素, 每遍历一个元素调用一次闭包,将元素传入闭包,闭包获取元素进行各种处理, 最后返回一个值.</li>
+<li><strong>arr.filter()</strong> : 遍历数组每一个元素, 每遍历一个元素调用一次闭包,将元素传入闭包, 闭包获取元素进行各种处理, 最后返回Bool值, 如果返回true会将元素添加到新数组中.</li>
+<li><strong>arr.reduce()</strong> : 遍历数组每一个元素,每遍历一个元素调用一次闭包,<br>将元素传入闭包, 闭包中 <code>result</code>上次遍历返回值 , <code>result</code>初始值为reduce传入值, <code>element</code> 每次遍历取出元素</li>
+</ul>
+<p><strong>1) map 映射函数</strong></p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token keyword">var</span> arr2 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token builtin">map</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token keyword">in</span>
+    <span class="token keyword">return</span> i <span class="token operator">*</span> <span class="token number">2</span>
+<span class="token punctuation">}</span>
+<span class="token function">print</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// [2, 4, 6, 8]</span>
+
+<span class="token comment" spellcheck="true">// 简化为</span>
+<span class="token keyword">var</span> arr2 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token builtin">map</span> <span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token punctuation">}</span>
+</code></pre>
+<p><strong>2) filter 过滤函数</strong></p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token keyword">var</span> arr3 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token builtin">filter</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Bool</span> <span class="token keyword">in</span>
+    <span class="token keyword">return</span> i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+<span class="token function">print</span><span class="token punctuation">(</span>arr3<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// [2, 4]</span>
+
+<span class="token comment" spellcheck="true">//简化为:</span>
+<span class="token keyword">var</span> arr3 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token builtin">filter</span> <span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">}</span>
+</code></pre>
+<p><strong>3) reduce 函数</strong></p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token keyword">var</span> result <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>result<span class="token punctuation">,</span> element<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token keyword">in</span>
+    result <span class="token operator">+</span> element
+<span class="token punctuation">}</span>
+<span class="token function">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//10</span>
+
+<span class="token comment" spellcheck="true">//简化为:</span>
+<span class="token comment" spellcheck="true">// $0 上次遍历返回的结果 (初始值为0)</span>
+<span class="token comment" spellcheck="true">// $1 每次遍历到的数组元素</span>
+<span class="token keyword">var</span> arr4 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">+</span> $<span class="token number">1</span> <span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">// 10</span>
+<span class="token keyword">var</span> arr5 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">+</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 10</span>
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-25701fceadf845d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="一张图解说Map/filter/reduce"></p>
+<p><strong>示例一:</strong></p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token number">_</span> i<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> i <span class="token operator">*</span> <span class="token number">2</span> <span class="token punctuation">}</span>
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">// [2, 4, 6, 8]</span>
+<span class="token function">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>double<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>示例二: Map 与 flatMap区别</strong></p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">// [[1], [2, 2], [3, 3, 3]]</span>
+<span class="token keyword">var</span> arr2 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token builtin">map</span> <span class="token punctuation">{</span> <span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>repeating<span class="token punctuation">:</span> $<span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">count</span><span class="token punctuation">:</span> $<span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// [1, 2, 2, 3, 3, 3]</span>
+<span class="token keyword">var</span> arr3 <span class="token operator">=</span> arr<span class="token punctuation">.</span>flatMap <span class="token punctuation">{</span> <span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>repeating<span class="token punctuation">:</span> $<span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">count</span><span class="token punctuation">:</span> $<span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+</code></pre>
+<pre><code>arr.map(transform: (Int) throws -&gt;  T)
+arr.flatMap(transform: (Int) throws -&gt; Sequence)
+</code></pre><ul>
+<li>flatMap: 传入数组元素, 遍历完后,返回<code>Sequence</code> 新的数组, 新数组元素为<code>ElementOfResult</code>.</li>
+<li>map: 传入数组元素, 返回新数组, 新数组数组元素和传入元素类型相同. </li>
+</ul>
+<p>区别:</p>
+<ul>
+<li>map: 无论返回什么类型, 再次包装可选项</li>
+<li>flatMap: 如果以前是非可选项,会包装成可选项. 如果以前是可选项,  不再包装成可选项.</li>
+</ul>
+<p><strong>示例三: compactMap() 函数</strong><br>compactMap() 压缩紧凑: 每次遍历后自动将处理结果解包, 如果结果为空则过滤</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"123"</span><span class="token punctuation">,</span> <span class="token string">"test"</span><span class="token punctuation">,</span> <span class="token string">"jack"</span><span class="token punctuation">,</span> <span class="token string">"-30"</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">// [Optional(123), nil, nil, Optional(-30)]</span>
+<span class="token keyword">var</span> arr2 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token builtin">map</span> <span class="token punctuation">{</span> <span class="token function">Int</span><span class="token punctuation">(</span>$<span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// [123, -30]</span>
+<span class="token keyword">var</span> arr3 <span class="token operator">=</span> arr<span class="token punctuation">.</span>compactMap <span class="token punctuation">{</span> <span class="token function">Int</span><span class="token punctuation">(</span>$<span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+</code></pre>
+<p><strong>示例四: 使用reduce实现map、filter的功能</strong></p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">// [2, 4, 6, 8]</span>
+<span class="token function">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token builtin">map</span> <span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">+</span> <span class="token punctuation">[</span>$<span class="token number">1</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// [2, 4]</span>
+<span class="token function">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token builtin">filter</span> <span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> $<span class="token number">1</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> $<span class="token number">0</span> <span class="token operator">+</span> <span class="token punctuation">[</span>$<span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">:</span> $<span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="lazy的优化"><a href="#lazy的优化" class="headerlink" title="lazy的优化"></a>lazy的优化</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">let</span> result <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token keyword">lazy</span><span class="token punctuation">.</span><span class="token builtin">map</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token keyword">in</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"mapping <span class="token interpolation"><span class="token delimiter variable">\(</span>i<span class="token delimiter variable">)</span></span>"</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> i <span class="token operator">*</span> <span class="token number">2</span>
+<span class="token punctuation">}</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"begin-----"</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"mapped"</span><span class="token punctuation">,</span> result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"mapped"</span><span class="token punctuation">,</span> result<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"mapped"</span><span class="token punctuation">,</span> result<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"end----"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>打印结果</p>
+<pre><code>begin-----
+mapping 1
+mapped 2
+mapping 2
+mapped 4
+mapping 3
+mapped 6
+end----
+</code></pre><h3 id="Optional的map和flatMap"><a href="#Optional的map和flatMap" class="headerlink" title="Optional的map和flatMap"></a>Optional的map和flatMap</h3><p><strong>示例一:</strong></p>
+<pre><code>var num1: Int? = 10
+// Optional(20)
+var num2 = num1.map { $0 * 2 }
+
+var num3: Int? = nil
+// nil
+var num4 = num3.map { $0 * 2 }
+</code></pre><ul>
+<li>map() 会将传入值解包.</li>
+<li>map() 会将返回值包装为 Optional</li>
+<li>map() 如果返回值为nil, 则不再执行闭包, 返回nil</li>
+</ul>
+<p><strong>示例二:</strong></p>
+<pre><code>var num1: Int? = 10
+// Optional(Optional(20))
+var num2 = num1.map { Optional.some($0 * 2) }
+
+// Optional(20)
+var num3 = num1.flatMap { Optional.some($0 * 2) }
+</code></pre><ul>
+<li>flatMap () 返回值如果已经是Optional, 就不会再次包装.如果返回值不是Optional会包装为Optional.</li>
+</ul>
+<p><strong>示例三:</strong></p>
+<pre><code>var num1: Int? = 10
+var num2 = (num1 != nil) ? (num1! + 10) : nil
+var num3 = num1.map { $0 + 10 }
+// num2、num3是等价的
+</code></pre><p><strong>示例四:</strong></p>
+<pre><code>var fmt = DateFormatter()
+fmt.dateFormat = &quot;yyyy-MM-dd&quot;
+var str: String? = &quot;2011-09-10&quot;
+// old
+var date1 = str != nil ? fmt.date(from: str!) : nil
+
+var date2 = str.flatMap { fmt.date(from: $0)  } 
+//可简写为
+//  new
+var date3 = str.flatMap(fmt.date)
+</code></pre><p><strong>示例五: map替换三目运算符</strong></p>
+<pre><code>var score: Int? = 98
+// old
+var str1 = score != nil ? &quot;socre is \(score!)&quot; : &quot;No score&quot;
+// new
+var str2 = score.map { &quot;score is \($0)&quot; } ?? &quot;No score&quot;
+</code></pre><p><strong>示例六:</strong></p>
+<pre><code>struct Person {
+var name: String  var age: Int
+}
+var items = [
+    Person(name: &quot;jack&quot;, age: 20),
+    Person(name: &quot;rose&quot;, age: 21),
+    Person(name: &quot;kate&quot;, age: 22)
+]
+
+// old
+func getPerson1(_ name: String) -&gt; Person? {
+    let index = items.firstIndex { $0.name == name }
+    return index != nil ? items[index!] : nil
+}
+// new
+func getPerson2(_ name: String) -&gt; Person? {
+    return items.firstIndex { $0.name == name }.map { items[$0] }
+}
+</code></pre><p><strong>示例七:</strong></p>
+<pre><code>struct Person {
+    var name: String  var age: Int
+    init?(_ json: [String : Any]) {
+        guard let name = json[&quot;name&quot;] as? String,
+            let age = json[&quot;age&quot;] as? Int else { // 逗号代表两边条件必须同时成立
+                return nil
+        }
+        self.name = name
+        self.age = age
+    }
+}
+var json: Dictionary? = [&quot;name&quot; : &quot;Jack&quot;, &quot;age&quot; : 10]
+// old
+var p1 = json != nil ? Person(json!) : nil
+// new
+var p2 = json.flatMap(Person.init)
+</code></pre><h3 id="函数式编程（Funtional-Programming）"><a href="#函数式编程（Funtional-Programming）" class="headerlink" title="函数式编程（Funtional Programming）"></a>函数式编程（Funtional Programming）</h3><p>1&gt; 函数式编程（Funtional Programming，简称FP）是一种编程范式，也就是如何编写程序的方法论.</p>
+<ul>
+<li>主要思想：把计算过程尽量分解成一系列可复用函数的调用</li>
+<li>主要特征：函数是“第一等公民”</li>
+<li>函数与其他数据类型一样的地位，可以赋值给其他变量，也可以作为函数参数、函数返回值</li>
+</ul>
+<p>2&gt; 函数式编程最早出现在LISP语言，绝大部分的现代编程语言也对函数式编程做了不同程度的支持，比如</p>
+<ul>
+<li>Haskell、JavaScript、Python、Swift、Kotlin、Scala等</li>
+</ul>
+<p>3&gt; 函数式编程中几个常用的概念</p>
+<ul>
+<li>Higher-Order Function、Function Currying</li>
+<li>Functor、Applicative Functor、Monad</li>
+</ul>
+<p>参考资料:<br><a href="http://www.mokacoding.com/blog/functor-applicative-monads-in-pictures" target="_blank" rel="noopener">1.Swift Functors, Applicatives, and Monads in Pictures</a><br><a href="http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html" target="_blank" rel="noopener">2.Functors, Applicatives, And Monads In Pictures</a></p>
+<h3 id="FP实践-–-传统写法"><a href="#FP实践-–-传统写法" class="headerlink" title="FP实践 – 传统写法"></a>FP实践 – 传统写法</h3><p>假设要实现以下功能：[(num + 3) * 5 - 1] % 10 / 2</p>
+<ul>
+<li>传统写法:</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">1</span>
+
+<span class="token keyword">func</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">_</span> v1<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> v1 <span class="token operator">+</span> v2 <span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">sub</span><span class="token punctuation">(</span><span class="token number">_</span> v1<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> v1 <span class="token operator">-</span> v2 <span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">multiple</span><span class="token punctuation">(</span><span class="token number">_</span> v1<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> v1 <span class="token operator">*</span> v2 <span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">divide</span><span class="token punctuation">(</span><span class="token number">_</span> v1<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> v1 <span class="token operator">/</span> v2 <span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">mod</span><span class="token punctuation">(</span><span class="token number">_</span> v1<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> v1 <span class="token operator">%</span> v2 <span class="token punctuation">}</span>
+
+<span class="token function">divide</span><span class="token punctuation">(</span><span class="token function">mod</span><span class="token punctuation">(</span><span class="token function">sub</span><span class="token punctuation">(</span><span class="token function">multiple</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="FP实践-–-函数式写法"><a href="#FP实践-–-函数式写法" class="headerlink" title="FP实践 – 函数式写法"></a>FP实践 – 函数式写法</h3><p><strong>1) 单个加法运算简化</strong></p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">func</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">_</span> v<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+         $<span class="token number">0</span> <span class="token operator">+</span> v  <span class="token comment" spellcheck="true">// 3传给v , num传入参数 $0</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> fn <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token function">fn</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">//可以简写为</span>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//先接收一个参数, 再接收一个参数</span>
+</code></pre>
+<p>最终简化为:</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">func</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">_</span> v<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span><span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">+</span> v   <span class="token punctuation">}</span>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//先接收一个参数, 再接收一个参数</span>
+</code></pre>
+<p><strong>2) 定义加 减 乘 除 取模 函数</strong></p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">func</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">_</span> v<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">+</span> v <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">sub</span><span class="token punctuation">(</span><span class="token number">_</span> v<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">-</span> v <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">multiple</span><span class="token punctuation">(</span><span class="token number">_</span> v<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">*</span> v <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">divide</span><span class="token punctuation">(</span><span class="token number">_</span> v<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">/</span> v <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">mod</span><span class="token punctuation">(</span><span class="token number">_</span> v<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">%</span> v <span class="token punctuation">}</span><span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>传统调用依然很繁琐:</li>
+</ul>
+<pre><code>let fn1 = add(3)
+let fn2 = multiple(5)
+let fn3 = sub(1)
+let fn4 = mod(10)
+let fn5 = divide(2)
+//num -&gt; fn1 -&gt; fn2 -&gt; fn3 -&gt; fn4 -&gt; fn5
+fn5( fn4( fn3( fn2( fn1(num) ) ) ) )
+</code></pre><p><strong>4) 函数合成</strong></p>
+<ul>
+<li>合成加和乘函数</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function">composite</span><span class="token punctuation">(</span><span class="token number">_</span> f1<span class="token punctuation">:</span> @<span class="token function">escaping</span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> f2<span class="token punctuation">:</span> @<span class="token function">escaping</span><span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token function">f2</span><span class="token punctuation">(</span> <span class="token function">f1</span><span class="token punctuation">(</span>$<span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> fn <span class="token operator">=</span> <span class="token function">composite</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">multiple</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token function">fn</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//20</span>
+</code></pre>
+<ul>
+<li>自定义运算符, 合成函数</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">infix</span> <span class="token keyword">operator</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">:</span> <span class="token builtin">AdditionPrecedence</span>
+<span class="token keyword">func</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token number">_</span> f1<span class="token punctuation">:</span> @<span class="token function">escaping</span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span><span class="token punctuation">,</span>
+          <span class="token number">_</span> f2<span class="token punctuation">:</span> @<span class="token function">escaping</span><span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span><span class="token punctuation">{</span>
+        <span class="token punctuation">{</span> <span class="token function">f2</span><span class="token punctuation">(</span> <span class="token function">f1</span><span class="token punctuation">(</span>$<span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> fn <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token function">multiple</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span> <span class="token function">fn</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//20</span>
+<span class="token comment" spellcheck="true">//所有运算</span>
+<span class="token keyword">let</span> fn2 <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token function">multiple</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token function">sub</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token function">mod</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token function">divide</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span> <span class="token function">fn2</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//4</span>
+
+<span class="token comment" spellcheck="true">//参数传递: num先传入f1的参数, f1返回值传入f2的参数,  f2返回值传出</span>
+</code></pre>
+<ul>
+<li><strong>注意: 柯里化<code>参数类型</code>和<code>返回值类型</code>必须相同才能合并!</strong></li>
+<li>即 f1参数 必须和f2参数相同.</li>
+</ul>
+<p>函数合成最终简化为:</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// 函数合成</span>
+<span class="token keyword">infix</span> <span class="token keyword">operator</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">:</span> <span class="token builtin">AdditionPrecedence</span>
+<span class="token keyword">func</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token operator">&lt;</span>A<span class="token punctuation">,</span> B<span class="token punctuation">,</span> C<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> f1<span class="token punctuation">:</span> @<span class="token function">escaping</span> <span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> B<span class="token punctuation">,</span>
+                  <span class="token number">_</span> f2<span class="token punctuation">:</span> @<span class="token function">escaping</span> <span class="token punctuation">(</span>B<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> C<span class="token punctuation">)</span> 
+        <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> C <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token function">f1</span><span class="token punctuation">(</span>$<span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> fn <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token function">multiple</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token function">sub</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token function">mod</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token function">divide</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token function">fn</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="高阶函数（Higher-Order-Function）"><a href="#高阶函数（Higher-Order-Function）" class="headerlink" title="高阶函数（Higher-Order Function）"></a>高阶函数（Higher-Order Function）</h3><p>高阶函数是至少满足下列一个条件的函数:</p>
+<ul>
+<li>接受一个或多个函数作为输入（map、filter、reduce等）</li>
+<li>返回一个函数</li>
+</ul>
+<p>FP中到处都是高阶函数</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">_</span> v<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> <span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">+</span> v <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+</code></pre>
+<h3 id="柯里化（Currying）"><a href="#柯里化（Currying）" class="headerlink" title="柯里化（Currying）"></a>柯里化（Currying）</h3><p><strong>1) 什么是柯里化？</strong></p>
+<ul>
+<li>将一个接受多参数的函数变换为一系列只接受单个参数的函数</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-60a7385d3b662d69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li><code>Array</code>、<code>Optional</code>的map方法接收的参数就是一个柯里化函数</li>
+</ul>
+<p><strong>2) 函数柯里化后参数顺序</strong></p>
+<ul>
+<li>根据给定函数柯里化</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function">add1</span><span class="token punctuation">(</span><span class="token number">_</span> v1<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>v1 <span class="token operator">-</span> v2<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">add2</span><span class="token punctuation">(</span><span class="token number">_</span> v1<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v3<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>v1 <span class="token operator">-</span> v2 <span class="token operator">-</span> v3<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>add1 add2分别柯里化</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function">add1</span><span class="token punctuation">(</span><span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token builtin">Int</span> <span class="token punctuation">{</span> <span class="token punctuation">{</span>$<span class="token number">0</span> <span class="token operator">-</span> v2<span class="token punctuation">}</span> <span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">//$0 == 20 , v2 == 10</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">add1</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 10</span>
+
+<span class="token keyword">func</span> <span class="token function">add2</span><span class="token punctuation">(</span><span class="token number">_</span> v3<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token builtin">Int</span> <span class="token punctuation">{</span>    <span class="token comment" spellcheck="true">//v3 == 10</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> v2 <span class="token keyword">in</span>  <span class="token comment" spellcheck="true">// v2 == 20</span>
+        <span class="token keyword">return</span><span class="token punctuation">{</span> v1 <span class="token keyword">in</span>  <span class="token comment" spellcheck="true">// v1 == 30</span>
+            <span class="token keyword">return</span> v1 <span class="token operator">-</span> v2 <span class="token operator">-</span> v3  
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">print</span><span class="token punctuation">(</span> <span class="token function">add2</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 0</span>
+</code></pre>
+<ul>
+<li>最终写为:</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> currying<span class="token operator">&lt;</span>A<span class="token punctuation">,</span> B<span class="token punctuation">,</span> C<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> fn<span class="token punctuation">:</span> @<span class="token function">escaping</span> <span class="token punctuation">(</span>A<span class="token punctuation">,</span> B<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> C<span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span>B<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> C <span class="token punctuation">{</span>
+        <span class="token punctuation">{</span> b <span class="token keyword">in</span> <span class="token punctuation">{</span> a <span class="token keyword">in</span> <span class="token function">fn</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> currying<span class="token operator">&lt;</span>A<span class="token punctuation">,</span> B<span class="token punctuation">,</span> C<span class="token punctuation">,</span> D<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> fn<span class="token punctuation">:</span> @<span class="token function">escaping</span> <span class="token punctuation">(</span>A<span class="token punctuation">,</span> B<span class="token punctuation">,</span> C<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> D<span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span>C<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span>B<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> D <span class="token punctuation">{</span>
+        <span class="token punctuation">{</span> c <span class="token keyword">in</span> <span class="token punctuation">{</span> b <span class="token keyword">in</span> <span class="token punctuation">{</span> a <span class="token keyword">in</span> <span class="token function">fn</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">// c = 10 , b = 20 , a = 30</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> curriedAdd1 <span class="token operator">=</span> <span class="token function">currying</span><span class="token punctuation">(</span>add1<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">curriedAdd1</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">//  20 - 10 </span>
+<span class="token keyword">let</span> curriedAdd2 <span class="token operator">=</span> <span class="token function">currying</span><span class="token punctuation">(</span>add2<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">curriedAdd2</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 30 - 20 - 10</span>
+</code></pre>
+<ul>
+<li><strong>注意: 如果传入参数有运算顺序的, 柯里化后会和原先传入参数顺序相反.</strong></li>
+<li>函数add1 柯里化参数 A == v2,  B == v1</li>
+<li>函数add2 柯里化参数 A == v3,  B == v2, C== v1</li>
+<li>包装一次少一次参数, 最后包装剩一个参数就开始计算</li>
+</ul>
+<p><strong>3) 自定义运算符实现函数柯里化</strong></p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">_</span> v1<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> v1 <span class="token operator">+</span> v2 <span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">sub</span><span class="token punctuation">(</span><span class="token number">_</span> v1<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> v1 <span class="token operator">-</span> v2 <span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">multiple</span><span class="token punctuation">(</span><span class="token number">_</span> v1<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> v1 <span class="token operator">*</span> v2 <span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">divide</span><span class="token punctuation">(</span><span class="token number">_</span> v1<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> v1 <span class="token operator">/</span> v2 <span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">mod</span><span class="token punctuation">(</span><span class="token number">_</span> v1<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> <span class="token number">_</span> v2<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> v1 <span class="token operator">%</span> v2 <span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>示例函数自定义运算符, 函数转为柯里版本</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">prefix</span> <span class="token keyword">func</span> <span class="token operator">~</span><span class="token operator">&lt;</span>A<span class="token punctuation">,</span> B<span class="token punctuation">,</span> C<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> fn<span class="token punctuation">:</span> @<span class="token function">escaping</span> <span class="token punctuation">(</span>A<span class="token punctuation">,</span> B<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> C<span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span>B<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> C <span class="token punctuation">{</span> <span class="token punctuation">{</span> b <span class="token keyword">in</span> <span class="token punctuation">{</span> a <span class="token keyword">in</span> <span class="token function">fn</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+<span class="token function">print</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token operator">~</span>sub<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//-10</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">infix</span> <span class="token keyword">operator</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">:</span> <span class="token builtin">AdditionPrecedence</span>
+<span class="token keyword">func</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span><span class="token operator">&lt;</span>A<span class="token punctuation">,</span> B<span class="token punctuation">,</span> C<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> f1<span class="token punctuation">:</span> @<span class="token function">escaping</span> <span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> B<span class="token punctuation">,</span>
+                  <span class="token number">_</span> f2<span class="token punctuation">:</span> @<span class="token function">escaping</span> <span class="token punctuation">(</span>B<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> C<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> C <span class="token punctuation">{</span> <span class="token punctuation">{</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token function">f1</span><span class="token punctuation">(</span>$<span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">var</span> fn <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">~</span>add<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token operator">~</span>multiple<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token operator">~</span>sub<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token operator">~</span>mod<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">></span><span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token operator">~</span>divide<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token function">fn</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="函子（Functor）"><a href="#函子（Functor）" class="headerlink" title="函子（Functor）"></a>函子（Functor）</h3><ul>
+<li>像Array、Optional这样支持map运算的类型，称为<code>函子</code>（Functor）</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">public</span> <span class="token keyword">func</span> <span class="token builtin">map</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> fn<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token builtin">Inner</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> T<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">Type</span><span class="token operator">&lt;</span>T<span class="token operator">></span>
+<span class="token comment" spellcheck="true">// Inner是Type里边包装的东西</span>
+</code></pre>
+<p>Array的map</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// Array&lt;Element></span>
+<span class="token keyword">public</span> <span class="token keyword">func</span> <span class="token builtin">map</span><span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> transform<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token builtin">Element</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> T<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Array</span><span class="token operator">&lt;</span>T<span class="token operator">></span>
+</code></pre>
+<p>Optional的map</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// Optional&lt;Wrapped></span>
+<span class="token keyword">public</span> <span class="token keyword">func</span> <span class="token builtin">map</span><span class="token operator">&lt;</span>U<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> transform<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token builtin">Wrapped</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> U<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Optional</span><span class="token operator">&lt;</span>U<span class="token operator">></span>
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-80bcf6574f315b8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-6ae8b4d1d7246d15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>图解: 将包装的2先解包, 加3操作后, 再次包装成盒子返回</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-2724a3408d6d71cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>图解: 如果盒子是空的, 就不能进行加3操作.</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-e33968ad15c27d3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>图解: 如果传入一堆包装的数据, 每次会遍历出一个盒子并解包进行加3操作, 操作后再次包装成盒子返回</p>
+<h3 id="适用函子（Applicative-Functor）"><a href="#适用函子（Applicative-Functor）" class="headerlink" title="适用函子（Applicative Functor）"></a>适用函子（Applicative Functor）</h3><ul>
+<li>对任意一个函子 F，如果能支持以下运算，该函子就是一个<code>适用函子</code></li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> pure<span class="token operator">&lt;</span>A<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> value<span class="token punctuation">:</span> A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> F<span class="token operator">&lt;</span>A<span class="token operator">></span>
+<span class="token keyword">func</span> <span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">></span><span class="token operator">&lt;</span>A<span class="token punctuation">,</span> B<span class="token operator">></span><span class="token punctuation">(</span>fn<span class="token punctuation">:</span> F<span class="token operator">&lt;</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> B<span class="token operator">></span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> F<span class="token operator">&lt;</span>A<span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> F<span class="token operator">&lt;</span>B<span class="token operator">></span>
+</code></pre>
+<ul>
+<li>Optional可以成为适用函子</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> pure<span class="token operator">&lt;</span>A<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> value<span class="token punctuation">:</span> A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> A <span class="token punctuation">{</span>value<span class="token punctuation">}</span>
+<span class="token keyword">infix</span> <span class="token keyword">operator</span> <span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">></span> <span class="token punctuation">:</span> <span class="token builtin">AdditionPrecedence</span>
+<span class="token keyword">func</span> <span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">></span><span class="token operator">&lt;</span>A<span class="token punctuation">,</span> B<span class="token operator">></span><span class="token punctuation">(</span>fn<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> B<span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span>A<span class="token operator">?</span> <span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> B<span class="token operator">?</span> <span class="token punctuation">{</span>
+    <span class="token keyword">guard</span> <span class="token keyword">let</span> f <span class="token operator">=</span> fn<span class="token punctuation">,</span> <span class="token keyword">let</span> v <span class="token operator">=</span> value <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token constant">nil</span> <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> value<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token keyword">var</span> fn<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span><span class="token punctuation">)</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// Operator(20)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>fn <span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">></span> value <span class="token keyword">as</span> <span class="token builtin">Any</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-bc687477a0e24888.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-21c471b3eec3ec58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>Array可以成为适用函子</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> pure<span class="token operator">&lt;</span>A<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> value<span class="token punctuation">:</span> A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">[</span>A<span class="token punctuation">]</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>value<span class="token punctuation">]</span> <span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">></span><span class="token operator">&lt;</span>A<span class="token punctuation">,</span> B<span class="token operator">></span><span class="token punctuation">(</span>fn<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> B<span class="token punctuation">]</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token punctuation">[</span>A<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">[</span>B<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> arr<span class="token punctuation">:</span> <span class="token punctuation">[</span>B<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">if</span> fn<span class="token punctuation">.</span><span class="token builtin">count</span> <span class="token operator">==</span> value<span class="token punctuation">.</span><span class="token builtin">count</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> fn<span class="token punctuation">.</span>startIndex<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">&lt;</span>fn<span class="token punctuation">.</span>endIndex <span class="token punctuation">{</span>
+            arr<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>fn<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">(</span>value<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> arr
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">// [10]</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">pure</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">+</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> $<span class="token number">0</span> <span class="token operator">-</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">// [2, 12, -2]</span>
+<span class="token function">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="单子（Monad）"><a href="#单子（Monad）" class="headerlink" title="单子（Monad）"></a>单子（Monad）</h3><ul>
+<li>对任意一个类型 F，如果能支持以下运算，那么就可以称为是一个<code>单子</code>（Monad）</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> pure<span class="token operator">&lt;</span>A<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> value<span class="token punctuation">:</span> A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> F<span class="token operator">&lt;</span>A<span class="token operator">></span>
+<span class="token keyword">func</span> flatMap<span class="token operator">&lt;</span>A<span class="token punctuation">,</span> B<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">_</span> value<span class="token punctuation">:</span> F<span class="token operator">&lt;</span>A<span class="token operator">></span><span class="token punctuation">,</span> <span class="token number">_</span> fn<span class="token punctuation">:</span> <span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> F<span class="token operator">&lt;</span>B<span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> F<span class="token operator">&lt;</span>B<span class="token operator">></span>
+</code></pre>
+<ul>
+<li>很显然，Array、Optional都是单子</li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2020/06/10/Swift5-1-27-面向协议编程/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2020/06/09/Swift5-1-25-Swift-常规用法/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar2.png" alt="codeTao's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        geeksk54@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: geeksk54@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">tab</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">send</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">89</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;codeTao
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

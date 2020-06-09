@@ -50,7 +50,7 @@
     
     <title>
         
-            iOS面试题14--Runloop | 
+            [Swift5.1] 27-面向协议编程 | 
         
         codeTao
     </title>
@@ -61,7 +61,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",iOS面试">
+    <meta name="keywords" content=",Swift5.1">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -227,7 +227,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="codeTao">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题14-Runloop/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/06/10/Swift5-1-27-面向协议编程/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="codeTao">
@@ -242,16 +242,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题14-Runloop/">
+    <meta property="og:url" content="http://yoursite.com/2020/06/10/Swift5-1-27-面向协议编程/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="iOS面试题14--Runloop | codeTao">
+    <meta property="og:title" content="[Swift5.1] 27-面向协议编程 | codeTao">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="iOS面试"> 
+    <meta property="og:article:tag" content="Swift5.1"> 
 
     
-        <meta property="article:published_time" content="Wed Sep 12 2018 15:42:04 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 12 2018 15:42:29 GMT+0800">
+        <meta property="article:published_time" content="Wed Jun 10 2020 00:54:35 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jun 10 2020 00:59:01 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2020/06/10/Swift5-1-27-面向协议编程/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -271,10 +271,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html",
-    "headline": "iOS面试题14--Runloop",
-    "datePublished": "Wed Sep 12 2018 15:42:04 GMT+0800",
-    "dateModified": "Wed Sep 12 2018 15:42:29 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2020/06/10/Swift5-1-27-面向协议编程/index.html",
+    "headline": "[Swift5.1] 27-面向协议编程",
+    "datePublished": "Wed Jun 10 2020 00:54:35 GMT+0800",
+    "dateModified": "Wed Jun 10 2020 00:59:01 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "codeTao",
@@ -292,7 +292,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": ",iOS面试",
+    "keywords": ",Swift5.1",
     "description": "",
 }
 </script>
@@ -367,7 +367,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是-Runloop？"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是 Runloop？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Runloop对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">Runloop对象</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Runloop与线程"><span class="post-toc-number">3.</span> <span class="post-toc-text">Runloop与线程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#获得RunLoop对象"><span class="post-toc-number">4.</span> <span class="post-toc-text">获得RunLoop对象</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RunLoop相关类"><span class="post-toc-number">5.</span> <span class="post-toc-text">RunLoop相关类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CFRunLoopModeRef"><span class="post-toc-number">6.</span> <span class="post-toc-text">CFRunLoopModeRef</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CFRunLoopTimerRef"><span class="post-toc-number">7.</span> <span class="post-toc-text">CFRunLoopTimerRef</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CFRunLoopSourceRef"><span class="post-toc-number">8.</span> <span class="post-toc-text">CFRunLoopSourceRef</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CFRunLoopObserverRef"><span class="post-toc-number">9.</span> <span class="post-toc-text">CFRunLoopObserverRef</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RunLoop处理逻辑"><span class="post-toc-number">10.</span> <span class="post-toc-text">RunLoop处理逻辑</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Runloop的应用"><span class="post-toc-number">11.</span> <span class="post-toc-text">Runloop的应用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#runloop定时源和输入源-image"><span class="post-toc-number">12.</span> <span class="post-toc-text">runloop定时源和输入源 image</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NSRunLoop的实现机制-及在多线程中如何使用"><span class="post-toc-number">13.</span> <span class="post-toc-text">NSRunLoop的实现机制,及在多线程中如何使用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#runloop和线程有什么关系？"><span class="post-toc-number">14.</span> <span class="post-toc-text">runloop和线程有什么关系？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#autorelease-对象在什么情况下会被释放？"><span class="post-toc-number">15.</span> <span class="post-toc-text">autorelease 对象在什么情况下会被释放？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对于runloop的理解不正确的是"><span class="post-toc-number">16.</span> <span class="post-toc-text">对于runloop的理解不正确的是</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#runloop的mode作用是什么？"><span class="post-toc-number">17.</span> <span class="post-toc-text">runloop的mode作用是什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#请写出NSTimer使用时的注意事项（两项即可）"><span class="post-toc-number">18.</span> <span class="post-toc-text">请写出NSTimer使用时的注意事项（两项即可）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UITableViewCell上有个UILabel，显示NSTimer实现的秒表时间，手指滚动cell过程中，label是否刷新，为什么？"><span class="post-toc-number">19.</span> <span class="post-toc-text">UITableViewCell上有个UILabel，显示NSTimer实现的秒表时间，手指滚动cell过程中，label是否刷新，为什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么-UIScrollView-的滚动会导致-NSTimer-失效？"><span class="post-toc-number">20.</span> <span class="post-toc-text">为什么 UIScrollView 的滚动会导致 NSTimer 失效？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？"><span class="post-toc-number">21.</span> <span class="post-toc-text">在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在开发中如何使用RunLoop？什么应用场景？"><span class="post-toc-number">22.</span> <span class="post-toc-text">在开发中如何使用RunLoop？什么应用场景？</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#面向协议编程"><span class="post-toc-number">1.</span> <span class="post-toc-text">面向协议编程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#回顾OOP"><span class="post-toc-number">2.</span> <span class="post-toc-text">回顾OOP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#OOP的不足"><span class="post-toc-number">3.</span> <span class="post-toc-text">OOP的不足</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#POP的解决方案"><span class="post-toc-number">4.</span> <span class="post-toc-text">POP的解决方案</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#再举例"><span class="post-toc-number">5.</span> <span class="post-toc-text">再举例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#POP的注意点"><span class="post-toc-number">6.</span> <span class="post-toc-text">POP的注意点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#利用协议实现前缀效果"><span class="post-toc-number">7.</span> <span class="post-toc-text">利用协议实现前缀效果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Base-类"><span class="post-toc-number">8.</span> <span class="post-toc-text">Base: 类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Base-协议"><span class="post-toc-number">9.</span> <span class="post-toc-text">Base: 协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#利用协议实现类型判断"><span class="post-toc-number">10.</span> <span class="post-toc-text">利用协议实现类型判断</span></a></li></ol>
     </ul>
     
 
@@ -399,7 +399,7 @@
         
     
             <p class="article-headline-p">
-                iOS面试题14--Runloop
+                [Swift5.1] 27-面向协议编程
             </p>
         </div>
 
@@ -418,7 +418,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>codeTao</strong>
-        <span>9月 12, 2018</span>
+        <span>6月 10, 2020</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -442,7 +442,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+        <a class="post_tag-link" href="/tags/Swift5-1/">Swift5.1</a>
     </ul>
     
 
@@ -470,7 +470,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题14--Runloop&url=http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[Swift5.1] 27-面向协议编程&url=http://yoursite.com/2020/06/10/Swift5-1-27-面向协议编程/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -479,7 +479,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题14--Runloop&url=http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html&via=codeTao" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[Swift5.1] 27-面向协议编程&url=http://yoursite.com/2020/06/10/Swift5-1-27-面向协议编程/index.html&via=codeTao" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -488,7 +488,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/10/Swift5-1-27-面向协议编程/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -497,7 +497,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/10/Swift5-1-27-面向协议编程/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -509,7 +509,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=iOS面试题14--Runloop&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=[Swift5.1] 27-面向协议编程&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/06/10/Swift5-1-27-面向协议编程/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -528,195 +528,158 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h4 id="什么是-Runloop？"><a href="#什么是-Runloop？" class="headerlink" title="什么是 Runloop？"></a>什么是 Runloop？</h4><ul>
-<li>从字面上讲就是运行循环。</li>
-<li>它内部就是do-while循环，在这个循环内部不断地处理各种任务。</li>
-<li>一个线程对应一个RunLoop，主线程的RunLoop默认已经启动，子线程的RunLoop得手动启动（调用run方法）</li>
-<li>RunLoop只能选择一个Mode启动，如果当前Mode中没有任何Source(Sources0、Sources1)、Timer，那么就直接退出RunLoop</li>
-<li>基本的作用就是保持程序的持续运行，处理app中的各种事件。通过runloop，有事运行，没事就休息，可以节省cpu资源，提高程序性能。</li>
-</ul>
-<h4 id="Runloop对象"><a href="#Runloop对象" class="headerlink" title="Runloop对象"></a>Runloop对象</h4><p>iOS中有2套API来访问和使用RunLoop</p>
+        <h3 id="面向协议编程"><a href="#面向协议编程" class="headerlink" title="面向协议编程"></a>面向协议编程</h3><p>面向协议编程（Protocol Oriented Programming，简称POP）</p>
 <ul>
-<li>Foundation：NSRunLoop</li>
-<li>Core Foundation：CFRunLoopRef</li>
-<li>NSRunLoop和CFRunLoopRef都代表着RunLoop对象</li>
-<li>NSRunLoop是基于CFRunLoopRef的一层OC包装，所以要了解RunLoop内部结构，需要多研究CFRunLoopRef层面的API。</li>
+<li>是Swift的一种编程范式， Apple于2015年WWDC提出</li>
+<li>在Swift的标准库中，能见到大量POP的影子</li>
 </ul>
-<h4 id="Runloop与线程"><a href="#Runloop与线程" class="headerlink" title="Runloop与线程"></a>Runloop与线程</h4><ul>
-<li>每条线程都有唯一的一个与之对应的RunLoop对象</li>
-<li>主线程的RunLoop已经自动创建好了，子线程的RunLoop需要主动创建</li>
-<li>RunLoop在第一次获取时创建，在线程结束时销毁</li>
-</ul>
-<h4 id="获得RunLoop对象"><a href="#获得RunLoop对象" class="headerlink" title="获得RunLoop对象"></a>获得RunLoop对象</h4><ul>
-<li>Foundation</li>
-</ul>
-<p>[NSRunLoop currentRunLoop]; // 获得当前线程的RunLoop对象</p>
-<p>[NSRunLoop mainRunLoop]; // 获得主线程的RunLoop对象</p>
 <ul>
-<li>Core Foundation</li>
+<li>同时，Swift也是一门面向对象的编程语言（Object Oriented Programming，简称OOP）</li>
+<li>在Swift开发中，OOP和POP是相辅相成的，任何一方并不能取代另一方</li>
+<li>POP能弥补OOP一些设计上的不足</li>
 </ul>
-<p>CFRunLoopGetCurrent(); // 获得当前线程的RunLoop对象</p>
-<p>CFRunLoopGetMain(); // 获得主线程的RunLoop对象</p>
-<h4 id="RunLoop相关类"><a href="#RunLoop相关类" class="headerlink" title="RunLoop相关类"></a>RunLoop相关类</h4><pre><code>Core Foundation中关于RunLoop的5个类
-CFRunLoopRef
-CFRunLoopModeRef
-CFRunLoopSourceRef
-CFRunLoopTimerRef
-CFRunLoopObserverRef
-</code></pre><h4 id="CFRunLoopModeRef"><a href="#CFRunLoopModeRef" class="headerlink" title="CFRunLoopModeRef"></a>CFRunLoopModeRef</h4><pre><code>CFRunLoopModeRef代表RunLoop的运行模式。
-一个RunLoop包含若干个Mode，每个Mode又包含若干个(set)Source/(array)Timer/(array)Observer
+<h3 id="回顾OOP"><a href="#回顾OOP" class="headerlink" title="回顾OOP"></a>回顾OOP</h3><p>1&gt; OOP的三大特性：封装、继承、多态</p>
+<p>2&gt; 继承的经典使用场合:</p>
+<ul>
+<li>当多个类（比如A、B、C类）具有很多共性时，可以将这些共性抽取到一个父类中（比如D类），最后A、B、C类继承D类</li>
+</ul>
+<h3 id="OOP的不足"><a href="#OOP的不足" class="headerlink" title="OOP的不足"></a>OOP的不足</h3><p><strong>1)但有些问题，使用OOP并不能很好解决</strong> </p>
+<ul>
+<li>比如 如何将 BVC、DVC 的公共方法 run 抽取出来？</li>
+</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">BVC</span><span class="token punctuation">:</span> <span class="token builtin">UIViewController</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"run"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">DVC</span><span class="token punctuation">:</span> <span class="token builtin">UITableViewController</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"run"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>2) 基于OOP想到的一些解决方案？</strong></p>
+<p>1.将run方法放到另一个对象A中，然后BVC、DVC拥有对象A属性<br>缺点: 多了一些额外的依赖关系</p>
+<p>2.将run方法增加到UIViewController分类中<br>缺点: UIViewController会越来越臃肿，而且会影响它的其他所有子类</p>
+<p>3.将run方法抽取到新的父类，采用多继承？（C++支持多继承）<br>缺点: 会增加程序设计复杂度，产生菱形继承等问题，需要开发者额外解决</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-d9a1ec67e45b1731.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="POP的解决方案"><a href="#POP的解决方案" class="headerlink" title="POP的解决方案"></a>POP的解决方案</h3><pre class=" language-swift"><code class="language-swift">protocol <span class="token builtin">Runnable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-每次RunLoop启动时，只能指定其中一个 Mode，这个Mode被称作CurrentMode
+<span class="token keyword">extension</span> <span class="token builtin">Runnable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"run"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-如果需要切换Mode，只能退出Loop，再重新指定一个Mode进入
 
-这样做主要是为了分隔开不同组的Source/Timer/Observer，让其互不影响
+<span class="token keyword">class</span> <span class="token class-name">BVC</span><span class="token punctuation">:</span> <span class="token builtin">UIViewController</span><span class="token punctuation">,</span> <span class="token builtin">Runnable</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">DVC</span><span class="token punctuation">:</span> <span class="token builtin">UITableViewController</span><span class="token punctuation">,</span> <span class="token builtin">Runnable</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
+<h3 id="再举例"><a href="#再举例" class="headerlink" title="再举例"></a>再举例</h3><p><img src="https://upload-images.jianshu.io/upload_images/126164-e1c014c18559b004.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="POP的注意点"><a href="#POP的注意点" class="headerlink" title="POP的注意点"></a>POP的注意点</h3><ul>
+<li>优先考虑创建协议，而不是父类（基类）</li>
+<li>优先考虑值类型（struct、enum），而不是引用类型（class）</li>
+<li>巧用协议的扩展功能</li>
+<li>不要为了面向协议而使用协议</li>
+</ul>
+<h3 id="利用协议实现前缀效果"><a href="#利用协议实现前缀效果" class="headerlink" title="利用协议实现前缀效果"></a>利用协议实现前缀效果</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> string <span class="token operator">=</span> <span class="token string">"123fdsf434"</span>
+<span class="token function">print</span><span class="token punctuation">(</span>string<span class="token punctuation">.</span>my<span class="token punctuation">.</span><span class="token function">numberCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>1&gt; 前缀类型:</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token constant">MY</span><span class="token operator">&lt;</span><span class="token builtin">Base</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> base<span class="token punctuation">:</span> <span class="token builtin">Base</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token number">_</span> base<span class="token punctuation">:</span> <span class="token builtin">Base</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>base <span class="token operator">=</span> base
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>2&gt; 利用协议 扩展前缀属性</p>
+<pre class=" language-swift"><code class="language-swift">protocol <span class="token builtin">MYCompatible</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token builtin">MYCompatible</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">var</span> my<span class="token punctuation">:</span> <span class="token constant">MY</span><span class="token operator">&lt;</span><span class="token keyword">Self</span><span class="token operator">></span><span class="token punctuation">.</span><span class="token keyword">Type</span> <span class="token punctuation">{</span>
+        <span class="token keyword">get</span><span class="token punctuation">{</span> <span class="token constant">MY</span><span class="token operator">&lt;</span><span class="token keyword">Self</span><span class="token operator">></span><span class="token punctuation">.</span><span class="token keyword">self</span> <span class="token punctuation">}</span>
+        <span class="token keyword">set</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> my<span class="token punctuation">:</span><span class="token constant">MY</span><span class="token operator">&lt;</span><span class="token keyword">Self</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">get</span> <span class="token punctuation">{</span> <span class="token function">MY</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+        <span class="token keyword">set</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>3&gt; 让扩展功能的类型 遵守协议, 给前缀类型扩展功能</p>
+<pre class=" language-swift"><code class="language-swift"><span class="token comment" spellcheck="true">//给字符串扩展功能, 让String拥有my前缀属性</span>
+<span class="token keyword">extension</span> <span class="token builtin">String</span><span class="token punctuation">:</span> <span class="token builtin">MYCompatible</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//给String.my , String().my 前缀扩展功能</span>
+<span class="token keyword">extension</span> <span class="token constant">MY</span> <span class="token keyword">where</span> <span class="token builtin">Base</span> <span class="token operator">==</span> <span class="token builtin">String</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">numberCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> <span class="token builtin">count</span> <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> c <span class="token keyword">in</span> base <span class="token keyword">where</span> <span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token string">"9"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token builtin">count</span> <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token builtin">count</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="Base-类"><a href="#Base-类" class="headerlink" title="Base: 类"></a>Base: 类</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token punctuation">:</span> <span class="token builtin">Person</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-mode主要是用来指定事件在运行循环中的优先级的，分为：
-•   NSDefaultRunLoopMode（kCFRunLoopDefaultMode）：默认，空闲状态
-•   UITrackingRunLoopMode：ScrollView滑动时会切换到该Mode
-•   UIInitializationRunLoopMode：run loop启动时，会切换到该mode
-•   NSRunLoopCommonModes（kCFRunLoopCommonModes）：Mode集合
-苹果公开提供的Mode有两个：
-•   NSDefaultRunLoopMode（kCFRunLoopDefaultMode）
-•   NSRunLoopCommonModes（kCFRunLoopCommonModes）
-</code></pre><h4 id="CFRunLoopTimerRef"><a href="#CFRunLoopTimerRef" class="headerlink" title="CFRunLoopTimerRef"></a>CFRunLoopTimerRef</h4><ul>
-<li>CFRunLoopTimerRef是基于时间的触发器</li>
-<li>CFRunLoopTimerRef基本上说的就是NSTimer，它受RunLoop的Mode影响</li>
-<li>GCD的定时器不受RunLoop的Mode影响</li>
-</ul>
-<h4 id="CFRunLoopSourceRef"><a href="#CFRunLoopSourceRef" class="headerlink" title="CFRunLoopSourceRef"></a>CFRunLoopSourceRef</h4><pre><code>CFRunLoopSourceRef是事件源（输入源）
-按照官方文档，Source的分类
-Port-Based Sources
-Custom Input Sources
-Cocoa Perform Selector Sources
-按照函数调用栈，Source的分类
-Source0：非基于Port的
-Source1：基于Port的，通过内核和其他线程通信，接收、分发系统事件
-</code></pre><h4 id="CFRunLoopObserverRef"><a href="#CFRunLoopObserverRef" class="headerlink" title="CFRunLoopObserverRef"></a>CFRunLoopObserverRef</h4><ul>
-<li>CFRunLoopObserverRef是观察者，能够监听RunLoop的状态改变</li>
-<li>可以监听的时间点有以下几个<ul>
-<li>kcfRunLoopEntry(即将进入loop)//1</li>
-<li>kcfRunLoopBeforeTimers(即将处理timer)//2</li>
-<li>kcfRunLoopBeforeSources(即将处理source)//4</li>
-<li>kcfRunLoopBeforeWaiting(即将进入休眠)//32</li>
-<li>kcfRunLoopAfterWaiting(刚从休眠中唤醒)//64</li>
-<li>kcfRunLoopExit(即将退出loop)//128</li>
-</ul>
-</li>
-<li>添加Observer</li>
-</ul>
-<pre><code>    CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(CFAllocatorGetDefault(), kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
-    NSLog(@&quot;----监听到RunLoop状态发生改变---%zd&quot;, activity);
-});
+<span class="token keyword">extension</span> <span class="token builtin">Person</span><span class="token punctuation">:</span> <span class="token builtin">MYCompatible</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token constant">MY</span> <span class="token keyword">where</span> <span class="token builtin">Base</span><span class="token punctuation">:</span> <span class="token builtin">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token builtin">Person</span><span class="token punctuation">.</span>my<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token builtin">Student</span><span class="token punctuation">.</span>my<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-// 添加观察者：监听RunLoop的状态
-CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopDefaultMode);
+<span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>my<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-// 释放Observer
-CFRelease(observer);
-</code></pre><h4 id="RunLoop处理逻辑"><a href="#RunLoop处理逻辑" class="headerlink" title="RunLoop处理逻辑"></a>RunLoop处理逻辑</h4><ul>
-<li>通知Observer:即将进入Loop（1）</li>
-<li>通知Observer：将要处理Timer（2）</li>
-<li>通知Observer：将要处理Source0（3）</li>
-<li>处理Source0（4）</li>
-<li>如果有Source0，跳到第9步（5）</li>
-<li>通知Observer：线程即将休眠（6）</li>
-<li>休眠，等待唤醒：（7）<ul>
-<li>Source0(port)。</li>
-<li>timer启动</li>
-<li>RunLoop设置的timer已经超时</li>
-<li>Runloop被外部手动唤醒</li>
-</ul>
-</li>
-<li>通知Observer：线程将被唤醒（8）</li>
-<li>处理未处理的时间（9）<ul>
-<li>如果用户定义的定时器启动，处理定时器事件并重启Runloop。进入步骤2.</li>
-<li>如果输入源启动，传递相应的消息。</li>
-<li>如果RunLopp被显式唤醒而且时间还没超时，重启RunLoop，进入步骤2.</li>
-</ul>
-</li>
-<li>通知Observer：即将退出Loop</li>
-</ul>
-<h4 id="Runloop的应用"><a href="#Runloop的应用" class="headerlink" title="Runloop的应用"></a>Runloop的应用</h4><ul>
-<li>NSTimer</li>
-<li>ImageView显示</li>
-<li>PerformSelector</li>
-<li>常驻线程</li>
-<li>自动释放池</li>
-</ul>
-<h4 id="runloop定时源和输入源-image"><a href="#runloop定时源和输入源-image" class="headerlink" title="runloop定时源和输入源 image"></a>runloop定时源和输入源 <img src="http://" alt="image">image</h4><ul>
-<li>Runloop处理的输入事件有两种不同的来源：输入源（input source）和定时源（timer source）</li>
-<li>输入源传递异步消息，通常来自于其他线程或者程序。</li>
-<li>定时源则传递同步消息，在特定时间或者一定的时间间隔发生</li>
-</ul>
-<h4 id="NSRunLoop的实现机制-及在多线程中如何使用"><a href="#NSRunLoop的实现机制-及在多线程中如何使用" class="headerlink" title="NSRunLoop的实现机制,及在多线程中如何使用"></a>NSRunLoop的实现机制,及在多线程中如何使用</h4><pre><code>- 实现机制：回答runloop的基本作用，处理逻辑，前面都有。
+<span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span>my<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="Base-协议"><a href="#Base-协议" class="headerlink" title="Base: 协议"></a>Base: 协议</h3><pre class=" language-swift"><code class="language-swift"><span class="token keyword">var</span> s1<span class="token punctuation">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token string">"123fdsf434"</span>
+<span class="token keyword">var</span> s2<span class="token punctuation">:</span> <span class="token builtin">NSString</span> <span class="token operator">=</span> <span class="token string">"123fdsf434"</span>
+<span class="token keyword">var</span> s3<span class="token punctuation">:</span> <span class="token builtin">NSMutableString</span> <span class="token operator">=</span> <span class="token string">"123fdsf434"</span>
 
-- 程序创建子线程的时候，才需要手动启动runloop。主线程的runloop已经默认启动。
-
-- 在多线程中，你需要判断是否需要runloop。如果需要runloop，那么你要负责配置runloop并启动。你不需要在任何情况下都去启动runloop。比如，你使用线程去处理一个预先定义好的耗时极长的任务时，你就可以无需启动runloop。Runloop只在你要和线程有交互时才需要
-</code></pre><h4 id="runloop和线程有什么关系？"><a href="#runloop和线程有什么关系？" class="headerlink" title="runloop和线程有什么关系？"></a>runloop和线程有什么关系？</h4><pre><code>- 主线程的run loop默认是启动的。
-iOS的应用程序里面，程序启动后会有一个如下的main()函数
-( argc,  * argv[]) {
-@autoreleasepool {
-    return UIApplicationMain(argc, argv, , NSStringFromClass([AppDelegate class]));
-}
-}
-重点是UIApplicationMain()函数，这个方法会为main thread设置一个NSRunLoop对象，这就解释了：为什么我们的应用可以在无人操作的时候休息，需要让它干活的时候又能立马响应。
-
-- 对其它线程来说，runloop默认是没有启动的，runloop只在你要和线程有交互时才需要。
-
-- 在任何一个 Cocoa 程序的线程中，都可以通过以下代码来获取到当前线程的 run loop 。
-NSRunLoop *runloop = [NSRunLoop currentRunLoop];
-</code></pre><h4 id="autorelease-对象在什么情况下会被释放？"><a href="#autorelease-对象在什么情况下会被释放？" class="headerlink" title="autorelease 对象在什么情况下会被释放？"></a>autorelease 对象在什么情况下会被释放？</h4><ul>
-<li>分两种情况：手动干预释放和系统自动释放</li>
-<li>手动干预释放就是指定autoreleasepool,当前作用域大括号结束就立即释放</li>
-<li>系统自动去释放:不手动指定autoreleasepool,Autorelease对象会在当前的 runloop 迭代结束时释放</li>
-<li>kCFRunLoopEntry(1):第一次进入会自动创建一个autorelease</li>
-<li>kCFRunLoopBeforeWaiting(32):进入休眠状态前会自动销毁一个autorelease,然后重新创建一个新的autorelease</li>
-<li>kCFRunLoopExit(128):退出runloop时会自动销毁最后一个创建的autorelease</li>
+<span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span>my<span class="token punctuation">.</span><span class="token function">numberCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span>my<span class="token punctuation">.</span><span class="token function">numberCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>s3<span class="token punctuation">.</span>my<span class="token punctuation">.</span><span class="token function">numberCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">extension</span> <span class="token builtin">String</span><span class="token punctuation">:</span> <span class="token builtin">MYCompatible</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token builtin">NSString</span><span class="token punctuation">:</span> <span class="token builtin">MYCompatible</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token constant">MY</span> <span class="token keyword">where</span> <span class="token builtin">Base</span><span class="token punctuation">:</span> <span class="token builtin">ExpressibleByStringLiteral</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">numberCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> string <span class="token operator">=</span> base <span class="token keyword">as</span><span class="token operator">!</span> <span class="token builtin">String</span>
+        <span class="token keyword">var</span> <span class="token builtin">count</span> <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> c <span class="token keyword">in</span> string <span class="token keyword">where</span>  <span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token string">"9"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token builtin">count</span> <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token builtin">count</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="利用协议实现类型判断"><a href="#利用协议实现类型判断" class="headerlink" title="利用协议实现类型判断"></a>利用协议实现类型判断</h3><ul>
+<li>协议最终就是一个具体类型, 有 metadate</li>
 </ul>
-<h4 id="对于runloop的理解不正确的是"><a href="#对于runloop的理解不正确的是" class="headerlink" title="对于runloop的理解不正确的是"></a>对于runloop的理解不正确的是</h4><pre><code>A 每一个线程都有其对应的RunLoop
-B 默认非主线程的RunLoop是没有运行的
-C 在一个单独的线程中没有必要去启用RunLoop
-D 可以将NSTimer添加到runloop中
-</code></pre><ul>
-<li>参考答案：C</li>
-<li>理由：说到RunLoop，它可是多线程的法定。通常来说，一个线程一次只能执行一个任务，执行完任务后就会退出线程。但是，对于主线程是不能退出的，因此我们需要让主线程即时任务执行完毕，也可以继续等待是接收事件而不退出，那么RunLoop就是关键法宝了。但是非主线程通常来说就是为了执行某一任务的，执行完毕就需要归还资源，因此默认是不运行RunLoop的。NSRunLoop提供了一个添加NSTimer的方法，这个方法是在应用正常状态下会回调。</li>
-</ul>
-<h4 id="runloop的mode作用是什么？"><a href="#runloop的mode作用是什么？" class="headerlink" title="runloop的mode作用是什么？"></a>runloop的mode作用是什么？</h4><pre><code>mode主要是用来指定事件在运行循环中的优先级的，分为：
-•   NSDefaultRunLoopMode（kCFRunLoopDefaultMode）：默认，空闲状态
-•   UITrackingRunLoopMode：ScrollView滑动时会切换到该Mode
-•   UIInitializationRunLoopMode：run loop启动时，会切换到该mode
-•   NSRunLoopCommonModes（kCFRunLoopCommonModes）：Mode集合
-苹果公开提供的Mode有两个：
-•   NSDefaultRunLoopMode（kCFRunLoopDefaultMode）
-•   NSRunLoopCommonModes（kCFRunLoopCommonModes）
-如果我们把一个NSTimer对象以NSDefaultRunLoopMode（kCFRunLoopDefaultMode）添加到主运行循环中的时候, ScrollView滚动过程中会因为mode的切换，而导致NSTimer将不再被调度。当我们滚动的时候，也希望不调度，那就应该使用默认模式。但是，如果希望在滚动时，定时器也要回调，那就应该使用common mode。
-</code></pre><h4 id="请写出NSTimer使用时的注意事项（两项即可）"><a href="#请写出NSTimer使用时的注意事项（两项即可）" class="headerlink" title="请写出NSTimer使用时的注意事项（两项即可）"></a>请写出NSTimer使用时的注意事项（两项即可）</h4><pre><code>思路和上一题一样，如果想要销毁timer，则必须先将timer置为失效，否则timer就一直占用内存而不会释放。造成逻辑上的内存泄漏。该泄漏不能用xcode及instruments测出来。 另外对于要求必须销毁timer的逻辑处理，未将timer置为失效，若每次都创建一次，则之前的不能得到释放，则会同时存在多个timer的实例在内存中。
-参考答案：
-•   注意timer添加到runloop时应该设置为什么mode
-•   注意timer在不需要时，一定要调用invalidate方法使定时器失效，否则得不到释放
-</code></pre><h4 id="UITableViewCell上有个UILabel，显示NSTimer实现的秒表时间，手指滚动cell过程中，label是否刷新，为什么？"><a href="#UITableViewCell上有个UILabel，显示NSTimer实现的秒表时间，手指滚动cell过程中，label是否刷新，为什么？" class="headerlink" title="UITableViewCell上有个UILabel，显示NSTimer实现的秒表时间，手指滚动cell过程中，label是否刷新，为什么？"></a>UITableViewCell上有个UILabel，显示NSTimer实现的秒表时间，手指滚动cell过程中，label是否刷新，为什么？</h4><pre><code>和上一题一样的思路，如果要cell滚动过程中定时器正常回调，UI正常刷新，那么要将timer放入到CommonModes下，因为是NSDefaultRunLoopMode，只有在空闲状态下才会回调。
-</code></pre><h4 id="为什么-UIScrollView-的滚动会导致-NSTimer-失效？"><a href="#为什么-UIScrollView-的滚动会导致-NSTimer-失效？" class="headerlink" title="为什么 UIScrollView 的滚动会导致 NSTimer 失效？"></a>为什么 UIScrollView 的滚动会导致 NSTimer 失效？</h4><ul>
-<li>思路和上一题一样，解决办法有2个,一个是更改mode为NSRunLoopCommonModes(无论runloop运行在哪个mode,都能运行),还有种办法是切换到主线程来更新UI界面的刷新</li>
-</ul>
-<pre><code> //将timer添加到NSDefaultRunLoopMode中
- [NSTimer scheduledTimerWithTimeInterval: target: selector:@selector(timerTick:) userInfo: repeats:];
-  //然后再添加到NSRunLoopCommonModes里
-   NSTimer *timer = [NSTimer timerWithTimeInterval: target: selector:@selector(timerTick:) userInfo: repeats:];
-    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-</code></pre><h4 id="在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？"><a href="#在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？" class="headerlink" title="在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？"></a>在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？</h4><ul>
-<li>思路和上一题一样</li>
-</ul>
-<h4 id="在开发中如何使用RunLoop？什么应用场景？"><a href="#在开发中如何使用RunLoop？什么应用场景？" class="headerlink" title="在开发中如何使用RunLoop？什么应用场景？"></a>在开发中如何使用RunLoop？什么应用场景？</h4><ul>
-<li>开启一个常驻线程（让一个子线程不进入消亡状态，等待其他线程发来消息，处理其他事件）</li>
-<li>在子线程中开启一个定时器</li>
-<li>在子线程中进行一些长期监控</li>
-<li>可以控制定时器在特定模式下执行</li>
-<li>可以让某些事件（行为、任务）在特定模式下执行</li>
-<li>可以添加Observer监听RunLoop的状态，比如监听点击事件的处理（在所有点击事件之前做一些事情）</li>
-</ul>
+<pre class=" language-swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function">isArray</span><span class="token punctuation">(</span><span class="token number">_</span> value<span class="token punctuation">:</span> <span class="token builtin">Any</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Bool</span> <span class="token punctuation">{</span> value <span class="token keyword">is</span> <span class="token punctuation">[</span><span class="token builtin">Any</span><span class="token punctuation">]</span> <span class="token punctuation">}</span>
+<span class="token function">isArray</span><span class="token punctuation">(</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token punctuation">)</span>
+<span class="token function">isArray</span><span class="token punctuation">(</span> <span class="token punctuation">[</span><span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token punctuation">)</span>
+<span class="token function">isArray</span><span class="token punctuation">(</span> <span class="token function">NSArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+<span class="token function">isArray</span><span class="token punctuation">(</span> <span class="token function">NSMutableArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-swift"><code class="language-swift">protocol <span class="token builtin">ArrayType</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token builtin">Array</span><span class="token punctuation">:</span> <span class="token builtin">ArrayType</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token builtin">NSArray</span><span class="token punctuation">:</span> <span class="token builtin">ArrayType</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">isArrayType</span><span class="token punctuation">(</span><span class="token number">_</span> type<span class="token punctuation">:</span> <span class="token builtin">Any</span><span class="token punctuation">.</span><span class="token keyword">Type</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Bool</span> <span class="token punctuation">{</span> type <span class="token keyword">is</span> <span class="token builtin">ArrayType</span><span class="token punctuation">.</span><span class="token keyword">Type</span> <span class="token punctuation">}</span>
+<span class="token function">isArrayType</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">Int</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span>
+<span class="token function">isArrayType</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">Any</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span>  
+<span class="token function">isArrayType</span><span class="token punctuation">(</span><span class="token builtin">NSArray</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span>
+<span class="token function">isArrayType</span><span class="token punctuation">(</span><span class="token builtin">NSMutableArray</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span>
+</code></pre>
 
         
     
@@ -770,21 +733,13 @@ D 可以将NSTimer添加到runloop中
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/12/iOS面试题15-网络/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/12/iOS面试题13-数据存储/" id="post_nav-older" class="next-content">
+        <a href="/2020/06/10/Swift5-1-26-函数式编程/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
