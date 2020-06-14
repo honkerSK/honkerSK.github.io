@@ -731,7 +731,8 @@ SEL s2 = NSSelectorFromString(@"test1"); // 将一个字符串方法转换成为
 <h4 id="什么是谓词"><a href="#什么是谓词" class="headerlink" title="什么是谓词"></a>什么是谓词</h4><p>谓词就是通过NSPredicate给定的逻辑条件作为约束条件，完成对数据的筛选。</p>
 <ul>
 <li><p>定义谓词对象，谓词对象中包含了过滤条件</p>
-<pre class=" language-objc"><code class="language-objc">NSPredicate *predicate = [NSPredicate predicateWithFormat:@"age<%d",30]; <="" code=""></%d",30];></code></pre>
+<pre class=" language-objc"><code class="language-objc">NSPredicate *predicate = [NSPredicate predicateWithFormat:@"age<%d",30];
+</code></pre>
 </li>
 <li><p>使用谓词条件过滤数组中的元素，过滤之后返回查询的结果</p>
 <pre class=" language-objc"><code class="language-objc">NSArray *array = [persons filteredArrayUsingPredicate:predicate];
@@ -1097,7 +1098,10 @@ self.age = newAge; }
 </code></pre>
 <h4 id="截取字符串”20-http-www-baidu-com”-中-”-”字符前面和后面的数据-分别输出它们。"><a href="#截取字符串”20-http-www-baidu-com”-中-”-”字符前面和后面的数据-分别输出它们。" class="headerlink" title="截取字符串”20 | http://www.baidu.com” 中, ”|”字符前面和后面的数据,分别输出它们。"></a>截取字符串”20 | <a href="http://www.baidu.com”" target="_blank" rel="noopener">http://www.baidu.com”</a> 中, ”|”字符前面和后面的数据,分别输出它们。</h4><pre class=" language-objc"><code class="language-objc">NSString * str = @"20 | http://www.baidu.com";
 NSArray *array = [str componentsSeparatedByString:@"|"]; //这是分别输出的截取后的字符串
-for (int i = 0; i<[array count];="" ++i)="" {="" nslog(@"%d="%@"," i,="" [array="" objectatindex:i]);="" }="" <="" code=""></[array></code></pre>
+for (int i = 0; i<[array count]; ++i) {
+    NSLog(@"%d=%@", i, [array objectAtIndex:i]);
+}
+</code></pre>
 <h4 id="写一个完整的代理-包括声明-实现"><a href="#写一个完整的代理-包括声明-实现" class="headerlink" title="写一个完整的代理,包括声明,实现"></a>写一个完整的代理,包括声明,实现</h4><pre class=" language-objc"><code class="language-objc">//创建
 @protocol MyDelagate
 
@@ -1324,7 +1328,7 @@ for (int i = 0; i<[array count];="" ++i)="" {="" nslog(@"%d="%@"," i,="" [array=
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">24</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">25</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -1342,7 +1346,7 @@ for (int i = 0; i<[array count];="" ++i)="" {="" nslog(@"%d="%@"," i,="" [array=
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">40</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">40</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -1376,7 +1380,7 @@ for (int i = 0; i<[array count];="" ++i)="" {="" nslog(@"%d="%@"," i,="" [array=
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">90</span>
+                <span class="sidebar-badge">91</span>
             </a>
         </li>
         
