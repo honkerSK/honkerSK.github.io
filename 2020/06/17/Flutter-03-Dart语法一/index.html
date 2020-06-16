@@ -50,7 +50,7 @@
     
     <title>
         
-            [Swift5.1] 9-方法 | 
+            [Flutter] 03-Dart语法一 | 
         
         codeTao
     </title>
@@ -61,7 +61,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",Swift5.1">
+    <meta name="keywords" content=",Flutter">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -227,7 +227,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="codeTao">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2020/06/03/Swift5-1-9-方法/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/06/17/Flutter-03-Dart语法一/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="codeTao">
@@ -242,16 +242,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2020/06/03/Swift5-1-9-方法/">
+    <meta property="og:url" content="http://yoursite.com/2020/06/17/Flutter-03-Dart语法一/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="[Swift5.1] 9-方法 | codeTao">
+    <meta property="og:title" content="[Flutter] 03-Dart语法一 | codeTao">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="Swift5.1"> 
+    <meta property="og:article:tag" content="Flutter"> 
 
     
-        <meta property="article:published_time" content="Wed Jun 03 2020 02:42:40 GMT+0800">
-        <meta property="article:modified_time" content="Wed Jun 03 2020 02:45:02 GMT+0800">
+        <meta property="article:published_time" content="Wed Jun 17 2020 00:34:00 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jun 17 2020 00:34:35 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2020/06/03/Swift5-1-9-方法/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2020/06/17/Flutter-03-Dart语法一/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -271,10 +271,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2020/06/03/Swift5-1-9-方法/index.html",
-    "headline": "[Swift5.1] 9-方法",
-    "datePublished": "Wed Jun 03 2020 02:42:40 GMT+0800",
-    "dateModified": "Wed Jun 03 2020 02:45:02 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2020/06/17/Flutter-03-Dart语法一/index.html",
+    "headline": "[Flutter] 03-Dart语法一",
+    "datePublished": "Wed Jun 17 2020 00:34:00 GMT+0800",
+    "dateModified": "Wed Jun 17 2020 00:34:35 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "codeTao",
@@ -292,7 +292,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": ",Swift5.1",
+    "keywords": ",Flutter",
     "description": "",
 }
 </script>
@@ -367,7 +367,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法（Method）"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法（Method）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mutating"><span class="post-toc-number">2.</span> <span class="post-toc-text">mutating</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#discardableResult"><span class="post-toc-number">3.</span> <span class="post-toc-text">@discardableResult</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-Hello-Dart"><span class="post-toc-number">1.</span> <span class="post-toc-text">一. Hello Dart</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-1-Hello-World"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.1. Hello World</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-程序的分析"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">1.2. 程序的分析</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-定义变量"><span class="post-toc-number">2.</span> <span class="post-toc-text">二. 定义变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-明确声明-Explicit"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2.1. 明确声明(Explicit)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-类型推导-Type-Inference"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.2. 类型推导(Type Inference)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-3-1-var的使用"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">2.3.1. var的使用</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-3-2-dynamic的使用"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">2.3.2. dynamic的使用</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-数据类型"><span class="post-toc-number">3.</span> <span class="post-toc-text">三. 数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-数字类型"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">3.1.  数字类型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-2-布尔类型"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">3.2. 布尔类型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-字符串类型"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3.3. 字符串类型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-4-集合类型"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">3.4. 集合类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-4-1-集合类型的定义"><span class="post-toc-number">3.4.1.</span> <span class="post-toc-text">3.4.1. 集合类型的定义</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-4-2-集合的常见操作"><span class="post-toc-number">3.4.2.</span> <span class="post-toc-text">3.4.2. 集合的常见操作</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-函数"><span class="post-toc-number">4.</span> <span class="post-toc-text">四. 函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-1-函数的基本定义"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">4.1. 函数的基本定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-2-函数的参数问题"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">4.2. 函数的参数问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-2-1-可选参数"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">4.2.1. 可选参数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-2-2-参数默认值"><span class="post-toc-number">4.2.2.</span> <span class="post-toc-text">4.2.2. 参数默认值</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-3-函数是一等公民"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">4.3. 函数是一等公民</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-4-匿名函数的使用"><span class="post-toc-number">4.3.1.</span> <span class="post-toc-text">4.4. 匿名函数的使用</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-5-词法作用域"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">4.5. 词法作用域</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-6-词法闭包"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">4.6. 词法闭包</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-7-返回值问题"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">4.7. 返回值问题</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -399,7 +399,7 @@
         
     
             <p class="article-headline-p">
-                [Swift5.1] 9-方法
+                [Flutter] 03-Dart语法一
             </p>
         </div>
 
@@ -418,7 +418,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>codeTao</strong>
-        <span>6月 03, 2020</span>
+        <span>6月 17, 2020</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -442,7 +442,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Swift5-1/">Swift5.1</a>
+        <a class="post_tag-link" href="/tags/Flutter/">Flutter</a>
     </ul>
     
 
@@ -470,7 +470,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[Swift5.1] 9-方法&url=http://yoursite.com/2020/06/03/Swift5-1-9-方法/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[Flutter] 03-Dart语法一&url=http://yoursite.com/2020/06/17/Flutter-03-Dart语法一/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -479,7 +479,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[Swift5.1] 9-方法&url=http://yoursite.com/2020/06/03/Swift5-1-9-方法/index.html&via=codeTao" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[Flutter] 03-Dart语法一&url=http://yoursite.com/2020/06/17/Flutter-03-Dart语法一/index.html&via=codeTao" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -488,7 +488,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/03/Swift5-1-9-方法/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/17/Flutter-03-Dart语法一/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -497,7 +497,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/03/Swift5-1-9-方法/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/17/Flutter-03-Dart语法一/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -509,7 +509,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=[Swift5.1] 9-方法&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/06/03/Swift5-1-9-方法/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=[Flutter] 03-Dart语法一&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/06/17/Flutter-03-Dart语法一/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -528,76 +528,377 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="方法（Method）"><a href="#方法（Method）" class="headerlink" title="方法（Method）"></a>方法（Method）</h3><p>枚举、结构体、类都可以定义实例方法、类型方法</p>
-<ul>
-<li>实例方法（Instance Method）：通过实例对象调用</li>
-<li>类型方法（Type Method）：通过类型调用，用<code>static</code>或者<code>class</code>关键字定义</li>
-</ul>
-<pre class=" language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token punctuation">{</span>
-    <span class="token keyword">static</span> <span class="token keyword">var</span> cout <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token builtin">Car</span><span class="token punctuation">.</span>cout <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function">getCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Int</span> <span class="token punctuation">{</span> cout <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">let</span> c0 <span class="token operator">=</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">let</span> c1 <span class="token operator">=</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">let</span> c2 <span class="token operator">=</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token builtin">Car</span><span class="token punctuation">.</span><span class="token function">getCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 3</span>
-</code></pre>
-<p><strong>self</strong></p>
-<ul>
-<li>在实例方法中代表实例对象</li>
-<li>在类型方法中代表类型</li>
-</ul>
-<ul>
-<li>在类型方法static func getCount中</li>
-<li>cout等价于self.cout、Car.self.cout、Car.cout</li>
-</ul>
-<h3 id="mutating"><a href="#mutating" class="headerlink" title="mutating"></a>mutating</h3><ul>
-<li>结构体和枚举是值类型，默认情况下，值类型的属性不能被自身的实例方法修改</li>
-<li>在<code>func</code>关键字前加<code>mutating</code>可以允许这种修改行为</li>
-</ul>
-<pre class=" language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token builtin">Point</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0.0</span>
-    <span class="token keyword">mutating</span> <span class="token keyword">func</span> <span class="token function">moveBy</span><span class="token punctuation">(</span>deltaX<span class="token punctuation">:</span> <span class="token builtin">Double</span><span class="token punctuation">,</span> deltaY<span class="token punctuation">:</span> <span class="token builtin">Double</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        x <span class="token operator">+</span><span class="token operator">=</span> deltaX
-        y <span class="token operator">+</span><span class="token operator">=</span> deltaY
-        <span class="token comment" spellcheck="true">// self = Point(x: x + deltaX, y: y + deltaY)</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<pre class=" language-swift"><code class="language-swift"><span class="token keyword">enum</span> <span class="token builtin">StateSwitch</span> <span class="token punctuation">{</span>
-    <span class="token keyword">case</span> low<span class="token punctuation">,</span> middle<span class="token punctuation">,</span> high  
-    <span class="token keyword">mutating</span> <span class="token keyword">func</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">switch</span> <span class="token keyword">self</span> <span class="token punctuation">{</span>
-        <span class="token keyword">case</span> <span class="token punctuation">.</span>low<span class="token punctuation">:</span>
-            <span class="token keyword">self</span> <span class="token operator">=</span> <span class="token punctuation">.</span>middle
-        <span class="token keyword">case</span> <span class="token punctuation">.</span>middle<span class="token punctuation">:</span>
-            <span class="token keyword">self</span> <span class="token operator">=</span> <span class="token punctuation">.</span>high
-        <span class="token keyword">case</span> <span class="token punctuation">.</span>high<span class="token punctuation">:</span>
-            <span class="token keyword">self</span> <span class="token operator">=</span> <span class="token punctuation">.</span>low
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h3 id="discardableResult"><a href="#discardableResult" class="headerlink" title="@discardableResult"></a>@discardableResult</h3><p>在func前面加个<code>@discardableResult</code>，可以消除：函数调用后返回值未被使用的警告⚠</p>
-<pre class=" language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token builtin">Point</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0.0</span>
-    @discardableResult <span class="token keyword">mutating</span>
-    <span class="token keyword">func</span> <span class="token function">moveX</span><span class="token punctuation">(</span>deltaX<span class="token punctuation">:</span> <span class="token builtin">Double</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">Double</span> <span class="token punctuation">{</span>
-        x <span class="token operator">+</span><span class="token operator">=</span> deltaX
-        <span class="token keyword">return</span> x
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token function">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-p<span class="token punctuation">.</span><span class="token function">moveX</span><span class="token punctuation">(</span>deltaX<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span>
-</code></pre>
-<pre><code>@discardableResult  
-func get() -&gt; Int {
-    return 10
+        <h3 id="一-Hello-Dart"><a href="#一-Hello-Dart" class="headerlink" title="一. Hello Dart"></a>一. Hello Dart</h3><h4 id="1-1-Hello-World"><a href="#1-1-Hello-World" class="headerlink" title="1.1. Hello World"></a>1.1. Hello World</h4><p>在VSCode中新建一个helloWorld.dart文件，添加下面的内容：</p>
+<pre><code>main(List&lt;String&gt; args) {
+  print(&#39;Hello World&#39;);
 }
-get()
+</code></pre><p>复制代码然后在终端执行<code>dart helloWorld.dart</code>，就能看到Hello World的结果了。</p>
+<ul>
+<li>VSCode快捷键<br>运行 <code>control+ option+ n</code><br>打开\关闭终端 <code>command + shift + y</code></li>
+</ul>
+<h4 id="1-2-程序的分析"><a href="#1-2-程序的分析" class="headerlink" title="1.2. 程序的分析"></a>1.2. 程序的分析</h4><ul>
+<li>一、Dart语言的入口也是<code>main</code>函数，并且必须显示的进行定义；</li>
+<li>二、Dart的入口函数<code>main</code>是没有返回值的；</li>
+<li>三、传递给<code>main</code>的命令行参数，是通过<code>List&lt;String&gt;</code>完成的。<br>从字面值就可以理解List是Dart中的集合类型。<br>其中的每一个<code>String</code>都表示传递给<code>main</code>的一个参数；</li>
+</ul>
+<ul>
+<li>四、定义字符串的时候，可以使用单引号或双引号；</li>
+<li>五、每行语句必须使用分号结尾，很多语言并不需要分号，比如Swift、JavaScript；</li>
+</ul>
+<h3 id="二-定义变量"><a href="#二-定义变量" class="headerlink" title="二. 定义变量"></a>二. 定义变量</h3><h4 id="2-1-明确声明-Explicit"><a href="#2-1-明确声明-Explicit" class="headerlink" title="2.1. 明确声明(Explicit)"></a>2.1. 明确声明(Explicit)</h4><p>明确声明变量的方式, 格式如下:</p>
+<pre><code>变量类型 变量名称 = 赋值;
+</code></pre><p>示例代码:</p>
+<pre><code>String name = &#39;codeTao&#39;;
+int age = 18;
+double height = 1.88;
+print(&#39;${name}, ${age}, ${height}&#39;); // 拼接方式后续会讲解
+</code></pre><p>注意事项: 定义的变量可以修改值, 但是不能赋值其他类型</p>
+<pre><code>String content = &#39;Hello Dart&#39;;
+content = &#39;Hello World&#39;; // 正确的
+content = 111; // 错误的, 将一个int值赋值给一个String变量
+</code></pre><h4 id="2-2-类型推导-Type-Inference"><a href="#2-2-类型推导-Type-Inference" class="headerlink" title="2.2. 类型推导(Type Inference)"></a>2.2. 类型推导(Type Inference)</h4><p>类型推导声明变量的方式, 格式如下:</p>
+<pre><code>var/dynamic/const/final 变量名称 = 赋值;
+</code></pre><h5 id="2-3-1-var的使用"><a href="#2-3-1-var的使用" class="headerlink" title="2.3.1. var的使用"></a>2.3.1. var的使用</h5><p>var的使用示例:</p>
+<ul>
+<li>runtimeType用于获取变量当前的类型</li>
+</ul>
+<pre><code>var name = &#39;codeTao&#39;;
+name = &#39;kobe&#39;;
+print(name.runtimeType); // String
+</code></pre><p>var的错误用法:</p>
+<pre><code>var age = 18;
+age = &#39;tao&#39;; // 不可以将String赋值给一个int类型
+</code></pre><h5 id="2-3-2-dynamic的使用"><a href="#2-3-2-dynamic的使用" class="headerlink" title="2.3.2. dynamic的使用"></a>2.3.2. dynamic的使用</h5><p>如果确实希望这样做,可以使用dynamic来声明变量:</p>
+<ul>
+<li>但是在开发中, 通常情况下不使用dynamic, 因为类型的变量会带来潜在的危险</li>
+</ul>
+<pre><code>dynamic name = &#39;codeTao&#39;;
+print(name.runtimeType); // String
+name = 18;
+print(name.runtimeType); // int
+</code></pre><p>#####2.3.3. final&amp;const的使用<br>final和const都是用于定义常量的, 也就是定义之后值都不可以修改</p>
+<pre><code>final name = &#39;codeTao&#39;;
+name = &#39;kobe&#39;; // 错误做法
+
+const age = 18;
+age = 20; // 错误做法
+</code></pre><p>final和const有什么区别呢?</p>
+<ul>
+<li>const在赋值时, 赋值的内容必须是在编译期间就确定下来的</li>
+<li>final在赋值时, 可以动态获取, 比如赋值一个函数</li>
+</ul>
+<pre><code>String getName() {
+  return &#39;codeTao&#39;;
+}
+
+main(List&lt;String&gt; args) {
+  const name = getName(); // 错误的做法, 因为要执行函数才能获取到值
+  final name = getName(); // 正确的做法
+}
+</code></pre><p>final和const小案例:</p>
+<ul>
+<li>首先, const是不可以赋值为DateTime.now()</li>
+<li>其次, final一旦被赋值后就有确定的结果, 不会再次赋值</li>
+</ul>
+<pre><code>// const time = DateTime.now(); // 错误的赋值方式
+final time = DateTime.now();
+print(time); // 2020-04-05 09:02:54.052626
+
+sleep(Duration(seconds: 2));
+print(time); // 2020-04-05 09:02:54.052626
+</code></pre><p>const放在赋值语句的右边，可以共享对象，提高性能:</p>
+<ul>
+<li>这里可以暂时先做了解，后面讲解类的常量构造函数时，我会再次提到这个概念</li>
+</ul>
+<pre><code>class Person {
+  const Person();
+}
+
+main(List&lt;String&gt; args) {
+  final a = const Person();
+  final b = const Person();
+  print(identical(a, b)); // true
+
+  final m = Person();
+  final n = Person();
+  print(identical(m, n)); // false
+}
+</code></pre><h3 id="三-数据类型"><a href="#三-数据类型" class="headerlink" title="三. 数据类型"></a>三. 数据类型</h3><h4 id="3-1-数字类型"><a href="#3-1-数字类型" class="headerlink" title="3.1.  数字类型"></a>3.1.  数字类型</h4><p>对于数值来说，我们也不用关心它是否有符号，以及数据的宽度和精度等问题。只要记着整数用<code>int</code>，浮点数用<code>double</code>就行了。<br>不过，要说明一下的是Dart中的<code>int</code>和<code>double</code>可表示的范围并不是固定的，它取决于运行Dart的平台。</p>
+<pre><code>// 1.整数类型int
+int age = 18;
+int hexAge = 0x12;
+print(age);
+print(hexAge);
+
+// 2.浮点类型double
+double height = 1.88;
+print(height);
+</code></pre><p>字符串和数字之间的转化:</p>
+<pre><code>// 字符串和数字转化
+// 1.字符串转数字
+var one = int.parse(&#39;111&#39;);
+var two = double.parse(&#39;12.22&#39;);
+print(&#39;${one} ${one.runtimeType}&#39;); // 111 int
+print(&#39;${two} ${two.runtimeType}&#39;); // 12.22 double
+
+// 2.数字转字符串
+var num1 = 123;
+var num2 = 123.456;
+var num1Str = num1.toString();
+var num2Str = num2.toString();
+var num2StrD = num2.toStringAsFixed(2); // 保留两位小数
+print(&#39;${num1Str} ${num1Str.runtimeType}&#39;); // 123 String
+print(&#39;${num2Str} ${num2Str.runtimeType}&#39;); // 123.456 String
+print(&#39;${num2StrD} ${num2StrD.runtimeType}&#39;); // 123.46 String
+</code></pre><h4 id="3-2-布尔类型"><a href="#3-2-布尔类型" class="headerlink" title="3.2. 布尔类型"></a>3.2. 布尔类型</h4><p>布尔类型中,Dart提供了一个bool的类型, 取值为true和false</p>
+<pre><code>// 布尔类型
+var isFlag = true;
+print(&#39;$isFlag ${isFlag.runtimeType}&#39;);
+</code></pre><p>注意: Dart中不能判断非0即真, 或者非空即真</p>
+<p>Dart的类型安全性意味着您不能使用if(非booleanvalue)或assert(非booleanvalue)之类的代码。</p>
+<pre><code>    var message = &#39;Hello Dart&#39;;
+  // 错误的写法
+  if (message) {
+    print(message)
+  }
+</code></pre><h4 id="3-3-字符串类型"><a href="#3-3-字符串类型" class="headerlink" title="3.3. 字符串类型"></a>3.3. 字符串类型</h4><p>Dart字符串是UTF-16编码单元的序列。您可以使用单引号或双引号创建一个字符串:</p>
+<pre><code>// 1.定义字符串的方式
+var s1 = &#39;Hello World&#39;;
+var s2 = &quot;Hello Dart&quot;;
+var s3 = &#39;Hello\&#39;Fullter&#39;;
+var s4 = &quot;Hello&#39;Fullter&quot;;
+</code></pre><p>可以使用三个单引号或者双引号表示多行字符串:</p>
+<pre><code>// 2.表示多行字符串的方式
+var message1 = &#39;&#39;&#39;
+哈哈哈
+呵呵呵
+嘿嘿嘿&#39;&#39;&#39;;
+</code></pre><p>字符串和其他变量或表达式拼接: 使用${expression}, 如果表达式是一个标识符, 那么{}可以省略</p>
+<pre><code>// 3.拼接其他变量
+var name = &#39;codeTao&#39;;
+var age = 18;
+var height = 1.88;
+print(&#39;my name is ${name}, age is $age, height is $height&#39;);
+</code></pre><h4 id="3-4-集合类型"><a href="#3-4-集合类型" class="headerlink" title="3.4. 集合类型"></a>3.4. 集合类型</h4><h5 id="3-4-1-集合类型的定义"><a href="#3-4-1-集合类型的定义" class="headerlink" title="3.4.1. 集合类型的定义"></a>3.4.1. 集合类型的定义</h5><p>对于集合类型，Dart则内置了最常用的三种：<code>List / Set / Map</code>。<br>其中，<code>List</code>可以这样来定义：</p>
+<pre><code>// List定义
+// 1.使用类型推导定义
+var letters = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;];
+print(&#39;$letters ${letters.runtimeType}&#39;);
+
+// 2.明确指定类型
+List&lt;int&gt; numbers = [1, 2, 3, 4];
+print(&#39;$numbers ${numbers.runtimeType}&#39;);
+</code></pre><p>其中，set可以这样来定义：</p>
+<ul>
+<li>其实，也就是把[]换成{}就好了。</li>
+<li>Set和List最大的两个不同就是：Set是无序的，并且元素是不重复的。</li>
+</ul>
+<pre><code>// Set的定义
+// 1.使用类型推导定义
+var lettersSet = {&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;};
+print(&#39;$lettersSet ${lettersSet.runtimeType}&#39;);
+
+// 2.明确指定类型
+Set&lt;int&gt; numbersSet = {1, 2, 3, 4};
+print(&#39;$numbersSet ${numbersSet.runtimeType}&#39;);
+</code></pre><p>最后，<code>Map</code>是我们常说的字典类型，它的定义是这样的：</p>
+<pre><code>// Map的定义
+// 1.使用类型推导定义
+var infoMap1 = {&#39;name&#39;: &#39;tao&#39;, &#39;age&#39;: 18};
+print(&#39;$infoMap1 ${infoMap1.runtimeType}&#39;);
+
+// 2.明确指定类型
+Map&lt;String, Object&gt; infoMap2 = {&#39;height&#39;: 1.88, &#39;address&#39;: &#39;北京市&#39;};
+print(&#39;$infoMap2 ${infoMap2.runtimeType}&#39;);
+</code></pre><h5 id="3-4-2-集合的常见操作"><a href="#3-4-2-集合的常见操作" class="headerlink" title="3.4.2. 集合的常见操作"></a>3.4.2. 集合的常见操作</h5><p>了解了这三个集合的定义方式之后，我们来看一些最基础的公共操作<br>第一类，是所有集合都支持的获取长度的属性length：</p>
+<pre><code>// 获取集合的长度
+print(letters.length);
+print(lettersSet.length);
+print(infoMap1.length);
+</code></pre><p>第二类, 是添加/删除/包含操作</p>
+<ul>
+<li>并且，对<code>List</code>来说，由于元素是有序的，它还提供了一个删除指定索引位置上元素的方法</li>
+</ul>
+<pre><code>// 添加/删除/包含元素
+numbers.add(5);
+numbersSet.add(5);
+print(&#39;$numbers $numbersSet&#39;);
+
+numbers.remove(1);
+numbersSet.remove(1);
+print(&#39;$numbers $numbersSet&#39;);
+
+print(numbers.contains(2));
+print(numbersSet.contains(2));
+
+// List根据index删除元素
+numbers.removeAt(3);
+print(&#39;$numbers&#39;);
+</code></pre><p>第三类，是<code>Map</code>的操作</p>
+<ul>
+<li>由于它有key和value，因此无论是读取值，还是操作，都要明确是基于key的，还是基于value的，或者是基于key/value对的。</li>
+</ul>
+<pre><code>// Map的操作
+// 1.根据key获取value
+print(infoMap1[&#39;name&#39;]); // tao
+
+// 2.获取所有的entries
+print(&#39;${infoMap1.entries} ${infoMap1.entries.runtimeType}&#39;); // (MapEntry(name: tao), MapEntry(age: 18)) MappedIterable&lt;String, MapEntry&lt;String, Object&gt;&gt;
+
+// 3.获取所有的keys
+print(&#39;${infoMap1.keys} ${infoMap1.keys.runtimeType}&#39;); // (name, age) _CompactIterable&lt;String&gt;
+
+// 4.获取所有的values
+print(&#39;${infoMap1.values} ${infoMap1.values.runtimeType}&#39;); // (tao, 18) _CompactIterable&lt;Object&gt;
+
+// 5.判断是否包含某个key或者value
+print(&#39;${infoMap1.containsKey(&#39;age&#39;)} ${infoMap1.containsValue(18)}&#39;); // true true
+
+// 6.根据key删除元素
+infoMap1.remove(&#39;age&#39;);
+print(&#39;${infoMap1}&#39;); // {name: tao}
+</code></pre><h3 id="四-函数"><a href="#四-函数" class="headerlink" title="四. 函数"></a>四. 函数</h3><h4 id="4-1-函数的基本定义"><a href="#4-1-函数的基本定义" class="headerlink" title="4.1. 函数的基本定义"></a>4.1. 函数的基本定义</h4><p>Dart是一种真正的面向对象语言，所以即使函数也是对象，所有也有类型, 类型就是Function。<br>这也就意味着函数可以作为变量定义或者作为其他函数的参数或者返回值.<br>函数的定义方式:</p>
+<pre><code>返回值 函数的名称(参数列表) {
+  函数体
+  return 返回值
+}
+</code></pre><p>按照上面的定义方式, 我们定义一个完整的函数:</p>
+<pre><code>int sum(num num1, num num2) {
+  return num1 + num2;
+}
+</code></pre><p><code>Effective Dart</code>建议对公共的API, 使用类型注解, 但是如果我们省略掉了类型, 依然是可以正常工作的</p>
+<pre><code>sum(num1, num2) {
+  return num1 + num2;
+}
+</code></pre><p>另外, 如果函数中只有一个表达式, 那么可以使用箭头语法(arrow syntax)</p>
+<ul>
+<li>注意, 这里面只能是一个表达式, 不能是一个语句</li>
+</ul>
+<pre><code>sum(num1, num2) =&gt; num1 + num2;
+</code></pre><h4 id="4-2-函数的参数问题"><a href="#4-2-函数的参数问题" class="headerlink" title="4.2. 函数的参数问题"></a>4.2. 函数的参数问题</h4><blockquote>
+<p>函数的参数可以分成两类: 必须参数和可选参数<br>前面使用的参数都是必须参数.</p>
+</blockquote>
+<h5 id="4-2-1-可选参数"><a href="#4-2-1-可选参数" class="headerlink" title="4.2.1. 可选参数"></a>4.2.1. 可选参数</h5><p>可选参数可以分为 命名可选参数 和 位置可选参数<br>定义方式:</p>
+<pre><code>命名可选参数: {param1, param2, ...}
+位置可选参数: [param1, param2, ...]
+</code></pre><p>命名可选参数的演示:</p>
+<pre><code>// 命名可选参数
+printInfo1(String name, {int age, double height}) {
+  print(&#39;name=$name age=$age height=$height&#39;);
+}
+
+// 调用printInfo1函数
+printInfo1(&#39;tao&#39;); // name=tao age=null height=null
+printInfo1(&#39;tao&#39;, age: 18); // name=tao age=18 height=null
+printInfo1(&#39;tao&#39;, age: 18, height: 1.88); // name=tao age=18 height=1.88
+printInfo1(&#39;tao&#39;, height: 1.88); // name=tao age=null height=1.88
+</code></pre><p>位置可选参数的演示:</p>
+<pre><code>// 定义位置可选参数
+printInfo2(String name, [int age, double height]) {
+  print(&#39;name=$name age=$age height=$height&#39;);
+}
+
+// 调用printInfo2函数
+printInfo2(&#39;tao&#39;); // name=tao age=null height=null
+printInfo2(&#39;tao&#39;, 18); // name=tao age=18 height=null
+printInfo2(&#39;tao&#39;, 18, 1.88); // name=tao age=18 height=1.88
+</code></pre><p>命名可选参数, 可以指定某个参数是必传的(使用@required, 有问题)</p>
+<pre><code>// 命名可选参数的必须
+printInfo3(String name, {int age, double height, @required String address}) {
+  print(&#39;name=$name age=$age height=$height address=$address&#39;);
+}
+</code></pre><h5 id="4-2-2-参数默认值"><a href="#4-2-2-参数默认值" class="headerlink" title="4.2.2. 参数默认值"></a>4.2.2. 参数默认值</h5><p>参数可以有默认值, 在不传入的情况下, 使用默认值</p>
+<ul>
+<li>注意, 只有可选参数才可以有默认值, 必须参数不能有默认值</li>
+</ul>
+<pre><code>// 参数的默认值
+printInfo4(String name, {int age = 18, double height=1.88}) {
+  print(&#39;name=$name age=$age height=$height&#39;);
+}
+</code></pre><p>Dart中的main函数就是一个接受可选的列表参数作为参数的, 所以在使用main函数时, 我们可以传入参数, 也可以不传入</p>
+<h4 id="4-3-函数是一等公民"><a href="#4-3-函数是一等公民" class="headerlink" title="4.3. 函数是一等公民"></a>4.3. 函数是一等公民</h4><p>在很多语言中, 函数并不能作为一等公民来使用, 比如Java/OC. 这种限制让编程不够灵活, 所以现代的编程语言基本都支持函数作为一等公民来使用, Dart也支持.</p>
+<p>这就意味着你可以将函数赋值给一个变量, 也可以将函数作为另外一个函数的参数或者返回值来使用.</p>
+<pre><code>main(List&lt;String&gt; args) {
+  // 1.将函数赋值给一个变量
+  var bar = foo;
+  print(bar);
+
+  // 2.将函数作为另一个函数的参数
+  test(foo);
+
+  // 3.将函数作为另一个函数的返回值
+  var func =getFunc();
+  func(&#39;kobe&#39;);
+}
+
+// 1.定义一个函数
+foo(String name) {
+  print(&#39;传入的name:$name&#39;);
+}
+
+// 2.将函数作为另外一个函数的参数
+test(Function func) {
+  func(&#39;codeTao&#39;);
+}
+
+// 3.将函数作为另一个函数的返回值
+getFunc() {
+  return foo;
+}
+</code></pre><h5 id="4-4-匿名函数的使用"><a href="#4-4-匿名函数的使用" class="headerlink" title="4.4. 匿名函数的使用"></a>4.4. 匿名函数的使用</h5><p>大部分我们定义的函数都会有自己的名字， 比如前面定义的foo、test函数等等。</p>
+<p>但是某些情况下，给函数命名太麻烦了，我们可以使用没有名字的函数，这种函数可以被称之为匿名函数( anonymous function)，也可以叫lambda或者closure。</p>
+<pre><code>main(List&lt;String&gt; args) {
+  // 1.定义数组
+  var movies = [&#39;盗梦空间&#39;, &#39;星际穿越&#39;, &#39;少年派&#39;, &#39;大话西游&#39;];
+
+  // 2.使用forEach遍历: 有名字的函数
+  printElement(item) {
+    print(item);
+  }
+  movies.forEach(printElement);
+
+  // 3.使用forEach遍历: 匿名函数
+  movies.forEach((item) {
+    print(item);
+  });
+  movies.forEach((item) =&gt; print(item));
+}
+</code></pre><h4 id="4-5-词法作用域"><a href="#4-5-词法作用域" class="headerlink" title="4.5. 词法作用域"></a>4.5. 词法作用域</h4><p>dart中的词法有自己明确的作用域范围，它是根据代码的结构({})来决定作用域范围的</p>
+<p>优先使用自己作用域中的变量，如果没有找到，则一层层向外查找。</p>
+<pre><code>var name = &#39;global&#39;;
+main(List&lt;String&gt; args) {
+  // var name = &#39;main&#39;;
+  void foo() {
+    // var name = &#39;foo&#39;;
+    print(name);
+  }
+
+  foo();
+}
+</code></pre><h4 id="4-6-词法闭包"><a href="#4-6-词法闭包" class="headerlink" title="4.6. 词法闭包"></a>4.6. 词法闭包</h4><p>闭包可以访问其词法范围内的变量，即使函数在其他地方被使用，也可以正常的访问。</p>
+<pre><code>main(List&lt;String&gt; args) {
+  makeAdder(num addBy) {
+    return (num i) {
+      return i + addBy;
+    };
+  }
+
+  var adder2 = makeAdder(2);
+  print(adder2(10)); // 12
+  print(adder2(6)); // 8
+
+  var adder5 = makeAdder(5);
+  print(adder5(10)); // 15
+  print(adder5(6)); // 11
+}
+</code></pre><h4 id="4-7-返回值问题"><a href="#4-7-返回值问题" class="headerlink" title="4.7. 返回值问题"></a>4.7. 返回值问题</h4><p>所有函数都返回一个值。如果没有指定返回值，则语句返回null;隐式附加到函数体。</p>
+<pre><code>main(List&lt;String&gt; args) {
+  print(foo()); // null
+}
+
+foo() {
+  print(&#39;foo function&#39;);
+}
 </code></pre>
         
     
@@ -651,21 +952,13 @@ get()
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2020/06/03/Swift5-1-10-下标/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2020/06/02/Swift5-1-8-属性/" id="post_nav-older" class="next-content">
+        <a href="/2020/06/16/Flutter-02-Mac环境搭建Flurrer问题解决/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
