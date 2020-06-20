@@ -50,7 +50,7 @@
     
     <title>
         
-            归档 | 
+            [Flutter] 06-Flutter的网络请求 | 
         
         codeTao
     </title>
@@ -61,7 +61,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",Flutter">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -88,6 +88,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-dune-light.min.css?ZfnESUNClnkZBE6Ec0djTA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -224,7 +227,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="codeTao">
-    <meta name="msapplication-starturl" content="http://yoursite.com/archives/page/3/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/06/20/Flutter-06-Flutter的网络请求/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="codeTao">
@@ -239,13 +242,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/archives/page/3/">
+    <meta property="og:url" content="http://yoursite.com/2020/06/20/Flutter-06-Flutter的网络请求/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档 | codeTao">
+    <meta property="og:title" content="[Flutter] 06-Flutter的网络请求 | codeTao">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="Flutter"> 
 
+    
+        <meta property="article:published_time" content="Sat Jun 20 2020 15:08:33 GMT+0800">
+        <meta property="article:modified_time" content="Sat Jun 20 2020 15:18:11 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -253,13 +259,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/page/3/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2020/06/20/Flutter-06-Flutter的网络请求/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2020/06/20/Flutter-06-Flutter的网络请求/index.html",
+    "headline": "[Flutter] 06-Flutter的网络请求",
+    "datePublished": "Sat Jun 20 2020 15:08:33 GMT+0800",
+    "dateModified": "Sat Jun 20 2020 15:18:11 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "codeTao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar2.png"
+        },
+        "description": "路上有多长 修行有多远 花叶融一钵 香积云外天"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "codeTao",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",Flutter",
+    "description": "",
+}
+</script>
 
 
     
@@ -302,655 +338,426 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一-网络请求的方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">一. 网络请求的方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-HttpClient"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.1. HttpClient</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-http库"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">1.2. http库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-dio三方库"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">1.3. dio三方库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4-dio库的封装"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">1.4. dio库的封装</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/06/04/Swift5-1-14-协议/">[Swift5.1] 14-协议</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/06/04/Swift5-1-14-协议/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar2.png" width="44px" height="44px" alt="codeTao's avatar">
-            </div>
-            <div>
-                <strong>codeTao</strong>
-                <span>6月 04, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/iOS笔记/">iOS笔记</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/06/04/Swift5-1-13-可选链/">[Swift5.1] 13-可选链</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-可选链（Optional Chaining）
-
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/06/04/Swift5-1-13-可选链/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar2.png" width="44px" height="44px" alt="codeTao's avatar">
-            </div>
-            <div>
-                <strong>codeTao</strong>
-                <span>6月 04, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/iOS笔记/">iOS笔记</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/06/04/Swift5-1-12-初始化/">[Swift5.1] 12-初始化</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            初始化器
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/06/04/Swift5-1-12-初始化/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar2.png" width="44px" height="44px" alt="codeTao's avatar">
-            </div>
-            <div>
-                <strong>codeTao</strong>
-                <span>6月 04, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/iOS笔记/">iOS笔记</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/06/03/Swift5-1-11-继承/">[Swift5.1] 11-继承</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/06/03/Swift5-1-11-继承/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar2.png" width="44px" height="44px" alt="codeTao's avatar">
-            </div>
-            <div>
-                <strong>codeTao</strong>
-                <span>6月 03, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/iOS笔记/">iOS笔记</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/06/03/Swift5-1-10-下标/">[Swift5.1] 10-下标</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/06/03/Swift5-1-10-下标/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar2.png" width="44px" height="44px" alt="codeTao's avatar">
-            </div>
-            <div>
-                <strong>codeTao</strong>
-                <span>6月 03, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/iOS笔记/">iOS笔记</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/06/03/Swift5-1-9-方法/">[Swift5.1] 9-方法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/06/03/Swift5-1-9-方法/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar2.png" width="44px" height="44px" alt="codeTao's avatar">
-            </div>
-            <div>
-                <strong>codeTao</strong>
-                <span>6月 03, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/iOS笔记/">iOS笔记</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/06/02/Swift5-1-8-属性/">[Swift5.1] 8-属性</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            属性Swift中跟...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/06/02/Swift5-1-8-属性/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar2.png" width="44px" height="44px" alt="codeTao's avatar">
-            </div>
-            <div>
-                <strong>codeTao</strong>
-                <span>6月 02, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/iOS笔记/">iOS笔记</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/06/02/Swift5-1-7-闭包/">[Swift5.1] 7-闭包</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/06/02/Swift5-1-7-闭包/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar2.png" width="44px" height="44px" alt="codeTao's avatar">
-            </div>
-            <div>
-                <strong>codeTao</strong>
-                <span>6月 02, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/iOS笔记/">iOS笔记</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/06/01/Swift5-1-6-结构体和类/">[Swift5.1] 6-结构体和类</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            结构体在 S...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/06/01/Swift5-1-6-结构体和类/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar2.png" width="44px" height="44px" alt="codeTao's avatar">
-            </div>
-            <div>
-                <strong>codeTao</strong>
-                <span>6月 01, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/iOS笔记/">iOS笔记</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/06/01/Swift5-1-5-可选项/">[Swift5.1] 5-可选项</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/06/01/Swift5-1-5-可选项/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar2.png" width="44px" height="44px" alt="codeTao's avatar">
-            </div>
-            <div>
-                <strong>codeTao</strong>
-                <span>6月 01, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/iOS笔记/">iOS笔记</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/archives/page/2/"><button aria-label="Last page" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/10/">10</a><a class="extend next" rel="next" href="/archives/page/4/"><button aria-label="Next page" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                [Flutter] 06-Flutter的网络请求
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar2.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>codeTao</strong>
+        <span>6月 20, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Flutter/">Flutter</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[Flutter] 06-Flutter的网络请求&url=http://yoursite.com/2020/06/20/Flutter-06-Flutter的网络请求/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[Flutter] 06-Flutter的网络请求&url=http://yoursite.com/2020/06/20/Flutter-06-Flutter的网络请求/index.html&via=codeTao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/20/Flutter-06-Flutter的网络请求/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/20/Flutter-06-Flutter的网络请求/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=[Flutter] 06-Flutter的网络请求&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/06/20/Flutter-06-Flutter的网络请求/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>我们项目中展示的大部分数据都是来自服务器，我们需要向服务器请求数据，并且对他们进行解析展示。向服务器发出请求就需要用到网络请求相关的知识。</p>
+</blockquote>
+<h2 id="一-网络请求的方式"><a href="#一-网络请求的方式" class="headerlink" title="一. 网络请求的方式"></a>一. 网络请求的方式</h2><blockquote>
+<p>在Flutter中常见的网络请求方式有三种：HttpClient、http库、dio库；</p>
+</blockquote>
+<h3 id="1-1-HttpClient"><a href="#1-1-HttpClient" class="headerlink" title="1.1. HttpClient"></a>1.1. HttpClient</h3><p>HttpClient是dart自带的请求类，在io包中，实现了基本的网络请求相关的操作。<br>需要导入httpClient包，import ‘dart:convert’;  和 import ‘dart:io’ ;</p>
+<p>网络调用通常遵循如下步骤：</p>
+<ol>
+<li>创建 client.</li>
+<li>构造 Uri.</li>
+<li>发起请求, 等待请求，同时您也可以配置请求headers、 body。</li>
+<li>关闭请求, 等待响应.</li>
+<li>解码响应的内容.</li>
+</ol>
+<p>网络请求实例：</p>
+<pre><code>import &#39;dart:convert&#39;;
+import &#39;dart:io&#39;;
+
+main(List&lt;String&gt; args) {
+  requestNetwork();
+}
+
+void requestNetwork() async {
+  // 1.创建HttpClient对象
+  final httpClient = HttpClient();
+
+  // 2.构建请求的uri
+  final uri = Uri.parse(&quot;http://123.207.32.32:8000/api/v1/recommend&quot;);
+
+  // 3.构建请求
+  final request = await httpClient.getUrl(uri);
+
+  // 4.发送请求，必须
+  final response = await request.close();
+  if (response.statusCode == HttpStatus.ok) {
+    print(await response.transform(utf8.decoder).join());
+  } else {
+    print(response.statusCode);
+  }
+}
+</code></pre><p>OK，其实HttpClient也可以发送post相关的请求，我们这里就不再演练。</p>
+<p>HttpClient虽然可以发送正常的网络请求，但是会暴露过多的细节：</p>
+<ul>
+<li>比如需要主动关闭request请求，拿到数据后也需要手动的进行字符串解码</li>
+</ul>
+<p>在开发中，我们一般很多直接面向HttpClient进行网络请求，而是使用一些库来完成。</p>
+<h3 id="1-2-http库"><a href="#1-2-http库" class="headerlink" title="1.2. http库"></a>1.2. http库</h3><p>http 是 Dart 官方提供的另一个网络请求类，相比于 HttpClient，易用性提升了不少。</p>
+<p>但是，没有默认集成到Dart的SDK中，所以我们需要先在pubspec中依赖它：</p>
+<pre><code>  http: ^0.12.0+2
+</code></pre><p>导入并且使用即可</p>
+<pre><code>import &#39;package:http/http.dart&#39; as http;
+
+void httpNetwork() async {
+  // 1.创建Client
+  final client = http.Client();
+
+  // 2.构建uri
+  final url = Uri.parse(&quot;http://123.207.32.32:8000/api/v1/recommend&quot;);
+
+  // 3.发送请求
+  final response = await client.get(url);
+
+  // 4.获取结果
+  if (response.statusCode == HttpStatus.ok) {
+    print(response.body);
+  } else {
+    print(response.statusCode);
+  }
+}
+</code></pre><h3 id="1-3-dio三方库"><a href="#1-3-dio三方库" class="headerlink" title="1.3. dio三方库"></a>1.3. dio三方库</h3><p>官方提供的HttpClient和http都可以正常的发送网络请求，但是对于现代的应用程序开发来说，我们通常要求的东西会更多：比如拦截器、取消请求、文件上传/下载、超时设置等等；</p>
+<p>这个时候，我们可以使用一个在Flutter中非常流行的三方库：dio；</p>
+<p>官网有对dio进行解释：</p>
+<blockquote>
+<p>dio是一个强大的Dart Http请求库，支持Restful API、FormData、拦截器、请求取消、Cookie管理、文件上传/下载、超时、自定义适配器等…</p>
+</blockquote>
+<p>使用dio三方库必然也需要先在pubspec中依赖它：</p>
+<pre><code>  dio: ^3.0.1
+</code></pre><p>代码演练：</p>
+<pre><code>import &#39;package:dio/dio.dart&#39;;
+
+void dioNetwork() async {
+  // 1.创建Dio请求对象
+  final dio = Dio();
+
+  // 2.发送网络请求
+  final response = await dio.get(&quot;&quot;);
+
+  // 3.打印请求结果
+  if (response.statusCode == HttpStatus.ok) {
+    print(response.data);
+  } else {
+    print(&quot;请求失败：${response.statusCode}&quot;);
+  }
+}
+</code></pre><h3 id="1-4-dio库的封装"><a href="#1-4-dio库的封装" class="headerlink" title="1.4. dio库的封装"></a>1.4. dio库的封装</h3><p>http_config.dart</p>
+<pre><code>class HTTPConfig {
+  static const baseURL = &quot;https://httpbin.org&quot;;
+  static const timeout = 5000;
+}
+</code></pre><p>http_request.dart</p>
+<pre><code>import &#39;package:dio/dio.dart&#39;;
+import &#39;package:testflutter001/service/config.dart&#39;;
+
+class HttpRequest {
+  static final BaseOptions options = BaseOptions(
+      baseUrl: HTTPConfig.baseURL, connectTimeout: HTTPConfig.timeout);
+  static final Dio dio = Dio(options);
+
+  static Future&lt;T&gt; request&lt;T&gt;(String url,
+      {String method = &#39;get&#39;, Map&lt;String, dynamic&gt; params, Interceptor inter}) async {
+    // 1.请求的单独配置
+    final options = Options(method: method);
+
+    // 2.添加第一个拦截器
+    Interceptor dInter = InterceptorsWrapper(
+      onRequest: (RequestOptions options) {
+        // 1.在进行任何网络请求的时候, 可以添加一个loading显示
+
+        // 2.很多页面的访问必须要求携带Token,那么就可以在这里判断是有Token
+
+        // 3.对参数进行一些处理,比如序列化处理等
+        print(&quot;拦截了请求&quot;);
+        return options;
+      },
+      onResponse: (Response response) {
+        print(&quot;拦截了响应&quot;);
+        return response;
+      },
+      onError: (DioError error) {
+        print(&quot;拦截了错误&quot;);
+        return error;
+      }
+    );
+    List&lt;Interceptor&gt; inters = [dInter];
+    if (inter != null) {
+      inters.add(inter);
+    }
+    dio.interceptors.addAll(inters);
+
+    // 3.发送网络请求
+    try {
+      Response response = await dio.request&lt;T&gt;(url, queryParameters: params, options: options);
+      return response.data;
+    } on DioError catch(e) {
+      return Future.error(e);
+    }
+  }
+}
+</code></pre><p>代码使用：</p>
+<pre><code>HttpRequest.request(&quot;https://httpbin.org/get&quot;, params: {&quot;name&quot;: &quot;tao&quot;, &#39;age&#39;: 18}).then((res) {
+  print(res);
+});
+
+HttpRequest.request(&quot;https://httpbin.org/post&quot;,
+                    method: &quot;post&quot;, params: {&quot;name&quot;: &quot;tao&quot;, &#39;age&#39;: 18}).then((res) {
+  print(res);
+});
+</code></pre>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script src="/js/md5.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '831359b6ab3a9f127d1b',
+            clientSecret: '0022bff5442e5f0135eeddf065b6d72eff9f5ae3',
+            repo: 'honkerSK.github.io',
+            owner: 'honkerSK',
+            admin: ['honkerSK'],
+            // facebook-like distraction free mode
+            id: md5(location.pathname),
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2020/06/19/Flutter-05-Dart中异步/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -1303,6 +1110,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -1315,6 +1126,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
