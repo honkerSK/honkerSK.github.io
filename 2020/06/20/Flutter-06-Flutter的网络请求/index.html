@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Sat Jun 20 2020 15:08:33 GMT+0800">
-        <meta property="article:modified_time" content="Sat Jun 20 2020 15:18:11 GMT+0800">
+        <meta property="article:modified_time" content="Sat Jun 20 2020 23:41:24 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2020/06/20/Flutter-06-Flutter的网络请求/index.html",
     "headline": "[Flutter] 06-Flutter的网络请求",
     "datePublished": "Sat Jun 20 2020 15:08:33 GMT+0800",
-    "dateModified": "Sat Jun 20 2020 15:18:11 GMT+0800",
+    "dateModified": "Sat Jun 20 2020 23:41:24 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "codeTao",
@@ -574,7 +574,7 @@ void requestNetwork() async {
 <ul>
 <li>比如需要主动关闭request请求，拿到数据后也需要手动的进行字符串解码</li>
 </ul>
-<p>在开发中，我们一般很多直接面向HttpClient进行网络请求，而是使用一些库来完成。</p>
+<p>在开发中，我们一般很少直接面向HttpClient进行网络请求，而是使用一些库来完成。</p>
 <h3 id="1-2-http库"><a href="#1-2-http库" class="headerlink" title="1.2. http库"></a>1.2. http库</h3><p>http 是 Dart 官方提供的另一个网络请求类，相比于 HttpClient，易用性提升了不少。</p>
 <p>但是，没有默认集成到Dart的SDK中，所以我们需要先在pubspec中依赖它：</p>
 <pre><code>  http: ^0.12.0+2
@@ -739,6 +739,14 @@ HttpRequest.request(&quot;https://httpbin.org/post&quot;,
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2020/06/21/Flutter-07-Flutter中反序列化Json/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
@@ -837,7 +845,7 @@ HttpRequest.request(&quot;https://httpbin.org/post&quot;,
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">30</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">31</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -855,7 +863,7 @@ HttpRequest.request(&quot;https://httpbin.org/post&quot;,
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">40</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">40</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -889,7 +897,7 @@ HttpRequest.request(&quot;https://httpbin.org/post&quot;,
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">96</span>
+                <span class="sidebar-badge">97</span>
             </a>
         </li>
         

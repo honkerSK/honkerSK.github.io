@@ -50,7 +50,7 @@
     
     <title>
         
-            KVC官方文档-键值编码指南第二部分1 | 
+            [Flutter] 07-Flutter中反序列化Json | 
         
         codeTao
     </title>
@@ -61,7 +61,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",文档翻译">
+    <meta name="keywords" content=",Flutter">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -227,7 +227,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="codeTao">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分1/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/06/21/Flutter-07-Flutter中反序列化Json/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="codeTao">
@@ -242,16 +242,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分1/">
+    <meta property="og:url" content="http://yoursite.com/2020/06/21/Flutter-07-Flutter中反序列化Json/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="KVC官方文档-键值编码指南第二部分1 | codeTao">
+    <meta property="og:title" content="[Flutter] 07-Flutter中反序列化Json | codeTao">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="文档翻译"> 
+    <meta property="og:article:tag" content="Flutter"> 
 
     
-        <meta property="article:published_time" content="Tue Sep 18 2018 16:04:33 GMT+0800">
-        <meta property="article:modified_time" content="Fri Nov 16 2018 15:30:37 GMT+0800">
+        <meta property="article:published_time" content="Sun Jun 21 2020 00:47:39 GMT+0800">
+        <meta property="article:modified_time" content="Sun Jun 21 2020 00:48:35 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分1/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2020/06/21/Flutter-07-Flutter中反序列化Json/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -271,10 +271,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分1/index.html",
-    "headline": "KVC官方文档-键值编码指南第二部分1",
-    "datePublished": "Tue Sep 18 2018 16:04:33 GMT+0800",
-    "dateModified": "Fri Nov 16 2018 15:30:37 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2020/06/21/Flutter-07-Flutter中反序列化Json/index.html",
+    "headline": "[Flutter] 07-Flutter中反序列化Json",
+    "datePublished": "Sun Jun 21 2020 00:47:39 GMT+0800",
+    "dateModified": "Sun Jun 21 2020 00:48:35 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "codeTao",
@@ -292,7 +292,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": ",文档翻译",
+    "keywords": ",Flutter",
     "description": "",
 }
 </script>
@@ -367,7 +367,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Key-Value-Coding-Fundamatals–Accessing-Object-Properties"><span class="post-toc-number">1.</span> <span class="post-toc-text">Key-Value Coding Fundamatals–Accessing Object Properties</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#访问对象属性"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">访问对象属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用Keys-和-Key-Paths标识对象的属性"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">使用Keys 和 Key Paths标识对象的属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用键获取属性值"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">使用键获取属性值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用键设置属性值"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">使用键设置属性值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用键简化对象访问"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">使用键简化对象访问</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-简单map"><span class="post-toc-number">1.</span> <span class="post-toc-text">一 简单map</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-分析的Json数据"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1) 分析的Json数据**</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-与Json结构对应的Model类"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2) 与Json结构对应的Model类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-请求数据并反序列化"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3) 请求数据并反序列化</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-Map含有简单List结构"><span class="post-toc-number">2.</span> <span class="post-toc-text">二. Map含有简单List结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-分析的Json数据-1"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1) 分析的Json数据</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-与Json结构对应的Model类-1"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2) 与Json结构对应的Model类</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-Map含有简单Map嵌套结构"><span class="post-toc-number">3.</span> <span class="post-toc-text">三 Map含有简单Map嵌套结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-分析的Json数据-2"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1) 分析的Json数据</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-与Json结构对应的Model类-2"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2) 与Json结构对应的Model类</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-Map含有对象列表的嵌套结构"><span class="post-toc-number">4.</span> <span class="post-toc-text">四 Map含有对象列表的嵌套结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-分析的Json数据-3"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1) 分析的Json数据</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-与Json结构对应的Model类-3"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">2) 与Json结构对应的Model类</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五-map列表"><span class="post-toc-number">5.</span> <span class="post-toc-text">五 map列表</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-分析的Json数据-4"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">1) 分析的Json数据</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-与Json结构对应的Model类-4"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">2) 与Json结构对应的Model类</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六-复杂的嵌套结构"><span class="post-toc-number">6.</span> <span class="post-toc-text">六 复杂的嵌套结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-分析的Json数据-5"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">1) 分析的Json数据</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-与Json结构对应的Model类-5"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">2) 与Json结构对应的Model类</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#七-手动Json转Model优缺点"><span class="post-toc-number">7.</span> <span class="post-toc-text">七 手动Json转Model优缺点:</span></a></li></ol>
     </ul>
     
 
@@ -399,7 +399,7 @@
         
     
             <p class="article-headline-p">
-                KVC官方文档-键值编码指南第二部分1
+                [Flutter] 07-Flutter中反序列化Json
             </p>
         </div>
 
@@ -418,7 +418,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>codeTao</strong>
-        <span>9月 18, 2018</span>
+        <span>6月 21, 2020</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -442,7 +442,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/文档翻译/">文档翻译</a>
+        <a class="post_tag-link" href="/tags/Flutter/">Flutter</a>
     </ul>
     
 
@@ -470,7 +470,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=KVC官方文档-键值编码指南第二部分1&url=http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分1/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[Flutter] 07-Flutter中反序列化Json&url=http://yoursite.com/2020/06/21/Flutter-07-Flutter中反序列化Json/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -479,7 +479,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=KVC官方文档-键值编码指南第二部分1&url=http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分1/index.html&via=codeTao" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[Flutter] 07-Flutter中反序列化Json&url=http://yoursite.com/2020/06/21/Flutter-07-Flutter中反序列化Json/index.html&via=codeTao" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -488,7 +488,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分1/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/21/Flutter-07-Flutter中反序列化Json/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -497,7 +497,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分1/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/21/Flutter-07-Flutter中反序列化Json/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -509,7 +509,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=KVC官方文档-键值编码指南第二部分1&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/18/KVC官方文档-键值编码指南第二部分1/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=[Flutter] 07-Flutter中反序列化Json&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/06/21/Flutter-07-Flutter中反序列化Json/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -529,96 +529,405 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <blockquote>
-<p>Key-Value Coding Programming Guide 官方文档第二部分第1节<br>2018.9.20 第一次修正 </p>
+<p>由于Flutter中禁用运行时反射，所以如果项目简单的话可以考虑手动JSON 反序列化，如果你的项目很复杂的话，可以考虑官方建议的 <a href="https://pub.dartlang.org/packages/json_serializable" target="_blank" rel="noopener">json_serializable</a> 代码生成器库。<br>在本文中，我们主要讨论对象反序列化，即如何将服务器端返回的字符串数据转化为对象, 其他的Json转Model方式在下章讨论。</p>
 </blockquote>
-<p><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/BasicPrinciples.html#//apple_ref/doc/uid/20002170-BAJEAIEE" target="_blank" rel="noopener">iOS-KVC官方文档第二部分第1节</a></p>
-<h1 id="Key-Value-Coding-Fundamatals–Accessing-Object-Properties"><a href="#Key-Value-Coding-Fundamatals–Accessing-Object-Properties" class="headerlink" title="Key-Value Coding Fundamatals–Accessing Object Properties"></a>Key-Value Coding Fundamatals–Accessing Object Properties</h1><blockquote>
-<p>键值编码基础– 访问对象属性</p>
-</blockquote>
-<h2 id="访问对象属性"><a href="#访问对象属性" class="headerlink" title="访问对象属性"></a>访问对象属性</h2><p>对象通常在其接口声明中指定属性, 这些属性属于以下几种类别之一:</p>
 <ul>
-<li><p><strong>属性</strong>. 指简单值, 例如标量(<code>scalars</code>)、字符串或布尔值。值对象(如<code>NSNumber</code>)和其他不可变类型(如<code>NSColor</code>) 也被视为属性。</p>
-</li>
-<li><p><strong>一对一关系</strong>. 指具有自己属性的可变对象。对象的属性可以在对象本身不变的情况下更改。例如，银行帐户对象(bank account object)可能具有owner属性，该属性是Person对象的实例，该Person对象具有address属性。owner的address可能会更改，而不会更改银行帐户持有的owner。银行帐户的owner没有变更。只有Person的address 发生改变。</p>
-</li>
-<li><p><strong>一对多关系</strong>. 指集合对象。你通常使用<code>NSArray</code>或<code>NSSet</code>保存此类集合的实例，但也可以使用自定义集合类。</p>
-</li>
+<li>首先先要了解什么是序列化和反序列化?</li>
 </ul>
-<p>清单 2-1中声明的<code>BankAccount</code>对象演示了每种类型的属性。</p>
-<p><strong>清单 2-1</strong><code>BankAccount</code>对象的属性</p>
-<pre class=" language-objc"><code class="language-objc">@interface BankAccount : NSObject
-
-@property (nonatomic) NSNumber* currentBalance;              // An attribute
-@property (nonatomic) Person* owner;                         // A to-one relation
-@property (nonatomic) NSArray<Transaction*>* transactions;   // A to-many relation
-
-@end
-</code></pre>
-<p>为了保持封装，对象通常为其接口上的属性提供访问器方法。对象的作者可以显式地编写这些方法，也可以依赖编译器自动合成它们。无论哪种方式，使用这些访问器之一的代码的作者必须在编译之前将属性名称写入代码中。访问器方法的名称成为使用它的代码的静态部分。例如，给定清单2-1中声明的BankAccount对象，编译器会合成一个可以为myAccount实例调用的setter ：</p>
-<pre class=" language-objc"><code class="language-objc">[myAccount setCurrentBalance:@(100.0)];
-</code></pre>
-<p>这是直接的，但缺乏灵活性。另一方面，符合键值编码的对象提供了使用字符串标识符访问对象属性的更通用机制。</p>
-<h3 id="使用Keys-和-Key-Paths标识对象的属性"><a href="#使用Keys-和-Key-Paths标识对象的属性" class="headerlink" title="使用Keys 和 Key Paths标识对象的属性"></a>使用Keys 和 Key Paths标识对象的属性</h3><p>键(<code>key</code>)是标识特定属性的字符串。通常, 按照惯例, 表示属性的键(<code>key</code>)是代码中显示的属性名。键(<code>key</code>)必须使用 <code>ASCII</code> 编码, 不能包含空格, 并且通常以小写字母开头 (尽管有例外, 如在许多类中的<code>URL</code>属性)。</p>
-<p>由于清单 2-1中的<code>BankAccount</code>类是符合键值编码的, 所以它能识别键(即它的属性的名称)<code>owner</code>、<code>currentBalance</code>和<code>transactions</code> 。您也可以通过其键来设置值, 而不是调用<code>setCurrentBalance:</code>方法:</p>
-<pre class=" language-objc"><code class="language-objc">[myAccount setValue:@(100.0) forKey:@"currentBalance"];
-</code></pre>
-<p>实际上, 您可以使用不同的键参数通过相同方法来设置myAccount对象的所有属性。因为参数是字符串类型, 所以它可以在运行时操作变量。</p>
-<p>键路径<code>Key path</code>是一个用点操作符<code>.</code>来分隔键的字符串, 用于指定要遍历的对象属性序列。序列中第一个键的属性是相对于接收者的, 每个后续键相对于上一个属性的值进行计算。键路径(<code>Key path</code>)对于使用单个方法深入调用对象的层次结构很有用。</p>
-<p>例如, 应用于银行帐户实例的键路径<code>owner.address.street</code>是指存储在银行帐户所有者地址中的街道字符串的值, 假设<code>Person</code>和<code>Address</code>类也符合的键值编码。</p>
-<blockquote>
-<p>注意<br>在 Swift 中, 您可以使用<code>#keyPath</code>表达式, 而不是使用字符串来指示键或键路径。这提供了编译时检查的优点, 详见<em><a href="https://developer.apple.com/documentation/swift#2984801" target="_blank" rel="noopener">Using Swift with Cocoa and Objective-C (Swift 4.2)</a> </em>中的<em><a href="https://developer.apple.com/documentation/swift#2984801" target="_blank" rel="noopener">Keys and Key Paths</a></em>章节。</p>
-</blockquote>
-<h3 id="使用键获取属性值"><a href="#使用键获取属性值" class="headerlink" title="使用键获取属性值"></a>使用键获取属性值</h3><p>对象在遵循<code>NSKeyValueCoding</code>协议时符合键值编码。继承自的对象（<a href="https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.5/Reference/Frameworks/ObjC/Foundation/Classes/NSObject/Description.html#//apple_ref/occ/cl/NSObject" target="_blank" rel="noopener"><code>NSObject</code></a>提供协议的基本方法的默认实现）会自动采用此协议的某些默认行为。这样的对象至少实现了以下基于键的基本getter：</p>
+<p>把对象转换为字节序列的过程称为<code>对象的序列化</code>；<br>把字节序列恢复为对象的过程称为<code>对象的反序列化</code>。</p>
+<p>接下来我们看下几种Json格式,如何反序列化的:</p>
+<h3 id="一-简单map"><a href="#一-简单map" class="headerlink" title="一 简单map"></a>一 简单map</h3><h4 id="1-分析的Json数据"><a href="#1-分析的Json数据" class="headerlink" title="1) 分析的Json数据**"></a>1) 分析的Json数据**</h4><p><strong>分析要诀:</strong></p>
 <ul>
-<li><p><a href="https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.5/Reference/Frameworks/ObjC/EOF/EOControl/Classes/NSObjectAdditions/Description.html#//apple_ref/occ/instm/NSObject/valueForKey:" target="_blank" rel="noopener"><code>valueForKey:</code></a> - 返回由key参数指定的属性的值。如果根据<a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/SearchImplementation.html#//apple_ref/doc/uid/20000955-CJBBBFFA" target="_blank" rel="noopener">访问者搜索模式中</a>描述的规则无法找到key命名的属性，则该对象会向自身发送<a href="https://developer.apple.com/documentation/objectivec/nsobject/1413457-value" target="_blank" rel="noopener"><code>valueForUndefinedKey:</code></a>消息。<a href="https://developer.apple.com/documentation/objectivec/nsobject/1413457-value" target="_blank" rel="noopener"><code>valueForUndefinedKey:</code></a>引发的默认实现抛出<code>NSUndefinedKeyException</code>异常，但是子类可以覆盖此方法并更优雅地处理这种情况。</p>
-</li>
-<li><p><a href="https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.5/Reference/Frameworks/ObjC/EOF/EOControl/Classes/NSObjectAdditions/Description.html#//apple_ref/occ/instm/NSObject/valueForKeyPath:" target="_blank" rel="noopener"><code>valueForKeyPath:</code></a> - 返回相对于接收器的指定键路径的值。keyPath序列中的任何对象都不符合特定key的键值编码 - 即，默认实现<code>valueForKey:</code>无法找到访问器方法 - -那么就会接收<a href="https://developer.apple.com/documentation/objectivec/nsobject/1413457-value" target="_blank" rel="noopener"><code>valueForUndefinedKey:</code></a>消息。</p>
-</li>
-<li><p><a href="https://developer.apple.com/documentation/objectivec/nsobject/1411319-dictionarywithvalues" target="_blank" rel="noopener"><code>dictionaryWithValuesForKeys:</code></a> - 返回相对于接收器的一组键所对应的值。该方法为数组中的每个键调用<code>valueForKey:</code>。返回的<code>NSDictionary</code>包含数组中所有键的值。</p>
-</li>
+<li>1&gt; Json中用花括号是 Map，用方括号是 List。</li>
+<li>2&gt; 对于嵌套结构，首先创建类和构造函数，然后从底层添加工厂方法。</li>
 </ul>
-<blockquote>
-<p>注意<br>集合对象 (如<code>NSArray</code>、 <code>NSSet</code>和<code>NSDictionary</code>) 不能包含nil的值。而是使用NSNull对象表示nil值。NSNull提供一个表示对象属性的nil值的单个实例。<code>dictionaryWithValuesForKeys:</code>的默认实现和相关的<code>setValuesForKeysWithDictionary:</code>会在NSNull (在字典参数中) 和nil(在存储的属性中)之间进行自动转换 。</p>
-</blockquote>
-<p>当您使用KeyPath来寻址属性时, 如果键路径中的最后一个键是一对多关系 (即引用集合), 则在多对键的右侧,返回的值是一个包含键的所有值的集合。例如, 请求键路径 “<code>transactions.payee</code>“ 的值返回包含所有<code>transaction</code>对象中<code>payee</code>对象的数组。这也适用于KeyPath中的多个数组。KeyPath <code>accounts.transactions.payee</code>返回一个数组，其中包含所有帐户中所有交易的所有收款人对象。</p>
-<h3 id="使用键设置属性值"><a href="#使用键设置属性值" class="headerlink" title="使用键设置属性值"></a>使用键设置属性值</h3><p>与 <code>getter</code>一样, 符合键值编码的对象也提供了一小组通用setter，其默认行为基于以下<code>NSKeyValueCoding</code>协议的实现<a href="https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.5/Reference/Frameworks/ObjC/Foundation/Classes/NSObject/Description.html#//apple_ref/occ/cl/NSObject" target="_blank" rel="noopener"><code>NSObject</code></a>:</p>
-<ul>
-<li><a href="https://developer.apple.com/documentation/objectivec/nsobject/1415969-setvalue" target="_blank" rel="noopener"><code>setValue:forKey:</code></a> - 将指定键设置为给定值。<code>setValue:forKey:</code>的默认实现会自动对表示标量和结构体的<code>NSNumber</code>和<code>NSValue</code>对象执行<code>解包</code>操作，并将它们设置到相应的属性中。有关包装(warp)和解包(unwarp)语义的详细信息，请参阅<a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/DataTypes.html#//apple_ref/doc/uid/20002171-BAJEAIEE" target="_blank" rel="noopener">Representing Non-Object Values</a>。</li>
-</ul>
-<p>如果接收<code>setter</code>调用的对象中没有对应指定键的属性，该对象将给自己发送一个<code>[setValue:forUndefinedKey:]</code>消息。<code>setValue:forUndefinedKey:</code>的默认实现将抛出<code>NSUndefinedKeyException</code>异常。但是, 子类可以重写此方法以自定义方式处理请求。</p>
-<ul>
-<li><p><code>setValue:forKeyPath:</code> 在相对于接收者的指定键路径上设置给定值。键路径序列中指定键所对应的对象如果不是键值编码兼容的，将会收到<code>setValue:forUndefinedKey:</code>消息。</p>
-</li>
-<li><p><code>setValuesForKeysWithDictionary:</code> 将指定字典中的值设置到接收者的属性中, 使用字典键标识属性。默认实现调用每个键值对的<code>setValue:forKey:</code> , 根据需要用<code>nil</code>替换<code>NSNull</code>对象。</p>
-</li>
-</ul>
-<p>在默认实现中, 当您尝试将非对象属性设置为<code>nil</code>值时, 符合键值编码兼容对象将自己发送一个<code>setNilValueForKey:</code>消息。<code>setNilValueForKey:</code>的默认实现将抛出<code>[NSInvalidArgumentException]</code>异常, 但对象可以重写此方法以替换默认值或标记值, 详见<em>处理非对象值</em>。</p>
-<h3 id="使用键简化对象访问"><a href="#使用键简化对象访问" class="headerlink" title="使用键简化对象访问"></a>使用键简化对象访问</h3><p>想知道基于key的 <code>getter</code> 和 <code>setter</code> 如何简化代码, 请查看下面的示例。在 macOS 中, <code>NSTableView</code>和<code>NSOutlineView</code>对象的标识符字符串与每个它们的列相关联。如果表的模型对象不是符合键值编码的, 则表的数据源方法将强制检查每个列标识符, 依次查找要返回的正确属性, 如清单 2-2所示。此外, 在将来, 当您向模型中添加另一个属性时, 在本例中为<code>Person</code> 对象, 还必须重新访问数据源方法, 添加另一个条件来测试新属性并返回相关值.</p>
-<p>清单 2-2 不基于键值编码的数据源方法的实现</p>
-<pre class=" language-objc"><code class="language-objc">- (id)tableView:(NSTableView *)tableview objectValueForTableColumn:(id)column row:(NSInteger)row {
-    id result = nil;
-    Person *person = [self.people objectAtIndex:row];
+<p>student.json 代码如下:</p>
+<pre><code>{
+  &quot;id&quot;:&quot;123456&quot;,
+  &quot;name&quot;:&quot;codeTao&quot;,
+  &quot;score&quot; : 99
+}
+</code></pre><p>该Json数据很明显是一个Map结构，可以创建一个Student类，通过factory构造方法来反序列化。</p>
+<h4 id="2-与Json结构对应的Model类"><a href="#2-与Json结构对应的Model类" class="headerlink" title="2) 与Json结构对应的Model类"></a>2) 与Json结构对应的Model类</h4><p>student_model.dart 文件代码如下:</p>
+<pre><code>class Student{
+  String studentId;
+  String studentName;
+  int studentScores;
 
-    if ([[column identifier] isEqualToString:@"name"]) {
-        result = [person name];
-    } else if ([[column identifier] isEqualToString:@"age"]) {
-        result = @([person age]);  // Wrap age, a scalar, as an NSNumber
-    } else if ([[column identifier] isEqualToString:@"favoriteColor"]) {
-        result = [person favoriteColor];
-    } // And so on...
+  Student({
+    this.studentId,
+    this.studentName,
+    this.studentScores
+});
 
-    return result;
+  factory Student.fromJson(Map&lt;String, dynamic&gt; parsedJson){
+    return Student(
+      studentId: parsedJson[&#39;id&#39;],
+      studentName : parsedJson[&#39;name&#39;],
+      studentScores : parsedJson [&#39;score&#39;]
+    );
+  }
+}
+</code></pre><p>注意: fromJson 方法中的参数是一个 Map&lt;String, dynamic&gt; ，这意味着直到运行时我们才知道值的类型。</p>
+<h4 id="3-请求数据并反序列化"><a href="#3-请求数据并反序列化" class="headerlink" title="3) 请求数据并反序列化"></a>3) 请求数据并反序列化</h4><p>student_services.dart 中请求数据, 并解析json, 最后调用 Student.fromJson 来反序列化，从 Student 对象中获取值。代码如下:</p>
+<pre><code>//1.import 导入相关文件
+import &#39;dart:async&#39; show Future;
+import &#39;package:flutter/services.dart&#39; show rootBundle;
+import &#39;dart:convert&#39;;
+import &#39;package:parsing_json_demo/model/student_model.dart&#39;; // 导入模型文件
+
+//2.加载 Json Asset
+Future&lt;String&gt; _loadAStudentAsset() async {
+  return await rootBundle.loadString(&#39;assets/student.json&#39;);
 }
 
-</code></pre>
-<p>另一方面,清单 2-3展示了相同数据源的方法的一个更紧凑的实现, 该数据源方法使用的是键值编码兼容的<code>Person</code>对象。仅使用<code>valueForKey:</code> getter, 数据源方法将使用列标识符作为键返回适当的值。除了更短的时间外, 它还更通用, 因为在以后添加新列时, 只要列标识符始终与模型对象的属性名称匹配, 它就会继续保持不变。</p>
-<p>清单 2-3基于键值编码的数据源方法的实现</p>
-<pre class=" language-objc"><code class="language-objc">- (id)tableView:(NSTableView *)tableview objectValueForTableColumn:(id)column row:(NSInteger)row {
-    return [[self.people objectAtIndex:row] valueForKey:[column identifier]];
+//3. 加载响应数据
+Future loadStudent() async {
+  //从 assets 中加载原始 json 字符串
+  String jsonString = await _loadAStudentAsset();
+  //解析 json 字符串
+  final jsonResponse = json.decode(jsonString);
+  //通过调用 Student.fromJson 方法反序列化解析的 json，以便可以使用 Student 对象来访问数据
+  Student student = new Student.fromJson(jsonResponse);
+  //Student 类里打印了 studentScores
+  print(&quot;student.studentScores= ${student.studentScores}&quot;);
 }
-</code></pre>
+</code></pre><ul>
+<li><p>在这项目中，所有 json 文件放在 assets 文件夹下，所以我们必须这样加载 json。你也可以进行网络调用，网络调用不在这篇文章的讨论范围内。</p>
+</li>
+<li><p>使用Flutter内置的<code>dart:convert</code>库Json解码器<code>json.decode()</code> 来实现，该方法可以根据 Json 字符串具体内容将其转为 List 或 Map。</p>
+</li>
+</ul>
+<p>注意：请记住上面<code>请求数据并反序列化</code>的 3 个步骤，接下来 json 解析都会用到（只更改文件名和方法名），我不会再重复书写该代码。但你可以在示例项目中查看所有内容。</p>
+<h3 id="二-Map含有简单List结构"><a href="#二-Map含有简单List结构" class="headerlink" title="二. Map含有简单List结构"></a>二. Map含有简单List结构</h3><h4 id="1-分析的Json数据-1"><a href="#1-分析的Json数据-1" class="headerlink" title="1) 分析的Json数据"></a>1) 分析的Json数据</h4><pre><code>{
+  &quot;city&quot;: &quot;广州&quot;,
+  &quot;streets&quot;: [
+    &quot;北京路&quot;,
+    &quot;上下九街&quot;
+  ]
+}
+</code></pre><ul>
+<li>该数据是一个含有 <code>List&lt;String&gt;</code>的Map</li>
+</ul>
+<h4 id="2-与Json结构对应的Model类-1"><a href="#2-与Json结构对应的Model类-1" class="headerlink" title="2) 与Json结构对应的Model类"></a>2) 与Json结构对应的Model类</h4><pre><code>class Address {
+  final String city;
+  final List&lt;String&gt; streets;
+
+  Address({
+    this.city,
+    this.streets
+  });
+
+  factory Address.fromJson(Map&lt;String, dynamic&gt; parsedJson) {
+    var streetsFromJson  = parsedJson[&#39;streets&#39;];
+    print(streetsFromJson.runtimeType); //List&lt;dynamic&gt;
+    // 显式地转换成 List&lt;String&gt;
+    // List&lt;String&gt; streetsList = new List&lt;String&gt;.from(streetsFromJson);
+    List&lt;String&gt; streetsList = streetsFromJson.cast&lt;String&gt;();
+
+    return new Address(
+      city: parsedJson[&#39;city&#39;],
+      streets: streetsList,
+    );
+  }
+}
+</code></pre><h3 id="三-Map含有简单Map嵌套结构"><a href="#三-Map含有简单Map嵌套结构" class="headerlink" title="三 Map含有简单Map嵌套结构"></a>三 Map含有简单Map嵌套结构</h3><h4 id="1-分析的Json数据-2"><a href="#1-分析的Json数据-2" class="headerlink" title="1) 分析的Json数据"></a>1) 分析的Json数据</h4><pre><code>{
+  &quot;shape_name&quot;:&quot;rectangle&quot;,
+  &quot;property&quot;:{
+    &quot;width&quot;:5.0,
+    &quot;height&quot;:10.0
+  }
+}
+</code></pre><h4 id="2-与Json结构对应的Model类-2"><a href="#2-与Json结构对应的Model类-2" class="headerlink" title="2) 与Json结构对应的Model类"></a>2) 与Json结构对应的Model类</h4><pre><code>class Shape{
+  String shapeName;
+  Property property;
+
+  Shape({
+    this.shapeName,
+    this.property
+  });
+
+  factory Shape.fromJson(Map&lt;String, dynamic&gt; parsedJson){
+    return Shape(
+      shapeName: parsedJson[&#39;shape_name&#39;],
+      property: Property.fromJson(parsedJson[&#39;property&#39;])
+    );
+  }
+}
+
+class Property{
+  double width;
+  double height;
+
+  Property({
+    this.width,
+    this.height
+  });
+
+  factory Property.fromJson(Map&lt;String, dynamic&gt; json){
+    return Property(
+      width: json[&#39;width&#39;],
+      height: json[&#39;height&#39;]
+    );
+  }
+}
+</code></pre><h3 id="四-Map含有对象列表的嵌套结构"><a href="#四-Map含有对象列表的嵌套结构" class="headerlink" title="四 Map含有对象列表的嵌套结构"></a>四 Map含有对象列表的嵌套结构</h3><h4 id="1-分析的Json数据-3"><a href="#1-分析的Json数据-3" class="headerlink" title="1) 分析的Json数据"></a>1) 分析的Json数据</h4><pre><code>{
+  &quot;id&quot;:1,
+  &quot;name&quot;:&quot;盒装牛奶&quot;,
+  &quot;images&quot;:[
+    {
+      &quot;id&quot;:11,
+      &quot;imageName&quot;:&quot;telunsu.png&quot;
+    },
+    {
+      &quot;id&quot;:22,
+      &quot;imageName&quot;:&quot;wahaha.png&quot;
+    }
+  ]
+}
+</code></pre><ul>
+<li>Map含有 对象列表 的嵌套结构</li>
+</ul>
+<h4 id="2-与Json结构对应的Model类-3"><a href="#2-与Json结构对应的Model类-3" class="headerlink" title="2) 与Json结构对应的Model类"></a>2) 与Json结构对应的Model类</h4><pre><code>class Product {
+  final int id;
+  final String name;
+  final List&lt;Image&gt; images;
+
+  Product({this.id, this.name, this.images});
+
+  factory Product.fromJson(Map&lt;String, dynamic&gt; parsedJson){
+    var list = parsedJson[&#39;images&#39;] as List;
+    print(list.runtimeType); //List&lt;dynamic&gt;
+    List&lt;Image&gt; imagesList = list.map((i) =&gt; Image.fromJson(i)).toList();
+    //print(imagesList.runtimeType); // map操作后imagesList类型为 &#39;MappedListIterable&lt;dynamic, Image&gt;
+    //不转化为List&lt;Image&gt;就会报错: Unhandled Exception: type &#39;MappedListIterable&lt;dynamic, Image&gt;&#39; is not a subtype of type &#39;List&lt;Image&gt;&#39;
+
+    return Product(
+      id: parsedJson[&#39;id&#39;],
+      name: parsedJson[&#39;name&#39;],
+      images: imagesList
+    );
+  }
+}
+
+class Image {
+  final int imageId;
+  final String imageName;
+
+  Image({this.imageId, this.imageName});
+
+  factory Image.fromJson(Map&lt;String, dynamic&gt; parsedJson){
+   return Image(
+     imageId:parsedJson[&#39;id&#39;],
+     imageName:parsedJson[&#39;imageName&#39;]
+   );
+  }
+}
+</code></pre><p>其中 <code>List&lt;Image&gt; imagesList = list.map((i) =&gt; Image.fromJson(i)).toList();</code><br>list 在这里是一个 List。现在我们通过调用 Image.fromJson 遍历整个列表，并把 list 中的每个对象映射到 Image 中，然后我们将每个 map 对象放入一个带有 toList() 的新列表中，并将它存储在 List<image> imagesList。</image></p>
+<h3 id="五-map列表"><a href="#五-map列表" class="headerlink" title="五 map列表"></a>五 map列表</h3><h4 id="1-分析的Json数据-4"><a href="#1-分析的Json数据-4" class="headerlink" title="1) 分析的Json数据"></a>1) 分析的Json数据</h4><pre><code>[
+  {
+    &quot;albumId&quot;: 1,
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;美丽的小径&quot;,
+    &quot;url&quot;: &quot;http://b.zol-img.com.cn/sjbizhi/images/11/640x1136/1592364145769.jpg&quot;,
+    &quot;thumbnailUrl&quot;: &quot;http://b.zol-img.com.cn/sjbizhi/images/11/480x800/1592364145769.jpg&quot;
+  },
+  {
+    &quot;albumId&quot;: 1,
+    &quot;id&quot;: 2,
+    &quot;title&quot;: &quot;小朋友说，别笑，我在办公呢？&quot;,
+    &quot;url&quot;: &quot;http://b.zol-img.com.cn/sjbizhi/images/11/640x1136/1592366115586.jpg&quot;,
+    &quot;thumbnailUrl&quot;: &quot;http://b.zol-img.com.cn/sjbizhi/images/11/480x800/1592366115586.jpg&quot;
+  },
+  {
+    &quot;albumId&quot;: 1,
+    &quot;id&quot;: 3,
+    &quot;title&quot;: &quot;豪华跑车&quot;,
+    &quot;url&quot;: &quot;http://sjbz.fd.zol-img.com.cn/t_s640x1136c/g3/M08/0E/0B/ChMlWF7oPRuIcWdWABs0s8RzN5wAAU0PwJXf0sAGzTL604.jpg&quot;,
+    &quot;thumbnailUrl&quot;: &quot;http://sjbz.fd.zol-img.com.cn/t_s480x800c/g3/M08/0E/0B/ChMlWF7oPRuIcWdWABs0s8RzN5wAAU0PwJXf0sAGzTL604.jpg&quot;
+  }
+]
+</code></pre><h4 id="2-与Json结构对应的Model类-4"><a href="#2-与Json结构对应的Model类-4" class="headerlink" title="2) 与Json结构对应的Model类"></a>2) 与Json结构对应的Model类</h4><pre><code>class PhotosList {
+  final List&lt;Photo&gt; photos;
+
+  PhotosList({
+    this.photos,
+});
+
+  factory PhotosList.fromJson(List&lt;dynamic&gt; parsedJson) {
+
+    List&lt;Photo&gt; photos = new List&lt;Photo&gt;();
+    photos = parsedJson.map((i)=&gt;Photo.fromJson(i)).toList();
+
+    return new PhotosList(
+      photos: photos
+    );
+  }
+}
+
+class Photo{
+  final String id;
+  final String title;
+  final String url;
+
+  Photo({
+    this.id,
+    this.url,
+    this.title
+}) ;
+
+  factory Photo.fromJson(Map&lt;String, dynamic&gt; json){
+    return new Photo(
+      id: json[&#39;id&#39;].toString(),
+      title: json[&#39;title&#39;],
+      url: json[&#39;json&#39;],
+    );
+  }
+}
+</code></pre><h3 id="六-复杂的嵌套结构"><a href="#六-复杂的嵌套结构" class="headerlink" title="六 复杂的嵌套结构"></a>六 复杂的嵌套结构</h3><h4 id="1-分析的Json数据-5"><a href="#1-分析的Json数据-5" class="headerlink" title="1) 分析的Json数据"></a>1) 分析的Json数据</h4><pre><code>{
+  &quot;page&quot;: 1,
+  &quot;per_page&quot;: 3,
+  &quot;total&quot;: 12,
+  &quot;total_pages&quot;: 4,
+  &quot;author&quot;:{
+    &quot;name&quot;: &quot;CodeTao&quot;
+  },
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;name&quot;: &quot;Harry&quot;,
+      &quot;avatar&quot;: &quot;https://upload-images.jianshu.io/upload_images/126164-be76091e050f0605.png&quot;,
+      &quot;images&quot;: [
+        {
+          &quot;id&quot; : 22,
+          &quot;imageName&quot;: &quot;aaa.jpeg&quot;
+        },
+        {
+          &quot;id&quot; : 23,
+          &quot;imageName&quot;: &quot;bbb.jpeg&quot;
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;name&quot;: &quot;Jame&quot;,
+      &quot;avatar&quot;: &quot;https://upload-images.jianshu.io/upload_images/126164-be76091e050f0605.png&quot;,
+      &quot;images&quot;: [
+        {
+          &quot;id&quot; : 33,
+          &quot;imageName&quot;: &quot;ccc.jpeg&quot;
+        },
+        {
+          &quot;id&quot; : 34,
+          &quot;imageName&quot;: &quot;ddd.jpeg&quot;
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: 3,
+      &quot;name&quot;: &quot;Henry&quot;,
+      &quot;avatar&quot;: &quot;https://upload-images.jianshu.io/upload_images/126164-be76091e050f0605.png&quot;,
+      &quot;images&quot;: [
+        {
+          &quot;id&quot; : 44,
+          &quot;imageName&quot;: &quot;eee.jpeg&quot;
+        },
+        {
+          &quot;id&quot; : 45,
+          &quot;imageName&quot;: &quot;fff.jpeg&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre><h4 id="2-与Json结构对应的Model类-5"><a href="#2-与Json结构对应的Model类-5" class="headerlink" title="2) 与Json结构对应的Model类"></a>2) 与Json结构对应的Model类</h4><pre><code>class Page{
+  int page;
+  int perPage;
+  int total;
+  int totalPages;
+  Author author;
+  List&lt;Data&gt; data;
+
+  Page({
+    this.page,
+    this.perPage,
+    this.total,
+    this.totalPages, this.author, this.data});
+
+  factory Page.fromJson(Map&lt;String, dynamic&gt; parsedJson){
+
+    var list = parsedJson[&#39;data&#39;] as List;
+    List&lt;Data&gt; data = list.map((i) =&gt; Data.fromJson(i)).toList();
+
+    return Page(
+        page: parsedJson[&#39;page&#39;],
+        perPage: parsedJson[&#39;per_page&#39;],
+        total: parsedJson[&#39;total&#39;],
+        totalPages: parsedJson[&#39;total_pages&#39;],
+        author: Author.fromJson(parsedJson[&#39;author&#39;]),
+        data: data
+    );
+  }
+}
+
+
+class Author{
+  String name;
+
+  Author({this.name});
+
+  factory Author.fromJson(Map&lt;String, dynamic&gt; parsedJson){
+    return Author(
+      name: parsedJson[&#39;name&#39;],
+    );
+  }
+}
+
+class Data{
+  int id;
+  String name; // add others
+  List&lt;Image&gt; imagesList;
+
+  Data({
+    this.id, this.name, this.imagesList
+});
+
+  factory Data.fromJson(Map&lt;String, dynamic&gt; parsedJson){
+
+    var list = parsedJson[&#39;images&#39;] as List;
+    List&lt;Image&gt; images = list.map((i) =&gt; Image.fromJson(i)).toList();
+
+    return Data(
+        id: parsedJson[&#39;id&#39;],
+        name: parsedJson[&#39;name&#39;],
+        imagesList: images
+    );
+  }
+}
+
+class Image{
+  int id;
+  String imageName;
+
+  Image({
+  this.id, this.imageName
+
+  });
+
+  factory Image.fromJson(Map&lt;String, dynamic&gt; parsedJson){
+    return Image(
+        id: parsedJson[&#39;id&#39;],
+        imageName : parsedJson[&#39;imageName&#39;],
+    );
+  }
+
+}
+</code></pre><h3 id="七-手动Json转Model优缺点"><a href="#七-手动Json转Model优缺点" class="headerlink" title="七 手动Json转Model优缺点:"></a>七 手动Json转Model优缺点:</h3><ul>
+<li>优点：完全是自己可控的，并且需要哪些字段就转化哪些字段，对于不需要的，忽略即可；并且继承关系也会一目了然</li>
+<li>缺点：麻烦，并且容易出错</li>
+</ul>
 <blockquote>
-<p>由于笔者水平有限，文中如果有错误的地方，或者有更好的方法，还望大神指出。<br>附上本文的所有 demo 下载链接，<a href="">【GitHub】</a>。<br>如果你看完后觉得对你有所帮助，还望在 GitHub 上点个 star。赠人玫瑰，手有余香。</p>
+<p>由于笔者水平有限，文中如果有错误的地方，或者有更好的方法，还望大神指出。<br>附上本文的所有 demo 下载链接，<a href="https://github.com/honkerSK/SKFlutterDemo.git" target="_blank" rel="noopener">【GitHub】</a>。<br>如果你看完后觉得对你有所帮助，还望在 GitHub 上点个 star。赠人玫瑰，手有余香。</p>
 </blockquote>
 
         
@@ -673,21 +982,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/18/KVC官方文档-键值编码指南第二部分2/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/18/KVC官方文档-键值编码指南第一部分/" id="post_nav-older" class="next-content">
+        <a href="/2020/06/20/Flutter-06-Flutter的网络请求/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
