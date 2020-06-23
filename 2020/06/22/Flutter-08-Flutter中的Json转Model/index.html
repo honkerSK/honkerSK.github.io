@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Mon Jun 22 2020 01:14:39 GMT+0800">
-        <meta property="article:modified_time" content="Mon Jun 22 2020 01:20:06 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jun 23 2020 17:05:23 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2020/06/22/Flutter-08-Flutter中的Json转Model/index.html",
     "headline": "[Flutter] 08-Flutter中的Json转Model",
     "datePublished": "Mon Jun 22 2020 01:14:39 GMT+0800",
-    "dateModified": "Mon Jun 22 2020 01:20:06 GMT+0800",
+    "dateModified": "Tue Jun 23 2020 17:05:23 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "codeTao",
@@ -367,7 +367,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-手动转化"><span class="post-toc-number">1.</span> <span class="post-toc-text">一. 手动转化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-json-serializable"><span class="post-toc-number">2.</span> <span class="post-toc-text">二. json_serializable</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第1步：添加相关的依赖"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">第1步：添加相关的依赖</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第2步：以json-serializable-的方式创建模型类"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">第2步：以json_serializable 的方式创建模型类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第3步：生成对应的-g-dart文件指令"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">第3步：生成对应的.g.dart文件指令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第4步：测试并打印"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">第4步：测试并打印</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-网页转换"><span class="post-toc-number">3.</span> <span class="post-toc-text">三. 网页转换</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四-编辑器插件"><span class="post-toc-number"></span> <span class="post-toc-text">四. 编辑器插件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Json转Model几种方式总结"><span class="post-toc-number">1.</span> <span class="post-toc-text">Json转Model几种方式总结:</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-手动转化"><span class="post-toc-number">1.</span> <span class="post-toc-text">一. 手动转化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-json-serializable"><span class="post-toc-number">2.</span> <span class="post-toc-text">二. json_serializable</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第1步：添加相关的依赖"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">第1步：添加相关的依赖</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第2步：以json-serializable-的方式创建模型类"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">第2步：以json_serializable 的方式创建模型类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第3步：生成对应的-g-dart文件指令"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">第3步：生成对应的.g.dart文件指令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第4步：测试并打印"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">第4步：测试并打印</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-网页转换"><span class="post-toc-number">3.</span> <span class="post-toc-text">三. 网页转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-编辑器插件"><span class="post-toc-number">4.</span> <span class="post-toc-text">四. 编辑器插件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Json转Model几种方式总结"><span class="post-toc-number">5.</span> <span class="post-toc-text">Json转Model几种方式总结:</span></a></li></ol>
     </ul>
     
 
@@ -532,7 +532,7 @@
 <p>背景: 在开发中，服务端通常返回Json数据，我们需要将Json数据转模型对象来使用。一般情况下，我们会使用一些第三方库来动态转化Model，但是Flutter中没有像Java的Gson/Jackson这类Json序列化类库，因为Flutter中禁用运行时反射。官方解释是运行时反射会干扰Dart的<code>tree shaking</code>，使用<code>tree shaking</code>可以在release版中去除未使用的代码，这可以显著优化应用程序的大小。由于反射会默认应用到所有代码，因此<code>tree shaking</code>会很难工作，因为在启用反射时很难知道哪些代码未被使用，因此冗余代码很难剥离，所以Flutter中禁用了Dart的反射功能，而正因如此也就无法实现动态转化Model的功能。</p>
 </blockquote>
 <p>在此基础上，接下来我们看下Flutter中还有哪几种Json转模型的方式:</p>
-<h3 id="一-手动转化"><a href="#一-手动转化" class="headerlink" title="一. 手动转化"></a>一. 手动转化</h3><p>在<a href="https://honkersk.github.io/2020/06/21/Flutter-07-Flutter中反序列化Json/" target="_blank" rel="noopener">上篇</a>已经通过6个示例分析过了, 这里不再讨论。</p>
+<h3 id="一-手动转化"><a href="#一-手动转化" class="headerlink" title="一. 手动转化"></a>一. 手动转化</h3><p>在上篇 <a href="https://honkersk.github.io/2020/06/21/Flutter-07-Flutter中反序列化Json/" target="_blank" rel="noopener">[Flutter] 07-Flutter中反序列化Json</a>已经通过6个示例分析过了, 这里不再讨论。</p>
 <h3 id="二-json-serializable"><a href="#二-json-serializable" class="headerlink" title="二. json_serializable"></a>二. json_serializable</h3><p><a href="https://pub.dartlang.org/packages/json_serializable" target="_blank" rel="noopener">json_serializable</a>是dart官方推荐和提供的JSON转Model的方式：</p>
 <ul>
 <li>一个自动化源代码生成器来为你生成 JSON 序列化数据模板；</li>
@@ -677,7 +677,7 @@ print(user);
 <p><img src="https://upload-images.jianshu.io/upload_images/126164-ad977bd823e97b58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt=""></p>
 <p><strong>优点:</strong> 这种方式操作起来会比使用json_serializable操作起来更简便一些，并且带下划线字段会自动转换为驼峰命名的属性名。<br><strong>缺点:</strong> 如果数据过于复杂的话，在生成的时候可能会少了某一个类，并且不能进行父类抽取。</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/126164-02298ba52807bf7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h2 id="四-编辑器插件"><a href="#四-编辑器插件" class="headerlink" title="四. 编辑器插件"></a>四. 编辑器插件</h2><p>目前Android Studio(或IntelliJ)有几个插件，可以将json文件转成Model类，但插件质量参差不齐，甚至还有一些沾染上了抄袭风波，故笔者在此不做优先推荐，读者有兴趣可以自行了解。</p>
+<h3 id="四-编辑器插件"><a href="#四-编辑器插件" class="headerlink" title="四. 编辑器插件"></a>四. 编辑器插件</h3><p>目前Android Studio(或IntelliJ)有几个插件，可以将json文件转成Model类，但插件质量参差不齐，甚至还有一些沾染上了抄袭风波，故笔者在此不做优先推荐，读者有兴趣可以自行了解。</p>
 <h3 id="Json转Model几种方式总结"><a href="#Json转Model几种方式总结" class="headerlink" title="Json转Model几种方式总结:"></a>Json转Model几种方式总结:</h3><ul>
 <li>手动序列化JSON：比较麻烦，效率低，但新手还是多做尝试和了解比较好。</li>
 <li>json_serializable：效率高，watch很好用。</li>
