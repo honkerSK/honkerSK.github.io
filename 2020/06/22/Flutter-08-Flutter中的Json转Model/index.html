@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Mon Jun 22 2020 01:14:39 GMT+0800">
-        <meta property="article:modified_time" content="Tue Jun 23 2020 17:05:23 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jun 24 2020 01:46:30 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2020/06/22/Flutter-08-Flutter中的Json转Model/index.html",
     "headline": "[Flutter] 08-Flutter中的Json转Model",
     "datePublished": "Mon Jun 22 2020 01:14:39 GMT+0800",
-    "dateModified": "Tue Jun 23 2020 17:05:23 GMT+0800",
+    "dateModified": "Wed Jun 24 2020 01:46:30 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "codeTao",
@@ -550,7 +550,7 @@ dev_dependencies:
 <li>注意：yaml配置文件对于缩进要求十分严格，下面的<code>build_runner</code>和<code>json_serializable</code>应该是与<code>flutter_test</code>平级的，千万不要写在flutter_test缩进后，这样它会认为这两个是flutter_test的子集目录！</li>
 </ul>
 <p>由于很多朋友在这一步遇到了问题，这里贴出源码:</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/126164-f22085fffcbc631b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-f22085fffcbc631b.png" alt=""></p>
 <h4 id="第2步：以json-serializable-的方式创建模型类"><a href="#第2步：以json-serializable-的方式创建模型类" class="headerlink" title="第2步：以json_serializable 的方式创建模型类"></a>第2步：以json_serializable 的方式创建模型类</h4><ul>
 <li>根据下面简单Json数据创建模型类:</li>
 </ul>
@@ -645,9 +645,9 @@ class Computer {
 <li><code>_$UserFromJson(json)</code> : 它接收了一个map：Map&lt;String, dynamic&gt;，并将这个Map里的值映射为我们所需要的实体类对象。我们就可以使用这个方法，将存有json数据的map转化为我们需要的实体类对象。</li>
 <li><code>_$UserToJson(this)</code>: 将调用此方法的对象直接根据字段映射成Map。<br>而这两个都是私有方法，part让两个文件共享作用域与命名空间，所以我们需要将生成的方法暴露给外部。</li>
 </ul>
-<p><strong>备注3:</strong><br><code>UserFromJson(json)</code>和 <code>ToJson()</code>调用方法，在未执行<code>生成对应的.g.dart文件指令</code>前该行可能会报错。<br><img src="https://upload-images.jianshu.io/upload_images/126164-2d82a904c8e22a4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>备注3:</strong><br><code>UserFromJson(json)</code>和 <code>ToJson()</code>调用方法，在未执行<code>生成对应的.g.dart文件指令</code>前该行可能会报错。<br><img src="https://upload-images.jianshu.io/upload_images/126164-2d82a904c8e22a4e.png" alt=""></p>
 <p><code>part &#39;computer.g.dart&#39;;</code>和 <code>part &#39;user.g.dart&#39;;</code> ，在未执行<code>生成对应的.g.dart文件指令</code>前该行可能会报错。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/126164-7befd0640987d307.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-7befd0640987d307.png" alt=""></p>
 <p><strong>备注4:</strong><br>toString方法不是必须的，只用来打印输出进行测试。</p>
 <h4 id="第3步：生成对应的-g-dart文件指令"><a href="#第3步：生成对应的-g-dart文件指令" class="headerlink" title="第3步：生成对应的.g.dart文件指令"></a>第3步：生成对应的.g.dart文件指令</h4><p>该操作有两种指令:一次性生成指令和 持续性生成指令。</p>
 <p><strong>一次性生成指令</strong></p>
@@ -674,9 +674,9 @@ class Computer {
 final user = User.fromJson(jsonInfo);
 print(user);
 </code></pre><h3 id="三-网页转换"><a href="#三-网页转换" class="headerlink" title="三. 网页转换"></a>三. 网页转换</h3><p><a href="https://app.quicktype.io/" target="_blank" rel="noopener">app.quicktype.io</a> 是一个将<code>JSON</code>转换成模型类的工具网站，目前来看支持大部分常用语言，并且灵活的可选项也非常多：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/126164-ad977bd823e97b58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-ad977bd823e97b58.png" alt=""></p>
 <p><strong>优点:</strong> 这种方式操作起来会比使用json_serializable操作起来更简便一些，并且带下划线字段会自动转换为驼峰命名的属性名。<br><strong>缺点:</strong> 如果数据过于复杂的话，在生成的时候可能会少了某一个类，并且不能进行父类抽取。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/126164-02298ba52807bf7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-02298ba52807bf7d.png" alt=""></p>
 <h3 id="四-编辑器插件"><a href="#四-编辑器插件" class="headerlink" title="四. 编辑器插件"></a>四. 编辑器插件</h3><p>目前Android Studio(或IntelliJ)有几个插件，可以将json文件转成Model类，但插件质量参差不齐，甚至还有一些沾染上了抄袭风波，故笔者在此不做优先推荐，读者有兴趣可以自行了解。</p>
 <h3 id="Json转Model几种方式总结"><a href="#Json转Model几种方式总结" class="headerlink" title="Json转Model几种方式总结:"></a>Json转Model几种方式总结:</h3><ul>
 <li>手动序列化JSON：比较麻烦，效率低，但新手还是多做尝试和了解比较好。</li>
