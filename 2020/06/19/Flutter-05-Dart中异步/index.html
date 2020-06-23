@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Fri Jun 19 2020 00:54:26 GMT+0800">
-        <meta property="article:modified_time" content="Fri Jun 19 2020 00:55:35 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jun 24 2020 01:50:49 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2020/06/19/Flutter-05-Dart中异步/index.html",
     "headline": "[Flutter] 05-Dart中异步",
     "datePublished": "Fri Jun 19 2020 00:54:26 GMT+0800",
-    "dateModified": "Fri Jun 19 2020 00:55:35 GMT+0800",
+    "dateModified": "Wed Jun 24 2020 01:50:49 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "codeTao",
@@ -747,7 +747,7 @@ Exception: 网络请求出现错误
 <li>这两种情况，我们都称Future为完成状态。</li>
 </ul>
 <p>Dart官网有对这两种状态解析，之所以贴出来是区别于Promise的三种状态</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/126164-25cd6adc1d4b791e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-25cd6adc1d4b791e.png" alt=""></p>
 <p><strong>补充三：Future的链式调用</strong></p>
 <p>上面代码我们可以进行如下的改进：</p>
 <ul>
@@ -893,7 +893,7 @@ String getNetworkData() {
 <li>错误非常明显：await关键字必须存在于async函数中。</li>
 <li>所以我们需要将<code>getNetworkData</code>函数定义成async函数。</li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/126164-4facf8083248be2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-4facf8083248be2e.png" alt=""></p>
 <p>继续修改代码如下：</p>
 <ul>
 <li>也非常简单，只需要在函数的()后面加上一个async关键字就可以了</li>
@@ -910,7 +910,7 @@ String getNetworkData() {
 <li>错误非常明显：使用async标记的函数，必须返回一个Future对象。</li>
 <li>所以我们需要继续修改代码，将返回值写成一个Future。</li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/126164-5e242d435aba631a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-5e242d435aba631a.png" alt=""></p>
 <p>继续修改代码如下：</p>
 <pre><code>Future&lt;String&gt; getNetworkData() async {
   var result = await Future.delayed(Duration(seconds: 3), () {
