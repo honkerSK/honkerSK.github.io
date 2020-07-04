@@ -50,7 +50,7 @@
     
     <title>
         
-            iOS面试题14--Runloop | 
+            [iOS开发]iOS13 Scene Delegate | 
         
         codeTao
     </title>
@@ -61,7 +61,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",iOS面试">
+    <meta name="keywords" content=",iOS技术">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -227,7 +227,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="codeTao">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/12/iOS面试题14-Runloop/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/07/04/iOS开发-iOS13-Scene-Delegate/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="codeTao">
@@ -242,16 +242,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/09/12/iOS面试题14-Runloop/">
+    <meta property="og:url" content="http://yoursite.com/2020/07/04/iOS开发-iOS13-Scene-Delegate/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="iOS面试题14--Runloop | codeTao">
+    <meta property="og:title" content="[iOS开发]iOS13 Scene Delegate | codeTao">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="iOS面试"> 
+    <meta property="og:article:tag" content="iOS技术"> 
 
     
-        <meta property="article:published_time" content="Wed Sep 12 2018 15:42:04 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 12 2018 15:42:29 GMT+0800">
+        <meta property="article:published_time" content="Sat Jul 04 2020 13:36:53 GMT+0800">
+        <meta property="article:modified_time" content="Sat Jul 04 2020 13:41:14 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -259,7 +259,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2020/07/04/iOS开发-iOS13-Scene-Delegate/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -271,10 +271,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html",
-    "headline": "iOS面试题14--Runloop",
-    "datePublished": "Wed Sep 12 2018 15:42:04 GMT+0800",
-    "dateModified": "Wed Sep 12 2018 15:42:29 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2020/07/04/iOS开发-iOS13-Scene-Delegate/index.html",
+    "headline": "[iOS开发]iOS13 Scene Delegate",
+    "datePublished": "Sat Jul 04 2020 13:36:53 GMT+0800",
+    "dateModified": "Sat Jul 04 2020 13:41:14 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "codeTao",
@@ -292,7 +292,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": ",iOS面试",
+    "keywords": ",iOS技术",
     "description": "",
 }
 </script>
@@ -367,7 +367,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是-Runloop？"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是 Runloop？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Runloop对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">Runloop对象</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Runloop与线程"><span class="post-toc-number">3.</span> <span class="post-toc-text">Runloop与线程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#获得RunLoop对象"><span class="post-toc-number">4.</span> <span class="post-toc-text">获得RunLoop对象</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RunLoop相关类"><span class="post-toc-number">5.</span> <span class="post-toc-text">RunLoop相关类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CFRunLoopModeRef"><span class="post-toc-number">6.</span> <span class="post-toc-text">CFRunLoopModeRef</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CFRunLoopTimerRef"><span class="post-toc-number">7.</span> <span class="post-toc-text">CFRunLoopTimerRef</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CFRunLoopSourceRef"><span class="post-toc-number">8.</span> <span class="post-toc-text">CFRunLoopSourceRef</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CFRunLoopObserverRef"><span class="post-toc-number">9.</span> <span class="post-toc-text">CFRunLoopObserverRef</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RunLoop处理逻辑"><span class="post-toc-number">10.</span> <span class="post-toc-text">RunLoop处理逻辑</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Runloop的应用"><span class="post-toc-number">11.</span> <span class="post-toc-text">Runloop的应用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#runloop定时源和输入源-image"><span class="post-toc-number">12.</span> <span class="post-toc-text">runloop定时源和输入源 image</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NSRunLoop的实现机制-及在多线程中如何使用"><span class="post-toc-number">13.</span> <span class="post-toc-text">NSRunLoop的实现机制,及在多线程中如何使用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#runloop和线程有什么关系？"><span class="post-toc-number">14.</span> <span class="post-toc-text">runloop和线程有什么关系？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#autorelease-对象在什么情况下会被释放？"><span class="post-toc-number">15.</span> <span class="post-toc-text">autorelease 对象在什么情况下会被释放？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对于runloop的理解不正确的是"><span class="post-toc-number">16.</span> <span class="post-toc-text">对于runloop的理解不正确的是</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#runloop的mode作用是什么？"><span class="post-toc-number">17.</span> <span class="post-toc-text">runloop的mode作用是什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#请写出NSTimer使用时的注意事项（两项即可）"><span class="post-toc-number">18.</span> <span class="post-toc-text">请写出NSTimer使用时的注意事项（两项即可）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UITableViewCell上有个UILabel，显示NSTimer实现的秒表时间，手指滚动cell过程中，label是否刷新，为什么？"><span class="post-toc-number">19.</span> <span class="post-toc-text">UITableViewCell上有个UILabel，显示NSTimer实现的秒表时间，手指滚动cell过程中，label是否刷新，为什么？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么-UIScrollView-的滚动会导致-NSTimer-失效？"><span class="post-toc-number">20.</span> <span class="post-toc-text">为什么 UIScrollView 的滚动会导致 NSTimer 失效？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？"><span class="post-toc-number">21.</span> <span class="post-toc-text">在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在开发中如何使用RunLoop？什么应用场景？"><span class="post-toc-number">22.</span> <span class="post-toc-text">在开发中如何使用RunLoop？什么应用场景？</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、SceneDelegate介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、SceneDelegate介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-、Window与Scene"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1)、Window与Scene</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-、SceneDelegate三处新增内容"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2)、SceneDelegate三处新增内容</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、SceneDelegate三处新增内容详解"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、SceneDelegate三处新增内容详解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-、SceneDelegate类"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1)、SceneDelegate类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-、AppDelegate类新增两个方法"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2)、AppDelegate类新增两个方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-、Info-plist-中的Application-Scene-Manifest"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3)、Info.plist 中的Application Scene Manifest</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、SceneDelegate适配"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、SceneDelegate适配</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-不需要多窗口（multiple-windows）"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 不需要多窗口（multiple windows）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-支持多窗口适配"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2. 支持多窗口适配</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、SwiftUI中SceneDelegate"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、SwiftUI中SceneDelegate</span></a></li></ol>
     </ul>
     
 
@@ -399,7 +399,7 @@
         
     
             <p class="article-headline-p">
-                iOS面试题14--Runloop
+                [iOS开发]iOS13 Scene Delegate
             </p>
         </div>
 
@@ -418,7 +418,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>codeTao</strong>
-        <span>9月 12, 2018</span>
+        <span>7月 04, 2020</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -442,7 +442,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/iOS面试/">iOS面试</a>
+        <a class="post_tag-link" href="/tags/iOS技术/">iOS技术</a>
     </ul>
     
 
@@ -470,7 +470,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=iOS面试题14--Runloop&url=http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[iOS开发]iOS13 Scene Delegate&url=http://yoursite.com/2020/07/04/iOS开发-iOS13-Scene-Delegate/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -479,7 +479,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=iOS面试题14--Runloop&url=http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html&via=codeTao" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[iOS开发]iOS13 Scene Delegate&url=http://yoursite.com/2020/07/04/iOS开发-iOS13-Scene-Delegate/index.html&via=codeTao" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -488,7 +488,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/07/04/iOS开发-iOS13-Scene-Delegate/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -497,7 +497,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/07/04/iOS开发-iOS13-Scene-Delegate/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -509,7 +509,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=iOS面试题14--Runloop&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/09/12/iOS面试题14-Runloop/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=codeTao&title=[iOS开发]iOS13 Scene Delegate&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2020/07/04/iOS开发-iOS13-Scene-Delegate/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -528,194 +528,270 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h4 id="什么是-Runloop？"><a href="#什么是-Runloop？" class="headerlink" title="什么是 Runloop？"></a>什么是 Runloop？</h4><ul>
-<li>从字面上讲就是运行循环。</li>
-<li>它内部就是do-while循环，在这个循环内部不断地处理各种任务。</li>
-<li>一个线程对应一个RunLoop，主线程的RunLoop默认已经启动，子线程的RunLoop得手动启动（调用run方法）</li>
-<li>RunLoop只能选择一个Mode启动，如果当前Mode中没有任何Source(Sources0、Sources1)、Timer，那么就直接退出RunLoop</li>
-<li>基本的作用就是保持程序的持续运行，处理app中的各种事件。通过runloop，有事运行，没事就休息，可以节省cpu资源，提高程序性能。</li>
-</ul>
-<h4 id="Runloop对象"><a href="#Runloop对象" class="headerlink" title="Runloop对象"></a>Runloop对象</h4><p>iOS中有2套API来访问和使用RunLoop</p>
+        <blockquote>
+<p>为了实现iPadOS支持多窗口，Xcode11后创建新工程默认会通过 UIScene 创建并管理多个 UIWindow 的应用，工程中除了 AppDelegate 外还会有一个 SceneDelegate。</p>
+</blockquote>
+<h3 id="一、SceneDelegate介绍"><a href="#一、SceneDelegate介绍" class="headerlink" title="一、SceneDelegate介绍"></a>一、SceneDelegate介绍</h3><h4 id="1-、Window与Scene"><a href="#1-、Window与Scene" class="headerlink" title="1)、Window与Scene"></a>1)、Window与Scene</h4><p>iOS13以后，SceneDelegate将负责AppDelegate的某些功能。 window（窗口）的概念被window（场景）的概念所代替， 一个scene现在可以作为您应用程序的用户界面和内容的载体。iOS13以前一个应用程序可以有不止一个window，同样现在一个应用程序也可以有不止一个scene。</p>
+<h4 id="2-、SceneDelegate三处新增内容"><a href="#2-、SceneDelegate三处新增内容" class="headerlink" title="2)、SceneDelegate三处新增内容"></a>2)、SceneDelegate三处新增内容</h4><p>iOS13以后，Xcode新建iOS项目中有增加三处新增内容:</p>
 <ul>
-<li>Foundation：NSRunLoop</li>
-<li>Core Foundation：CFRunLoopRef</li>
-<li>NSRunLoop和CFRunLoopRef都代表着RunLoop对象</li>
-<li>NSRunLoop是基于CFRunLoopRef的一层OC包装，所以要了解RunLoop内部结构，需要多研究CFRunLoopRef层面的API。</li>
+<li>1&gt; 添加一个新的类SceneDelegate</li>
 </ul>
-<h4 id="Runloop与线程"><a href="#Runloop与线程" class="headerlink" title="Runloop与线程"></a>Runloop与线程</h4><ul>
-<li>每条线程都有唯一的一个与之对应的RunLoop对象</li>
-<li>主线程的RunLoop已经自动创建好了，子线程的RunLoop需要主动创建</li>
-<li>RunLoop在第一次获取时创建，在线程结束时销毁</li>
-</ul>
-<h4 id="获得RunLoop对象"><a href="#获得RunLoop对象" class="headerlink" title="获得RunLoop对象"></a>获得RunLoop对象</h4><ul>
-<li>Foundation</li>
-</ul>
-<p>[NSRunLoop currentRunLoop]; // 获得当前线程的RunLoop对象</p>
-<p>[NSRunLoop mainRunLoop]; // 获得主线程的RunLoop对象</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-3214998b9dc99928.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新增SceneDelegateClass"></p>
 <ul>
-<li>Core Foundation</li>
-</ul>
-<p>CFRunLoopGetCurrent(); // 获得当前线程的RunLoop对象</p>
-<p>CFRunLoopGetMain(); // 获得主线程的RunLoop对象</p>
-<h4 id="RunLoop相关类"><a href="#RunLoop相关类" class="headerlink" title="RunLoop相关类"></a>RunLoop相关类</h4><pre><code>Core Foundation中关于RunLoop的5个类
-CFRunLoopRef
-CFRunLoopModeRef
-CFRunLoopSourceRef
-CFRunLoopTimerRef
-CFRunLoopObserverRef
-</code></pre><h4 id="CFRunLoopModeRef"><a href="#CFRunLoopModeRef" class="headerlink" title="CFRunLoopModeRef"></a>CFRunLoopModeRef</h4><pre><code>CFRunLoopModeRef代表RunLoop的运行模式。
-一个RunLoop包含若干个Mode，每个Mode又包含若干个(set)Source/(array)Timer/(array)Observer
-
-每次RunLoop启动时，只能指定其中一个 Mode，这个Mode被称作CurrentMode
-
-如果需要切换Mode，只能退出Loop，再重新指定一个Mode进入
-
-这样做主要是为了分隔开不同组的Source/Timer/Observer，让其互不影响
-
-mode主要是用来指定事件在运行循环中的优先级的，分为：
-•   NSDefaultRunLoopMode（kCFRunLoopDefaultMode）：默认，空闲状态
-•   UITrackingRunLoopMode：ScrollView滑动时会切换到该Mode
-•   UIInitializationRunLoopMode：run loop启动时，会切换到该mode
-•   NSRunLoopCommonModes（kCFRunLoopCommonModes）：Mode集合
-苹果公开提供的Mode有两个：
-•   NSDefaultRunLoopMode（kCFRunLoopDefaultMode）
-•   NSRunLoopCommonModes（kCFRunLoopCommonModes）
-</code></pre><h4 id="CFRunLoopTimerRef"><a href="#CFRunLoopTimerRef" class="headerlink" title="CFRunLoopTimerRef"></a>CFRunLoopTimerRef</h4><ul>
-<li>CFRunLoopTimerRef是基于时间的触发器</li>
-<li>CFRunLoopTimerRef基本上说的就是NSTimer，它受RunLoop的Mode影响</li>
-<li>GCD的定时器不受RunLoop的Mode影响</li>
-</ul>
-<h4 id="CFRunLoopSourceRef"><a href="#CFRunLoopSourceRef" class="headerlink" title="CFRunLoopSourceRef"></a>CFRunLoopSourceRef</h4><pre><code>CFRunLoopSourceRef是事件源（输入源）
-按照官方文档，Source的分类
-Port-Based Sources
-Custom Input Sources
-Cocoa Perform Selector Sources
-按照函数调用栈，Source的分类
-Source0：非基于Port的
-Source1：基于Port的，通过内核和其他线程通信，接收、分发系统事件
-</code></pre><h4 id="CFRunLoopObserverRef"><a href="#CFRunLoopObserverRef" class="headerlink" title="CFRunLoopObserverRef"></a>CFRunLoopObserverRef</h4><ul>
-<li>CFRunLoopObserverRef是观察者，能够监听RunLoop的状态改变</li>
-<li>可以监听的时间点有以下几个<ul>
-<li>kcfRunLoopEntry(即将进入loop)//1</li>
-<li>kcfRunLoopBeforeTimers(即将处理timer)//2</li>
-<li>kcfRunLoopBeforeSources(即将处理source)//4</li>
-<li>kcfRunLoopBeforeWaiting(即将进入休眠)//32</li>
-<li>kcfRunLoopAfterWaiting(刚从休眠中唤醒)//64</li>
-<li>kcfRunLoopExit(即将退出loop)//128</li>
-</ul>
+<li><p>2&gt; AppDelegate类中新增与<code>scene sessions</code>相关的新方法：</p>
+<pre><code>application(_:configurationForConnecting:options:) 
+application(_:didDiscardSceneSessions:)
+</code></pre></li>
+<li><p>3&gt; Info.plist文件中新增<code>Application Scene Manifest</code>配置项，用于配置App的scene，包括它们的scene配置名，delegate类名和storyboard</p>
 </li>
-<li>添加Observer</li>
 </ul>
-<pre><code>    CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(CFAllocatorGetDefault(), kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
-    NSLog(@&quot;----监听到RunLoop状态发生改变---%zd&quot;, activity);
-});
+<p>下面分别讲解下新增三处内容:</p>
+<h3 id="二、SceneDelegate三处新增内容详解"><a href="#二、SceneDelegate三处新增内容详解" class="headerlink" title="二、SceneDelegate三处新增内容详解"></a>二、SceneDelegate三处新增内容详解</h3><h4 id="1-、SceneDelegate类"><a href="#1-、SceneDelegate类" class="headerlink" title="1)、SceneDelegate类"></a>1)、SceneDelegate类</h4><p>SceneDelegate和AppDelegate中方法名相似, 是任何应用程序生命周期都会调用方法。</p>
+<pre><code>//SceneDelegate.swift 代码
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    var window: UIWindow?
 
-// 添加观察者：监听RunLoop的状态
-CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopDefaultMode);
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let _ = (scene as? UIWindowScene) else { return }
+    }
 
-// 释放Observer
-CFRelease(observer);
-</code></pre><h4 id="RunLoop处理逻辑"><a href="#RunLoop处理逻辑" class="headerlink" title="RunLoop处理逻辑"></a>RunLoop处理逻辑</h4><ul>
-<li>通知Observer:即将进入Loop（1）</li>
-<li>通知Observer：将要处理Timer（2）</li>
-<li>通知Observer：将要处理Source0（3）</li>
-<li>处理Source0（4）</li>
-<li>如果有Source0，跳到第9步（5）</li>
-<li>通知Observer：线程即将休眠（6）</li>
-<li>休眠，等待唤醒：（7）<ul>
-<li>Source0(port)。</li>
-<li>timer启动</li>
-<li>RunLoop设置的timer已经超时</li>
-<li>Runloop被外部手动唤醒</li>
-</ul>
-</li>
-<li>通知Observer：线程将被唤醒（8）</li>
-<li>处理未处理的时间（9）<ul>
-<li>如果用户定义的定时器启动，处理定时器事件并重启Runloop。进入步骤2.</li>
-<li>如果输入源启动，传递相应的消息。</li>
-<li>如果RunLopp被显式唤醒而且时间还没超时，重启RunLoop，进入步骤2.</li>
-</ul>
-</li>
-<li>通知Observer：即将退出Loop</li>
-</ul>
-<h4 id="Runloop的应用"><a href="#Runloop的应用" class="headerlink" title="Runloop的应用"></a>Runloop的应用</h4><ul>
-<li>NSTimer</li>
-<li>ImageView显示</li>
-<li>PerformSelector</li>
-<li>常驻线程</li>
-<li>自动释放池</li>
-</ul>
-<h4 id="runloop定时源和输入源-image"><a href="#runloop定时源和输入源-image" class="headerlink" title="runloop定时源和输入源 image"></a>runloop定时源和输入源 <img src="http://" alt="image">image</h4><ul>
-<li>Runloop处理的输入事件有两种不同的来源：输入源（input source）和定时源（timer source）</li>
-<li>输入源传递异步消息，通常来自于其他线程或者程序。</li>
-<li>定时源则传递同步消息，在特定时间或者一定的时间间隔发生</li>
-</ul>
-<h4 id="NSRunLoop的实现机制-及在多线程中如何使用"><a href="#NSRunLoop的实现机制-及在多线程中如何使用" class="headerlink" title="NSRunLoop的实现机制,及在多线程中如何使用"></a>NSRunLoop的实现机制,及在多线程中如何使用</h4><pre><code>- 实现机制：回答runloop的基本作用，处理逻辑，前面都有。
+    func sceneDidDisconnect(_ scene: UIScene) { }
 
-- 程序创建子线程的时候，才需要手动启动runloop。主线程的runloop已经默认启动。
+    func sceneDidBecomeActive(_ scene: UIScene) { }
 
-- 在多线程中，你需要判断是否需要runloop。如果需要runloop，那么你要负责配置runloop并启动。你不需要在任何情况下都去启动runloop。比如，你使用线程去处理一个预先定义好的耗时极长的任务时，你就可以无需启动runloop。Runloop只在你要和线程有交互时才需要
-</code></pre><h4 id="runloop和线程有什么关系？"><a href="#runloop和线程有什么关系？" class="headerlink" title="runloop和线程有什么关系？"></a>runloop和线程有什么关系？</h4><pre><code>- 主线程的run loop默认是启动的。
-iOS的应用程序里面，程序启动后会有一个如下的main()函数
-( argc,  * argv[]) {
-@autoreleasepool {
-    return UIApplicationMain(argc, argv, , NSStringFromClass([AppDelegate class]));
+    func sceneWillResignActive(_ scene: UIScene) { }
+
+    func sceneWillEnterForeground(_ scene: UIScene) { }
+
+    func sceneDidEnterBackground(_ scene: UIScene) { }
 }
-}
-重点是UIApplicationMain()函数，这个方法会为main thread设置一个NSRunLoop对象，这就解释了：为什么我们的应用可以在无人操作的时候休息，需要让它干活的时候又能立马响应。
-
-- 对其它线程来说，runloop默认是没有启动的，runloop只在你要和线程有交互时才需要。
-
-- 在任何一个 Cocoa 程序的线程中，都可以通过以下代码来获取到当前线程的 run loop 。
-NSRunLoop *runloop = [NSRunLoop currentRunLoop];
-</code></pre><h4 id="autorelease-对象在什么情况下会被释放？"><a href="#autorelease-对象在什么情况下会被释放？" class="headerlink" title="autorelease 对象在什么情况下会被释放？"></a>autorelease 对象在什么情况下会被释放？</h4><ul>
-<li>分两种情况：手动干预释放和系统自动释放</li>
-<li>手动干预释放就是指定autoreleasepool,当前作用域大括号结束就立即释放</li>
-<li>系统自动去释放:不手动指定autoreleasepool,Autorelease对象会在当前的 runloop 迭代结束时释放</li>
-<li>kCFRunLoopEntry(1):第一次进入会自动创建一个autorelease</li>
-<li>kCFRunLoopBeforeWaiting(32):进入休眠状态前会自动销毁一个autorelease,然后重新创建一个新的autorelease</li>
-<li>kCFRunLoopExit(128):退出runloop时会自动销毁最后一个创建的autorelease</li>
-</ul>
-<h4 id="对于runloop的理解不正确的是"><a href="#对于runloop的理解不正确的是" class="headerlink" title="对于runloop的理解不正确的是"></a>对于runloop的理解不正确的是</h4><pre><code>A 每一个线程都有其对应的RunLoop
-B 默认非主线程的RunLoop是没有运行的
-C 在一个单独的线程中没有必要去启用RunLoop
-D 可以将NSTimer添加到runloop中
 </code></pre><ul>
-<li>参考答案：C</li>
-<li>理由：说到RunLoop，它可是多线程的法定。通常来说，一个线程一次只能执行一个任务，执行完任务后就会退出线程。但是，对于主线程是不能退出的，因此我们需要让主线程即时任务执行完毕，也可以继续等待是接收事件而不退出，那么RunLoop就是关键法宝了。但是非主线程通常来说就是为了执行某一任务的，执行完毕就需要归还资源，因此默认是不运行RunLoop的。NSRunLoop提供了一个添加NSTimer的方法，这个方法是在应用正常状态下会回调。</li>
+<li><code>scene(_:willConnectTo:options:)</code>函数 : SceneDelegate的最重要的函数，相当于iOS 12上的 <code>application(_:didFinishLaunchingWithOptions:)</code> 函数。当将scene添加到app中时<code>scene(_:willConnectTo:options:)</code>函数会被调用的，因此在这里对scene进行配置。 这里需要特别注意的是，使用一个SceneDelegate来配置App中的所有scene，并且这个delegate通常会响应任何scene。在上面的代码中，我们可以手动地设置了视图控制器堆栈，稍后会进行详细介绍。</li>
 </ul>
-<h4 id="runloop的mode作用是什么？"><a href="#runloop的mode作用是什么？" class="headerlink" title="runloop的mode作用是什么？"></a>runloop的mode作用是什么？</h4><pre><code>mode主要是用来指定事件在运行循环中的优先级的，分为：
-•   NSDefaultRunLoopMode（kCFRunLoopDefaultMode）：默认，空闲状态
-•   UITrackingRunLoopMode：ScrollView滑动时会切换到该Mode
-•   UIInitializationRunLoopMode：run loop启动时，会切换到该mode
-•   NSRunLoopCommonModes（kCFRunLoopCommonModes）：Mode集合
-苹果公开提供的Mode有两个：
-•   NSDefaultRunLoopMode（kCFRunLoopDefaultMode）
-•   NSRunLoopCommonModes（kCFRunLoopCommonModes）
-如果我们把一个NSTimer对象以NSDefaultRunLoopMode（kCFRunLoopDefaultMode）添加到主运行循环中的时候, ScrollView滚动过程中会因为mode的切换，而导致NSTimer将不再被调度。当我们滚动的时候，也希望不调度，那就应该使用默认模式。但是，如果希望在滚动时，定时器也要回调，那就应该使用common mode。
-</code></pre><h4 id="请写出NSTimer使用时的注意事项（两项即可）"><a href="#请写出NSTimer使用时的注意事项（两项即可）" class="headerlink" title="请写出NSTimer使用时的注意事项（两项即可）"></a>请写出NSTimer使用时的注意事项（两项即可）</h4><pre><code>思路和上一题一样，如果想要销毁timer，则必须先将timer置为失效，否则timer就一直占用内存而不会释放。造成逻辑上的内存泄漏。该泄漏不能用xcode及instruments测出来。 另外对于要求必须销毁timer的逻辑处理，未将timer置为失效，若每次都创建一次，则之前的不能得到释放，则会同时存在多个timer的实例在内存中。
-参考答案：
-•   注意timer添加到runloop时应该设置为什么mode
-•   注意timer在不需要时，一定要调用invalidate方法使定时器失效，否则得不到释放
-</code></pre><h4 id="UITableViewCell上有个UILabel，显示NSTimer实现的秒表时间，手指滚动cell过程中，label是否刷新，为什么？"><a href="#UITableViewCell上有个UILabel，显示NSTimer实现的秒表时间，手指滚动cell过程中，label是否刷新，为什么？" class="headerlink" title="UITableViewCell上有个UILabel，显示NSTimer实现的秒表时间，手指滚动cell过程中，label是否刷新，为什么？"></a>UITableViewCell上有个UILabel，显示NSTimer实现的秒表时间，手指滚动cell过程中，label是否刷新，为什么？</h4><pre><code>和上一题一样的思路，如果要cell滚动过程中定时器正常回调，UI正常刷新，那么要将timer放入到CommonModes下，因为是NSDefaultRunLoopMode，只有在空闲状态下才会回调。
-</code></pre><h4 id="为什么-UIScrollView-的滚动会导致-NSTimer-失效？"><a href="#为什么-UIScrollView-的滚动会导致-NSTimer-失效？" class="headerlink" title="为什么 UIScrollView 的滚动会导致 NSTimer 失效？"></a>为什么 UIScrollView 的滚动会导致 NSTimer 失效？</h4><ul>
-<li>思路和上一题一样，解决办法有2个,一个是更改mode为NSRunLoopCommonModes(无论runloop运行在哪个mode,都能运行),还有种办法是切换到主线程来更新UI界面的刷新</li>
+<p>SceneDelegate其他方法:</p>
+<ul>
+<li><code>sceneDidDisconnect(_:)</code> 当scene与app断开连接是调用（注意，以后它可能被重新连接）</li>
+<li><code>sceneDidBecomeActive(_:)</code>  当用户开始与scene进行交互（例如从应用切换器中选择场景）时，会调用</li>
+<li><code>sceneWillResignActive(_:)</code>  当用户停止与scene交互（例如通过切换器切换到另一个场景）时调用</li>
+<li><code>sceneWillEnterForeground(_:)</code> 当scene变成活动窗口时调用，即从后台状态变成开始或恢复状态</li>
+<li><code>sceneDidEnterBackground(_:)</code> 当scene进入后台时调用，即该应用已最小化但仍存活在后台中</li>
 </ul>
-<pre><code> //将timer添加到NSDefaultRunLoopMode中
- [NSTimer scheduledTimerWithTimeInterval: target: selector:@selector(timerTick:) userInfo: repeats:];
-  //然后再添加到NSRunLoopCommonModes里
-   NSTimer *timer = [NSTimer timerWithTimeInterval: target: selector:@selector(timerTick:) userInfo: repeats:];
-    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-</code></pre><h4 id="在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？"><a href="#在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？" class="headerlink" title="在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？"></a>在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？</h4><ul>
-<li>思路和上一题一样</li>
+<h4 id="2-、AppDelegate类新增两个方法"><a href="#2-、AppDelegate类新增两个方法" class="headerlink" title="2)、AppDelegate类新增两个方法"></a>2)、AppDelegate类新增两个方法</h4><pre><code>//AppDelegate.swift 代码
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+        return true
+    }
+    // MARK: UISceneSession Lifecycle
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -&gt; UISceneConfiguration {
+        return UISceneConfiguration(name: &quot;Default Configuration&quot;, sessionRole: connectingSceneSession.role)
+    }
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set&lt;UISceneSession&gt;) {
+    }
+}
+</code></pre><p>在iOS13中AppDelegate中新增的两个函数是负责管理Senen Session的代理函数。在应用创建scene(场景)后，<code>scene session</code>对象将跟踪与该scene相关的所有信息。</p>
+<p>这两个函数是:</p>
+<ul>
+<li><p><code>application(_:configurationForConnecting:options:)</code> :   方法会返回一个UISceneConfiguration对象，其中包含场景详细信息，包括要创建的场景类型，用于管理场景的代理对象以及包含要显示的初始视图控制器的StoryBoard。 如果未实现此方法，则必须在应用程序的Info.plist文件中提供场景配置数据。<br>注意：该代理方法中返回UISceneConfiguration对象的配置名为Default Configuration，则系统就会自动去调用SceneDelegate这个类。这样SceneDelegate和AppDelegate产生了关联。</p>
+</li>
+<li><p><code>application(_:didDiscardSceneSessions:)</code> : 在分屏中关闭其中一个或多个scene时候回调用，可以在该函数中销毁场景所使用的资源。<br>该方法与<code>application(_:didDiscardSceneSessions:)</code>的区别是，该方法仅在场景断开连接时调用，不会被丢弃，它可能会重新连接。而<code>application(_: didDiscardSceneSessions:)</code>发生在使用应用程序切退出场景时。</p>
+</li>
 </ul>
-<h4 id="在开发中如何使用RunLoop？什么应用场景？"><a href="#在开发中如何使用RunLoop？什么应用场景？" class="headerlink" title="在开发中如何使用RunLoop？什么应用场景？"></a>在开发中如何使用RunLoop？什么应用场景？</h4><ul>
-<li>开启一个常驻线程（让一个子线程不进入消亡状态，等待其他线程发来消息，处理其他事件）</li>
-<li>在子线程中开启一个定时器</li>
-<li>在子线程中进行一些长期监控</li>
-<li>可以控制定时器在特定模式下执行</li>
-<li>可以让某些事件（行为、任务）在特定模式下执行</li>
-<li>可以添加Observer监听RunLoop的状态，比如监听点击事件的处理（在所有点击事件之前做一些事情）</li>
+<h4 id="3-、Info-plist-中的Application-Scene-Manifest"><a href="#3-、Info-plist-中的Application-Scene-Manifest" class="headerlink" title="3)、Info.plist 中的Application Scene Manifest"></a>3)、Info.plist 中的Application Scene Manifest</h4><p><img src="https://upload-images.jianshu.io/upload_images/126164-28938168b088feca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>Info.plist文件文件包含App的配置信息，如App的名称，版本，支持的设备方向，现在我们可以通过配置Application Scene Manifest项来支持的不同场景。大多数应用程序只有一个场景，但是可以通过配置该项创建更多场景，如用于响应推送通知或特定操作的特定场景。</p>
+<ul>
+<li><code>Enable Multiple Windows</code>: 默认为<code>NO</code>，其设置为<code>YES</code>可以支持多个窗口。 </li>
+<li><p><code>Application Session Role</code>: 是一个数组，用于在应用程序中声明场景。 该数组每个元素是一个字典，字典中有三个键值,分别为<br><code>Configuration Name</code>: 当前配置的名字，必须是唯一的;<br><code>Delegate Class Name</code>: 场景的代理类名，将与该Scene代理对象关联;<br><code>StoryBoard name</code>: 场景用于创建初始UI的storyboard名称。</p>
+</li>
+<li><p>AppDelegate方法<code>application(_:configurationForConnecting:options:)</code>返回值为<code>UISceneConfiguration</code>实例，上边三个键值分别对应UISceneConfiguration三个属性<code>name</code>、<code>delegateClass</code>、<code>storyboard</code> 。</p>
+</li>
+<li><p>默认在info.plist中进行了配置， 不用<code>application(_:configurationForConnecting:options:)</code>方法也没有关系。如果没有在info.plist配置Application Scene Manifest项就需要实现这个方法并返回一个UISceneConfiguration对象。</p>
+</li>
+</ul>
+<p><strong>那么AppDelegate中的<code>SceneDelegate</code>、<code>UISceneSession</code>和Info.plist中的<code>Application Scene Manifest</code>是如何一起创建多窗口应用的呢？</strong></p>
+<ul>
+<li>首先，SceneDelegate类管理场景的生命周期，处理各种响应，如 <code>sceneDidBecomeActive(_:)</code> and <code>sceneDidEnterBackground(_:)</code>之类的事件。</li>
+<li>然后，AppDelegate类中的新函数。 它管理scene sessions(场景会话)，提供场景的配置数据，并响应用户丢弃场景的事件。</li>
+<li>最后，<code>Application Scene Manifest</code> 列出了当前应用程序支持的场景，并将它们连接到delegate类并初始化storyboard。</li>
+</ul>
+<h3 id="三、SceneDelegate适配"><a href="#三、SceneDelegate适配" class="headerlink" title="三、SceneDelegate适配"></a>三、SceneDelegate适配</h3><p>从iOS13开始AppDelegate不再有window属性，window属性被定义在SceneDelegate中。这是因为iOS13中AppDelegate的职责发现了改变： </p>
+<ul>
+<li>iOS13之前，AppDelegate的职责全权处理App生命周期和UI生命周期； </li>
+<li>iOS13之后，AppDelegate的职责是：<br>1、处理 App 生命周期<br>2、新的 Scene Session 生命周期<br>3、UI的生命周期交给新增的Scene Delegate处理。</li>
+</ul>
+<p>因此，iOS13以前创建项目如果不需要多窗口就不需要任何改动，而iOS13以后创建新项目时，就要做一些适配:</p>
+<h4 id="1-不需要多窗口（multiple-windows）"><a href="#1-不需要多窗口（multiple-windows）" class="headerlink" title="1. 不需要多窗口（multiple windows）"></a>1. 不需要多窗口（multiple windows）</h4><ul>
+<li>删除掉info.plist中Application Scene Manifest选项，同时，注释SceneDelegate文件中所有代码，SceneDelegate文件删不删除都可以。</li>
+<li>注释 AppDelegate中关于Scene的代理方法</li>
+</ul>
+<p>如果使用纯代码来实现显示界面，需要在AppDelegate.h中手动添加window属性，添加以下代码即可：</p>
+<pre><code>class AppDelegate: UIResponder, UIApplicationDelegate {
+    //手动添加window属性
+    var window: UIWindow?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+
+        self.window = UIWindow(frame:UIScreen.main.bounds)
+        self.window!.backgroundColor = UIColor.white
+        //设置root
+        let rootVC = UIViewController()
+        self.window!.rootViewController = rootVC
+        self.window!.makeKeyAndVisible()
+        return true
+    }
+
+    // MARK: UISceneSession Lifecycle
+//    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -&gt; UISceneConfiguration {
+//        return UISceneConfiguration(name: &quot;Default Configuration&quot;, sessionRole: connectingSceneSession.role)
+//    }
+//    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set&lt;UISceneSession&gt;) {
+//    }
+}
+</code></pre><h4 id="2-支持多窗口适配"><a href="#2-支持多窗口适配" class="headerlink" title="2. 支持多窗口适配"></a>2. 支持多窗口适配</h4><p>iOS 13后新项目中info.plist中的配置项Application Scene Manifest是针对iPad multiple windows功能推出的。在保留Application Scene Manifest配置项不予删除时（其中，项目是否支持多窗口功能是个可勾选项），AppDelegate的生命周期方法不再起作用，需要在SceneDelegate中使用UIScene提供的生命周期方法，并且需要针对 iOS 13 在Scene中配置和 iOS 13 以下在AppDelegate中做两套配置。</p>
+<p>下面是纯代码实现界面显示的代码：<br><strong>Swift适配代码步骤:</strong></p>
+<ul>
+<li><p>1)第一步，SceneDelegate中添加@available(iOS 13, *)</p>
+<pre><code>//SceneDelegate.swift
+@available(iOS 13, *)  //在类的头部@available(iOS 13, *)添加即可
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+....
+....
+}
+</code></pre></li>
+<li><p>2)第二步，AppDelegate中声明window属性，<code>didFinishLaunchingWithOptions</code>中添加版本判断，AppDelegate中新增两个方法前添加@available(iOS 13, <em>)。也可以将这两个方法添加到AppDelegate分类中,分类前添加@available(iOS 13, </em>)。</p>
+</li>
+</ul>
+<pre><code>// AppDelegate.swift
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    //手动添加window属性
+    var window: UIWindow?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+        if #available(iOS 13, *) {
+
+        } else {
+            window = UIWindow(frame:UIScreen.main.bounds)
+            window!.backgroundColor = UIColor.blue
+            //设置root
+            let rootVC = UIViewController()
+            window!.rootViewController = rootVC
+            window!.makeKeyAndVisible()
+        }
+        return true
+    }
+
+    //新增方法添加@available(iOS 13, *)
+    @available(iOS 13.0, *)
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -&gt; UISceneConfiguration {
+        return UISceneConfiguration(name: &quot;Default Configuration&quot;, sessionRole: connectingSceneSession.role)
+    }
+    @available(iOS 13.0, *)
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set&lt;UISceneSession&gt;) {
+    }
+}
+</code></pre><ul>
+<li><p>3)第三步，SceneDelegate中初始化UIWindow，并添加根视图控制器</p>
+<pre><code>@available(iOS 13, *)
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
+  var window: UIWindow?
+  func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) { 
+      guard let windowScene = (scene as? UIWindowScene) else { return }
+      let window = UIWindow(windowScene: windowScene)
+      let vc = ViewController()
+      vc.view.backgroundColor = .red
+      let navigation = UINavigationController(rootViewController: vc)
+      window.rootViewController = navigation
+      window.makeKeyAndVisible()
+      self.window = window
+  }
+...
+...
+}
+</code></pre></li>
+</ul>
+<p><strong>OC适配代码:</strong></p>
+<pre><code>// AppDelegate.m中
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    if (@available(iOS 13.0, *)) {
+
+    } else {
+        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        [self.window setBackgroundColor:[UIColor whiteColor]];
+
+        ViewController *vc = [[ViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self.window setRootViewController:nav];
+        [self.window makeKeyAndVisible];
+    }
+    return YES;
+}
+</code></pre><pre><code>// SceneDelegate.m中
+- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
+
+    //在这里手动创建新的window
+    if (@available(iOS 13.0, *)) {
+        UIWindowScene *windowScene = (UIWindowScene *)scene;
+        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        [self.window setWindowScene:windowScene];
+        [self.window setBackgroundColor:[UIColor whiteColor]];
+
+        ViewController *con = [[ViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:con];
+        [self.window setRootViewController:nav];
+        [self.window makeKeyAndVisible];
+    }
+}
+</code></pre><ul>
+<li><strong>注意:</strong>如果不使用storyboard，需要将配置中的storyboard项删除</li>
+</ul>
+<ul>
+<li><strong>注意2:</strong>AppDelegate中的有关事件循环的方法，在iOS 13后是不会走的，iOS13以下的才会收到事件回调的。iOS13以上会走SceneDelegate对应的方法事件循环方法<pre><code>func applicationWillResignActive(_ application: UIApplication) { }
+...
+...
+</code></pre></li>
+</ul>
+<h3 id="四、SwiftUI中SceneDelegate"><a href="#四、SwiftUI中SceneDelegate" class="headerlink" title="四、SwiftUI中SceneDelegate"></a>四、SwiftUI中SceneDelegate</h3><p>SwiftUI创建的iOS 13项目，所以SwiftUI应用程序主要依靠SceneDelegate来设置应用程序的初始UI。</p>
+<p>SwiftUI项目info.plist文件中<code>Application Scene Manifest</code>项配置如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-4ca967d17a7fbe84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>默认配置中没有设置“Storyboard Name”这一项。但是如果要配置支持多个窗口，则需要将<code>Enable Multiple Windows</code>设置为YES。</li>
+<li>AppDelegate类，和上边iOS新建项目AppDelegate一样。</li>
+<li>SceneDelegate类中实现代码，如下 </li>
+</ul>
+<pre><code>//SceneDelegate.swift
+import UIKit
+import SwiftUI
+
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    var window: UIWindow?
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        let contentView = ContentView()
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            window.rootViewController = UIHostingController(rootView: contentView)
+            self.window = window
+            window.makeKeyAndVisible()
+        }
+    }
+.....
+.....
+}
+</code></pre><p>上面的代码中发生了什么？<br>使用此方法可以有选择地配置UIWindow窗口并将其附加到提供的UIWindowScene场景。<br>如果使用storyboard，则<code>window</code>属性将自动初始化并附加到场景中。</p>
+<ul>
+<li>首先，添加新场景会调用<code>scene(_: willConnectTo: options:)</code>方法。 方法传入一个scene对象和一个session，传入的scene对象是由应用程序创建的。</li>
+<li>其次，window属性会在这里用到。 App仍然使用<code>UIWindow</code>对象，但现在它们已成为scene（场景）的一部分。 在if let代码块中，使用scene来初始化UIWindow对象。</li>
+<li><p>然后设置window的rootViewController，将window实例赋值给场景的window属性，并且设置窗口makeKeyAndVisible为true，即将该窗口置于App的前面。<br>接着为SwiftUI项目创建了ContentView实例，并通过使用UIHostingController将其添加为根视图控制器。 该控制器用于将基于SwiftUI的视图显示在屏幕上。</p>
+</li>
+<li><p>最后，UIScene的实例化对象scene实际上是UIWindowScene类型的对象。 这就是as?对可选类型转换的原因。 （到目前为止，已创建的场景通常为“ UIWindowScene”类型，但将来可能还会有更多类型的场景。）</p>
+</li>
+</ul>
+<p>将上边归纳如下内容：</p>
+<ul>
+<li>当<code>scene(_: willConnectTo: options:)</code>被调用时，SceneDelegate会在正确的时间配置场景。</li>
+<li>AppDelegate和Manifest的默认配置，他们没有涉及storyboard的任何东西。</li>
+<li><code>scene(_: willConnectTo: options: )</code>函数内，创建一个SwiftUI视图，将其放置在托管控制器中，然后将控制器分配给window属性的根视图控制器，并将该窗口放置在应用程序UI的前面 。</li>
 </ul>
 
         
@@ -770,21 +846,13 @@ D 可以将NSTimer添加到runloop中
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/12/iOS面试题15-网络/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/12/iOS面试题13-数据存储/" id="post_nav-older" class="next-content">
+        <a href="/2020/07/02/Flutter-09-Flutter真机调试错误处理/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
