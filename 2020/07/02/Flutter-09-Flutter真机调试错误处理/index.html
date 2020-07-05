@@ -251,7 +251,7 @@
 
     
         <meta property="article:published_time" content="Thu Jul 02 2020 00:59:46 GMT+0800">
-        <meta property="article:modified_time" content="Thu Jul 02 2020 01:00:24 GMT+0800">
+        <meta property="article:modified_time" content="Sat Jul 04 2020 19:13:58 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "http://yoursite.com/2020/07/02/Flutter-09-Flutter真机调试错误处理/index.html",
     "headline": "[Flutter] 09-Flutter真机调试错误处理",
     "datePublished": "Thu Jul 02 2020 00:59:46 GMT+0800",
-    "dateModified": "Thu Jul 02 2020 01:00:24 GMT+0800",
+    "dateModified": "Sat Jul 04 2020 19:13:58 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "codeTao",
@@ -529,7 +529,10 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <blockquote>
-<p>Flutter真机调试错误处理总结:<br>问题1:运行FlutterSDK低版本项目的建议<br>问题2:Xcode iOS Flutter真机调试错误 It appears that your application still contains the default signing identifier<br>问题3:Xcode iOS Flutter真机调试错误: Could not build the precompiled application for the device<br>问题4:Xcode iOS Flutter真机调试错误:Could not install build/ios/iphoneos/Runner.app on</p>
+<p>AndroidStudio 运行Flutter项目是通过 Xcode 构建项目的，所以真机遇到问题，可以先使用Xcode打开对应iOS项目进行调试给出的错误信息也比较准确，编译没问题后用AndroidStudio真机运行项目。</p>
+</blockquote>
+<blockquote>
+<p>下面总结了几个笔者在Flutter真机调试时错误处理:<br>问题1:运行FlutterSDK低版本项目的建议<br>问题2:Xcode iOS Flutter真机调试错误 It appears that your application still contains the default signing identifier<br>问题3:Xcode iOS Flutter真机调试错误: Could not build the precompiled application for the device<br>问题4:Xcode iOS Flutter真机调试错误:Could not install build/ios/iphoneos/Runner.app on</p>
 </blockquote>
 <h4 id="问题1-运行FlutterSDK低版本项目的建议"><a href="#问题1-运行FlutterSDK低版本项目的建议" class="headerlink" title="问题1:运行FlutterSDK低版本项目的建议"></a>问题1:运行FlutterSDK低版本项目的建议</h4><p>由于FlutterSDK更新比较频繁，有时下载一个项目后会发现，报各种bug，各种问题，下面总结下处理步骤：<br>1&gt; 找到pubspec.yaml 文件，执行 <code>flutter get pub</code> 安装项目所需插件。<br>2&gt; 确定低版本项目的环境配置是否和当前电脑环境一致，下面给出一个笔者下载的低版本项目所需运行环境:</p>
 <pre><code>Flutter SDK (Channel stable, v1.5.4-hotfix.2, on Mac OS X 10.13.6 17G2112, locale zh-Hans-CN， Dart SDK : 2.5.0)
@@ -547,8 +550,18 @@ Error launching application on iPhone.
 Error launching application on iPhone8p.
 </code></pre><p><strong>解决：</strong></p>
 <ul>
-<li>打开Xcode, File-&gt;Workspace Settings-&gt; 找到Build System 选项修改为: Legacy Build System</li>
-<li>最后一定要在真机上, 设置信任运行的app! <code>啰嗦下步骤: 手机设置-&gt;通用-&gt;设备管理-&gt;找到运行app设置信任</code><br><img src="https://upload-images.jianshu.io/upload_images/126164-d55fbc972014c4a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li><p>首先Xcode打开对应iOS项目，确定singing配置和bundle Id有效，如下图:<br><img src="https://upload-images.jianshu.io/upload_images/126164-ab163a0bf8fef13c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="singing配置"></p>
+</li>
+<li><p>然后打开Xcode，File-&gt;Workspace Settings-&gt; 找到Build System 选项修改为: Legacy Build System。</p>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-d55fbc972014c4a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>编译没问题后Xcode真机运行，如果有下面弹窗提示，需要真机需要信任运行app ，真机上操作步骤: 手机设置-&gt;通用-&gt;设备管理-&gt;找到运行app设置信任`。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/126164-7f17240c8214ce78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>修改后重新真机运行AndroidStudio。</li>
 </ul>
 <h4 id="问题4-Xcode-iOS-Flutter真机调试错误-Could-not-install-build-ios-iphoneos-Runner-app-on"><a href="#问题4-Xcode-iOS-Flutter真机调试错误-Could-not-install-build-ios-iphoneos-Runner-app-on" class="headerlink" title="问题4:Xcode iOS Flutter真机调试错误:Could not install build/ios/iphoneos/Runner.app on"></a>问题4:Xcode iOS Flutter真机调试错误:Could not install build/ios/iphoneos/Runner.app on</h4><p><strong>错误信息:</strong></p>
 <pre><code>Could not install build/ios/iphoneos/Runner.app on xxxxxx.
@@ -715,7 +728,7 @@ Error launching application on iPhonesk8p.
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2020/07/">七月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2020/07/">七月 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">39</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -733,7 +746,7 @@ Error launching application on iPhonesk8p.
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">33</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">40</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">33</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS文档/">iOS文档<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS笔记/">iOS笔记<span class="sidebar_archives-count">40</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -767,7 +780,7 @@ Error launching application on iPhonesk8p.
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">100</span>
+                <span class="sidebar-badge">101</span>
             </a>
         </li>
         
